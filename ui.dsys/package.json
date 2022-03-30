@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "tokens-generator": "node index.js"
+  },
+  "dependencies": {
+    "@paclife/plds.tokens": "^0.0.4"
+  }
+}
