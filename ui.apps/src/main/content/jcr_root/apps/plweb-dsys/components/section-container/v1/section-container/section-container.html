@@ -1,0 +1,27 @@
+<!-- section container clientlibs are embedded in clientlib base -->
+
+<div class="section-container__main
+    ${properties.removeSpaceDesktop ? ' section-container--desktop-horizontal-no-space' : ' section-container--desktop-horizontal-space-default'}
+    ${properties.removeSpaceTablet ? ' section-container--tablet-horizontal-no-space' : ' section-container--tablet-horizontal-space-default'}
+    ${properties.removeSpaceMobile ? ' section-container--mobile-horizontal-no-space' : ' section-container--mobile-horizontal-space-default'}
+    ${properties.removeSpaceDesktop ? ' section-container--desktop-full-width' : ''}
+    ${properties.animation && properties.animation != 'none' ? ' animatedParent animateOnce' : ''} 
+    section-container--desktop-top-${properties.desktopTop} 
+    section-container--desktop-bottom-${properties.desktopBottom} 
+    section-container--tablet-top-${properties.tabletTop} 
+    section-container--tablet-bottom-${properties.tabletBottom} 
+    section-container--mobile-top-${properties.mobileTop} 
+    section-container--mobile-bottom-${properties.mobileBottom} 
+    section-container--desktop-background-${properties.desktopBgColor} 
+    section-container--tablet-background-${properties.tabletBgColor} 
+    section-container--mobile-background-${properties.mobileBgColor}">
+    <!-- Layout Container Parsys Inclusion -->
+    <div
+        class="width-container ${properties.animation && properties.animation != 'none' ? 'animated slower' : ''} ${properties.animation && properties.animation != 'none' ? properties.animation : ''}">
+        <div class="component-title-bar" data-sly-test="${wcmmode.edit || wcmmode.design}">
+            Section Container
+        </div>
+        <sly data-sly-resource="${'layout-container-parsys' @ resourceType='wcm/foundation/components/responsivegrid', decoration='true'}"
+            data-sly-unwrap />
+    </div>
+</div>

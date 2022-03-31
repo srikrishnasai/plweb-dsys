@@ -4,4 +4,4 @@
     allowProxy="{Boolean}true"
     categories="[plweb-dsys.base]"
     dependencies="[plweb-dsys.dependencies]"
-    embed="[plweb-dsys-dsys.site,core.wcm.components.accordion.v1,core.wcm.components.tabs.v1,core.wcm.components.carousel.v1,core.wcm.components.image.v2,core.wcm.components.breadcrumb.v2,core.wcm.components.search.v1,core.wcm.components.form.text.v2,core.wcm.components.pdfviewer.v1,core.wcm.components.commons.datalayer.v1,plweb-dsys.grid]"/>
+    embed="[plweb-dsys.site,plweb-dsys.section-container,core.wcm.components.accordion.v1,core.wcm.components.tabs.v1,core.wcm.components.carousel.v1,core.wcm.components.image.v2,core.wcm.components.breadcrumb.v2,core.wcm.components.search.v1,core.wcm.components.form.text.v2,core.wcm.components.pdfviewer.v1,core.wcm.components.commons.datalayer.v1,plweb-dsys.grid]"/>

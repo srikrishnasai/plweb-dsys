@@ -14,7 +14,8 @@
     limitations under the License.
 */-->
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
-    <sly data-sly-call="${clientlib.css @ categories='plweb-dsys.base'}">
+    <sly data-sly-call="${clientLib.css @ categories='plweb-dsys.base'}"/>
+    <sly data-sly-test="${wcmmode.edit || wcmmode.design}" data-sly-call="${clientLib.css @ categories='plweb-dsys.author'}"/>
 </sly>
 
 <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>

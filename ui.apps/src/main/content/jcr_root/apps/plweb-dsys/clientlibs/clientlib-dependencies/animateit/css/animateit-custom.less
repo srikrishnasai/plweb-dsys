@@ -1,0 +1,130 @@
+@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/less-imports.less";
+
+/* START: fadeInUp-100 */
+@-webkit-keyframes fadeInUp-100 { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(100px); 
+    }
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
+@keyframes fadeInUp-100 { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(100px);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+}
+.fadeInUp-100 {
+    opacity: 0;
+    transform: translateY(100px);
+
+    &.go {
+        -webkit-animation-name: fadeInUp-100; 
+        animation-name: fadeInUp-100; 
+    }
+}
+/* END: fadeInUp-100 */
+
+/* START: fadeGrowUp */
+@-webkit-keyframes fadeGrowUp { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: scale(0.4); 
+    }
+    100% { 
+        opacity: 1; 
+        -webkit-transform: scale(1); 
+    } 
+} 
+@keyframes fadeGrowUp { 
+    0% { 
+        opacity: 0; 
+        transform: scale(0.4);  
+    }
+    100% { 
+        opacity: 1; 
+        transform: scale(1); 
+    } 
+}
+.fadeGrowUp {
+    opacity: 0;
+    transform: scale(0.4);
+
+    &.go {
+        -webkit-animation-name: fadeGrowUp;
+        animation-name: fadeGrowUp;
+    }
+}
+.fadeGrowUp-200 {
+    animation-duration: 0.2s;
+}
+/* END: fadeGrowUp */
+
+/* START: fadeSlideGrowUp */
+@-webkit-keyframes fadeSlideGrowUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0.4) translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1) translateY(0);
+    }
+}
+@keyframes fadeSlideGrowUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.4) translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.fadeSlideGrowUp {
+    opacity: 0;
+    transform: scale(0.4) translateY(100px);
+
+    &.go {
+        -webkit-animation-name: fadeSlideGrowUp;
+        animation-name: fadeSlideGrowUp;
+    }
+}
+/* END: fadeSlideGrowUp */
+
+
+/* START: slideGrowUp */
+@-webkit-keyframes slideGrowUp {
+    0% {
+        -webkit-transform: translateY(100px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+@keyframes slideGrowUp {
+    0% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.slideGrowUp {
+    transform: translateY(100px);
+
+    &.go {
+        -webkit-animation-name: slideGrowUp;
+        animation-name: slideGrowUp;
+    }
+}
+/* END: slideGrowUp */
