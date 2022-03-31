@@ -1,0 +1,8 @@
+{
+  "aces": [
+    "type=allow;privileges=jcr:all;path=/content/plweb-dsys"
+  ],
+  "principalName": "plWebDsysServiceUser",
+  "type": "add",
+  "ensure-immediately": true
+}
