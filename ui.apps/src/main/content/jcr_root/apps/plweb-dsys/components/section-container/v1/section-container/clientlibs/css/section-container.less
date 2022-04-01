@@ -1,138 +1,174 @@
 @import "/apps/plweb-dsys/clientlibs/clientlib-site/css/less-imports.less";
 
-.section-container__main {
-    &.section-container--desktop-full-width {
-        .width-container {
-            max-width: none;
-            padding: 0;
+.section-container {
+    .element(main, {
+            .modifier(desktop-full-width, {
+                .width-container {
+                    max-width: none;
+                    padding  : 0;
+                }
+            });
+
+            .width-container {
+                max-width    : 1440px;
+                margin       : 0 auto;
+                box-sizing   : content-box;
+                padding-left : 5rem;
+                padding-right: 5rem;
+            }
+
+            &.section-container {
+
+                @media @mediaXS {
+                    .modifier(mobile-top-no-space ,{
+                        margin-top: 0;
+                    });
+
+                    .modifier(mobile-bottom-no-space ,{
+                        margin-bottom: 0;
+                    });
+
+                    .modifier(mobile-top-verySmall ,{
+                        margin-top: @16;
+                    });
+
+                    .modifier(mobile-bottom-verySmall ,{
+                        margin-bottom: @16;
+                    });
+
+                    .modifier(mobile-top-small ,{
+                        margin-top: @32;
+                    });
+
+                    .modifier(mobile-bottom-small ,{
+                        margin-bottom: @32;
+                    });
+
+                    .modifier(mobile-top-medium ,{
+                        margin-top: @64;
+                    });
+
+                    .modifier(mobile-bottom-medium ,{
+                        margin-bottom: @64;
+                    });
+
+                    .modifier(mobile-top-large ,{
+                        margin-top: @80;
+                    });
+
+                    .modifier(mobile-bottom-large ,{
+                        margin-bottom: @80;
+                    });
+
+                    .modifier(mobile-top-extralarge ,{
+                        margin-top: @160;
+                    });
+
+                    .modifier(mobile-bottom-extralarge ,{
+                        margin-bottom: @160;
+                    });
+                }
+
+                @media @mediaSMTillLG {
+                    .modifier(tablet-top-no-space ,{
+                        margin-top: 0;
+                    });
+
+                    .modifier(tablet-bottom-no-space ,{
+                        margin-bottom: 0;
+                    });
+
+                    .modifier(tablet-top-verySmall ,{
+                        margin-top: @16;
+                    });
+
+                    .modifier(tablet-bottom-verySmall ,{
+                        margin-bottom: @16;
+                    });
+
+                    .modifier(tablet-top-small ,{
+                        margin-top: @32;
+                    });
+
+                    .modifier(tablet-bottom-small ,{
+                        margin-bottom: @32;
+                    });
+
+                    .modifier(tablet-top-medium ,{
+                        margin-top: @64;
+                    });
+
+                    .modifier(tablet-bottom-medium ,{
+                        margin-bottom: @64;
+                    });
+
+                    .modifier(tablet-top-large ,{
+                        margin-top: @80;
+                    });
+
+                    .modifier(tablet-bottom-large ,{
+                        margin-bottom: @80;
+                    });
+
+                    .modifier(tablet-top-extralarge ,{
+                        margin-top: @160;
+                    });
+
+                    .modifier(tablet-bottom-extralarge ,{
+                        margin-bottom: @160;
+                    });
+                }
+
+                @media @mediaLG {
+                    .modifier(desktop-top-no-space ,{
+                        margin-top: 0;
+                    });
+
+                    .modifier(desktop-bottom-no-space ,{
+                        margin-bottom: 0;
+                    });
+
+                    .modifier(desktop-top-verySmall ,{
+                        margin-top: @16;
+                    });
+
+                    .modifier(desktop-bottom-verySmall ,{
+                        margin-bottom: @16;
+                    });
+
+                    .modifier(desktop-top-small ,{
+                        margin-top: @32;
+                    });
+
+                    .modifier(desktop-bottom-small ,{
+                        margin-bottom: @32;
+                    });
+
+                    .modifier(desktop-top-medium ,{
+                        margin-top: @64;
+                    });
+
+                    .modifier(desktop-bottom-medium ,{
+                        margin-bottom: @64;
+                    });
+
+                    .modifier(desktop-top-large ,{
+                        margin-top: @80;
+                    });
+
+                    .modifier(desktop-bottom-large ,{
+                        margin-bottom: @80;
+                    });
+
+                    .modifier(desktop-top-extralarge ,{
+                        margin-top: @160;
+                    });
+
+                    .modifier(desktop-bottom-extralarge ,{
+                        margin-bottom: @160;
+                    });
+                }
+            }
         }
-    }
-
-    .width-container {
-        max-width: 1440px;
-        margin: 0 auto;
-        box-sizing: content-box;
-        padding-left: 5rem;
-        padding-right: 5rem;
-    }
-
-    &.section-container {
-
-        @media @mediaXS {
-            &--mobile-top-no-space {
-                margin-top: 0;
-            }
-            &--mobile-bottom-no-space {
-                margin-bottom: 0;
-            }
-            &--mobile-top-verySmall {
-                margin-top: @16;
-            }
-            &--mobile-bottom-verySmall {
-                margin-bottom: @16;
-            }
-            &--mobile-top-small {
-                margin-top: @32;
-            }
-            &--mobile-bottom-small {
-                margin-bottom: @32;
-            }
-            &--mobile-top-medium {
-                margin-top: @64;
-            }
-            &--mobile-bottom-medium { 
-                margin-bottom: @64;
-            }
-            &--mobile-top-large {
-                margin-top: @80;
-            }
-            &--mobile-bottom-large {
-                margin-bottom: @80;
-            }
-            &--mobile-top-extralarge {
-                margin-top: @160;
-            }
-            &--mobile-bottom-extralarge {
-                margin-bottom: @160;
-            }
-        }
-
-        @media @mediaSMTillLG {
-            &--tablet-top-no-space {
-                margin-top: 0;
-            }
-            &--tablet-bottom-no-space {
-                margin-bottom: 0;
-            }
-            &--tablet-top-verySmall {
-                margin-top: @16;
-            }
-            &--tablet-bottom-verySmall {
-                margin-bottom: @16;
-            }
-            &--tablet-top-small {
-                margin-top: @32;
-            }
-            &--tablet-bottom-small {
-                margin-bottom: @32;
-            }
-            &--tablet-top-medium {
-                margin-top: @64;
-            }
-            &--tablet-bottom-medium { 
-                margin-bottom: @64;
-            }
-            &--tablet-top-large {
-                margin-top: @80;
-            }
-            &--tablet-bottom-large {
-                margin-bottom: @80;
-            }
-            &--tablet-top-extralarge {
-                margin-top: @160;
-            }
-            &--tablet-bottom-extralarge {
-                margin-bottom: @160;
-            }
-        }
-
-        @media @mediaLG {
-            &--desktop-top-no-space {
-                margin-top: 0;
-            }
-            &--desktop-bottom-no-space {
-                margin-bottom: 0;
-            }
-            &--desktop-top-verySmall {
-                margin-top: @16;
-            }
-            &--desktop-bottom-verySmall {
-                margin-bottom: @16;
-            }
-            &--desktop-top-small {
-                margin-top: @32;
-            }
-            &--desktop-bottom-small {
-                margin-bottom: @32;
-            }
-            &--desktop-top-medium {
-                margin-top: @64;
-            }
-            &--desktop-bottom-medium { 
-                margin-bottom: @64;
-            }
-            &--desktop-top-large {
-                margin-top: @80;
-            }
-            &--desktop-bottom-large {
-                margin-bottom: @80;
-            }
-            &--desktop-top-extralarge {
-                margin-top: @160;
-            }
-            &--desktop-bottom-extralarge {
-                margin-bottom: @160;
-            }
-        }
-    }
+    )
 }

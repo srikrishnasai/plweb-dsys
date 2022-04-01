@@ -25,3 +25,54 @@
 .fw-700 {font-weight: @700};
 .fw-800 {font-weight: @800};
 .fw-900 {font-weight: @900};
+
+/*---===<<< BEM >>>===---*/
+/* ---------------------------------------------------------------------------
+	Toolkit: Rem
+	============
+	.element() & .modifier() takes a @element and @content and formats it to
+	BEM standards.
+	
+	e.g.,
+	Example:
+	.block {
+    	.element(item, {
+	      	width: 100px;
+	    });
+      
+		.element(~'item:hover', {
+	      	color: white;
+	    });
+	      
+	    .modifier(red, {
+	      	color: red;
+	    });
+	}
+	 
+	Result: 
+	.block {
+		.block__item {
+			width: 100px;
+		}
+	
+		.block__item:hover {
+			color: white;
+		}
+	 	
+		.block--red {
+			color: red;
+		}
+	}
+--------------------------------------------------------------------------- */
+
+.element(@element; @content) {
+    &__@{element} {
+      @content();
+    }
+  }
+  
+  .modifier(@modifier; @content) {
+    &--@{modifier} {
+      @content();
+    }
+  }
