@@ -2,24 +2,26 @@
 
 .section-container {
     .element(main, {
-            .modifier(desktop-full-width, {
-                .width-container {
-                    max-width: none;
-                    padding  : 0;
-                }
-            });
+        
+        .width-container {
+            max-width    : 1440px;
+            margin       : 0 auto;
+            box-sizing   : content-box;
+            padding-left : 5rem;
+            padding-right: 5rem;
+        }
 
-            .width-container {
-                max-width    : 1440px;
-                margin       : 0 auto;
-                box-sizing   : content-box;
-                padding-left : 5rem;
-                padding-right: 5rem;
-            }
-
-            &.section-container {
+        &.section-container {
 
                 @media @mediaXS {
+
+                    .modifier(mobile-full-width, {
+                        .width-container {
+                            max-width: none;
+                            padding  : 0;
+                        }
+                    });
+
                     .modifier(mobile-top-no-space ,{
                         margin-top: 0;
                     });
@@ -70,6 +72,14 @@
                 }
 
                 @media @mediaSMTillLG {
+
+                    .modifier(tablet-full-width, {
+                        .width-container {
+                            max-width: none;
+                            padding  : 0;
+                        }
+                    });
+
                     .modifier(tablet-top-no-space ,{
                         margin-top: 0;
                     });
@@ -120,6 +130,14 @@
                 }
 
                 @media @mediaLG {
+
+                    .modifier(desktop-full-width, {
+                        .width-container {
+                            max-width: none;
+                            padding  : 0;
+                        }
+                    });
+
                     .modifier(desktop-top-no-space ,{
                         margin-top: 0;
                     });
@@ -170,5 +188,5 @@
                 }
             }
         }
-    )
+    );
 }
