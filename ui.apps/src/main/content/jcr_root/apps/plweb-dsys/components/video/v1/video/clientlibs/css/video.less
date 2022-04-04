@@ -1,0 +1,30 @@
+@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/mediaQueries.less";
+@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+
+.video {
+    .element(main, {
+        position: relative;
+      	aspect-ratio: 16/9;
+       	display: flex;
+    	justify-content: center;
+    	align-items: center;
+        cursor: pointer;
+    });
+
+
+    .element(playButton, {
+        cursor: pointer;
+		 position  : absolute;
+        color     : white !important;
+        background: transparent;
+        border    : 0px;
+        outline   : none;
+        z-index   : 10000;
+        opacity: 0;
+        transition: all 0.5s linear;
+        @media @mediaIEOnly {
+			display: none;
+        }
+    });
+
+}

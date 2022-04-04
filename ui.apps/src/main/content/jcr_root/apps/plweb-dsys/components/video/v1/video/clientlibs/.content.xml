@@ -2,5 +2,5 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:ClientLibraryFolder"
     allowProxy="{Boolean}true"
-    categories="[plweb-dsys.dependencies]"
-    embed="[plweb-dsys.jquery,plweb-dsys.animateit,plweb-dsys.font-awesome]"/>
+    categories="[plweb-dsys.video]"
+    dependencies="[plweb-dsys.font-awesome,plweb-dsys.jquery]"/>
