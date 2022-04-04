@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabs
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                        maximized="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <listSettings
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Video Settings"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <controls
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Check if the browser should not show playback controls."
+                                                name="./controls"
+                                                text="Controls"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <autoplay
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Start playback automatically"
+                                                name="./autoplay"
+                                                text="Autoplay"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <loop
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Jump back to the start when the end of the video is reached."
+                                                name="./loop"
+                                                text="Loop"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <download
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Allow for download."
+                                                name="./download"
+                                                text="Download"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <useOriginalImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}false"
+                                                fieldDescription="This will load original video thumbnail image from DAM."
+                                                name="./useOriginalImage"
+                                                text="Use Original Image for thumbnails"
+                                                value="true"/>
+                                            <preload
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                emptyOption="{Boolean}true"
+                                                fieldDescription="If the video should automatically be downloaded on page load."
+                                                fieldLabel="Preload"
+                                                name="./preload"
+                                                type="editable">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <auto
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Preload video on page load (auto)"
+                                                        value="auto"/>
+                                                    <metadata
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Preload only video metadata (metadata)"
+                                                        value="metadata"/>
+                                                    <none
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="No preloading (none)"
+                                                        value="none"/>
+                                                    <empty
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Skip preload setting (browser default behavior)"
+                                                        value=""/>
+                                                </items>
+                                            </preload>
+                                            <source
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Video Source&#xa;"
+                                                name="./source"
+                                                rootPath="/content/dam/paclife"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </listSettings>
+                        </items>
+                    </tabs>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

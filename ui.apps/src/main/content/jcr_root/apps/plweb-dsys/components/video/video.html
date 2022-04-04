@@ -1,0 +1,19 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @ categories='plweb-dsys.video'}" />
+
+<section class="video__main">
+    <button class="video__playButton">
+        <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
+    </button>
+    <video muted="${properties.autoplay ? true : null}" id="videoPlayer" width="100%" height="100%"
+        controls="${properties.controls ? null : true }" autoplay="${properties.autoplay ? true : null}"
+        loop="${properties.loop ? true : null}" preload="${properties.preload}"
+        controlsList="${properties.download ? true : null}">
+        <source src="${properties.source}" type="video/mp4" />
+        <source src="video/videogular.ogg" type="video/ogg" />
+        <source src="video/videogular.webm" type="video/webm" />
+    </video>
+</section>
+
+<sly data-sly-call="${template.placeholder @ isEmpty=list.items.size == 0}" />
