@@ -1,3 +1,2 @@
 #base=css
 fontawesome.min.css
-all.min.css
