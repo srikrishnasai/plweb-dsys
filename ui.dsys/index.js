@@ -19,7 +19,7 @@ fs.readdir(sourceFile, function(err, files) {
             })
 
             file = file.replace('.js', '')
-            const destinationPath = path.join(__dirname, "..", "ui.apps", "src", "main", "content", "jcr_root", "apps", "plweb-dsys", "clientlibs", "clientlib-site", "css");
+            const destinationPath = path.join(__dirname, "..", "ui.apps", "src", "main", "content", "jcr_root", "apps", "plweb-dsys", "clientlibs", "clientlib-site", "css", "design-tokens");
             console.log(destinationPath);
             fs.writeFile(`${destinationPath}/${file}.less`, lessFileData, (err) => {
                 if (err)

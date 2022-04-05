@@ -1,5 +1,5 @@
-@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/mediaQueries.less";
-@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-tokens/mediaQueries.less";
+@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-tokens/mixins.less";
 
 .video {
     .element(main, {
@@ -14,12 +14,12 @@
 
     .element(playButton, {
         cursor: pointer;
-		 position  : absolute;
+		position  : absolute;
         color     : white !important;
         background: transparent;
         border    : 0px;
         outline   : none;
-        z-index   : 10000;
+        z-index   : 100;
         opacity: 0;
         transition: all 0.5s linear;
         @media @mediaIEOnly {
