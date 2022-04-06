@@ -33,7 +33,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="The text to display on the button."
                                                 fieldLabel="Text"
-                                                name="./jcr:title"
+                                                name="./text"
                                                 required="true"/>
                                             <link
                                                 jcr:primaryType="nt:unstructured"

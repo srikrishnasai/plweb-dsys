@@ -1,11 +1,8 @@
-<button data-sly-use.button="com.adobe.cq.wcm.core.components.models.Button"
-        data-sly-element="${button.link ? 'a' : 'button'}"
-        type="${button.link ? '' : 'button'}"
-        class="cmp-button"
-        href="${button.link}"
-        aria-label="${button.accessibilityLabel}"
-        data-cmp-clickable="${button.data ? true : false}"
-        data-cmp-data-layer="${button.data.json}">
-   
-    <span data-sly-test="${button.text}" class="cmp-button__text">${button.text}</span>
-</button>
+<div class="dsys-button ${properties.btnPos == 'btn-center' ? 'dsys-button--position-center' : ''} ${properties.btnPos == 'btn-right' ? 'dsys-button--position-right' : ''}">
+    <a class="dsys-button__main 
+     ${properties.btnstyle == 'primary' ? 'dsys-button__main--primary' : 'dsys-button__main--secondary'}" 
+     href="${properties.link}" target="${properties.linkTarget == '_blank' ? '_blank' : ''}">
+        <span class="dsys-button-text" data-sly-test="${properties.text}">${properties.text}</span>
+    </a>
+
+</div>
