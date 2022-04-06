@@ -1,0 +1,11 @@
+<button data-sly-use.button="com.adobe.cq.wcm.core.components.models.Button"
+        data-sly-element="${button.link ? 'a' : 'button'}"
+        type="${button.link ? '' : 'button'}"
+        class="cmp-button"
+        href="${button.link}"
+        aria-label="${button.accessibilityLabel}"
+        data-cmp-clickable="${button.data ? true : false}"
+        data-cmp-data-layer="${button.data.json}">
+   
+    <span data-sly-test="${button.text}" class="cmp-button__text">${button.text}</span>
+</button>
