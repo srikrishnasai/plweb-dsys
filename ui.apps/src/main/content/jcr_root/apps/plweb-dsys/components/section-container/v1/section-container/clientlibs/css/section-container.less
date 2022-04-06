@@ -1,4 +1,5 @@
 @import "/apps/plweb-dsys/clientlibs/clientlib-site/css/less-imports.less";
+@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 
 .section-container {
     .element(main, {
@@ -7,12 +8,12 @@
             max-width    : 1280px;
             margin       : 0 auto;
             box-sizing   : content-box;
-            padding-left : 8rem;
-            padding-right: 8rem;
+            padding-left : @80;
+            padding-right: @80;
 
             @media @mediaXS { 
-                padding-left : 3.2rem;
-                padding-right: 3.2rem;
+                padding-left : @32;
+                padding-right: @32;
             }
         }
 
