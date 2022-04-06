@@ -35,7 +35,7 @@ public class LinkHelpers {
     private String checkLinkFormat(String link) {
         String formattedLink = "";
         if (null != link && !link.isEmpty()) {
-            if (link.contains(".com") || link.contains("www") || link.contains(".html")) {
+            if (link.toLowerCase().contains(".com") || link.toLowerCase().contains("www") || link.toLowerCase().contains(".html")) {
                 formattedLink = link;
             } else {
                 formattedLink = link + ".html";
