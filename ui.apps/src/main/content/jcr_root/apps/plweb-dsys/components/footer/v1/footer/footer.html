@@ -1,0 +1,73 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @ categories='plweb-dsys.footer'}" />
+<sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}" />
+<sly data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems1'}"></sly>
+<sly data-sly-use.model2="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems2'}"></sly>
+<sly data-sly-use.model3="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems3'}"></sly>
+
+<footer class="section-container__main">
+    <div class="footer__nav-bar">
+        <section class="width-container footer__main">
+            <nav class="footer__list">
+                <div data-sly-test="${properties.section1Title}" class="footer--mobile-nav-header-container">
+                    <h6 class="footer__text footer--heading"> ${properties.section1Title} </h6>
+                    <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
+                </div>
+                <ul class="footer--mobile-list" data-sly-test="${model1.childResource}"
+                    data-sly-list="${model1.childResource.listChildren}">
+                    <li class="footer__text footer--link-mobile-view">
+                        <a href="${item.linkTarget @ extension='html'}" target="${item.linkTabTarget ? '_blank' : ''}"
+                            class="footer__link"> ${item.linkName} </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="footer__list">
+                <div data-sly-test="${properties.section2Title}" class="footer--mobile-nav-header-container">
+                    <h6 class="footer__text footer--heading">${properties.section2Title} </h6>
+                    <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
+                </div>
+                <ul class="footer--mobile-list" data-sly-test="${model2.childResource}"
+                    data-sly-list="${model2.childResource.listChildren}">
+                    <li class="footer__text footer--link-mobile-view">
+                        <a href="${item.linkTarget @ extension='html'}" target="${item.linkTabTarget ? '_blank' : ''}"
+                            class="footer__link"> ${item.linkName} </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="footer__list">
+                <div data-sly-test="${properties.section3Title}" class="footer--mobile-nav-header-container">
+                    <h6 class="footer__text footer--heading">${properties.section3Title}</h6>
+                    <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
+                </div>
+                <ul class="footer--mobile-list" data-sly-test="${model3.childResource}"
+                    data-sly-list="${model3.childResource.listChildren}">
+                    <li class="footer__text footer--link-mobile-view">
+                        <a href="${item.linkTarget @ extension='html'}" target="${item.linkTabTarget ? '_blank' : ''}"
+                            class="footer__link"> ${item.linkName} </a>
+                    </li>
+                </ul>
+            </nav>
+            <aside class="footer__list footer__list--logo-container">
+                <img class="footer__logo" src="${properties.fileReference}" alt="Logo" />
+            </aside>
+        </section>
+    </div>
+
+    <div class="width-container footer__main">
+        <section class="footer__other-links">
+            <span class="footer__copyright"> ${properties.copyright} </span>
+            <div class="footer__mobile-bottom-links">
+                <a href="${properties.privacyTarget @ extension='html'}"
+                    target="${properties.privacyLinkTabTarget ? '_blank' : ''}">
+                    ${properties.privacyTargetText}
+                </a>
+                <a href="${properties.legalInfoTarget @ extension='html'}"
+                    target="${properties.legalInfoTabTarget ? '_blank' : ''}">
+                    ${properties.legalInfoText}
+                </a>
+            </div>
+        </section>
+    </div>
+
+</footer>
