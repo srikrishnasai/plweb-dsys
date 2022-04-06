@@ -1,0 +1,14 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @ categories='plweb-dsys.title'}" />
+
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+
+<div class="dsys-title ${properties.alignments == 'right' ? 'dsys-title--textPosition-right' : ''}
+            ${properties.alignments == 'center' ? 'dsys-title--textPosition-center' : ''} ">
+        <h1 data-sly-element="${properties.type}" class="dsys-title__heading" style="color: ${properties.titleColor @context='styleString'};">${properties.title}</h1>
+        <h3 class="dsys-title__subheading" style="color: ${properties.titleColor @context='styleString'};">${properties.subTitle}</h3>
+</div>
+
+<sly data-sly-call="${template.placeholder @isEmpty=!properties.title}"></sly>
+
