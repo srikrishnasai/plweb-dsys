@@ -1,0 +1,10 @@
+{
+	"root": {
+		"_xmlns:sling": "http://sling.apache.org/jcr/sling/1.0",
+		"_xmlns:jcr": "http://www.jcp.org/jcr/1.0",
+		"_jcr:primaryType": "sling:OsgiConfig",
+		"_name": "flexImg200h",
+		"_transforms": "[resize:height=200,progressive:enabled=true]",
+		"__prefix": "jcr"
+	}
+}

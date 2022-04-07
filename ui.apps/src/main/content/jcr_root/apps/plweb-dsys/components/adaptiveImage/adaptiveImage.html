@@ -1,0 +1,15 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" data-sly-call="${templates.placeholder @ isEmpty = !title}" />
+
+<sly data-sly-use.image="${'pl.web.dsys.core.models.AdaptiveImage'}">
+    <noscript>
+		<img src="${image.large @ context='uri'}" alt="${image.alt ? image.alt : ''}"/>
+	</noscript>
+    <a data-sly-unwrap="${!image.link}" href="${image.link}" data-cmp-hook-image="link" class="${image.imagePos}">
+        <div class="adaptive-image">
+            <img class="adaptive-image__elm ${image.imagePos}" data-sm-src="${image.small @ context='html'}" data-md-src="${image.medium @ context='html'}" data-lg-src="${image.large @ context='html'}"
+                src="data:image/gif;base64,R0lGOD	lhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAI=" alt="${image.alt ? image.alt : ''}" title="${image.title ? image.title : 'Image'}">
+            <div class="adaptive-image__loader"></div>
+        </div>
+    </a>
+    <span class="adaptive-image--popup-title ${image.imagePos}" data-sly-test="${!image.displayPopupTitle && image.title}">${image.title}</span>
+</sly>
