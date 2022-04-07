@@ -1,4 +1,0 @@
-{
-    "name":"flexImg300w",
-    "transforms":"[resize:width=300,progressive:enabled=true]"
-}

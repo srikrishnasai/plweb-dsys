@@ -1,0 +1,8 @@
+{
+  "name": "flexImg576h",
+  "transforms": [
+    "resize:height=576",
+	"progressive:enabled=true"
+  ]
+}
+

@@ -1,5 +1,0 @@
-{
-  "primaryType": "sling:OsgiConfig",
-  "name": "flexImg1440h",
-  "transforms": "[resize:height=1440,progressive:enabled=true]"
-}

@@ -1,0 +1,7 @@
+{
+  "name": "flexImg400w",
+  "transforms": [
+    "resize:width=400",
+	"progressive:enabled=true"
+  ]
+}

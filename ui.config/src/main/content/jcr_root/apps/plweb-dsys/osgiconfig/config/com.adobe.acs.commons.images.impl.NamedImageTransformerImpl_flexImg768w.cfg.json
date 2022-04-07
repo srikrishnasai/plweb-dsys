@@ -1,0 +1,7 @@
+{
+  "name": "flexImg768w",
+  "transforms": [
+    "resize:width=768",
+	"progressive:enabled=true"
+  ]
+}

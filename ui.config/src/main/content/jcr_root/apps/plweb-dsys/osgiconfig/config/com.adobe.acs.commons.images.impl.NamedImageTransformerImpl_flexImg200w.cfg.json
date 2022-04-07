@@ -1,0 +1,7 @@
+{
+  "name": "flexImg200w",
+  "transforms": [
+    "resize:width=200",
+	"progressive:enabled=true"
+  ]
+}
