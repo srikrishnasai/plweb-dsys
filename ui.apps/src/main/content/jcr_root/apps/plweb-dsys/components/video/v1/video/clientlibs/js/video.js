@@ -13,7 +13,7 @@ $(window).on("load", function () {
 
         function showPlayButton() {
             $(button).css("opacity", "1");
-            $(button).css("z-index", "10000");
+            $(button).css("z-index", "2");
         }
 
         function hidePlayButton() {
