@@ -5,6 +5,8 @@
 <sly data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems1'}"></sly>
 <sly data-sly-use.model2="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems2'}"></sly>
 <sly data-sly-use.model3="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems3'}"></sly>
+<sly data-sly-use.model4="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='rightBottomMultiFieldItems'}"></sly>
+<sly data-sly-use.model5="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='leftBottomMultiFieldItems'}"></sly>
 
 <footer class="section-container__main">
     <div class="footer__nav-bar">
@@ -16,11 +18,10 @@
                 </div>
                 <ul class="footer--mobile-list" data-sly-test="${model1.childResource}"
                     data-sly-list="${model1.childResource.listChildren}">
-                    <li class="footer__text footer--link-mobile-view">
-                        <a href="${item.linkTarget @ extension='html'}" target="${item.linkTabTarget ? '_blank' : ''}"
-                            class="footer__link"> 
-                            ${item.linkName} 
-                        </a>
+                    <li class="footer__text footer--link-mobile-view" 
+						sly data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
+                        <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}"
+                            class="footer__link"> ${item.linkName} </a>
                     </li>
                 </ul>
             </nav>
@@ -31,11 +32,10 @@
                 </div>
                 <ul class="footer--mobile-list" data-sly-test="${model2.childResource}"
                     data-sly-list="${model2.childResource.listChildren}">
-                    <li class="footer__text footer--link-mobile-view">
-                        <a href="${item.linkTarget @ extension='html'}" target="${item.linkTabTarget ? '_blank' : ''}"
-                            class="footer__link"> 
-                            ${item.linkName} 
-                        </a>
+                    <li class="footer__text footer--link-mobile-view"
+						sly data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
+                        <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}"
+                            class="footer__link"> ${item.linkName} </a>
                     </li>
                 </ul>
             </nav>
@@ -46,11 +46,10 @@
                 </div>
                 <ul class="footer--mobile-list" data-sly-test="${model3.childResource}"
                     data-sly-list="${model3.childResource.listChildren}">
-                    <li class="footer__text footer--link-mobile-view">
-                        <a href="${item.linkTarget @ extension='html'}" target="${item.linkTabTarget ? '_blank' : ''}"
-                            class="footer__link"> 
-                            ${item.linkName} 
-                        </a>
+                    <li class="footer__text footer--link-mobile-view"
+						sly data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
+                        <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}"
+                            class="footer__link"> ${item.linkName} </a>
                     </li>
                 </ul>
             </nav>
@@ -64,16 +63,25 @@
         <section class="footer__other-links">
             <span class="footer__copyright"> ${properties.copyright} </span>
             <div class="footer__mobile-bottom-links">
-                <a href="${properties.privacyTarget @ extension='html'}"
-                    target="${properties.privacyLinkTabTarget ? '_blank' : ''}">
-                    ${properties.privacyTargetText}
-                </a>
-                <a href="${properties.legalInfoTarget @ extension='html'}"
-                    target="${properties.legalInfoTabTarget ? '_blank' : ''}">
-                    ${properties.legalInfoText}
-                </a>
+                <ul class="footer--mobile-list" data-sly-test="${model4.childResource}"
+                    data-sly-list="${model4.childResource.listChildren}">
+                    <li class="footer__text footer--link-mobile-view"
+						sly data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
+                        <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}"
+                            class="footer__link"> ${item.linkName} </a>
+                    </li>
+                </ul>
             </div>
+			<div class="footer__mobile-bottom-links"></div>
+				<ul class="footer--mobile-list" data-sly-test="${model5.childResource}"
+					data-sly-list="${model5.childResource.listChildren}">
+					<li class="footer__text footer--link-mobile-view"
+						sly data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
+						<a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}"
+							class="footer__link"> ${item.linkName} </a>
+					</li>
+				</ul>
+			</div>
         </section>
     </div>
-
 </footer>

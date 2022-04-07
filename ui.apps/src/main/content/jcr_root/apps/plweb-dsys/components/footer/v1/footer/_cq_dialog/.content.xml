@@ -12,9 +12,9 @@
                 sling:resourceType="granite/ui/components/coral/foundation/tabs"
                 maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
-                    <general
+                    <logo
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="General"
+                        jcr:title="Logo"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
@@ -36,58 +36,26 @@
                                         title="Upload Image Asset"
                                         uploadUrl="${suffix.path}"
                                         useHTML5="{Boolean}true"/>
-                                    <copyright
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter copyright text"
-                                        fieldLabel="Copyright"
-                                        name="./copyright"/>
-                                    <privacyTargetText
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter name for the privacy &amp; other policy link"
-                                        fieldLabel="Enter Policy Link Name"
-                                        name="./privacyTargetText"/>
-                                    <targetPrivacyPolicy
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                        fieldDescription="Select path of the privacy &amp; other policy to visit "
-                                        fieldLabel="Privacy Policy"
-                                        name="./privacyTarget"
-                                        rootPath="/content"/>
-                                    <privacyTabTarget
+                                    <showImageFromDam
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                         checked="{Boolean}false"
-                                        fieldDescription="Check this checkbox to open the link in new tab."
-                                        name="./privacyLinkTabTarget"
-                                        text="Open Link in New Tab"
+                                        fieldDescription="This will load the Original images"
+                                        name="./useOriginalImage"
+                                        text="Use Original Images"
                                         value="true"/>
-                                    <legalInfoText
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter name for the legal information link"
-                                        fieldLabel="Enter Legal Info Link Name"
-                                        name="./legalInfoText"/>
-                                    <targetLegalInfo
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                        fieldDescription="Select path of the legal information page to visit"
-                                        fieldLabel="Legal Information"
-                                        name="./legalInfoTarget"
-                                        rootPath="/content"/>
-                                    <legalInfoTabTarget
+                                    <showTransparentImage
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                         checked="{Boolean}false"
-                                        fieldDescription="Check this checkbox to open the link in new tab."
-                                        name="./legalInfoTabTarget"
-                                        text="Open Link in New Tab"
+                                        fieldDescription="This will load the transparent images"
+                                        name="./useTransparentImage"
+                                        text="Use Transparent Images"
                                         value="true"/>
                                 </items>
                             </column>
                         </items>
-                    </general>
+                    </logo>
                     <section1
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Section1"
@@ -109,7 +77,7 @@
                                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                         composite="{Boolean}true"
                                         eaem-nested=""
-                                        fieldDescription="Click 'Add field' to add a new link"
+                                        fieldDescription="Click 'Add' to add a new link"
                                         fieldLabel="Footer Links">
                                         <field
                                             jcr:primaryType="nt:unstructured"
@@ -165,7 +133,7 @@
                                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                         composite="{Boolean}true"
                                         eaem-nested=""
-                                        fieldDescription="Click 'Add field' to add a new link"
+                                        fieldDescription="Click 'Add' to add a new link"
                                         fieldLabel="Footer Links">
                                         <field
                                             jcr:primaryType="nt:unstructured"
@@ -221,7 +189,7 @@
                                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                         composite="{Boolean}true"
                                         eaem-nested=""
-                                        fieldDescription="Click 'Add field' to add a new link"
+                                        fieldDescription="Click 'Add' to add a new link"
                                         fieldLabel="Footer Links">
                                         <field
                                             jcr:primaryType="nt:unstructured"
@@ -256,6 +224,98 @@
                             </column>
                         </items>
                     </section3>
+                    <bottomLinks
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Bottom Links"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <copyright
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter copyright text"
+                                        fieldLabel="Copyright"
+                                        name="./copyright"/>
+                                    <footerLeftBottomLinks
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        eaem-nested=""
+                                        fieldDescription="Click 'Add' to add a new link"
+                                        fieldLabel="Footer Left Bottom Links">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            name="./leftBottomMultiFieldItems">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <footerLinkName
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Please enter link name"
+                                                    fieldLabel="Footer Link Name"
+                                                    name="./linkName"/>
+                                                <footerLinkTarget
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                    fieldDescription="Select path of the target page"
+                                                    fieldLabel="Target Link"
+                                                    name="./linkTarget"
+                                                    rootPath="/content"/>
+                                                <linkTabTarget
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="{Boolean}false"
+                                                    fieldDescription="Check this checkbox to open the link in new tab."
+                                                    name="./linkTabTarget"
+                                                    text="Open Link in New Tab"
+                                                    value="true"/>
+                                            </items>
+                                        </field>
+                                    </footerLeftBottomLinks>
+                                    <footerRightBottomLinks
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        eaem-nested=""
+                                        fieldDescription="Click 'Add' to add a new link"
+                                        fieldLabel="Footer Right Bottom Links">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            name="./rightBottomMultiFieldItems">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <footerLinkName
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Please enter link name"
+                                                    fieldLabel="Footer Link Name"
+                                                    name="./linkName"/>
+                                                <footerLinkTarget
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                    fieldDescription="Select path of the target page"
+                                                    fieldLabel="Target Link"
+                                                    name="./linkTarget"
+                                                    rootPath="/content"/>
+                                                <linkTabTarget
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="{Boolean}false"
+                                                    fieldDescription="Check this checkbox to open the link in new tab."
+                                                    name="./linkTabTarget"
+                                                    text="Open Link in New Tab"
+                                                    value="true"/>
+                                            </items>
+                                        </field>
+                                    </footerRightBottomLinks>
+                                </items>
+                            </column>
+                        </items>
+                    </bottomLinks>
                 </items>
             </tabs>
         </items>
