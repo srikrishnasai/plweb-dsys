@@ -1,0 +1,9 @@
+<template data-sly-template.inplace="${@ nodeName, emptyText, large, medium, small, showPlaceHolder}">
+	<div data-sly-use.wcmInit="/libs/wcm/foundation/components/page/initwcm.js" 
+		class="inplace-image-edit-view ${image.largeImage && !image.mediumImage && !image.smallImage && showPlaceHolder ? 'displayOne' : 'hide-img-placeholder'}"
+		data-sly-use.image="${'pl.annuities.core.util.InplaceCroppingHelper' @ nodeName = nodeName}" data-sly-test="${wcmmode.edit && wcmInit.isTouchAuthoring}">
+		<div class="${image.largeImage ? '' : 'cq-placeholder '}cq-dd-${large}" data-emptytext="${emptyText}"></div>
+  		<div class="${image.mediumImage ? '' : 'cq-placeholder '}cq-dd-${medium}" data-emptytext="${emptyText}"></div>
+		<div class="${image.smallImage ? '' : 'cq-placeholder '}cq-dd-${small}" data-emptytext="${emptyText}"></div>
+	</div>
+</template>

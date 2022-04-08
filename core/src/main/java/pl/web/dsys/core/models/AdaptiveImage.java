@@ -99,11 +99,11 @@ public class AdaptiveImage {
 		/*If for some reason, the transforms are not set, setting default transforms*/
 		if(null == this.getLargeTransformName() || StringUtils.isBlank(this.getLargeTransformName())
 				|| !this.getLargeTransformName().contains("flexImg")) {
-			this.setLargeTransformName("flexImg1920w");
+			this.setLargeTransformName("flexImg1440w");
 		}
 		if(null == this.getMediumTransformName() || StringUtils.isBlank(this.getMediumTransformName())
 				|| !this.getMediumTransformName().contains("flexImg")) {
-			this.setMediumTransformName("flexImg1200w");
+			this.setMediumTransformName("flexImg992w");
 		}
 		if(null == this.getSmallTransformName() || StringUtils.isBlank(this.getSmallTransformName())
 				|| !this.getSmallTransformName().contains("flexImg")) {
@@ -133,7 +133,7 @@ public class AdaptiveImage {
 			}
 			return getAdaptiveImagePath(getSmallTransformName(), image);
 		}
-
+	// ------------ Fallback to the Medium image when Samll image not present
 		image = getImage(PROPERTY_ADAPTIVE_IMAGE_MEDIUM);
 		if (checkContent(image)) {
 			if(valueMap.containsKey(PROPERTY_MEDIUM_IMAGE_TRANSPARENT)) {
@@ -144,7 +144,7 @@ public class AdaptiveImage {
 			}
 			return getAdaptiveImagePath(getMediumTransformName(), image);
 		}
-
+	// ------------ Fallback to the Large image when Medium image not present
 		image = getImage(PROPERTY_ADAPTIVE_IMAGE_LARGE);
 		if (checkContent(image)) {
 			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
@@ -172,7 +172,7 @@ public class AdaptiveImage {
 			}
 			return getAdaptiveImagePath(getMediumTransformName(), image);
 		}
-
+	// ------------ Fallback to the Large image when Medium image not present
 		image = getImage(PROPERTY_ADAPTIVE_IMAGE_LARGE);
 		if (checkContent(image)) {
 			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
@@ -205,6 +205,7 @@ public class AdaptiveImage {
 		return null;
 	}
 
+	/* Set image source path format */
 	private String getAdaptiveImagePath(String transformName, Image image) {
 		LOG.debug("in getAdaptiveImagePath");
 		if (transformName != null) {
@@ -217,6 +218,7 @@ public class AdaptiveImage {
 		return null;
 	}
 
+	/* Get image title */
 	public String getDisplayPopupTitle(){
 		LOG.debug("in getDisplayPopupTitle");
 		Resource imageParent = resource.getParent();
@@ -224,6 +226,7 @@ public class AdaptiveImage {
 		return vm.get(PROPERTY_DISPLAY_POPUP_TITLE_TAG, String.class);
 	}
 
+	/* Get image alt value from the dialog and if not present then fetch from the dam properies */
 	public String getAlt() {
 		LOG.debug("in getAlt");
 		if (valueMap.containsKey(PROPERTY_ALT_TAG)) {
@@ -258,6 +261,7 @@ public class AdaptiveImage {
 		}
 		return "";
 	}	
+	/* Get image title from the dialog and if not present then fetch from the dam properies */
 	public String getTitle() {
 		LOG.debug("in getTitle");
 		Resource imageParent = resource.getParent();
@@ -287,6 +291,7 @@ public class AdaptiveImage {
 		return "";
 	}
 
+	/* Get image alt title from dialog and if not present then fetch from the dam properies */
 	public String getLink() {
 		LOG.debug("in getLink method of Adaptive Image");
 		Resource imageParent = resource.getParent();

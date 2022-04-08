@@ -26,6 +26,7 @@ public class ImageTransformHelper {
     @PostConstruct 
     public void activate() throws Exception {
         
+        // ------------ Returns path based on the image is transparent or not
         if( null != transform && null != imagePath) {
             if(null != transparent && transparent.equalsIgnoreCase("true")){
                 this.transformedImageUrl = String.format(IMAGE_PATH_FORMAT_TRANSPARENT, imagePath, transform);

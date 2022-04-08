@@ -5,11 +5,13 @@
         <div 
             data-sly-test="${wcmmode.edit || wcmmode.design}">
         </div>
+        <!-- Inclusion of inpace-editing -->
         <sly data-sly-test="${wcmmode.edit}" 
-            data-sly-use.editing="plannuities/components/sightly/templates/inplace-editing-placeholder.html"
+            data-sly-use.editing="plweb-dsys/components/sightly/templates/inplace-editing-placeholder.html"
             data-sly-call="${editing.inplace @ nodeName='image', emptyText=component.title, large='large', medium='medium', small='small', showPlaceHolder=true}">
         </sly>
-        <sly data-sly-resource="${'image' @ resourceType='plweb-dsys/components/content/adaptiveImage', selectors=[img.largeTransform, img.mediumTransform, img.smallTransform], wcmmode='disabled'}"></sly>
+        <!-- Inclusion of adaptive image resource -->
+        <sly data-sly-resource="${'image' @ resourceType='plweb-dsys/components/adaptiveImage/v1/adaptiveImage', selectors=[img.largeTransform, img.mediumTransform, img.smallTransform], wcmmode='disabled'}"></sly>
     </div>
 </div>
 </sly>

@@ -71,10 +71,14 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Very Low (576px)"
                                                         value="flexImageLargeVeryLow"/>
-                                                    <aptImageThumbnailLarge
+                                                    <aptImageLargeThumbnailLarge
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="Thumbnail (200px)"
-                                                        value="flexImageLargeThumbnail"/>
+                                                        text="Large Thumbnail (400px)"
+                                                        value="flexImageLargeThumbnailLarge"/>
+                                                    <aptImageSmallThumbnailLarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Small Thumbnail (200px)"
+                                                        value="flexImageLargeThumbnailSmall"/>
                                                 </items>
                                             </largeImageTransform>
                                             <lgResType
@@ -152,6 +156,14 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Low (580px)"
                                                         value="flexImageMediumLow"/>
+                                                    <aptImageLargeThumbnailMedium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Large Thumbnail (400px)"
+                                                        value="flexImageMediumThumbnailLarge"/>
+                                                    <aptImageSmallThumbnailMedium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Small Thumbnail (200px)"
+                                                        value="flexImageMediumThumbnailSmall"/>
                                                 </items>
                                             </mediumImageTransform>
                                             <mdResType
@@ -229,6 +241,14 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Low (440px)"
                                                         value="flexImageSmallLow"/>
+                                                    <aptImageLargeThumbnailSmall
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Large Thumbnail (400px)"
+                                                        value="flexImageSmallThumbnailLarge"/>
+                                                    <aptImageSmallThumbnailSmall
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Small Thumbnail (200px)"
+                                                        value="flexImageSmallThumbnailSmall"/>
                                                 </items>
                                             </smallImageTransform>
                                             <smResType
