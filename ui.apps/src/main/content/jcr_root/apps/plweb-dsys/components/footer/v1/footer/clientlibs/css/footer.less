@@ -62,8 +62,12 @@
         .openSans;
 	});
 
-    .element(copyright,{
-			flex: 1;
+    .element(drop-down,{
+		flex-shrink: 0
+	});
+
+    .modifier(occupy-full-width,{
+		flex: 1;
     });
 
     .element(drop-down,{
@@ -72,10 +76,15 @@
 
     .element(mobile-bottom-links,{
         display: flex;
-        gap: @24;
+        flex-wrap: wrap;
         a{
             color: @textBodyLight;
+            margin-right: @24;
         }
+    });
+
+    .element(left-links,{
+		margin: 0rem 1rem;
     });
 
 	@media @mediaXS {
@@ -149,7 +158,11 @@
         .modifier(heading,{
             flex: 1;
             margin-top:  0rem;
-        })
+        });
+
+        .element(left-links,{
+		    margin: 0rem 
+        });
 
     }
 }
