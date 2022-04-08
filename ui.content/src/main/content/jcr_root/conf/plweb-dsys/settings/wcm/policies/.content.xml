@@ -207,11 +207,13 @@
                 </policy_641475696923109>
                 <policy_641528232375303
                     jcr:description="Allows all sizes, but not H1, which is reserved for the main page title."
+                    jcr:lastModified="{Date}2022-04-05T19:58:00.882+05:30"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Content Title"
                     sling:resourceType="wcm/core/components/policy/policy"
                     allowedTypes="[h2,h3,h4,h5,h6]"
-                    linkDisabled="false"
+                    linkDisabled="true"
                     type="h2">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_641528232375303>
@@ -267,10 +269,13 @@
                 </policy_1574694950110>
                 <policy_1574695586800
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2022-03-30T17:30:22.775+05:30"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Content"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:plweb-dsys - Content,/apps/plweb-dsys/components/form/container]">
+                    components="[group:plweb-dsys - Content,/apps/plweb-dsys/components/form/container]"
+                    layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
