@@ -1,3 +1,4 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
 <div class="dsys-button ${properties.btnPos == 'btn-center' ? 'dsys-button--position-center' : ''} ${properties.btnPos == 'btn-right' ? 'dsys-button--position-right' : ''}">
     <a class="dsys-button__main 
      ${properties.btnstyle == 'primary' ? 'dsys-button__main--primary' : 'dsys-button__main--secondary'}" 
@@ -6,3 +7,5 @@
     </a>
 
 </div>
+
+<sly data-sly-call="${template.placeholder @isEmpty=!properties.text}"></sly>

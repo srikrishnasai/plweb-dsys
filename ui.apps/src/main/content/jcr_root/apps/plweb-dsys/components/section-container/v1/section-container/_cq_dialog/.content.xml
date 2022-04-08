@@ -7,6 +7,7 @@
     xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Section Container"
+    extraClientlibs="[plweb-dsys.author.show-hide-fields]"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         granite:class="cmp-list--editor"
@@ -28,70 +29,146 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <topSpacing
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Top Spacing"
-                                        name="./desktopTop">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <no-spacing
+                                    <desktopExternalSpacing
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                            <items jcr:primaryType="nt:unstructured">    
+                                            <topSpacing
                                                 jcr:primaryType="nt:unstructured"
-                                                text="No Spacing"
-                                                value="no-space"/>
-                                            <very-small
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Top External Spacing"
+                                                name="./desktopTopExternal">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <no-spacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="No Spacing"
+                                                        value="no-space"/>
+                                                    <very-small
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Very Small - 16px"
+                                                        value="very-small"/>
+                                                    <small
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Small - 32px"
+                                                        value="small"/>
+                                                    <medium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Medium - 48px"
+                                                        value="medium"/>
+                                                    <large
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Large - 64px"
+                                                        value="large"/>
+                                                    <extralarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Extra Large - 80px"
+                                                        value="extra-large"/>
+                                                </items>
+                                            </topSpacing>
+                                            <bottomSpacing
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Very Small - 16px"
-                                                value="verySmall"/>
-                                            <small
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Small - 32px"
-                                                value="small"/>
-                                            <medium
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Medium - 64px"
-                                                value="medium"/>
-                                            <large
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Large - 80px"
-                                                value="large"/>
-                                            <extralarge
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Extra Large - 160px"
-                                                value="extralarge"/>
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Bottom External Spacing"
+                                                name="./desktopBottomExternal">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <no-spacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="No Spacing"
+                                                        value="no-space"/>
+                                                    <very-small
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Very Small - 16px"
+                                                        value="very-small"/>
+                                                    <small
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Small - 32px"
+                                                        value="small"/>
+                                                    <medium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Medium - 48px"
+                                                        value="medium"/>
+                                                    <large
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Large - 64px"
+                                                        value="large"/>
+                                                    <extralarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Extra Large - 80px"
+                                                        value="extra-large"/>
+                                                </items>
+                                            </bottomSpacing>
                                         </items>
-                                    </topSpacing>
-                                    <bottomSpacing
+                                    </desktopExternalSpacing>
+                                    <desktopInternalSpacing
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Bottom Spacing"
-                                        name="./desktopBottom">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <no-spacing
+                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                        <items jcr:primaryType="nt:unstructured">    
+                                            <topSpacing
                                                 jcr:primaryType="nt:unstructured"
-                                                text="No Spacing"
-                                                value="no-space"/>
-                                            <very-small
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Top Internal Spacing"
+                                                name="./desktopTopInternal">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <no-spacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="No Spacing"
+                                                        value="no-space"/>
+                                                    <very-small
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Very Small - 16px"
+                                                        value="very-small"/>
+                                                    <small
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Small - 32px"
+                                                        value="small"/>
+                                                    <medium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Medium - 48px"
+                                                        value="medium"/>
+                                                    <large
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Large - 64px"
+                                                        value="large"/>
+                                                    <extralarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Extra Large - 80px"
+                                                        value="extra-large"/>
+                                                </items>
+                                            </topSpacing>
+                                            <bottomSpacing
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Very Small - 16px"
-                                                value="verySmall"/>
-                                            <small
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Small - 32px"
-                                                value="small"/>
-                                            <medium
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Medium - 64px"
-                                                value="medium"/>
-                                            <large
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Large - 80px"
-                                                value="large"/>
-                                            <extralarge
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Extra Large - 160px"
-                                                value="extralarge"/>
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Bottom Internal Spacing"
+                                                name="./desktopBottomInternal">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <no-spacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="No Spacing"
+                                                        value="no-space"/>
+                                                    <very-small
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Very Small - 16px"
+                                                        value="very-small"/>
+                                                    <small
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Small - 32px"
+                                                        value="small"/>
+                                                    <medium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Medium - 48px"
+                                                        value="medium"/>
+                                                    <large
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Large - 64px"
+                                                        value="large"/>
+                                                    <extralarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Extra Large - 80px"
+                                                        value="extra-large"/>
+                                                </items>
+                                            </bottomSpacing>
                                         </items>
-                                    </bottomSpacing>
+                                    </desktopInternalSpacing>
                                     <isFullScreenToggle
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -117,6 +194,10 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Light Grey"
                                                 value="light-grey"/>
+                                            <dark-blue
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Dark Blue"
+                                                value="dark-blue"/>
                                         </items>
                                     </bgColor>
                                 </items>
@@ -135,102 +216,197 @@
                                 <items jcr:primaryType="nt:unstructured">
                                     <customConfigForTablet
                                         jcr:primaryType="nt:unstructured"
+                                        granite:class="cq-dialog-checkbox-showhide"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="Removes the default left and right spacing added to the component container"
-                                        name="./removeSpaceDesktop"
-                                        text="Full Width"
-                                        value="true"/>
-                                    <topSpacing
+                                        fieldDescription="Uncheck this checkbox to use custom configuration for tablet"
+                                        name="./useDesktopConfigForTablet"
+                                        checked="{Boolean}true"
+                                        text="Use Desktop Config"
+                                        uncheckedValue="false"
+                                        value="true">
+                                        <granite:data 
+                                            jcr:primaryType="nt:unstructured"
+                                            cq-dialog-checkbox-showhide-target=".tablet-custom-config"/>
+                                    </customConfigForTablet>
+                                    <customConfigForTabletContainer
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Top Spacing"
-                                        name="./tabletTop">
+                                        granite:class="tablet-custom-config"
+                                        showhidetargetvalue="true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <no-spacing
+                                            <tabletExternalSpacing
                                                 jcr:primaryType="nt:unstructured"
-                                                text="No Spacing"
-                                                value="no-space"/>
-                                            <very-small
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">    
+                                                    <topSpacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Top External Spacing"
+                                                        name="./tabletTopExternal">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <no-spacing
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="No Spacing"
+                                                                value="no-space"/>
+                                                            <very-small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Very Small - 16px"
+                                                                value="very-small"/>
+                                                            <small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Small - 24px"
+                                                                value="small"/>
+                                                            <medium
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Medium - 32px"
+                                                                value="medium"/>
+                                                            <large
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Large - 48px"
+                                                                value="large"/>
+                                                            <extralarge
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Extra Large - 64px"
+                                                                value="extra-large"/>
+                                                        </items>
+                                                    </topSpacing>
+                                                    <bottomSpacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Bottom External Spacing"
+                                                        name="./tabletBottomExternal">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <no-spacing
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="No Spacing"
+                                                                value="no-space"/>
+                                                            <very-small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Very Small - 16px"
+                                                                value="very-small"/>
+                                                            <small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Small - 24px"
+                                                                value="small"/>
+                                                            <medium
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Medium - 32px"
+                                                                value="medium"/>
+                                                            <large
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Large - 48px"
+                                                                value="large"/>
+                                                            <extralarge
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Extra Large - 64px"
+                                                                value="extra-large"/>
+                                                        </items>
+                                                    </bottomSpacing>
+                                                </items>
+                                            </tabletExternalSpacing>
+                                            <tabletInternalSpacing
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Very Small - 16px"
-                                                value="verySmall"/>
-                                            <small
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">    
+                                                    <topSpacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Top Internal Spacing"
+                                                        name="./tabletTopInternal">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <no-spacing
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="No Spacing"
+                                                                value="no-space"/>
+                                                            <very-small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Very Small - 16px"
+                                                                value="very-small"/>
+                                                            <small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Small - 24px"
+                                                                value="small"/>
+                                                            <medium
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Medium - 32px"
+                                                                value="medium"/>
+                                                            <large
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Large - 48px"
+                                                                value="large"/>
+                                                            <extralarge
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Extra Large - 64px"
+                                                                value="extra-large"/>
+                                                        </items>
+                                                    </topSpacing>
+                                                    <bottomSpacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Bottom Internal Spacing"
+                                                        name="./tabletBottomInternal">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <no-spacing
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="No Spacing"
+                                                                value="no-space"/>
+                                                            <very-small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Very Small - 16px"
+                                                                value="very-small"/>
+                                                            <small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Small - 24px"
+                                                                value="small"/>
+                                                            <medium
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Medium - 32px"
+                                                                value="medium"/>
+                                                            <large
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Large - 48px"
+                                                                value="large"/>
+                                                            <extralarge
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Extra Large - 64px"
+                                                                value="extra-large"/>
+                                                        </items>
+                                                    </bottomSpacing>
+                                                </items>
+                                            </tabletInternalSpacing>
+                                            <isFullScreenToggle
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Small - 32px"
-                                                value="small"/>
-                                            <medium
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Removes the default left and right spacing added to the component container"
+                                                name="./removeSpaceTablets"
+                                                text="Full Width"
+                                                value="true"/>
+                                            <bgColor
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Medium - 64px"
-                                                value="medium"/>
-                                            <large
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Large - 80px"
-                                                value="large"/>
-                                            <extralarge
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Extra Large - 160px"
-                                                value="extralarge"/>
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Background Color"
+                                                name="./tabletBgColor">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <transparent
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Transparent"
+                                                        value="transparent"/>
+                                                    <white
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="White"
+                                                        value="white"/>
+                                                    <light-grey
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Light Grey"
+                                                        value="light-grey"/>
+                                                    <dark-blue
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Dark Blue"
+                                                        value="dark-blue"/>
+                                                </items>
+                                            </bgColor>
                                         </items>
-                                    </topSpacing>
-                                    <bottomSpacing
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Bottom Spacing"
-                                        name="./tabletBottom">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <no-spacing
-                                                jcr:primaryType="nt:unstructured"
-                                                text="No Spacing"
-                                                value="no-space"/>
-                                            <very-small
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Very Small - 16px"
-                                                value="verySmall"/>
-                                            <small
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Small - 32px"
-                                                value="small"/>
-                                            <medium
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Medium - 64px"
-                                                value="medium"/>
-                                            <large
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Large - 80px"
-                                                value="large"/>
-                                            <extralarge
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Extra Large - 160px"
-                                                value="extralarge"/>
-                                        </items>
-                                    </bottomSpacing>
-                                    <isFullScreenToggle
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="Removes the default left and right spacing added to the component container"
-                                        name="./removeSpaceTablets"
-                                        text="Full Width"
-                                        value="true"/>
-                                    <bgColor
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Background Color"
-                                        name="./tabletBgColor">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <transparent
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Transparent"
-                                                value="transparent"/>
-                                            <white
-                                                jcr:primaryType="nt:unstructured"
-                                                text="White"
-                                                value="white"/>
-                                            <light-grey
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Light Grey"
-                                                value="light-grey"/>
-                                        </items>
-                                    </bgColor>
+                                    </customConfigForTabletContainer>
                                 </items>
                             </column>
                         </items>
@@ -245,97 +421,199 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <topSpacing
+                                    <customConfigForMobile
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Top Spacing"
-                                        name="./mobileTop">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <no-spacing
-                                                jcr:primaryType="nt:unstructured"
-                                                text="No Spacing"
-                                                value="no-space"/>
-                                            <very-small
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Very Small - 16px"
-                                                value="verySmall"/>
-                                            <small
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Small - 32px"
-                                                value="small"/>
-                                            <medium
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Medium - 64px"
-                                                value="medium"/>
-                                            <large
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Large - 80px"
-                                                value="large"/>
-                                            <extralarge
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Extra Large - 160px"
-                                                value="extralarge"/>
-                                        </items>
-                                    </topSpacing>
-                                    <bottomSpacing
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Bottom Spacing"
-                                        name="./mobileBottom">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <no-spacing
-                                                jcr:primaryType="nt:unstructured"
-                                                text="No Spacing"
-                                                value="no-space"/>
-                                            <very-small
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Very Small - 16px"
-                                                value="verySmall"/>
-                                            <small
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Small - 32px"
-                                                value="small"/>
-                                            <medium
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Medium - 64px"
-                                                value="medium"/>
-                                            <large
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Large - 80px"
-                                                value="large"/>
-                                            <extralarge
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Extra Large - 160px"
-                                                value="extralarge"/>
-                                        </items>
-                                    </bottomSpacing>
-                                    <isFullScreenToggle
-                                        jcr:primaryType="nt:unstructured"
+                                        granite:class="cq-dialog-checkbox-showhide"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="Removes the default left and right spacing added to the component container"
-                                        name="./removeSpaceMobile"
-                                        text="Full Width"
-                                        value="true"/>
-                                    <bgColor
+                                        fieldDescription="Uncheck this checkbox to use custom configuration for mobile"
+                                        name="./useDesktopConfigForMobile"
+                                        checked="{Boolean}true"
+                                        text="Use Desktop Config"
+                                        uncheckedValue="false"
+                                        value="true">
+                                        <granite:data 
+                                            jcr:primaryType="nt:unstructured"
+                                            cq-dialog-checkbox-showhide-target=".mobile-custom-config"/>
+                                    </customConfigForMobile>
+                                    <customConfigForMobileContainer
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Background Color"
-                                        name="./mobileBgColor">
+                                        showhidetargetvalue="true"
+                                        granite:class="mobile-custom-config"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <transparent
+                                            <mobileExternalSpacing
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Transparent"
-                                                value="transparent"/>
-                                            <white
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">    
+                                                    <topSpacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Top External Spacing"
+                                                        name="./mobileTopExternal">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <no-spacing
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="No Spacing"
+                                                                value="no-space"/>
+                                                            <very-small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Very Small - 8px"
+                                                                value="very-small"/>
+                                                            <small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Small - 16px"
+                                                                value="small"/>
+                                                            <medium
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Medium - 24px"
+                                                                value="medium"/>
+                                                            <large
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Large - 32px"
+                                                                value="large"/>
+                                                            <extralarge
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Extra Large - 40px"
+                                                                value="extra-large"/>
+                                                        </items>
+                                                    </topSpacing>
+                                                    <bottomSpacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Bottom External Spacing"
+                                                        name="./mobileBottomExternal">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <no-spacing
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="No Spacing"
+                                                                value="no-space"/>
+                                                            <very-small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Very Small - 8px"
+                                                                value="very-small"/>
+                                                            <small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Small - 16px"
+                                                                value="small"/>
+                                                            <medium
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Medium - 24px"
+                                                                value="medium"/>
+                                                            <large
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Large - 32px"
+                                                                value="large"/>
+                                                            <extralarge
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Extra Large - 40px"
+                                                                value="extra-large"/>
+                                                        </items>
+                                                    </bottomSpacing>
+                                                </items>
+                                            </mobileExternalSpacing>
+                                            <mobileInternalSpacing
                                                 jcr:primaryType="nt:unstructured"
-                                                text="White"
-                                                value="white"/>
-                                            <light-grey
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">    
+                                                    <topSpacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Top Internal Spacing"
+                                                        name="./mobileTopInternal">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <no-spacing
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="No Spacing"
+                                                                value="no-space"/>
+                                                            <very-small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Very Small - 8px"
+                                                                value="very-small"/>
+                                                            <small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Small - 16px"
+                                                                value="small"/>
+                                                            <medium
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Medium - 24px"
+                                                                value="medium"/>
+                                                            <large
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Large - 32px"
+                                                                value="large"/>
+                                                            <extralarge
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Extra Large - 40px"
+                                                                value="extra-large"/>
+                                                        </items>
+                                                    </topSpacing>
+                                                    <bottomSpacing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Bottom Internal Spacing"
+                                                        name="./mobileBottomInternal">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <no-spacing
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="No Spacing"
+                                                                value="no-space"/>
+                                                            <very-small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Very Small - 8px"
+                                                                value="very-small"/>
+                                                            <small
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Small - 16px"
+                                                                value="small"/>
+                                                            <medium
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Medium - 24px"
+                                                                value="medium"/>
+                                                            <large
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Large - 32px"
+                                                                value="large"/>
+                                                            <extralarge
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Extra Large - 40px"
+                                                                value="extra-large"/>
+                                                        </items>
+                                                    </bottomSpacing>
+                                                </items>
+                                            </mobileInternalSpacing>
+                                            <isFullScreenToggle
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Light Grey"
-                                                value="light-grey"/>
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Removes the default left and right spacing added to the component container"
+                                                name="./removeSpaceMobile"
+                                                text="Full Width"
+                                                value="true"/>
+                                            <bgColor
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Background Color"
+                                                name="./mobileBgColor">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <transparent
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Transparent"
+                                                        value="transparent"/>
+                                                    <white
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="White"
+                                                        value="white"/>
+                                                    <light-grey
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Light Grey"
+                                                        value="light-grey"/>
+                                                    <dark-blue
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Dark Blue"
+                                                        value="dark-blue"/>
+                                                </items>
+                                            </bgColor>
                                         </items>
-                                    </bgColor>
+                                    </customConfigForMobileContainer>
                                 </items>
                             </column>
                         </items>

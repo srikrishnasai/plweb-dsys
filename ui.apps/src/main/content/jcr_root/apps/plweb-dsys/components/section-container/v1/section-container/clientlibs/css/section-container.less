@@ -10,7 +10,7 @@
             box-sizing   : content-box;
             padding-left : @80;
             padding-right: @80;
-
+            
             @media @mediaXS { 
                 padding-left : @32;
                 padding-right: @32;
@@ -39,57 +39,109 @@
                 .modifier(mobile-background-light-grey, {
                     background-color: @neutral;
                 });
-        
+                
+                .modifier(mobile-background-dark-blue, {
+                    background-color: @primaryDark;
+                });
+
                 .modifier(mobile-background-transparent, {
                     background-color: transparent;
                 });
                 
-                .modifier(mobile-top-no-space ,{
+                .modifier(mobile-top-external-no-space ,{
                     margin-top: 0;
                 });
 
-                .modifier(mobile-bottom-no-space ,{
+                .modifier(mobile-bottom-external-no-space ,{
                     margin-bottom: 0;
                 });
 
-                .modifier(mobile-top-verySmall ,{
+                .modifier(mobile-top-external-very-small ,{
                     margin-top: @8;
                 });
 
-                .modifier(mobile-bottom-verySmall ,{
+                .modifier(mobile-bottom-external-very-small ,{
                     margin-bottom: @8;
                 });
 
-                .modifier(mobile-top-small ,{
+                .modifier(mobile-top-external-small ,{
                     margin-top: @16;
                 });
 
-                .modifier(mobile-bottom-small ,{
+                .modifier(mobile-bottom-external-small ,{
                     margin-bottom: @16;
                 });
 
-                .modifier(mobile-top-medium ,{
+                .modifier(mobile-top-external-medium ,{
                     margin-top: @24;
                 });
 
-                .modifier(mobile-bottom-medium ,{
+                .modifier(mobile-bottom-external-medium ,{
                     margin-bottom: @24;
                 });
 
-                .modifier(mobile-top-large ,{
+                .modifier(mobile-top-external-large ,{
                     margin-top: @32;
                 });
 
-                .modifier(mobile-bottom-large ,{
+                .modifier(mobile-bottom-external-large ,{
                     margin-bottom: @32;
                 });
 
-                .modifier(mobile-top-extralarge ,{
+                .modifier(mobile-top-external-extra-large ,{
                     margin-top: @40;
                 });
 
-                .modifier(mobile-bottom-extralarge ,{
+                .modifier(mobile-bottom-external-extra-large ,{
                     margin-bottom: @40;
+                });
+
+                .modifier(mobile-top-internal-no-space ,{
+                    padding-top: 0;
+                });
+                
+                .modifier(mobile-bottom-internal-no-space ,{
+                    padding-bottom: 0;
+                });
+                
+                .modifier(mobile-top-internal-very-small ,{
+                    padding-top: @8;
+                });
+                
+                .modifier(mobile-bottom-internal-very-small ,{
+                    padding-bottom: @8;
+                });
+                
+                .modifier(mobile-top-internal-small ,{
+                    padding-top: @16;
+                });
+                
+                .modifier(mobile-bottom-internal-small ,{
+                    padding-bottom: @16;
+                });
+                
+                .modifier(mobile-top-internal-medium ,{
+                    padding-top: @24;
+                });
+                
+                .modifier(mobile-bottom-internal-medium ,{
+                    padding-bottom: @24;
+                });
+                
+                .modifier(mobile-top-internal-large ,{
+                    padding-top: @32;
+                });
+                
+                .modifier(mobile-bottom-internal-large ,{
+                    padding-bottom: @32;
+                });
+                
+                .modifier(mobile-top-internal-extra-large ,{
+                    padding-top: @40;
+                });
+                
+                .modifier(mobile-bottom-internal-extra-large ,{
+                    padding-bottom: @40;
                 });
             }
 
@@ -109,57 +161,109 @@
                 .modifier(tablet-background-light-grey, {
                     background-color: @neutral;
                 });
-        
+                
+                .modifier(tablet-background-dark-blue, {
+                    background-color: @primaryDark;
+                });
+
                 .modifier(tablet-background-transparent, {
                     background-color: transparent;
                 });
 
-                .modifier(tablet-top-no-space ,{
+                .modifier(tablet-top-external-no-space ,{
                     margin-top: 0;
                 });
 
-                .modifier(tablet-bottom-no-space ,{
+                .modifier(tablet-bottom-external-no-space ,{
                     margin-bottom: 0;
                 });
 
-                .modifier(tablet-top-verySmall ,{
+                .modifier(tablet-top-external-very-small ,{
                     margin-top: @16;
                 });
 
-                .modifier(tablet-bottom-verySmall ,{
+                .modifier(tablet-bottom-external-very-small ,{
                     margin-bottom: @16;
                 });
 
-                .modifier(tablet-top-small ,{
+                .modifier(tablet-top-external-small ,{
                     margin-top: @24;
                 });
 
-                .modifier(tablet-bottom-small ,{
+                .modifier(tablet-bottom-external-small ,{
                     margin-bottom: @24;
                 });
 
-                .modifier(tablet-top-medium ,{
+                .modifier(tablet-top-external-medium ,{
                     margin-top: @32;
                 });
 
-                .modifier(tablet-bottom-medium ,{
+                .modifier(tablet-bottom-external-medium ,{
                     margin-bottom: @32;
                 });
 
-                .modifier(tablet-top-large ,{
+                .modifier(tablet-top-external-large ,{
                     margin-top: @48;
                 });
 
-                .modifier(tablet-bottom-large ,{
+                .modifier(tablet-bottom-external-large ,{
                     margin-bottom: @48;
                 });
 
-                .modifier(tablet-top-extralarge ,{
+                .modifier(tablet-top-external-extra-large ,{
                     margin-top: @64;
                 });
 
-                .modifier(tablet-bottom-extralarge ,{
+                .modifier(tablet-bottom-external-extra-large ,{
                     margin-bottom: @64;
+                });
+
+                .modifier(tablet-top-internal-no-space ,{
+                    padding-top: 0;
+                });
+                
+                .modifier(tablet-bottom-internal-no-space ,{
+                    padding-bottom: 0;
+                });
+                
+                .modifier(tablet-top-internal-very-small ,{
+                    padding-top: @16;
+                });
+                
+                .modifier(tablet-bottom-internal-very-small ,{
+                    padding-bottom: @16;
+                });
+                
+                .modifier(tablet-top-internal-small ,{
+                    padding-top: @24;
+                });
+                
+                .modifier(tablet-bottom-internal-small ,{
+                    padding-bottom: @24;
+                });
+                
+                .modifier(tablet-top-internal-medium ,{
+                    padding-top: @32;
+                });
+                
+                .modifier(tablet-bottom-internal-medium ,{
+                    padding-bottom: @32;
+                });
+                
+                .modifier(tablet-top-internal-large ,{
+                    padding-top: @48;
+                });
+                
+                .modifier(tablet-bottom-internal-large ,{
+                    padding-bottom: @48;
+                });
+                
+                .modifier(tablet-top-internal-extra-large ,{
+                    padding-top: @64;
+                });
+                
+                .modifier(tablet-bottom-internal-extra-large ,{
+                    padding-bottom: @64;
                 });
             }
 
@@ -179,57 +283,109 @@
                 .modifier(desktop-background-light-grey, {
                     background-color: @neutral;
                 });
-        
+                
+                .modifier(desktop-background-dark-blue, {
+                    background-color: @primaryDark;
+                });
+
                 .modifier(desktop-background-transparent, {
                     background-color: transparent;
                 });
 
-                .modifier(desktop-top-no-space ,{
+                .modifier(desktop-top-external-no-space ,{
                     margin-top: 0;
                 });
 
-                .modifier(desktop-bottom-no-space ,{
+                .modifier(desktop-bottom-external-no-space ,{
                     margin-bottom: 0;
                 });
 
-                .modifier(desktop-top-verySmall ,{
+                .modifier(desktop-top-external-very-small ,{
                     margin-top: @16;
                 });
 
-                .modifier(desktop-bottom-verySmall ,{
+                .modifier(desktop-bottom-external-very-small ,{
                     margin-bottom: @16;
                 });
 
-                .modifier(desktop-top-small ,{
+                .modifier(desktop-top-external-small ,{
                     margin-top: @32;
                 });
 
-                .modifier(desktop-bottom-small ,{
+                .modifier(desktop-bottom-external-small ,{
                     margin-bottom: @32;
                 });
 
-                .modifier(desktop-top-medium ,{
+                .modifier(desktop-top-external-medium ,{
                     margin-top: @48;
                 });
 
-                .modifier(desktop-bottom-medium ,{
+                .modifier(desktop-bottom-external-medium ,{
                     margin-bottom: @48;
                 });
 
-                .modifier(desktop-top-large ,{
+                .modifier(desktop-top-external-large ,{
                     margin-top: @64;
                 });
 
-                .modifier(desktop-bottom-large ,{
+                .modifier(desktop-bottom-external-large ,{
                     margin-bottom: @64;
                 });
 
-                .modifier(desktop-top-extralarge ,{
+                .modifier(desktop-top-external-extra-large ,{
                     margin-top: @80;
                 });
 
-                .modifier(desktop-bottom-extralarge ,{
+                .modifier(desktop-bottom-external-extra-large ,{
                     margin-bottom: @80
+                });
+
+                .modifier(desktop-top-internal-no-space ,{
+                    padding-top: 0;
+                });
+                
+                .modifier(desktop-bottom-internal-no-space ,{
+                    padding-bottom: 0;
+                });
+                
+                .modifier(desktop-top-internal-very-small ,{
+                    padding-top: @16;
+                });
+                
+                .modifier(desktop-bottom-internal-very-small ,{
+                    padding-bottom: @16;
+                });
+                
+                .modifier(desktop-top-internal-small ,{
+                    padding-top: @32;
+                });
+                
+                .modifier(desktop-bottom-internal-small ,{
+                    padding-bottom: @32;
+                });
+                
+                .modifier(desktop-top-internal-medium ,{
+                    padding-top: @48;
+                });
+                
+                .modifier(desktop-bottom-internal-medium ,{
+                    padding-bottom: @48;
+                });
+                
+                .modifier(desktop-top-internal-large ,{
+                    padding-top: @64;
+                });
+                
+                .modifier(desktop-bottom-internal-large ,{
+                    padding-bottom: @64;
+                });
+                
+                .modifier(desktop-top-internal-extra-large ,{
+                    padding-top: @80;
+                });
+                
+                .modifier(desktop-bottom-internal-extra-large ,{
+                    padding-bottom: @80
                 });
             }
         }
