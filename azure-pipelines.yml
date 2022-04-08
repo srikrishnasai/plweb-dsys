@@ -1,0 +1,39 @@
+# Pipleine Script for building Web AEM for AMS Corp
+
+variables:
+  buildEnv: dev
+
+trigger:
+- development
+- feature/*
+- release/*
+- master
+
+pr:
+- master
+- developemt
+- release/*
+
+pool:
+ name: Linux-AgentPool
+ demands:
+   - agent.os -equals Linux
+   - agent_name  -equals linux-survivor   
+
+steps:
+- checkout: self
+  clean: true
+  persistCredentials: true
+
+- script: |
+    echo "Building AMS paclife-dsys-ui"
+    ls -al
+    pwd    
+    echo $(Agent.TempDirectory)
+
+- task: Maven@3
+  displayName: 'Maven pom.xml'
+  inputs:
+    mavenPomFile: 'pom.xml'
+    options: 'clean compile '
+    publishJUnitResults: false
