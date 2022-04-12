@@ -1,10 +1,10 @@
 {
   "organization.id": "AB388C3E55F2BDE17F000101@AdobeOrg",
-  "technical.account.email": "697455aa-e139-4e9c-b896-661db2402afe@techacct.adobe.com",
-  "technical.account.id": "2BF62615620CA5840A495C4B@techacct.adobe.com",
-  "api.key": "d1ab044af3ad494ea0ac19b765793a22",
+  "technical.account.email": "21db785a-93f8-42e3-a6ee-8d75f3589a53@techacct.adobe.com",
+  "technical.account.id": "7DB771DC62505EE60A495FBC@techacct.adobe.com",
+  "api.key": "61bd153e4adb4e0c8b50f7e4fdb61911",
   "private.key.path": "/mnt/crx/",
-  "client.secret": "p8e-cSyPd_vvREe3AuQ5IwIpQbfHV6uocDpE",
-  "teams.webhook": "https://hooks.slack.com/services/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",
+  "client.secret": "p8e-a58HNE61t2-YXvFnfl41_Skq3P0qYe_g",
+  "teams.webhook": ["https://hooks.slack.com/services/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"],
   "auth.server": "ims-na1.adobelogin.com"
 }

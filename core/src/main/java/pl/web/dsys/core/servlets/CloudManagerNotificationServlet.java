@@ -68,7 +68,7 @@ public class CloudManagerNotificationServlet extends SlingAllMethodsServlet {
 		String client_secret() default "";
 
 		@AttributeDefinition(name = "Teams Webhook")
-		String teams_webhook() default "";
+		String[] teams_webhook() default "";
 
 		@AttributeDefinition(name = "Auth Server")
 		String auth_server() default "";

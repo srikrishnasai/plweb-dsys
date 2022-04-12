@@ -90,7 +90,7 @@ public class CloudManagerNotificationUtil {
 			SecretKeySpec secretKeySpec = new SecretKeySpec(config.client_secret().getBytes(), "HmacSHA256");
 			mac.init(secretKeySpec);
 			String hmacSha256 = Base64.encodeBase64String(mac.doFinal(requestData.getBytes()));
-
+            log.debug("HmacSha String ::{}", hmacSha256);
 			if (!signature.equals(hmacSha256)) {
 				throw new Exception("x-adobe-signature HMAC check failed");
 			}
@@ -215,25 +215,28 @@ public class CloudManagerNotificationUtil {
 	public static void notifyTeams(String message, CloudManagerNotificationServlet.Config config) throws Exception {
 		try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
 
-			HttpPost notifyPostRequest = new HttpPost(config.teams_webhook());
+			for (String webhook : config.teams_webhook()) {
+				log.debug("Webhook Channel Url ::{}", webhook);
+				HttpPost notifyPostRequest = new HttpPost(webhook);
 
-			Map<String, String> postMessage = new HashMap<>();
-			/*
-			 * postMessage.put("@context", "blue"); postMessage.put("@type", "yellow");
-			 * postMessage.put("themeColor", "green"); postMessage.put("title",
-			 * "Notification From Cloud Manager");
-			 */
-			postMessage.put("text", message);
-			StringEntity postingString = new StringEntity(new Gson().toJson(postMessage));
-			notifyPostRequest.setEntity(postingString);
-			notifyPostRequest.addHeader("Content-Type", "application/json");
+				Map<String, String> postMessage = new HashMap<>();
+				/*
+				 * postMessage.put("@context", "blue"); postMessage.put("@type", "yellow");
+				 * postMessage.put("themeColor", "green"); postMessage.put("title",
+				 * "Notification From Cloud Manager");
+				 */
+				postMessage.put("text", message);
+				StringEntity postingString = new StringEntity(new Gson().toJson(postMessage));
+				notifyPostRequest.setEntity(postingString);
+				notifyPostRequest.addHeader("Content-Type", "application/json");
 
-			HttpResponse response = httpclient.execute(notifyPostRequest);
+				HttpResponse response = httpclient.execute(notifyPostRequest);
 
-			if (200 != response.getStatusLine().getStatusCode()) {
-				throw new IOException("Server returned error: " + response.getStatusLine().getReasonPhrase());
+				if (200 != response.getStatusLine().getStatusCode()) {
+					throw new IOException("Server returned error: " + response.getStatusLine().getReasonPhrase());
+				}
+
 			}
-
 		}
 	}
 }
