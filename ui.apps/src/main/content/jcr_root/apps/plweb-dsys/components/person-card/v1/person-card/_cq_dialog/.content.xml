@@ -102,11 +102,13 @@
                                         </items>
                                     </logo>
                                     <name
+                                        required="{Boolean}true"
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldLabel="Name"
                                         name="./name"/>
                                     <designation
+                                        required="{Boolean}true"
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldLabel="Designation"
