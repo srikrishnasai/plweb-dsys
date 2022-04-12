@@ -1,0 +1,31 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @ categories='plweb-dsys.ups'}" />
+<sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}" />
+
+<div class="parent">
+<h2>${properties.title}</h2>
+<p>${properties.description}</p>
+
+<div class="child">
+<h3>${properties.section1header}</h3>
+<p>${properties.section1description}<sup>${properties.section1SuperScript}</sup></p></div>
+
+<div class="child">
+<h3>${properties.section2header}</h3>
+<p>${properties.section2description}<sup>${properties.section2SuperScript}</sup></p></div>
+
+<div class="child">
+<h3>${properties.section3header}</h3>
+<p>${properties.section3description}<sup>${properties.section3SuperScript}</sup></p></div>
+
+<div class="child">
+<h3>${properties.section4header}</h3>
+<p>${properties.section4description}<sup>${properties.section4SuperScript}</sup></p></div>
+
+</div>
+
+
+
+
+
