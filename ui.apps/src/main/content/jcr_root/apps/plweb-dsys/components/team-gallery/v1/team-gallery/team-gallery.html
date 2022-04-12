@@ -1,0 +1,22 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @ categories='plweb-dsys.team-gallery'}" />
+<sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}" />
+<sly data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems1'}"></sly>
+
+
+<h2 class="team-gallery__title">${properties.title}</h2>
+<div class="team-gallery__sub-heading">${properties.desc}</div>
+
+<ul class="team-gallery__main" data-sly-test="${model1.childResource}"
+    data-sly-list="${model1.childResource.listChildren}">
+    <li class="team-gallery__container">
+        <img class="team-gallery__avatar" src="${item.fileReference}" alt="Person's Image"  />
+        <div>
+            <h4 class="team-gallery__name ${properties.color == 'tealColor' && 'team-gallery--teal-color'}">
+                ${item.employeeName} </h4>
+            <div class="team-gallery__position">${item.position}</div>
+            <div class="team-gallery__position">${item.description}</div>
+        </div>
+    </li>
+</ul>
