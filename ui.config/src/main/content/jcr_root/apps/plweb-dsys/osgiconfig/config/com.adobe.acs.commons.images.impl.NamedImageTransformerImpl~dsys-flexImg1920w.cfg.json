@@ -1,0 +1,7 @@
+{
+  "name": "dsys-flexImg1920w",
+  "transforms": [
+    "resize:width=1920",
+	"progressive:enabled=true"
+  ]
+}

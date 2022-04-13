@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Adaptive Image"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <images
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Images"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured" 
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+									<large
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Large Image (Default)"
+                                        fileNameParameter="./image/large/fileName"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./image/large/file"
+                                        title="Upload Image Asset"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                    <lgResType
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                        name="./image/large/sling:resourceType"
+                                        value="wcm/foundation/components/image"/>
+                                    <medium
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Medium Image"
+                                        fileNameParameter="./image/medium/fileName"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./image/medium/file"
+                                        title="Upload Image Asset"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                    <mdResType
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                        name="./image/medium/sling:resourceType"
+                                        value="wcm/foundation/components/image"/>
+                                    <small
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Small Image"
+                                        fileNameParameter="./image/small/fileName"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./image/small/file"
+                                        title="Upload Image Asset"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                    <smResType
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                        name="./image/small/sling:resourceType"
+                                        value="wcm/foundation/components/image"/>                                
+                                </items>
+                            </column>
+                        </items>
+                    </images>
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Settings"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured" 
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+									<alt
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="(leave empty to use the title defined above)"
+                                        fieldLabel="Alt Text"
+                                        name="./alt"/>
+                                </items>
+                            </column>
+                        </items>
+                    </basic>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

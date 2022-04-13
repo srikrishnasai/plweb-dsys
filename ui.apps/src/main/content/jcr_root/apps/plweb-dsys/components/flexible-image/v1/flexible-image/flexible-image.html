@@ -1,0 +1,24 @@
+<div 
+    data-sly-use.img="${'pl.web.dsys.core.models.ImageTransformHelperUse'}"
+    data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+    <div>
+        <div 
+            data-sly-test="${wcmmode.edit || wcmmode.design}">
+        </div>
+        <!-- Inclusion of inpace-editing -->
+        <sly data-sly-test="${wcmmode.edit}" 
+            data-sly-use.editing="plweb-dsys/components/sightly/templates/inplace-editing-placeholder.html"
+            data-sly-call="${editing.inplace @ nodeName='image', emptyText=component.title, large='large', medium='medium', small='small', showPlaceHolder=true}">
+        </sly>
+        <!-- Inclusion of adaptive image resource -->
+        <sly data-sly-resource="${'image' @ resourceType='plweb-dsys/components/adaptiveImage/v1/adaptiveImage', selectors=[img.largeTransform, img.mediumTransform, img.smallTransform], wcmmode='disabled'}"></sly>
+    </div>
+</div>
+</sly>
+<!-- Author mode styles -->
+<style>
+    .flexible-image.cq-Editable-dom {
+        min-height: 45px;
+        margin-bottom: 10px;
+    }
+</style>

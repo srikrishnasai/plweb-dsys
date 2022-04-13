@@ -1,0 +1,8 @@
+{
+  "name": "dsys-flexImg992h",
+  "transforms": [
+    "resize:height=992",
+	"progressive:enabled=true"
+  ]
+}
+

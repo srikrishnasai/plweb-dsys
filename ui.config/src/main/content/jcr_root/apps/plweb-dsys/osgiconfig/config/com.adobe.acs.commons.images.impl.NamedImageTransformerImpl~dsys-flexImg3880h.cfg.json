@@ -1,0 +1,8 @@
+{
+  "name": "dsys-flexImg3880h",
+  "transforms": [
+    "resize:height=3880",
+	"progressive:enabled=true"
+  ]
+}
+
