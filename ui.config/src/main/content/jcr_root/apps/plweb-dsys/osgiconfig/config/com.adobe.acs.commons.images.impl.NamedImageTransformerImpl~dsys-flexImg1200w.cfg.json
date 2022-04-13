@@ -1,7 +1,7 @@
 {
-  "name": "flexImg3880w",
+  "name": "dsys-flexImg1200w",
   "transforms": [
-    "resize:width=3880",
+    "resize:width=1200",
 	"progressive:enabled=true"
   ]
 }

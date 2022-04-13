@@ -34,25 +34,25 @@ public class ImageTransformsMap {
     public ImageTransformsMap () {
         Map<String, String> tMap = new HashMap<>();
 
-        tMap.put(TRANFORM_LARGE_VERY_HIGH, "flexImg1440");
-        tMap.put(TRANFORM_LARGE_HIGH, "flexImg1200");
-        tMap.put(TRANFORM_LARGE_MEDIUM, "flexImg992");
-        tMap.put(TRANFORM_LARGE_LOW, "flexImg768");
-        tMap.put(TRANFORM_LARGE_VERY_LOW, "flexImg576");
-        tMap.put(TRANFORM_LARGE_THUMBNAIL_LARGE, "flexImg400");
-        tMap.put(TRANFORM_LARGE_THUMBNAIL_SMALL, "flexImg200");
+        tMap.put(TRANFORM_LARGE_VERY_HIGH, "dsys-flexImg1440");
+        tMap.put(TRANFORM_LARGE_HIGH, "dsys-flexImg1200");
+        tMap.put(TRANFORM_LARGE_MEDIUM, "dsys-flexImg992");
+        tMap.put(TRANFORM_LARGE_LOW, "dsys-flexImg768");
+        tMap.put(TRANFORM_LARGE_VERY_LOW, "dsys-flexImg576");
+        tMap.put(TRANFORM_LARGE_THUMBNAIL_LARGE, "dsys-flexImg400");
+        tMap.put(TRANFORM_LARGE_THUMBNAIL_SMALL, "dsys-flexImg200");
 
-        tMap.put(TRANFORM_MEDIUM_HIGH, "flexImg992");
-        tMap.put(TRANFORM_MEDIUM_MEDIUM, "flexImg768");
-        tMap.put(TRANFORM_MEDIUM_LOW, "flexImg580");
-        tMap.put(TRANFORM_MEDIUM_THUMBNAIL_LARGE, "flexImg400");
-        tMap.put(TRANFORM_MEDIUM_THUMBNAIL_SMALL, "flexImg200");
+        tMap.put(TRANFORM_MEDIUM_HIGH, "dsys-flexImg992");
+        tMap.put(TRANFORM_MEDIUM_MEDIUM, "dsys-flexImg768");
+        tMap.put(TRANFORM_MEDIUM_LOW, "dsys-flexImg580");
+        tMap.put(TRANFORM_MEDIUM_THUMBNAIL_LARGE, "dsys-flexImg400");
+        tMap.put(TRANFORM_MEDIUM_THUMBNAIL_SMALL, "dsys-flexImg200");
 
-        tMap.put(TRANFORM_SMALL_HIGH, "flexImg768");
-        tMap.put(TRANFORM_SMALL_MEDIUM, "flexImg580");
-        tMap.put(TRANFORM_SMALL_LOW, "flexImg440");
-        tMap.put(TRANFORM_SMALL_THUMBNAIL_LARGE, "flexImg400");
-        tMap.put(TRANFORM_SMALL_THUMBNAIL_SMALL, "flexImg200");
+        tMap.put(TRANFORM_SMALL_HIGH, "dsys-flexImg768");
+        tMap.put(TRANFORM_SMALL_MEDIUM, "dsys-flexImg580");
+        tMap.put(TRANFORM_SMALL_LOW, "dsys-flexImg440");
+        tMap.put(TRANFORM_SMALL_THUMBNAIL_LARGE, "dsys-flexImg400");
+        tMap.put(TRANFORM_SMALL_THUMBNAIL_SMALL, "dsys-flexImg200");
 
         this.setTransformsMap(tMap);
     }

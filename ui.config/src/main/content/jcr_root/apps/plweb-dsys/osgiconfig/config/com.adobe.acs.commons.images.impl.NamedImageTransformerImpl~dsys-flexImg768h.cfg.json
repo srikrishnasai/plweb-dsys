@@ -1,7 +1,7 @@
 {
-  "name": "flexImg3880h",
+  "name": "dsys-flexImg768h",
   "transforms": [
-    "resize:height=3880",
+    "resize:height=768",
 	"progressive:enabled=true"
   ]
 }

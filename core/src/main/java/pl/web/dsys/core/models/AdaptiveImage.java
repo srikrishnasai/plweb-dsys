@@ -98,16 +98,16 @@ public class AdaptiveImage {
 
 		/*If for some reason, the transforms are not set, setting default transforms*/
 		if(null == this.getLargeTransformName() || StringUtils.isBlank(this.getLargeTransformName())
-				|| !this.getLargeTransformName().contains("flexImg")) {
-			this.setLargeTransformName("flexImg1440w");
+				|| !this.getLargeTransformName().contains("dsys-flexImg")) {
+			this.setLargeTransformName("dsys-flexImg1440w");
 		}
 		if(null == this.getMediumTransformName() || StringUtils.isBlank(this.getMediumTransformName())
-				|| !this.getMediumTransformName().contains("flexImg")) {
-			this.setMediumTransformName("flexImg992w");
+				|| !this.getMediumTransformName().contains("dsys-flexImg")) {
+			this.setMediumTransformName("dsys-flexImg992w");
 		}
 		if(null == this.getSmallTransformName() || StringUtils.isBlank(this.getSmallTransformName())
-				|| !this.getSmallTransformName().contains("flexImg")) {
-			this.setSmallTransformName("flexImg768w");
+				|| !this.getSmallTransformName().contains("dsys-flexImg")) {
+			this.setSmallTransformName("dsys-flexImg768w");
 		}
 	}
 
@@ -129,7 +129,7 @@ public class AdaptiveImage {
 				this.transparent = true;
 			}
 			if(valueMap.containsKey(PROPERTY_SMALL_IMAGE_DAM)){
-				return getAdaptiveImagePath("flexImg", image);
+				return getAdaptiveImagePath("dsys-flexImg", image);
 			}
 			return getAdaptiveImagePath(getSmallTransformName(), image);
 		}
@@ -140,7 +140,7 @@ public class AdaptiveImage {
 				this.transparent = true;
 			}
 			if(valueMap.containsKey(PROPERTY_MEDIUM_IMAGE_DAM)){
-				return getAdaptiveImagePath("flexImg", image);
+				return getAdaptiveImagePath("dsys-flexImg", image);
 			}
 			return getAdaptiveImagePath(getMediumTransformName(), image);
 		}
@@ -151,7 +151,7 @@ public class AdaptiveImage {
 				this.transparent = true;
 			}
 			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_DAM)){
-				return getAdaptiveImagePath("flexImg", image);
+				return getAdaptiveImagePath("dsys-flexImg", image);
 			}
 			return getAdaptiveImagePath(getLargeTransformName(), image);
 		}
@@ -168,7 +168,7 @@ public class AdaptiveImage {
 				this.transparent = true;
 			}
 			if(valueMap.containsKey(PROPERTY_MEDIUM_IMAGE_DAM)){
-				return getAdaptiveImagePath("flexImg", image);
+				return getAdaptiveImagePath("dsys-flexImg", image);
 			}
 			return getAdaptiveImagePath(getMediumTransformName(), image);
 		}
@@ -179,7 +179,7 @@ public class AdaptiveImage {
 				this.transparent = true;
 			}
 			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_DAM)){
-				return getAdaptiveImagePath("flexImg", image);
+				return getAdaptiveImagePath("dsys-flexImg", image);
 			}
 			return getAdaptiveImagePath(getLargeTransformName(), image);
 		}
@@ -194,7 +194,7 @@ public class AdaptiveImage {
 			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
 				this.transparent = true;
 			}
-			return getAdaptiveImagePath("flexImg", image);
+			return getAdaptiveImagePath("dsys-flexImg", image);
 		} 
 		if (checkContent(image)) {
 			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
