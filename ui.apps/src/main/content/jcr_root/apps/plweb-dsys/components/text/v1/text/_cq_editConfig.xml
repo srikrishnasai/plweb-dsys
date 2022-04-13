@@ -97,6 +97,18 @@
                     jcr:primaryType="nt:unstructured"
                     features="*">
                     <styles jcr:primaryType="nt:unstructured">
+                        <body
+                            jcr:primaryType="nt:unstructured"
+                            cssName="dsys-text dsys-text--body"
+                            text="Body"/>
+                        <caption
+                            jcr:primaryType="nt:unstructured"
+                            cssName="dsys-text dsys-text--caption"
+                            text="Caption"/>
+                        <disclosure
+                            jcr:primaryType="nt:unstructured"
+                            cssName="dsys-text dsys-text--disclosure"
+                            text="Disclosure"/>
                         <microcopy
                             jcr:primaryType="nt:unstructured"
                             cssName="dsys-text dsys-text--microcopy"
