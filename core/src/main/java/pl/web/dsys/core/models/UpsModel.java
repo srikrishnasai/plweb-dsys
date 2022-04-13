@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
@@ -24,11 +25,13 @@ import org.slf4j.LoggerFactory;
  *
  */
 @Model(adaptables = { Resource.class,
-		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, resourceType = UpsModel.resourceType)
+@Exporter(name = "jackson", extensions = "json")
 public class UpsModel {
 
 	private static final Logger log = LoggerFactory.getLogger(UpsModel.class);
-
+	public static final String resourceType = "plweb-dsys/components/ups/v1/ups";
+	
 	@SlingObject
 	Resource resource;
 
