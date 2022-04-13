@@ -47,6 +47,10 @@
                                         fieldLabel="Text Color"
                                         name="./color">
                                         <items jcr:primaryType="cq:WidgetCollection">
+                                            <blue
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Blue (#005EAD)"
+                                                value="blueColor"/>
                                             <black
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Black (neutral 1000)"

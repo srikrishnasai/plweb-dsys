@@ -8,20 +8,25 @@
     <img class="person-card__avatar person-card--compact-avatar" src="${properties.fileReference}"
         alt="Person's Image" />
     <div class="person-card__compact-container">
-        <div class="person-card__compact-name ${properties.color == 'tealColor' && 'person-card--teal-color'}">${properties.name} </div>
+        <div
+            class="person-card__compact-name ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''} ${properties.color == 'blackColor' ? 'person-card--black-color' : ''}">
+            ${properties.name} </div>
         <div class="person-card__compact-position">${properties.position}</div>
         <div class="person-card__link-container">
             <div class="person-card__link-container" data-sly-test="${properties.mail}">
                 <div class="person-card__mail"></div>
-                <a href="mailto:${properties.mail}" class="person-card__link">${properties.mail}</a>
+                <a href="mailto:${properties.mail}"
+                    class="person-card__link ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''} ">${properties.mail}</a>
             </div>
             <div class="person-card__link-container" data-sly-test="${properties.telephone}"
                 class="person-card__link-container">
                 <div class="person-card__phone"></div>
-                <span class="person-card__link">${properties.telephone}</span>
+                <span
+                    class="person-card__link ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''}">${properties.telephone}</span>
             </div>
             <div class="person-card__link-container" data-sly-test="${properties.linkedin}">
-                <a href="${properties.linkedin}" class="person-card__link">Linkedin</a>
+                <a href="${properties.linkedin}"
+                    class="person-card__link ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''}">Linkedin</a>
             </div>
         </div>
     </div>
@@ -33,7 +38,8 @@
         <img class="person-card__avatar person-card--bio-avatar" src="${properties.fileReference}"
             alt="Person's Image" />
         <div class="person-card__bio-container-with-text">
-            <h3 class="person-card__bio-name ${properties.color == 'tealColor' && 'person-card--teal-color'}">
+            <h3
+                class="person-card__bio-name ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''} ${properties.color == 'blackColor' ? 'person-card--black-color' : ''}">
                 ${properties.name} </h3>
             <h4 class="person-card__bio-position">${properties.position}</h4>
             <div class="person-card__bio-desc">
@@ -42,14 +48,17 @@
             <div class="person-card__link-container">
                 <div class="person-card__link-container" data-sly-test="${properties.mail}">
                     <div class="person-card__mail"></div>
-                    <a href="mailto:${properties.mail}" class="person-card__link">${properties.mail}</a>
+                    <a href="mailto:${properties.mail}"
+                        class="person-card__link ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''}">${properties.mail}</a>
                 </div>
                 <div class="person-card__link-container" data-sly-test="${properties.telephone}">
                     <div class="person-card__phone"></div>
-                    <span class="person-card__link">${properties.telephone}</span>
+                    <span
+                        class="person-card__link ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''}">${properties.telephone}</span>
                 </div>
                 <div class="person-card__link-container" data-sly-test="${properties.linkedin}">
-                    <a href="${properties.linkedin}" class="person-card__link">Linkedin</a>
+                    <a href="${properties.linkedin}"
+                        class="person-card__link ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''}">Linkedin</a>
                 </div>
             </div>
         </div>
@@ -61,7 +70,8 @@
             <img class="person-card__avatar person-card--bio-avatar" src="${properties.fileReference}"
                 alt="Person's Image" />
             <div>
-                <h3 class="person-card__bio-name ${properties.color == 'tealColor' && 'person-card--teal-color'}">
+                <h3
+                    class="person-card__bio-name ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''} ${properties.color == 'blackColor' ? 'person-card--black-color' : ''}">
                     ${properties.name} </h3>
                 <div class="person-card__bio-position">${properties.position}</div>
             </div>
@@ -72,14 +82,17 @@
         <div class="person-card__link-container">
             <div class="person-card__link-container" data-sly-test="${properties.mail}">
                 <div class="person-card__mail"></div>
-                <a href="mailto:${properties.mail}" class="person-card__link">${properties.mail}</a>
+                <a href="mailto:${properties.mail}"
+                    class="person-card__link ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''}">${properties.mail}</a>
             </div>
             <div class="person-card__link-container" data-sly-test="${properties.telephone}">
                 <div class="person-card__phone"></div>
-                <span class="person-card__link">${properties.telephone}</span>
+                <span
+                    class="person-card__link ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''}">${properties.telephone}</span>
             </div>
-            <div  id ="${properties.linkedin}" class="person-card__link-container" data-sly-test="${properties.linkedin}">
-                <a id="fes" href="${properties.linkedin}" class="person-card__link">Linkedin</a>
+            <div id="${properties.linkedin}" class="person-card__link-container" data-sly-test="${properties.linkedin}">
+                <a href="${properties.linkedin}"
+                    class="person-card__link ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''}">Linkedin</a>
             </div>
         </div>
     </section>
