@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Team Gallery"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General;"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Title"
+                                        name="./title"/>
+                                    <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Description"
+                                        name="./desc"/>
+                                    <text-color
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="cq-dialog-dropdown-showhide"
+                                        fieldLabel="Text Color"
+                                        name="./color">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <teal
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Teal Color (#108188)"
+                                                value="tealColor"/>
+                                            <blue
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Blue Color (#005EAD)"
+                                                value="blueColor"/>
+                                        </items>
+                                    </text-color>
+                                    <team
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        eaem-nested=""
+                                        fieldDescription="Click 'Add field' to add a new team member"
+                                        fieldLabel="Team member">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            name="./multiFieldItems1">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <peopleConfig
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Edit employees"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <logo
+                                                            jcr:primaryType="nt:unstructured"
+                                                            jcr:title="Image"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                            margin="{Boolean}true">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <column
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <logo
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                            allowUpload="{Boolean}false"
+                                                                            autoStart="{Boolean}false"
+                                                                            class="cq-droptarget"
+                                                                            fieldLabel="Image"
+                                                                            fileNameParameter="./logo"
+                                                                            mimeTypes="[image]"
+                                                                            multiple="{Boolean}false"
+                                                                            name="./logoImage"
+                                                                            required="{Boolean}true"
+                                                                            title="Upload Image Asset"
+                                                                            uploadUrl="${suffix.path}"
+                                                                            useHTML5="{Boolean}true"/>
+                                                                        <showImageFromDam
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                            checked="{Boolean}false"
+                                                                            fieldDescription="This will load the Original images"
+                                                                            name="./useOriginalImage"
+                                                                            text="Use Original Images"
+                                                                            value="true"/>
+                                                                        <showTransparentImage
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                            checked="{Boolean}false"
+                                                                            fieldDescription="This will load the transparent images"
+                                                                            name="./useTransparentImage"
+                                                                            text="Use Transparent Images"
+                                                                            value="true"/>
+                                                                    </items>
+                                                                </column>
+                                                            </items>
+                                                        </logo>
+                                                        <name
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Name"
+                                                            name="./employeeName"
+                                                            required="{Boolean}true"/>
+                                                        <designation
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Designation"
+                                                            name="./position"
+                                                            required="{Boolean}true"/>
+                                                        <description
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Description"
+                                                            name="./description"/>
+                                                    </items>
+                                                </peopleConfig>
+                                            </items>
+                                        </field>
+                                    </team>
+                                </items>
+                            </column>
+                        </items>
+                    </general>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

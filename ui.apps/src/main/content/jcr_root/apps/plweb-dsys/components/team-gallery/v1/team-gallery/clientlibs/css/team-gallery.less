@@ -1,0 +1,97 @@
+@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/less-imports.less";
+@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+
+@name-teal: rgba(16,129,136,1);
+@name-blue : rgba(0, 94, 173, 1);
+
+.team-gallery {
+
+    .element(title,{
+        color: @neutral1000;
+        font-size: 36px;
+        line-height: 48px;
+        .ta-center;
+        .fw-700;
+        .montserrat;
+        margin-bottom: @8;
+    });
+    .element(sub-heading,{
+        line-height: 24px;
+        .ta-center;
+        .openSans;
+    });
+
+    .element(main,{
+        margin-top: @64;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        box-sizing: border-box;
+    });
+    .element(container,{
+        width: 25%;
+        .ta-center;
+        margin-bottom: @8;
+        padding-right: @32;
+    });
+
+    .element(avatar,{
+        margin-bottom: @24;
+        height: 171px;
+        width: 171px;
+        object-fit: cover;
+        border-radius: 50%;
+    });
+    .element(name,{
+        font-size: 18.06px;
+        .fw-700;
+        line-height: 28px;
+        .ta-center;
+        .montserrat;
+        color: @name-blue
+    });
+    .element(position,{
+        line-height: 24px;
+        .ta-center;
+        .openSans;
+    });
+    .modifier(teal-color,{
+        color: @name-teal
+    });
+
+    @media @mediaXS {
+
+        .element(main,{
+           flex-direction: column;
+           margin-top: @32;
+        });
+        .element(container,{
+            width: 100%;
+            margin-bottom: 0.5rem;
+            .ta-left;
+            padding-right: 0;
+            align-items: center;
+            display: flex;
+        });
+
+        .element(avatar,{
+            margin-right: @24;
+            width: 83px;
+            height: 83px;
+            margin-bottom: 0;
+        });
+        .element(name,{
+            font-size: 16px;
+            line-height: 24px;
+            .openSans;
+            .ta-left;
+        });
+        .element(position,{
+            font-size: 14.45px;
+            line-height: 24px;
+            .ta-left;
+            overflow: hidden;
+        });
+    }
+}
