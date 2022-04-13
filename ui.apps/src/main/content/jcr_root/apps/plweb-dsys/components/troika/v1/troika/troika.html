@@ -1,0 +1,31 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html" data-sly-test.text="${properties.richText}"
+     id="${properties.rteId}" class="plweb-richtext">
+    <p class="cmp-text__paragraph"
+       data-sly-unwrap="${properties.textIsRich}">${properties.richText @ context = properties.textIsRich ? 'html' : 'text'}</p>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text, classAppend='cmp-text'}"></sly>
+
+<div>${properties.generalDescription}</div>
+<div>${properties.generalTitle}</div>
+<div>${properties.numberOfTroika}</div>
+<div>${properties.troikaPosition}</div>
+<div>${properties.disableImage}</div>
+
+<div>${properties.section1Description}</div>
+<div>${properties.section1Title}</div>
+<div>${properties.section1WebpageTitle}</div>
+<div>${properties.section1webpageTarget}</div>
+<div>${properties.section1webpageTabTarget}</div>
+
+<div>${properties.section2Description}</div>
+<div>${properties.section2Title}</div>
+<div>${properties.section2WebpageTitle}</div>
+<div>${properties.section2webpageTarget}</div>
+<div>${properties.section2webpageTabTarget}</div>
+
+<div>${properties.section3Description}</div>
+<div>${properties.section3Title}</div>
+<div>${properties.section3WebpageTitle}</div>
+<div>${properties.section3webpageTarget}</div>
+<div>${properties.section3webpageTabTarget}</div>
+
