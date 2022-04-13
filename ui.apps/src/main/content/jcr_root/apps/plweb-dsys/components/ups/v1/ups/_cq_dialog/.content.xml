@@ -3,12 +3,13 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="Ups"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="">
+    extraClientlibs="[plweb-dsys.ups.dialog]">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
             <tabs
+                granite:class="ups-tabs"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/tabs"
                 maximized="{Boolean}true">
@@ -35,9 +36,17 @@
                                                 name="./title"/>
                                             <description
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                 fieldLabel="Description"
-                                                name="./description"/>
+                                                name="./description"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
+                                                <uiSettings
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
+                                            </description>
                                             <alignments
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
@@ -110,7 +119,7 @@
                                                 class="cq-droptarget"
                                                 fieldLabel="Image"
                                                 fileNameParameter="./sectionOneImg"
-												fileReferenceParameter="./sectionOneImgReference"
+                                                fileReferenceParameter="./sectionOneImgReference"
                                                 mimeTypes="[image]"
                                                 multiple="{Boolean}false"
                                                 name="./sectionOneImage"
@@ -125,10 +134,18 @@
                                                 name="./sectionOneHeader"/>
                                             <sectionOneDescription
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                 fieldDescription="Enter section One description text"
                                                 fieldLabel="Section One Description"
-                                                name="./sectionOneDescription"/>
+                                                name="./sectionOneDescription"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
+                                                <uiSettings
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
+                                            </sectionOneDescription>
                                             <sectionOneSuperScript
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -164,7 +181,7 @@
                                                 class="cq-droptarget"
                                                 fieldLabel="Image"
                                                 fileNameParameter="./sectionTwoImg"
-												fileReferenceParameter="./sectionTwoImgReference"
+                                                fileReferenceParameter="./sectionTwoImgReference"
                                                 mimeTypes="[image]"
                                                 multiple="{Boolean}false"
                                                 name="./sectionTwoImage"
@@ -179,10 +196,18 @@
                                                 name="./sectionTwoHeader"/>
                                             <sectionTwoDescription
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                 fieldDescription="Enter section Two description text"
                                                 fieldLabel="Section Two Description"
-                                                name="./sectionTwoDescription"/>
+                                                name="./sectionTwoDescription"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
+                                                <uiSettings
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
+                                            </sectionTwoDescription>
                                             <sectionTwoSuperScript
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -218,7 +243,7 @@
                                                 class="cq-droptarget"
                                                 fieldLabel="Image"
                                                 fileNameParameter="./sectionThreeImg"
-												fileReferenceParameter="./sectionThreeImgReference"
+                                                fileReferenceParameter="./sectionThreeImgReference"
                                                 mimeTypes="[image]"
                                                 multiple="{Boolean}false"
                                                 name="./sectionThreeImage"
@@ -233,10 +258,18 @@
                                                 name="./sectionThreeHeader"/>
                                             <sectionThreeDescription
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                 fieldDescription="Enter section Three description text"
                                                 fieldLabel="Section Three Description"
-                                                name="./sectionThreeDescription"/>
+                                                name="./sectionThreeDescription"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
+                                                <uiSettings
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
+                                            </sectionThreeDescription>
                                             <sectionThreeSuperScript
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -272,7 +305,7 @@
                                                 class="cq-droptarget"
                                                 fieldLabel="Image"
                                                 fileNameParameter="./sectionFourImg"
-												fileReferenceParameter="./sectionFourImgReference"
+                                                fileReferenceParameter="./sectionFourImgReference"
                                                 mimeTypes="[image]"
                                                 multiple="{Boolean}false"
                                                 name="./sectionFourImage"
@@ -287,10 +320,18 @@
                                                 name="./sectionFourHeader"/>
                                             <sectionFourDescription
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                 fieldDescription="Enter section Four description text"
                                                 fieldLabel="Section Four Description"
-                                                name="./sectionFourDescription"/>
+                                                name="./sectionFourDescription"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
+                                                <uiSettings
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
+                                            </sectionFourDescription>
                                             <sectionFourSuperScript
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
