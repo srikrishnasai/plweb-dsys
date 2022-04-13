@@ -3,7 +3,7 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="Troika"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="[plweb-dsys.author.checkbox-show-hide, plweb-dsys.author.select-showhide, plweb-dsys.clientlib]">
+    extraClientlibs="[plweb-dsys.author.checkbox-show-hide, plweb-dsys.author.tabs-show-hide]">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
@@ -73,8 +73,8 @@
                                     <numberOfTroika
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        granite:class="tabs__show-hide"
                                         fieldDescription="Choose the number of troika"
-                                        granite:class="cq-dialog-select-showhide"
                                         fieldLabel="Number Of Troika"
                                         name="./numberOfTroika">
                                         <items jcr:primaryType="nt:unstructured">
@@ -105,6 +105,8 @@
                         jcr:title="Troika Section1"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
+                        <granite:data jcr:primaryType="nt:unstructured"
+                              dep-value="1,2,3"/>
                         <items jcr:primaryType="nt:unstructured">
                             <column
                                 jcr:primaryType="nt:unstructured"
@@ -178,9 +180,10 @@
                     <troikaSection2
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Troika Section2"
-                        granite:class="targetURL"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
+                        <granite:data jcr:primaryType="nt:unstructured"
+                              dep-value="2,3"/>
                         <items jcr:primaryType="nt:unstructured">
                             <column
                                 jcr:primaryType="nt:unstructured"
@@ -253,9 +256,12 @@
                     </troikaSection2>
                     <troikaSection3
                         jcr:primaryType="nt:unstructured"
+                        granite:class="targetURL"
                         jcr:title="Troika Section3"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
+                        <granite:data jcr:primaryType="nt:unstructured"
+                              dep-value="3"/>
                         <items jcr:primaryType="nt:unstructured">
                             <column
                                 jcr:primaryType="nt:unstructured"
@@ -331,3 +337,4 @@
         </items>
     </content>
 </jcr:root>
+
