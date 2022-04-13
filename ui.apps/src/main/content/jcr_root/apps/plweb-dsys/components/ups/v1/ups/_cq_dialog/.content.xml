@@ -2,7 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Ups"
-    sling:resourceType="cq/gui/components/authoring/dialog">
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -18,251 +19,290 @@
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
-                            <column
+                            <columns
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <title
+                                    <column
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldLabel="Enter Title"
-                                        name="./title"/>
-                                    <description
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldLabel="Enter description"
-                                        name="./description"/>
-                                    <alignments
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Select text alignments"
-                                        name="./alignments">
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <left
+                                            <title
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Left"
-                                                value="left"/>
-                                            <center
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Title"
+                                                name="./title"/>
+                                            <description
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Center"
-                                                value="center"/>
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Description"
+                                                name="./description"/>
+                                            <alignments
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Text Alignments"
+                                                name="./alignments">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <left
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Left"
+                                                        value="left"/>
+                                                    <center
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Center"
+                                                        value="center"/>
+                                                </items>
+                                            </alignments>
+                                            <numberOfSection
+                                                granite:class="ups-show-hide-tabs"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                emptyOption="{Boolean}true"
+                                                fieldDescription="Choose the number of sections"
+                                                fieldLabel="Number Of Sections"
+                                                name="./numberOfSections">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <one
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="One"
+                                                        value="1"/>
+                                                    <two
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Two"
+                                                        value="2"/>
+                                                    <three
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Three"
+                                                        value="3"/>
+                                                    <four
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Four"
+                                                        value="4"/>
+                                                </items>
+                                            </numberOfSection>
                                         </items>
-                                    </alignments>
-                                    <numberOfSection
-                                        granite:class="ups-show-hide-tabs"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        emptyOption="{Boolean}true"
-                                        fieldDescription="Choose the number of sections"
-                                        fieldLabel="Number Of Sections"
-                                        name="./numberOfSections">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <one
-                                                jcr:primaryType="nt:unstructured"
-                                                text="One"
-                                                value="1"/>
-                                            <two
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Two"
-                                                value="2"/>
-                                            <three
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Three"
-                                                value="3"/>
-                                            <four
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Four"
-                                                value="4"/>
-                                        </items>
-                                    </numberOfSection>
+                                    </column>
                                 </items>
-                            </column>
+                            </columns>
                         </items>
                     </general>
-                    <section1
+                    <sectionOne
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Section1"
+                        jcr:title="Section One"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
-                            <column
+                            <columns
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <section1Image
+                                    <column
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
-                                        allowUpload="{Boolean}false"
-                                        autoStart="{Boolean}false"
-                                        class="cq-droptarget"
-                                        fieldLabel="Image"
-                                        fileNameParameter="./section1img"
-                                        mimeTypes="[image]"
-                                        multiple="{Boolean}false"
-                                        name="./section1image"
-                                        title="Upload Image Asset"
-                                        uploadUrl="${suffix.path}"
-                                        useHTML5="{Boolean}true"/>
-                                    <section1Header
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter section1 header text"
-                                        fieldLabel="Section1 Header"
-                                        name="./section1header"/>
-                                    <section1Description
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter section1 description text"
-                                        fieldLabel="Section1 Description"
-                                        name="./section1description"/>
-                                    <section1SuperScript
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Please enter superscript for description."
-                                        fieldLabel="Section1 Superscript"
-                                        name="./section1SuperScript"/>
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <sectionOneImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Image"
+                                                fileNameParameter="./sectionOneImg"
+												fileReferenceParameter="./sectionOneImgReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./sectionOneImage"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <sectionOneHeader
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter section One header text"
+                                                fieldLabel="Section One Header"
+                                                name="./sectionOneHeader"/>
+                                            <sectionOneDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter section One description text"
+                                                fieldLabel="Section One Description"
+                                                name="./sectionOneDescription"/>
+                                            <sectionOneSuperScript
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Please enter superscript for description."
+                                                fieldLabel="Section One Superscript"
+                                                name="./sectionOneSuperScript"/>
+                                        </items>
+                                    </column>
                                 </items>
-                            </column>
+                            </columns>
                         </items>
-                    </section1>
-                    <section2
+                    </sectionOne>
+                    <sectionTwo
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Section2"
+                        jcr:title="Section Two"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
-                            <column
+                            <columns
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <section2Image
+                                    <column
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
-                                        allowUpload="{Boolean}false"
-                                        autoStart="{Boolean}false"
-                                        class="cq-droptarget"
-                                        fieldLabel="Image"
-                                        fileNameParameter="./section2img"
-                                        mimeTypes="[image]"
-                                        multiple="{Boolean}false"
-                                        name="./section2image"
-                                        title="Upload Image Asset"
-                                        uploadUrl="${suffix.path}"
-                                        useHTML5="{Boolean}true"/>
-                                    <section2Header
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter section2 header text"
-                                        fieldLabel="Section2 Header"
-                                        name="./section2header"/>
-                                    <section2Description
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter section2 description text"
-                                        fieldLabel="Section2 Description"
-                                        name="./section2description"/>
-                                    <section2SuperScript
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Please enter superscript for description."
-                                        fieldLabel="Section2 Superscript"
-                                        name="./section2SuperScript"/>
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <sectionTwoImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Image"
+                                                fileNameParameter="./sectionTwoImg"
+												fileReferenceParameter="./sectionTwoImgReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./sectionTwoImage"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <sectionTwoHeader
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter section Two header text"
+                                                fieldLabel="Section Two Header"
+                                                name="./sectionTwoHeader"/>
+                                            <sectionTwoDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter section Two description text"
+                                                fieldLabel="Section Two Description"
+                                                name="./sectionTwoDescription"/>
+                                            <sectionTwoSuperScript
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Please enter superscript for description."
+                                                fieldLabel="Section Two Superscript"
+                                                name="./sectionTwoSuperScript"/>
+                                        </items>
+                                    </column>
                                 </items>
-                            </column>
+                            </columns>
                         </items>
-                    </section2>
-                    <section3
+                    </sectionTwo>
+                    <sectionThree
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Section3"
+                        jcr:title="Section Three"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
-                            <column
+                            <columns
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <section3Image
+                                    <column
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
-                                        allowUpload="{Boolean}false"
-                                        autoStart="{Boolean}false"
-                                        class="cq-droptarget"
-                                        fieldLabel="Image"
-                                        fileNameParameter="./section3img"
-                                        mimeTypes="[image]"
-                                        multiple="{Boolean}false"
-                                        name="./section3image"
-                                        title="Upload Image Asset"
-                                        uploadUrl="${suffix.path}"
-                                        useHTML5="{Boolean}true"/>
-                                    <section3Header
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter section3 header text"
-                                        fieldLabel="Section3 Header"
-                                        name="./section3header"/>
-                                    <section3Description
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter section3 description text"
-                                        fieldLabel="Section3 Description"
-                                        name="./section3description"/>
-                                    <section3SuperScript
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Please enter superscript for description."
-                                        fieldLabel="Section3 Superscript"
-                                        name="./section3SuperScript"/>
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <sectionThreeImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Image"
+                                                fileNameParameter="./sectionThreeImg"
+												fileReferenceParameter="./sectionThreeImgReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./sectionThreeImage"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <sectionThreeHeader
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter section Three header text"
+                                                fieldLabel="Section Three Header"
+                                                name="./sectionThreeHeader"/>
+                                            <sectionThreeDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter section Three description text"
+                                                fieldLabel="Section Three Description"
+                                                name="./sectionThreeDescription"/>
+                                            <sectionThreeSuperScript
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Please enter superscript for description."
+                                                fieldLabel="Section Three Superscript"
+                                                name="./sectionThreeSuperScript"/>
+                                        </items>
+                                    </column>
                                 </items>
-                            </column>
+                            </columns>
                         </items>
-                    </section3>
-                    <section4
+                    </sectionThree>
+                    <sectionFour
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Section4"
+                        jcr:title="Section Four"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
-                            <column
+                            <columns
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <section4Image
+                                    <column
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
-                                        allowUpload="{Boolean}false"
-                                        autoStart="{Boolean}false"
-                                        class="cq-droptarget"
-                                        fieldLabel="Image"
-                                        fileNameParameter="./section4img"
-                                        mimeTypes="[image]"
-                                        multiple="{Boolean}false"
-                                        name="./section4image"
-                                        title="Upload Image Asset"
-                                        uploadUrl="${suffix.path}"
-                                        useHTML5="{Boolean}true"/>
-                                    <section4Header
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter section4 header text"
-                                        fieldLabel="Section4 Header"
-                                        name="./section4header"/>
-                                    <section4Description
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter section4 description text"
-                                        fieldLabel="Section4 Description"
-                                        name="./section4description"/>
-                                    <section4SuperScript
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Please enter superscript for description."
-                                        fieldLabel="Section4 Superscript"
-                                        name="./section4SuperScript"/>
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <sectionFourImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Image"
+                                                fileNameParameter="./sectionFourImg"
+												fileReferenceParameter="./sectionFourImgReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./sectionFourImage"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <sectionFourHeader
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter section Four header text"
+                                                fieldLabel="Section Four Header"
+                                                name="./sectionFourHeader"/>
+                                            <sectionFourDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter section Four description text"
+                                                fieldLabel="Section Four Description"
+                                                name="./sectionFourDescription"/>
+                                            <sectionFourSuperScript
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Please enter superscript for description."
+                                                fieldLabel="Section Four Superscript"
+                                                name="./sectionFourSuperScript"/>
+                                        </items>
+                                    </column>
                                 </items>
-                            </column>
+                            </columns>
                         </items>
-                    </section4>
+                    </sectionFour>
                 </items>
             </tabs>
         </items>
