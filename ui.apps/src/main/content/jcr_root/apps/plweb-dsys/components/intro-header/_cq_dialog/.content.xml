@@ -1,62 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root 
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Intro Header"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
+        granite:class="cmp-list--editor"
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-            <column
+            <tabs
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/container">
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
-                    <tabs
+                    <general
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/tabs"
-                        maximized="{Boolean}true">
+                        jcr:title="Desktop"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
-                            <listSettings
+                            <column
                                 jcr:primaryType="nt:unstructured"
-                                jcr:title="General"
-                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <column
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <bgColor
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Background Color"
-                                                name="./bgColor">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <transparent
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Transparent"
-                                                        value="transparent"/>
-                                                    <white
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="White"
-                                                        value="white"/>
-                                                    <light-grey
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Light Grey"
-                                                        value="light-grey"/>
-                                                    <dark-blue
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Dark Blue"
-                                                        value="dark-blue"/>
-                                                </items>
-                                            </bgColor>
-                                        </items>
-                                    </column>
+                                    
                                 </items>
-                            </listSettings>
+                            </column>
                         </items>
-                    </tabs>
+                    </general>
                 </items>
-            </column>
+            </tabs>
         </items>
     </content>
 </jcr:root>
