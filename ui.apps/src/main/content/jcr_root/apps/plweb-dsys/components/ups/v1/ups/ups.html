@@ -9,7 +9,10 @@ ${upsObj.title}<br>
 ${upsObj.description}<br>
 ${upsObj.alignments}<br>
 ${upsObj.numberOfSections}<br>
-${upsObj.sectionOneImgReference}<br>${upsObj.sectionOneHeader}<br>${upsObj.sectionOneDescription}<br>${upsObj.sectionOneSuperScript}<br>
-${upsObj.sectionTwoImgReference}<br>${upsObj.sectionTwoHeader}<br>${upsObj.sectionTwoDescription}<br>${upsObj.sectionTwoSuperScript}<br>
-${upsObj.sectionThreeImgReference}<br>${upsObj.sectionThreeHeader}<br>${upsObj.sectionThreeDescription}<br>${upsObj.sectionThreeSuperScript}<br>
-${upsObj.sectionFourImgReference}<br>${upsObj.sectionFourHeader}<br>${upsObj.sectionFourDescription}<br>${upsObj.sectionFourSuperScript}<br>
+
+<sly data-sly-list.sections="${upsObj.sections}">
+${sections.sectionImgReference}<br>
+${sections.sectionHeader}<br>
+${sections.sectionDescription @ context = 'html'}<br>
+${sections.sectionSuperScript}<br>
+</sly>

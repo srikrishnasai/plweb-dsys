@@ -1,11 +1,16 @@
 package pl.web.dsys.core.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
@@ -42,57 +47,21 @@ public class UpsModel {
 	@ValueMapValue
 	private String numberOfSections;
 
-	@ValueMapValue
-	private String sectionOneImgReference;
+	@ChildResource
+	private List<UpsSectionItems> sections;
 
-	@ValueMapValue
-	private String sectionTwoImgReference;
-
-	@ValueMapValue
-	private String sectionThreeImgReference;
-
-	@ValueMapValue
-	private String sectionFourImgReference;
-
-	@ValueMapValue
-	private String sectionOneHeader;
-
-	@ValueMapValue
-	private String sectionTwoHeader;
-
-	@ValueMapValue
-	private String sectionThreeHeader;
-
-	@ValueMapValue
-	private String sectionFourHeader;
-
-	@ValueMapValue
-	private String sectionOneDescription;
-
-	@ValueMapValue
-	private String sectionTwoDescription;
-
-	@ValueMapValue
-	private String sectionThreeDescription;
-
-	@ValueMapValue
-	private String sectionFourDescription;
-
-	@ValueMapValue
-	private String sectionOneSuperScript;
-
-	@ValueMapValue
-	private String sectionTwoSuperScript;
-
-	@ValueMapValue
-	private String sectionThreeSuperScript;
-
-	@ValueMapValue
-	private String sectionFourSuperScript;
+	int noOfSecs;
 
 	@PostConstruct
 	protected void init() {
 		log.debug("Inside Post Construct of Ups Model..");
+		if (StringUtils.isNotBlank(numberOfSections)) {
+			noOfSecs = Integer.parseInt(numberOfSections);
+			log.debug("No of sections ::{}", noOfSecs);
+			sections = sections.subList(0, noOfSecs);
+		} else {
+			sections = new ArrayList<UpsSectionItems>();
+		}
 	}
 
 	public String getTitle() {
@@ -111,68 +80,8 @@ public class UpsModel {
 		return numberOfSections;
 	}
 
-	public String getSectionOneImgReference() {
-		return sectionOneImgReference;
-	}
-
-	public String getSectionTwoImgReference() {
-		return sectionTwoImgReference;
-	}
-
-	public String getSectionThreeImgReference() {
-		return sectionThreeImgReference;
-	}
-
-	public String getSectionFourImgReference() {
-		return sectionFourImgReference;
-	}
-
-	public String getSectionOneHeader() {
-		return sectionOneHeader;
-	}
-
-	public String getSectionTwoHeader() {
-		return sectionTwoHeader;
-	}
-
-	public String getSectionThreeHeader() {
-		return sectionThreeHeader;
-	}
-
-	public String getSectionFourHeader() {
-		return sectionFourHeader;
-	}
-
-	public String getSectionOneDescription() {
-		return sectionOneDescription;
-	}
-
-	public String getSectionTwoDescription() {
-		return sectionTwoDescription;
-	}
-
-	public String getSectionThreeDescription() {
-		return sectionThreeDescription;
-	}
-
-	public String getSectionFourDescription() {
-		return sectionFourDescription;
-	}
-
-	public String getSectionOneSuperScript() {
-		return sectionOneSuperScript;
-	}
-
-	public String getSectionTwoSuperScript() {
-		return sectionTwoSuperScript;
-	}
-
-	public String getSectionThreeSuperScript() {
-		return sectionThreeSuperScript;
-	}
-
-	public String getSectionFourSuperScript() {
-		return sectionFourSuperScript;
+	public List<UpsSectionItems> getSections() {
+		return sections;
 	}
 
 }

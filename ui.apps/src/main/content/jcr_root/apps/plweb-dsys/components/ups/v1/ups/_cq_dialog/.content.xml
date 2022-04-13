@@ -118,11 +118,11 @@
                                                 autoStart="{Boolean}false"
                                                 class="cq-droptarget"
                                                 fieldLabel="Image"
-                                                fileNameParameter="./sectionOneImg"
-                                                fileReferenceParameter="./sectionOneImgReference"
+                                                fileNameParameter="./sections/item0/sectionImg"
+                                                fileReferenceParameter="./sections/item0/sectionImgReference"
                                                 mimeTypes="[image]"
                                                 multiple="{Boolean}false"
-                                                name="./sectionOneImage"
+                                                name="./sections/item0/sectionImage"
                                                 title="Upload Image Asset"
                                                 uploadUrl="${suffix.path}"
                                                 useHTML5="{Boolean}true"/>
@@ -131,13 +131,13 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Enter section One header text"
                                                 fieldLabel="Section One Header"
-                                                name="./sectionOneHeader"/>
+                                                name="./sections/item0/sectionHeader"/>
                                             <sectionOneDescription
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                 fieldDescription="Enter section One description text"
                                                 fieldLabel="Section One Description"
-                                                name="./sectionOneDescription"
+                                                name="./sections/item0/sectionDescription"
                                                 useFixedInlineToolbar="{Boolean}true">
                                                 <rtePlugins
                                                     jcr:primaryType="nt:unstructured"
@@ -151,7 +151,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Please enter superscript for description."
                                                 fieldLabel="Section One Superscript"
-                                                name="./sectionOneSuperScript"/>
+                                                name="./sections/item0/sectionSuperScript"/>
                                         </items>
                                     </column>
                                 </items>
@@ -180,11 +180,11 @@
                                                 autoStart="{Boolean}false"
                                                 class="cq-droptarget"
                                                 fieldLabel="Image"
-                                                fileNameParameter="./sectionTwoImg"
-                                                fileReferenceParameter="./sectionTwoImgReference"
+                                                fileNameParameter="./sections/item1/sectionImg"
+                                                fileReferenceParameter="./sections/item1/sectionImgReference"
                                                 mimeTypes="[image]"
                                                 multiple="{Boolean}false"
-                                                name="./sectionTwoImage"
+                                                name="./sections/item1/sectionImage"
                                                 title="Upload Image Asset"
                                                 uploadUrl="${suffix.path}"
                                                 useHTML5="{Boolean}true"/>
@@ -193,13 +193,13 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Enter section Two header text"
                                                 fieldLabel="Section Two Header"
-                                                name="./sectionTwoHeader"/>
+                                                name="./sections/item1/sectionHeader"/>
                                             <sectionTwoDescription
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                 fieldDescription="Enter section Two description text"
                                                 fieldLabel="Section Two Description"
-                                                name="./sectionTwoDescription"
+                                                name="./sections/item1/sectionDescription"
                                                 useFixedInlineToolbar="{Boolean}true">
                                                 <rtePlugins
                                                     jcr:primaryType="nt:unstructured"
@@ -213,7 +213,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Please enter superscript for description."
                                                 fieldLabel="Section Two Superscript"
-                                                name="./sectionTwoSuperScript"/>
+                                                name="./sections/item1/sectionSuperScript"/>
                                         </items>
                                     </column>
                                 </items>
@@ -242,11 +242,11 @@
                                                 autoStart="{Boolean}false"
                                                 class="cq-droptarget"
                                                 fieldLabel="Image"
-                                                fileNameParameter="./sectionThreeImg"
-                                                fileReferenceParameter="./sectionThreeImgReference"
+                                                fileNameParameter="./sections/item2/sectionImg"
+                                                fileReferenceParameter="./sections/item2/sectionImgReference"
                                                 mimeTypes="[image]"
                                                 multiple="{Boolean}false"
-                                                name="./sectionThreeImage"
+                                                name="./sections/item2/sectionImage"
                                                 title="Upload Image Asset"
                                                 uploadUrl="${suffix.path}"
                                                 useHTML5="{Boolean}true"/>
@@ -255,13 +255,13 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Enter section Three header text"
                                                 fieldLabel="Section Three Header"
-                                                name="./sectionThreeHeader"/>
+                                                name="./sections/item2/sectionHeader"/>
                                             <sectionThreeDescription
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                 fieldDescription="Enter section Three description text"
                                                 fieldLabel="Section Three Description"
-                                                name="./sectionThreeDescription"
+                                                name="./sections/item2/sectionDescription"
                                                 useFixedInlineToolbar="{Boolean}true">
                                                 <rtePlugins
                                                     jcr:primaryType="nt:unstructured"
@@ -275,7 +275,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Please enter superscript for description."
                                                 fieldLabel="Section Three Superscript"
-                                                name="./sectionThreeSuperScript"/>
+                                                name="./sections/item2/sectionSuperScript"/>
                                         </items>
                                     </column>
                                 </items>
@@ -304,11 +304,11 @@
                                                 autoStart="{Boolean}false"
                                                 class="cq-droptarget"
                                                 fieldLabel="Image"
-                                                fileNameParameter="./sectionFourImg"
-                                                fileReferenceParameter="./sectionFourImgReference"
+                                                fileNameParameter="./sections/item3/sectionImg"
+                                                fileReferenceParameter="./sections/item3/sectionImgReference"
                                                 mimeTypes="[image]"
                                                 multiple="{Boolean}false"
-                                                name="./sectionFourImage"
+                                                name="./sections/item3/sectionImage"
                                                 title="Upload Image Asset"
                                                 uploadUrl="${suffix.path}"
                                                 useHTML5="{Boolean}true"/>
@@ -317,13 +317,13 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Enter section Four header text"
                                                 fieldLabel="Section Four Header"
-                                                name="./sectionFourHeader"/>
+                                                name="./sections/item3/sectionHeader"/>
                                             <sectionFourDescription
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                 fieldDescription="Enter section Four description text"
                                                 fieldLabel="Section Four Description"
-                                                name="./sectionFourDescription"
+                                                name="./sections/item3/sectionDescription"
                                                 useFixedInlineToolbar="{Boolean}true">
                                                 <rtePlugins
                                                     jcr:primaryType="nt:unstructured"
@@ -337,7 +337,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Please enter superscript for description."
                                                 fieldLabel="Section Four Superscript"
-                                                name="./sectionFourSuperScript"/>
+                                                name="./sections/item3/sectionSuperScript"/>
                                         </items>
                                     </column>
                                 </items>
