@@ -65,8 +65,8 @@
         <section class="footer__other-links">
             <span class="footer__copyright ${!model5.childResource ? 'footer--occupy-full-width' : ''}">
                 ${properties.copyright} </span>
-            <div class="footer__left-links">
-                <ul class="footer__mobile-bottom-links" data-sly-test="${model5.childResource}"
+            <div class="footer__bottom-links-container">
+                <ul class="footer__mobile-bottom-links ${model4.childResource.listChildren ?'footer--display-list' : ''}" data-sly-test="${model5.childResource}"
                     data-sly-list="${model5.childResource.listChildren}">
                     <li data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
                         <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}">
@@ -74,9 +74,7 @@
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div>
-                <ul class="footer__mobile-bottom-links" data-sly-test="${model4.childResource}"
+                <ul class="footer__mobile-bottom-links ${model5.childResource.listChildren ?'footer--display-list' : ''}" data-sly-test="${model4.childResource}"
                     data-sly-list="${model4.childResource.listChildren}">
                     <li data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
                         <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}">

@@ -67,7 +67,7 @@
 	});
 
     .modifier(occupy-full-width,{
-		flex: 1;
+		flex-grow: 1;
     });
 
     .element(drop-down,{
@@ -89,6 +89,11 @@
 
     .element(copyright,{
         flex-shrink: 0;
+        margin-right: 1rem;
+    });
+
+    .element(bottom-links-container,{
+        display: flex;
     });
 
 	@media @mediaXS {
@@ -152,6 +157,7 @@
 
         .element(mobile-bottom-links,{
             justify-content: space-between;
+            row-gap: @4;
         });
 
         .modifier(mobile-nav-header-container,{
@@ -163,9 +169,9 @@
             flex: 1;
             margin-top:  0rem;
         });
-
-        .element(left-links,{
-		    margin: 0rem 
+        
+        .modifier(display-list,{
+            flex-direction: column;
         });
 
     }
