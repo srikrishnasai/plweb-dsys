@@ -91,10 +91,6 @@
                                                 text="Three"
                                                 value="3"/>
                                         </items>
-                                        <granite:data
-                                            jcr:primaryType="nt:unstructured"
-                                            cq-dialog-select-showhide-falsy1="2"
-                                            cq-dialog-select-showhide-target1=".targetURL"/>
                                     </numberOfTroika>
                                 </items>
                             </column>
@@ -163,11 +159,12 @@
                                                 allowUpload="{Boolean}false"
                                                 autoStart="{Boolean}false"
                                                 class="cq-droptarget"
-                                                fieldLabel="Image"
-                                                fileNameParameter="./section1/fileName"
+                                                fieldLabel="Troika Image"
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./section1Image"
+                                                name="./file"
                                                 mimeTypes="[image]"
-                                                multiple="{Boolean}false"
-                                                name="./section1/image"
+                                                multiple="{Boolean}false"  
                                                 title="Upload Image Asset"
                                                 uploadUrl="${suffix.path}"
                                                 useHTML5="{Boolean}true"/>
@@ -240,11 +237,12 @@
                                                 allowUpload="{Boolean}false"
                                                 autoStart="{Boolean}false"
                                                 class="cq-droptarget"
-                                                fieldLabel="Image"
-                                                fileNameParameter="./image"
+                                                fieldLabel="Troika Image"
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./section2Image"
+                                                name="./file"
                                                 mimeTypes="[image]"
-                                                multiple="{Boolean}false"
-                                                name="./traicoImage2"
+                                                multiple="{Boolean}false"  
                                                 title="Upload Image Asset"
                                                 uploadUrl="${suffix.path}"
                                                 useHTML5="{Boolean}true"/>
@@ -256,7 +254,6 @@
                     </troikaSection2>
                     <troikaSection3
                         jcr:primaryType="nt:unstructured"
-                        granite:class="targetURL"
                         jcr:title="Troika Section3"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
@@ -318,11 +315,12 @@
                                                 allowUpload="{Boolean}false"
                                                 autoStart="{Boolean}false"
                                                 class="cq-droptarget"
-                                                fieldLabel="Image"
-                                                fileNameParameter="./image"
+                                                fieldLabel="Troika Image"
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./section3Image"
+                                                name="./file"
                                                 mimeTypes="[image]"
-                                                multiple="{Boolean}false"
-                                                name="./traicoImage3"
+                                                multiple="{Boolean}false"  
                                                 title="Upload Image Asset"
                                                 uploadUrl="${suffix.path}"
                                                 useHTML5="{Boolean}true"/>
