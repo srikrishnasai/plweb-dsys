@@ -4,15 +4,21 @@
     data-sly-call="${clientlib.all @ categories='plweb-dsys.ups'}" />
 <sly data-sly-call="${template.placeholder @ isEmpty=!upsObj.title, classAppend='cmp-ups'}"></sly>
 
-
-${upsObj.title}<br>
-${upsObj.description}<br>
-${upsObj.alignments}<br>
-${upsObj.numberOfSections}<br>
-
-<sly data-sly-list.sections="${upsObj.sections}">
-${sections.sectionImgReference}<br>
-${sections.sectionHeader}<br>
-${sections.sectionDescription @ context = 'html'}<br>
-${sections.sectionSuperScript}<br>
-</sly>
+<section id="ups_component"
+    class="${(upsObj.alignments == 'center' || upsObj.numberOfSections == '1' || upsObj.numberOfSections == '2') ? 'ups--center' : ''}">
+    <div class="ups__header">
+        <h2 data-sly-test="${upsObj.title}" class="ups__title">${upsObj.title}</h2>
+        <div data-sly-test="${upsObj.description}" class="ups__sub-heading">
+            ${upsObj.description @ context = 'html'}
+        </div>
+    </div>
+    <ul class="ups__main" data-sly-list.sections="${upsObj.sections}">
+        <li class="ups__header">
+            <img data-sly-test="${sections.sectionImgReference}" alt="Icon" class="ups__icon"
+                src="${sections.sectionImgReference}">
+            <div class="ups__border-for-no-img" data-sly-test="${!sections.sectionImgReference}"></div>
+            <h3 class="ups__internal-title"> ${sections.sectionHeader}</h3>
+            <div class="ups__internal-subtitle">${sections.sectionDescription @ context = 'html'}</div>
+        </li>
+    </ul>
+</section>
