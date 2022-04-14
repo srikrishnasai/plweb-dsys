@@ -84,27 +84,34 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/container"
                                             name="./multiFieldItems1">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <section1LinkName
+                                                <linkConfig
                                                     jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                    fieldDescription="Please enter link name"
-                                                    fieldLabel="Link Name"
-                                                    name="./linkName"/>
-                                                <section1LinkTarget
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                    fieldDescription="Select path of the target page"
-                                                    fieldLabel="Target Link"
-                                                    name="./linkTarget"
-                                                    rootPath="/content"/>
-                                                <linkTabTarget
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                    checked="{Boolean}false"
-                                                    fieldDescription="Check this checkbox to open the link in new tab."
-                                                    name="./linkTabTarget"
-                                                    text="Open Link in New Tab"
-                                                    value="true"/>
+                                                    jcr:title="Add link"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <section1LinkName
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Please enter link name"
+                                                            fieldLabel="Link Name"
+                                                            name="./linkName"/>
+                                                        <section1LinkTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                            fieldDescription="Select path of the target page"
+                                                            fieldLabel="Target Link"
+                                                            name="./linkTarget"
+                                                            rootPath="/content"/>
+                                                        <linkTabTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="{Boolean}false"
+                                                            fieldDescription="Check this checkbox to open the link in new tab."
+                                                            name="./linkTabTarget"
+                                                            text="Open Link in New Tab"
+                                                            value="true"/>
+                                                    </items>
+                                                </linkConfig>
                                             </items>
                                         </field>
                                     </section1Links>
@@ -140,27 +147,34 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/container"
                                             name="./multiFieldItems2">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <section2LinkName
+                                                <linkConfig
                                                     jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                    fieldDescription="Please enter link name"
-                                                    fieldLabel="Link Name"
-                                                    name="./linkName"/>
-                                                <section2LinkTarget
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                    fieldDescription="Select path of the target page"
-                                                    fieldLabel="Target Link"
-                                                    name="./linkTarget"
-                                                    rootPath="/content"/>
-                                                <linkTabTarget
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                    checked="{Boolean}false"
-                                                    fieldDescription="Check this checkbox to open the link in new tab."
-                                                    name="./linkTabTarget"
-                                                    text="Open Link in New Tab"
-                                                    value="true"/>
+                                                    jcr:title="Add link"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <section2LinkName
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Please enter link name"
+                                                            fieldLabel="Link Name"
+                                                            name="./linkName"/>
+                                                        <section2LinkTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                            fieldDescription="Select path of the target page"
+                                                            fieldLabel="Target Link"
+                                                            name="./linkTarget"
+                                                            rootPath="/content"/>
+                                                        <linkTabTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="{Boolean}false"
+                                                            fieldDescription="Check this checkbox to open the link in new tab."
+                                                            name="./linkTabTarget"
+                                                            text="Open Link in New Tab"
+                                                            value="true"/>
+                                                    </items>
+                                                </linkConfig>
                                             </items>
                                         </field>
                                     </section2Links>
@@ -196,27 +210,34 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/container"
                                             name="./multiFieldItems3">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <section3LinkName
+                                                <linkConfig
                                                     jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                    fieldDescription="Please enter link name"
-                                                    fieldLabel="Link Name"
-                                                    name="./linkName"/>
-                                                <section3LinkTarget
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                    fieldDescription="Select path of the target page"
-                                                    fieldLabel="Target Link"
-                                                    name="./linkTarget"
-                                                    rootPath="/content"/>
-                                                <linkTabTarget
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                    checked="{Boolean}false"
-                                                    fieldDescription="Check this checkbox to open the link in new tab."
-                                                    name="./linkTabTarget"
-                                                    text="Open Link in New Tab"
-                                                    value="true"/>
+                                                    jcr:title="Add link"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <section3LinkName
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Please enter link name"
+                                                            fieldLabel="Link Name"
+                                                            name="./linkName"/>
+                                                        <section3LinkTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                            fieldDescription="Select path of the target page"
+                                                            fieldLabel="Target Link"
+                                                            name="./linkTarget"
+                                                            rootPath="/content"/>
+                                                        <linkTabTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="{Boolean}false"
+                                                            fieldDescription="Check this checkbox to open the link in new tab."
+                                                            name="./linkTabTarget"
+                                                            text="Open Link in New Tab"
+                                                            value="true"/>
+                                                    </items>
+                                                </linkConfig>
                                             </items>
                                         </field>
                                     </section3Links>
@@ -252,27 +273,34 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/container"
                                             name="./leftBottomMultiFieldItems">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <footerLinkName
+                                                <linkConfig
                                                     jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                    fieldDescription="Please enter link name"
-                                                    fieldLabel="Footer Link Name"
-                                                    name="./linkName"/>
-                                                <footerLinkTarget
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                    fieldDescription="Select path of the target page"
-                                                    fieldLabel="Target Link"
-                                                    name="./linkTarget"
-                                                    rootPath="/content"/>
-                                                <linkTabTarget
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                    checked="{Boolean}false"
-                                                    fieldDescription="Check this checkbox to open the link in new tab."
-                                                    name="./linkTabTarget"
-                                                    text="Open Link in New Tab"
-                                                    value="true"/>
+                                                    jcr:title="Add link"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <footerLinkName
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Please enter link name"
+                                                            fieldLabel="Footer Link Name"
+                                                            name="./linkName"/>
+                                                        <footerLinkTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                            fieldDescription="Select path of the target page"
+                                                            fieldLabel="Target Link"
+                                                            name="./linkTarget"
+                                                            rootPath="/content"/>
+                                                        <linkTabTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="{Boolean}false"
+                                                            fieldDescription="Check this checkbox to open the link in new tab."
+                                                            name="./linkTabTarget"
+                                                            text="Open Link in New Tab"
+                                                            value="true"/>
+                                                    </items>
+                                                </linkConfig>
                                             </items>
                                         </field>
                                     </footerLeftBottomLinks>
@@ -288,27 +316,34 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/container"
                                             name="./rightBottomMultiFieldItems">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <footerLinkName
+                                                <linkConfig
                                                     jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                    fieldDescription="Please enter link name"
-                                                    fieldLabel="Footer Link Name"
-                                                    name="./linkName"/>
-                                                <footerLinkTarget
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                    fieldDescription="Select path of the target page"
-                                                    fieldLabel="Target Link"
-                                                    name="./linkTarget"
-                                                    rootPath="/content"/>
-                                                <linkTabTarget
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                    checked="{Boolean}false"
-                                                    fieldDescription="Check this checkbox to open the link in new tab."
-                                                    name="./linkTabTarget"
-                                                    text="Open Link in New Tab"
-                                                    value="true"/>
+                                                    jcr:title="Add link"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <footerLinkName
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Please enter link name"
+                                                            fieldLabel="Footer Link Name"
+                                                            name="./linkName"/>
+                                                        <footerLinkTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                            fieldDescription="Select path of the target page"
+                                                            fieldLabel="Target Link"
+                                                            name="./linkTarget"
+                                                            rootPath="/content"/>
+                                                        <linkTabTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="{Boolean}false"
+                                                            fieldDescription="Check this checkbox to open the link in new tab."
+                                                            name="./linkTabTarget"
+                                                            text="Open Link in New Tab"
+                                                            value="true"/>
+                                                    </items>
+                                                </linkConfig>
                                             </items>
                                         </field>
                                     </footerRightBottomLinks>
