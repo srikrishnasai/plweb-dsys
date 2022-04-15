@@ -2,7 +2,7 @@
 @import "/apps/plweb-dsys/clientlibs/clientlib-site/css/less-imports.less";
 
 @name-teal: rgba(16,129,136,1);
-@name-blue : rgba(0, 94, 173, 1);
+@primary-text-color : @blue600;
 
 .person-card {
 
@@ -27,7 +27,7 @@
         font-size: 16px;
         .fw-700;
         line-height: 24px;
-        color: @name-blue;
+        color: @neutral1000;
         .openSans;
     });
     .element(compact-position,{
@@ -53,7 +53,7 @@
     });
     .element(link,{
         text-decoration: none;
-        color: @name-blue;
+        color: @primary-text-color;
         font-size: 12.8px;
         line-height: 16px;
         margin-right: @32;
@@ -77,7 +77,7 @@
         margin-right: @48;
     });
     .element(bio-name,{
-        color: @name-blue;
+        color: @neutral1000;
         font-size: 25.01px;
         .montserrat;
         .fw-700;
@@ -105,7 +105,9 @@
     });
 
     .modifier(teal-color,{
-        color: @name-teal
+       a{
+            color: @name-teal;
+        }
     });
 
     .modifier(black-color,{

@@ -51,10 +51,6 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Blue (#005EAD)"
                                                 value="blueColor"/>
-                                            <black
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Black (neutral 1000)"
-                                                value="blackColor"/>
                                             <teal
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Teal Color (#108188)"
@@ -106,17 +102,17 @@
                                         </items>
                                     </logo>
                                     <name
-                                        required="{Boolean}true"
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldLabel="Name"
-                                        name="./name"/>
+                                        name="./name"
+                                        required="{Boolean}true"/>
                                     <designation
-                                        required="{Boolean}true"
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldLabel="Designation"
-                                        name="./position"/>
+                                        name="./position"
+                                        required="{Boolean}true"/>
                                     <description
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/container"
