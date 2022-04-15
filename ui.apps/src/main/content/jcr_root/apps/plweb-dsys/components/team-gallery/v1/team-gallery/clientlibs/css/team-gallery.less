@@ -2,7 +2,7 @@
 @import "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 
 @name-teal: rgba(16,129,136,1);
-@name-blue : rgba(0, 94, 173, 1);
+@primary-text-color : @blue600;;
 
 .team-gallery {
 
@@ -50,7 +50,11 @@
         line-height: 28px;
         .ta-center;
         .montserrat;
-        color: @name-blue
+        color: @neutral1000;
+        a{
+            text-decoration: none;
+            color: @primary-text-color;
+        }
     });
     .element(position,{
         line-height: 24px;
@@ -58,7 +62,9 @@
         .openSans;
     });
     .modifier(teal-color,{
-        color: @name-teal;
+        a{
+            color: @name-teal;
+        }
     });
 
     @media @mediaXS {

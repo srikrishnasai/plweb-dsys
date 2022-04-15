@@ -8,13 +8,16 @@
 <h2 class="team-gallery__title">${properties.title}</h2>
 <div class="team-gallery__sub-heading">${properties.desc}</div>
 
-<ul class="team-gallery__main" data-sly-test="${model1.childResource}"
+<ul class="team-gallery__main ${properties.color == 'tealColor' && 'team-gallery--teal-color'}" data-sly-test="${model1.childResource}"
     data-sly-list="${model1.childResource.listChildren}">
     <li class="team-gallery__container">
         <img class="team-gallery__avatar" src="${item.fileReference}" alt="Person's Image"  />
         <div>
-            <h4 class="team-gallery__name ${properties.color == 'tealColor' && 'team-gallery--teal-color'}">
-                ${item.employeeName} </h4>
+            <h4 class="team-gallery__name">
+                <a data-sly-test="${item.linkTarget}" href="${item.linkTarget}"
+                target="${item.openInNewTab ? '_blank' : ''}"> ${item.employeeName} </a>
+            <span data-sly-test="${!item.linkTarget}">  ${item.employeeName}</span>
+                </h4>
             <div class="team-gallery__position">${item.position}</div>
             <div class="team-gallery__position">${item.description}</div>
         </div>
