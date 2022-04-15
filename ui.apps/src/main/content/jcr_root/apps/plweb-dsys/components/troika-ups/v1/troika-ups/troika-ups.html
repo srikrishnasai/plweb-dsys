@@ -1,0 +1,18 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html" 
+      data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-use.objRef="pl.web.dsys.core.models.TroikaUpsModel"
+      data-sly-call="${clientlib.all @ categories='plweb-dsys.troika-ups'}">
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !objRef.cardTitle, classAppend='cmp-text'}"></sly>
+
+<div>Title: ${objRef.cardTitle}</div>
+<div>Descriptions: ${objRef.cardDescription}</div>
+<div>Webpage: ${objRef.cardWebpageTitle}</div>
+<div>Webpage Link: ${objRef.cardWebpageTarget}</div>
+<div>Open New Tab?: ${objRef.cardWebpageTabTarget}</div>
+<div>Alignments ${objRef.alignments}</div>
+<div>Disable Image? ${objRef.disableImage}</div>
+<div>Image: ${objRef.cardImage}</div>
+
+
+
