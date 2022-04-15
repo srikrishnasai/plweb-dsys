@@ -1,31 +1,27 @@
-<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html" data-sly-test.text="${properties.richText}"
-     id="${properties.rteId}" class="plweb-richtext">
-    <p class="cmp-text__paragraph"
-       data-sly-unwrap="${properties.textIsRich}">${properties.richText @ context = properties.textIsRich ? 'html' : 'text'}</p>
-</div>
-<sly data-sly-call="${templates.placeholder @ isEmpty = !text, classAppend='cmp-text'}"></sly>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-use.troikaObj="pl.web.dsys.core.models.TroikaModel"
+    data-sly-call="${clientlib.all @ categories='plweb-dsys.troika'}" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!troikaObj.title, classAppend='cmp-troika'}"></sly>
 
-<div>${properties.generalDescription}</div>
-<div>${properties.generalTitle}</div>
-<div>${properties.numberOfTroika}</div>
-<div>${properties.troikaPosition}</div>
-<div>${properties.disableImage}</div>
+<div>-----------Troika------------</div>
+${troikaObj.generalTitle}<br>
+${troikaObj.generalDescription}<br>
+${troikaObj.alignments}<br>
+${troikaObj.numberOfSections}<br>
+Diable Image?  ${troikaObj.disableImage}<br>
 
-<div>${properties.section1Description}</div>
-<div>${properties.section1Title}</div>
-<div>${properties.section1WebpageTitle}</div>
-<div>${properties.section1webpageTarget}</div>
-<div>${properties.section1webpageTabTarget}</div>
+<sly data-sly-list.sections="${troikaObj.sections}">
+${sections.sectionImgReference}<br>
+${sections.sectionTitle}<br>
+${sections.sectionDescription @ context = 'html'}<br>
+${sections.webpageTitle}<br>
+${sections.webpageTarget}<br>
+Open New Tab? ${sections.webpageTabTarget}<br>
+</sly>
+<div>-----------Troika End------------</div>
 
-<div>${properties.section2Description}</div>
-<div>${properties.section2Title}</div>
-<div>${properties.section2WebpageTitle}</div>
-<div>${properties.section2webpageTarget}</div>
-<div>${properties.section2webpageTabTarget}</div>
 
-<div>${properties.section3Description}</div>
-<div>${properties.section3Title}</div>
-<div>${properties.section3WebpageTitle}</div>
-<div>${properties.section3webpageTarget}</div>
-<div>${properties.section3webpageTabTarget}</div>
+
+
 

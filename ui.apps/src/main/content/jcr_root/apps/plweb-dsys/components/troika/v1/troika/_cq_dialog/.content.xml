@@ -53,12 +53,12 @@
                                             jcr:primaryType="nt:unstructured"
                                             cq-dialog-checkbox-showhide-target=".disable-animation-showhide-target"/>
                                     </disableImage>
-                                    <troikaPosition
+                                    <alignments
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                         fieldDescription="Choose the position of the troika"
-                                        fieldLabel="Troika Position"
-                                        name="./troikaPosition">
+                                        fieldLabel="Text Alignments"
+                                        name="./alignments">
                                         <items jcr:primaryType="nt:unstructured">
                                             <left
                                                 jcr:primaryType="nt:unstructured"
@@ -69,14 +69,14 @@
                                                 text="Center"
                                                 value="center"/>
                                         </items>
-                                    </troikaPosition>
-                                    <numberOfTroika
+                                    </alignments>
+                                    <numberOfSections
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                         granite:class="tabs__show-hide"
                                         fieldDescription="Choose the number of troika"
-                                        fieldLabel="Number Of Troika"
-                                        name="./numberOfTroika">
+                                        fieldLabel="Number Of Sections"
+                                        name="./numberOfSections">
                                         <items jcr:primaryType="nt:unstructured">
                                             <one
                                                 jcr:primaryType="nt:unstructured"
@@ -91,7 +91,7 @@
                                                 text="Three"
                                                 value="3"/>
                                         </items>
-                                    </numberOfTroika>
+                                    </numberOfSections>
                                 </items>
                             </column>
                         </items>
@@ -108,16 +108,40 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
+                                    <section1Image
+                                        granite:class="disable-animation-showhide-target"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        showhidetargetvalue="true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <section1Image
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Image"
+                                                fileNameParameter="./sections/item0/sectionImg"
+                                                fileReferenceParameter="./sections/item0/sectionImgReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./sections/item0/sectionImage"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </section1Image>
                                     <title
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldDescription="Enter section1 title text"
                                         fieldLabel="Troika Title"
-                                        name="./section1Title"/>
+                                        name="./sections/item0/sectionTitle"/>
                                     <desciption
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                                        name="./section1Description"
+                                        fieldLabel="Troika Descriptions"
+                                        name="./sections/item0/sectionDescription"
                                         useFixedInlineToolbar="{Boolean}true">
                                         <rtePlugins
                                             jcr:primaryType="nt:unstructured"
@@ -131,45 +155,22 @@
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldDescription="Please enter link name"
                                         fieldLabel="Webpage Title"
-                                        name="./section1WebpageTitle"/>
+                                        name="./sections/item0/webpageTitle"/>
                                     <webpageTarget
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                         fieldDescription="Select path of the target page"
                                         fieldLabel="Webpage Target"
-                                        name="./section1webpageTarget"
+                                        name="./sections/item0/webpageTarget"
                                         rootPath="/content"/>
                                     <linkTabTarget
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                         checked="{Boolean}false"
                                         fieldDescription="Check this checkbox to open the link in new tab."
-                                        name="./section1webpageTabTarget"
+                                        name="./sections/item0/webpageTabTarget"
                                         text="Open Link in New Tab"
                                         value="true"/>
-                                    <section1Image
-                                        granite:class="disable-animation-showhide-target"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container"
-                                        showhidetargetvalue="true">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <section1Image
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
-                                                allowUpload="{Boolean}false"
-                                                autoStart="{Boolean}false"
-                                                class="cq-droptarget"
-                                                fieldLabel="Troika Image"
-                                                fileNameParameter="./fileName"
-                                                fileReferenceParameter="./section1Image"
-                                                name="./file"
-                                                mimeTypes="[image]"
-                                                multiple="{Boolean}false"  
-                                                title="Upload Image Asset"
-                                                uploadUrl="${suffix.path}"
-                                                useHTML5="{Boolean}true"/>
-                                        </items>
-                                    </section1Image>
                                 </items>
                             </column>
                         </items>
@@ -186,16 +187,40 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
+                                    <section2Image
+                                        granite:class="disable-animation-showhide-target"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        showhidetargetvalue="true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <section1Image
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Image"
+                                                fileNameParameter="./sections/item1/sectionImg"
+                                                fileReferenceParameter="./sections/item1/sectionImgReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./sections/item1/sectionImage"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </section2Image>
                                     <title
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter troika title"
+                                        fieldDescription="Enter section2 title text"
                                         fieldLabel="Troika Title"
-                                        name="./section2Title"/>
+                                        name="./sections/item1/sectionTitle"/>
                                     <desciption
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                                        name="./section2Description"
+                                        fieldLabel="Troika2 Descriptions"
+                                        name="./sections/item1/sectionDescription"
                                         useFixedInlineToolbar="{Boolean}true">
                                         <rtePlugins
                                             jcr:primaryType="nt:unstructured"
@@ -209,45 +234,22 @@
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldDescription="Please enter link name"
                                         fieldLabel="Webpage Title"
-                                        name="./section2WebpageTitle"/>
+                                        name="./sections/item1/webpageTitle"/>
                                     <webpageTarget
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                         fieldDescription="Select path of the target page"
                                         fieldLabel="Webpage Target"
-                                        name="./section2WebpageTarget"
+                                        name="./sections/item1/webpageTarget"
                                         rootPath="/content"/>
-                                    <webpageTabTarget
+                                    <linkTabTarget
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                         checked="{Boolean}false"
                                         fieldDescription="Check this checkbox to open the link in new tab."
-                                        name="./section2WebpageTabTarget"
+                                        name="./sections/item1/webpageTabTarget"
                                         text="Open Link in New Tab"
                                         value="true"/>
-                                    <section2Image
-                                        granite:class="disable-animation-showhide-target"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container"
-                                        showhidetargetvalue="true">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <section2Image
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
-                                                allowUpload="{Boolean}false"
-                                                autoStart="{Boolean}false"
-                                                class="cq-droptarget"
-                                                fieldLabel="Troika Image"
-                                                fileNameParameter="./fileName"
-                                                fileReferenceParameter="./section2Image"
-                                                name="./file"
-                                                mimeTypes="[image]"
-                                                multiple="{Boolean}false"  
-                                                title="Upload Image Asset"
-                                                uploadUrl="${suffix.path}"
-                                                useHTML5="{Boolean}true"/>
-                                        </items>
-                                    </section2Image>
                                 </items>
                             </column>
                         </items>
@@ -264,16 +266,39 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
+                                    <section1Image
+                                        granite:class="disable-animation-showhide-target"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        showhidetargetvalue="true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <section1Image
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Image"
+                                                fileNameParameter="./sections/item2/sectionImg"
+                                                fileReferenceParameter="./sections/item2/sectionImgReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./sections/item2/sectionImage"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </section1Image>
                                     <title
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter troika title"
+                                        fieldDescription="Enter section title text"
                                         fieldLabel="Troika Title"
-                                        name="./section3Title"/>
-                                   <desciption
+                                        name="./sections/item2/sectionTitle"/>
+                                    <desciption
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                                        name="./section3Description"
+                                        name="./sections/item2/sectionDescription"
                                         useFixedInlineToolbar="{Boolean}true">
                                         <rtePlugins
                                             jcr:primaryType="nt:unstructured"
@@ -287,45 +312,22 @@
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldDescription="Please enter link name"
                                         fieldLabel="Webpage Title"
-                                        name="./section3WebpageTitle"/>
+                                        name="./sections/item2/webpageTitle"/>
                                     <webpageTarget
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                         fieldDescription="Select path of the target page"
                                         fieldLabel="Webpage Target"
-                                        name="./section3WebpageTarget"
+                                        name="./sections/item2/webpageTarget"
                                         rootPath="/content"/>
-                                    <webpageTabTarget
+                                    <linkTabTarget
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                         checked="{Boolean}false"
                                         fieldDescription="Check this checkbox to open the link in new tab."
-                                        name="./section3WebpageTabTarget"
+                                        name="./sections/item2/webpageTabTarget"
                                         text="Open Link in New Tab"
                                         value="true"/>
-                                    <section3Image
-                                        granite:class="disable-animation-showhide-target"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container"
-                                        showhidetargetvalue="true">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <section3Image
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
-                                                allowUpload="{Boolean}false"
-                                                autoStart="{Boolean}false"
-                                                class="cq-droptarget"
-                                                fieldLabel="Troika Image"
-                                                fileNameParameter="./fileName"
-                                                fileReferenceParameter="./section3Image"
-                                                name="./file"
-                                                mimeTypes="[image]"
-                                                multiple="{Boolean}false"  
-                                                title="Upload Image Asset"
-                                                uploadUrl="${suffix.path}"
-                                                useHTML5="{Boolean}true"/>
-                                        </items>
-                                    </section3Image>
                                 </items>
                             </column>
                         </items>
