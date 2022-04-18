@@ -16,7 +16,7 @@
             <div data-sly-test="${objRef.cardDescription}" class="troika-ups__subtitle">
                   ${objRef.cardDescription @ context = 'html'}
             </div>
-            <a target="${objRef.cardWebpageTabTarget} ? '_blank' : ''}" data-sly-test="${objRef.cardWebpageTarget}"
+            <a target="${objRef.cardWebpageTabTarget} ? '_blank' : ''}" data-sly-test="${(objRef.cardWebpageTarget && properties.componentType == 'troika' )}"
                   href="${objRef.cardWebpageTarget}" class="troika-ups__link">
                   ${objRef.cardWebpageTitle}
             </a>
