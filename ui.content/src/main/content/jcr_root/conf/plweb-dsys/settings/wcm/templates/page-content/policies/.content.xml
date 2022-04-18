@@ -55,6 +55,14 @@
                                 cq:policy="plweb-dsys/components/download/policy_1575032193319"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="wcm/core/components/policies/mapping"/>
+                            <card jcr:primaryType="nt:unstructured">
+                                <v1 jcr:primaryType="nt:unstructured">
+                                    <card
+                                        cq:policy="plweb-dsys/components/card/v1/card/policy_1650278400284"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </v1>
+                            </card>
                         </components>
                     </plweb-dsys>
                 </container>

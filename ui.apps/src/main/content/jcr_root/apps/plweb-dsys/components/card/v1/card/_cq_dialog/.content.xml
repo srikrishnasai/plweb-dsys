@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="Troika/Ups"
+    jcr:title="Card"
     sling:resourceType="cq/gui/components/authoring/dialog"
     extraClientlibs="[plweb-dsys.author.checkbox-show-hide, plweb-dsys.author.tabs-show-hide]">
     <content
@@ -23,23 +23,9 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <disableImage
-                                        granite:class="cq-dialog-checkbox-showhide"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="Click the checkbox to use component without image"
-                                        name="./disableImage"
-                                        text="Use Component Without Image"
-                                        value="true">
-                                        <granite:data
-                                            jcr:primaryType="nt:unstructured"
-                                            cq-dialog-checkbox-showhide-target=".disable-animation-showhide-target"/>
-                                    </disableImage>
                                     <image
-                                        granite:class="disable-animation-showhide-target"
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container"
-                                        showhidetargetvalue="true">
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
                                             <image
                                                 jcr:primaryType="nt:unstructured"

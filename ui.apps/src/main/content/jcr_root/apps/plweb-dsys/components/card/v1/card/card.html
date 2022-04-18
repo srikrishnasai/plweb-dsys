@@ -1,0 +1,24 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+      data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-use.objRef="pl.web.dsys.core.models.CardModel"
+      data-sly-call="${clientlib.all @ categories='plweb-dsys.card'}">
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !objRef.cardTitle, classAppend='cmp-text'}"></sly>
+
+<section
+      class="${objRef.alignments == 'center'  ? 'card--center' : ''} ${properties.componentType == 'troika' ? 'card--troika' : ''} ">
+      <div class="card__main card--${properties.bgColor}">
+            <img class="card__icon" data-sly-test="${(objRef.cardImage || disableImage  )}" alt="Icon"
+                  src="${objRef.cardImage}" />
+            <div class="card__border-for-no-img"
+                  data-sly-test="${(!objRef.cardImage && properties.componentType != 'troika')}"></div>
+            <h3 data-sly-test="${objRef.cardTitle}" class="card__title"> ${objRef.cardTitle}</h3>
+            <div data-sly-test="${objRef.cardDescription}" class="card__subtitle">
+                  ${objRef.cardDescription @ context = 'html'}
+            </div>
+            <a target="${objRef.cardWebpageTabTarget} ? '_blank' : ''}" data-sly-test="${(objRef.cardWebpageTarget && properties.componentType == 'troika' )}"
+                  href="${objRef.cardWebpageTarget}" class="card__link">
+                  ${objRef.cardWebpageTitle}
+            </a>
+      </div>
+</section>

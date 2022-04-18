@@ -19,11 +19,11 @@ import org.slf4j.LoggerFactory;
 
 
 @Model(adaptables = { Resource.class,
-		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, resourceType = TroikaUpsModel.resourceType)
-public class TroikaUpsModel {
+		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, resourceType = CardModel.resourceType)
+public class CardModel {
 
-	private static final Logger log = LoggerFactory.getLogger(TroikaUpsModel.class);
-	public static final String resourceType = "plweb-dsys/components/troika-ups/v1/troika-ups";
+	private static final Logger log = LoggerFactory.getLogger(CardModel.class);
+	public static final String resourceType = "plweb-dsys/components/card/v1/card";
 	
 	@SlingObject
 	Resource resource;
