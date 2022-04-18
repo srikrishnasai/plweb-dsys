@@ -21,7 +21,7 @@
                 class="person-card__link-container">
                 <div class="person-card__phone"></div>
                 <div id="${properties.telephone}"></div>
-                <a class="person-card__link">${properties.telephone}</a>
+                <a href="tel:${properties.telephone}" class="person-card__link">${properties.telephone}</a>
             </div>
             <div class="person-card__link-container" data-sly-test="${properties.linkedin}">
                 <a href="${properties.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
@@ -51,7 +51,7 @@
                 <div class="person-card__link-container" data-sly-test="${properties.telephone}">
                     <div class="person-card__phone"></div>
                     <div id="${properties.telephone}"></div>
-                    <a class="person-card__link">${properties.telephone}</a>
+                    <a href="tel:${properties.telephone}" class="person-card__link">${properties.telephone}</a>
                 </div>
                 <div class="person-card__link-container" data-sly-test="${properties.linkedin}">
                     <a href="${properties.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
@@ -82,9 +82,9 @@
             </div>
             <div class="person-card__link-container" data-sly-test="${properties.telephone}">
                 <div class="person-card__phone"></div>
-                <a  class="person-card__link">${properties.telephone}</a>
+                <a href="tel:${properties.telephone}" class="person-card__link">${properties.telephone}</a>
             </div>
-            <div id="${properties.linkedin}" class="person-card__link-container" data-sly-test="${properties.linkedin}">
+            <div class="person-card__link-container" data-sly-test="${properties.linkedin}">
                 <a href="${properties.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
             </div>
         </div>
