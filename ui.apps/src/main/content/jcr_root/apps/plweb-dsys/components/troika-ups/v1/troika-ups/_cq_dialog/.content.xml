@@ -23,25 +23,6 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <componenttype
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/select"
-                                        class="cq-dialog-dropdown-showhide"
-                                        cq-dialog-dropdown-showhide-target=".component-field-hide-show"
-                                        fieldDescription="Select type of component"
-                                        fieldLabel="Use Component as"
-                                        name="./componentType">
-                                        <items jcr:primaryType="cq:WidgetCollection">
-                                            <ups
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Ups"
-                                                value="ups"/>
-                                            <troika
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Troika"
-                                                value="troika"/>
-                                        </items>
-                                    </componenttype>
                                     <disableImage
                                         granite:class="cq-dialog-checkbox-showhide"
                                         jcr:primaryType="nt:unstructured"
@@ -77,6 +58,22 @@
                                                 useHTML5="{Boolean}true"/>
                                         </items>
                                     </image>
+                                    <originalImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}false"
+                                                fieldDescription="This will load the original image."
+                                                name="./image/useOriginalImage"
+                                                text="Use Original Image"
+                                                value="true"/>
+                                    <transparentImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}false"
+                                                fieldDescription="Check this checkbox if the image is transparent."
+                                                name="./image/useTransparentImage"
+                                                text="Use Transparent Image"
+                                                value="true"/>
                                     <title
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -96,85 +93,27 @@
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
                                     </desciption>
-                                     <troikafields
+                                    <webpageName
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/container"
-                                        class="hide component-field-hide-show"
-                                        showhidetargetvalue="troika">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <well
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/container">
-                                                <layout
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <webpageName
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                        fieldDescription="Please enter link name"
-                                                        fieldLabel="Webpage Title"
-                                                        name="./cardWebpageTitle"/>
-                                                    <webpageTarget
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                        fieldDescription="Select path of the target page"
-                                                        fieldLabel="Webpage Target"
-                                                        name="./cardWebpageTarget"
-                                                        rootPath="/content"/>
-                                                    <linkTabTarget
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                        checked="{Boolean}false"
-                                                        fieldDescription="Check this checkbox to open the link in new tab."
-                                                        name="./cardWebpageTabTarget"
-                                                        text="Open Link in New Tab"
-                                                        value="true"/>
-                                                </items>
-                                            </well>
-                                        </items>
-                                    </troikafields>
-                                    <bgColor
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Please enter link name"
+                                        fieldLabel="Webpage Title"
+                                        name="./cardWebpageTitle"/>                    
+                                    <webpageTarget
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Background Color"
-                                        name="./bgColor">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <transparent
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Transparent"
-                                                value="transparent"/>
-                                            <white
-                                                jcr:primaryType="nt:unstructured"
-                                                text="White (#FFFFFF)"
-                                                value="white"/>
-                                            <light-blue
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Light Blue (#E8F2FA)"
-                                                value="light-blue"/>
-                                            <light-grey
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Light Grey (#FBFBFB)"
-                                                value="light-grey"/>
-                                        </items>
-                                    </bgColor>
-                                    <alignments
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldDescription="Select path of the target page"
+                                        fieldLabel="Webpage Target"
+                                        name="./cardWebpageTarget"
+                                        rootPath="/content"/>
+                                    <linkTabTarget
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldDescription="Choose the position of the troika"
-                                        fieldLabel="Text Alignment"
-                                        name="./alignments">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <left
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Left"
-                                                value="left"/>
-                                            <center
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Center"
-                                                value="center"/>
-                                        </items>
-                                    </alignments>
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        checked="{Boolean}false"
+                                        fieldDescription="Check this checkbox to open the link in new tab."
+                                        name="./cardWebpageTabTarget"
+                                        text="Open Link in New Tab"
+                                        value="true"/>                                      
                                 </items>
                             </column>
                         </items>
