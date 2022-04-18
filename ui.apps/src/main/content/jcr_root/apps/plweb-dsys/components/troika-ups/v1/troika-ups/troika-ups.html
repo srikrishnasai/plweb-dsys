@@ -5,18 +5,20 @@
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !objRef.cardTitle, classAppend='cmp-text'}"></sly>
 
-
-<div
-      class="${objRef.alignments == 'center'  ? 'troika-ups--center' : ''} ${properties.componentType == 'troika' ? 'troika-ups--troika' : ''} troika-ups__main">
-      <img class="troika-ups__icon" data-sly-test="${(objRef.cardImage || disableImage  )}" alt="Icon"
-            src="${objRef.cardImage}" />
-      <div class="troika-ups__border-for-no-img" data-sly-test="${!objRef.cardImage}"></div>
-      <h3 data-sly-test="${objRef.cardTitle}" class="troika-ups__title"> ${objRef.cardTitle}</h3>
-      <div data-sly-test="${objRef.cardDescription}" class="troika-ups__subtitle">
-            ${objRef.cardDescription @ context = 'html'}
+<section
+      class="${objRef.alignments == 'center'  ? 'troika-ups--center' : ''} ${properties.componentType == 'troika' ? 'troika-ups--troika' : ''} ">
+      <div class="troika-ups__main troika-ups--${properties.bgColor}">
+            <img class="troika-ups__icon" data-sly-test="${(objRef.cardImage || disableImage  )}" alt="Icon"
+                  src="${objRef.cardImage}" />
+            <div class="troika-ups__border-for-no-img"
+                  data-sly-test="${(!objRef.cardImage && properties.componentType != 'troika')}"></div>
+            <h3 data-sly-test="${objRef.cardTitle}" class="troika-ups__title"> ${objRef.cardTitle}</h3>
+            <div data-sly-test="${objRef.cardDescription}" class="troika-ups__subtitle">
+                  ${objRef.cardDescription @ context = 'html'}
+            </div>
+            <a target="${objRef.cardWebpageTabTarget} ? '_blank' : ''}" data-sly-test="${objRef.cardWebpageTarget}"
+                  href="${objRef.cardWebpageTarget}" class="troika-ups__link">
+                  ${objRef.cardWebpageTitle}
+            </a>
       </div>
-      <a target="${objRef.cardWebpageTabTarget ? '_blank' : ''}" data-sly-test="${objRef.cardWebpageTarget}"
-            href="${objRef.cardWebpageTarget}" class="dsys-troika-content-text-wrapper__link">
-            ${objRef.cardWebpageTitle}
-      </a>
-</div>
+</section>
