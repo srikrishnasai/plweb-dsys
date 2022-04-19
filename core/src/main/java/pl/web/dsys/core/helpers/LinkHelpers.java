@@ -62,8 +62,8 @@ public class LinkHelpers {
     public static boolean
     isExternalURL(String url)
     {
-        // Regex to check valid URL
-        String regex = "^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+        // Regex to check any external URLs begins with http, https, ftp, file or //.
+        String regex = "^((https?|ftp|file):)?//[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
         // Compile the ReGex
         Pattern p = Pattern.compile(regex);
         // Find match between given string
