@@ -1,0 +1,15 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}" />
+<sly data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems1'}"></sly>
+<div>
+<nav>
+<ul data-sly-list="${model1.childResource.listChildren}">
+<li>
+<a href="${item.linkTarget @ extension='html'}"> 
+ ${item.linkTarget} 
+</a>
+ </li>
+ </ul>
+</nav>
+</div>
