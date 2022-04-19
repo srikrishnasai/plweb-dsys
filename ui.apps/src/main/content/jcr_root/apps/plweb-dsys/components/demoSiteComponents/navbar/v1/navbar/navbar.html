@@ -1,13 +1,16 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
 <sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}" />
-<sly data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems1'}"></sly>
+<sly data-sly-use.model1="${'pl.web.dsys.core.models.NavigationBarModel'}"></sly>
 <div>
 <nav>
-<ul data-sly-list="${model1.childResource.listChildren}">
+<ul data-sly-list="${model1.pageInfoList}">
 <li>
-<a href="${item.linkTarget @ extension='html'}"> 
- ${item.linkTarget} 
+
+<p> ${item.pageTile}</p>
+<p> ${item.resourceType}</p>
+<a href="${item.path @ extension='html'}"> 
+    ${item.path} 
 </a>
  </li>
  </ul>

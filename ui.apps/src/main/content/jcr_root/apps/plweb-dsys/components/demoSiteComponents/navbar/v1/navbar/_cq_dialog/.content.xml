@@ -22,28 +22,13 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <navItemLinks
+                                    <navItemLinkTarget
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                        composite="{Boolean}true"
-                                        eaem-nested=""
-                                        fieldDescription="Click 'Add field' to add a new link"
-                                        fieldLabel="Navigation Item  Links">
-                                        <field
-                                            jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/container"
-                                            name="./multiFieldItems1">
-                                            <items jcr:primaryType="nt:unstructured">
-                                                <navLinkTarget
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                    fieldDescription="Select path for the target page"
-                                                    fieldLabel="Navigation Item Target Link"
-                                                    name="./linkTarget"
-                                                    rootPath="/content"/>
-                                            </items>
-                                        </field>
-                                    </navItemLinks>
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldDescription="Select path of the target page"
+                                        fieldLabel="Target Link"
+                                        name="./linkTarget"
+                                        rootPath="/content"/>
                                 </items>
                             </column>
                         </items>
