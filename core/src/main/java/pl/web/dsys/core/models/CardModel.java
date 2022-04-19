@@ -55,6 +55,12 @@ public class CardModel {
 	@ValueMapValue
 	private String cardImage;
 
+	@ValueMapValue
+	private String useTransparentImage;
+
+	@ValueMapValue
+	private String useOriginalImage;
+
 	@PostConstruct
 	protected void init() {
 		log.debug("Inside Post Construct of Troika/Ups Model..");
@@ -90,6 +96,14 @@ public class CardModel {
 
 	public String getCardImage() {
 		return cardImage;
+	}
+
+	public String getUseTransparentImage() {
+		return useTransparentImage;
+	}
+
+	public String getUseOriginalImage() {
+		return useOriginalImage;
 	}
 
 }

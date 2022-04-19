@@ -49,7 +49,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 checked="{Boolean}false"
                                                 fieldDescription="This will load the original image."
-                                                name="./image/useOriginalImage"
+                                                name="./useOriginalImage"
                                                 text="Use Original Image"
                                                 value="true"/>
                                     <transparentImage
@@ -57,7 +57,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 checked="{Boolean}false"
                                                 fieldDescription="Check this checkbox if the image is transparent."
-                                                name="./image/useTransparentImage"
+                                                name="./useTransparentImage"
                                                 text="Use Transparent Image"
                                                 value="true"/>
                                     <title
