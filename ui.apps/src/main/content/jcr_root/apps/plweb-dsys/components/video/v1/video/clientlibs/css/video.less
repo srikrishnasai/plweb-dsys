@@ -1,7 +1,8 @@
-@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-tokens/mediaQueries.less";
-@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
-@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-tokens/colors.less";
-@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-tokens/zIndices.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-tokens/mediaQueries.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-tokens/colors.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-tokens/zIndices.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-tokens/durations.less";
 
 .video {
     .element(main, {
@@ -23,7 +24,7 @@
         outline   : none;
         z-index: @focus;
         opacity: 0;
-        transition: all 0.5s linear;
+        transition: all @long linear;
         @media @mediaIEOnly {
 			display: none;
         }
