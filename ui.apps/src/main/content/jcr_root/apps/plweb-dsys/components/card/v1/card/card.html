@@ -5,20 +5,17 @@
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !objRef.cardTitle, classAppend='cmp-text'}"></sly>
 
-<section
-      class="${objRef.alignments == 'center'  ? 'card--center' : ''} ${properties.componentType == 'troika' ? 'card--troika' : ''} ">
-      <div class="card__main card--${properties.bgColor}">
-            <img class="card__icon" data-sly-test="${(objRef.cardImage || disableImage  )}" alt="Icon"
-                  src="${objRef.cardImage}" />
-            <div class="card__border-for-no-img"
-                  data-sly-test="${(!objRef.cardImage && properties.componentType != 'troika')}"></div>
-            <h3 data-sly-test="${objRef.cardTitle}" class="card__title"> ${objRef.cardTitle}</h3>
-            <div data-sly-test="${objRef.cardDescription}" class="card__subtitle">
-                  ${objRef.cardDescription @ context = 'html'}
-            </div>
-            <a target="${objRef.cardWebpageTabTarget} ? '_blank' : ''}" data-sly-test="${(objRef.cardWebpageTarget && properties.componentType == 'troika' )}"
-                  href="${objRef.cardWebpageTarget}" class="card__link">
-                  ${objRef.cardWebpageTitle}
-            </a>
+
+<section class="card__main">
+      <div class="card__icon card__box"  data-sly-test="${!objRef.cardImage}">Place image</div>
+      <img class="card__icon" data-sly-test="${objRef.cardImage}" alt="Icon" src="${objRef.cardImage}" />
+      <div class="card__border-for-no-img"></div>
+      <h3 data-sly-test="${objRef.cardTitle}" class="card__title"> ${objRef.cardTitle}</h3>
+      <div data-sly-test="${objRef.cardDescription}" class="card__subtitle">
+            ${objRef.cardDescription @ context = 'html'}
       </div>
+      <a target="${objRef.cardWebpageTabTarget} ? '_blank' : ''}" data-sly-test="${objRef.cardWebpageTarget}"
+            href="${objRef.cardWebpageTarget}" class="card__link">
+            ${objRef.cardWebpageTitle}
+      </a>
 </section>
