@@ -447,8 +447,8 @@
                 <v1 jcr:primaryType="nt:unstructured">
                     <card jcr:primaryType="nt:unstructured">
                         <policy_1650278400284
-                            cq:styleDefaultClasses="Card"
-                            jcr:lastModified="{Date}2022-04-18T16:20:34.389+05:30"
+                            cq:styleDefaultClasses="card"
+                            jcr:lastModified="{Date}2022-04-18T18:53:25.194+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="card-policy"
@@ -460,7 +460,6 @@
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
-                                            cq:styleClasses="card--ups"
                                             cq:styleId="1650278453572"
                                             cq:styleLabel="Ups"
                                             jcr:primaryType="nt:unstructured"/>
@@ -476,12 +475,11 @@
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
-                                            cq:styleClasses="card-image"
                                             cq:styleId="1650278520111"
                                             cq:styleLabel="With Image"
                                             jcr:primaryType="nt:unstructured"/>
                                         <item1
-                                            cq:styleClasses="card-no-image"
+                                            cq:styleClasses="card--no-image"
                                             cq:styleId="1650278572632"
                                             cq:styleLabel="Without Image"
                                             jcr:primaryType="nt:unstructured"/>
@@ -492,22 +490,22 @@
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
-                                            cq:styleClasses="card-bgcolor-transparent"
+                                            cq:styleClasses="dsys-bgColor--transparent"
                                             cq:styleId="1650278651343"
                                             cq:styleLabel="Transparent"
                                             jcr:primaryType="nt:unstructured"/>
                                         <item1
-                                            cq:styleClasses="card-bgcolor-white"
+                                            cq:styleClasses="dsys-bgColor--whiteColor"
                                             cq:styleId="1650278653159"
                                             cq:styleLabel="White (#FFFFFF)"
                                             jcr:primaryType="nt:unstructured"/>
                                         <item2
-                                            cq:styleClasses="card-bgcolor-light-blue"
+                                            cq:styleClasses="dsys-bgColor--light-blue"
                                             cq:styleId="1650278654162"
                                             cq:styleLabel="Light Blue (#E8F2FA)"
                                             jcr:primaryType="nt:unstructured"/>
                                         <item3
-                                            cq:styleClasses="card-bgcolor-light-grey"
+                                            cq:styleClasses="dsys-bgColor--light-grey"
                                             cq:styleId="1650278656021"
                                             cq:styleLabel="Light Grey (#FBFBFB)"
                                             jcr:primaryType="nt:unstructured"/>
@@ -518,12 +516,11 @@
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
-                                            cq:styleClasses="card-align-left"
                                             cq:styleId="1650278904154"
                                             cq:styleLabel="Left"
                                             jcr:primaryType="nt:unstructured"/>
                                         <item1
-                                            cq:styleClasses="card-align-center"
+                                            cq:styleClasses="card--center"
                                             cq:styleId="1650278905257"
                                             cq:styleLabel="Center"
                                             jcr:primaryType="nt:unstructured"/>
