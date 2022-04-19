@@ -390,4 +390,54 @@
             }
         }
     });
+
+    .element(layout, {
+        .modifier(grid ,{
+            .aem-Grid {
+                display: flex;
+            }
+
+            @media @mediaMobile {
+                .aem-Grid {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        });
+    });
+
+    .element(justify, {
+        .modifier(center ,{
+            .aem-Grid {
+                justify-content: center;
+            }
+        });
+    });
+
+    .element(gap, {
+
+        .modifier(extrasmall ,{
+            .aem-Grid {
+                gap: 24px;
+            }
+        });
+
+        .modifier(small ,{
+            .aem-Grid {
+                gap: 32px;
+            }
+        });
+
+        .modifier(medium ,{
+            .aem-Grid {
+                gap: 60px;
+            }
+        });
+
+        .modifier(large ,{
+            .aem-Grid {
+                gap: 128px;
+            }
+        });
+    });
 }
