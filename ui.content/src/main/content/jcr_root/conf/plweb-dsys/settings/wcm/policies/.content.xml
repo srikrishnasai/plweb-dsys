@@ -398,11 +398,11 @@
                                             cq:styleClasses="section-container__layout--grid"
                                             cq:styleId="1650354041255"
                                             cq:styleLabel="Grid"
-                                             jcr:primaryType="nt:unstructured"/>
+                                            jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item0>
                                 <item1
-                                cq:styleGroupLabel="Gaps"
+                                    cq:styleGroupLabel="Gaps"
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
