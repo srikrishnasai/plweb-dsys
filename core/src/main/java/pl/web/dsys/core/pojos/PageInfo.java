@@ -1,7 +1,7 @@
 package pl.web.dsys.core.pojos;
 
 /**
- * PageInfo class is a pojo for getting pageInfo to be used in navigation bar component.
+ * PageInfo class is a pojo to be used in category list for nav bar component.
  */
 public class PageInfo {
     private String pageTile;

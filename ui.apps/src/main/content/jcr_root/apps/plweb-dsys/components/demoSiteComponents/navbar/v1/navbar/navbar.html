@@ -1,18 +1,28 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
 <sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}" />
-<sly data-sly-use.model1="${'pl.web.dsys.core.models.NavigationBarModel'}"></sly>
+<sly data-sly-use.navigationBar="${'pl.web.dsys.core.models.NavigationBarModel'}"></sly>
 <div>
-<nav>
-<ul data-sly-list="${model1.pageInfoList}">
-<li>
+    <nav>
+        <ul data-sly-list="${navigationBar.categoryList}">
+            <li>
 
-<p> ${item.pageTile}</p>
-<p> ${item.resourceType}</p>
-<a href="${item.path @ extension='html'}"> 
-    ${item.path} 
-</a>
- </li>
- </ul>
-</nav>
+                <ul data-sly-list.pageInfolist="${item.pageInfolist}">
+                    <li>
+                        <p> ${pageInfolist.pageTile}</p>
+                        <a href="${pageInfolist.path @ extension='html'}">
+                            ${pageInfolist.path}
+                        </a>
+                    </li>
+
+                </ul>
+
+                <p> ${item.category}</p>
+                <a href="${item.path @ extension='html'}">
+                    ${item.path}
+                </a>
+            </li>
+
+        </ul>
+    </nav>
 </div>
