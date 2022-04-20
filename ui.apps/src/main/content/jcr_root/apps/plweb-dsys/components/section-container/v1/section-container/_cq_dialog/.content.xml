@@ -198,6 +198,10 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Dark Blue"
                                                 value="dark-blue"/>
+                                            <light-blue
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Light Blue"
+                                                value="light-blue"/>
                                         </items>
                                     </bgColor>
                                 </items>
