@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/conf/plweb-dsys" mode="merge"/>
+    <filter root="/conf/plweb-dsys"/>
     <filter root="/content/plweb-dsys" mode="merge"/>
     <filter root="/content/dam/plweb-dsys" mode="merge"/>
     <filter root="/content/experience-fragments/plweb-dsys" mode="merge"/>
