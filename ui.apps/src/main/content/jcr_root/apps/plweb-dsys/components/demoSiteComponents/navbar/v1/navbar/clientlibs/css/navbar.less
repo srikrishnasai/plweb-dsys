@@ -1,0 +1,21 @@
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/less-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+
+.navbar{
+    .element(list-heading,{
+        &::before{
+            content:attr(data-header);
+            .fw-700;
+            .montserrat;
+            color: @neutral1000;
+        }
+    });
+    .element(list-item,{
+        a{
+            text-decoration: none;
+            color: @neutral1000;
+            margin-left: @8;
+        }
+        margin-top: @8;
+    });
+}
