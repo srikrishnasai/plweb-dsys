@@ -80,6 +80,9 @@
         .card__box{
             display: none;
         }
+        .card__img-container{
+            height: 0px !important;
+        }
     });
     .modifier(troika,{
         .card__icon{
@@ -98,7 +101,10 @@
             padding: @24;
         }
         .card__img-container{
-            min-height: 226px;
+            height: 226px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     });
 

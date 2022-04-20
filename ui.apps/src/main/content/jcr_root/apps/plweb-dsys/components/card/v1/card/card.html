@@ -10,8 +10,8 @@
 
 <section class="card__main">
       <div class="card__icon card__box" data-sly-test="${!objRef.cardImage}">Place image</div>
-      <div class="card__img-container">
-            <img class="card__icon" data-sly-test="${objRef.cardImage}" alt="Icon"
+      <div data-sly-test="${objRef.cardImage}" class="card__img-container">
+            <img class="card__icon" alt="Icon"
                   src="${objRef.useOriginalImage ? objRef.cardImage : imageurl.transformedImageUrl}" />
       </div>
       <div class="card__border-for-no-img"></div>
@@ -19,7 +19,7 @@
       <div data-sly-test="${objRef.cardDescription}" class="card__subtitle">
             ${objRef.cardDescription @ context = 'html'}
       </div>
-      <a target="${objRef.cardWebpageTabTarget} ? '_blank' : ''}" data-sly-test="${objRef.cardWebpageTarget}"
+      <a target="${objRef.cardWebpageTabTarget ? '_blank' : ''}" data-sly-test="${objRef.cardWebpageTarget}"
             href="${linkTarget.linkURL}" class="card__link">
             ${objRef.cardWebpageTitle}
       </a>
