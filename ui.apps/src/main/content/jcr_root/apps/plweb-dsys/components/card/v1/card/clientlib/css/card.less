@@ -1,0 +1,111 @@
+@import (reference)  "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+
+.card{
+
+    @media @mediaMobile{
+        width: 100% !important;
+    }
+    .element(main,{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        max-width: 500px;
+        padding: @4;
+        box-sizing: border-box;
+    });
+
+    .element(box,{
+        border: 1px solid @neutral300;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    });
+
+    .element(icon,{
+        height: 64px;
+        width: 64px;
+        object-fit: cover;
+        margin-bottom: @24;
+        border-radius: @rounded;
+    });
+
+    .element(border-for-no-img,{
+        border: 2px solid @blue400;
+        border-radius: @rounded;
+        width: 80px;
+        margin-bottom: @8;
+        display: none;
+    });
+
+    .element(title,{
+        font-size: 25.01px;
+    });
+
+    .element(subtitle,{
+        margin-top: @8;
+        line-height: 24px;
+       .openSans;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 72px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    });
+
+    .element(link,{
+        margin-top: @16;;
+        font-family: .openSans;
+        color: @blue600;
+        text-decoration: none;
+    });
+    .modifier(center,{
+        .ta-center;
+        display: flex;
+        justify-content: center;
+            .card__main{
+                align-items: center;
+            }
+    });
+
+    .modifier(no-image,{
+        img{
+            display: none;
+        }
+        .card__border-for-no-img{
+            display: block;
+        }
+        .card__box{
+            display: none;
+        }
+        .card__img-container{
+            height: 0px !important;
+        }
+    });
+    .modifier(troika,{
+        .card__icon{
+            width: 100%;
+            height: auto;
+            max-height: 226px;
+        };
+        .card__border-for-no-img{
+            display: none;
+        }
+        .card__box{
+            min-height: 120px;
+            width: 80%;
+        }
+        .card__main{
+            padding: @24;
+        }
+        .card__img-container{
+            height: 226px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    });
+
+
+}

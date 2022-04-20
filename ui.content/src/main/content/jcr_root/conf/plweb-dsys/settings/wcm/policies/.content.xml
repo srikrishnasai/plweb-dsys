@@ -378,7 +378,7 @@
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy>
             </page>
-			<section-container jcr:primaryType="nt:unstructured">
+            <section-container jcr:primaryType="nt:unstructured">
                 <v1 jcr:primaryType="nt:unstructured">
                     <section-container jcr:primaryType="nt:unstructured">
                         <policy_1649920050038
@@ -443,6 +443,94 @@
                     </section-container>
                 </v1>
             </section-container>
+            <card jcr:primaryType="nt:unstructured">
+                <v1 jcr:primaryType="nt:unstructured">
+                    <card jcr:primaryType="nt:unstructured">
+                        <policy_1650278400284
+                            cq:styleDefaultClasses="card"
+                            jcr:lastModified="{Date}2022-04-18T18:53:25.194+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="card-policy"
+                            sling:resourceType="wcm/core/components/policy/policy">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                            <cq:styleGroups jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleGroupLabel="COMPONENT TYPE"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleId="1650278453572"
+                                            cq:styleLabel="Ups"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                            cq:styleClasses="card--troika"
+                                            cq:styleId="1650278462039"
+                                            cq:styleLabel="Troika"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item0>
+                                <item1
+                                    cq:styleGroupLabel="USE COMPONENT"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleId="1650278520111"
+                                            cq:styleLabel="With Image"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                            cq:styleClasses="card--no-image"
+                                            cq:styleId="1650278572632"
+                                            cq:styleLabel="Without Image"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item1>
+                                <item2
+                                    cq:styleGroupLabel="BACKGROUND"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="dsys-bgColor--transparent"
+                                            cq:styleId="1650278651343"
+                                            cq:styleLabel="Transparent"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                            cq:styleClasses="dsys-bgColor--whiteColor"
+                                            cq:styleId="1650278653159"
+                                            cq:styleLabel="White (#FFFFFF)"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item2
+                                            cq:styleClasses="dsys-bgColor--light-blue"
+                                            cq:styleId="1650278654162"
+                                            cq:styleLabel="Light Blue (#E8F2FA)"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item3
+                                            cq:styleClasses="dsys-bgColor--light-grey"
+                                            cq:styleId="1650278656021"
+                                            cq:styleLabel="Light Grey (#FBFBFB)"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item2>
+                                <item3
+                                    cq:styleGroupLabel="ALIGNMENT"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleId="1650278904154"
+                                            cq:styleLabel="Left"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                            cq:styleClasses="card--center"
+                                            cq:styleId="1650278905257"
+                                            cq:styleLabel="Center"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item3>
+                            </cq:styleGroups>
+                        </policy_1650278400284>
+                    </card>
+                </v1>
+            </card>
         </components>
     </plweb-dsys>
 </jcr:root>

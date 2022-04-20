@@ -1,0 +1,2 @@
+#base=js
+checkbox-show-hide.js
