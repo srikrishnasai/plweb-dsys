@@ -2,18 +2,19 @@
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.navbar'}" />
 <sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}" />
-<sly data-sly-use.model1="${'pl.web.dsys.core.models.NavigationBarModel'}"></sly>
+<sly data-sly-use.navigationBar="${'pl.web.dsys.core.models.NavigationBarModel'}"></sly>
 
 <nav class="navbar">
-    <!--Dummy heading for now. Change the value in data-header to change heading -->
-    <ul class="dsys-text--body navbar__list-heading" data-header="Page Resources" data-sly-list="${model1.pageInfoList}">
-        <li class="dsys-text--microcopy navbar__list-item">
+    <ul data-sly-list="${navigationBar.categoryList}">
+        <li class="dsys-text--body navbar__list-heading" data-header="${item.category}">
+            <ul data-sly-list.pageInfolist="${item.pageInfolist}">
+                <li class="dsys-text--microcopy navbar__list-item">
+                    <a href="${pageInfolist.path @ extension='html'}">
+                        ${pageInfolist.pageTile}
+                    </a>
+                </li>
 
-            <!-- <p> ${item.pageTile}</p> -->
-            <!-- <p> ${item.resourceType}</p> -->
-            <a href="${item.path @ extension='html'}">
-                ${item.pageTile}
-            </a>
+            </ul>
         </li>
     </ul>
 </nav>
