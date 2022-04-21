@@ -42,7 +42,14 @@
                             <text
                                 cq:policy="plweb-dsys/components/text/policy_641562756958017"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                                sling:resourceType="wcm/core/components/policies/mapping">
+                                <v1 jcr:primaryType="nt:unstructured">
+                                    <text
+                                        cq:policy="plweb-dsys/components/text/v1/text/policy_1649835738040"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </v1>
+                            </text>
                             <teaser
                                 cq:policy="plweb-dsys/components/teaser/policy_1575031387650"
                                 jcr:primaryType="nt:unstructured"
