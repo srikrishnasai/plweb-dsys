@@ -5,6 +5,6 @@
         cq:templateType="/conf/plweb-dsys/settings/wcm/template-types/xf"
         jcr:description="My Site Experience Fragment Template"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Web Variation"
+        jcr:title="Experience Fragment Template"
         status="enabled"/>
 </jcr:root>
