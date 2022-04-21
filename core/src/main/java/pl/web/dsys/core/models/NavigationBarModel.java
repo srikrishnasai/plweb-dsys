@@ -48,92 +48,81 @@ public class NavigationBarModel {
     public List<PageInfo> pageInfoList;
     public List<CategoryList> categoryList;
     Resource requestResource;
-    Iterator<Resource> resourceIterator;
+    Iterator<Page> resourceIterator;
     PageManager pageManager;
 
     @PostConstruct
     protected void init() {
         if (linkTarget != null) {
             requestResource = resourceResolver.getResource(linkTarget);
-            if (requestResource != null) {
-                resourceIterator = requestResource.listChildren();
-
+            pageManager = resourceResolver.adaptTo(PageManager.class);
+            Page page = pageManager.getContainingPage(requestResource);
+            if (page != null) {
+                resourceIterator = page.listChildren();
                 // get child pages of current page path
                 categoryList = new ArrayList<>();
                 resourceIterator.forEachRemaining(resource -> {
-                    pageManager = resourceResolver.adaptTo(PageManager.class);
-                    if (pageManager != null) {
-                        Page page = pageManager.getContainingPage(resource);
-                        if (page != null) {
+                    // get current page properties
+                    CategoryList categorylist = new CategoryList();
+                    final Resource contentResource = resource.getContentResource();
+                    final ValueMap pageValueMap = contentResource.getValueMap();
+                    final String pageTitle = pageValueMap.get(NameConstants.PN_PAGE_TITLE) != null
+                            ? pageValueMap.get(NameConstants.PN_PAGE_TITLE).toString()
+                            : pageValueMap.get(NameConstants.PN_TITLE).toString();
+                    final String isHideInNavigation = pageValueMap.get(NameConstants.PN_HIDE_IN_NAV) != null
+                            ? pageValueMap.get(NameConstants.PN_HIDE_IN_NAV).toString()
+                            : StringUtils.EMPTY;
+                    categorylist.setCategory(pageTitle);
+                    categorylist.setPath(resource.getPath());
 
-                            // get current page properties
-                            CategoryList categorylist = new CategoryList();
-                            final Resource contentResource = page.getContentResource();
-                            final ValueMap pageValueMap = contentResource.getValueMap();
-                            final String pageTitle = pageValueMap.get(NameConstants.PN_PAGE_TITLE) != null
-                                    ? pageValueMap.get(NameConstants.PN_PAGE_TITLE).toString()
-                                    : pageValueMap.get(NameConstants.PN_TITLE).toString();
-                            final String isHideInNavigation = pageValueMap.get(NameConstants.PN_HIDE_IN_NAV) != null
-                                    ? pageValueMap.get(NameConstants.PN_HIDE_IN_NAV).toString()
-                                    : StringUtils.EMPTY;
-                            categorylist.setCategory(pageTitle);
-                            categorylist.setPath(page.getPath());
+                    // get current page's list of child pages.
+                    if (null != resource.getPath()) {
+                        requestResource = resourceResolver.getResource(resource.getPath());
+                        pageManager = resourceResolver.adaptTo(PageManager.class);
+                        Page childPage = pageManager.getContainingPage(requestResource);
+                        if (null != childPage) {
+                            resourceIterator = childPage.listChildren();
+                            pageInfoList = new ArrayList<>();
+                            resourceIterator.forEachRemaining(childResource -> {
+                                pageManager = resourceResolver.adaptTo(PageManager.class);
 
-                            // get current page's list of child pages.
-                            if (null != page.getPath()) {
-                                requestResource = resourceResolver.getResource(page.getPath());
-                                if (null != requestResource) {
-                                    resourceIterator = requestResource.listChildren();
-                                    pageInfoList = new ArrayList<>();
-                                    resourceIterator.forEachRemaining(childResource -> {
-                                        pageManager = resourceResolver.adaptTo(PageManager.class);
-                                        if (null != pageManager) {
-                                            Page childPage = pageManager.getContainingPage(childResource);
-                                            if (null != childPage) {
+                                // get child page properties
+                                final Resource contentResourceChild = childResource.getContentResource();
+                                final ValueMap pageValueMapChild = contentResourceChild.getValueMap();
+                                final String pageTitleChild = pageValueMapChild
+                                        .get(NameConstants.PN_PAGE_TITLE) != null
+                                                ? pageValueMapChild.get(NameConstants.PN_PAGE_TITLE)
+                                                        .toString()
+                                                : pageValueMapChild.get(NameConstants.PN_TITLE)
+                                                        .toString();
+                                final String isHideInNavigationChild = pageValueMapChild
+                                        .get(NameConstants.PN_HIDE_IN_NAV) != null
+                                                ? pageValueMapChild.get(NameConstants.PN_HIDE_IN_NAV)
+                                                        .toString()
+                                                : StringUtils.EMPTY;
+                                PageInfo pageInfo = new PageInfo();
+                                pageInfo.setPageTile(pageTitleChild);
+                                pageInfo.setPath(childResource.getPath());
 
-                                                // get child page properties
-                                                final Resource contentResourceChild = childPage.getContentResource();
-                                                final ValueMap pageValueMapChild = contentResourceChild.getValueMap();
-                                                final String pageTitleChild = pageValueMapChild
-                                                        .get(NameConstants.PN_PAGE_TITLE) != null
-                                                                ? pageValueMapChild.get(NameConstants.PN_PAGE_TITLE)
-                                                                        .toString()
-                                                                : pageValueMapChild.get(NameConstants.PN_TITLE)
-                                                                        .toString();
-                                                final String isHideInNavigationChild = pageValueMapChild
-                                                        .get(NameConstants.PN_HIDE_IN_NAV) != null
-                                                                ? pageValueMapChild.get(NameConstants.PN_HIDE_IN_NAV)
-                                                                        .toString()
-                                                                : StringUtils.EMPTY;
-                                                PageInfo pageInfo = new PageInfo();
-                                                pageInfo.setPageTile(pageTitleChild);
-                                                pageInfo.setPath(childPage.getPath());
-
-                                                // add page into list only if its hide in navigation property is not set
-                                                // to true
-                                                if (isHideInNavigationChild.isEmpty()
-                                                        || !isHideInNavigationChild.equalsIgnoreCase("true")) {
-                                                    pageInfoList.add(pageInfo);
-                                                }
-
-                                            }
-
-                                        }
-
-                                    });
-
+                                // add page into list only if its hide in navigation property is not set
+                                // to true
+                                if (isHideInNavigationChild.isEmpty()
+                                        || !isHideInNavigationChild.equalsIgnoreCase("true")) {
+                                    pageInfoList.add(pageInfo);
                                 }
 
-                            }
-                            categorylist.setPageInfolist(pageInfoList);
-
-                            // add page into list only if its hide in navigation property is not set to true
-                            if (isHideInNavigation.isEmpty() || !isHideInNavigation.equalsIgnoreCase("true")) {
-                                categoryList.add(categorylist);
-                            }
+                            });
 
                         }
+
                     }
+                    categorylist.setPageInfolist(pageInfoList);
+
+                    // add page into list only if its hide in navigation property is not set to true
+                    if (isHideInNavigation.isEmpty() || !isHideInNavigation.equalsIgnoreCase("true")) {
+                        categoryList.add(categorylist);
+                    }
+
                 });
             }
         }
