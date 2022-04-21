@@ -2,6 +2,10 @@
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 
 .navbar{
+
+    background-color: @textBodyDark;
+    margin: @16;
+
     .element(list-heading,{
         margin-bottom: @16;
         &::before{
@@ -12,11 +16,18 @@
         }
     });
     .element(list-item,{
+        margin-top: @8;
+        display: flex;
+        width: 100%;
         a{
             text-decoration: none;
             color: @neutral1000;
             margin-left: @8;
+            padding: @4;
+            flex: 1;
         }
-        margin-top: @8;
+        &:hover{
+            background-color: @neutral100;
+        }
     });
 }
