@@ -1,0 +1,12 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+	data-sly-use.objRef="pl.web.dsys.core.models.SecondaryNavModel"
+    data-sly-call="${clientlib.all @ categories='plweb-dsys.secondary-nav'}" />
+	
+	Hello Secondary nav 
+	
+	Column One Nav Type -------> ${objRef.columnOne.navType} <br>
+	
+	Column Two Nav Type -------> ${objRef.columnTwo.navType} <br>
+	
+	Column Three Nav Type -------> ${objRef.columnThree.navType} <br>
