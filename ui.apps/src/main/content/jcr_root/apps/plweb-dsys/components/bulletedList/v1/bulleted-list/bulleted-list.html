@@ -1,4 +1,5 @@
 <div data-sly-resource="${'title' @ resourceType='plweb-dsys/components/title/v1/title'}"></div>
+<div data-sly-resource="${'text' @ resourceType='plweb-dsys/components/text/v1/text'}"></div>
 
 <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
       data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
@@ -8,7 +9,7 @@
 <p>${properties.columnNumbers}</p>
 <ul data-sly-test="${model1.childResource}" data-sly-list="${model1.childResource.listChildren}">
 <li> ${item.listItemText}</li>
- </ul>
+</ul>
 
 
 </div>
