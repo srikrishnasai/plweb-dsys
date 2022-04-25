@@ -106,18 +106,15 @@
                                                 fieldLabel="Select Title Color"
                                                 name="./titleColor">
                                                 <items jcr:primaryType="nt:unstructured">
-                                                    <dark
+                                                    <primaryDark
                                                         jcr:primaryType="nt:unstructured"
-                                                        text=" Dark (#474747)"
-                                                        value="#474747"/>
-                                                    <light
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Light (#e8f2fa)"
-                                                        value="#e8f2fa"/>
+                                                        text="Primary Dark"
+                                                        value="primaryDark"/>
+                                                    
                                                     <white
                                                         jcr:primaryType="nt:unstructured"
                                                         text="White"
-                                                        value="#FFFFFF"/>
+                                                        value="textBodyDark"/>
                                                 </items>
                                             </titleColor>
                                             <subtitleColor
@@ -126,18 +123,15 @@
                                                 fieldLabel="Select Subtitle Color"
                                                 name="./subtitleColor">
                                                 <items jcr:primaryType="nt:unstructured">
-                                                    <dark
+                                                    <primaryDark
                                                         jcr:primaryType="nt:unstructured"
-                                                        text=" Dark (#474747)"
-                                                        value="#474747"/>
-                                                    <light
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Light (#e8f2fa)"
-                                                        value="#e8f2fa"/>
+                                                        text="Primary Dark"
+                                                        value="primaryDark"/>
+                                                    
                                                     <white
                                                         jcr:primaryType="nt:unstructured"
                                                         text="White"
-                                                        value="#FFFFFF"/>
+                                                        value="textBodyDark"/>
                                                 </items>
                                             </subtitleColor>
                                             
