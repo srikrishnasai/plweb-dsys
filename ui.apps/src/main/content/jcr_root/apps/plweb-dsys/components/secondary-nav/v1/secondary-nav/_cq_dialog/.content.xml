@@ -116,27 +116,34 @@
                                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
                                                                     name="./columnOne/overview/secondaryLinks">
                                                                     <items jcr:primaryType="nt:unstructured">
-                                                                        <linkText
+                                                                        <linkConfigs
                                                                             jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                            fieldDescription="Enter Link Text"
-                                                                            fieldLabel="Link Text"
-                                                                            name="./linkText"/>
-                                                                        <targetPath
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                                            fieldDescription="Select path of the page to visit "
-                                                                            fieldLabel="Link Target Path"
-                                                                            name="./targetPath"
-                                                                            rootPath="/content/plweb-dsys"/>
-                                                                        <linktarget
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                                            checked="{Boolean}false"
-                                                                            fieldDescription="Check this checkbox to open the link in new tab."
-                                                                            name="./linkTarget"
-                                                                            text="Open Link in New Tab"
-                                                                            value="true"/>
+                                                                            jcr:title="Edit Secondary Links"
+                                                                            sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
+                                                                                <targetPath
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                                    fieldDescription="Select path of the page to visit "
+                                                                                    fieldLabel="Link Target Path"
+                                                                                    name="./targetPath"
+                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                <linktarget
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                    checked="{Boolean}false"
+                                                                                    fieldDescription="Check this checkbox to open the link in new tab."
+                                                                                    name="./linkTarget"
+                                                                                    text="Open Link in New Tab"
+                                                                                    value="true"/>
+                                                                            </items>
+                                                                        </linkConfigs>
                                                                     </items>
                                                                 </field>
                                                             </secondaryLinks>
@@ -170,46 +177,53 @@
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                                                 composite="{Boolean}true"
                                                                 fieldDescription="Click 'Add field' to add a new Image to the Slide show"
-                                                                fieldLabel="Secondary Links">
+                                                                fieldLabel="Links">
                                                                 <field
                                                                     jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
                                                                     name="./columnOne/multilinks/links">
                                                                     <items jcr:primaryType="nt:unstructured">
-                                                                        <linkText
+                                                                        <linkConfigs
                                                                             jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                            fieldDescription="Enter Link Text"
-                                                                            fieldLabel="Link Text"
-                                                                            name="./linkText"/>
-                                                                        <targetPath
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                                            fieldDescription="Select path of the page to visit "
-                                                                            fieldLabel="Link Target Path"
-                                                                            name="./targetPath"
-                                                                            rootPath="/content/plweb-dsys"/>
-                                                                        <linktarget
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                                            checked="{Boolean}false"
-                                                                            fieldDescription="Check this checkbox to open the link in new tab."
-                                                                            name="./linkTarget"
-                                                                            text="Open Link in New Tab"
-                                                                            value="true"/>
-                                                                        <desciption
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                                                                            fieldLabel="Description"
-                                                                            name="./description"
-                                                                            useFixedInlineToolbar="{Boolean}true">
-                                                                            <rtePlugins
-                                                                                jcr:primaryType="nt:unstructured"
-                                                                                sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
-                                                                            <uiSettings
-                                                                                jcr:primaryType="nt:unstructured"
-                                                                                sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
-                                                                        </desciption>
+                                                                            jcr:title="Edit Links"
+                                                                            sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
+                                                                                <targetPath
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                                    fieldDescription="Select path of the page to visit "
+                                                                                    fieldLabel="Link Target Path"
+                                                                                    name="./targetPath"
+                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                <linktarget
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                    checked="{Boolean}false"
+                                                                                    fieldDescription="Check this checkbox to open the link in new tab."
+                                                                                    name="./linkTarget"
+                                                                                    text="Open Link in New Tab"
+                                                                                    value="true"/>
+                                                                                <desciption
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                                                    fieldLabel="Description"
+                                                                                    name="./description"
+                                                                                    useFixedInlineToolbar="{Boolean}true">
+                                                                                    <rtePlugins
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
+                                                                                    <uiSettings
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
+                                                                                </desciption>
+                                                                            </items>
+                                                                        </linkConfigs>
                                                                     </items>
                                                                 </field>
                                                             </links>
@@ -376,27 +390,34 @@
                                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
                                                                     name="./columnTwo/overview/secondaryLinks">
                                                                     <items jcr:primaryType="nt:unstructured">
-                                                                        <linkText
+                                                                        <linkConfigs
                                                                             jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                            fieldDescription="Enter Link Text"
-                                                                            fieldLabel="Link Text"
-                                                                            name="./linkText"/>
-                                                                        <targetPath
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                                            fieldDescription="Select path of the page to visit "
-                                                                            fieldLabel="Link Target Path"
-                                                                            name="./targetPath"
-                                                                            rootPath="/content/plweb-dsys"/>
-                                                                        <linktarget
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                                            checked="{Boolean}false"
-                                                                            fieldDescription="Check this checkbox to open the link in new tab."
-                                                                            name="./linkTarget"
-                                                                            text="Open Link in New Tab"
-                                                                            value="true"/>
+                                                                            jcr:title="Edit Secondary Links"
+                                                                            sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
+                                                                                <targetPath
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                                    fieldDescription="Select path of the page to visit "
+                                                                                    fieldLabel="Link Target Path"
+                                                                                    name="./targetPath"
+                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                <linktarget
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                    checked="{Boolean}false"
+                                                                                    fieldDescription="Check this checkbox to open the link in new tab."
+                                                                                    name="./linkTarget"
+                                                                                    text="Open Link in New Tab"
+                                                                                    value="true"/>
+                                                                            </items>
+                                                                        </linkConfigs>
                                                                     </items>
                                                                 </field>
                                                             </secondaryLinks>
@@ -430,46 +451,53 @@
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                                                 composite="{Boolean}true"
                                                                 fieldDescription="Click 'Add field' to add a new Image to the Slide show"
-                                                                fieldLabel="Secondary Links">
+                                                                fieldLabel="Links">
                                                                 <field
                                                                     jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
                                                                     name="./columnTwo/multilinks/links">
                                                                     <items jcr:primaryType="nt:unstructured">
-                                                                        <linkText
+                                                                        <linkConfigs
                                                                             jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                            fieldDescription="Enter Link Text"
-                                                                            fieldLabel="Link Text"
-                                                                            name="./linkText"/>
-                                                                        <targetPath
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                                            fieldDescription="Select path of the page to visit "
-                                                                            fieldLabel="Link Target Path"
-                                                                            name="./targetPath"
-                                                                            rootPath="/content/plweb-dsys"/>
-                                                                        <linktarget
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                                            checked="{Boolean}false"
-                                                                            fieldDescription="Check this checkbox to open the link in new tab."
-                                                                            name="./linkTarget"
-                                                                            text="Open Link in New Tab"
-                                                                            value="true"/>
-                                                                        <desciption
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                                                                            fieldLabel="Description"
-                                                                            name="./description"
-                                                                            useFixedInlineToolbar="{Boolean}true">
-                                                                            <rtePlugins
-                                                                                jcr:primaryType="nt:unstructured"
-                                                                                sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
-                                                                            <uiSettings
-                                                                                jcr:primaryType="nt:unstructured"
-                                                                                sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
-                                                                        </desciption>
+                                                                            jcr:title="Edit Links"
+                                                                            sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
+                                                                                <targetPath
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                                    fieldDescription="Select path of the page to visit "
+                                                                                    fieldLabel="Link Target Path"
+                                                                                    name="./targetPath"
+                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                <linktarget
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                    checked="{Boolean}false"
+                                                                                    fieldDescription="Check this checkbox to open the link in new tab."
+                                                                                    name="./linkTarget"
+                                                                                    text="Open Link in New Tab"
+                                                                                    value="true"/>
+                                                                                <desciption
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                                                    fieldLabel="Description"
+                                                                                    name="./description"
+                                                                                    useFixedInlineToolbar="{Boolean}true">
+                                                                                    <rtePlugins
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
+                                                                                    <uiSettings
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
+                                                                                </desciption>
+                                                                            </items>
+                                                                        </linkConfigs>
                                                                     </items>
                                                                 </field>
                                                             </links>
@@ -636,27 +664,34 @@
                                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
                                                                     name="./columnThree/overview/secondaryLinks">
                                                                     <items jcr:primaryType="nt:unstructured">
-                                                                        <linkText
+                                                                        <linkConfigs
                                                                             jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                            fieldDescription="Enter Link Text"
-                                                                            fieldLabel="Link Text"
-                                                                            name="./linkText"/>
-                                                                        <targetPath
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                                            fieldDescription="Select path of the page to visit "
-                                                                            fieldLabel="Link Target Path"
-                                                                            name="./targetPath"
-                                                                            rootPath="/content/plweb-dsys"/>
-                                                                        <linktarget
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                                            checked="{Boolean}false"
-                                                                            fieldDescription="Check this checkbox to open the link in new tab."
-                                                                            name="./linkTarget"
-                                                                            text="Open Link in New Tab"
-                                                                            value="true"/>
+                                                                            jcr:title="Edit Secondary Links"
+                                                                            sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
+                                                                                <targetPath
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                                    fieldDescription="Select path of the page to visit "
+                                                                                    fieldLabel="Link Target Path"
+                                                                                    name="./targetPath"
+                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                <linktarget
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                    checked="{Boolean}false"
+                                                                                    fieldDescription="Check this checkbox to open the link in new tab."
+                                                                                    name="./linkTarget"
+                                                                                    text="Open Link in New Tab"
+                                                                                    value="true"/>
+                                                                            </items>
+                                                                        </linkConfigs>
                                                                     </items>
                                                                 </field>
                                                             </secondaryLinks>
@@ -690,46 +725,53 @@
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                                                 composite="{Boolean}true"
                                                                 fieldDescription="Click 'Add field' to add a new Image to the Slide show"
-                                                                fieldLabel="Secondary Links">
+                                                                fieldLabel="Links">
                                                                 <field
                                                                     jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
                                                                     name="./columnThree/multilinks/links">
                                                                     <items jcr:primaryType="nt:unstructured">
-                                                                        <linkText
+                                                                        <linkConfigs
                                                                             jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                            fieldDescription="Enter Link Text"
-                                                                            fieldLabel="Link Text"
-                                                                            name="./linkText"/>
-                                                                        <targetPath
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                                            fieldDescription="Select path of the page to visit "
-                                                                            fieldLabel="Link Target Path"
-                                                                            name="./targetPath"
-                                                                            rootPath="/content/plweb-dsys"/>
-                                                                        <linktarget
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                                            checked="{Boolean}false"
-                                                                            fieldDescription="Check this checkbox to open the link in new tab."
-                                                                            name="./linkTarget"
-                                                                            text="Open Link in New Tab"
-                                                                            value="true"/>
-                                                                        <desciption
-                                                                            jcr:primaryType="nt:unstructured"
-                                                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                                                                            fieldLabel="Description"
-                                                                            name="./description"
-                                                                            useFixedInlineToolbar="{Boolean}true">
-                                                                            <rtePlugins
-                                                                                jcr:primaryType="nt:unstructured"
-                                                                                sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
-                                                                            <uiSettings
-                                                                                jcr:primaryType="nt:unstructured"
-                                                                                sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
-                                                                        </desciption>
+                                                                            jcr:title="Edit Links"
+                                                                            sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
+                                                                                <targetPath
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                                    fieldDescription="Select path of the page to visit "
+                                                                                    fieldLabel="Link Target Path"
+                                                                                    name="./targetPath"
+                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                <linktarget
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                    checked="{Boolean}false"
+                                                                                    fieldDescription="Check this checkbox to open the link in new tab."
+                                                                                    name="./linkTarget"
+                                                                                    text="Open Link in New Tab"
+                                                                                    value="true"/>
+                                                                                <desciption
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                                                    fieldLabel="Description"
+                                                                                    name="./description"
+                                                                                    useFixedInlineToolbar="{Boolean}true">
+                                                                                    <rtePlugins
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
+                                                                                    <uiSettings
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
+                                                                                </desciption>
+                                                                            </items>
+                                                                        </linkConfigs>
                                                                     </items>
                                                                 </field>
                                                             </links>
