@@ -14,6 +14,8 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.day.cq.wcm.api.NameConstants;
+
 /**
  * This Model takes url as parameter and resolves and returns shortened url for
  * the same.
@@ -46,9 +48,21 @@ public class LinkHelperModel {
 	protected void init() {
 		log.debug("Inside Post Construct of LinkHelper Model.. ::{}", originalLink);
 		if (StringUtils.isNotBlank(originalLink)) {
-			modifiedLink = resolver.map(request, originalLink);
-			if (!StringUtils.endsWithIgnoreCase(originalLink, ".html")) {
-				modifiedLink = modifiedLink + ".html";
+			Resource page = resolver.resolve(originalLink);
+			if (page != null) {
+				if (page.getResourceType().equals(NameConstants.NT_PAGE)) {
+					// Internal Page.
+					modifiedLink = resolver.map(request, originalLink);
+					if (!StringUtils.endsWithIgnoreCase(originalLink, ".html")) {
+						modifiedLink = modifiedLink + ".html";
+					}
+				} else {
+					// DAM Path
+					modifiedLink = resolver.map(request, originalLink);
+				}
+			} else {
+				// External Link
+				modifiedLink = originalLink;
 			}
 			log.debug("Modified Link ::{}", modifiedLink);
 		}
