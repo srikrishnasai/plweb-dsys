@@ -35,10 +35,10 @@ public class SecondaryNavModel {
 
 	@ChildResource
 	private SecondaryNavColumnModel columnOne;
-	
+
 	@ChildResource
 	private SecondaryNavColumnModel columnTwo;
-	
+
 	@ChildResource
 	private SecondaryNavColumnModel columnThree;
 
@@ -58,5 +58,5 @@ public class SecondaryNavModel {
 	public SecondaryNavColumnModel getColumnThree() {
 		return columnThree;
 	}
-	
+
 }
