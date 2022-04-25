@@ -1,0 +1,14 @@
+<div data-sly-resource="${'title' @ resourceType='plweb-dsys/components/title/v1/title'}"></div>
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+      data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+       data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='listItemValues'}"/>
+       <div>
+
+<p>${properties.columnNumbers}</p>
+<ul data-sly-test="${model1.childResource}" data-sly-list="${model1.childResource.listChildren}">
+<li> ${item.listItemText}</li>
+ </ul>
+
+
+</div>
