@@ -1,0 +1,10 @@
+<sly data-sly-template.multilink="${@ multilinkObj}">
+   <div id="overviewSupport" class="secondary-nav__support">
+      <sly data-sly-list.links="${multilinkObj.links}">
+      <sly data-sly-test="${links.targetPath}" data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=links.targetPath}"/>
+         <a class="dsys-text dsys-text--body" href="${linkhelper.modifiedLink}">${links.linkText}</a>
+         <div class="dsys-text dsys-text--caption support__description">${links.description @ context='html'}
+         </div>
+      </sly>
+   </div>
+</sly>

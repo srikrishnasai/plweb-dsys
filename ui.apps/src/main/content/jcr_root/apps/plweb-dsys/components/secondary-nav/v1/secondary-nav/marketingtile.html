@@ -1,0 +1,7 @@
+<sly data-sly-template.marketingtile="${@ marketingObj}">
+   <div id="marketing" class="secondary-nav__marketing">
+      <img class="marketing__image" alt="Marketing Image" src="${marketingObj.fileReference}"/>
+      <div class="dsys-text dsys-text--caption marketing__description">${marketingObj.description @ context='html'}
+      </div>
+   </div>
+</sly>

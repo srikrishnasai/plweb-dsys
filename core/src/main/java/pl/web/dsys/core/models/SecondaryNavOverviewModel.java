@@ -38,7 +38,7 @@ public class SecondaryNavOverviewModel {
 	private String primaryLinkTargetPath;
 
 	@ValueMapValue
-	private String privateLinkTarget;
+	private String primaryLinkTarget;
 
 	@ValueMapValue
 	private String overviewDescription;
@@ -66,8 +66,8 @@ public class SecondaryNavOverviewModel {
 		return primaryLinkTargetPath;
 	}
 
-	public String getPrivateLinkTarget() {
-		return privateLinkTarget;
+	public String getPrimaryLinkTarget() {
+		return primaryLinkTarget;
 	}
 
 	public String getOverviewDescription() {
