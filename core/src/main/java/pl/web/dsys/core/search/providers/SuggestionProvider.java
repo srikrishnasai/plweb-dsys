@@ -1,4 +1,4 @@
-package pl.web.dsys.core.providers;
+package pl.web.dsys.core.search.providers;
 
 import java.util.List;
 
