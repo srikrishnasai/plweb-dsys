@@ -273,7 +273,7 @@
                 </policy_1574694950110>
                 <policy_1574695586800
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                    jcr:lastModified="{Date}2022-03-30T17:30:22.775+05:30"
+                    jcr:lastModified="{Date}2022-04-22T18:10:56.202+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Content"
@@ -531,6 +531,43 @@
                     </card>
                 </v1>
             </card>
+            <bulletedList jcr:primaryType="nt:unstructured">
+                <v1 jcr:primaryType="nt:unstructured">
+                    <bulleted-list jcr:primaryType="nt:unstructured">
+                        <policy_1650632266913
+                            jcr:lastModified="{Date}2022-04-22T18:32:30.990+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="List Type"
+                            sling:resourceType="wcm/core/components/policy/policy">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                            <cq:styleGroups jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleGroupLabel="List Type"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="cmp-list--bullet-points"
+                                            cq:styleId="1650632366071"
+                                            cq:styleLabel="Bullet Points"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                            cq:styleClasses="cmp-list--checkmarks"
+                                            cq:styleId="1650632367480"
+                                            cq:styleLabel="Checkmarks"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item2
+                                            cq:styleClasses="cmp-list--numbers"
+                                            cq:styleId="1650632368188"
+                                            cq:styleLabel="Numbers"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item0>
+                            </cq:styleGroups>
+                        </policy_1650632266913>
+                    </bulleted-list>
+                </v1>
+            </bulletedList>
         </components>
     </plweb-dsys>
 </jcr:root>

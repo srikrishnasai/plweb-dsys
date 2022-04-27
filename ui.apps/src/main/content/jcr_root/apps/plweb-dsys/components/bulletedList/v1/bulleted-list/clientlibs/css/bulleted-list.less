@@ -1,0 +1,179 @@
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+
+
+
+
+.bulleted-list {
+    &.cmp-list{
+        .modifier(checkmarks,{
+            .bullet-list {
+                display: grid;
+                gap: 10px;
+    
+                .li-bullet-list {
+                    list-style-type: none;
+                    // padding: .25em 0 0 2.5em;
+                    padding-left: 30px;
+                    position: relative;
+    
+                    
+                    &:before {
+                        content: " ";
+                        display: block;
+                        border: solid .8em #E9F2FA;
+                        border-radius: .8em;
+                        height: 0;
+                        width: 0;
+                        position: absolute;
+                        left: .5em;
+                        top: 30%;
+                        margin-top: -.5em;
+                    }
+    
+                    &:after {
+                        content: " ";
+                        display: block;
+                        width: .3em;
+                        height: .6em;
+                        border: solid #0D65B3;
+                        border-width: 0 .2em .2em 0 !important;
+                        position: absolute;
+                        left: 1em;
+                        top: 30%;
+                        margin-top: -.2em;
+                        -webkit-transform: rotate(45deg);
+                        -moz-transform: rotate(45deg);
+                        -o-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+    
+                    span.list-text {
+                        font-family: 'Open Sans';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+    
+    
+    
+                }
+    
+            }
+
+        });
+        .modifier(bullet-points,{
+            .bullet-list {
+                list-style-type: none;
+                padding-left: 10px;
+                display: grid;
+                gap: 10px;
+                li {
+                    position: relative;
+                    padding-left: 20px;
+                    display: flex;
+                    flex-direction: row;
+                    &:before {
+                        content: "";
+                        height: 15px;
+                        width: 15px;
+                        border-radius: 50%;
+                        margin-top: 5px;
+                        background-color: #0D65B3;
+                        min-width: 15px;
+                    }
+                }
+            }
+    
+            
+        });
+        .modifier(numbers,{
+            .bullet-list {
+                counter-reset: li;
+                list-style-type: none;
+                font-size: 1rem;
+                line-height: 18px;
+                padding-left: 10px;
+                font-weight: 700;
+                display: grid;
+    
+                li {
+                    position: relative;
+                    padding: 5px 0 5px 30px;
+                    &:before {
+                        content: counter(li);
+                        counter-increment: li;
+                        height: 25px;
+                        width: 25px;
+                        border-radius: 50%;
+                        text-align: center;
+                        position: absolute;
+                        left: 0;
+                        top: 10px;
+                        color: #0D65B3;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #E9F2FA;
+                        min-width: 25px;
+                    }
+                }
+            }
+
+        });
+    }
+
+    .bulleted-list-wrapper {
+        padding: 10px;
+
+        .bullet-list {
+            li {
+                span.list-text {
+                    font-family: 'Open Sans';
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    display: block;
+                    padding-left: 10px;
+                }
+            }
+
+            .modifier(one, {
+                    grid-template-columns: auto;
+                }
+
+            );
+
+            .modifier(two, {
+                    grid-template-columns: auto auto;
+                    grid-template-rows: repeat(3, auto);
+                    gap: 10px;
+                    grid-auto-flow: column;
+
+                }
+
+            );
+
+            .modifier(three, {
+                    grid-template-columns: auto auto auto;
+                    grid-template-rows: repeat(2, auto);
+                    gap: 10px;
+                    grid-auto-flow: column;
+                }
+
+            );
+        }
+    }
+
+}
+
+@media @mediaMobile {
+    .bullet-list{
+        grid-template-columns: auto !important;
+        grid-template-rows: repeat(1, auto) !important;
+        gap: 10px !important;
+        grid-auto-flow: row !important;
+    }
+}

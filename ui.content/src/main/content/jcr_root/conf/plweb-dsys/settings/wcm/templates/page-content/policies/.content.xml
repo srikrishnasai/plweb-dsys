@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2022-03-30T13:51:03.551+05:30"
+        cq:lastModified="{Date}2022-04-22T18:32:31.048+05:30"
         cq:lastModifiedBy="admin"
         cq:policy="plweb-dsys/components/page/policy"
         jcr:primaryType="nt:unstructured"
@@ -70,7 +70,7 @@
                                         sling:resourceType="wcm/core/components/policies/mapping"/>
                                 </v1>
                             </card>
-							<section-container jcr:primaryType="nt:unstructured">
+                            <section-container jcr:primaryType="nt:unstructured">
                                 <v1 jcr:primaryType="nt:unstructured">
                                     <section-container
                                         cq:policy="plweb-dsys/components/section-container/v1/section-container/policy_1649920050038"
@@ -78,6 +78,14 @@
                                         sling:resourceType="wcm/core/components/policies/mapping"/>
                                 </v1>
                             </section-container>
+                            <bulletedList jcr:primaryType="nt:unstructured">
+                                <v1 jcr:primaryType="nt:unstructured">
+                                    <bulleted-list
+                                        cq:policy="plweb-dsys/components/bulletedList/v1/bulleted-list/policy_1650632266913"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </v1>
+                            </bulletedList>
                         </components>
                     </plweb-dsys>
                 </container>

@@ -1,0 +1,13 @@
+<div data-sly-resource="${'title' @ resourceType='plweb-dsys/components/title/v1/title'}"></div>
+<div data-sly-resource="${'text' @ resourceType='plweb-dsys/components/text/v1/text'}"></div>
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+      data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-call="${clientlib.all @ categories='plweb-dsys.bulleted-list'}"
+       data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='listItemValues'}"/>
+<div class="bulleted-list-wrapper">
+      <ul data-sly-test="${model1.childResource}" data-sly-list="${model1.childResource.listChildren}" class="bullet-list  bullet-list--${properties.columnNumbers} ">
+            <li class="li-bullet-list li-bullet-list--${properties.columnNumbers}"> <span class="list-text"> ${item.listItemText} </span> </li>
+      </ul>
+</div>
+
