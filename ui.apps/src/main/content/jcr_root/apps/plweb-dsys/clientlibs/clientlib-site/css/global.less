@@ -1,6 +1,8 @@
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 
+@teal-color: rgba(16,129,136,1);
+
 .aem-GridColumn {
     padding: 0 !important;
 }
@@ -55,7 +57,6 @@
 }
 
 .dsys-text{
-
     &.dsys-text{
         .openSans;
         .modifier(body,{
@@ -87,7 +88,7 @@
         });
 
         .modifier(color-teal, {
-            color: rgba(16,129,136,1);
+            color: @teal-color
         });
     }
 }
@@ -107,4 +108,12 @@
     .modifier(transparent, {
         background-color: transparent;
     });
+}
+
+.dsys-icon{
+    .element(search,{
+        background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/search.svg);
+        height: 18px;
+        width: 18px;
+    })
 }

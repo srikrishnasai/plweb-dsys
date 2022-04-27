@@ -1,12 +1,76 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-	data-sly-use.objRef="pl.web.dsys.core.models.SecondaryNavModel"
-    data-sly-call="${clientlib.all @ categories='plweb-dsys.secondary-nav'}" />
-	
-	Hello Secondary nav 
-	
-	Column One Nav Type -------> ${objRef.columnOne.navType} <br>
-	
-	Column Two Nav Type -------> ${objRef.columnTwo.navType} <br>
-	
-	Column Three Nav Type -------> ${objRef.columnThree.navType} <br>
+   data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+   data-sly-use.overviewTemplate="overview.html"
+   data-sly-use.multilinkTemplate="multilink.html"
+   data-sly-use.marketingTemplate="marketingtile.html"
+   data-sly-use.objRef="pl.web.dsys.core.models.SecondaryNavModel"
+   data-sly-call="${clientlib.all @ categories='plweb-dsys.secondary-nav'}" />
+<section class="section-container__main">
+   <div class="width-container secondary-nav__main">
+      <img id="logo" alt="Company's Logo" src="" />
+      <nav id="navigaton" class="secondary-nav__navigation">
+         <ul>
+            <li>
+               <a id="navLink" href="https://www.annuities.pacificlife.com/"> Link 1 </a>
+               <div id="dropdown" class="secondary-nav__dropdown">
+                  <sly data-sly-test.columnOneNavType="${objRef.columnOne.navType}">
+                     <sly data-sly-test="${columnOneNavType == 'overview'}">
+                        <sly data-sly-call="${overviewTemplate.overview @ overviewObj=objRef.columnOne.overview}"/>
+                     </sly>
+                     <sly data-sly-test="${columnOneNavType == 'multilinks'}">
+                        <sly data-sly-call="${multilinkTemplate.multilink @ multilinkObj=objRef.columnOne.multilinks}"/>
+                     </sly>
+                     <sly data-sly-test="${columnOneNavType == 'marketingTile'}">
+                        <sly data-sly-call="${marketingTemplate.marketingtile @ marketingObj=objRef.columnOne.marketingtile}"/>
+                     </sly>
+                  </sly>
+                  <sly data-sly-test.columnTwoNavType="${objRef.columnTwo.navType}">
+                     <sly data-sly-test="${columnTwoNavType == 'overview'}">
+                        <sly data-sly-call="${overviewTemplate.overview @ overviewObj=objRef.columnTwo.overview}"/>
+                     </sly>
+                     <sly data-sly-test="${columnTwoNavType == 'multilinks'}">
+                        <sly data-sly-call="${multilinkTemplate.multilink @ multilinkObj=objRef.columnTwo.multilinks}"/>
+                     </sly>
+                     <sly data-sly-test="${columnTwoNavType == 'marketingTile'}">
+                        <sly data-sly-call="${marketingTemplate.marketingtile @ marketingObj=objRef.columnTwo.marketingtile}"/>
+                     </sly>
+                  </sly>
+                  <sly data-sly-test.columnThreeNavType="${objRef.columnThree.navType}">
+                     <sly data-sly-test="${columnThreeNavType == 'overview'}">
+                        <sly data-sly-call="${overviewTemplate.overview @ overviewObj=objRef.columnThree.overview}"/>
+                     </sly>
+                     <sly data-sly-test="${columnThreeNavType == 'multilinks'}">
+                        <sly data-sly-call="${multilinkTemplate.multilink @ multilinkObj=objRef.columnThree.multilinks}"/>
+                     </sly>
+                     <sly data-sly-test="${columnThreeNavType == 'marketingTile'}">
+                        <sly data-sly-call="${marketingTemplate.marketingtile @ marketingObj=objRef.columnThree.marketingtile}"/>
+                     </sly>
+                  </sly>
+               </div>
+            </li>
+            <li>
+               <a id="navLink" href="https://www.annuities.pacificlife.com/"> Link 2 </a>
+            </li>
+            <li>
+               <a id="navLink" href="https://www.annuities.pacificlife.com/"> Link 3 </a>
+            </li>
+            <li>
+               <a id="navLink" href="https://www.annuities.pacificlife.com/"> Link 4 </a>
+            </li>
+            <li>
+               <a id="navLink" href="https://www.annuities.pacificlife.com/"> Link 5 </a>
+            </li>
+            <li>
+               <a id="navLink" href="https://www.annuities.pacificlife.com/"> Link 6 </a>
+            </li>
+            <li>
+               <a id="navLink" href="https://www.annuities.pacificlife.com/"> Link 7 </a>
+            </li>
+            <li>
+               <a id="navLink" href="https://www.annuities.pacificlife.com/"> Link 8 </a>
+            </li>
+         </ul>
+      </nav>
+      <div id="search-icon" class="dsys-icon__search"></div>
+   </div>
+</section>

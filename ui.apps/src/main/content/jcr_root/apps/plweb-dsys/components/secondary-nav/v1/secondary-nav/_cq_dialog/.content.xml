@@ -51,10 +51,10 @@
                                                 </items>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
-                                                    cq-dialog-dropdown-showhide-target=".navtype-showhide-target"/>
+                                                    cq-dialog-dropdown-showhide-target=".navtype-column-one-showhide-target"/>
                                             </navType>
                                             <overview
-                                                granite:class="navtype-showhide-target"
+                                                granite:class="navtype-column-one-showhide-target"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
@@ -161,7 +161,7 @@
                                                     showhidetargetvalue="overview"/>
                                             </overview>
                                             <multilinks
-                                                granite:class="navtype-showhide-target"
+                                                granite:class="navtype-column-one-showhide-target"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
@@ -235,7 +235,7 @@
                                                     showhidetargetvalue="multilinks"/>
                                             </multilinks>
                                             <marketingtile
-                                                granite:class="navtype-showhide-target"
+                                                granite:class="navtype-column-one-showhide-target"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
@@ -325,10 +325,10 @@
                                                 </items>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
-                                                    cq-dialog-dropdown-showhide-target=".navtype-showhide-target"/>
+                                                    cq-dialog-dropdown-showhide-target=".navtype-column-two-showhide-target"/>
                                             </navType>
                                             <overview
-                                                granite:class="navtype-showhide-target"
+                                                granite:class="navtype-column-two-showhide-target"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
@@ -435,7 +435,7 @@
                                                     showhidetargetvalue="overview"/>
                                             </overview>
                                             <multilinks
-                                                granite:class="navtype-showhide-target"
+                                                granite:class="navtype-column-two-showhide-target"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
@@ -509,7 +509,7 @@
                                                     showhidetargetvalue="multilinks"/>
                                             </multilinks>
                                             <marketingtile
-                                                granite:class="navtype-showhide-target"
+                                                granite:class="navtype-column-two-showhide-target"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
@@ -599,10 +599,10 @@
                                                 </items>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
-                                                    cq-dialog-dropdown-showhide-target=".navtype-showhide-target"/>
+                                                    cq-dialog-dropdown-showhide-target=".navtype-column-three-showhide-target"/>
                                             </navType>
                                             <overview
-                                                granite:class="navtype-showhide-target"
+                                                granite:class="navtype-column-three-showhide-target"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
@@ -709,7 +709,7 @@
                                                     showhidetargetvalue="overview"/>
                                             </overview>
                                             <multilinks
-                                                granite:class="navtype-showhide-target"
+                                                granite:class="navtype-column-three-showhide-target"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
@@ -783,7 +783,7 @@
                                                     showhidetargetvalue="multilinks"/>
                                             </multilinks>
                                             <marketingtile
-                                                granite:class="navtype-showhide-target"
+                                                granite:class="navtype-column-three-showhide-target"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
