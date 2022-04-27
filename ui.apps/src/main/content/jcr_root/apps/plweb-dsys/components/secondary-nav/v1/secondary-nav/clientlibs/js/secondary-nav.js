@@ -48,9 +48,7 @@
                 .find("li")
                 .each(function () {
                     if ($(document).width() > 556) {
-                        console.log("COMING HERE")
                         var dropdown = $(this).find("#dropdown");
-                        console.log(dropdown)
                         $(this).hover(
                             function () {
                                 if (!dropdown.hasClass("secondary-nav--dropdown-active")) {
@@ -82,5 +80,3 @@
         });
     });
 })();
-
-// $('#div').off('mouseenter mouseleave');
