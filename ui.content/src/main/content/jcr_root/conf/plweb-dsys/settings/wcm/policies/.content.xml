@@ -402,7 +402,7 @@
                                     </cq:styles>
                                 </item0>
                                 <item1
-                                    cq:styleGroupLabel="Gaps"
+                                    cq:styleGroupLabel="Gutter"
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0

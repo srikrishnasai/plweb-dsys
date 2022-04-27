@@ -622,6 +622,74 @@
                             </column>
                         </items>
                     </mobile>
+                    <titleSettings
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Title &amp; Text Settings"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <alignment
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Alignment"
+                                                name="./titleTextAlignment">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <left
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Left"
+                                                        value="left"/>
+                                                    <Center
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Center"
+                                                        value="center"/>
+                                                    <right
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Right"
+                                                        value="right"/>
+                                                </items>
+                                            </alignment>
+                                            <bottomSpacing
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Spacing after text"
+                                                name="./titleTextBottomSpacing">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <small
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Small (12px)"
+                                                        value="small"/>
+                                                    <medium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Medium(24px)"
+                                                        value="medium"/>
+                                                    <large
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Large(36px)"
+                                                        value="large"/>
+                                                </items>
+                                            </bottomSpacing>
+                                            <restrictTextWidth
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Applies a max width to text"
+                                                name="./restrictTextWidth"
+                                                text="Restrict Text Width"
+                                                value="true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </titleSettings>
                     <animate
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Animation"

@@ -1,6 +1,7 @@
 <!-- section container clientlibs are embedded in clientlib base -->
 
-<div class="section-container__main
+<div
+    class="section-container__main
     ${properties.removeSpaceDesktop ? ' section-container--desktop-full-width' : ''}
     ${properties.removeSpaceTablet ? ' section-container--tablet-full-width' : ''}
     ${properties.removeSpaceMobile ? ' section-container--mobile-full-width' : ''}
@@ -19,12 +20,23 @@
     section-container--tablet-background-${properties.useDesktopConfigForMobile ? properties.desktopBgColor : properties.tabletBgColor} 
     section-container--mobile-background-${properties.useDesktopConfigForMobile ? properties.desktopBgColor : properties.mobileBgColor}">
     <!-- Layout Container Parsys Inclusion -->
+
+
     <div
         class="width-container ${properties.animation && properties.animation != 'none' ? 'animated slower' : ''} ${properties.animation && properties.animation != 'none' ? properties.animation : ''}">
         <div class="component-title-bar" data-sly-test="${wcmmode.edit || wcmmode.design}">
             Section Container
         </div>
-        <sly data-sly-resource="${'layout-container-parsys' @ resourceType='wcm/foundation/components/responsivegrid', decoration='true'}"
-            data-sly-unwrap />
+        <div class="section-container__title-and-text section-container__title-and-text--alignment-${properties.titleTextAlignment} section-container__title-and-text--bottom-spacing-${properties.titleTextBottomSpacing}">
+            <div class="section-container__title" data-sly-resource="${'title' @ resourceType='plweb-dsys/components/title/v1/title', decoration='true'}">
+            </div>
+    
+            <div class="section-container__desc ${properties.restrictTextWidth ? 'section-container__desc--restrict-width' : ''}" data-sly-resource="${'desc' @ resourceType='plweb-dsys/components/text/v1/text', decoration='true'}">
+            </div>
+        </div>
+        
+        <div class="section-container__layout-parsys"
+             data-sly-resource="${'layout-container-parsys' @ resourceType='wcm/foundation/components/responsivegrid', decoration='true'}">
+        </div>
     </div>
 </div>

@@ -403,6 +403,34 @@
         }
     });
 
+    .element(title-and-text, {
+        .modifier(alignment-left, {
+            text-align: left;
+        });
+        .modifier(alignment-center, {
+            text-align: center;
+        });
+        .modifier(alignment-right, {
+            text-align: right;
+        });
+
+        .modifier(bottom-spacing-small, {
+            margin-bottom: @16;
+        });
+        .modifier(bottom-spacing-medium, {
+            margin-bottom: @24;
+        });
+        .modifier(bottom-spacing-large, {
+            margin-bottom: @32;
+        });
+    });
+
+    .element(desc, {
+        .modifier(restrict-width, {
+            max-width: 672px;
+        });
+    });
+
     .element(layout, {
         .modifier(grid ,{
             .aem-Grid {
@@ -451,5 +479,11 @@
                 gap: 128px;
             }
         });
+    });
+
+    .element(layout-parsys, {
+        .new.newpar {
+            min-width: 150px;
+        }
     });
 }
