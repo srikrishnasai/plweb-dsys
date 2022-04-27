@@ -51,7 +51,7 @@ public class SecondaryNavLinksModel {
 	}
 
 	public String getLinkTarget() {
-		return linkTarget;
+		return linkTarget != null ? "_blank" : "_self";
 	}
 
 	public String getDescription() {
