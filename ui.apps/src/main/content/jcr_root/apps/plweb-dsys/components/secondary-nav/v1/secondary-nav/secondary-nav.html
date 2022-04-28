@@ -3,21 +3,6 @@
 	data-sly-use.overviewTemplate="overview.html" data-sly-use.multilinkTemplate="multilink.html"
 	data-sly-use.marketingTemplate="marketingtile.html" data-sly-use.objRef="pl.web.dsys.core.models.SecondaryNavModel"
 	data-sly-call="${clientlib.all @ categories='plweb-dsys.secondary-nav'}" />
-<section class="section-container__main">
-	<div class="width-container secondary-nav__main">
-		<div class="secondary-nav__img-container">
-			<img id="logo" alt="Company's Logo" src="" />
-			<div id="hamburger" class="secondary-nav__mobile-icon secondary-nav--hamburger"></div>
-		</div>
-		<nav id="navigaton" class="secondary-nav__navigation">
-			<ul>
-				<li>
-					<div class="secondary-nav__link-container">
-						<a target="_blank" id="navLink" href="https://www.annuities.pacificlife.com/"> Link 1 </a>
-						<div id="dropdownButton" class="secondary-nav__drop-down"></div>
-					</div>
-					<div id="dropdown" class="secondary-nav__dropdown">
-						<div id="dropdownContainer" class="dropdown__container">
 							<sly data-sly-test.columnOneNavType="${objRef.columnOne.navType}">
 								<sly data-sly-test="${columnOneNavType == 'overview'}">
 									<sly
@@ -60,86 +45,3 @@
 										data-sly-call="${marketingTemplate.marketingtile @ marketingObj=objRef.columnThree.marketingtile}" />
 								</sly>
 							</sly>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="secondary-nav__link-container">
-						<a target="_blank" id="navLink" href="https://www.annuities.pacificlife.com/"> Link 2 </a>
-						<div id="dropdownButton" class="secondary-nav__drop-down"></div>
-					</div>
-					<div id="dropdown" class="secondary-nav__dropdown">
-						<div id="dropdownContainer" class="dropdown__container">
-							<div id="overview" class="secondary-nav__overview">
-								<h4 class="overview__header">Second Dropdown</h4>
-								<a  target="_blank" class="dsys-text dsys-text--body">What is Lorem Ipsum?</a>
-								<div class="dsys-text dsys-text--caption overview__description">
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-									Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-									unknown printer took a galley of type and scrambled it to make a type specimen book.
-								</div>
-								<div class="overview__additional-links">
-									<a target="_blank" class="dsys-text dsys-text--caption">Calculate Tax Performance</a>
-								</div>
-								<div>
-									<a  target="_blank" class="dsys-text dsys-text--caption">Cost Insights</a>
-								</div>
-							</div>
-							<div id="overviewSupport" class="secondary-nav__support">
-								<a  target="_blank" class="dsys-text dsys-text--body">Why do we use it?</a>
-								<div class="dsys-text dsys-text--caption support__description">
-									Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-									piece of classical Latin literature from 45 BC, making it over 2000 years old.
-								</div>
-								<a  target="_blank" class="dsys-text dsys-text--body">Why do we use it?</a>
-								<div class="dsys-text dsys-text--caption support__description">
-									Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-									Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-									treatise on the theory of ethics, very popular during the Renaissance. The first
-									line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section
-									1.10.32.
-								</div>
-								<a  target="_blank" class="dsys-text dsys-text--body">Why do we use it?</a>
-								<div class="dsys-text dsys-text--caption support__description">
-									It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-									Ipsum passages, and more recently with desktop publishing software like Aldus
-									PageMaker including versions of Lorem Ipsum.
-								</div>
-							</div>
-							<div id="marketing" class="secondary-nav__marketing">
-								<img class="marketing__image" alt="Marketing Image" />
-								<div class="dsys-text dsys-text--caption marketing__description">
-									All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
-									necessary, making this the first true generator on the Internet. It uses a
-									dictionary of over 200 Latin words, combined with a handful of model sentence
-									structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem
-									Ipsum is therefore always free from repetition, injected humour, or
-									non-characteristic words etc.
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<a  target="_blank"  id="navLink" href="https://www.annuities.pacificlife.com/"> Link 3 </a>
-				</li>
-				<li>
-					<a  target="_blank"  id="navLink" href="https://www.annuities.pacificlife.com/"> Link 4 </a>
-				</li>
-				<li>
-					<a  target="_blank"  id="navLink" href="https://www.annuities.pacificlife.com/"> Link 5 </a>
-				</li>
-				<li>
-					<a  target="_blank"  id="navLink" href="https://www.annuities.pacificlife.com/"> Link 6 </a>
-				</li>
-				<li>
-					<a  target="_blank"  id="navLink" href="https://www.annuities.pacificlife.com/"> Link 7 </a>
-				</li>
-				<li>
-					<a  target="_blank"  id="navLink" href="https://www.annuities.pacificlife.com/"> Link 8 </a>
-				</li>
-			</ul>
-		</nav>
-		<div id="search-icon" class="dsys-icon__search secondary-nav__search"></div>
-	</div>
-</section>
