@@ -4,7 +4,4 @@
     <filter root="/apps/plweb-dsys/components"/>
 	<filter root="/apps/plweb-dsys/common"/>
     <filter root="/apps/plweb-dsys/i18n"/>
-    <filter root="/oak:index/cqPageLuceneDsysSuggest"/>
-
-
 </workspaceFilter>
