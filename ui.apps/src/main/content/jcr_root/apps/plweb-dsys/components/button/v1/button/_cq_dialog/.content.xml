@@ -66,20 +66,19 @@
                                                 <items jcr:primaryType="nt:unstructured">
                                                      <pbg-wc
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="Pill - Primary bgcolor, White color Text"
+                                                        text="Blue Background, White color Text"
                                                         value="pbg-wc"/>
-                                                    
                                                     <b3bg-b9c
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="Pill - Blue300 bgcolor, Blue900 color Text"
+                                                        text="Blue300 bgcolor, Blue900 color Text"
                                                         value="b3bg-b9c"/>
                                                     <tbg-pc
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="Pill - Transparent bgcolor, Blue100 color Text"
+                                                        text="Transparent Background, Blue100 color Text"
                                                         value="tbg-pc"/>
                                                     <tbg-b1c
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="Pill - Transparent bgcolor, Primary color Text"
+                                                        text="Transparent Background, Primary color Text"
                                                         value="tbg-b1c"/>
                                                 </items>
                                             </buttonStyle>

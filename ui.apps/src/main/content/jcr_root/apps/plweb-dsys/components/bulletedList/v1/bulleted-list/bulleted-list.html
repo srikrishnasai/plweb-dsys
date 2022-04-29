@@ -1,7 +1,4 @@
-<div data-sly-resource="${'title' @ resourceType='plweb-dsys/components/title/v1/title'}"></div>
-<div data-sly-resource="${'text' @ resourceType='plweb-dsys/components/text/v1/text'}"></div>
-
-<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
       data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
       data-sly-call="${clientlib.all @ categories='plweb-dsys.bulleted-list'}"
        data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='listItemValues'}"/>
@@ -11,3 +8,4 @@
       </ul>
 </div>
 
+<sly data-sly-call="${template.placeholder @isEmpty=title}"></sly>
