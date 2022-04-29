@@ -2,13 +2,18 @@ package pl.web.dsys.core.models;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.jackrabbit.JcrConstants;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.day.cq.wcm.api.Page;
 
 /**
  * This Sling Model returns Secondary Nav Overview Type authored dialog values
@@ -37,13 +42,35 @@ public class SecondaryNavLinksModel {
 	@ValueMapValue
 	private String description;
 
+	@ValueMapValue
+	private String secondaryNavXfPath;
+
+	@SlingObject
+	private ResourceResolver resolver;
+
+	String pageTitle = StringUtils.EMPTY;
+
+	String pageDescription = StringUtils.EMPTY;
+
 	@PostConstruct
 	protected void init() {
 		log.debug("Inside Post Construct of Secondary Nav Links Model..");
+		log.debug("Resolver is null ::{}", resolver == null);
+		if (StringUtils.isNotBlank(targetPath) && resolver != null) {
+			Resource pageResource = resolver.getResource(targetPath);
+			if (pageResource != null) {
+				Page page = pageResource.adaptTo(Page.class);
+				if (page != null) {
+					pageTitle = page.getTitle();
+					pageDescription = page.getDescription();
+				}
+			}
+		}
 	}
 
 	public String getLinkText() {
-		return linkText;
+		// falling back to pagetitle if link text is not authored.
+		return linkText != null ? linkText : pageTitle;
 	}
 
 	public String getTargetPath() {
@@ -55,7 +82,15 @@ public class SecondaryNavLinksModel {
 	}
 
 	public String getDescription() {
-		return description;
+		// falling back to page description if description in dialog is not authored.
+		return description != null ? description : pageDescription;
+	}
+
+	public String getSecondaryNavXfPath() {
+		if (StringUtils.isNotBlank(secondaryNavXfPath)) {
+			return secondaryNavXfPath + "/" + JcrConstants.JCR_CONTENT;
+		}
+		return secondaryNavXfPath;
 	}
 
 }
