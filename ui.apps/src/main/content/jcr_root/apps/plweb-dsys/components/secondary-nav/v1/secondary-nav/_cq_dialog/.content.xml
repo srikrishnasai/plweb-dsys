@@ -71,19 +71,19 @@
                                                                 fieldDescription="Enter Overview Header Text"
                                                                 fieldLabel="Overview Header"
                                                                 name="./columnOne/overview/header"/>
-                                                            <primaryLinkText
-                                                                jcr:primaryType="nt:unstructured"
-                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                fieldDescription="Enter Primary Link Text"
-                                                                fieldLabel="Primary Link Text"
-                                                                name="./columnOne/overview/primaryLinkText"/>
-                                                            <targetPath
+															<targetPath
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                                                 fieldDescription="Select path of the page to visit "
                                                                 fieldLabel="Primary Link Target Path"
                                                                 name="./columnOne/overview/primaryLinkTargetPath"
                                                                 rootPath="/content/plweb-dsys"/>
+                                                            <primaryLinkText
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldDescription="Enter Primary Link Text"
+                                                                fieldLabel="Primary Link Text"
+                                                                name="./columnOne/overview/primaryLinkText"/>
                                                             <linktarget
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -121,19 +121,19 @@
                                                                             jcr:title="Edit Secondary Links"
                                                                             sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                                                             <items jcr:primaryType="nt:unstructured">
-                                                                                <linkText
-                                                                                    jcr:primaryType="nt:unstructured"
-                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                                    fieldDescription="Enter Link Text"
-                                                                                    fieldLabel="Link Text"
-                                                                                    name="./linkText"/>
-                                                                                <targetPath
+																			    <targetPath
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                                                                     fieldDescription="Select path of the page to visit "
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
                                                                                     rootPath="/content/plweb-dsys"/>
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
                                                                                 <linktarget
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -188,12 +188,6 @@
                                                                             jcr:title="Edit Links"
                                                                             sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                                                             <items jcr:primaryType="nt:unstructured">
-                                                                                <linkText
-                                                                                    jcr:primaryType="nt:unstructured"
-                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                                    fieldDescription="Enter Link Text"
-                                                                                    fieldLabel="Link Text"
-                                                                                    name="./linkText"/>
                                                                                 <targetPath
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
@@ -201,6 +195,12 @@
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
                                                                                     rootPath="/content/plweb-dsys"/>
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
                                                                                 <linktarget
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -345,12 +345,6 @@
                                                                 fieldDescription="Enter Overview Header Text"
                                                                 fieldLabel="Overview Header"
                                                                 name="./columnTwo/overview/header"/>
-                                                            <primaryLinkText
-                                                                jcr:primaryType="nt:unstructured"
-                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                fieldDescription="Enter Primary Link Text"
-                                                                fieldLabel="Primary Link Text"
-                                                                name="./columnTwo/overview/primaryLinkText"/>
                                                             <targetPath
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
@@ -358,6 +352,12 @@
                                                                 fieldLabel="Primary Link Target Path"
                                                                 name="./columnTwo/overview/primaryLinkTargetPath"
                                                                 rootPath="/content/plweb-dsys"/>
+                                                            <primaryLinkText
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldDescription="Enter Primary Link Text"
+                                                                fieldLabel="Primary Link Text"
+                                                                name="./columnTwo/overview/primaryLinkText"/>
                                                             <linktarget
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -395,12 +395,6 @@
                                                                             jcr:title="Edit Secondary Links"
                                                                             sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                                                             <items jcr:primaryType="nt:unstructured">
-                                                                                <linkText
-                                                                                    jcr:primaryType="nt:unstructured"
-                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                                    fieldDescription="Enter Link Text"
-                                                                                    fieldLabel="Link Text"
-                                                                                    name="./linkText"/>
                                                                                 <targetPath
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
@@ -408,6 +402,12 @@
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
                                                                                     rootPath="/content/plweb-dsys"/>
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
                                                                                 <linktarget
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -462,12 +462,6 @@
                                                                             jcr:title="Edit Links"
                                                                             sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                                                             <items jcr:primaryType="nt:unstructured">
-                                                                                <linkText
-                                                                                    jcr:primaryType="nt:unstructured"
-                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                                    fieldDescription="Enter Link Text"
-                                                                                    fieldLabel="Link Text"
-                                                                                    name="./linkText"/>
                                                                                 <targetPath
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
@@ -475,6 +469,12 @@
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
                                                                                     rootPath="/content/plweb-dsys"/>
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
                                                                                 <linktarget
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -619,12 +619,6 @@
                                                                 fieldDescription="Enter Overview Header Text"
                                                                 fieldLabel="Overview Header"
                                                                 name="./columnThree/overview/header"/>
-                                                            <primaryLinkText
-                                                                jcr:primaryType="nt:unstructured"
-                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                fieldDescription="Enter Primary Link Text"
-                                                                fieldLabel="Primary Link Text"
-                                                                name="./columnThree/overview/primaryLinkText"/>
                                                             <targetPath
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
@@ -632,6 +626,12 @@
                                                                 fieldLabel="Primary Link Target Path"
                                                                 name="./columnThree/overview/primaryLinkTargetPath"
                                                                 rootPath="/content/plweb-dsys"/>
+                                                            <primaryLinkText
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldDescription="Enter Primary Link Text"
+                                                                fieldLabel="Primary Link Text"
+                                                                name="./columnThree/overview/primaryLinkText"/>
                                                             <linktarget
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -669,12 +669,6 @@
                                                                             jcr:title="Edit Secondary Links"
                                                                             sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                                                             <items jcr:primaryType="nt:unstructured">
-                                                                                <linkText
-                                                                                    jcr:primaryType="nt:unstructured"
-                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                                    fieldDescription="Enter Link Text"
-                                                                                    fieldLabel="Link Text"
-                                                                                    name="./linkText"/>
                                                                                 <targetPath
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
@@ -682,6 +676,12 @@
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
                                                                                     rootPath="/content/plweb-dsys"/>
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
                                                                                 <linktarget
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -736,12 +736,6 @@
                                                                             jcr:title="Edit Links"
                                                                             sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                                                             <items jcr:primaryType="nt:unstructured">
-                                                                                <linkText
-                                                                                    jcr:primaryType="nt:unstructured"
-                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                                    fieldDescription="Enter Link Text"
-                                                                                    fieldLabel="Link Text"
-                                                                                    name="./linkText"/>
                                                                                 <targetPath
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
@@ -749,6 +743,12 @@
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
                                                                                     rootPath="/content/plweb-dsys"/>
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
                                                                                 <linktarget
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"

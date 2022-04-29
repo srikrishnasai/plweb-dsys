@@ -8,14 +8,12 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageManager;
 
 /**
  * This Sling Model returns Secondary Nav Overview Type authored dialog values
@@ -59,10 +57,13 @@ public class SecondaryNavLinksModel {
 		log.debug("Inside Post Construct of Secondary Nav Links Model..");
 		log.debug("Resolver is null ::{}", resolver == null);
 		if (StringUtils.isNotBlank(targetPath) && resolver != null) {
-			Page page = resolver.getResource(targetPath).adaptTo(Page.class);
-			if (page != null) {
-				pageTitle = page.getTitle();
-				pageDescription = page.getDescription();
+			Resource pageResource = resolver.getResource(targetPath);
+			if (pageResource != null) {
+				Page page = pageResource.adaptTo(Page.class);
+				if (page != null) {
+					pageTitle = page.getTitle();
+					pageDescription = page.getDescription();
+				}
 			}
 		}
 	}
@@ -87,7 +88,7 @@ public class SecondaryNavLinksModel {
 
 	public String getSecondaryNavXfPath() {
 		if (StringUtils.isNotBlank(secondaryNavXfPath)) {
-			return secondaryNavXfPath + "/" + JcrConstants.JCR_CONTENT + "/root";
+			return secondaryNavXfPath + "/" + JcrConstants.JCR_CONTENT;
 		}
 		return secondaryNavXfPath;
 	}

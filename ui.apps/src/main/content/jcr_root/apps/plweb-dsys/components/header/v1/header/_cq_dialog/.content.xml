@@ -13,6 +13,40 @@
                 sling:resourceType="granite/ui/components/coral/foundation/tabs"
                 maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
+                    <topnav
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Top Nav"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <allSitesPath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select path for all sites to show the dropdown"
+                                                fieldLabel="All Sites Path"
+                                                name="./allSitesPath"
+                                                rootPath="/content/plweb-dsys"/>
+                                            <topNavHeaderText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter top nav header text"
+                                                fieldLabel="Top Nav Header Text"
+                                                name="./topNavHeaderText"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </topnav>
                     <primarynav
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Primary Nav"
@@ -70,19 +104,19 @@
                                                                             jcr:title="Edit Links"
                                                                             sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                                                             <items jcr:primaryType="nt:unstructured">
-                                                                                <linkText
-                                                                                    jcr:primaryType="nt:unstructured"
-                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                                    fieldDescription="Enter Link Text"
-                                                                                    fieldLabel="Link Text"
-                                                                                    name="./linkText"/>
-                                                                                <targetPath
+																			    <targetPath
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                                                                     fieldDescription="Select path of the page to visit "
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
                                                                                     rootPath="/content/plweb-dsys"/>
+                                                                                <linkText
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldDescription="Enter Link Text"
+                                                                                    fieldLabel="Link Text"
+                                                                                    name="./linkText"/>
                                                                                 <linktarget
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"

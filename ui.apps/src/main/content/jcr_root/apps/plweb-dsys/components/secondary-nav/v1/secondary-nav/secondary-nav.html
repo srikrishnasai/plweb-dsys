@@ -1,47 +1,34 @@
-<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-	data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-	data-sly-use.overviewTemplate="overview.html" data-sly-use.multilinkTemplate="multilink.html"
-	data-sly-use.marketingTemplate="marketingtile.html" data-sly-use.objRef="pl.web.dsys.core.models.SecondaryNavModel"
-	data-sly-call="${clientlib.all @ categories='plweb-dsys.secondary-nav'}" />
-							<sly data-sly-test.columnOneNavType="${objRef.columnOne.navType}">
-								<sly data-sly-test="${columnOneNavType == 'overview'}">
-									<sly
-										data-sly-call="${overviewTemplate.overview @ overviewObj=objRef.columnOne.overview}" />
-								</sly>
-								<sly data-sly-test="${columnOneNavType == 'multilinks'}">
-									<sly
-										data-sly-call="${multilinkTemplate.multilink @ multilinkObj=objRef.columnOne.multilinks}" />
-								</sly>
-								<sly data-sly-test="${columnOneNavType == 'marketingTile'}">
-									<sly
-										data-sly-call="${marketingTemplate.marketingtile @ marketingObj=objRef.columnOne.marketingtile}" />
-								</sly>
-							</sly>
-							<sly data-sly-test.columnTwoNavType="${objRef.columnTwo.navType}">
-								<sly data-sly-test="${columnTwoNavType == 'overview'}">
-									<sly
-										data-sly-call="${overviewTemplate.overview @ overviewObj=objRef.columnTwo.overview}" />
-								</sly>
-								<sly data-sly-test="${columnTwoNavType == 'multilinks'}">
-									<sly
-										data-sly-call="${multilinkTemplate.multilink @ multilinkObj=objRef.columnTwo.multilinks}" />
-								</sly>
-								<sly data-sly-test="${columnTwoNavType == 'marketingTile'}">
-									<sly
-										data-sly-call="${marketingTemplate.marketingtile @ marketingObj=objRef.columnTwo.marketingtile}" />
-								</sly>
-							</sly>
-							<sly data-sly-test.columnThreeNavType="${objRef.columnThree.navType}">
-								<sly data-sly-test="${columnThreeNavType == 'overview'}">
-									<sly
-										data-sly-call="${overviewTemplate.overview @ overviewObj=objRef.columnThree.overview}" />
-								</sly>
-								<sly data-sly-test="${columnThreeNavType == 'multilinks'}">
-									<sly
-										data-sly-call="${multilinkTemplate.multilink @ multilinkObj=objRef.columnThree.multilinks}" />
-								</sly>
-								<sly data-sly-test="${columnThreeNavType == 'marketingTile'}">
-									<sly
-										data-sly-call="${marketingTemplate.marketingtile @ marketingObj=objRef.columnThree.marketingtile}" />
-								</sly>
-							</sly>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-use.overviewTemplate="overview.html" data-sly-use.multilinkTemplate="multilink.html" data-sly-use.marketingTemplate="marketingtile.html" data-sly-use.objRef="pl.web.dsys.core.models.SecondaryNavModel" data-sly-call="${clientlib.all @ categories='plweb-dsys.secondary-nav'}" />
+<sly data-sly-test.columnOneNavType="${objRef.columnOne.navType}">
+   <sly data-sly-test="${columnOneNavType == 'overview'}">
+      <sly data-sly-call="${overviewTemplate.overview @ overviewObj=objRef.columnOne.overview}" />
+   </sly>
+   <sly data-sly-test="${columnOneNavType == 'multilinks'}">
+      <sly data-sly-call="${multilinkTemplate.multilink @ multilinkObj=objRef.columnOne.multilinks}" />
+   </sly>
+   <sly data-sly-test="${columnOneNavType == 'marketingTile'}">
+      <sly data-sly-call="${marketingTemplate.marketingtile @ marketingObj=objRef.columnOne.marketingtile}" />
+   </sly>
+</sly>
+<sly data-sly-test.columnTwoNavType="${objRef.columnTwo.navType}">
+   <sly data-sly-test="${columnTwoNavType == 'overview'}">
+      <sly data-sly-call="${overviewTemplate.overview @ overviewObj=objRef.columnTwo.overview}" />
+   </sly>
+   <sly data-sly-test="${columnTwoNavType == 'multilinks'}">
+      <sly data-sly-call="${multilinkTemplate.multilink @ multilinkObj=objRef.columnTwo.multilinks}" />
+   </sly>
+   <sly data-sly-test="${columnTwoNavType == 'marketingTile'}">
+      <sly data-sly-call="${marketingTemplate.marketingtile @ marketingObj=objRef.columnTwo.marketingtile}" />
+   </sly>
+</sly>
+<sly data-sly-test.columnThreeNavType="${objRef.columnThree.navType}">
+   <sly data-sly-test="${columnThreeNavType == 'overview'}">
+      <sly data-sly-call="${overviewTemplate.overview @ overviewObj=objRef.columnThree.overview}" />
+   </sly>
+   <sly data-sly-test="${columnThreeNavType == 'multilinks'}">
+      <sly data-sly-call="${multilinkTemplate.multilink @ multilinkObj=objRef.columnThree.multilinks}" />
+   </sly>
+   <sly data-sly-test="${columnThreeNavType == 'marketingTile'}">
+      <sly data-sly-call="${marketingTemplate.marketingtile @ marketingObj=objRef.columnThree.marketingtile}" />
+   </sly>
+</sly>

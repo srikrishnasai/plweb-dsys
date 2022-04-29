@@ -1,28 +1,29 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-	data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-    data-sly-use.headerRef="pl.web.dsys.core.models.HeaderModel"
-	data-sly-call="${clientlib.all @ categories='plweb-dsys.header'}" />
+   data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+   data-sly-use.headerRef="pl.web.dsys.core.models.HeaderModel"
+   data-sly-call="${clientlib.all @ categories='plweb-dsys.header'}" />
 <section class="section-container__main">
-	<div class="width-container secondary-nav__main">
-		<div class="secondary-nav__img-container">
-			<img id="logo" alt="Company's Logo" src="${headerRef.fileReference}" />
-			<div id="hamburger" class="secondary-nav__mobile-icon secondary-nav--hamburger"></div>
-		</div>
-		<nav id="navigaton" class="secondary-nav__navigation">
-			<ul data-sly-list="${headerRef.primarylinks}">
-				<li>
-					<div class="secondary-nav__link-container">
-						<a target="${item.linkTarget}" id="navLink" href="${item.targetPath}">${item.linkText}</a>
-						<div id="dropdownButton" class="secondary-nav__drop-down"></div>
-					</div>
-                    <div id="dropdown" class="secondary-nav__dropdown">
-						<div id="dropdownContainer" class="dropdown__container">
-                              <sly data-sly-test="${item.secondaryNavXfPath}" data-sly-resource="${@path = item.secondaryNavXfPath , selectors='content', wcmmode='disabled'}"/>
-                        </div>
-                     </div>   
-                </li>
-			</ul>
-		</nav>
-		<div id="search-icon" class="dsys-icon__search secondary-nav__search"></div>
-	</div>
+   <div class="width-container secondary-nav__main">
+      <div class="secondary-nav__img-container">
+         <img id="logo" alt="Company's Logo" src="${headerRef.fileReference}" />
+         <div id="hamburger" class="secondary-nav__mobile-icon secondary-nav--hamburger"></div>
+      </div>
+      <nav id="navigaton" class="secondary-nav__navigation">
+         <ul data-sly-list="${headerRef.primarylinks}">
+            <li>
+               <div class="secondary-nav__link-container">
+                  <sly data-sly-test="${item.targetPath}" data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=item.targetPath}"/>
+                  <a target="${item.linkTarget}" id="navLink" href="${linkhelper.modifiedLink}">${item.linkText}</a>
+                  <div id="dropdownButton" class="secondary-nav__drop-down"></div>
+               </div>
+               <div id="dropdown" class="secondary-nav__dropdown">
+                  <div id="dropdownContainer" class="dropdown__container">
+                     <sly data-sly-test="${item.secondaryNavXfPath}" data-sly-resource="${@path = item.secondaryNavXfPath , selectors='content', wcmmode='disabled'}"/>
+                  </div>
+               </div>
+            </li>
+         </ul>
+      </nav>
+      <div id="search-icon" class="dsys-icon__search secondary-nav__search"></div>
+   </div>
 </section>
