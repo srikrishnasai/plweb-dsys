@@ -1,14 +1,15 @@
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 @import (reference)  "/apps/plweb-dsys/clientlibs/clientlib-site/css/global.less";
-
 @navigation-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 @nav-bg-color: #fff;
-
-.secondary-nav{
+.header{
+    position: relative;
     box-shadow: @navigation-shadow;
     background-color: @nav-bg-color;
-    position: relative;
+}
+.secondary-nav{
+    display: flex;
     .element(main,{
         display: flex;
         align-items: center;
@@ -80,7 +81,6 @@
                 @media @mediaXL{
                     max-width    : 1440px;
                 }
-                display: flex;
                 padding: @32 @80;
             })
         };
@@ -93,7 +93,6 @@
             cursor: pointer;
         }
     });
-
     .element(overview,{
         flex: 1;
         .overview{
@@ -103,7 +102,6 @@
                 line-height: 28px;
                 margin-bottom: @24;
                 font-size: 18.06px;
-
             });
             .element(description,{
                 margin-bottom: @32;
@@ -137,28 +135,22 @@
             })
         }
     });
-
     .modifier(dropdown-active,{
         display: block !important;
     });
     .modifier(dropdown-show,{
         opacity: 1 !important;
     });
-
     .element(drop-down,{
         display: none;
     });
-
     .element(mobile-icon,{
         display: none;
     });
-
     @media @mediaMobile{
-
         box-shadow: none;
         background: transparent;
-
-        .element(main,{ 
+        .element(main,{
             margin-top: @16 !important;
             margin-bottom: @16  !important;
             flex-direction: column;
@@ -168,7 +160,6 @@
             padding-right: 0rem !important;
             gap: 0rem;
         });
-
         .element(img-container,{
             padding: @32;
             display: flex;
@@ -182,26 +173,21 @@
                 max-height: 80px;
             }
         });
-
         .element(mobile-icon,{
             width: 25px;
             height: 16px;
             display: inline-block;
             cursor: pointer;
         });
-
         .modifier(hamburger,{
             background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/hamburger.svg);
         });
-
         .modifier(close,{
             background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/close.svg);
         });
-
         .element(search,{
             display: none;
         });
-
         .element(navigation,{
             width: 100%;
             padding-left:2rem;
@@ -223,7 +209,6 @@
                 width: 100%;
             }
         });
-        
         .element(link-container,{
             display: flex;
             align-items: center;
@@ -231,7 +216,6 @@
                 flex: 1;
             }
         });
-
         .element(drop-down,{
             display: inline-block;
             background: @textBodyLight;
@@ -300,7 +284,6 @@
             // .overview{
             //     .element(header,{
             //         display: none;
-    
             //     });
             //     .element(description,{
             //         display: none;
@@ -311,6 +294,13 @@
             // }
         });
     }
+}
 
 
-}   
+
+
+
+
+
+
+
