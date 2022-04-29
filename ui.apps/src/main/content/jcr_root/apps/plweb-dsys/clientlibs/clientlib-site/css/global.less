@@ -6,54 +6,140 @@
 .aem-GridColumn {
     padding: 0 !important;
 }
-
 .dsys-button{
     display: flex;
-    .modifier(position-center,{
+    cursor: pointer;
+
+    .modifier(center,{
         justify-content: center;
     });
-    .modifier(position-right,{
+    .modifier(right,{
         justify-content: right;
     });
     .element(main,{
-        border-radius: 4px;
-        padding: 8px 16px;
+        border-radius: @rounded;
+        padding: @8 @16;
         text-decoration: none;
-        .modifier(primary,{
-            background-color: #8DC6F7;
+        font-family: 'Open Sans';
+        line-height: 24px;
+        .fw-700;
+        .modifier(pbg-wc,{
+            background-color: @primary;
             .dsys-button-text{
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 1rem;
-                line-height: 24px;
-                color: #082A47;
+                color: @neutral0;
+            }       
+            &:hover{
+                background-color: #082a47;
+            }     
+        });
+    
+        .modifier(b3bg-b9c,{
+            background-color: @blue300;
+            .dsys-button-text{
+                color: @blue900;
+            }   
+            &:hover{
+                background-color: #8dc6f794;
+            }         
+        });
+    
+        .modifier(tbg-pc,{
+            background-color: transparent;
+            border: 1px solid @primary;
+            .dsys-button-text{
+                color: @primary;
+            }
+            &:hover{
+                background-color: @primary;   
+                border: none;
+                .dsys-button-text{
+                    color: @textBodyDark;
+                }
             }
         });
-        .modifier(secondary,{
+    
+        .modifier(tbg-b1c,{
             background-color: transparent;
+            border: 1px solid @blue100;
             .dsys-button-text{
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 1rem;
-                line-height: 24px;
-                color: #E9F2FA;;
+                color: @blue100;
+            }
+            &:hover{
+                background-color: @blue100;
+                border: none;
+                .dsys-button-text{
+                    color: @primary;
+                }
+
             }
         });
         
+        
     });
+        
+    
 }
  
 .dsys-title{
-    &.dsys-title{
-        .modifier(textPosition-center,{
-            text-align: center;
-        });
-        .modifier(textPosition-right,{
-            text-align: right;
-        });
+    text-transform: capitalize;
+    
+    .modifier(center,{
+        .ta-center;
+    });
+    .modifier(right,{
+        .ta-right;
+    });
+
+    .title-heading-sup{
+        vertical-align: super;
+        margin-left: 5px;
+        top: -0.2em;
     }
+    
+.dsys-title{
+    
+    .element(heading-h1,{
+        .montserrat;
+        font-weight: 700;
+        font-size: 2.5rem;
+        line-height: 56px;
+    });
+    .element(heading-h2,{
+        .montserrat;
+        font-weight: 700;
+        font-size: 2.25rem;
+        line-height: 48px;
+    });
+
+    .element(heading-h3,{
+        .montserrat;
+        font-weight: 700;
+        font-size: 1.75rem;
+        line-height: 36px;
+    });
+   
+    .element(subheading,{
+        .montserrat;
+        font-weight: 700;
+        font-size: 1.75rem;
+        line-height: 36px;
+
+        .modifier(primaryDark,{
+            color: @primaryDark;
+        });
+        .modifier(textBodyDark,{
+            color: @textBodyDark;
+        });
+
+    });
+
+    .modifier(primaryDark,{
+        color: @primaryDark;
+    });
+    .modifier(textBodyDark,{
+        color: @textBodyDark;
+    });
+}
 }
 
 .dsys-text{
