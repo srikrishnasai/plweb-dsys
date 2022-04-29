@@ -1,15 +1,15 @@
 @import (reference)  "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 
+@dropdown-box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+
 .topnav{
-
     background-color: @primaryDark;
-    display: flex;
-    align-items: center;
-    height: 40px;
-    margin: 0 !important;
-
-
+    .element(main,{
+        display: flex;
+        align-items: center;
+        height: 40px;
+    });
     .element(all-sites,{
         border-width: 0px;
         outline: 0px;
@@ -27,17 +27,20 @@
         };
         .list{
             position: absolute;
-            background: #FBFBFB;
+            background: @textBodyDark;
             width: max-content;
             display: flex;
             flex-direction: column;
             gap: @8;
             align-items: baseline;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.18);
-            transform: translateX(-200%);
+            box-shadow: @dropdown-box-shadow;
             opacity: @transparent;
             transition: opacity @long linear;
             padding: @4;
+            display: none;
+            top: 100%;
+            transform: translateY(5px);
+            z-index: @focus;
             li{
                 width: 100%;
                 padding: @4;
@@ -52,10 +55,10 @@
                 background-color: @neutral100
             };
         };
+        .activate-list{
+            display: block;
+        };
         .show-list{
-            top: 100%;
-            transform: translateY(5px);
-            z-index: @focus;
             opacity: @opaque;
         }
     });
