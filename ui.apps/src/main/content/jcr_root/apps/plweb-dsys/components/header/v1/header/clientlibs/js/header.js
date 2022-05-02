@@ -47,7 +47,7 @@
             $(nav)
                 .find("li")
                 .each(function () {
-                    if ($(document).width() > 556) {
+                    if ($(document).width() > 991) {
                         var dropdown = $(this).find("#dropdown");
                         $(this).hover(
                             function () {
