@@ -7,17 +7,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
-
-//OSGI Annotations
-import org.osgi.service.component.annotations.Component;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+//OSGI Annotations
+import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-//Search Predicate imports
-import pl.web.dsys.core.search.predicates.PredicateFactory;
-import pl.web.dsys.core.search.predicates.PredicateOption;
 
 //cq search imports
 import com.day.cq.commons.inherit.ComponentInheritanceValueMap;
@@ -25,10 +20,14 @@ import com.day.cq.dam.api.DamConstants;
 import com.day.cq.search.eval.JcrPropertyPredicateEvaluator;
 import com.day.cq.wcm.api.NameConstants;
 
+//Search Predicate imports
+import pl.web.dsys.core.search.predicates.PredicateFactory;
+import pl.web.dsys.core.search.predicates.PredicateOption;
+
 //OSGI Annotation Declaration R7 Format
-@Component(service={}) 
-public class PathsPredicateFactoryImpl implements PredicateFactory{
-    public static final String SEARCHPATH_PROPERTY_NAME = "searchingPaths";
+@Component(service = { PredicateFactory.class }, immediate = true)
+public class PathsPredicateFactoryImpl implements PredicateFactory {
+	public static final String SEARCHPATH_PROPERTY_NAME = "searchingPaths";
 	public static final String ALLOWED_ROOT = "/content";
 	public static final String ALLOWED_DAM_ROOT = "/content/dam";
 	private static final Logger log = LoggerFactory.getLogger(PathsPredicateFactoryImpl.class);
@@ -99,5 +98,5 @@ public class PathsPredicateFactoryImpl implements PredicateFactory{
 	public List<PredicateOption> getPredicateOptions(SlingHttpServletRequest request) {
 		return Collections.emptyList();
 	}
-    
+
 }

@@ -1,29 +1,5 @@
 package pl.web.dsys.core.servlets;
 
-//apache sling imports
-import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.servlets.HttpConstants;
-import org.apache.sling.api.servlets.SlingAllMethodsServlet;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import pl.web.dsys.core.search.SearchResult;
-import pl.web.dsys.core.search.SearchResultsPagination;
-import pl.web.dsys.core.search.predicates.PredicateResolver;
-import pl.web.dsys.core.search.predicates.impl.FullltextPredicateFactoryImpl;
-import pl.web.dsys.core.search.providers.SearchProvider;
-
-//OSGI Annotations
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-
-//json imports
-import org.json.JSONException;
-import org.json.JSONObject;
-
 //java util imports
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,19 +8,36 @@ import java.util.Map;
 
 import javax.servlet.Servlet;
 
+import org.apache.commons.lang3.StringUtils;
+//apache sling imports
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.servlets.SlingAllMethodsServlet;
+import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
+//json imports
+import org.json.JSONException;
+import org.json.JSONObject;
+//OSGI Annotations
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.day.cq.commons.inherit.ComponentInheritanceValueMap;
 import com.day.cq.search.result.Hit;
 import com.day.cq.wcm.api.NameConstants;
 
-import org.apache.commons.lang3.StringUtils;
-
-
+import pl.web.dsys.core.search.SearchResult;
+import pl.web.dsys.core.search.SearchResultsPagination;
+import pl.web.dsys.core.search.predicates.PredicateResolver;
+import pl.web.dsys.core.search.predicates.impl.FullltextPredicateFactoryImpl;
+import pl.web.dsys.core.search.providers.SearchProvider;
 
 //OSGI Annotation Declaration R7 Format
-@Component(name = "Search Results GET Servlet", service={Servlet.class},
-				property = {"sling.servlet.methods= " + HttpConstants.METHOD_GET,
-								"sling.servlet.resourceTypes="+ "plweb-dsys/components/global-search/v1/global-search",
-								"sling.servlet.extensions=" + "json"})
+@Component(name = "Search Results GET Servlet", service = { Servlet.class })
+@SlingServletResourceTypes(resourceTypes = "plweb-dsys/components/global-search/v1/global-search", methods = "GET", extensions = "json")
 public class FetchSerchResults extends SlingAllMethodsServlet {
 	/**
 	 * 
@@ -204,5 +197,5 @@ public class FetchSerchResults extends SlingAllMethodsServlet {
 		}
 		return totalResult;
 	}
-    
+
 }
