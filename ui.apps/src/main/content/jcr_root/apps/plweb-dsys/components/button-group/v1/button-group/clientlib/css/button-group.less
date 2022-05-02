@@ -1,0 +1,33 @@
+@import (reference)  "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+
+.dsys-button-group {
+    .element(main,{
+        display: flex;
+        flex-direction: row;
+    });
+
+    .modifier(small-gap,{
+        .dsys-button-group__main{
+            gap: 12px;
+        }
+     });
+
+    .modifier(medium-gap,{
+        .dsys-button-group__main{
+            gap: 24px;
+        }
+     });
+
+    .modifier(large-gap,{
+        .dsys-button-group__main{
+            gap: 36px;
+        }
+     });
+
+    .modifier(center,{
+        .dsys-button-group__main{
+            justify-content: center;
+        }
+     });
+}

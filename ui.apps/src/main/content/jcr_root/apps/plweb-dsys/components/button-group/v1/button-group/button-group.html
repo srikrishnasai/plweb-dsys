@@ -1,0 +1,11 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+      data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-use.objRef="pl.web.dsys.core.models.ButtonGroupModel">
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = 'true', classAppend='cmp-text'}"></sly>
+<div class="dsys-button-group__main">
+      <div data-sly-resource="${'button1' @ resourceType='/apps/plweb-dsys/components/button/v1/button', decorationTagName='div'}"></div>
+      <div data-sly-resource="${'button2' @ resourceType='/apps/plweb-dsys/components/button/v1/button', decorationTagName='div'}"></div>
+      <div data-sly-test="${objRef.numberOfButtons == '3'}"
+           data-sly-resource="${'button3' @ resourceType='/apps/plweb-dsys/components/button/v1/button', decorationTagName='div'}"></div>
+</div>
