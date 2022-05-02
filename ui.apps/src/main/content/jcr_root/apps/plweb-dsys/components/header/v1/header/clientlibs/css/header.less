@@ -41,16 +41,16 @@
             content: '';
             height: 1px;
             width: 100%;
-            transition: transform .3s;
+            transition: transform @long;
             background-color: @teal-color;
             transform: scaleX(0);
-            transform-origin: left;
+            transform-origin: center;
             position: absolute;
             left: 0;
             pointer-events: none;
             top: 100%;
         }
-        @media @mediaSM{
+        @media @mediaMD{
             li:hover{
                  #navLink {
                     color: @teal-color !important;
@@ -147,7 +147,7 @@
     .element(mobile-icon,{
         display: none;
     });
-    @media @mediaMobile{
+    @media @mediaTablet{
         box-shadow: none;
         background: transparent;
         .element(main,{
