@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 
 @Model(adaptables = { Resource.class,
 		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, resourceType = ButtonGroupModel.resourceType)
+@Exporter(name = "jackson", extensions = "json")		
 public class ButtonGroupModel {
 
 	private static final Logger log = LoggerFactory.getLogger(ButtonGroupModel.class);
