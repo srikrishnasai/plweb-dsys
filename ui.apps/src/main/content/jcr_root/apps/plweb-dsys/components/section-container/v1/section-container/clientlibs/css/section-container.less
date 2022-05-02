@@ -433,10 +433,6 @@
 
     .element(layout, {
         .modifier(grid ,{
-            .aem-Grid {
-                display: flex;
-            }
-
             @media @mediaMobile {
                 .aem-Grid {
                     display: flex;
@@ -486,4 +482,7 @@
             min-width: 150px;
         }
     });
+}
+.section-container__layout--grid > .section-container__main > .width-container > .section-container__layout-parsys > .responsivegrid > .aem-Grid {
+    display: flex;
 }
