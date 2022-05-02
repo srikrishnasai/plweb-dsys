@@ -568,6 +568,55 @@
                     </bulleted-list>
                 </v1>
             </bulletedList>
+            <button-group jcr:primaryType="nt:unstructured">
+                <v1 jcr:primaryType="nt:unstructured">
+                    <button-group jcr:primaryType="nt:unstructured">
+                        <policy_1651472479262
+                            cq:styleDefaultClasses="Button-Group"
+                            jcr:lastModified="{Date}2022-05-02T13:14:49.654+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Button Group"
+                            sling:resourceType="wcm/core/components/policy/policy">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                            <cq:styleGroups jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleGroupLabel="Buttons Gap"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="dsys-button-group--small-gap"
+                                            cq:styleId="1651473073343"
+                                            cq:styleLabel="Small"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                            cq:styleClasses="dsys-button-group--medium-gap"
+                                            cq:styleId="1651473610468"
+                                            cq:styleLabel="Medium"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item2
+                                            cq:styleClasses="dsys-button-group--large-gap"
+                                            cq:styleId="1651473618199"
+                                            cq:styleLabel="Large"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item0>
+                                <item1
+                                    cq:styleGroupLabel="Buttons Position"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="dsys-button-group--center"
+                                            cq:styleId="1651477282816"
+                                            cq:styleLabel="Center"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item1>
+                            </cq:styleGroups>
+                        </policy_1651472479262>
+                    </button-group>
+                </v1>
+            </button-group> 
         </components>
     </plweb-dsys>
 </jcr:root>

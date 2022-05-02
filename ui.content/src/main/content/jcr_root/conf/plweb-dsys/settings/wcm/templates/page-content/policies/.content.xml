@@ -86,6 +86,14 @@
                                         sling:resourceType="wcm/core/components/policies/mapping"/>
                                 </v1>
                             </bulletedList>
+                            <button-group jcr:primaryType="nt:unstructured">
+                                <v1 jcr:primaryType="nt:unstructured">
+                                    <button-group
+                                        cq:policy="plweb-dsys/components/button-group/v1/button-group/policy_1651472479262"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </v1>
+                            </button-group>
                         </components>
                     </plweb-dsys>
                 </container>
