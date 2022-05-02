@@ -34,7 +34,7 @@
     }
 
     $(window).on("load", function () {
-        $(".secondary-nav").each(function () {
+        $(".header").each(function () {
             var hamburger = $("#hamburger");
             var nav = $(this).find(".secondary-nav__navigation").first();
             hamburger.on("click", function () {
