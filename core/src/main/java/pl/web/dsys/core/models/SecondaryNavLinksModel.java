@@ -44,6 +44,9 @@ public class SecondaryNavLinksModel {
 
 	@ValueMapValue
 	private String secondaryNavXfPath;
+	
+	@ValueMapValue
+	private String iconPath;
 
 	@SlingObject
 	private ResourceResolver resolver;
@@ -91,6 +94,10 @@ public class SecondaryNavLinksModel {
 			return secondaryNavXfPath + "/" + JcrConstants.JCR_CONTENT;
 		}
 		return secondaryNavXfPath;
+	}
+
+	public String getIconPath() {
+		return iconPath;
 	}
 
 }
