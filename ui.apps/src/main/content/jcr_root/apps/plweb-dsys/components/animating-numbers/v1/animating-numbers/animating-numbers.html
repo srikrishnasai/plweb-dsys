@@ -1,0 +1,22 @@
+<!--This template is called in other components where a animating numbers are required-->
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+    <sly data-sly-use.clientlib="${'/libs/granite/sightly/templates/clientlib.html'}"
+     data-sly-call="${clientLib.all @ categories='plweb-dsys.animating-numbers'}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty= !properties.animatingNumbersLabel}"></sly>
+
+    <div class="animation-wrapper animatedParent animateOnce  "data-appear-offset="-300">
+        <div class="animating-numbers animated fadeInDownHalfVeryShort   mx-auto" style="color:${properties.animatingNumbersColor @context='styleString'}"
+             data-animating-numbers-start-value="${properties.animatingNumbersStartValue}"
+             data-animating-numbers-end-value="${properties.animatingNumbersEndValue}"
+             data-animating-numbers-increment-value="${properties.animatingNumbersIncrementValue}"
+             data-animating-numbers-interval="${properties.animatingNumbersAnimationInterval}">
+            <div class="animating-numbers-number-wrapper">
+                ${properties.animatingNumbersPrefix}<span class="animating-numbers-number">${properties.animatingNumbersStartValue}</span>${properties.animatingNumbersSuffix}
+            </div>
+            <div class="animating-numbers-number-label">
+                <p>
+                    <b>${properties.animatingNumbersLabel}</b>
+                </p>
+            </div>
+        </div>
+    </div>
