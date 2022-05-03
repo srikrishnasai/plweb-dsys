@@ -1,20 +1,32 @@
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 @import (reference)  "/apps/plweb-dsys/clientlibs/clientlib-site/css/global.less";
+
 @navigation-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 @nav-bg-color: #fff;
+
 .header{
     position: relative;
     box-shadow: @navigation-shadow;
     background-color: @nav-bg-color;
 }
+
 .secondary-nav{
     display: flex;
+
     .element(main,{
         display: flex;
         align-items: center;
-        gap: @80;
+        gap: @64;
+        @media @mediaLG {
+            gap: @80;
+        }
     });
+
+    .element(mobile-icon,{
+        display: none;
+    });
+
     .element(navigation,{
         flex: 1;
         ul{
@@ -25,7 +37,7 @@
         ul > li{
             padding: @24 @16;
         }
-         #navLink{
+         .navigation-link{
             .montserrat;
             .fw-600;
             color: @neutral1000;
@@ -37,7 +49,7 @@
             box-sizing: border-box;
             position: relative;
         }
-         #navLink::after{
+        .navigation-link::after{
             content: '';
             height: 1px;
             width: 100%;
@@ -52,7 +64,7 @@
         }
         @media @mediaMD{
             li:hover{
-                 #navLink {
+                .navigation-link {
                     color: @teal-color !important;
                     &::after{
                         transform: scaleX(1) !important;
@@ -73,7 +85,7 @@
         background-color: @nav-bg-color;
         gap: @8;
         display: none;
-        transition: opacity 0.4s linear;
+        transition: opacity @long linear;
         .dropdown{
             .element(container,{
                 max-width    : 1280px;
@@ -93,6 +105,11 @@
             cursor: pointer;
         }
     });
+
+    .element(drop-down-mobile,{
+        display: none;
+    });
+
     .element(overview,{
         flex: 1;
         .overview{
@@ -112,6 +129,7 @@
             })
         }
     });
+
     .element(support,{
         margin-top: 52px;
         flex: 1;
@@ -122,6 +140,7 @@
             });
         }
     });
+
     .element(marketing,{
         margin-top: 52px;
         flex: 1;
@@ -141,12 +160,8 @@
     .modifier(dropdown-show,{
         opacity: 1 !important;
     });
-    .element(drop-down,{
-        display: none;
-    });
-    .element(mobile-icon,{
-        display: none;
-    });
+
+
     @media @mediaTablet{
         box-shadow: none;
         background: transparent;
@@ -197,7 +212,7 @@
             box-shadow: @navigation-shadow;
             display: none;
             opacity: 0;
-            transition: all 0.5s linear;
+            transition: all @long linear;
             ul{
                 margin-bottom: @16;
                 flex-direction: column;
@@ -216,7 +231,7 @@
                 flex: 1;
             }
         });
-        .element(drop-down,{
+        .element(drop-down-mobile,{
             display: inline-block;
             background: @textBodyLight;
             width: 14px;
@@ -238,7 +253,7 @@
             background: transparent;
             display: block;
             max-height: 0px;
-            transition: all 0.5s linear;
+            transition: all @long linear;
             overflow: hidden;
             .dropdown{
                 .element(container,{
@@ -264,11 +279,6 @@
                 display: none;
             };
             margin-top: 0px;
-            // .support{
-            //     .element(description,{
-            //         display: none;
-            //     });
-            // }
         });
         .element(overview,{
             :not(a){
@@ -280,18 +290,6 @@
                 flex-direction: column;
                 margin: 0px;
             }
-            // flex: 1;
-            // .overview{
-            //     .element(header,{
-            //         display: none;
-            //     });
-            //     .element(description,{
-            //         display: none;
-            //     });
-            //     .element(additional-links,{
-            //         margin-bottom: @8;
-            //     })
-            // }
         });
     }
 }
