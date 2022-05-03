@@ -54,8 +54,8 @@
 				<li>
 					<div class="secondary-nav__link-container">
 						<sly data-sly-test="${item.targetPath}" data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=item.targetPath}"/>
-                  <a target="${item.linkTarget}" id="navLink" href="${linkhelper.modifiedLink}">${item.linkText}</a>
-						<div id="dropdownButton" class="secondary-nav__drop-down"></div>
+                  <a target="${item.linkTarget}" class="navigation-link" href="${linkhelper.modifiedLink}">${item.linkText}</a>
+						<div id="dropdownButton" class="secondary-nav__drop-down-mobile"></div>
 					</div>
 					<div id="dropdown" class="secondary-nav__dropdown">
 						<div id="dropdownContainer" class="dropdown__container">
