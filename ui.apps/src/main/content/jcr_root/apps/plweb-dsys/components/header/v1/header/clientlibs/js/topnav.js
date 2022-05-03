@@ -1,11 +1,16 @@
 (function () {
     var ANIMATION_TIME = 600;
+
     var CLASS_LOADING_TIME = 10;
 
+    var SHOW_LIST_CLASS = "show-list";
+
+    var ACTIVATE_LIST_CLASS = "activate-list";
+
     function hideList(list) {
-        list.removeClass("show-list");
+        list.removeClass(SHOW_LIST_CLASS);
         setTimeout(function () {
-            list.removeClass("activate-list");
+            list.removeClass(ACTIVATE_LIST_CLASS);
         }, ANIMATION_TIME + CLASS_LOADING_TIME);
     }
 
@@ -14,12 +19,12 @@
             $(this).on("click", function (e) {
                 e.stopPropagation();
                 var list = $(this).find("#list");
-                if (list.hasClass("show-list")) {
+                if (list.hasClass(SHOW_LIST_CLASS)) {
                     hideList(list);
                 } else {
-                    list.toggleClass("activate-list");
+                    list.toggleClass(ACTIVATE_LIST_CLASS);
                     setTimeout(function () {
-                        list.toggleClass("show-list");
+                        list.toggleClass(SHOW_LIST_CLASS);
                     }, CLASS_LOADING_TIME);
                 }
             });
