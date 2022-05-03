@@ -98,5 +98,4 @@ public class PathsPredicateFactoryImpl implements PredicateFactory {
 	public List<PredicateOption> getPredicateOptions(SlingHttpServletRequest request) {
 		return Collections.emptyList();
 	}
-
 }
