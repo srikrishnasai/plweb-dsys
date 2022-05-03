@@ -91,7 +91,7 @@ public class PathsPredicateFactoryImpl implements PredicateFactory {
 				&& (vm.getInherited(SEARCHPATH_PROPERTY_NAME, null) instanceof String[])) {
 			return vm.getInherited(SEARCHPATH_PROPERTY_NAME, String[].class);
 		}
-		return new String[] { "/content/pl-corp" };
+		return new String[] { "/content/plweb-dsys" };
 	}
 
 	@Override
