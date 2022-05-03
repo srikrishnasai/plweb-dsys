@@ -11,7 +11,6 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
@@ -19,19 +18,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.apache.sling.servlets.annotations.SlingServletPathsStrict;
 import javax.servlet.Servlet;
 import com.day.cq.wcm.api.NameConstants;
 import pl.web.dsys.core.search.impl.SuggestionsImpl;
 import pl.web.dsys.core.search.predicates.impl.PathsPredicateFactoryImpl;
 import pl.web.dsys.core.search.providers.SuggestionProvider;
 
-@Component(name = "Get Auto Suggestions", service={Servlet.class},
-property = {"sling.servlet.methods= " + HttpConstants.METHOD_GET,
-				"sling.servlet.paths="+ "/bin/dsys/autosuggestions",
-				"sling.servlet.extensions=" + "json"})
+@Component(name = "Get Auto Suggestions", service={Servlet.class})				
+@SlingServletPathsStrict(paths = "/bin/autosuggestions", methods = "GET", extensions = "json")
 public class SuggestionsServlet extends SlingAllMethodsServlet {
-
 	/**
 	 * 
 	 */

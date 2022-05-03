@@ -36,7 +36,7 @@ import com.day.cq.wcm.api.NameConstants;
 import pl.web.dsys.core.search.predicates.impl.PathsPredicateFactoryImpl;
 import pl.web.dsys.core.search.providers.SuggestionProvider;
 
-@Component(service={})
+@Component(service={SuggestionProvider.class})
 public class SuggestionProviderImpl implements SuggestionProvider {
 
 	public static final String SEARCHPATH_PROPERTY_NAME = "searchingPaths";
