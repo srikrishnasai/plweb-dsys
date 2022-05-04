@@ -1,0 +1,29 @@
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+
+
+.animating-numbers {
+
+    .element(number-wrapper,{
+        .montserrat;
+		font-weight: bold;
+		font-variant-numeric: tabular-nums;
+		.ta-center;
+		margin: 0;
+		line-height: 1;
+		font-size: 35px;
+		margin-top: 24px;
+		margin-bottom: 12px;
+    });
+
+    .element(number-label,{
+		.ta-center;
+		.fw-700;
+		letter-spacing: 0px;
+		.montserrat;
+		line-height: 27px;
+		.capitalize;
+        font-size: 16px;
+        margin-top: 15px;
+    });
+}

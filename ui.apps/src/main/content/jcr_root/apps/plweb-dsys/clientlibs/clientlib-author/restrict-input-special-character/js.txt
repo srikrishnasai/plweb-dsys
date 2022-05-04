@@ -1,0 +1,2 @@
+#base=js
+restrict-input-special-character.js
