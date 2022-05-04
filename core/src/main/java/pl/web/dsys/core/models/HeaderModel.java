@@ -106,10 +106,10 @@ public class HeaderModel {
 				while (it.hasNext()) {
 					Page childPage = it.next();
 					ValueMap vm = childPage.getContentResource().adaptTo(ValueMap.class);
-					//Need to check for Auth Control here for the page.
+					// Need to check for Auth Control here for the page.
 					LinkPojo lp = new LinkPojo();
 					lp.setLinkText(childPage.getTitle());
-					lp.setLinkUrl(getUrl(vm,childPage));
+					lp.setLinkUrl(getUrl(vm, childPage));
 					allSitesList.add(lp);
 				}
 			}
@@ -120,8 +120,8 @@ public class HeaderModel {
 
 	private String getUrl(ValueMap vm, Page childPage) {
 		String redirectUrl = vm.get("cq:redirectTarget", String.class);
-		if(StringUtils.isNotBlank(redirectUrl)) {
-			if(CommonUtils.isExternal(redirectUrl)) {
+		if (StringUtils.isNotBlank(redirectUrl)) {
+			if (CommonUtils.isExternal(redirectUrl)) {
 				return redirectUrl;
 			} else {
 				return CommonUtils.resolveUrl(redirectUrl, resolver, request);
@@ -129,5 +129,9 @@ public class HeaderModel {
 		} else {
 			return CommonUtils.resolveUrl(childPage.getPath(), resolver, request);
 		}
+	}
+
+	public String getHomePagePath() {
+		return currentPage.getAbsoluteParent(1).getPath() + "/home.html";
 	}
 }
