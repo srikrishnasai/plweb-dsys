@@ -4,7 +4,7 @@
          <sly data-sly-test="${links.targetPath}"
             data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=links.targetPath}" />
          <div class="support__link-container">
-            <a target="${links.linkTarget}" class="dsys-text dsys-text--body support__icon-link" href="${linkhelper.modifiedLink}">
+            <a target="${links.linkTarget}" class="dsys-text dsys-text--body support__icon-link ${!links.iconPath && 'support--no-icon-link'}" href="${linkhelper.modifiedLink}">
                <div class="dsys-icon dsys-icon--${links.iconPath}"></div>
             </a>
             <div>

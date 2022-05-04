@@ -71,16 +71,15 @@
                                 }, ANIMATION_DURATION + TIME_TO_ADD_DISPLAY_CLASS);
                             }
                         );
-                    } else {
-                        var dropdownButton = $(this).find("#dropdownButton");
-                        if (dropdownButton) {
-                            $(dropdownButton).on("click", function () {
-                                var dropdownElem = $(this).parent().parent().find("#dropdown");
-                                if (!$(this).hasClass(UP_ARROW_CLASS)) {
-                                    showMegaMenu(dropdownElem, this);
-                                } else hideMegaMenu(dropdownElem, this);
-                            });
-                        }
+                    }
+                    var dropdownButton = $(this).find("#dropdownButton");
+                    if (dropdownButton) {
+                        $(dropdownButton).on("click", function () {
+                            var dropdownElem = $(this).parent().parent().find("#dropdown");
+                            if (!$(this).hasClass(UP_ARROW_CLASS)) {
+                                showMegaMenu(dropdownElem, this);
+                            } else hideMegaMenu(dropdownElem, this);
+                        });
                     }
                 });
         });
