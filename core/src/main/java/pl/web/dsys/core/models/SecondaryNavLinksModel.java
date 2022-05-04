@@ -44,7 +44,7 @@ public class SecondaryNavLinksModel {
 
 	@ValueMapValue
 	private String secondaryNavXfPath;
-	
+
 	@ValueMapValue
 	private String iconPath;
 
@@ -54,6 +54,8 @@ public class SecondaryNavLinksModel {
 	String pageTitle = StringUtils.EMPTY;
 
 	String pageDescription = StringUtils.EMPTY;
+
+	String iconName = StringUtils.EMPTY;
 
 	@PostConstruct
 	protected void init() {
@@ -69,6 +71,17 @@ public class SecondaryNavLinksModel {
 				}
 			}
 		}
+
+		if (StringUtils.isNotBlank(iconPath)) {
+			String[] iconPathArray = iconPath.split("/");
+			if (iconPathArray.length >= 2) {
+				iconName = iconPathArray[iconPathArray.length - 1];
+				if (!iconName.endsWith(".svg")) {
+					iconName = iconPathArray[iconPathArray.length - 2];
+				}
+			}
+		}
+		log.debug("Icon Name ::{}", iconName);
 	}
 
 	public String getLinkText() {
@@ -97,7 +110,7 @@ public class SecondaryNavLinksModel {
 	}
 
 	public String getIconPath() {
-		return iconPath;
+		return iconName;
 	}
 
 }
