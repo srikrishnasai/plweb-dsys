@@ -17,15 +17,14 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import pl.web.dsys.core.search.SearchResults;
-import pl.web.dsys.core.search.SearchResult;
-
 import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-@Model(adaptables = Resource.class, adapters = SearchResults.class, resourceType = "cq:Page")
+import pl.web.dsys.core.search.SearchResult;
+
+@Model(adaptables = Resource.class, adapters = SearchResult.class, resourceType = "cq:Page")
 public class PageSearchResultImpl implements SearchResult {
 
 	private static final Logger log = LoggerFactory.getLogger(PageSearchResultImpl.class);
