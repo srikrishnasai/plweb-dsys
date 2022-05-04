@@ -1,1 +1,0 @@
-package pl.web.dsys.core.search.providers.impl;

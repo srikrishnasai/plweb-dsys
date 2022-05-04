@@ -40,7 +40,7 @@ import pl.web.dsys.core.search.providers.SuggestionProvider;
 public class SuggestionProviderImpl implements SuggestionProvider {
 
 	public static final String SEARCHPATH_PROPERTY_NAME = "searchingPaths";
-	private static final String CORP_SUGGEST_LUCENE_INDEX = "cqPageLuceneCorpSuggest";
+	private static final String CORP_SUGGEST_LUCENE_INDEX = "cqPageLuceneDsysSuggest";
 	private static final Logger log = LoggerFactory.getLogger(SuggestionProviderImpl.class);
 
 	@Reference
@@ -64,8 +64,12 @@ public class SuggestionProviderImpl implements SuggestionProvider {
 						escape(nodeType), escape(term), escape(p), CORP_SUGGEST_LUCENE_INDEX);
 				final QueryManager queryManager = resourceResolver.adaptTo(Session.class).getWorkspace()
 						.getQueryManager();
+						log.debug("suggest statement::{}", statement);
+
 				final QueryResult result = queryManager.createQuery(statement, javax.jcr.query.Query.JCR_SQL2)
 						.execute();
+						log.debug("suggest result::{}", result);
+
 				final RowIterator rows = result.getRows();
 
 				int count = 0;
@@ -87,7 +91,7 @@ public class SuggestionProviderImpl implements SuggestionProvider {
 					}
 
 				}
-				log.info("Statement ::{} and its result ::{}", statement, suggestions);
+				log.debug("Statement ::{} and its result ::{}", statement, suggestions);
 			}
 		}
 
@@ -129,10 +133,14 @@ public class SuggestionProviderImpl implements SuggestionProvider {
 		params.put("group.1_property", "searchingPaths");
 		params.put("group.1_property.operation", JcrPropertyPredicateEvaluator.OP_EXISTS);
 		params.put("group.2_property", JcrResourceConstants.SLING_RESOURCE_TYPE_PROPERTY);
-		params.put("group.2_property.value", "pcwr/components/structure/parts/search");
+		params.put("group.2_property.value", "plweb-dsys/components/global-search/v1/global-search");
 		params.put("group.p.and", "true");
 		Query query = queryBuilder.createQuery(PredicateGroup.create(params), resolver.adaptTo(Session.class));
+		log.debug("suggestions query::{}", query.toString());
+
 		SearchResult result = query.getResult();
+		log.debug("SuggestionProviderImpl result ::{}", result);
+
 		List<Hit> hitList = result.getHits();
 		if (!hitList.isEmpty()) {
 			Resource searchResource;

@@ -22,7 +22,7 @@ import pl.web.dsys.core.search.predicates.impl.PathsPredicateFactoryImpl;
 import com.day.cq.wcm.api.NameConstants;
 import pl.web.dsys.core.search.Suggestions;
 
-@Model(adaptables = SlingHttpServletRequest.class, adapters = Suggestions.class, resourceType = "pcwr/components/structure/parts/topnav")
+@Model(adaptables = SlingHttpServletRequest.class, adapters = Suggestions.class, resourceType = "plweb-dsys/components/global-search/v1/global-search")
 @Exporter(name = "jackson", selector = "suggestions", extensions = "json")
 public class SuggestionsImpl implements Suggestions {
 

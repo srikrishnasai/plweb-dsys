@@ -51,13 +51,18 @@ public class SuggestionsServlet extends SlingAllMethodsServlet {
 			log.debug("Search Term ::{}", searchTerm);
 			final String[] searchPaths = suggestionProvider.getSearchPaths(request.getResourceResolver(),
 					request.getParameter(PathsPredicateFactoryImpl.SEARCHPATH_PROPERTY_NAME));
+					log.debug("searchPaths ::{}", searchPaths.toString());
+
 			suggestions = suggestionProvider.suggest(request.getResourceResolver(), searchPaths, NameConstants.NT_PAGE,
 					searchTerm, DEFAULT_SUGGESTIONS_LIMIT);
+					log.debug("Suggestions ::{}", suggestions);
+
 			JSONObject jObj = new JSONObject();
 			try {
 				jObj.put("searchTerm", searchTerm);
 				jObj.put("suggestions", suggestions);
 			} catch (JSONException e) {
+				log.debug("Search suggestion error ::{}", e.getMessage());
 				log.error("Error Occured while fetching suggestions ::{}", e.getMessage());
 			}
 			response.getWriter().print(jObj);
