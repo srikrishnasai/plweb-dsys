@@ -14,7 +14,7 @@
                 <items jcr:primaryType="nt:unstructured">
                     <general
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="General;"
+                        jcr:title="General"
                         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
@@ -83,10 +83,10 @@
                                                                             autoStart="{Boolean}false"
                                                                             class="cq-droptarget"
                                                                             fieldLabel="Image"
-                                                                            fileNameParameter="./logo"
+                                                                            fileNameParameter="./fileName"
                                                                             mimeTypes="[image]"
                                                                             multiple="{Boolean}false"
-                                                                            name="./logoImage"
+                                                                            name="./file"
                                                                             required="{Boolean}true"
                                                                             title="Upload Image Asset"
                                                                             uploadUrl="${suffix.path}"

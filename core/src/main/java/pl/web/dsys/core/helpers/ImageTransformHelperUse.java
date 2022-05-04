@@ -1,4 +1,4 @@
-package pl.web.dsys.core.models;
+package pl.web.dsys.core.helpers;
 
 import org.apache.sling.api.resource.Resource;
 import javax.jcr.RepositoryException;
@@ -24,7 +24,7 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 
 import com.day.cq.wcm.api.Page;
 
-import pl.web.dsys.core.models.ImageTransformsMap;
+import pl.web.dsys.core.helpers.ImageTransformsMap;
 
 @Model(adaptables = {Resource.class, SlingHttpServletRequest.class},
 defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)

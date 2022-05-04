@@ -1,4 +1,4 @@
-package pl.web.dsys.core.models;
+package pl.web.dsys.core.helpers;
 
 import java.util.Map;
 import java.util.HashMap;

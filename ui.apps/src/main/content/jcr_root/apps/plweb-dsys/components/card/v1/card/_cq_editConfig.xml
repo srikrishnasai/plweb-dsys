@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    cq:disableTargeting="true"
+    jcr:primaryType="cq:EditConfig">
+    <cq:listeners
+        jcr:primaryType="cq:EditListenersConfig"
+        afteradd="REFRESH_SELF"
+        afteredit="REFRESH_SELF"
+        afterinsert="REFRESH_SELF"/>
+    <cq:dropTargets jcr:primaryType="nt:unstructured">
+        <image
+            jcr:primaryType="cq:DropTargetConfig"
+            sling:resourceType="wcm/foundation/components/image"
+            accept="[image/.*]"
+            groups="[media]"
+            propertyName="./image/fileReference">
+            <parameters
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="plweb-dsys/components/card/v1/card">
+                <image
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/image"
+                    imageCrop=""
+                    imageMap=""
+                    imageRotate=""/>
+            </parameters>
+        </image>
+    </cq:dropTargets>
+    <cq:inplaceEditing
+        jcr:primaryType="cq:InplaceEditingConfig"
+        active="{Boolean}true"
+        editorType="hybrid">
+        <cq:childEditors jcr:primaryType="nt:unstructured">
+            <image
+                jcr:primaryType="cq:ChildEditorConfig"
+                title="Image"
+                type="image"/>
+        </cq:childEditors>
+        <config jcr:primaryType="nt:unstructured">
+            <image jcr:primaryType="nt:unstructured">
+                <plugins jcr:primaryType="nt:unstructured">
+                    <crop
+                        jcr:primaryType="nt:unstructured"
+                        features="*">
+                        <aspectRatios jcr:primaryType="nt:unstructured">
+                            <square
+                                jcr:primaryType="nt:unstructured"
+                                name="1:1 Crop"
+                                ratio="1"/>
+                            <widecrop
+                                jcr:primaryType="nt:unstructured"
+                                name="2:1"
+                                ratio="0.5"/>
+                        </aspectRatios>
+                    </crop>
+                </plugins>
+            </image>
+        </config>
+    </cq:inplaceEditing>
+</jcr:root>

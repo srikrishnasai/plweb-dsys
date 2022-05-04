@@ -1,4 +1,4 @@
-package pl.web.dsys.core.models;
+package pl.web.dsys.core.helpers;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;

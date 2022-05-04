@@ -1,7 +1,7 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-use.footerObj="pl.web.dsys.core.models.FooterModel"
-    data-sly-use.imageurl="${'pl.web.dsys.core.models.ImageTransformHelper' @ transform='dsys-flexImg576w', imagePath=footerObj.imagePath, transparent=footerObj.useTransparentImage}"
+    data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg576w', imagePath=footerObj.imagePath, transparent=footerObj.useTransparentImage}"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.footer'}" />
 <sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !footerObj.copyright)}" />
 <sly data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems1'}"></sly>

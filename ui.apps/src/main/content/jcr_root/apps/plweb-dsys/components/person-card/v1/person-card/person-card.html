@@ -2,11 +2,11 @@
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.person-card'}" />
 <sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}" />
-
+<sly data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg576w', nodeName='image', transparent='false'}"/>
 
 <aside data-sly-test="${properties.category == 'compact'}"
     class="person-card__compact-main  ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''} ${properties.color == 'blackColor' ? 'person-card--black-color' : ''}">
-    <img class="person-card__avatar person-card--compact-avatar" src="${properties.fileReference}"
+    <img class="person-card__avatar person-card--compact-avatar" src="${imageurl.transformedImageUrl}"
         alt="Person's Image" />
     <div class="person-card__compact-container">
         <div class="person-card__compact-name">
@@ -33,7 +33,7 @@
 <div data-sly-test="${properties.category == 'bio'}">
     <section
         class="person-card__bio-main person-card--bio-desktop ${properties.bgColor == 'transparent' && 'person-card--bg-transparent'} ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''} ${properties.color == 'blackColor' ? 'person-card--black-color' : ''}">
-        <img class="person-card__avatar person-card--bio-avatar" src="${properties.fileReference}"
+        <img class="person-card__avatar person-card--bio-avatar" src="${imageurl.transformedImageUrl}"
             alt="Person's Image" />
         <div class="person-card__bio-container-with-text">
             <h3 class="person-card__bio-name">
@@ -63,7 +63,7 @@
     <section
         class="person-card__bio-main ${properties.bgColor == 'transparent' && 'person-card--bg-transparent'} person-card--bio-mobile">
         <div class="person-card__bio-container-with-text">
-            <img class="person-card__avatar person-card--bio-avatar" src="${properties.fileReference}"
+            <img class="person-card__avatar person-card--bio-avatar" src="${imageurl.transformedImageUrl}"
                 alt="Person's Image" />
             <div>
                 <h3 class="person-card__bio-name">
@@ -89,4 +89,10 @@
             </div>
         </div>
     </section>
+</div>
+
+<div data-sly-test="${wcmmode.edit || wcmmode.design}">
+	<div class="inplace-image-edit-view">
+		<div class="${imageurl.transformedImageUrl ? '' : 'cq-placeholder '}cq-dd-image" style="display:none"></div>
+	</div>	 
 </div>
