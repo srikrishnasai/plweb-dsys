@@ -14,10 +14,10 @@
          <a target="${secondarylink.linkTarget}" class="dsys-text dsys-text--caption"
             href="${linkhelper.modifiedLink}">${secondarylink.linkText}</a>
       </div>
-      <div data-sly-test="${overviewObj.telephone}" class="overview__telephone-container">
-         <a href="tel:${properties.telephone}">
+      <div data-sly-test="${overviewObj.telephone}">
+         <a href="tel:${overviewObj.telephone}" class="overview__telephone-container">
             <div class="dsys-icon dsys-icon--phone"></div>
-            <span>${overviewObj.telephone}</span>
+            <span class="dsys-text dsys-text--caption">${overviewObj.telephone}</span>
          </a>
       </div>
    </div>
