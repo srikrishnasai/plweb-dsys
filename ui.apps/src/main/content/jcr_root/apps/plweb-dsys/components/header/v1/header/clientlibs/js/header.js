@@ -7,6 +7,12 @@
 
     var LIST_HEIGHT = 40;
 
+    var MAX_TABLET_WIDTH = 991;
+
+    var TIME_TO_ADD_DISPLAY_CLASS = 10;
+
+    var ANIMATION_DURATION = 600;
+
     function showMegaMenu(dropdownElem, button) {
         var maxHeight = $(dropdownElem).find("a").length * LIST_HEIGHT;
         $(dropdownElem).css("max-height", maxHeight + "px");
@@ -14,7 +20,7 @@
     }
 
     function hideMegaMenu(dropdownElem, button) {
-        $(dropdownElem).css("max-height", "0px");
+        $(dropdownElem).removeAttr("style");
         $(button).toggleClass(UP_ARROW_CLASS);
     }
     function hideNav(button, nav) {
@@ -22,7 +28,7 @@
         nav.removeClass("secondary-nav--dropdown-show");
         setTimeout(function () {
             nav.removeClass("secondary-nav--dropdown-active");
-        }, 520);
+        }, ANIMATION_DURATION + TIME_TO_ADD_DISPLAY_CLASS);
     }
 
     function showNav(button, nav) {
@@ -30,7 +36,7 @@
         nav.addClass("secondary-nav--dropdown-active");
         setTimeout(function () {
             nav.addClass("secondary-nav--dropdown-show");
-        }, 10);
+        }, TIME_TO_ADD_DISPLAY_CLASS);
     }
 
     $(window).on("load", function () {
@@ -47,7 +53,7 @@
             $(nav)
                 .find("li")
                 .each(function () {
-                    if ($(document).width() > 556) {
+                    if ($(document).width() > MAX_TABLET_WIDTH) {
                         var dropdown = $(this).find("#dropdown");
                         $(this).hover(
                             function () {
@@ -55,14 +61,14 @@
                                     dropdown.addClass("secondary-nav--dropdown-active");
                                     setTimeout(function () {
                                         dropdown.addClass("secondary-nav--dropdown-show");
-                                    }, 10);
+                                    }, TIME_TO_ADD_DISPLAY_CLASS);
                                 }
                             },
                             function () {
                                 dropdown.removeClass("secondary-nav--dropdown-show");
                                 setTimeout(function () {
                                     dropdown.removeClass("secondary-nav--dropdown-active");
-                                }, 420);
+                                }, ANIMATION_DURATION + TIME_TO_ADD_DISPLAY_CLASS);
                             }
                         );
                     } else {

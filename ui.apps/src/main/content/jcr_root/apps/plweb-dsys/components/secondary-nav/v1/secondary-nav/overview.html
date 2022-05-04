@@ -1,13 +1,24 @@
 <sly data-sly-template.overview="${@ overviewObj}">
-   <sly data-sly-test="${overviewObj.primaryLinkTargetPath}" data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=overviewObj.primaryLinkTargetPath}"/>
+   <sly data-sly-test="${overviewObj.primaryLinkTargetPath}"
+      data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=overviewObj.primaryLinkTargetPath}" />
    <div id="overview" class="secondary-nav__overview">
-      <h4 class="overview__header">${overviewObj.header}</h4>
-      <a  target="${overviewObj.primaryLinkTarget}" class="dsys-text dsys-text--body" href="${linkhelper.modifiedLink}">${overviewObj.primaryLinkText}</a>
-      <div class="dsys-text dsys-text--caption overview__description">${overviewObj.overviewDescription @ context='html'}
+      <h4 class="overview__header ${!overviewObj.header && 'overview--no-header'}">${overviewObj.header}</h4>
+      <a target="${overviewObj.primaryLinkTarget}" class="dsys-text dsys-text--body ${!linkhelper.modifiedLink && 'overview--no-link'}"
+         href="${linkhelper.modifiedLink}">${overviewObj.primaryLinkText}</a>
+      <div class="dsys-text dsys-text--caption overview__description">${overviewObj.overviewDescription @
+         context='html'}
       </div>
       <div data-sly-list.secondarylink="${overviewObj.secondaryLinks}" class="overview__additional-links">
-         <sly data-sly-test="${secondarylink.targetPath}" data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=secondarylink.targetPath}"/>
-         <a  target="${secondarylink.linkTarget}" class="dsys-text dsys-text--caption" href="${linkhelper.modifiedLink}">${secondarylink.linkText}</a>
+         <sly data-sly-test="${secondarylink.targetPath}"
+            data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=secondarylink.targetPath}" />
+         <a target="${secondarylink.linkTarget}" class="dsys-text dsys-text--caption"
+            href="${linkhelper.modifiedLink}">${secondarylink.linkText}</a>
+      </div>
+      <div data-sly-test="${overviewObj.telephone}" class="overview__telephone-container">
+         <a href="tel:${properties.telephone}">
+            <div class="dsys-icon dsys-icon--phone"></div>
+            <span>${overviewObj.telephone}</span>
+         </a>
       </div>
    </div>
 </sly>

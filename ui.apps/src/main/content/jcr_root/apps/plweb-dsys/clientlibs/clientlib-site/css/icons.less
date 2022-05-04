@@ -1,0 +1,46 @@
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+
+.dsys-icon{
+    background-color: @neutral1000;
+    width: 25px;
+    height: 16px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    &.dsys-icon{
+        .modifier(close,{
+            mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/close.svg);
+            -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/close.svg);
+        });
+        .modifier(downArrow,{
+            mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downArrow.svg);
+            -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downArrow.svg);
+        });
+        .modifier(downCaret,{
+            mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downCaret.svg);
+            -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downCaret.svg);
+        });
+        .modifier(hamburger,{
+            mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/hamburger.svg);
+            -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/hamburger.svg);
+        });
+        .modifier(mail,{
+            mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/mail.svg);
+            -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/mail.svg);
+        });
+        .modifier(phone,{
+            mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/phone.svg);
+            -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/phone.svg);
+        });
+        .modifier(search,{
+            mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/search.svg);
+            -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/search.svg);
+        });
+        .modifier(upArrow,{
+            mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/upArrow.svg);
+            -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/upArrow.svg);
+        });
+    }
+}

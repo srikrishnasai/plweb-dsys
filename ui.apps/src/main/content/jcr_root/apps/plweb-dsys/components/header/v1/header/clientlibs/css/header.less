@@ -1,20 +1,33 @@
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 @import (reference)  "/apps/plweb-dsys/clientlibs/clientlib-site/css/global.less";
+@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/icons.less";
+
 @navigation-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 @nav-bg-color: #fff;
+
 .header{
     position: relative;
     box-shadow: @navigation-shadow;
     background-color: @nav-bg-color;
 }
+
 .secondary-nav{
     display: flex;
+
     .element(main,{
         display: flex;
         align-items: center;
-        gap: @80;
+        gap: @64;
+        @media @mediaLG {
+            gap: @80;
+        }
     });
+
+    .element(mobile-icon,{
+        display: none;
+    });
+
     .element(navigation,{
         flex: 1;
         ul{
@@ -25,7 +38,7 @@
         ul > li{
             padding: @24 @16;
         }
-         #navLink{
+         .navigation-link{
             .montserrat;
             .fw-600;
             color: @neutral1000;
@@ -37,22 +50,22 @@
             box-sizing: border-box;
             position: relative;
         }
-         #navLink::after{
+        .navigation-link::after{
             content: '';
             height: 1px;
             width: 100%;
-            transition: transform .3s;
+            transition: transform @long;
             background-color: @teal-color;
             transform: scaleX(0);
-            transform-origin: left;
+            transform-origin: center;
             position: absolute;
             left: 0;
             pointer-events: none;
             top: 100%;
         }
-        @media @mediaSM{
+        @media @mediaMD{
             li:hover{
-                 #navLink {
+                .navigation-link {
                     color: @teal-color !important;
                     &::after{
                         transform: scaleX(1) !important;
@@ -73,7 +86,7 @@
         background-color: @nav-bg-color;
         gap: @8;
         display: none;
-        transition: opacity 0.4s linear;
+        transition: opacity @long linear;
         .dropdown{
             .element(container,{
                 max-width    : 1280px;
@@ -93,6 +106,11 @@
             cursor: pointer;
         }
     });
+
+    .element(drop-down-mobile,{
+        display: none;
+    });
+
     .element(overview,{
         flex: 1;
         .overview{
@@ -103,15 +121,32 @@
                 margin-bottom: @24;
                 font-size: 18.06px;
             });
+            .modifier(no-header,{
+                margin-bottom: 52px;
+            });
+            .modifier(no-link,{
+                cursor: initial;
+                color: @textBodyLight;
+            });
             .element(description,{
                 margin-bottom: @32;
                 max-width: 70%;
             });
             .element(additional-links,{
                 margin-bottom: @8;
-            })
+            });
+            .element(telephone-container,{
+                display: flex;
+                gap: @16;
+                align-items: center;
+                .dsys-icon--phone{
+                    width: 20px;
+                    height: 20px
+                }
+            });
         }
     });
+
     .element(support,{
         margin-top: 52px;
         flex: 1;
@@ -120,8 +155,17 @@
                 margin-bottom: @24;
                 max-width: 70%;
             });
+            .element(link-container,{
+                display: flex;
+                gap: @16;
+            });
+            .element(icon-link,{
+                padding-top: @4;
+                margin-bottom: 0;
+            })
         }
     });
+
     .element(marketing,{
         margin-top: 52px;
         flex: 1;
@@ -131,7 +175,7 @@
                 max-width: 220px;
             });
             .element(description,{
-                max-width: 70%
+                max-width: 220px;
             })
         }
     });
@@ -141,13 +185,9 @@
     .modifier(dropdown-show,{
         opacity: 1 !important;
     });
-    .element(drop-down,{
-        display: none;
-    });
-    .element(mobile-icon,{
-        display: none;
-    });
-    @media @mediaMobile{
+
+
+    @media @mediaTablet{
         box-shadow: none;
         background: transparent;
         .element(main,{
@@ -197,7 +237,7 @@
             box-shadow: @navigation-shadow;
             display: none;
             opacity: 0;
-            transition: all 0.5s linear;
+            transition: all @long linear;
             ul{
                 margin-bottom: @16;
                 flex-direction: column;
@@ -216,7 +256,7 @@
                 flex: 1;
             }
         });
-        .element(drop-down,{
+        .element(drop-down-mobile,{
             display: inline-block;
             background: @textBodyLight;
             width: 14px;
@@ -238,7 +278,7 @@
             background: transparent;
             display: block;
             max-height: 0px;
-            transition: all 0.5s linear;
+            transition: all @long linear;
             overflow: hidden;
             .dropdown{
                 .element(container,{
@@ -264,11 +304,6 @@
                 display: none;
             };
             margin-top: 0px;
-            // .support{
-            //     .element(description,{
-            //         display: none;
-            //     });
-            // }
         });
         .element(overview,{
             :not(a){
@@ -280,18 +315,6 @@
                 flex-direction: column;
                 margin: 0px;
             }
-            // flex: 1;
-            // .overview{
-            //     .element(header,{
-            //         display: none;
-            //     });
-            //     .element(description,{
-            //         display: none;
-            //     });
-            //     .element(additional-links,{
-            //         margin-bottom: @8;
-            //     })
-            // }
         });
     }
 }

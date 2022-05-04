@@ -34,7 +34,6 @@
 			<span class="topnav__nav-text"> All Sites </span>
 			<span class="caret"></span>
 			<ul class="list" id="list" data-sly-list.allsitesItem="${headerRef.allSites}">
-				<!-- Populate List dynamically using sightly -->
 				<li>
 					<a href="${allsitesItem.linkUrl}">${allsitesItem.linkText}
 					</a>
@@ -54,9 +53,11 @@
 			<ul data-sly-list="${headerRef.primarylinks}">
 				<li>
 					<div class="secondary-nav__link-container">
-						<sly data-sly-test="${item.targetPath}" data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=item.targetPath}"/>
-                  <a target="${item.linkTarget}" id="navLink" href="${linkhelper.modifiedLink}">${item.linkText}</a>
-						<div id="dropdownButton" class="secondary-nav__drop-down"></div>
+						<sly data-sly-test="${item.targetPath}"
+							data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=item.targetPath}" />
+						<a target="${item.linkTarget}" class="navigation-link"
+							href="${linkhelper.modifiedLink}">${item.linkText}</a>
+						<div id="dropdownButton" class="secondary-nav__drop-down-mobile"></div>
 					</div>
 					<div id="dropdown" class="secondary-nav__dropdown">
 						<div id="dropdownContainer" class="dropdown__container">
@@ -67,6 +68,8 @@
 				</li>
 			</ul>
 		</nav>
-		<div id="search-icon" class="dsys-icon__search secondary-nav__search"></div>
+		<div>
+			<div id="search-icon" class="dsys-icon__search secondary-nav__search"></div>
+		</div>
 	</div>
 </section>
