@@ -1,0 +1,64 @@
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+@import (reference)  "/apps/plweb-dsys/clientlibs/clientlib-site/css/global.less";
+
+
+.animate-rating-circle {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
+
+.circular-rating{
+    .element(circle-inner-wrapper,{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    });
+    .element(circle,{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .rating-circle {
+            background: #24c5cf;
+            position: relative;
+            text-align: center;
+            color: #fff;
+            border-radius: 50%;
+            opacity: 0.8;
+            transform: scale(0.1);
+            transition: transform @veryLong ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            .rating-text {
+                .fw-700;
+            }
+            .modifier(medium,{
+                height: 85px;
+                width: 85px;
+                font-size: 40px;
+            });
+            .modifier(small,{
+                height: 60px;
+                width: 60px;
+                font-size: 25px;
+            });
+            .modifier(large,{
+                height: 120px;
+                width: 120px;
+                font-size: 50px;
+            });
+            .rating-dec{
+                font-weight: 600;
+                    letter-spacing: 0.6px;
+                    font-size: 18px;
+                     color: #24c5cf;
+            }
+        }
+    })
+}
+
+
