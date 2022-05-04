@@ -1,19 +1,20 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-use.objRef="pl.web.dsys.core.models.CircularRatingModel"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.circular-rating'}" />
-<sly data-sly-call="${template.placeholder @ isEmpty= !properties.ratingTitle}"></sly>
+<sly data-sly-call="${template.placeholder @ isEmpty= !objRef.ratingTitle}"></sly>
 
 <div class="circular-ratings-component circular-ratings">
     <div class="animatedParent animateOnce" data-appear-offset="-300">
         <div class="circular-rating__circle-inner-wrapper animated fadeIn">
             <div class="circular-rating__circle">
-                <div id="ratingCircle" class="rating-circle ${properties.circularRatingSize == 'large' ? 'rating-circle--large' : ''} ${properties.circularRatingSize == 'medium' ? 'rating-circle--medium' : ''}  ${properties.circularRatingSize == 'small' ? 'rating-circle--small' : ''}"
-                    style="background:${properties.circularRatingColor @context='styleString'}"
-                    data-circular-rating-size="${properties.circularRatingSize}">
-                    <div class="rating-text">${properties.ratingText}</div>
+                <div id="ratingCircle" class="rating-circle ${objRef.circularRatingSize == 'large' ? 'rating-circle--large' : ''} ${objRef.circularRatingSize == 'medium' ? 'rating-circle--medium' : ''}  ${objRef.circularRatingSize == 'small' ? 'rating-circle--small' : ''}"
+                    style="background:${objRef.circularRatingColor @context='styleString'}"
+                    data-circular-rating-size="${objRef.circularRatingSize}">
+                    <div class="rating-text">${objRef.ratingText}</div>
                 </div>
                 <div class="rating-dec"
-                    style="color:${properties.circularRatingColor @context='styleString'}">${properties.ratingTitle}
+                    style="color:${objRef.circularRatingColor @context='styleString'}">${objRef.ratingTitle}
                 </div>
             </div>
         </div>
