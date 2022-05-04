@@ -62,10 +62,9 @@
 							href="${linkhelper.modifiedLink}">${item.linkText}</a>
 						<div id="dropdownButton" class="secondary-nav__drop-down-mobile"></div>
 					</div>
-					<div id="dropdown" class="secondary-nav__dropdown">
+					<div data-sly-test="${item.secondaryNavXfPath}" id="dropdown" class="secondary-nav__dropdown">
 						<div id="dropdownContainer" class="dropdown__container">
-							<sly data-sly-test="${item.secondaryNavXfPath}"
-								data-sly-resource="${@path = item.secondaryNavXfPath , selectors='content', wcmmode='disabled'}" />
+							<sly data-sly-resource="${@path = item.secondaryNavXfPath , selectors='content', wcmmode='disabled'}" />
 						</div>
 					</div>
 				</li>
