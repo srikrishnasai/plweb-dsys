@@ -79,6 +79,7 @@ public class SecondaryNavLinksModel {
 				if (!iconName.endsWith(".svg")) {
 					iconName = iconPathArray[iconPathArray.length - 2];
 				}
+				iconName = iconName.replace(".svg", "");
 			}
 		}
 		log.debug("Icon Name ::{}", iconName);

@@ -2,8 +2,8 @@
    <sly data-sly-test="${overviewObj.primaryLinkTargetPath}"
       data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=overviewObj.primaryLinkTargetPath}" />
    <div id="overview" class="secondary-nav__overview">
-      <h4 class="overview__header">${overviewObj.header}</h4>
-      <a target="${overviewObj.primaryLinkTarget}" class="dsys-text dsys-text--body"
+      <h4 class="overview__header ${!overviewObj.header && 'overview--no-header'}">${overviewObj.header}</h4>
+      <a target="${overviewObj.primaryLinkTarget}" class="dsys-text dsys-text--body ${!linkhelper.modifiedLink && 'overview--no-link'}"
          href="${linkhelper.modifiedLink}">${overviewObj.primaryLinkText}</a>
       <div class="dsys-text dsys-text--caption overview__description">${overviewObj.overviewDescription @
          context='html'}
@@ -16,7 +16,7 @@
       </div>
       <div data-sly-test="${overviewObj.telephone}" class="overview__telephone-container">
          <a href="tel:${properties.telephone}">
-            <div class="overview__telephone"></div>
+            <div class="dsys-icon dsys-icon--phone"></div>
             <span>${overviewObj.telephone}</span>
          </a>
       </div>

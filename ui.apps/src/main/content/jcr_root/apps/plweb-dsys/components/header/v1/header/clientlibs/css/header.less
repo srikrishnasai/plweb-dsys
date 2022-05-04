@@ -1,6 +1,7 @@
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 @import (reference)  "/apps/plweb-dsys/clientlibs/clientlib-site/css/global.less";
+@import "/apps/plweb-dsys/clientlibs/clientlib-site/css/icons.less";
 
 @navigation-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 @nav-bg-color: #fff;
@@ -120,13 +121,29 @@
                 margin-bottom: @24;
                 font-size: 18.06px;
             });
+            .modifier(no-header,{
+                margin-bottom: 52px;
+            });
+            .modifier(no-link,{
+                cursor: initial;
+                color: @textBodyLight;
+            });
             .element(description,{
                 margin-bottom: @32;
                 max-width: 70%;
             });
             .element(additional-links,{
                 margin-bottom: @8;
-            })
+            });
+            .element(telephone-container,{
+                display: flex;
+                gap: @16;
+                align-items: center;
+                .dsys-icon--phone{
+                    width: 20px;
+                    height: 20px
+                }
+            });
         }
     });
 
@@ -138,6 +155,14 @@
                 margin-bottom: @24;
                 max-width: 70%;
             });
+            .element(link-container,{
+                display: flex;
+                gap: @16;
+            });
+            .element(icon-link,{
+                padding-top: @4;
+                margin-bottom: 0;
+            })
         }
     });
 
@@ -150,7 +175,7 @@
                 max-width: 220px;
             });
             .element(description,{
-                max-width: 70%
+                max-width: 220px;
             })
         }
     });
