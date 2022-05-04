@@ -5,9 +5,13 @@
       data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
       data-sly-call="${clientlib.all @ categories='plweb-dsys.bulleted-list'}"
        data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='listItemValues'}"/>
-<div class="bulleted-list-wrapper">
-      <ul data-sly-test="${model1.childResource}" data-sly-list="${model1.childResource.listChildren}" class="bullet-list  bullet-list--${properties.columnNumbers} ">
-            <li class="li-bullet-list li-bullet-list--${properties.columnNumbers}"> <span class="list-text"> ${item.listItemText} </span> </li>
-      </ul>
-</div>
+      <div class="bulleted-list-wrapper animatedParent animateOnce"  
+            data-length="${model1.length}" data-columnCount="${properties.columnNumbers}"  
+            data-appear-top-offset='-300'>
+            <ul data-sly-test="${model1.childResource}" data-sly-list="${model1.childResource.listChildren}"
+            class="bullet-list bullet-list--${properties.columnNumbers}  animated fadeInDownHalfShort delay-500">
+                        <li class="li-bullet-list li-bullet-list--${properties.columnNumbers}"> <span class="list-text"> ${item.listItemText} </span> </li>
+                  </ul>
+      </div>
+
 

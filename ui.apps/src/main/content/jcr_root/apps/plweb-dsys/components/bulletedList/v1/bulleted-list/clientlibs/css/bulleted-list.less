@@ -13,11 +13,8 @@
     
                 .li-bullet-list {
                     list-style-type: none;
-                    // padding: .25em 0 0 2.5em;
                     padding-left: 30px;
-                    position: relative;
-    
-                    
+                    position: relative;                
                     &:before {
                         content: " ";
                         display: block;
@@ -47,7 +44,6 @@
                         -o-transform: rotate(45deg);
                         transform: rotate(45deg);
                     }
-    
                     span.list-text {
                         font-family: 'Open Sans';
                         font-style: normal;
@@ -55,13 +51,8 @@
                         font-size: 16px;
                         line-height: 24px;
                     }
-    
-    
-    
                 }
-    
             }
-
         });
         .modifier(bullet-points,{
             .bullet-list {
@@ -84,9 +75,7 @@
                         min-width: 15px;
                     }
                 }
-            }
-    
-            
+            }        
         });
         .modifier(numbers,{
             .bullet-list {
@@ -121,7 +110,6 @@
                     }
                 }
             }
-
         });
     }
 
@@ -139,28 +127,20 @@
                     padding-left: 10px;
                 }
             }
-
             .modifier(one, {
                     grid-template-columns: auto;
                 }
-
             );
-
             .modifier(two, {
-                    grid-template-columns: auto auto;
-                    grid-template-rows: repeat(3, auto);
                     gap: 10px;
                     grid-auto-flow: column;
-
                 }
 
             );
-
             .modifier(three, {
-                    grid-template-columns: auto auto auto;
-                    grid-template-rows: repeat(2, auto);
                     gap: 10px;
                     grid-auto-flow: column;
+                    grid-template-columns: auto auto auto;
                 }
 
             );
