@@ -1,27 +1,29 @@
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+
 
 .animating-numbers {
 
-	.animating-numbers-number-wrapper {
-		font-family: 'Montserrat';
+    .element(number-wrapper,{
+        .montserrat;
 		font-weight: bold;
 		font-variant-numeric: tabular-nums;
-		text-align: center;
+		.ta-center;
 		margin: 0;
 		line-height: 1;
 		font-size: 35px;
 		margin-top: 24px;
-		margin-bottom: 12px
-	}
-	
-	.animating-numbers-number-label {
-		text-align: center;
-		font-weight: 700;
+		margin-bottom: 12px;
+    });
+
+    .element(number-label,{
+		.ta-center;
+		.fw-700;
 		letter-spacing: 0px;
-		font-family: 'Montserrat';
+		.montserrat;
 		line-height: 27px;
-		text-transform: capitalize;
+		.capitalize;
         font-size: 16px;
         margin-top: 15px;
-
-	}
+    });
 }
