@@ -140,8 +140,8 @@
                 gap: @16;
                 align-items: center;
                 .dsys-icon--phone{
-                    width: 20px;
-                    height: 20px
+                    width: 25px;
+                    height: 25px
                 }
             });
         }
@@ -162,6 +162,11 @@
             .element(icon-link,{
                 padding-top: @4;
                 margin-bottom: 0;
+            });
+            .modifier(no-icon-link,{
+                .dsys-icon{
+                    background-color: transparent
+                }
             })
         }
     });
@@ -300,9 +305,12 @@
             display: none;
         });
         .element(support,{
-            :not(a){
+            .support__description , .dsys-icon{
                 display: none;
             };
+            .support__link-container{
+                gap: 0px;
+            }
             margin-top: 0px;
         });
         .element(overview,{
@@ -319,7 +327,11 @@
     }
 }
 
-
+@media @mediaTablet{
+    .secondary-nav{
+        display: block;
+    }
+}
 
 
 
