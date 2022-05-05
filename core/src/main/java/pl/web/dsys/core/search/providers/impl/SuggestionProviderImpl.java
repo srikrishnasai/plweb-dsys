@@ -40,7 +40,7 @@ import pl.web.dsys.core.search.providers.SuggestionProvider;
 public class SuggestionProviderImpl implements SuggestionProvider {
 
 	public static final String SEARCHPATH_PROPERTY_NAME = "searchingPaths";
-	private static final String CORP_SUGGEST_LUCENE_INDEX = "cqPageLuceneDsysSuggest";
+	private static final String DSYS_SUGGEST_LUCENE_INDEX = "cqPageLuceneDsysSuggest";
 	private static final Logger log = LoggerFactory.getLogger(SuggestionProviderImpl.class);
 
 	@Reference
@@ -61,7 +61,7 @@ public class SuggestionProviderImpl implements SuggestionProvider {
 			if (nodeType.equalsIgnoreCase(NameConstants.NT_PAGE)) {
 				final String statement = String.format(
 						"SELECT [rep:suggest()] FROM [%s] WHERE SUGGEST('%s') AND ISDESCENDANTNODE('%s') OPTION(INDEX NAME [%s])",
-						escape(nodeType), escape(term), escape(p), CORP_SUGGEST_LUCENE_INDEX);
+						escape(nodeType), escape(term), escape(p), DSYS_SUGGEST_LUCENE_INDEX);
 				final QueryManager queryManager = resourceResolver.adaptTo(Session.class).getWorkspace()
 						.getQueryManager();
 						log.debug("suggest statement::{}", statement);
