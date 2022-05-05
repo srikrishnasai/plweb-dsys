@@ -25,6 +25,7 @@ import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageFilter;
 
 import pl.web.dsys.core.pojos.LinkPojo;
+import pl.web.dsys.core.utils.AuthUtil;
 import pl.web.dsys.core.utils.CommonUtils;
 
 /**
@@ -106,7 +107,14 @@ public class HeaderModel {
 				while (it.hasNext()) {
 					Page childPage = it.next();
 					ValueMap vm = childPage.getContentResource().adaptTo(ValueMap.class);
-					// Need to check for Auth Control here for the page.
+					if (vm.containsKey("hideInNav") && vm.get("hideInNav", Boolean.class)) {
+						log.debug("No Access as its hide in Nav ::{}", childPage.getPath());
+						continue;
+					}
+					if (!AuthUtil.checkAccess(request, childPage.adaptTo(Resource.class))) {
+						log.debug("No Access listItem -->::{}", childPage.getPath());
+						continue;
+					}
 					LinkPojo lp = new LinkPojo();
 					lp.setLinkText(childPage.getTitle());
 					lp.setLinkUrl(getUrl(vm, childPage));
