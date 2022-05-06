@@ -82,7 +82,7 @@ public class HeaderModel {
 	}
 
 	public String getSearchTargetPath() {
-		return searchTargetPath;
+		return CommonUtils.resolveUrl(searchTargetPath, resolver, request);
 	}
 
 	public List<SecondaryNavLinksModel> getPrimarylinks() {

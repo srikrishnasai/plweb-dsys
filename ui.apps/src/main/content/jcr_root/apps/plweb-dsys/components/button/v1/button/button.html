@@ -1,5 +1,6 @@
-<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
-<div class="dsys-button dsys-button--${properties.btnPos}">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" />
+<div data-sly-test="${authControlObj.hasComponentAccess}" class="dsys-button dsys-button--${properties.btnPos}">
     <a class="dsys-button__main 
      dsys-button__main--${properties.btnstyle}" 
      href="${properties.link}" target="${properties.linkTarget == '_blank' ? '_blank' : ''}">

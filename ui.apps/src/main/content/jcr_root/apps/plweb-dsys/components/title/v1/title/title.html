@@ -1,10 +1,11 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+	data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.title'}" />
 
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
 
-<div class="dsys-title dsys-title--${properties.alignments}">
+<div data-sly-test="${authControlObj.hasComponentAccess}" class="dsys-title dsys-title--${properties.alignments}">
         <h1 data-sly-element="${properties.type}" class="dsys-title__heading-${properties.type} dsys-title--${properties.titleColor}" >${properties.title}<sup class="title-heading-sup">${properties.titleSuperScript}</sup></h1>
         <h3 class="dsys-title__subheading dsys-title__subheading--${properties.subtitleColor}">${properties.subTitle}</h3>
 </div>

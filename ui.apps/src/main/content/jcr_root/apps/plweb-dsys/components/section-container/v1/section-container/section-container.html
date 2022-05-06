@@ -1,6 +1,6 @@
 <!-- section container clientlibs are embedded in clientlib base -->
-
-<div
+<sly data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" />
+<div data-sly-test="${authControlObj.hasComponentAccess}"
     class="section-container__main
     ${properties.removeSpaceDesktop ? ' section-container--desktop-full-width' : ''}
     ${properties.removeSpaceTablet ? ' section-container--tablet-full-width' : ''}

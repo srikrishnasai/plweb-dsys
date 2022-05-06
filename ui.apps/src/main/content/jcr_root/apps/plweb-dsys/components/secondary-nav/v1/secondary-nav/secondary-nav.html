@@ -1,4 +1,5 @@
-<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-use.overviewTemplate="overview.html" data-sly-use.multilinkTemplate="multilink.html" data-sly-use.marketingTemplate="marketingtile.html" data-sly-use.objRef="pl.web.dsys.core.models.SecondaryNavModel" data-sly-call="${clientlib.all @ categories='plweb-dsys.secondary-nav'}" />
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-use.overviewTemplate="overview.html" data-sly-use.multilinkTemplate="multilink.html" data-sly-use.marketingTemplate="marketingtile.html" data-sly-use.objRef="pl.web.dsys.core.models.SecondaryNavModel" data-sly-call="${clientlib.all @ categories='plweb-dsys.secondary-nav'}" data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" />
+<sly data-sly-test="${authControlObj.hasComponentAccess}">
 <sly data-sly-test.columnOneNavType="${objRef.columnOne.navType}">
    <sly data-sly-test="${columnOneNavType == 'overview'}">
       <sly data-sly-call="${overviewTemplate.overview @ overviewObj=objRef.columnOne.overview}" />
@@ -31,4 +32,5 @@
    <sly data-sly-test="${columnThreeNavType == 'marketingTile'}">
       <sly data-sly-call="${marketingTemplate.marketingtile @ marketingObj=objRef.columnThree.marketingtile}" />
    </sly>
+</sly>
 </sly>

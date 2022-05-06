@@ -3,7 +3,7 @@
       <sly data-sly-list.links="${multilinkObj.links}">
          <sly data-sly-test="${links.targetPath}"
             data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=links.targetPath}" />
-         <div class="support__link-container">
+         <div class="support__link-container" data-sly-test="${itemControlObj.resourceAuthorized}" data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=links.targetPath}">
             <a target="${links.linkTarget}" class="dsys-text dsys-text--body support__icon-link ${!links.iconPath && 'support--no-icon-link'}" href="${linkhelper.modifiedLink}">
                <div class="dsys-icon dsys-icon--${links.iconPath}"></div>
             </a>
