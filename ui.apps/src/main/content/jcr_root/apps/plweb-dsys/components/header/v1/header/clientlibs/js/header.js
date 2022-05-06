@@ -60,12 +60,12 @@
                                 if (!dropdown.hasClass("secondary-nav--dropdown-active")) {
                                     dropdown.addClass("secondary-nav--dropdown-active");
                                     setTimeout(function () {
-                                        dropdown.addClass("secondary-nav--dropdown-show");
+                                        dropdown.children(0).addClass("secondary-nav--dropdown-show");
                                     }, TIME_TO_ADD_DISPLAY_CLASS);
                                 }
                             },
                             function () {
-                                dropdown.removeClass("secondary-nav--dropdown-show");
+                                dropdown.children(0).removeClass("secondary-nav--dropdown-show");
                                 setTimeout(function () {
                                     dropdown.removeClass("secondary-nav--dropdown-active");
                                 }, ANIMATION_DURATION + TIME_TO_ADD_DISPLAY_CLASS);

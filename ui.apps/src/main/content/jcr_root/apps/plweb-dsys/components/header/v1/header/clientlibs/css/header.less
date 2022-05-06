@@ -24,6 +24,12 @@
         }
     });
 
+    .element(img-container,{
+        img{
+            max-height: 50px;
+        }
+    });
+
     .element(mobile-icon,{
         display: none;
     });
@@ -75,7 +81,6 @@
         }
     });
     .element(dropdown,{
-        opacity: 0;
         position: absolute;
         width: 100%;
         left: 0px;
@@ -86,9 +91,10 @@
         background-color: @nav-bg-color;
         gap: @8;
         display: none;
-        transition: opacity @long linear;
         .dropdown{
             .element(container,{
+                opacity: 0;
+                transition: opacity @long linear;
                 max-width    : 1280px;
                 margin: 0 auto;
                 @media @mediaXL{
@@ -213,7 +219,7 @@
             background: @nav-bg-color;
             box-sizing: border-box;
             box-shadow: @navigation-shadow;
-            img{
+            a{
                 flex: 1;
                 max-height: 80px;
             }
