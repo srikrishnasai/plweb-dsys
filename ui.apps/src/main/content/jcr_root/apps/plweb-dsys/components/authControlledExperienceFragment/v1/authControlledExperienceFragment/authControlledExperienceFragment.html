@@ -1,0 +1,7 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+      data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+	  data-sly-use.objRef="pl.web.dsys.core.models.AuthControlledExperienceFragment"
+      data-sly-call="${clientlib.all @ categories='plweb-dsys.authcontrolled.experiencefragment'}">
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !objRef.experienceFragmentPath, classAppend='cmp-text'}"></sly>
+<sly data-sly-test="${objRef.experienceFragmentPath}" data-sly-resource="${@path = objRef.experienceFragmentPath , selectors='content', wcmmode='disabled'}"/>
