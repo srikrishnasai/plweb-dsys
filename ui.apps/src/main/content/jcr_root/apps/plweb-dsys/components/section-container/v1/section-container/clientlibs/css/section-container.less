@@ -464,6 +464,16 @@
 
     .element(gap, {
 
+
+        .aem-Grid::after , .aem-Grid::before{
+            content: none;
+        }
+
+        .aem-Grid{
+            &::after , &::before {
+                content: none;
+            }
+        }
         .modifier(extrasmall ,{
             .aem-Grid {
                 gap: @24;
