@@ -1,12 +1,13 @@
 <div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
       data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
       data-sly-use.objRef="pl.web.dsys.core.models.CardModel"
+	  data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
       data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg576w', nodeName='image', transparent=objRef.useTransparentImage}"
       data-sly-use.linkTarget="${'pl.web.dsys.core.helpers.LinkHelpers' @ url=objRef.cardWebpageTarget}"
       data-sly-call="${clientlib.all @ categories='plweb-dsys.card'}">
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !objRef.cardTitle, classAppend='cmp-text'}"></sly>
-
+<sly data-sly-test="${authControlObj.hasComponentAccess}">
 <section class="card__main">
       <div class="card__icon card__box" data-sly-test="${!objRef.cardImage}">Place image</div>
       <div data-sly-test="${objRef.cardImage}" class="card__img-container">
@@ -29,3 +30,4 @@
 		<div class="${imageurl.transformedImageUrl ? '' : 'cq-placeholder '}cq-dd-image" style="display:none"></div>
 	</div>	 
 </div>
+</sly>

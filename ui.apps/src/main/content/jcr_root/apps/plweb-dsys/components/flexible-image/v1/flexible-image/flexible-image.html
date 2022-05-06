@@ -1,7 +1,8 @@
 <div 
     data-sly-use.img="${'pl.web.dsys.core.helpers.ImageTransformHelperUse'}"
-    data-sly-use.template="core/wcm/components/commons/v1/templates.html">
-    <div>
+    data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+	data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" >
+    <div data-sly-test="${authControlObj.hasComponentAccess}">
         <div 
             data-sly-test="${wcmmode.edit || wcmmode.design}">
         </div>

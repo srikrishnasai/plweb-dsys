@@ -1,9 +1,10 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-    data-sly-call="${clientlib.all @ categories='plweb-dsys.person-card'}" />
+    data-sly-call="${clientlib.all @ categories='plweb-dsys.person-card'}"
+    data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"	/>
 <sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}" />
 <sly data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg576w', nodeName='image', transparent='false'}"/>
-
+<sly data-sly-test="${authControlObj.hasComponentAccess}">
 <aside data-sly-test="${properties.category == 'compact'}"
     class="person-card__compact-main  ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''} ${properties.color == 'blackColor' ? 'person-card--black-color' : ''}">
     <img class="person-card__avatar person-card--compact-avatar" src="${imageurl.transformedImageUrl}"
@@ -96,3 +97,4 @@
 		<div class="${imageurl.transformedImageUrl ? '' : 'cq-placeholder '}cq-dd-image" style="display:none"></div>
 	</div>	 
 </div>
+</sly>

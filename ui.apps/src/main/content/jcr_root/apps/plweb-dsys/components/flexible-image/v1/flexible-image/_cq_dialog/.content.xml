@@ -393,58 +393,10 @@
                             </columns>
                         </items>
                     </metadata>
-                    <auth
+					<authControl
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Auth Control"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
-                        <items jcr:primaryType="nt:unstructured">
-                            <column
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <title
-                                        jcr:primaryType="nt:unstructured"
-                                        jcr:title="Component Authorization"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <compauth
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                fieldDescription="Check if you want to turn on Component Auth Control."
-                                                name="./compauth"
-                                                text="Component Auth"
-                                                value="{Boolean}true"/>
-                                            <tags
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
-                                                allowBulkEdit="{Boolean}true"
-                                                autocreateTag="{Boolean}true"
-                                                fieldDescription="Select tags under AMF Authorize/User Type or AMF Autorize/Special Agencies"
-                                                fieldLabel="Auth Tags"
-                                                multiple="{Boolean}true"
-                                                name="./cq:authtags">
-                                                <granite:data
-                                                    jcr:primaryType="nt:unstructured"
-                                                    cq-msm-lockable="cq:authtags"/>
-                                            </tags>
-                                            <denytags
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                name="./denyTags"
-                                                renderReadOnly="{Boolean}true"
-                                                text="Deny Tags"
-                                                value="true">
-                                                <granite:data
-                                                    jcr:primaryType="nt:unstructured"
-                                                    allowBulkEdit="{Boolean}true"
-                                                    cq-msm-lockable="denyTags"/>
-                                            </denytags>
-                                        </items>
-                                    </title>
-                                </items>
-                            </column>
-                        </items>
-                    </auth>
+                        path="plweb-dsys/common/authcontrol/cq:dialog/content/items/tabs/items/authControl"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"/>
                 </items>
             </tabs>
         </items>
