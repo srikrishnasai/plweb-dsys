@@ -64,7 +64,7 @@
     <div class="width-container footer__main">
         <section class="footer__other-links">
             <span class="footer__copyright ${!model5.childResource ? 'footer--occupy-full-width' : ''}">
-                ${footerObj.copyright} </span>
+                ${footerObj.copyright  @ context = 'html'} </span>
             <div class="footer__bottom-links-container">
                 <ul class="footer__mobile-bottom-links ${model4.childResource.listChildren ?'footer--display-list footer--left-link-full-width' : ''}"
                     data-sly-test="${model5.childResource}" data-sly-list="${model5.childResource.listChildren}">
