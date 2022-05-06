@@ -27,7 +27,7 @@ public class AuthUtil {
 	public static String getAgencyTag(SlingHttpServletRequest request) {
 		String group = SharedContants.DEFAULT_PUBLIC_AGENCY;
 		String[] selectors = request.getRequestPathInfo().getSelectors();
-		if (selectors != null && selectors.length > 1) {
+		if (selectors != null && selectors.length > 0) {
 			log.debug("Selectors from Request are ::{}", Arrays.asList(selectors));
 			for (String selector : selectors) {
 				log.debug("Selector ::{}", selector);
