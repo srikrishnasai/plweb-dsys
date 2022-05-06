@@ -141,6 +141,10 @@
                             </columns>
                         </items>
                     </properties>
+					<authControl
+                        jcr:primaryType="nt:unstructured"
+                        path="plweb-dsys/common/authcontrol/cq:dialog/content/items/tabs/items/authControl"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"/>
                 </items>
             </tabs>
         </items>

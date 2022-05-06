@@ -20,7 +20,8 @@
                 </div>
                 <ul class="footer--mobile-list" data-sly-test="${model1.childResource}"
                     data-sly-list="${model1.childResource.listChildren}">
-                    <li class="footer__text footer--link-mobile-view" sly
+					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
+                    <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text footer--link-mobile-view"
                         data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
                         <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}"
                             class="footer__link"> ${item.linkName} </a>
@@ -34,7 +35,8 @@
                 </div>
                 <ul class="footer--mobile-list" data-sly-test="${model2.childResource}"
                     data-sly-list="${model2.childResource.listChildren}">
-                    <li class="footer__text footer--link-mobile-view" sly
+					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
+                    <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text footer--link-mobile-view" sly
                         data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
                         <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}"
                             class="footer__link"> ${item.linkName} </a>
@@ -48,7 +50,8 @@
                 </div>
                 <ul class="footer--mobile-list" data-sly-test="${model3.childResource}"
                     data-sly-list="${model3.childResource.listChildren}">
-                    <li class="footer__text footer--link-mobile-view" sly
+					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
+                    <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text footer--link-mobile-view" sly
                         data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
                         <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}"
                             class="footer__link"> ${item.linkName} </a>
@@ -68,7 +71,8 @@
             <div class="footer__bottom-links-container">
                 <ul class="footer__mobile-bottom-links ${model4.childResource.listChildren ?'footer--display-list footer--left-link-full-width' : ''}"
                     data-sly-test="${model5.childResource}" data-sly-list="${model5.childResource.listChildren}">
-                    <li data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
+					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
+                    <li data-sly-test="${itemControlObj.resourceAuthorized}" data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
                         <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}">
                             ${item.linkName}
                         </a>
@@ -76,7 +80,8 @@
                 </ul>
                 <ul class="footer__mobile-bottom-links ${model5.childResource.listChildren ?'footer--display-list' : ''}"
                     data-sly-test="${model4.childResource}" data-sly-list="${model4.childResource.listChildren}">
-                    <li data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
+					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
+                    <li data-sly-test="${itemControlObj.resourceAuthorized}" data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
                         <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}">
                             ${item.linkName}
                         </a>

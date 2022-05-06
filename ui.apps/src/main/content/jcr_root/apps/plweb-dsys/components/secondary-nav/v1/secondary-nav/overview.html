@@ -11,7 +11,7 @@
       <div data-sly-list.secondarylink="${overviewObj.secondaryLinks}" class="overview__additional-links">
          <sly data-sly-test="${secondarylink.targetPath}"
             data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=secondarylink.targetPath}" />
-         <a target="${secondarylink.linkTarget}" class="dsys-text dsys-text--caption"
+         <a data-sly-test="${itemControlObj.resourceAuthorized}" data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=secondarylink.targetPath}" target="${secondarylink.linkTarget}" class="dsys-text dsys-text--caption"
             href="${linkhelper.modifiedLink}">${secondarylink.linkText}</a>
       </div>
       <div data-sly-test="${overviewObj.telephone}">
