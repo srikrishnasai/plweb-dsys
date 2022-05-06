@@ -409,6 +409,14 @@
         });
         .modifier(alignment-center, {
             text-align: center;
+            // to align the text to the center when max-width restriction is applied
+            .section-container {
+                .element(desc, {
+                    .modifier(restrict-width, {
+                        margin: auto;
+                    });
+                });
+            }
         });
         .modifier(alignment-right, {
             text-align: right;
