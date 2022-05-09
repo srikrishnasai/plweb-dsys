@@ -64,7 +64,6 @@
                                                             fieldDescription="Select path of the variation experience fragment for the tag."
                                                             fieldLabel="Variation Experience Fragment Path"
                                                             name="./variationXfPath"
-                                                            required="{Boolean}true"
                                                             rootPath="/content/experience-fragments"/>
                                                     </items>
                                                 </otherVariations>
