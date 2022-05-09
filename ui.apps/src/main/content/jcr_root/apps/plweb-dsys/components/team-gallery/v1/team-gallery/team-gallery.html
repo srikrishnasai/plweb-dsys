@@ -3,8 +3,8 @@
     data-sly-call="${clientlib.all @ categories='plweb-dsys.team-gallery'}"
 	data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"	/>
 
-<sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}" />
 <sly data-sly-use.model="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='galleryItems'}"></sly>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.childResource}" />
 
 <sly data-sly-test="${authControlObj.hasComponentAccess}">
 <h2 class="team-gallery__title">${properties.title}</h2>
