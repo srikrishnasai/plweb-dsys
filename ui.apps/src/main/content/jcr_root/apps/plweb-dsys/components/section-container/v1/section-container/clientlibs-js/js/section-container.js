@@ -8,10 +8,8 @@
             }
         });
     }
-
-    $(window).on("load", checkContainerClass);
-    /** Checking if app is running in author mode or disabled mode. The code block should run in author mode only */
-    if(window.Granite){
-        $(window).on("DOMNodeInserted", checkContainerClass)
-    }
+    $(document).ready(function() {
+        checkContainerClass();
+    });
+    
 })();
