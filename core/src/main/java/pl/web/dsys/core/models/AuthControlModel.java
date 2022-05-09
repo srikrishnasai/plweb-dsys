@@ -104,10 +104,14 @@ public class AuthControlModel {
 	public boolean isResourceAuthorized() {
 		boolean access = Boolean.TRUE;
 		if (isItemAuth) {
+			log.debug("Inside is Resource Authorized method ::{}", path);
 			Resource itemResource = resolver.getResource(path);
 			if (itemResource != null) {
+				log.debug("Resource Item is not null");
 				if (AuthUtil.isAuthorOrPreview(request)) {
 					access = AuthUtil.isAuthorOrPreview(request);
+				} else {
+					access = AuthUtil.checkAccess(request, itemResource);
 				}
 				log.debug("Item has Access ::{}", access);
 			}
