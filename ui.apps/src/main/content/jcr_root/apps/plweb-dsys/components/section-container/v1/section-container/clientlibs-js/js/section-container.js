@@ -10,6 +10,8 @@
     }
 
     $(window).on("load", checkContainerClass);
-    // TODO : Run this code block only in edit mode though in disable mode this event once page loaded will not be fired again
-    $(window).on("DOMNodeInserted", checkContainerClass)
+    /** Checking if app is running in author mode or disabled mode. The code block should run in author mode only */
+    if(window.Granite){
+        $(window).on("DOMNodeInserted", checkContainerClass)
+    }
 })();
