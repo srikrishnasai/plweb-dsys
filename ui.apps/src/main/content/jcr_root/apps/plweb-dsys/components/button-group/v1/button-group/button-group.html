@@ -2,7 +2,7 @@
       data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
       data-sly-call="${clientlib.all @ categories='plweb-dsys.button-group'}"
       data-sly-use.objRef="pl.web.dsys.core.models.ButtonGroupModel"
-	  data-sly-use.objRef="pl.web.dsys.core.models.CardModel" >
+	  data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" >
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = 'true', classAppend='cmp-text'}"></sly>
 <div data-sly-test="${authControlObj.hasComponentAccess}" class="dsys-button-group__main">

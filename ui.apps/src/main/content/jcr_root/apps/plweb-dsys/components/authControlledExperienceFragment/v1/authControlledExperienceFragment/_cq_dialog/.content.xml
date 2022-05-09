@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Auth Controlled Experience Fragment"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <defaultXfPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldDescription="Select path of the default experience fragment to be shown on pages."
+                                        fieldLabel="Default Experience Fragment Path"
+                                        name="./defaultXfPath"
+                                        rootPath="/content/experience-fragments"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldDescription="Click 'Add field' to add a new variation for different tags"
+                                        fieldLabel="Other Variations">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            name="./variations">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <otherVariations
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Edit Fragment Variation"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <authTags
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                            allowBulkEdit="{Boolean}true"
+                                                            autocreateTag="{Boolean}true"
+                                                            fieldDescription="Select tags under AMF Authorize/User Type or AMF Autorize/Special Agencies"
+                                                            fieldLabel="Auth Tags"
+                                                            name="./cq:authtags"
+                                                            required="{Boolean}true">
+                                                            <granite:data
+                                                                jcr:primaryType="nt:unstructured"
+                                                                cq-msm-lockable="cq:authtags"/>
+                                                        </authTags>
+                                                        <variationXfPath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                            fieldDescription="Select path of the variation experience fragment for the tag."
+                                                            fieldLabel="Variation Experience Fragment Path"
+                                                            name="./variationXfPath"
+                                                            required="{Boolean}true"
+                                                            rootPath="/content/experience-fragments"/>
+                                                    </items>
+                                                </otherVariations>
+                                            </items>
+                                        </field>
+                                    </links>
+                                </items>
+                            </column>
+                        </items>
+                    </general>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
