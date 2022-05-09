@@ -382,7 +382,7 @@
                 <v1 jcr:primaryType="nt:unstructured">
                     <section-container jcr:primaryType="nt:unstructured">
                         <policy_1649920050038
-                            jcr:lastModified="{Date}2022-04-19T16:16:42.733+05:30"
+                            jcr:lastModified="{Date}2022-05-09T15:05:33.662+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Section Container Policy"
@@ -428,7 +428,7 @@
                                     </cq:styles>
                                 </item1>
                                 <item2
-                                    cq:styleGroupLabel="Justify"
+                                    cq:styleGroupLabel="Horizontal Alignment"
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
@@ -438,6 +438,17 @@
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item2>
+                                <item3
+                                    cq:styleGroupLabel="Vertical Alignment"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="section-container__align--center"
+                                            cq:styleId="1652088883376"
+                                            cq:styleLabel="Center"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item3>
                             </cq:styleGroups>
                         </policy_1649920050038>
                     </section-container>
