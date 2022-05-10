@@ -100,5 +100,18 @@
        display: none;
     }
     
+    @media @mediaIEOnly {
+        .list{
+            left: 0px;
+            width: auto;
+            white-space: nowrap;
+        }
+        .element(dot-row-container,{
+            margin-bottom: 2px;
+        });
+        .element(dot,{
+            margin-left:2px ;
+        })
+    }
 
 }
