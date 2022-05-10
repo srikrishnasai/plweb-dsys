@@ -13,6 +13,10 @@
 
     var ANIMATION_DURATION = 600;
 
+    var LIST_ID = "#list"
+
+    var ACTIVATE_LIST_CLASS = "activate-list";
+
     function showMegaMenu(dropdownElem, button) {
         var maxHeight = $(dropdownElem).find("a").length * LIST_HEIGHT;
         $(dropdownElem).css("max-height", maxHeight + "px");
@@ -57,6 +61,7 @@
                         var dropdown = $(this).find("#dropdown");
                         $(this).hover(
                             function () {
+                                $(LIST_ID).removeClass(ACTIVATE_LIST_CLASS)
                                 if (!dropdown.hasClass("secondary-nav--dropdown-active")) {
                                     dropdown.addClass("secondary-nav--dropdown-active");
                                     setTimeout(function () {

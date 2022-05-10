@@ -7,6 +7,10 @@
 
     var ACTIVATE_LIST_CLASS = "activate-list";
 
+    var LIST_ID = "#list"
+
+    var TOPNAV_CLASS_NAME = ".topnav__all-sites"
+
     function hideList(list) {
         list.removeClass(SHOW_LIST_CLASS);
         setTimeout(function () {
@@ -15,10 +19,10 @@
     }
 
     $(window).on("load", function () {
-        $(".topnav__all-sites").each(function () {
+        $(TOPNAV_CLASS_NAME).each(function () {
             $(this).on("click", function (e) {
                 e.stopPropagation();
-                var list = $(this).find("#list");
+                var list = $(this).find(LIST_ID);
                 if (list.hasClass(SHOW_LIST_CLASS)) {
                     hideList(list);
                 } else {
@@ -31,7 +35,7 @@
         });
     });
     $(window).on("click", function () {
-        var list = $("#list");
+        var list = $(LIST_ID);
         hideList(list);
     });
 })();
