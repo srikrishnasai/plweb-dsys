@@ -217,8 +217,7 @@
             width: 100%;
             background: @nav-bg-color;
             box-sizing: border-box;
-            box-shadow: @navigation-shadow;
-            a{
+            .logo{
                 flex: 1;
                 max-height: 80px;
             }
@@ -244,7 +243,7 @@
             padding-right: 2rem;
             background: @nav-bg-color;
             box-sizing: border-box;
-            box-shadow: @navigation-shadow;
+            // box-shadow: @navigation-shadow;
             display: none;
             opacity: 0;
             transition: all @long linear;
@@ -281,8 +280,7 @@
             mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/upArrow.svg);
             -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/upArrow.svg);
         });
-        .element(dropdown,{
-            opacity: 1;
+        .element(dropdown,{       
             position: unset;
             box-shadow: none;
             background: transparent;
@@ -294,6 +292,7 @@
                 .element(container,{
                     flex-direction: column;
                     padding: 0px;
+                    opacity: 1;
                     padding-left: @8;
                 });
             }
@@ -327,7 +326,10 @@
                 display: flex;
                 flex-direction: column;
                 margin: 0px;
-            }
+            };
+            .modifier(no-link,{
+                display: none;
+            });
         });
     }
 }
