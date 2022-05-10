@@ -147,7 +147,10 @@
                 align-items: center;
                 .dsys-icon--phone{
                     width: 25px;
-                    height: 25px
+                    height: 25px;
+                    @media @mediaIEOnly{
+                        margin-right: @8;
+                    }
                 }
             });
         }
@@ -167,6 +170,11 @@
             });
             .element(icon-link,{
                 margin-bottom: 0;
+                @media @mediaIEOnly{
+                    .dsys-icon{
+                        margin-right: @8;
+                    }
+                }
             });
             .modifier(no-icon-link,{
                 .dsys-icon{
