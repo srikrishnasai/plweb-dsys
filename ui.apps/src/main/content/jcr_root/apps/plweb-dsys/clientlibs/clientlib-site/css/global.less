@@ -207,25 +207,27 @@
 .dsys-link {
     width: fit-content;
     position: relative;
-  &:after {    
-    content: '';
-    height: 1px;
-    width: 100%;
-    transition: transform @long;
-    background-color: @primary;
-    transform: scaleX(0);
-    transform-origin: center;
-    position: absolute;
-    left: 0;
-    pointer-events: none;
-    top: 100%;
-  }
-  &:hover { 
-    color: @primary !important;  //Needed to override color given by the element's class
-      &:after{
-        transform: scaleX(1);
-      }
-  }
+    @media @mediaMD {
+        &:after {    
+            content: '';
+            height: 1px;
+            width: 100%;
+            transition: transform @long;
+            background-color: @primary;
+            transform: scaleX(0);
+            transform-origin: center;
+            position: absolute;
+            left: 0;
+            pointer-events: none;
+            top: 100%;
+        }
+        &:hover { 
+            color: @primary !important;  //Needed to override color given by the element's class
+            &:after{
+                transform: scaleX(1);
+            }
+        }
+    }
 }
 .dsys-border{
     .element(left,{
