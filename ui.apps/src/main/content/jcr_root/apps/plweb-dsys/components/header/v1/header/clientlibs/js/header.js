@@ -13,21 +13,30 @@
 
     var ANIMATION_DURATION = 600;
 
+    var LIST_ID = "#list"
+
+    var ACTIVATE_LIST_CLASS = "activate-list";
+
     function showMegaMenu(dropdownElem, button) {
         var maxHeight = $(dropdownElem).find("a").length * LIST_HEIGHT;
         $(dropdownElem).css("max-height", maxHeight + "px");
-        $(button).toggleClass(UP_ARROW_CLASS);
+        $(button).addClass(UP_ARROW_CLASS);
     }
 
     function hideMegaMenu(dropdownElem, button) {
         $(dropdownElem).removeAttr("style");
-        $(button).toggleClass(UP_ARROW_CLASS);
+        $(button).removeClass(UP_ARROW_CLASS);
     }
     function hideNav(button, nav) {
         $(button).toggleClass(CLOSE_ARROW_CLASS);
         nav.removeClass("secondary-nav--dropdown-show");
         setTimeout(function () {
             nav.removeClass("secondary-nav--dropdown-active");
+            $(nav).find("li").each(function () {
+                var dropdownButton = $(this).find("#dropdownButton");
+                var dropdownElem = $(dropdownButton).parent().parent().find("#dropdown");
+                hideMegaMenu(dropdownElem, dropdownButton);
+            })
         }, ANIMATION_DURATION + TIME_TO_ADD_DISPLAY_CLASS);
     }
 
@@ -57,6 +66,7 @@
                         var dropdown = $(this).find("#dropdown");
                         $(this).hover(
                             function () {
+                                $(LIST_ID).removeClass(ACTIVATE_LIST_CLASS)
                                 if (!dropdown.hasClass("secondary-nav--dropdown-active")) {
                                     dropdown.addClass("secondary-nav--dropdown-active");
                                     setTimeout(function () {

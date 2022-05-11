@@ -61,7 +61,7 @@
             height: 1px;
             width: 100%;
             transition: transform @long;
-            background-color: @teal-color;
+            background-color: @primary;
             transform: scaleX(0);
             transform-origin: center;
             position: absolute;
@@ -72,7 +72,7 @@
         @media @mediaMD{
             li:hover{
                 .navigation-link {
-                    color: @teal-color !important;
+                    color: @primary !important;
                     &::after{
                         transform: scaleX(1) !important;
                     }
@@ -105,7 +105,7 @@
         };
         a{
             text-decoration: none;
-            color: @teal-color;
+            color: @primary;
             .fw-700;
             margin-bottom: @8;
             display: block;
@@ -147,7 +147,10 @@
                 align-items: center;
                 .dsys-icon--phone{
                     width: 25px;
-                    height: 25px
+                    height: 25px;
+                    @media @mediaIEOnly{
+                        margin-right: @8;
+                    }
                 }
             });
         }
@@ -166,8 +169,12 @@
                 gap: @16;
             });
             .element(icon-link,{
-                padding-top: @4;
                 margin-bottom: 0;
+                @media @mediaIEOnly{
+                    .dsys-icon{
+                        margin-right: @8;
+                    }
+                }
             });
             .modifier(no-icon-link,{
                 .dsys-icon{
@@ -218,8 +225,7 @@
             width: 100%;
             background: @nav-bg-color;
             box-sizing: border-box;
-            box-shadow: @navigation-shadow;
-            a{
+            .logo{
                 flex: 1;
                 max-height: 80px;
             }
@@ -245,7 +251,7 @@
             padding-right: 2rem;
             background: @nav-bg-color;
             box-sizing: border-box;
-            box-shadow: @navigation-shadow;
+            // box-shadow: @navigation-shadow;
             display: none;
             opacity: 0;
             transition: all @long linear;
@@ -282,8 +288,7 @@
             mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/upArrow.svg);
             -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/upArrow.svg);
         });
-        .element(dropdown,{
-            opacity: 1;
+        .element(dropdown,{       
             position: unset;
             box-shadow: none;
             background: transparent;
@@ -295,6 +300,7 @@
                 .element(container,{
                     flex-direction: column;
                     padding: 0px;
+                    opacity: 1;
                     padding-left: @8;
                 });
             }
@@ -328,7 +334,10 @@
                 display: flex;
                 flex-direction: column;
                 margin: 0px;
-            }
+            };
+            .modifier(no-link,{
+                display: none;
+            });
         });
     }
 }

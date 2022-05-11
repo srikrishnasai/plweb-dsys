@@ -9,38 +9,67 @@
     mask-position: center;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
+    @media @mediaIEOnly{
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
+    }
     &.dsys-icon{
         .modifier(close,{
             mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/close.svg);
             -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/close.svg);
+            @media @mediaIEOnly{
+                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/close.svg);
+            }
         });
         .modifier(downArrow,{
             mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downArrow.svg);
             -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downArrow.svg);
+            @media @mediaIEOnly{
+                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downArrow.svg);
+            }
         });
         .modifier(downCaret,{
             mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downCaret.svg);
             -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downCaret.svg);
+            @media @mediaIEOnly{
+                background-image:  url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downCaret.svg);
+            }
         });
         .modifier(hamburger,{
-            mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/hamburger.svg);
+            mask-image:  url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/hamburger.svg);
             -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/hamburger.svg);
+            @media @mediaIEOnly{
+                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/hamburger.svg);
+            }
         });
         .modifier(mail,{
             mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/mail.svg);
             -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/mail.svg);
+            @media @mediaIEOnly{
+                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/mail.svg);
+            }
         });
         .modifier(phone,{
             mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/phone.svg);
             -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/phone.svg);
+            @media @mediaIEOnly{
+                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/phone.svg);
+            }
         });
         .modifier(search,{
             mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/search.svg);
             -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/search.svg);
+            @media @mediaIEOnly{
+                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/search.svg);
+            }
         });
         .modifier(upArrow,{
             mask-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/upArrow.svg);
             -webkit-mask-image : url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/upArrow.svg);
+            @media @mediaIEOnly{
+                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/upArrow.svg);
+            }
         });
     }
 }
