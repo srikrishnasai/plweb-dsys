@@ -3,13 +3,12 @@
     data-sly-use.footerObj="pl.web.dsys.core.models.FooterModel"
     data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg576w', imagePath=footerObj.imagePath, transparent=footerObj.useTransparentImage}"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.footer'}" />
-<sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !footerObj.copyright)}" />
 <sly data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems1'}"></sly>
 <sly data-sly-use.model2="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems2'}"></sly>
 <sly data-sly-use.model3="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems3'}"></sly>
 <sly data-sly-use.model4="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='rightBottomMultiFieldItems'}"></sly>
 <sly data-sly-use.model5="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='leftBottomMultiFieldItems'}"></sly>
-
+<sly data-sly-call="${template.placeholder @ isEmpty=!model1.childResource}" />
 <footer class="section-container__main">
     <div class="footer__nav-bar">
         <section class="width-container footer__main">

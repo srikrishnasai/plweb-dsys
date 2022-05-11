@@ -2,7 +2,7 @@
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.person-card'}"
     data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"	/>
-<sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}" />
+<sly data-sly-call="${template.placeholder @ isEmpty= !properties.name}" />
 <sly data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg576w', nodeName='image', transparent='false'}"/>
 <sly data-sly-test="${authControlObj.hasComponentAccess}">
 <aside data-sly-test="${properties.category == 'compact'}"
