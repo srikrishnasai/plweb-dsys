@@ -1,47 +1,60 @@
 <!-- section container clientlibs are embedded in clientlib base -->
 <sly data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" />
+
 <div data-sly-test="${authControlObj.hasComponentAccess}"
-    class="section-container__main
+    class="${(wcmmode.edit || wcmmode.design) ? 'component-border': ''} 
+    section-container__main  
     ${properties.removeSpaceDesktop ? ' section-container--desktop-full-width' : ''}
     ${properties.removeSpaceTablet ? ' section-container--tablet-full-width' : ''}
     ${properties.removeSpaceMobile ? ' section-container--mobile-full-width' : ''}
     ${properties.animation && properties.animation != 'none' ? ' animatedParent animateOnce' : ''} 
-    section-container--desktop-top-external-${properties.desktopTopExternal} section-container--desktop-top-internal-${properties.desktopTopInternal}
-    section-container--desktop-bottom-external-${properties.desktopBottomExternal} section-container--desktop-bottom-internal-${properties.desktopBottomInternal}
-    section-container--tablet-top-external-${properties.useDesktopConfigForTablet ? properties.desktopTopExternal : properties.tabletTopExternal} 
-    section-container--tablet-top-internal-${properties.useDesktopConfigForTablet ? properties.desktopTopInternal : properties.tabletTopInternal}
+    section-container--desktop-top-external-${properties.desktopTopExternal}  
+    section-container--desktop-bottom-external-${properties.desktopBottomExternal} 
+    section-container--desktop-top-internal-${properties.desktopTopInternal}
+    section-container--desktop-bottom-internal-${properties.desktopBottomInternal}
+    section-container--tablet-top-external-${properties.useDesktopConfigForTablet ? properties.desktopTopExternal : properties.tabletTopExternal}
     section-container--tablet-bottom-external-${properties.useDesktopConfigForTablet ? properties.desktopBottomExternal : properties.tabletBottomExternal} 
+    section-container--tablet-top-internal-${properties.useDesktopConfigForTablet ? properties.desktopTopInternal : properties.tabletTopInternal}
     section-container--tablet-bottom-internal-${properties.useDesktopConfigForTablet ? properties.desktopBottomInternal : properties.tabletBottomInternal}
     section-container--mobile-top-external-${properties.useDesktopConfigForMobile ? properties.desktopTopExternal : properties.mobileTopExternal} 
+    section-container--mobile-bottom-external-${properties.useDesktopConfigForMobile ? properties.desktopBottomExternal : properties.mobileBottomExternal}
     section-container--mobile-top-internal-${properties.useDesktopConfigForMobile ? properties.desktopTopInternal : properties.mobileTopInternal}
-    section-container--mobile-bottom-external-${properties.useDesktopConfigForMobile ? properties.desktopBottomExternal : properties.mobileBottomExternal} 
     section-container--mobile-bottom-internal-${properties.useDesktopConfigForMobile ? properties.desktopBottomInternal : properties.mobileBottomInternal}      
     section-container--desktop-background-${properties.desktopBgColor} 
     section-container--tablet-background-${properties.useDesktopConfigForMobile ? properties.desktopBgColor : properties.tabletBgColor} 
     section-container--mobile-background-${properties.useDesktopConfigForMobile ? properties.desktopBgColor : properties.mobileBgColor}">
     <!-- Layout Container Parsys Inclusion -->
 
-
+    <!-- Section container start text only for edit mode-->
+    <div class="component-bar component-title-bar section-container__author-title-bar"
+        data-sly-test="${wcmmode.edit || wcmmode.design}">
+        Section Container
+    </div>
+    <div class="section-container__author-title-bar-dummy"
+        data-sly-test="${wcmmode.edit || wcmmode.design}">
+    </div>
     <div
         class="width-container ${properties.animation && properties.animation != 'none' ? 'animated slower' : ''} ${properties.animation && properties.animation != 'none' ? properties.animation : ''}">
-        <div class="component-title-bar" data-sly-test="${wcmmode.edit || wcmmode.design}">
-            Section Container
-        </div>
         <div data-sly-test="${!properties.hideTitleandText}"
-             class="section-container__title-and-text section-container__title-and-text--alignment-${properties.titleTextAlignment} section-container__title-and-text--bottom-spacing-${properties.titleTextBottomSpacing}">
-            <div class="section-container__title" data-sly-resource="${'title' @ resourceType='plweb-dsys/components/title/v1/title', decoration='true'}">
+            class="section-container__title-and-text section-container__title-and-text--alignment-${properties.titleTextAlignment} section-container__title-and-text--bottom-spacing-${properties.titleTextBottomSpacing}">
+            <div class="section-container__title"
+                data-sly-resource="${'title' @ resourceType='plweb-dsys/components/title/v1/title', decoration='true'}">
             </div>
-    
-            <div class="section-container__desc ${properties.restrictTextWidth ? 'section-container__desc--restrict-width' : ''}" data-sly-resource="${'desc' @ resourceType='plweb-dsys/components/text/v1/text', decoration='true'}">
+
+            <div class="section-container__desc ${properties.restrictTextWidth ? 'section-container__desc--restrict-width' : ''}"
+                data-sly-resource="${'desc' @ resourceType='plweb-dsys/components/text/v1/text', decoration='true'}">
             </div>
         </div>
-        
         <div class="section-container__layout-parsys"
-             data-sly-resource="${'layout-container-parsys' @ resourceType='plweb-dsys/components/responsive-grid/v1/responsive-grid', decoration='true'}">
+            data-sly-resource="${'layout-container-parsys' @ resourceType='plweb-dsys/components/responsive-grid/v1/responsive-grid', decoration='true'}">
         </div>
+    </div>
+    <!--End text only for edit mode-->
+    <div class="component-bar component-end-bar section-container__author-end-bar"
+        data-sly-test="${wcmmode.edit || wcmmode.design}">
+        End of section container
     </div>
 </div>
 
-<sly
-    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.section-container-js'}" />
