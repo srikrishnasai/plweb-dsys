@@ -8,7 +8,7 @@
             data-appear-top-offset='-300'>
             <ul data-sly-test="${model1.childResource}" data-sly-list="${model1.childResource.listChildren}"
             class="bullet-list bullet-list--${properties.columnNumbers}  animated fadeInDownHalfShort delay-500">
-                        <li data-sly-test="${item.listItemText}" class="li-bullet-list li-bullet-list--${properties.columnNumbers}"> <span class="list-text"> ${item.listItemText} </span> </li>
+                        <li data-sly-test="${item.listItemText}" class="li-bullet-list li-bullet-list--${properties.columnNumbers}"> <span class="list-text"> ${item.listItemText @ context='html'} </span> </li>
                   </ul>
       </div>
 
