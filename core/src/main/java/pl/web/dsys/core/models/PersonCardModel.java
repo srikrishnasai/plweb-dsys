@@ -69,10 +69,13 @@ public class PersonCardModel {
 	@PostConstruct
 	protected void init() {
 		log.debug("Inside Post Construct of Person Card Model..");	
-		child = resource;
-		child = child.getChild("image");
-		valueMap = child.getValueMap();
-		fileReference = valueMap.get("fileReference", String.class);
+		if(null != resource) {
+			child = resource.getChild("image");
+			if(null != child) {
+				valueMap = child.getValueMap();
+		    	fileReference = valueMap.get("fileReference", String.class);  
+			}
+		}
 	}
 
 	public String getCategory() {
