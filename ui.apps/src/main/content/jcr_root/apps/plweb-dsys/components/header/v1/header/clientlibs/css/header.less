@@ -47,37 +47,10 @@
          .navigation-link{
             .montserrat;
             .fw-600;
-            color: @neutral1000;
-            text-decoration: none;
-            font-size: 13px;
             line-height: 24px;
             .uppercase;
             min-height: 25px;
             box-sizing: border-box;
-            position: relative;
-        }
-        .navigation-link::after{
-            content: '';
-            height: 1px;
-            width: 100%;
-            transition: transform @long;
-            background-color: @primary;
-            transform: scaleX(0);
-            transform-origin: center;
-            position: absolute;
-            left: 0;
-            pointer-events: none;
-            top: 100%;
-        }
-        @media @mediaMD{
-            li:hover{
-                .navigation-link {
-                    color: @primary !important;
-                    &::after{
-                        transform: scaleX(1) !important;
-                    }
-                }
-            }
         }
     });
     .element(dropdown,{
@@ -104,12 +77,10 @@
             })
         };
         a{
-            text-decoration: none;
-            color: @primary;
             .fw-700;
             margin-bottom: @8;
             display: block;
-            cursor: pointer;
+            color: @primary;
         }
     });
 
@@ -121,11 +92,7 @@
         flex: 1;
         .overview{
             .element(header,{
-                .fw-700;
-                .montserrat;
-                line-height: 28px;
                 margin-bottom: @24;
-                font-size: 18.06px;
             });
             .modifier(no-header,{
                 margin-bottom: 52px;
@@ -151,6 +118,7 @@
                     @media @mediaIEOnly{
                         margin-right: @8;
                     }
+                    display: inline-block;
                 }
             });
         }
@@ -306,9 +274,8 @@
             }
             a{
                 color: @textBodyLight;
-                font-size: 13px !important;
                 .fw-400;
-                line-height: 24px !important;
+                font-size: 13px !important; // Important needed orelse styles override by dsys-text--body
                 margin-top: 12px;
                 margin-bottom: 0px;
             }

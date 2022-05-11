@@ -42,19 +42,15 @@
             transform: translateY(5px);
             z-index: @focus;
             min-width: 100%;
-            li{
-                font-size: 12px;
+            .list-items{
                 width: 100%;
                 padding: @4;
                 box-sizing: border-box;
                 .ta-left;
-                a{
-                    text-decoration: none;
-                    color: @neutral1000;
-                }
+                color: @textBodyLight;
             };
-            li:hover{
-                background-color: @neutral100
+            .list-items:hover{
+                background-color: @textBodyLight;
             };
         };
         .activate-list{
@@ -84,9 +80,7 @@
     });
     
     .element(nav-text,{
-            font-size: 12px;
             .fw-700;
-            .openSans;
             line-height: 24px;
             margin-left: @8;
             color: @textBodyDark;

@@ -29,16 +29,12 @@
     });
 
     .element(text, {
-		font-size: 13px;
 		line-height: 24px;
         margin: @16 0rem;
-        .fw-400;
-        .openSans;
 	});
 
     .element(link,{
 		color:  @textBodyDark;
-        text-decoration: none;
     });
 
     .modifier(heading,{
@@ -59,7 +55,6 @@
     	line-height: 20px;
     	color: @textBodyLight;
         width: 100%;
-        .fw-400;
         .openSans;
 	});
 
@@ -94,7 +89,6 @@
 
     .element(bottom-links-container,{
         display: flex;
-        width: 100%;
     });
 
     .modifier(left-link-full-width,{
@@ -165,6 +159,10 @@
         .element(mobile-bottom-links,{
             justify-content: space-between;
             row-gap: @4;
+            flex: 1;
+            a{
+                margin-left: 0px;
+            }
         });
 
         .modifier(mobile-nav-header-container,{

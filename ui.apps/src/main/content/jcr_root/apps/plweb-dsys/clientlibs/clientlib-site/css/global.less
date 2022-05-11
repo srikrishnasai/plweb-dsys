@@ -146,22 +146,22 @@
     &.dsys-text{
         .openSans;
         .modifier(body,{
-            font-size: @brandBody;
+            font-size: @brandBody;  // 16px;
             line-height: 24px;
         });
 
         .modifier(caption ,{
-            font-size: @brandCaption;
+            font-size: @brandCaption; //14.45px
             line-height: 24px;
         });
 
         .modifier(disclosure ,{
-            font-size: @brandDisclosure;
+            font-size: @brandDisclosure; //14.45px
             line-height: 24px;
         });
 
         .modifier(microcopy,{
-            font-size: @brandMicrocopy;
+            font-size: @brandMicrocopy; //12.8px
             line-height: 16px;
         });
 
@@ -205,26 +205,29 @@
 }
 
 .dsys-link {
-    text-decoration: none;
     width: fit-content;
     position: relative;
-  
-  &:after {    
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background-color: @blue600;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
-  &:hover:after { 
-    width: 100%; 
-    left: 0; 
-  }
+    @media @mediaMD {
+        &:after {    
+            content: '';
+            height: 1px;
+            width: 100%;
+            transition: transform @long;
+            background-color: @primary;
+            transform: scaleX(0);
+            transform-origin: center;
+            position: absolute;
+            left: 0;
+            pointer-events: none;
+            top: 100%;
+        }
+        &:hover { 
+            color: @primary !important;  //Needed to override color given by the element's class
+            &:after{
+                transform: scaleX(1);
+            }
+        }
+    }
 }
 .dsys-border{
     .element(left,{

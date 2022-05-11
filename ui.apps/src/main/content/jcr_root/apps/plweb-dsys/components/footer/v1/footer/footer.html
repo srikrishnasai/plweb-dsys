@@ -14,13 +14,13 @@
         <section class="width-container footer__main">
             <nav class="footer__list">
                 <div data-sly-test="${footerObj.section1Title}" class="footer--mobile-nav-header-container">
-                    <h6 class="footer__text footer--heading"> ${footerObj.section1Title} </h6>
+                    <h6 class="footer__text dsys-text dsys-text--microcopy footer--heading"> ${footerObj.section1Title} </h6>
                     <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
                 </div>
                 <ul class="footer--mobile-list" data-sly-test="${model1.childResource}"
                     data-sly-list="${model1.childResource.listChildren}">
 					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
-                    <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text footer--link-mobile-view"
+                    <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text dsys-text dsys-text--microcopy footer--link-mobile-view"
                         data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
                         <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}"
                             class="footer__link"> ${item.linkName} </a>
@@ -29,13 +29,13 @@
             </nav>
             <nav class="footer__list">
                 <div data-sly-test="${footerObj.section2Title}" class="footer--mobile-nav-header-container">
-                    <h6 class="footer__text footer--heading">${footerObj.section2Title} </h6>
+                    <h6 class="footer__text dsys-text dsys-text--microcopy footer--heading">${footerObj.section2Title} </h6>
                     <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
                 </div>
                 <ul class="footer--mobile-list" data-sly-test="${model2.childResource}"
                     data-sly-list="${model2.childResource.listChildren}">
 					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
-                    <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text footer--link-mobile-view" sly
+                    <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text dsys-text dsys-text--microcopy footer--link-mobile-view" sly
                         data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
                         <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}"
                             class="footer__link"> ${item.linkName} </a>
@@ -44,13 +44,13 @@
             </nav>
             <nav class="footer__list">
                 <div data-sly-test="${footerObj.section3Title}" class="footer--mobile-nav-header-container">
-                    <h6 class="footer__text footer--heading">${footerObj.section3Title}</h6>
+                    <h6 class="footer__text dsys-text dsys-text--microcopy footer--heading">${footerObj.section3Title}</h6>
                     <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
                 </div>
                 <ul class="footer--mobile-list" data-sly-test="${model3.childResource}"
                     data-sly-list="${model3.childResource.listChildren}">
 					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
-                    <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text footer--link-mobile-view" sly
+                    <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text dsys-text dsys-text--microcopy footer--link-mobile-view" sly
                         data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
                         <a href="${linkHelper.linkURL}" target="${item.linkTabTarget ? '_blank' : ''}"
                             class="footer__link"> ${item.linkName} </a>
