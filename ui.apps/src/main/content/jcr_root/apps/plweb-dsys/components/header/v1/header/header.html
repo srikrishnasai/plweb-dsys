@@ -32,22 +32,23 @@
 					</div>
 				</div>
 			</div>
-			<span class="topnav__nav-text"> All Sites </span>
+			<span class="dsys-text dsys-text--microcopy topnav__nav-text"> All Sites </span>
 			<span class="caret"></span>
 			<ul class="list" id="list" data-sly-list.allsitesItem="${headerRef.allSites}">
-				<li>
+				<li class="dsys-text dsys-text--microcopy list-items">
 					<a href="${allsitesItem.linkUrl}">${allsitesItem.linkText}
 					</a>
 				</li>
 			</ul>
 		</button>
-		<span class="topnav__nav-text topnav--site-name">${headerRef.topNavHeaderText}</span>
+		<span
+			class="dsys-text dsys-text--microcopy topnav__nav-text topnav--site-name">${headerRef.topNavHeaderText}
+		</span>
 	</nav>
 </div>
 <section class="section-container__main">
 	<div class="width-container secondary-nav__main">
 		<div class="secondary-nav__img-container">
-			<!--  TODO : Add the target and href property which the author authors -->
 			<div class="logo"> 
 				<a target="_blank" href="${headerRef.homePagePath}">
 					<img data-sly-test="${headerRef.fileReference}" id="logo" alt="Company's Logo"
