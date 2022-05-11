@@ -1,2 +1,0 @@
-#base=js
-checkbox-show-hide-multifield.js
