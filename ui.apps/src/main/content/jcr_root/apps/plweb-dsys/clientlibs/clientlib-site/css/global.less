@@ -228,16 +228,55 @@
 }
 .dsys-border{
     .element(left,{
-        border-left: 12px solid #005EAD;
+        position: relative;
+        z-index : 1;
+        &:before {
+            content : "";
+            position: absolute;
+            right    : 100%;
+            top     : 10%;
+            height  : 80%;
+            border-left:12px solid #005EAD;
+        }
     });
     .element(right,{
-        border-right: 12px solid #005EAD;
+        position: relative;
+        z-index : 1;
+        &:before {
+            content : "";
+            position: absolute;
+            left    : 100%;
+            top     : 10%;
+            height  : 80%;
+            border-left:12px solid #005EAD;
+        }
     });
     .element(top,{
-        border-top: 12px solid #005EAD;
+        position: relative;
+        z-index : 1;
+        :before {
+            content : "";
+            position: absolute;
+            left    : 10%;
+            bottom  : 99%;
+            height  : 5px;
+            width   : 80%;
+            border-top:12px solid #005EAD;
+        }
     });
     .element(bottom,{
-        border-bottom: 12px solid #005EAD;
+        position: relative;
+        z-index : 1;
+        :before {
+            content : "";
+            position: absolute;
+            left    : 10%;
+            bottom  : 0;
+            height  : 25;
+            width   : 80%;
+            top:100%;
+            border-top:12px solid #005EAD;
+        }    
     });
 
 }
