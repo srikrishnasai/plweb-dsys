@@ -22,7 +22,7 @@
                 if ($link && $link.length) {
                     updateHref($link, $el);
                 } else {
-                    $link = $('<a href="#" style="display: inline-block; margin-top: 5px; font-size: 0.9rem; font-weight: 700; line-height:1.6rem;" class="content-fragment-path-link" target="blank">Edit Content Fragment</a>');
+                    $link = $('<a href="#" style="display: inline-block; margin-top: 5px; font-size: 0.9rem; font-weight: 700; line-height:1.6rem;" class="content-fragment-path-link" target="blank">Edit Experience Fragment</a>');
                     updateHref($link, $el);
                     $link.insertAfter($elWrapper);
                 }
