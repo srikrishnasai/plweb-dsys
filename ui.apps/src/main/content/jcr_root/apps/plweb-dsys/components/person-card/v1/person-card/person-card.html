@@ -1,9 +1,9 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.person-card'}"
-    data-sly-use.personCardObj="pl.web.dsys.core.models.PersonCardModel"
-    data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"	/>
-<sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !personCardObj.copyright)}" />
+    data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"	
+    data-sly-use.personCardObj="pl.web.dsys.core.models.PersonCardModel" />
+<sly data-sly-call="${template.placeholder @ isEmpty= !personCardObj.name}" />
 <sly data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform=personCardObj.useOriginalImage ?'dsys-flexImg':'dsys-flexImg576w', nodeName='image', transparent=personCardObj.useTransparentImage}"/>
 <sly data-sly-test="${authControlObj.hasComponentAccess}">
 <aside data-sly-test="${personCardObj.category == 'compact'}"
