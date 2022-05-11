@@ -208,22 +208,24 @@
     text-decoration: none;
     width: fit-content;
     position: relative;
-  
   &:after {    
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
+    content: '';
+    height: 1px;
+    width: 100%;
+    transition: transform @long;
+    background-color: @primary;
+    transform: scaleX(0);
+    transform-origin: center;
     position: absolute;
-    background-color: @blue600;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
+    left: 0;
+    pointer-events: none;
+    top: 100%;
   }
-  &:hover:after { 
-    width: 100%; 
-    left: 0; 
+  &:hover { 
+    color: @primary !important;  //Needed to override color given by the element's class
+      &:after{
+        transform: scaleX(1);
+      }
   }
 }
 .dsys-border{
