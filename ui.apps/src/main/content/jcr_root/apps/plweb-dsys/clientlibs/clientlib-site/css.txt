@@ -3,3 +3,4 @@ fonts.less
 normalize.less
 typography.less
 global.less
+global-author.less
