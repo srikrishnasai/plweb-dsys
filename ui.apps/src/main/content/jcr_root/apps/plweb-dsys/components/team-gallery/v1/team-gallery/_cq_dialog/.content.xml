@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Team Gallery"
-    sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="[plweb-dsys.author.checkbox-show-hide-multifield]">
+    sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -93,31 +92,21 @@
                                                                             uploadUrl="${suffix.path}"
                                                                             useHTML5="{Boolean}true"/>
                                                                         <showImageFromDam
-                                                                            granite:class="cq-dialog-showhide-checkbox-multifield"
                                                                             jcr:primaryType="nt:unstructured"
                                                                             sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                                             checked="{Boolean}false"
                                                                             fieldDescription="This will load the Original images"
                                                                             name="./useOriginalImage"
                                                                             text="Use Original Images"
-                                                                            value="true">
-                                                                            <granite:data
-                                                                                jcr:primaryType="nt:unstructured"
-                                                                                cq-dialog-showhide-checkbox-multifield-target=".checkbox-showhide-multi"/>
-                                                                        </showImageFromDam>
+                                                                            value="true"/>
                                                                         <showTransparentImage
-                                                                            granite:class="checkbox-showhide-multi"
                                                                             jcr:primaryType="nt:unstructured"
                                                                             sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                                             checked="{Boolean}false"
                                                                             fieldDescription="This will load the transparent images"
                                                                             name="./useTransparentImage"
                                                                             text="Use Transparent Images"
-                                                                            value="true">
-                                                                            <granite:data
-                                                                                jcr:primaryType="nt:unstructured"
-                                                                                showhidetargetvalue=""/>
-                                                                        </showTransparentImage>
+                                                                            value="true"/>
                                                                     </items>
                                                                 </column>
                                                             </items>
@@ -163,10 +152,10 @@
                             </column>
                         </items>
                     </general>
-                    <authControl
+					<authControl
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/include"
-                        path="plweb-dsys/common/authcontrol/cq:dialog/content/items/tabs/items/authControl"/>
+                        path="plweb-dsys/common/authcontrol/cq:dialog/content/items/tabs/items/authControl"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"/>
                 </items>
             </tabs>
         </items>
