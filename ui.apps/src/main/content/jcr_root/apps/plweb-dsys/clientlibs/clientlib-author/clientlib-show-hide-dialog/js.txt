@@ -1,2 +1,0 @@
-#base=js
-show-hide-fields.js

@@ -16,8 +16,6 @@
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
     <!-- includes global clientlibs like jquery -->
     <sly data-sly-call="${clientLib.all @ categories='plweb-dsys.global-dependencies'}" />
-    <sly data-sly-test="${wcmmode.edit || wcmmode.design}"
-         data-sly-call="${clientLib.css @ categories='plweb-dsys.author'}" />
     <sly data-sly-call="${clientLib.css @ categories='plweb-dsys.base'}" />
 </sly>
 

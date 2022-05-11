@@ -1,0 +1,3 @@
+#base=js
+auth-control-author-styling.js
+display-tags.js

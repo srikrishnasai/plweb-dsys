@@ -7,7 +7,7 @@
     xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Section Container"
-    extraClientlibs="[plweb-dsys.author.show-hide-fields]"
+    extraClientlibs="[plweb-dsys.author.checkbox-show-hide]"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         granite:class="cmp-list--editor"
@@ -441,7 +441,6 @@
                                     </customConfigForMobile>
                                     <customConfigForMobileContainer
                                         jcr:primaryType="nt:unstructured"
-                                        showhidetargetvalue="true"
                                         granite:class="mobile-custom-config"
                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
@@ -617,6 +616,9 @@
                                                 </items>
                                             </bgColor>
                                         </items>
+                                        <granite:data 
+                                            jcr:primaryType="nt:unstructured"
+                                            cq-dialog-show-or-hide="show"/>
                                     </customConfigForMobileContainer>
                                 </items>
                             </column>
