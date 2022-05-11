@@ -98,7 +98,7 @@
                                 name="./animatingNumbersColor">
                                 <items
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceSuperType="/apps/plannuities/common/commonColorSelect/cq:dialog/content/items/column/items/color/items"/>
+                                    sling:resourceSuperType="/apps/plweb-dsys/common/common-color-picker/v1/common-color-picker/cq:dialog/content/items/column/items/color/items"/>
                             </color>
                         </items>
                     </column>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Custom Color Selection"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <color
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Choose the color."
+                        fieldLabel="Color"
+                        name="./color">
+                        <items jcr:primaryType="nt:unstructured">
+                            <darkBlue
+                                jcr:primaryType="nt:unstructured"
+                                text="Dark Blue (#1E376C)"
+                                value="#1E376C"/>
+                            <mediumBlue
+                                jcr:primaryType="nt:unstructured"
+                                text="Medium Blue (#21ADE3)"
+                                value="#21ADE3"/>
+                            <lightBlue
+                                jcr:primaryType="nt:unstructured"
+                                text="Light Blue (#B1E2FA)"
+                                value="#B1E2FA"/>
+                            <black
+                                jcr:primaryType="nt:unstructured"
+                                text="Black"
+                                value="black"/>
+                            <grey
+                                jcr:primaryType="nt:unstructured"
+                                text="Grey (#B4B6B5)"
+                                value="#b4b6b5"/>
+                            <lightGrey
+                                jcr:primaryType="nt:unstructured"
+                                text="Light Grey (#EBEBEB)"
+                                value="#ebebeb"/>
+                            <white
+                                jcr:primaryType="nt:unstructured"
+                                text="White"
+                                value="white"/>
+                            <turquoise
+                                jcr:primaryType="nt:unstructured"
+                                text="Turquoise (#24C5CF)"
+                                value="#24c5cf"/>
+                            <indigo
+                                jcr:primaryType="nt:unstructured"
+                                text="Indigo (#6610F2)"
+                                value="#6610f2"/>
+                            <pink
+                                jcr:primaryType="nt:unstructured"
+                                text="Pink (#E83E8C)"
+                                value="#e83e8c"/>
+                            <red
+                                jcr:primaryType="nt:unstructured"
+                                text="Red (#DC3545)"
+                                value="#dc3545"/>
+                            <orange
+                                jcr:primaryType="nt:unstructured"
+                                text="Orage (#FD7E14)"
+                                value="#fd7e14"/>
+                            <yellow
+                                jcr:primaryType="nt:unstructured"
+                                text="Yellow (#FFC107)"
+                                value="#ffc107"/>
+                            <green
+                                jcr:primaryType="nt:unstructured"
+                                text="Green (#8DC63F)"
+                                value="#8dc63f"/>
+                        </items>
+                    </color>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
