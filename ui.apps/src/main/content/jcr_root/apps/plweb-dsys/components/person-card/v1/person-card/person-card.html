@@ -1,100 +1,103 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.person-card'}"
-    data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"	/>
-<sly data-sly-call="${template.placeholder @ isEmpty= !properties.name}" />
-<sly data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg576w', nodeName='image', transparent='false'}"/>
+    data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
+    data-sly-use.personCardObj="pl.web.dsys.core.models.PersonCardModel" />
+<sly data-sly-call="${template.placeholder @ isEmpty= !personCardObj.name}" />
+<sly
+    data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform=personCardObj.useOriginalImage ?'dsys-flexImg':'dsys-flexImg576w', nodeName='image', transparent=personCardObj.useTransparentImage}" />
 <sly data-sly-test="${authControlObj.hasComponentAccess}">
-<aside data-sly-test="${properties.category == 'compact'}"
-    class="person-card__compact-main  ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''} ${properties.color == 'blackColor' ? 'person-card--black-color' : ''}">
-    <img class="person-card__avatar person-card--compact-avatar" src="${imageurl.transformedImageUrl}"
-        alt="Person's Image" />
-    <div class="person-card__compact-container">
-        <div class="person-card__compact-name">
-            ${properties.name} </div>
-        <div class="person-card__compact-position">${properties.position}</div>
-        <div class="person-card__link-container">
-            <div class="person-card__link-container" data-sly-test="${properties.mail}">
-                <div class="person-card__mail"></div>
-                <a href="mailto:${properties.mail}" class="person-card__link">${properties.mail}</a>
-            </div>
-            <div class="person-card__link-container" data-sly-test="${properties.telephone}"
-                class="person-card__link-container">
-                <div class="person-card__phone"></div>
-                <div id="${properties.telephone}"></div>
-                <a href="tel:${properties.telephone}" class="person-card__link">${properties.telephone}</a>
-            </div>
-            <div class="person-card__link-container" data-sly-test="${properties.linkedin}">
-                <a href="${properties.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
-            </div>
-        </div>
-    </div>
-</aside>
-
-<div data-sly-test="${properties.category == 'bio'}">
-    <section
-        class="person-card__bio-main person-card--bio-desktop ${properties.bgColor == 'transparent' && 'person-card--bg-transparent'} ${properties.color == 'tealColor' ? 'person-card--teal-color' : ''} ${properties.color == 'blackColor' ? 'person-card--black-color' : ''}">
-        <img class="person-card__avatar person-card--bio-avatar" src="${imageurl.transformedImageUrl}"
+    <aside data-sly-test="${personCardObj.category == 'compact'}"
+        class="person-card__compact-main  ${personCardObj.color == 'tealColor' ? 'person-card--teal-color' : ''} ${personCardObj.color == 'blackColor' ? 'person-card--black-color' : ''}">
+        <img class="person-card__avatar person-card--compact-avatar" src="${imageurl.transformedImageUrl}"
             alt="Person's Image" />
-        <div class="person-card__bio-container-with-text">
-            <h3 class="person-card__bio-name">
-                ${properties.name}
-            </h3>
-            <h4 class="person-card__bio-position">${properties.position}</h4>
-            <div class="person-card__bio-desc">
-                ${properties.desc}
-            </div>
+        <div class="person-card__compact-container">
+            <div class="person-card__compact-name">
+                ${personCardObj.name} </div>
+            <div class="person-card__compact-position">${personCardObj.position}</div>
             <div class="person-card__link-container">
-                <div class="person-card__link-container" data-sly-test="${properties.mail}">
+                <div class="person-card__link-container" data-sly-test="${personCardObj.mail}">
                     <div class="person-card__mail"></div>
-                    <a href="mailto:${properties.mail}" class="person-card__link">${properties.mail}</a>
+                    <a href="mailto:${personCardObj.mail}" class="person-card__link">${personCardObj.mail}</a>
                 </div>
-                <div class="person-card__link-container" data-sly-test="${properties.telephone}">
+                <div class="person-card__link-container" data-sly-test="${personCardObj.telephone}"
+                    class="person-card__link-container">
                     <div class="person-card__phone"></div>
-                    <div id="${properties.telephone}"></div>
-                    <a href="tel:${properties.telephone}" class="person-card__link">${properties.telephone}</a>
+                    <div id="${personCardObj.telephone}"></div>
+                    <a href="tel:${personCardObj.telephone}" class="person-card__link">${personCardObj.telephone}</a>
                 </div>
-                <div class="person-card__link-container" data-sly-test="${properties.linkedin}">
-                    <a href="${properties.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
+                <div class="person-card__link-container" data-sly-test="${personCardObj.linkedin}">
+                    <a href="${personCardObj.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
                 </div>
             </div>
         </div>
-    </section>
+    </aside>
 
-    <section
-        class="person-card__bio-main ${properties.bgColor == 'transparent' && 'person-card--bg-transparent'} person-card--bio-mobile">
-        <div class="person-card__bio-container-with-text">
+    <div data-sly-test="${personCardObj.category == 'bio'}">
+        <section
+            class="person-card__bio-main person-card--bio-desktop ${personCardObj.bgColor == 'transparent' && 'person-card--bg-transparent'} ${personCardObj.color == 'tealColor' ? 'person-card--teal-color' : ''} ${personCardObj.color == 'blackColor' ? 'person-card--black-color' : ''}">
             <img class="person-card__avatar person-card--bio-avatar" src="${imageurl.transformedImageUrl}"
                 alt="Person's Image" />
-            <div>
+            <div class="person-card__bio-container-with-text">
                 <h3 class="person-card__bio-name">
-                    ${properties.name}
+                    ${personCardObj.name}
                 </h3>
-                <div class="person-card__bio-position">${properties.position}</div>
+                <h4 class="person-card__bio-position">${personCardObj.position}</h4>
+                <div class="person-card__bio-desc">
+                    ${personCardObj.desc}
+                </div>
+                <div class="person-card__link-container">
+                    <div class="person-card__link-container" data-sly-test="${personCardObj.mail}">
+                        <div class="person-card__mail"></div>
+                        <a href="mailto:${personCardObj.mail}" class="person-card__link">${personCardObj.mail}</a>
+                    </div>
+                    <div class="person-card__link-container" data-sly-test="${personCardObj.telephone}">
+                        <div class="person-card__phone"></div>
+                        <div id="${personCardObj.telephone}"></div>
+                        <a href="tel:${personCardObj.telephone}"
+                            class="person-card__link">${personCardObj.telephone}</a>
+                    </div>
+                    <div class="person-card__link-container" data-sly-test="${personCardObj.linkedin}">
+                        <a href="${personCardObj.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="person-card__bio-desc">
-            ${properties.desc}
-        </div>
-        <div class="person-card__link-container">
-            <div class="person-card__link-container" data-sly-test="${properties.mail}">
-                <div class="person-card__mail"></div>
-                <a href="mailto:${properties.mail}" class="person-card__link">${properties.mail}</a>
-            </div>
-            <div class="person-card__link-container" data-sly-test="${properties.telephone}">
-                <div class="person-card__phone"></div>
-                <a href="tel:${properties.telephone}" class="person-card__link">${properties.telephone}</a>
-            </div>
-            <div class="person-card__link-container" data-sly-test="${properties.linkedin}">
-                <a href="${properties.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
-            </div>
-        </div>
-    </section>
-</div>
+        </section>
 
-<div data-sly-test="${wcmmode.edit || wcmmode.design}">
-	<div class="inplace-image-edit-view">
-		<div class="${imageurl.transformedImageUrl ? '' : 'cq-placeholder '}cq-dd-image" style="display:none"></div>
-	</div>	 
-</div>
+        <section
+            class="person-card__bio-main ${personCardObj.bgColor == 'transparent' && 'person-card--bg-transparent'} person-card--bio-mobile">
+            <div class="person-card__bio-container-with-text">
+                <img class="person-card__avatar person-card--bio-avatar" src="${imageurl.transformedImageUrl}"
+                    alt="Person's Image" />
+                <div>
+                    <h3 class="person-card__bio-name">
+                        ${personCardObj.name}
+                    </h3>
+                    <div class="person-card__bio-position">${personCardObj.position}</div>
+                </div>
+            </div>
+            <div class="person-card__bio-desc">
+                ${personCardObj.desc}
+            </div>
+            <div class="person-card__link-container">
+                <div class="person-card__link-container" data-sly-test="${personCardObj.mail}">
+                    <div class="person-card__mail"></div>
+                    <a href="mailto:${personCardObj.mail}" class="person-card__link">${personCardObj.mail}</a>
+                </div>
+                <div class="person-card__link-container" data-sly-test="${personCardObj.telephone}">
+                    <div class="person-card__phone"></div>
+                    <a href="tel:${personCardObj.telephone}" class="person-card__link">${personCardObj.telephone}</a>
+                </div>
+                <div class="person-card__link-container" data-sly-test="${personCardObj.linkedin}">
+                    <a href="${personCardObj.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div data-sly-test="${wcmmode.edit || wcmmode.design}">
+        <div class="inplace-image-edit-view">
+            <div class="${imageurl.transformedImageUrl ? '' : 'cq-placeholder '}cq-dd-image" style="display:none"></div>
+        </div>
+    </div>
 </sly>

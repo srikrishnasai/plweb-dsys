@@ -2,17 +2,17 @@
       data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
       data-sly-use.objRef="pl.web.dsys.core.models.CardModel"
 	  data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
-      data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg576w', nodeName='image', transparent=objRef.useTransparentImage}"
+      data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform=objRef.useOriginalImage ?'dsys-flexImg':'dsys-flexImg576w', nodeName='image', transparent=objRef.useTransparentImage}"
       data-sly-use.linkTarget="${'pl.web.dsys.core.helpers.LinkHelpers' @ url=objRef.cardWebpageTarget}"
       data-sly-call="${clientlib.all @ categories='plweb-dsys.card'}">
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !objRef.cardTitle, classAppend='cmp-text'}"></sly>
 <sly data-sly-test="${authControlObj.hasComponentAccess}">
 <section class="card__main">
-      <div class="card__icon card__box" data-sly-test="${!objRef.cardImage}">Place image</div>
-      <div data-sly-test="${objRef.cardImage}" class="card__img-container">
+      <div class="card__icon card__box" data-sly-test="${!objRef.fileReference}">Place image</div>
+      <div data-sly-test="${objRef.fileReference}" class="card__img-container">
             <img class="card__icon" alt="Icon"
-                  src="${objRef.useOriginalImage ? objRef.cardImage : imageurl.transformedImageUrl}" />
+                  src="${imageurl.transformedImageUrl}" />
       </div>
       <div class="card__border-for-no-img"></div>
       <h3 data-sly-test="${objRef.cardTitle}" class="card__title"> ${objRef.cardTitle}</h3>

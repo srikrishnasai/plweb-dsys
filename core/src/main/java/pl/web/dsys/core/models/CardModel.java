@@ -1,17 +1,12 @@
 package pl.web.dsys.core.models;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.PostConstruct;
+import org.apache.sling.api.resource.ValueMap;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
-import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
@@ -53,17 +48,22 @@ public class CardModel {
 	private String disableImage;
 
 	@ValueMapValue
-	private String cardImage;
-
-	@ValueMapValue
 	private String useTransparentImage;
 
 	@ValueMapValue
 	private String useOriginalImage;
 
+	Resource child;
+	ValueMap valueMap;
+	private String fileReference;
+
 	@PostConstruct
 	protected void init() {
-		log.debug("Inside Post Construct of Troika/Ups Model..");
+		log.debug("Inside Post Construct of Card Model..");
+		child = resource;
+		child = child.getChild("image");
+		valueMap = child.getValueMap();
+		fileReference = valueMap.get("fileReference", String.class); 
 	}
 
 	public String getCardTitle() {
@@ -94,8 +94,8 @@ public class CardModel {
 		return disableImage;
 	}
 
-	public String getCardImage() {
-		return cardImage;
+	public String getFileReference() {
+		return fileReference;
 	}
 
 	public String getUseTransparentImage() {
