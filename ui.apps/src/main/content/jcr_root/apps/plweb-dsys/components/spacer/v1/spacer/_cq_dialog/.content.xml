@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Spacer"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[core.wcm.components.list.v1.editor]"
+    helpPath="https://www.adobe.com/go/aem_cmp_list_v1">
+    <content
+        granite:class="cmp-list--editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <listSettings
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Spacer Settings"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <height
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Leave empty to use the page title."
+                                        fieldLabel="Height"
+                                        name="./height"/>
+                                    <fontsize
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="font size"
+                                        name="./fontsize">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <px
+                                                jcr:primaryType="nt:unstructured"
+                                                text="px"
+                                                value="px"/>
+                                            <em
+                                                jcr:primaryType="nt:unstructured"
+                                                text="em"
+                                                value="em"/>
+                                        </items>
+                                    </fontsize>
+                                </items>
+                            </column>
+                        </items>
+                    </listSettings>
+                    <auth
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Auth Control"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <authtitlecomp
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Authorization by Component"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <compauth
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Check if you want to turn on Component Auth Control."
+                                                name="./compauth"
+                                                text="Component Auth"
+                                                value="{Boolean}true"/>
+                                            <tags
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                allowBulkEdit="{Boolean}true"
+                                                autocreateTag="{Boolean}true"
+                                                fieldDescription="Select tags under AMF Authorize/User Type or AMF Autorize/Special Agencies"
+                                                fieldLabel="Auth Tags"
+                                                multiple="{Boolean}true"
+                                                name="./cq:authtags">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-msm-lockable="cq:tags"/>
+                                            </tags>
+                                            <denytags
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Makes tag list about a list of denied agencies"
+                                                name="./denyTags"
+                                                renderReadOnly="{Boolean}true"
+                                                text="Deny Tags"
+                                                value="true"/>
+                                        </items>
+                                    </authtitlecomp>
+                                </items>
+                            </column>
+                        </items>
+                    </auth>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
