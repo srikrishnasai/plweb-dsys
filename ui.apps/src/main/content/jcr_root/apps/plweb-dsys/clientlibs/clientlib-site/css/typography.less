@@ -1,24 +1,32 @@
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 
 h1{
-    font-family: 'Montserrat';
-    font-weight: 700;
+    .fw-700;
+    .montserrat;
     font-size: 2.5rem;
     line-height: 56px;
 }
 h2{
-    font-family: 'Montserrat';
-    font-weight: 700;
+    .fw-700;
+    .montserrat;
     font-size: 2.25rem;
     line-height: 48px;
 }
 h3{
-    font-family: 'Montserrat';
-    font-weight: 700;
+    .fw-700;
+    .montserrat;
     font-size: 1.75rem;
     line-height: 36px;
 }
+h4{
+    .fw-700;
+    .montserrat;
+    font-size: @brandH4; //18.01px
+    line-height: 28px;
+}
 a{
     text-decoration: none;
-    color: @neutral1000;
+    color: @textBodyLight;
+    cursor: pointer;
 }
