@@ -48,6 +48,7 @@
 </div>
 <section class="section-container__main">
 	<div class="width-container secondary-nav__main">
+		<!-- Wrapped in a div because if anchor tag href is empty than anchor tag is not added to DOM and so anchor tag classes were also not present -->
 		<div class="secondary-nav__img-container">
 			<div class="logo"> 
 				<a target="_blank" href="${headerRef.homePagePath}">
@@ -63,11 +64,14 @@
 					<div class="secondary-nav__link-container">
 						<sly data-sly-test="${item.targetPath}"
 							data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=item.targetPath}" />
-						<a target="${item.linkTarget}" class="navigation-link"
+						<a target="${item.linkTarget}" class="dsys-text dsys-text--microcopy dsys-link navigation-link"
 							href="${linkhelper.modifiedLink}">${item.linkText}</a>
+							<!-- Dropdown icon.Only displayed in device whose size is less than 991px -->
 						<div id="dropdownButton" class="secondary-nav__drop-down-mobile"></div>
 					</div>
+					<!-- Main dropdown container for megamenu. Padding is applied to this div -->
 					<div data-sly-test="${item.secondaryNavXfPath}" id="dropdown" class="secondary-nav__dropdown">
+		<!-- Toggle the opacity of this div to show/hide content so that when fade out effect is happening the parent div is still there orelse we would be able to see the background in fadeout-->
 						<div id="dropdownContainer" class="dropdown__container">
 							<sly
 								data-sly-resource="${@path = item.secondaryNavXfPath , selectors='content', wcmmode='disabled'}" />
