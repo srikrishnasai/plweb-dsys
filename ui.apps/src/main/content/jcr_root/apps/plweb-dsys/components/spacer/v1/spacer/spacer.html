@@ -1,8 +1,7 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.spacer'}"
-    data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !properties.copyright)}"
-    data-sly-use.spacer="${'pl.web.dsys.core.models.Spacer'}"
+    data-sly-call="${template.placeholder @ isEmpty=true}" data-sly-use.spacer="${'pl.web.dsys.core.models.Spacer'}"
     data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" />
 <div data-sly-test="${authControlObj.hasComponentAccess}" id="" class=""
     style="height: ${spacer.height @context = 'text'};">&nbsp;</div>
