@@ -47,37 +47,10 @@
          .navigation-link{
             .montserrat;
             .fw-600;
-            color: @neutral1000;
-            text-decoration: none;
-            font-size: 13px;
             line-height: 24px;
             .uppercase;
             min-height: 25px;
             box-sizing: border-box;
-            position: relative;
-        }
-        .navigation-link::after{
-            content: '';
-            height: 1px;
-            width: 100%;
-            transition: transform @long;
-            background-color: @primary;
-            transform: scaleX(0);
-            transform-origin: center;
-            position: absolute;
-            left: 0;
-            pointer-events: none;
-            top: 100%;
-        }
-        @media @mediaMD{
-            li:hover{
-                .navigation-link {
-                    color: @primary !important;
-                    &::after{
-                        transform: scaleX(1) !important;
-                    }
-                }
-            }
         }
     });
     .element(dropdown,{
