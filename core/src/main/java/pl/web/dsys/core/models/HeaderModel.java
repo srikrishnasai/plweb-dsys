@@ -68,6 +68,12 @@ public class HeaderModel {
 	@ValueMapValue
 	private String topNavHeaderText;
 
+	@ValueMapValue
+	private String hideSearch;
+
+	@ValueMapValue
+	private String hideTopNav;
+
 	@ChildResource
 	private List<SecondaryNavLinksModel> primarylinks;
 
@@ -142,4 +148,13 @@ public class HeaderModel {
 	public String getHomePagePath() {
 		return currentPage.getAbsoluteParent(1).getPath() + "/home.html";
 	}
+
+	public String getHideSearch() {
+		return hideSearch;
+	}
+
+	public String getHideTopNav() {
+		return hideTopNav;
+	}
+	
 }
