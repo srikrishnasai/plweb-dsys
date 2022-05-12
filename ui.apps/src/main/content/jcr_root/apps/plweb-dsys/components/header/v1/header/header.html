@@ -3,7 +3,7 @@
 	data-sly-use.headerRef="pl.web.dsys.core.models.HeaderModel"
 	data-sly-call="${clientlib.all @ categories='plweb-dsys.header'}" />
 <sly data-sly-call="${template.placeholder @ isEmpty = !headerRef.allSitesPath, classAppend='cmp-text'}"></sly>
-<div class="section-container__main topnav">
+<div data-sly-test="${!headerRef.hideTopNav}" class="section-container__main topnav">
 	<nav class="width-container topnav__main">
 		<button class="topnav__all-sites">
 			<div class="topnav__dot-container">
@@ -80,7 +80,7 @@
 				</li>
 			</ul>
 		</nav>
-		<div>
+		<div data-sly-test="${!headerRef.hideSearch}">
 			<div id="search-icon" class="dsys-icon__search secondary-nav__search"></div>
 		</div>
 	</div>

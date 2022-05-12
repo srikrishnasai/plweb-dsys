@@ -1,3 +1,5 @@
+//This Js hides the target if check box is checked..
+
 (function (document, $) {
     "use strict";
     $(document).on("foundation-contentloaded", function (e) {
@@ -9,31 +11,31 @@
     });
     function checkboxShowHideHandler(el) {
         el.each(function (i, element) {
-      var isShowOnChecked = $(element).data("isShowOnCheckedTarget");
             if($(element).is("coral-checkbox")) {
                 Coral.commons.ready(element, function (component) {
-                    showHide(component, element, true);
+                    showHide(component, element);
                     component.on("change", function () {
-                        showHide(component, element, isShowOnChecked);
+                        showHide(component, element);
                     });
                 });
             } else {
                 var component = $(element).data("checkbox");
                 if (component) {
-                    showHide(component, element, isShowOnChecked);
+                    showHide(component, element);
                 }
             }
         })
     }
     function showHide(component, element, isShowOnChecked = false) {
         var target = $(element).data("cqDialogCheckboxShowhideTarget");
+        var isShowOnChecked = $(element).data("isshowoncheckedtarget");
 		var $target = $(target);
         if (target) {
-          isShowOnChecked ? $target.hide() :  $target.show();
           if (component.checked) {
-                isShowOnChecked ? $target.show() :  $target.hide();
-
-            }
+              isShowOnChecked ? $target.show() : $target.hide();
+          } else {
+              isShowOnChecked ? $target.hide() : $target.show();
+          }
         }
     }
 })(document, Granite.$);
