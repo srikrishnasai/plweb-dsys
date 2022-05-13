@@ -459,7 +459,7 @@
                     <card jcr:primaryType="nt:unstructured">
                         <policy_1650278400284
                             cq:styleDefaultClasses="card"
-                            jcr:lastModified="{Date}2022-04-18T18:53:25.194+05:30"
+                            jcr:lastModified="{Date}2022-05-13T17:14:39.437+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="card-policy"
@@ -478,6 +478,11 @@
                                             cq:styleClasses="card--troika"
                                             cq:styleId="1650278462039"
                                             cq:styleLabel="Troika"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item2
+                                            cq:styleClasses="card--text-card"
+                                            cq:styleId="1652442274535"
+                                            cq:styleLabel="Text Card"
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item0>
