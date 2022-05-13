@@ -63,9 +63,9 @@
 				<li>
 					<div class="secondary-nav__link-container">
 						<sly data-sly-test="${item.targetPath}"
-							data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=item.targetPath}" />
+							data-sly-use.linkhelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url=item.targetPath}" />
 						<a target="${item.linkTarget}" class="dsys-text dsys-text--microcopy dsys-link navigation-link"
-							href="${linkhelper.modifiedLink}">${item.linkText}</a>
+							href="${linkhelper.linkURL}">${item.linkText}</a>
 							<!-- Dropdown icon.Only displayed in device whose size is less than 991px -->
 						<div id="dropdownButton" class="secondary-nav__drop-down-mobile"></div>
 					</div>
