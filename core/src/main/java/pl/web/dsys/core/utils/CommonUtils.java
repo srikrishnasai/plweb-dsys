@@ -42,13 +42,34 @@ public class CommonUtils {
 		return null;
 	}
 
+	/**
+	 * Function to validate external URL using regular expression
+	 * 
+	 * @param url a string object.
+	 * @return string that is formatted url.
+	 */
 	public static boolean isExternal(String url) {
+		// Regex to check any external URLs begins with http, https, ftp, file or //.
 		String regex = "^((https?|ftp|file):)?//[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+		// Compile the ReGex
 		Pattern p = Pattern.compile(regex);
+		// Find match between given string
+		// and regular expression
+		// using Pattern.matcher()
 		Matcher m = p.matcher(url);
+		// Return if the string
+		// matched the ReGex
 		return m.matches();
 	}
 
+	/**
+	 * Function to map requested url and returns modified url with extension
+	 * 
+	 * @param url      a requested url string object.
+	 * @param resolver a Resource resolver object is used to map url.
+	 * @param request  a SlingHttpServletRequest is used to map url.
+	 * @return
+	 */
 	public static String resolveUrl(String url, ResourceResolver resolver, SlingHttpServletRequest request) {
 		log.debug("CommonUtils resolver is null ::{}", resolver == null);
 		log.debug("CommonUtils request is null ::{}", request == null);
