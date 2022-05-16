@@ -44,7 +44,7 @@
                 </h3>
                 <h4 class="person-card__bio-position">${personCardObj.position}</h4>
                 <div class="person-card__bio-desc">
-                    ${personCardObj.desc}
+                    ${personCardObj.desc @ context = 'html'}
                 </div>
                 <div class="person-card__link-container">
                     <div class="person-card__link-container" data-sly-test="${personCardObj.mail}">
@@ -77,7 +77,7 @@
                 </div>
             </div>
             <div class="person-card__bio-desc">
-                ${personCardObj.desc}
+                ${personCardObj.desc @ context = 'html'}
             </div>
             <div class="person-card__link-container">
                 <div class="person-card__link-container" data-sly-test="${personCardObj.mail}">

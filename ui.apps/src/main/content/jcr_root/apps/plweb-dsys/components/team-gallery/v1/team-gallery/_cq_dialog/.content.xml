@@ -22,33 +22,6 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <title
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldLabel="Title"
-                                        name="./title"/>
-                                    <description
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldLabel="Description"
-                                        name="./desc"/>
-                                    <text-color
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/select"
-                                        class="cq-dialog-dropdown-showhide"
-                                        fieldLabel="Text Color"
-                                        name="./color">
-                                        <items jcr:primaryType="cq:WidgetCollection">
-                                            <teal
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Teal Color (#108188)"
-                                                value="tealColor"/>
-                                            <blue
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Blue Color (#005EAD)"
-                                                value="blueColor"/>
-                                        </items>
-                                    </text-color>
                                     <team
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
@@ -125,9 +98,17 @@
                                                             required="{Boolean}true"/>
                                                         <description
                                                             jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                            fieldLabel="Description"
-                                                            name="./description"/>
+                                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                            fieldLabel="Descriptions"
+                                                            name="./description"
+                                                            useFixedInlineToolbar="{Boolean}true">
+                                                            <rtePlugins
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
+                                                            <uiSettings
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
+                                                        </description>
                                                         <link
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"

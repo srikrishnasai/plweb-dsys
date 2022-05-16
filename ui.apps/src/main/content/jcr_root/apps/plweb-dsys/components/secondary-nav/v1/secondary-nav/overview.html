@@ -1,19 +1,19 @@
 <sly data-sly-template.overview="${@ overviewObj}">
    <sly data-sly-test="${overviewObj.primaryLinkTargetPath}"
-      data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=overviewObj.primaryLinkTargetPath}" />
+      data-sly-use.linkhelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= overviewObj.primaryLinkTargetPath}" />
    <div id="overview" class="secondary-nav__overview">
       <h4 class="overview__header ${!overviewObj.header ? 'overview--no-header' : ''}">${overviewObj.header}</h4>
-      <a target="${overviewObj.primaryLinkTarget}" class="dsys-text dsys-text--body ${!linkhelper.modifiedLink ? 'overview--no-link' : ''}"
-         href="${linkhelper.modifiedLink}">${overviewObj.primaryLinkText}</a>
+      <a target="${overviewObj.primaryLinkTarget}" class="dsys-text dsys-text--body ${!linkhelper.linkURL ? 'overview--no-link' : ''}"
+         href="${linkhelper.linkURL}">${overviewObj.primaryLinkText}</a>
       <div class="dsys-text dsys-text--caption overview__description">${overviewObj.overviewDescription @
          context='html'}
       </div>
       <div data-sly-list.secondarylink="${overviewObj.secondaryLinks}" class="overview__additional-links">
          <sly data-sly-test="${secondarylink.targetPath}"
-            data-sly-use.linkhelper="${'pl.web.dsys.core.models.LinkHelperModel' @ originalLink=secondarylink.targetPath}" />
+            data-sly-use.linkhelper="${'pl.web.dsys.core.helpers.linkURL' @ url= secondarylink.targetPath}" />
 			<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=secondarylink.targetPath}"/>
          <a data-sly-test="${itemControlObj.resourceAuthorized}" target="${secondarylink.linkTarget}" class="dsys-text dsys-text--caption"
-            href="${linkhelper.modifiedLink}">${secondarylink.linkText}</a>
+            href="${linkhelper.linkURL}">${secondarylink.linkText}</a>
       </div>
       <div data-sly-test="${overviewObj.telephone}">
          <a href="tel:${overviewObj.telephone}" class="overview__telephone-container">
