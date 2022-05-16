@@ -11,10 +11,16 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 @Model(adaptables = {Resource.class, SlingHttpServletRequest.class},
 defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ImageTransformHelper {
+
+    private static final Logger log = LoggerFactory.getLogger(ImageTransformHelper.class);
+
     
     @RequestAttribute
     String transform;
@@ -48,10 +54,16 @@ public class ImageTransformHelper {
     		Resource imageResource = resourceResolver.getResource(imageNodePath);
     		if(null != imageResource) {
     			String fileReference = imageResource.getValueMap().get("fileReference", StringUtils.EMPTY);
-    			String imageName = fileReference.substring(fileReference.lastIndexOf("/") + 1);
-    			path = String.format(IMAGE_NODE_PATH_FORMAT, imageNodePath, imageName);
+                if(fileReference.toLowerCase().contains(".svg")){
+                    this.transformedImageUrl = fileReference; // Returns origin image path if it is svg file
+                }
+                else{
+                    String imageName = fileReference.substring(fileReference.lastIndexOf("/") + 1);
+                    path = String.format(IMAGE_NODE_PATH_FORMAT, imageNodePath, imageName);
+                }
     		}
     	}
+
     	
         // ------------ Returns path based on the image is transparent or not
         if( null != transform && null != path) {
