@@ -6,7 +6,7 @@
         cq:lastModifiedBy="admin"
         cq:template="/conf/plweb-dsys/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="plweb-dsys/components/page"
+        sling:resourceType="plweb-dsys/components/page/v1/page"
         socialMedia="[facebook]">
         <root
             jcr:primaryType="nt:unstructured"

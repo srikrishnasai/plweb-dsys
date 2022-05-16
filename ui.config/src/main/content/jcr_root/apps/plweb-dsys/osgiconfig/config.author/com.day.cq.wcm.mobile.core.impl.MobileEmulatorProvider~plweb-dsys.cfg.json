@@ -1,6 +1,6 @@
 {
   "mobile.resourceTypes": [
-    "plweb-dsys/components/page"
+    "plweb-dsys/components/page/v1/page"
   ],
   "README": "Indicate which page resource types should display the mobile emulators."
 }

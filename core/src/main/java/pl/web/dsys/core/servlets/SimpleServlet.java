@@ -38,7 +38,7 @@ import java.io.IOException;
  */
 @Component(service = { Servlet.class })
 @SlingServletResourceTypes(
-        resourceTypes="plweb-dsys/components/page",
+        resourceTypes="plweb-dsys/components/page/v1/page",
         methods=HttpConstants.METHOD_GET,
         extensions="txt")
 @ServiceDescription("Simple Demo Servlet")
