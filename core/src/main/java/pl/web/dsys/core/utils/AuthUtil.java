@@ -25,6 +25,7 @@ public class AuthUtil {
 	 * @return
 	 */
 	public static String getAgencyTag(SlingHttpServletRequest request) {
+
 		String group = SharedContants.DEFAULT_PUBLIC_AGENCY;
 		String[] selectors = request.getRequestPathInfo().getSelectors();
 		if (selectors != null && selectors.length > 0) {
@@ -48,20 +49,7 @@ public class AuthUtil {
 
 		group = getAgencyTag(request);
 		ResourceResolver resourceResolver = request.getResourceResolver();
-		ValueMap vm = null;
-		if (resourceResolver.isResourceType(res, DamConstants.NT_DAM_ASSET)) {
-			log.debug("Asset Resource ::{}", res.getPath());
-			Resource assetRes = resourceResolver
-					.getResource(res.getPath() + "/" + JcrConstants.JCR_CONTENT + DamConstants.METADATA_FOLDER);
-			if (null != assetRes) {
-				vm = assetRes.getValueMap();
-			}
-		} else {
-			Resource pageRes = resourceResolver.getResource(res.getPath() + "/" + JcrConstants.JCR_CONTENT);
-			if (null != pageRes) {
-				vm = pageRes.getValueMap();
-			}
-		}
+		ValueMap vm = getVm(resourceResolver, res);
 		if (null != vm) {
 			authTags = vm.get(SharedContants.PN_AUTH_TAGS, new String[0]);
 			log.debug("Auth Tags of the resource from Auth Util ::{}", Arrays.asList(authTags));
@@ -108,5 +96,38 @@ public class AuthUtil {
 			return Boolean.TRUE;
 		}
 		return Boolean.FALSE;
+	}
+
+	public static ValueMap getVm(ResourceResolver resourceResolver, Resource res) {
+		ValueMap vm = null;
+		if (resourceResolver.isResourceType(res, DamConstants.NT_DAM_ASSET)) {
+			log.debug("Asset Resource ::{}", res.getPath());
+			Resource assetRes = resourceResolver
+					.getResource(res.getPath() + "/" + JcrConstants.JCR_CONTENT + DamConstants.METADATA_FOLDER);
+			if (null != assetRes) {
+				vm = assetRes.getValueMap();
+			}
+		} else {
+			Resource pageRes = resourceResolver.getResource(res.getPath() + "/" + JcrConstants.JCR_CONTENT);
+			if (null != pageRes) {
+				vm = pageRes.getValueMap();
+			}
+		}
+		return vm;
+	}
+
+	/**
+	 * Returns group name from the request selector.
+	 * @param selector
+	 * @return
+	 */
+	public static String getGroupTag(String selector) {
+		if (StringUtils.isNotBlank(selector)
+				&& StringUtils.startsWithIgnoreCase(selector, SharedContants.AGENCY_SELECTOR_PREFIX)) {
+			return SharedContants.AGENCY_PREFIX
+					+ StringUtils.substringAfter(selector, SharedContants.AGENCY_SELECTOR_PREFIX).toUpperCase();
+		}
+
+		return SharedContants.AGENCY_PREFIX + SharedContants.DEFAULT_PUBLIC_AGENCY;
 	}
 }

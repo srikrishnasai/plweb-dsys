@@ -12,13 +12,9 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
-import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageManager;
 
 import pl.web.dsys.core.utils.AuthUtil;
 import pl.web.dsys.core.utils.SharedContants;
@@ -42,12 +38,6 @@ public class AuthControlModel {
 	@RequestAttribute
 	private String path;
 
-	@ScriptVariable
-	private Page currentPage;
-
-	@ScriptVariable
-	private PageManager pageManager;
-
 	protected boolean compAuth;
 	protected String[] authtags;
 	protected boolean isDenyTags;
@@ -58,7 +48,6 @@ public class AuthControlModel {
 	@PostConstruct
 	protected void init() {
 		log.debug("Inside Post Construct of Auth Control Model..");
-		log.debug("PageManager is null ::{}", pageManager == null);
 		if (null != resource) {
 			vm = resource.getValueMap();
 			compAuth = vm.get(SharedContants.PN_COMPONENT_AUTH, SharedContants.DO_COMPONENT_AUTH_DEFAULT);
@@ -99,24 +88,6 @@ public class AuthControlModel {
 
 	public boolean isHasComponentAccess() {
 		return hasComponentAccess;
-	}
-
-	public boolean isResourceAuthorized() {
-		boolean access = Boolean.TRUE;
-		if (isItemAuth) {
-			log.debug("Inside is Resource Authorized method ::{}", path);
-			Resource itemResource = resolver.getResource(path);
-			if (itemResource != null) {
-				log.debug("Resource Item is not null");
-				if (AuthUtil.isAuthorOrPreview(request)) {
-					access = AuthUtil.isAuthorOrPreview(request);
-				} else {
-					access = AuthUtil.checkAccess(request, itemResource);
-				}
-				log.debug("Item has Access ::{}", access);
-			}
-		}
-		return access;
 	}
 
 }
