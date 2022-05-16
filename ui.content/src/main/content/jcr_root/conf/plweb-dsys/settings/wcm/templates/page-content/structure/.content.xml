@@ -7,7 +7,7 @@
         cq:lastModifiedBy="admin"
         cq:template="/conf/plweb-dsys/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="plweb-dsys/components/page">
+        sling:resourceType="plweb-dsys/components/page/v1/page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="plweb-dsys/components/container"
