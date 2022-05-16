@@ -1,18 +1,19 @@
 package pl.web.dsys.core.helpers;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.regex.*;
-import org.apache.commons.io.FilenameUtils;
 
-
+import pl.web.dsys.core.utils.CommonUtils;
 
 @Model(adaptables = { Resource.class,
         SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
@@ -20,15 +21,25 @@ public class LinkHelpers {
 
     Logger logger = LoggerFactory.getLogger(LinkHelpers.class);
 
-    @Inject
+    @SlingObject
+    private Resource resource;
+
+    @SlingObject
+    private ResourceResolver resolver;
+
+    @SlingObject
+    private SlingHttpServletRequest request;
+
+    @RequestAttribute
     private String url;
-    private String linkURL;
+    private String linkURL = StringUtils.EMPTY;
 
     @PostConstruct
     protected void init() {
         if (url != null && !url.isEmpty()) {
             linkURL = checkLinkFormat(url);
         }
+
     }
 
     /**
@@ -37,45 +48,12 @@ public class LinkHelpers {
      * @return formattedLink returns formatted url link after validating.
      */
     private String checkLinkFormat(String link) {
-        String formattedLink = "";
-        if (null != link && !link.isEmpty()) {
-            if(isExternalURL(link.toLowerCase())){
-                return formattedLink = link;                
-            }
-            else{
-             if (null != FilenameUtils.getExtension(link) && !FilenameUtils.getExtension(link).isEmpty()){
-               return formattedLink = link;
-            } else {
-               return formattedLink = link + ".html";
-            }
-
-            }
-
-           
-
+        if (CommonUtils.isExternal(link.toLowerCase())) {
+            return link;
         }
-        return formattedLink;
+        return CommonUtils.resolveUrl(link, resolver, request);
 
     }
-
-     // Function to validate external URL using regular expression
-    public static boolean
-    isExternalURL(String url)
-    {
-        // Regex to check any external URLs begins with http, https, ftp, file or //.
-        String regex = "^((https?|ftp|file):)?//[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
-        // Compile the ReGex
-        Pattern p = Pattern.compile(regex);
-        // Find match between given string
-        // and regular expression
-        // using Pattern.matcher()
-        Matcher m = p.matcher(url);
- 
-        // Return if the string
-        // matched the ReGex
-        return m.matches();
-    }
-
 
     public String getLinkURL() {
         return linkURL;
