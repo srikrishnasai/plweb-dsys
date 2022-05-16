@@ -110,11 +110,14 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Primary Dark"
                                                         value="primaryDark"/>
-                                                    
                                                     <white
                                                         jcr:primaryType="nt:unstructured"
                                                         text="White"
                                                         value="textBodyDark"/>
+                                                    <black
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Black"
+                                                        value="textBodyLight"/>
                                                 </items>
                                             </titleColor>
                                             <subtitleColor
@@ -127,11 +130,14 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Primary Dark"
                                                         value="primaryDark"/>
-                                                    
                                                     <white
                                                         jcr:primaryType="nt:unstructured"
                                                         text="White"
                                                         value="textBodyDark"/>
+                                                    <black
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Black"
+                                                        value="textBodyLight"/>
                                                 </items>
                                             </subtitleColor>
                                             

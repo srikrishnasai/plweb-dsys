@@ -7,10 +7,8 @@
 <sly data-sly-call="${template.placeholder @ isEmpty=!model.childResource}" />
 
 <sly data-sly-test="${authControlObj.hasComponentAccess}">
-<h2 class="team-gallery__title">${properties.title}</h2>
-<div class="team-gallery__sub-heading">${properties.desc}</div>
 
-<ul class="team-gallery__main ${properties.color == 'tealColor' && 'team-gallery--teal-color'}"
+<ul class="team-gallery__main team-gallery--teal-color"
     data-sly-test="${model.childResource}" data-sly-list="${model.childResource.listChildren}">
 	<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
     <li data-sly-test="${itemControlObj.resourceAuthorized}"
@@ -27,7 +25,7 @@
                 <span data-sly-test="${!item.linkTarget}"> ${item.employeeName}</span>
             </h4>
             <div class="team-gallery__position">${item.position}</div>
-            <div class="team-gallery__position">${item.description}</div>
+            <div class="team-gallery__position">${item.description @ context = 'html'}</div>
         </div>
     </li>
 </ul>
