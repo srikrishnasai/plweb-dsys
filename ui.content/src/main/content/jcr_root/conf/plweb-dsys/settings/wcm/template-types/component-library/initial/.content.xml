@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="plweb-dsys/components/demoSiteComponents/demoPage">
+        sling:resourceType="plweb-dsys/components/component-library/component-library-page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="plweb-dsys/components/container">

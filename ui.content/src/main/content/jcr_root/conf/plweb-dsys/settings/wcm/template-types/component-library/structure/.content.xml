@@ -4,7 +4,7 @@
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="plweb-dsys/components/demoSiteComponents/demoPage">
+        sling:resourceType="plweb-dsys/components/component-library/component-library-page">
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
                 <phone
