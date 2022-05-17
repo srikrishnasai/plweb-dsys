@@ -48,20 +48,7 @@ public class AuthUtil {
 
 		group = getAgencyTag(request);
 		ResourceResolver resourceResolver = request.getResourceResolver();
-		ValueMap vm = null;
-		if (resourceResolver.isResourceType(res, DamConstants.NT_DAM_ASSET)) {
-			log.debug("Asset Resource ::{}", res.getPath());
-			Resource assetRes = resourceResolver
-					.getResource(res.getPath() + "/" + JcrConstants.JCR_CONTENT + DamConstants.METADATA_FOLDER);
-			if (null != assetRes) {
-				vm = assetRes.getValueMap();
-			}
-		} else {
-			Resource pageRes = resourceResolver.getResource(res.getPath() + "/" + JcrConstants.JCR_CONTENT);
-			if (null != pageRes) {
-				vm = pageRes.getValueMap();
-			}
-		}
+		ValueMap vm = getVm(resourceResolver, res);
 		if (null != vm) {
 			authTags = vm.get(SharedContants.PN_AUTH_TAGS, new String[0]);
 			log.debug("Auth Tags of the resource from Auth Util ::{}", Arrays.asList(authTags));
@@ -108,5 +95,29 @@ public class AuthUtil {
 			return Boolean.TRUE;
 		}
 		return Boolean.FALSE;
+	}
+	
+	/**
+	 * 
+	 * @param resourceResolver
+	 * @param res
+	 * @return
+	 */
+	public static ValueMap getVm(ResourceResolver resourceResolver, Resource res) {
+		ValueMap vm = null;
+		if (resourceResolver.isResourceType(res, DamConstants.NT_DAM_ASSET)) {
+			log.debug("Asset Resource ::{}", res.getPath());
+			Resource assetRes = resourceResolver
+					.getResource(res.getPath() + "/" + JcrConstants.JCR_CONTENT + DamConstants.METADATA_FOLDER);
+			if (null != assetRes) {
+				vm = assetRes.getValueMap();
+			}
+		} else {
+			Resource pageRes = resourceResolver.getResource(res.getPath() + "/" + JcrConstants.JCR_CONTENT);
+			if (null != pageRes) {
+				vm = pageRes.getValueMap();
+			}
+		}
+		return vm;
 	}
 }

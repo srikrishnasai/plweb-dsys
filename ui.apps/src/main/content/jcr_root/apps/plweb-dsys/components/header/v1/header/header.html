@@ -60,7 +60,8 @@
 		</div>
 		<nav id="navigaton" class="secondary-nav__navigation">
 			<ul data-sly-list="${headerRef.primarylinks}">
-				<li>
+			<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.targetPath}"/>
+				<li data-sly-test="${itemControlObj.resourceAuthorized}">
 					<div class="secondary-nav__link-container">
 						<sly data-sly-test="${item.targetPath}"
 							data-sly-use.linkhelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url=item.targetPath}" />
@@ -74,7 +75,7 @@
 		<!-- Toggle the opacity of this div to show/hide content so that when fade out effect is happening the parent div is still there orelse we would be able to see the background in fadeout-->
 						<div id="dropdownContainer" class="dropdown__container">
 							<sly
-								data-sly-resource="${@path = item.secondaryNavXfPath , selectors='content', wcmmode='disabled'}" />
+								data-sly-resource="${@path = item.secondaryNavXfPath , selectors=request.requestPathInfo.selectorString, wcmmode='disabled'}" />
 						</div>
 					</div>
 				</li>
