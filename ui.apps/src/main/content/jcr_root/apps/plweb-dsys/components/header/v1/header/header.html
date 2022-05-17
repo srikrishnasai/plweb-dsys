@@ -60,7 +60,8 @@
 		</div>
 		<nav id="navigaton" class="secondary-nav__navigation">
 			<ul data-sly-list="${headerRef.primarylinks}">
-				<li>
+			<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.targetPath}"/>
+				<li data-sly-test="${itemControlObj.resourceAuthorized}">
 					<div class="secondary-nav__link-container">
 						<sly data-sly-test="${item.targetPath}"
 							data-sly-use.linkhelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url=item.targetPath}" />
