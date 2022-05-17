@@ -459,7 +459,7 @@
                     <card jcr:primaryType="nt:unstructured">
                         <policy_1650278400284
                             cq:styleDefaultClasses="card"
-                            jcr:lastModified="{Date}2022-05-17T16:20:04.315+05:30"
+                            jcr:lastModified="{Date}2022-05-17T17:33:08.236+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="card-policy"
@@ -529,6 +529,7 @@
                                 </item2>
                                 <item3
                                     cq:styleGroupLabel="CENTER ALIGN"
+                                    cq:styleGroupMultiple="true"
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
