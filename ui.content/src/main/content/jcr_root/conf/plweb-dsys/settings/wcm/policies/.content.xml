@@ -459,7 +459,7 @@
                     <card jcr:primaryType="nt:unstructured">
                         <policy_1650278400284
                             cq:styleDefaultClasses="card"
-                            jcr:lastModified="{Date}2022-05-13T17:14:39.437+05:30"
+                            jcr:lastModified="{Date}2022-05-17T16:20:04.315+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="card-policy"
@@ -528,17 +528,28 @@
                                     </cq:styles>
                                 </item2>
                                 <item3
-                                    cq:styleGroupLabel="ALIGNMENT"
+                                    cq:styleGroupLabel="CENTER ALIGN"
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
+                                            cq:styleClasses="card--center--image"
                                             cq:styleId="1650278904154"
-                                            cq:styleLabel="Left"
+                                            cq:styleLabel="Image"
                                             jcr:primaryType="nt:unstructured"/>
                                         <item1
-                                            cq:styleClasses="card--center"
+                                            cq:styleClasses="card--center--text"
                                             cq:styleId="1650278905257"
-                                            cq:styleLabel="Center"
+                                            cq:styleLabel="Title"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item2
+                                            cq:styleClasses="card--center--description"
+                                            cq:styleId="1652784029871"
+                                            cq:styleLabel="Description"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item3
+                                            cq:styleClasses="card--center--link"
+                                            cq:styleId="1652784069800"
+                                            cq:styleLabel="Link"
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item3>
