@@ -2,4 +2,4 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Component"
     jcr:title="Navigation Bar"
-    componentGroup="plweb-dsys - demo site"/>
+    componentGroup="plweb-dsys - Component Library"/>

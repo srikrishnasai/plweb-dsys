@@ -2,7 +2,7 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        jcr:description="Generic template for web pages"
+        jcr:description="Generic template for component's documentation"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Empty Page"/>
+        jcr:title="Component Library"/>
 </jcr:root>

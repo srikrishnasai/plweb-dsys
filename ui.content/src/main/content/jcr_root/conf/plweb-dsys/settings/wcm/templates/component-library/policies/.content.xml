@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-05-17T17:28:27.538+05:30"
+        cq:lastModifiedBy="admin"
+        cq:policy="plweb-dsys/components/page/v1/page/policy"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/core/components/policies/mappings">
+        <root
+            cq:policy="plweb-dsys/components/container/policy_1574694950110"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/core/components/policies/mapping">
+            <container
+                cq:policy="plweb-dsys/components/container/policy_1574695586800"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping"/>
+            <section_container jcr:primaryType="nt:unstructured">
+                <layout-container-parsys
+                    cq:policy="plweb-dsys/components/responsive-grid/v1/responsive-grid/policy_1652788159053"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/core/components/policies/mapping">
+                    <container
+                        cq:policy="plweb-dsys/components/container/policy_1574695586800"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/core/components/policies/mapping">
+                        <plweb-dsys jcr:primaryType="nt:unstructured">
+                            <components jcr:primaryType="nt:unstructured">
+                                <card jcr:primaryType="nt:unstructured">
+                                    <v1 jcr:primaryType="nt:unstructured">
+                                        <card
+                                            cq:policy="plweb-dsys/components/card/v1/card/policy_1650278400284"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+                                    </v1>
+                                </card>
+                                <text jcr:primaryType="nt:unstructured">
+                                    <v1 jcr:primaryType="nt:unstructured">
+                                        <text
+                                            cq:policy="plweb-dsys/components/text/v1/text/policy_1649835738040"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+                                    </v1>
+                                </text>
+                                <button-group jcr:primaryType="nt:unstructured">
+                                    <v1 jcr:primaryType="nt:unstructured">
+                                        <button-group
+                                            cq:policy="plweb-dsys/components/button-group/v1/button-group/policy_1651472479262"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+                                    </v1>
+                                </button-group>
+                                <bulletedList jcr:primaryType="nt:unstructured">
+                                    <v1 jcr:primaryType="nt:unstructured">
+                                        <bulleted-list
+                                            cq:policy="plweb-dsys/components/bulletedList/v1/bulleted-list/policy_1650632266913"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+                                    </v1>
+                                </bulletedList>
+                            </components>
+                        </plweb-dsys>
+                        <section_container jcr:primaryType="nt:unstructured">
+                            <layout-container-parsys
+                                cq:policy="plweb-dsys/components/responsive-grid/v1/responsive-grid/policy_1652788159053"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                        </section_container>
+                    </container>
+                    <section_container jcr:primaryType="nt:unstructured">
+                        <layout-container-parsys
+                            cq:policy="plweb-dsys/components/responsive-grid/v1/responsive-grid/policy_1652788159053"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/core/components/policies/mapping"/>
+                    </section_container>
+                </layout-container-parsys>
+            </section_container>
+        </root>
+    </jcr:content>
+</jcr:root>

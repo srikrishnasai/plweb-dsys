@@ -79,7 +79,7 @@
                 <v1 jcr:primaryType="nt:unstructured">
                     <text jcr:primaryType="nt:unstructured">
                         <policy_1649835738040
-                            jcr:lastModified="{Date}2022-04-13T13:12:48.476+05:30"
+                            jcr:lastModified="{Date}2022-05-17T17:21:29.405+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Text Component Policy"
@@ -273,7 +273,7 @@
                 </policy_1574694950110>
                 <policy_1574695586800
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                    jcr:lastModified="{Date}2022-04-22T18:10:56.202+05:30"
+                    jcr:lastModified="{Date}2022-05-17T17:21:13.707+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Content"
@@ -459,7 +459,7 @@
                     <card jcr:primaryType="nt:unstructured">
                         <policy_1650278400284
                             cq:styleDefaultClasses="card"
-                            jcr:lastModified="{Date}2022-04-18T18:53:25.194+05:30"
+                            jcr:lastModified="{Date}2022-05-17T17:21:24.232+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="card-policy"
@@ -546,7 +546,7 @@
                 <v1 jcr:primaryType="nt:unstructured">
                     <bulleted-list jcr:primaryType="nt:unstructured">
                         <policy_1650632266913
-                            jcr:lastModified="{Date}2022-04-22T18:32:30.990+05:30"
+                            jcr:lastModified="{Date}2022-05-17T17:21:43.920+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="List Type"
@@ -584,7 +584,7 @@
                     <button-group jcr:primaryType="nt:unstructured">
                         <policy_1651472479262
                             cq:styleDefaultClasses="dsys-button-group--small-gap dsys-button-group--left"
-                            jcr:lastModified="{Date}2022-05-04T12:07:39.659+05:30"
+                            jcr:lastModified="{Date}2022-05-17T17:21:36.558+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Button Group"
@@ -623,6 +623,21 @@
                     </button-group>
                 </v1>
             </button-group>
+            <responsive-grid jcr:primaryType="nt:unstructured">
+                <v1 jcr:primaryType="nt:unstructured">
+                    <responsive-grid jcr:primaryType="nt:unstructured">
+                        <policy_1652788159053
+                            jcr:lastModified="{Date}2022-05-17T17:28:27.534+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Component Library"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[group:plweb-dsys - Component Library,group:plweb-dsys - Content]">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_1652788159053>
+                    </responsive-grid>
+                </v1>
+            </responsive-grid>
         </components>
     </plweb-dsys>
 </jcr:root>
