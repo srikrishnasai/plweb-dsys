@@ -25,7 +25,6 @@ public class AuthUtil {
 	 * @return
 	 */
 	public static String getAgencyTag(SlingHttpServletRequest request) {
-
 		String group = SharedContants.DEFAULT_PUBLIC_AGENCY;
 		String[] selectors = request.getRequestPathInfo().getSelectors();
 		if (selectors != null && selectors.length > 0) {
@@ -97,7 +96,13 @@ public class AuthUtil {
 		}
 		return Boolean.FALSE;
 	}
-
+	
+	/**
+	 * 
+	 * @param resourceResolver
+	 * @param res
+	 * @return
+	 */
 	public static ValueMap getVm(ResourceResolver resourceResolver, Resource res) {
 		ValueMap vm = null;
 		if (resourceResolver.isResourceType(res, DamConstants.NT_DAM_ASSET)) {
@@ -114,20 +119,5 @@ public class AuthUtil {
 			}
 		}
 		return vm;
-	}
-
-	/**
-	 * Returns group name from the request selector.
-	 * @param selector
-	 * @return
-	 */
-	public static String getGroupTag(String selector) {
-		if (StringUtils.isNotBlank(selector)
-				&& StringUtils.startsWithIgnoreCase(selector, SharedContants.AGENCY_SELECTOR_PREFIX)) {
-			return SharedContants.AGENCY_PREFIX
-					+ StringUtils.substringAfter(selector, SharedContants.AGENCY_SELECTOR_PREFIX).toUpperCase();
-		}
-
-		return SharedContants.AGENCY_PREFIX + SharedContants.DEFAULT_PUBLIC_AGENCY;
 	}
 }

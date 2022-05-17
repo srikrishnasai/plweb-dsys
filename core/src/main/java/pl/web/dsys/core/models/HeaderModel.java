@@ -15,7 +15,6 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
-import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
 import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
@@ -28,7 +27,6 @@ import com.day.cq.wcm.api.PageFilter;
 import pl.web.dsys.core.pojos.LinkPojo;
 import pl.web.dsys.core.utils.AuthUtil;
 import pl.web.dsys.core.utils.CommonUtils;
-import pl.web.dsys.core.utils.SharedContants;
 
 /**
  * This Sling Model returns Header Component's authored dialog values and
@@ -76,18 +74,13 @@ public class HeaderModel {
 	@ValueMapValue
 	private String hideTopNav;
 
-	@RequestAttribute
-	private String selector;
-
 	@ChildResource
 	private List<SecondaryNavLinksModel> primarylinks;
-	String group = StringUtils.EMPTY;
 
 	@PostConstruct
 	protected void init() {
 		log.debug("Inside Post Construct of Header Model..");
 		allSitesPath = StringUtils.isBlank(allSitesPath) ? ALL_SITES_PATH : allSitesPath;
-		group = AuthUtil.getGroupTag(selector);
 	}
 
 	public String getFileReference() {
@@ -124,9 +117,7 @@ public class HeaderModel {
 						log.debug("No Access as its hide in Nav ::{}", childPage.getPath());
 						continue;
 					}
-					String[] authTags = vm.get(SharedContants.PN_AUTH_TAGS, new String[0]);
-					boolean isDenyAuth = vm.get(SharedContants.PN_DENY_TAGS, SharedContants.DO_DENY_AUTH_DEFAULT);
-					if (!AuthUtil.checkAccess(authTags, isDenyAuth, group.trim())) {
+					if (!AuthUtil.checkAccess(request, childPage.adaptTo(Resource.class))) {
 						log.debug("No Access listItem -->::{}", childPage.getPath());
 						continue;
 					}
@@ -165,5 +156,5 @@ public class HeaderModel {
 	public String getHideTopNav() {
 		return hideTopNav;
 	}
-
+	
 }
