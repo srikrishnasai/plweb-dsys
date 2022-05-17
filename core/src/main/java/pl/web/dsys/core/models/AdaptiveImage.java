@@ -1,4 +1,5 @@
 package pl.web.dsys.core.models;
+import pl.web.dsys.core.utils.CommonUtils;
 
 import java.util.Arrays;
 
@@ -27,6 +28,13 @@ import org.slf4j.LoggerFactory;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.api.DamConstants;
 import com.day.cq.wcm.foundation.Image;
+
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+
+import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject; 
 
 @Model(adaptables = {Resource.class, SlingHttpServletRequest.class},
 defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
@@ -68,6 +76,9 @@ public class AdaptiveImage {
 
 	@SlingObject
 	Resource resource;
+
+	@SlingObject
+    private ResourceResolver resolver;
 
 	ValueMap valueMap;
 
@@ -208,12 +219,15 @@ public class AdaptiveImage {
 	/* Set image source path format */
 	private String getAdaptiveImagePath(String transformName, Image image) {
 		LOG.debug("in getAdaptiveImagePath");
+		String modifiedPath;
 		if (transformName != null) {
 			if(this.transparent) {
 				this.transparent = false;
-                return String.format(IMAGE_PNG_PATH_FORMAT, image.getPath(), getFileName(image.getFileReference()), transformName);
+                modifiedPath = String.format(IMAGE_PNG_PATH_FORMAT, image.getPath(), getFileName(image.getFileReference()), transformName);
+				return CommonUtils.resolveUrl(modifiedPath, resolver, request);	 
             }
-			return String.format(IMAGE_PATH_FORMAT, image.getPath(), getFileName(image.getFileReference()), transformName);
+			modifiedPath = String.format(IMAGE_PATH_FORMAT, image.getPath(), getFileName(image.getFileReference()), transformName);
+			return CommonUtils.resolveUrl(modifiedPath, resolver, request);	 
 		}
 		return null;
 	}
