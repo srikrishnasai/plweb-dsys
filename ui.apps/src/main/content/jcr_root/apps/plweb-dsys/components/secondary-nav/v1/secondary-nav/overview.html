@@ -10,7 +10,7 @@
       </div>
       <div data-sly-list.secondarylink="${overviewObj.secondaryLinks}" class="overview__additional-links">
          <sly data-sly-test="${secondarylink.targetPath}"
-            data-sly-use.linkhelper="${'pl.web.dsys.core.helpers.linkURL' @ url= secondarylink.targetPath}" />
+            data-sly-use.linkhelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= secondarylink.targetPath}" />
 			<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=secondarylink.targetPath}"/>
          <a data-sly-test="${itemControlObj.resourceAuthorized}" target="${secondarylink.linkTarget}" class="dsys-text dsys-text--caption"
             href="${linkhelper.linkURL}">${secondarylink.linkText}</a>
