@@ -75,7 +75,7 @@
 		<!-- Toggle the opacity of this div to show/hide content so that when fade out effect is happening the parent div is still there orelse we would be able to see the background in fadeout-->
 						<div id="dropdownContainer" class="dropdown__container">
 							<sly
-								data-sly-resource="${@path = item.secondaryNavXfPath , selectors=request.requestPathInfo.selectorString, wcmmode='disabled'}" />
+								data-sly-resource="${@path = item.secondaryNavXfPath , selectors=request.requestPathInfo.selectorString, wcmmode=(request.requestPathInfo.selectorString == 'content') ? 'read_only' : 'disabled'}" />
 						</div>
 					</div>
 				</li>
