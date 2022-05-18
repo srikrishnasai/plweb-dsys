@@ -3,7 +3,7 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="Page"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="[cq.common.wcm,core.wcm.components.page.v2.editor,cq.wcm.msm.properties,granite.contexthub.configuration,cq.siteadmin.admin.properties]"
+    extraClientlibs="[cq.common.wcm,core.wcm.components.page.v2.editor,cq.wcm.msm.properties,granite.contexthub.configuration,cq.siteadmin.admin.properties,plweb-dsys.add-path-editor-link]"
     helpPath="https://www.adobe.com/go/aem_cmp_page_v2"
     mode="edit"
     trackingFeature="core-components:page:v2">
@@ -38,6 +38,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                                 fieldDescription="Select path of the header experience fragment"
                                                 fieldLabel="Header Experience Fragment Path"
+												granite:class="add-path-editor-link"
                                                 name="./headerXfPath"
                                                 rootPath="/content/experience-fragments"/>
                                             <footerXfPath
@@ -45,6 +46,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                                 fieldDescription="Select path of the footer experience fragment"
                                                 fieldLabel="Footer Experience Fragment Path"
+												granite:class="add-path-editor-link"
                                                 name="./footerXfPath"
                                                 rootPath="/content/experience-fragments"/>
                                         </items>

@@ -32,12 +32,14 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/heading"
                                                 level="{Long}4"
+												cq:hideOnEdit="{Boolean}true"
                                                 text="Authorization By Item"/>
                                             <itemAuth
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 fieldDescription="Check if you want Auth Control by list item."
                                                 name="./itemauth"
+												cq:hideOnEdit="{Boolean}true"
                                                 text="Auth by Item"
                                                 value="{Boolean}true"/>
                                             <compAuthTitle
