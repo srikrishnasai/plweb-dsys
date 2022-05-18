@@ -10,8 +10,9 @@
         display: flex;
         width: 100%;
         flex-direction: column;
-        max-width: 500px;
-        padding: @4;
+        // max-width: 500px;
+        // padding: @4;
+        // padding-top: 0;
         box-sizing: border-box;
     });
 
@@ -42,26 +43,53 @@
         font-size: 25.01px;
     });
 
-    .element(subtitle,{
+
+    .element(description,{
         margin-top: @8;
         line-height: 24px;
        .openSans;
+       margin-bottom: @16;
     });
 
     .element(link,{
-        margin-top: @16;;
+
         .openSans;
         color: @blue600;
         text-decoration: none;
     });
-    .modifier(center,{
-        .ta-center;
-        display: flex;
-        justify-content: center;
-            .card__main{
-                align-items: center;
-            }
+    .modifier(center-title,{
+        .card__title{
+            text-align: center;
+        }
+        .border-wrapper{
+            display: flex;
+            justify-content: center;
+        }
     });
+
+    .modifier(center-description,{
+        .card__description{
+            text-align: center;
+        }
+    });
+
+    .modifier(center-image,{
+        .card__img-container{
+            display: flex;
+            justify-content: center;
+        }
+    });
+
+
+    .modifier(center-link,{
+        .link-wrapper--pdf{
+            justify-content: center;
+        }
+        .card__link{
+            justify-content: center !important;
+        }
+    });
+
 
     .modifier(no-image,{
         img{
@@ -77,11 +105,62 @@
             height: 0px !important;
         }
     });
+
+    
+
+    
+
+
+    .link-wrapper{
+        .modifier(pdf,{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            width: 100%;
+            align-items: center;
+            margin-top: auto;
+            .pdf-wrapper{
+                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/pdf.svg);
+                width: 16px;
+                height: 16px;
+                background-repeat: no-repeat;
+            }
+
+        });
+        .modifier(button,{
+            width: 100%;
+            margin-top: auto;
+            .card__link{
+               
+                background: #0D65B3;
+                border-radius: 4px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #FBFBFB;
+                padding: 10px 24px;
+            }
+            
+            .pdf-wrapper{
+               display: none
+            }
+
+        });
+        .modifier(webpage,{
+            width: 100%;
+            margin-top: auto;
+            .card__link{
+                display: flex;
+                justify-content: left;
+            }
+        });
+    }
     .modifier(troika,{
+        border-radius: 4px;
         .card__icon{
             width: 100%;
             height: auto;
-            max-height: 226px;
         };
         .card__border-for-no-img{
             display: none;
@@ -91,13 +170,27 @@
             width: 80%;
         }
         .card__main{
-            padding: @24;
+            padding: 0 !important;
         }
-        .card__img-container{
-            height: 226px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    });
+
+    .modifier(text-card,{
+        border: 1px solid #DEDEDE;
+        border-radius: 8px;
+        .card__main{
+            padding: 24px;
+            height: 100%;    
+        }
+        .card__description{
+            margin-bottom: 20%;
+        }
+        &.card--no-image{
+            .card__main{
+                .card__border-for-no-img{
+                    display: none !important;
+                }
+                
+            }
         }
     });
 
