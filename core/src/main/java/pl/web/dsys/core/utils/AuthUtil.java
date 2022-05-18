@@ -91,7 +91,7 @@ public class AuthUtil {
 	 */
 	public static boolean isAuthorOrPreview(SlingHttpServletRequest request) {
 		WCMMode wcmMode = WCMMode.fromRequest(request);
-		if (wcmMode == WCMMode.EDIT || wcmMode == WCMMode.PREVIEW) {
+		if (wcmMode == WCMMode.EDIT || wcmMode == WCMMode.PREVIEW || wcmMode == WCMMode.READ_ONLY) {
 			return Boolean.TRUE;
 		}
 		return Boolean.FALSE;
