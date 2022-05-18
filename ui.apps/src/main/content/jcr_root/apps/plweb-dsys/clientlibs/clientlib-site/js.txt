@@ -1,3 +1,4 @@
 #base=js
 global.js
 utils.js
+accordion.js

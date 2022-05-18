@@ -1,0 +1,47 @@
+
+
+
+
+.cmp-accordion__button{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &.cmp-accordion__button--expanded{
+        .cmp-accordion__icon{
+            background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/angle-up-solid.svg);
+            height: 20px;
+            width: 20px;
+            background-repeat: no-repeat;
+        }
+    }
+
+
+
+    .cmp-accordion__icon{
+        background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/angle-down-solid.svg);
+        height: 20px;
+        width: 20px;
+        background-repeat: no-repeat;
+    }
+
+    .cmp-accordion__title{
+        width: 98%;
+    }
+    
+}
+
+.cmp-accordion__panel{
+    padding: 18px;
+    background-color: white;
+    overflow: hidden;
+}
