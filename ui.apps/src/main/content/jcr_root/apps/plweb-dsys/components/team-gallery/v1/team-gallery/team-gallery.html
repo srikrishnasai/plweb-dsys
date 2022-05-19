@@ -20,7 +20,7 @@
             src="${item.useOriginalImage ? item.fileReference : imageurl.transformedImageUrl}" alt="Person's Image" />
         <div>
             <h4 class="team-gallery__name">
-                <a data-sly-test="${item.linkTarget}" href="${linkTarget.linkURL @ extension='html'}"
+                <a data-sly-test="${item.linkTarget}" href="${linkTarget.linkURL}"
                     target="${item.openInNewTab ? '_blank' : ''}"> ${item.employeeName} </a>
                 <span data-sly-test="${!item.linkTarget}"> ${item.employeeName}</span>
             </h4>
