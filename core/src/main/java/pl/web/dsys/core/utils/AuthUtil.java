@@ -108,7 +108,7 @@ public class AuthUtil {
 		if (resourceResolver.isResourceType(res, DamConstants.NT_DAM_ASSET)) {
 			log.debug("Asset Resource ::{}", res.getPath());
 			Resource assetRes = resourceResolver
-					.getResource(res.getPath() + "/" + JcrConstants.JCR_CONTENT + DamConstants.METADATA_FOLDER);
+					.getResource(res.getPath() + "/" + JcrConstants.JCR_CONTENT + "/" + DamConstants.METADATA_FOLDER);
 			if (null != assetRes) {
 				vm = assetRes.getValueMap();
 			}
