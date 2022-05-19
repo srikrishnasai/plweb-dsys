@@ -3,8 +3,8 @@
     <sly data-sly-use.clientlib="${'/libs/granite/sightly/templates/clientlib.html'}"
      data-sly-call="${clientLib.all @ categories='plweb-dsys.animating-numbers'}"/>
 <sly data-sly-call="${template.placeholder @ isEmpty= !properties.animatingNumbersLabel}"></sly>
-
-    <div class="animation-wrapper animatedParent animateOnce  "data-appear-offset="-300">
+<sly data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" />
+    <div data-sly-test="${authControlObj.hasComponentAccess}" class="animation-wrapper animatedParent animateOnce  "data-appear-offset="-300">
         <div class="animating-numbers animated fadeInDownHalfVeryShort   mx-auto" style="color:${properties.animatingNumbersColor @context='styleString'}"
              data-animating-numbers-start-value="${properties.animatingNumbersStartValue}"
              data-animating-numbers-end-value="${properties.animatingNumbersEndValue}"

@@ -21,7 +21,8 @@
       <div data-sly-test="${objRef.cardDescription}" class="card__description">
             ${objRef.cardDescription @ context = 'html'}
       </div>
-      <div class="link-wrapper--${properties.linkOptions}">
+	  <sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=objRef.cardWebpageTarget}"/>
+      <div data-sly-test="${itemControlObj.resourceAuthorized}" class="link-wrapper--${properties.linkOptions}">
             <div class="pdf-wrapper" data-sly-test="${properties.linkOptions == 'pdf'}"></div>
             <div class="wrapper-link">
                   <a target="${objRef.cardWebpageTabTarget ? '_blank' : ''}" data-sly-test="${objRef.cardWebpageTarget}"
