@@ -74,7 +74,6 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 fieldDescription="Makes tag list about a list of denied agencies"
                                                 name="./denyTags"
-                                                renderReadOnly="{Boolean}true"
                                                 text="Deny Tags"
                                                 value="true"/>
                                         </items>
