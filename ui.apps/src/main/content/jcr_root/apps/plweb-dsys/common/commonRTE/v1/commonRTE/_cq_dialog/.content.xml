@@ -105,6 +105,24 @@
                                     </chars>
                                 </specialCharsConfig>
                             </misctools>
+							<styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*">
+                                <styles jcr:primaryType="nt:unstructured">
+                                    <white
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="dsys-text dsys-text--color-white"
+                                        text="White"/>
+									<black
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="dsys-text dsys-text--color-black"
+                                        text="Black"/>
+                                    <teal
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="dsys-text dsys-text--color-teal"
+                                        text="Teal"/>
+                                </styles>
+                            </styles>
                             <table
                                 jcr:primaryType="nt:unstructured"
                                 features="*"/>
@@ -113,7 +131,7 @@
                             <cui jcr:primaryType="nt:unstructured">
                                 <inline
                                     jcr:primaryType="nt:unstructured"
-                                    toolbar="[edit#copy,edit#paste-default,edit#paste-plaintext,edit#paste-wordhtml,format#bold,format#italic,format#underline,#justify,#lists,subsuperscript#subscript,subsuperscript#superscript,links#modifylink,links#unlink,links#anchor,findreplace#find,findreplace#replace,misctools#specialchars,misctools#sourceedit,#paraformat,table#table]">
+                                    toolbar="[edit#copy,edit#paste-default,edit#paste-plaintext,edit#paste-wordhtml,format#bold,format#italic,format#underline,#justify,#lists,subsuperscript#subscript,subsuperscript#superscript,links#modifylink,links#unlink,links#anchor,findreplace#find,findreplace#replace,misctools#specialchars,misctools#sourceedit,#paraformat,table#table,#styles]">
                                     <popovers jcr:primaryType="nt:unstructured">
                                         <justify
                                             jcr:primaryType="nt:unstructured"
