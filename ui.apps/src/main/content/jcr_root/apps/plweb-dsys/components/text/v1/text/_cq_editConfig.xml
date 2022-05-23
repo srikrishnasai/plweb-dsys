@@ -113,6 +113,18 @@
                             jcr:primaryType="nt:unstructured"
                             cssName="dsys-text dsys-text--microcopy"
                             text="Microcopy"/>
+						<white
+                            jcr:primaryType="nt:unstructured"
+                            cssName="dsys-text dsys-text--color-white"
+                            text="White"/>
+						<black
+                            jcr:primaryType="nt:unstructured"
+                            cssName="dsys-text dsys-text--color-black"
+                            text="Black"/>
+                        <teal
+                            jcr:primaryType="nt:unstructured"
+                            cssName="dsys-text dsys-text--color-teal"
+                            text="Teal"/>
                     </styles>
                 </styles>
             </rtePlugins>
