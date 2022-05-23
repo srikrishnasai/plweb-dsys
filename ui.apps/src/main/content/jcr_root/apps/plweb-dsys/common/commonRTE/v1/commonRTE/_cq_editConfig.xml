@@ -88,6 +88,24 @@
                         </chars>
                     </specialCharsConfig>
                 </misctools>
+				<styles
+                    jcr:primaryType="nt:unstructured"
+                    features="*">
+                    <styles jcr:primaryType="nt:unstructured">
+                        <white
+                            jcr:primaryType="nt:unstructured"
+                            cssName="dsys-text dsys-text--color-white"
+                            text="White"/>
+						<black
+                            jcr:primaryType="nt:unstructured"
+                            cssName="dsys-text dsys-text--color-black"
+                            text="Black"/>
+                        <teal
+                            jcr:primaryType="nt:unstructured"
+                            cssName="dsys-text dsys-text--color-teal"
+                            text="Teal"/>
+                    </styles>
+                </styles>
                 <table
                     jcr:primaryType="nt:unstructured"
                     features="*"/>
