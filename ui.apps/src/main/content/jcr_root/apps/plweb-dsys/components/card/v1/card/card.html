@@ -23,7 +23,7 @@
       </div>
 	  <sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=objRef.cardWebpageTarget}"/>
       <div data-sly-test="${itemControlObj.resourceAuthorized}" class="link-wrapper--${properties.linkOptions}">
-            <div class="pdf-wrapper" data-sly-test="${properties.linkOptions == 'pdf'}"></div>
+            <div class="pdf-wrapper" data-sly-test="${properties.linkOptions == 'pdf' && objRef.cardWebpageTarget}"></div>
             <div class="wrapper-link">
                   <a target="${objRef.cardWebpageTabTarget ? '_blank' : ''}" data-sly-test="${objRef.cardWebpageTarget}"
                   href="${linkTarget.linkURL}" class="card__link">
