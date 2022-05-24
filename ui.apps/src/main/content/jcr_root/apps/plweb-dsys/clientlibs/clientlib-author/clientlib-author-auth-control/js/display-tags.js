@@ -64,7 +64,7 @@
         },
         condition: function(editable) {
             var properties = Granite.HTTP.eval(editable.path + '.infinity.json');
-            if(properties['cq:authtags']) {
+            if(properties && properties['cq:authtags']) {
                 return true;
             }
             return false;

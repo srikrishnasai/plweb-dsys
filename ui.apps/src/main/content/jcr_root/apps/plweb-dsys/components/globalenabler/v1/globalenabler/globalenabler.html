@@ -4,5 +4,6 @@
       data-sly-call="${clientlib.all @ categories='plweb-dsys.globalenabler'}">
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = 'true', classAppend='cmp-text'}"></sly>
-<sly data-sly-test="${objRef.experienceFragmentPath}" data-sly-set.selector="content.${request.requestPathInfo.selectorString}"
-data-sly-resource="${@path = objRef.experienceFragmentPath , selectors=selector, wcmmode=request.requestPathInfo.selectorString ? 'disabled' : 'read_only'}"/>
+<sly data-sly-test="${objRef.experienceFragmentPath}" 
+     data-sly-set.selector="content.${request.requestPathInfo.selectorString}"
+     data-sly-resource="${@path = objRef.experienceFragmentPath , selectors=selector, wcmmode=request.requestPathInfo.selectorString ? 'disabled' : 'read_only'}"/>

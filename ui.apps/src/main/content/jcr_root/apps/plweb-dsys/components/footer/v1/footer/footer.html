@@ -17,7 +17,7 @@
                     <h6 class="footer__text dsys-text dsys-text--microcopy footer--heading"> ${footerObj.section1Title} </h6>
                     <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
                 </div>
-                <ul class="footer--mobile-list" data-sly-test="${model1.childResource}"
+                <ul class="footer__links footer--mobile-list" data-sly-test="${model1.childResource}"
                     data-sly-list="${model1.childResource.listChildren}">
 					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
                     <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text dsys-text dsys-text--microcopy footer--link-mobile-view"
@@ -32,7 +32,7 @@
                     <h6 class="footer__text dsys-text dsys-text--microcopy footer--heading">${footerObj.section2Title} </h6>
                     <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
                 </div>
-                <ul class="footer--mobile-list" data-sly-test="${model2.childResource}"
+                <ul class="footer__links footer--mobile-list" data-sly-test="${model2.childResource}"
                     data-sly-list="${model2.childResource.listChildren}">
 					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
                     <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text dsys-text dsys-text--microcopy footer--link-mobile-view" sly
@@ -47,7 +47,7 @@
                     <h6 class="footer__text dsys-text dsys-text--microcopy footer--heading">${footerObj.section3Title}</h6>
                     <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
                 </div>
-                <ul class="footer--mobile-list" data-sly-test="${model3.childResource}"
+                <ul class="footer__links footer--mobile-list" data-sly-test="${model3.childResource}"
                     data-sly-list="${model3.childResource.listChildren}">
 					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
                     <li data-sly-test="${itemControlObj.resourceAuthorized}" class="footer__text dsys-text dsys-text--microcopy footer--link-mobile-view" sly
@@ -68,7 +68,7 @@
             <span class="footer__copyright ${!model5.childResource ? 'footer--occupy-full-width' : ''}">
                 ${footerObj.copyright  @ context = 'html'} </span>
             <div class="footer__bottom-links-container">
-                <ul class="footer__mobile-bottom-links ${model4.childResource.listChildren ?'footer--display-list footer--left-link-full-width' : ''}"
+                <ul class="footer__bottom-links ${model4.childResource.listChildren ?'footer--display-list footer--left-link-full-width' : ''}"
                     data-sly-test="${model5.childResource}" data-sly-list="${model5.childResource.listChildren}">
 					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
                     <li data-sly-test="${itemControlObj.resourceAuthorized}" data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
@@ -77,7 +77,7 @@
                         </a>
                     </li>
                 </ul>
-                <ul class="footer__mobile-bottom-links ${model5.childResource.listChildren ?'footer--display-list' : ''}"
+                <ul class="footer__bottom-links ${model5.childResource.listChildren ?'footer--display-list' : ''}"
                     data-sly-test="${model4.childResource}" data-sly-list="${model4.childResource.listChildren}">
 					<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.linkTarget}"/>
                     <li data-sly-test="${itemControlObj.resourceAuthorized}" data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.linkTarget}">
