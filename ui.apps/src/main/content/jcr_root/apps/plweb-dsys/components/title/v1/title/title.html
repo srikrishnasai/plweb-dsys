@@ -6,8 +6,8 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
 
 <div data-sly-test="${authControlObj.hasComponentAccess}" class="dsys-title dsys-title--${properties.alignments}">
-        <h1 data-sly-element="${properties.type}" class="dsys-title__heading-${properties.type} dsys-title--${properties.titleColor}" >${properties.title}<sup class="title-heading-sup">${properties.titleSuperScript}</sup></h1>
-        <h3 class="dsys-title__subheading dsys-title__subheading--${properties.subtitleColor}">${properties.subTitle}</h3>
+        <h1 data-sly-test="${properties.title}" data-sly-element="${properties.type}" class="dsys-title__heading-${properties.type} dsys-title--${properties.titleColor}" >${properties.title}<sup data-sly-test="${properties.titleSuperScript}" class="title-heading-sup">${properties.titleSuperScript}</sup></h1>
+        <h3 data-sly-test="${properties.subTitle}" class="dsys-title__subheading dsys-title__subheading--${properties.subtitleColor}">${properties.subTitle}</h3>
 </div>
 <sly data-sly-call="${template.placeholder @isEmpty=!properties.title}"></sly>
 
