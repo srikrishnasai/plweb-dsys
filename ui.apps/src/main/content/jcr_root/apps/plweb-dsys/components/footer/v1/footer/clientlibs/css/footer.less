@@ -74,10 +74,15 @@
     .element(mobile-bottom-links,{
         display: flex;
         flex-wrap: wrap;
+        list-style-type: none;
         a{
             color: @textBodyLight;
             margin-left: @24;
         }
+    });
+
+    .modifier(mobile-list,{
+        padding-inline-start: 0px;
     });
 
     .element(left-links,{
@@ -141,6 +146,7 @@
             max-height: 0px;
             transition: all 0.5s linear;
             overflow: hidden;
+            padding-inline-start: 0px;
         });
 
         .modifier(up-arrow,{
