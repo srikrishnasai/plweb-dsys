@@ -458,6 +458,14 @@
 
     .element(layout, {
         .modifier(grid ,{
+            .aem-Grid::before {
+                content: none;
+            }
+
+            .aem-Grid::after {
+                content: none;
+            }
+
             @media @mediaMobile {
                 .aem-Grid {
                     display: flex;
