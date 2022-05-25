@@ -26,6 +26,7 @@
         .ta-center;
         margin-bottom: @8;
         padding-right: @32;
+        margin-left: -2rem;
         box-sizing: border-box;
     });
 
@@ -70,6 +71,7 @@
             margin-bottom: 0.5rem;
             .ta-left;
             padding-right: 0;
+            padding-bottom: 1rem;
             align-items: center;
             display: flex;
             box-sizing: border-box;
@@ -94,4 +96,26 @@
             overflow: hidden;
         });
     }
+
+    @media @mediaSMOnly {
+        .element(main,{
+            gap: 20%;
+         });
+         .element(container,{
+             flex: 1;
+             padding-right: 1rem;
+             margin-bottom: 1.5rem;
+         });
+    }
+
+    @media @mediaMDOnly {
+        .element(main,{
+            gap: 10%;
+         });
+         .element(container,{
+             flex: 1;
+             margin-bottom: 1.5rem;
+         });
+    }
+
 }
