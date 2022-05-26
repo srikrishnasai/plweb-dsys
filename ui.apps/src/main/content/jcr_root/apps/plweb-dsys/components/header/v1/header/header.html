@@ -68,7 +68,7 @@
 						<a target="${item.linkTarget}" class="dsys-text dsys-text--microcopy dsys-link navigation-link"
 							href="${linkhelper.linkURL}">${item.linkText}</a>
 							<!-- Dropdown icon.Only displayed in device whose size is less than 991px -->
-						<div id="dropdownButton" class="secondary-nav__drop-down-mobile"></div>
+						<div id="dropdownButton"  data-sly-test="${item.secondaryNavXfPath}"  class="secondary-nav__drop-down-mobile"></div>
 					</div>
 					<!-- Main dropdown container for megamenu. Padding is applied to this div -->
 					<div data-sly-test="${item.secondaryNavXfPath}" id="dropdown" class="secondary-nav__dropdown">

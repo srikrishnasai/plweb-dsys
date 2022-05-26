@@ -18,6 +18,11 @@
     var ACTIVATE_LIST_CLASS = "activate-list";
 
     function showMegaMenu(dropdownElem, button) {
+        var hasUpArrow = $('.secondary-nav__navigation').find(".secondary-nav--up-arrow");
+        if(hasUpArrow.length > 0){
+            $('.secondary-nav--up-arrow').parent().parent().find("#dropdown").removeAttr("style");
+            $('.secondary-nav__navigation').find(".secondary-nav--up-arrow").removeClass(UP_ARROW_CLASS);
+        }
         var maxHeight = $(dropdownElem).find("a").length * LIST_HEIGHT;
         $(dropdownElem).css("max-height", maxHeight + "px");
         $(button).addClass(UP_ARROW_CLASS);
@@ -28,6 +33,7 @@
         $(button).removeClass(UP_ARROW_CLASS);
     }
     function hideNav(button, nav) {
+        
         $(button).toggleClass(CLOSE_ARROW_CLASS);
         nav.removeClass("secondary-nav--dropdown-show");
         setTimeout(function () {
