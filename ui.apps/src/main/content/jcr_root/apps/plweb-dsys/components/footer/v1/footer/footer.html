@@ -15,7 +15,7 @@
             <nav class="footer__list">
                 <div data-sly-test="${footerObj.section1Title}" class="footer--mobile-nav-header-container">
                     <h6 class="footer__text dsys-text dsys-text--microcopy footer--heading"> ${footerObj.section1Title} </h6>
-                    <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
+                    <button data-sly-list="${model1.childResource.listChildren}" data-sly-test="${model1.childResource}" class="footer__drop-down"></button>
                 </div>
                 <ul class="footer__links footer--mobile-list" data-sly-test="${model1.childResource}"
                     data-sly-list="${model1.childResource.listChildren}">
@@ -30,7 +30,7 @@
             <nav class="footer__list">
                 <div data-sly-test="${footerObj.section2Title}" class="footer--mobile-nav-header-container">
                     <h6 class="footer__text dsys-text dsys-text--microcopy footer--heading">${footerObj.section2Title} </h6>
-                    <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
+                    <button data-sly-list="${model1.childResource.listChildren}"  data-sly-test="${model2.childResource}" class="footer__drop-down"></button>
                 </div>
                 <ul class="footer__links footer--mobile-list" data-sly-test="${model2.childResource}"
                     data-sly-list="${model2.childResource.listChildren}">
@@ -45,7 +45,7 @@
             <nav class="footer__list">
                 <div data-sly-test="${footerObj.section3Title}" class="footer--mobile-nav-header-container">
                     <h6 class="footer__text dsys-text dsys-text--microcopy footer--heading">${footerObj.section3Title}</h6>
-                    <button data-sly-list="${model1.childResource.listChildren}" class="footer__drop-down"></button>
+                    <button data-sly-list="${model1.childResource.listChildren}" data-sly-test="${model3.childResource}" class="footer__drop-down"></button>
                 </div>
                 <ul class="footer__links footer--mobile-list" data-sly-test="${model3.childResource}"
                     data-sly-list="${model3.childResource.listChildren}">
