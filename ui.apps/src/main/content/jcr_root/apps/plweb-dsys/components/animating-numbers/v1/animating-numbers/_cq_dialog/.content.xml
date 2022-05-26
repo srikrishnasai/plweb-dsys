@@ -2,112 +2,120 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Animating Numbers"
-    sling:resourceType="cq/gui/components/authoring/dialog">
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[plweb-dsys.authoring.input.validation]">
     <content
-        granite:class="cmp-list--editor"
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/container">
+		granite:class="cmp-list--editor"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
         <items jcr:primaryType="nt:unstructured">
-            <animatingNumbers
+            <tabs
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Animating Numbers"
-                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                extraClientlibs="[plweb-dsys.authoring.input.validation]">
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
-                    <column
+                    <general
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        jcr:title="General"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
-                            <startValue
+                            <column
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Enter the Starting value of the animating number"
-                                fieldLabel="Starting Value"
-                                name="./animatingNumbersStartValue"
-                                validation="special-character-validation"/>
-                            <endValue
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Enter the End value of the animating number"
-                                fieldLabel="End Value"
-                                name="./animatingNumbersEndValue"
-                                validation="special-character-validation"/>
-                            <incrementCounter
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Enter the value for the number to increment by"
-                                fieldLabel="Increment Value"
-                                name="./animatingNumbersIncrementValue"
-                                validation="special-character-validation"/>
-                            <animationInterval
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldDescription="Select the duration for the increment of number in milliseconds"
-                                fieldLabel="Time Interval (in milliseconds)"
-                                name="./animatingNumbersAnimationInterval"
-                                validation="special-character-validation">
-                                <items
-                                    jcr:primaryType="nt:unstructured"
-                                    default="60">
-                                    <extraslow100ms
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Extra Slow (100ms)"
-                                        value="100"/>
-                                    <slow80ms
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Slow (80ms)"
-                                        value="80"/>
-                                    <normal60ms
-                                        jcr:primaryType="nt:unstructured"
-                                        selected="{Boolean}true"
-                                        text="Normal (60ms)"
-                                        value="60"/>
-                                    <fast40ms
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Fast (40ms)"
-                                        value="40"/>
-                                    <extrafast20ms
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Extra Fast (20ms)"
-                                        value="20"/>
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <startValue
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldDescription="Enter the Starting value of the animating number"
+										fieldLabel="Starting Value"
+										name="./animatingNumbersStartValue"
+										validation="special-character-validation"/>
+									<endValue
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldDescription="Enter the End value of the animating number"
+										fieldLabel="End Value"
+										name="./animatingNumbersEndValue"
+										validation="special-character-validation"/>
+									<incrementCounter
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldDescription="Enter the value for the number to increment by"
+										fieldLabel="Increment Value"
+										name="./animatingNumbersIncrementValue"
+										validation="special-character-validation"/>
+									<animationInterval
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/form/select"
+										fieldDescription="Select the duration for the increment of number in milliseconds"
+										fieldLabel="Time Interval (in milliseconds)"
+										name="./animatingNumbersAnimationInterval"
+										validation="special-character-validation">
+										<items
+											jcr:primaryType="nt:unstructured"
+											default="60">
+											<extraslow100ms
+												jcr:primaryType="nt:unstructured"
+												text="Extra Slow (100ms)"
+												value="100"/>
+											<slow80ms
+												jcr:primaryType="nt:unstructured"
+												text="Slow (80ms)"
+												value="80"/>
+											<normal60ms
+												jcr:primaryType="nt:unstructured"
+												selected="{Boolean}true"
+												text="Normal (60ms)"
+												value="60"/>
+											<fast40ms
+												jcr:primaryType="nt:unstructured"
+												text="Fast (40ms)"
+												value="40"/>
+											<extrafast20ms
+												jcr:primaryType="nt:unstructured"
+												text="Extra Fast (20ms)"
+												value="20"/>
+										</items>
+									</animationInterval>
+									<prefix
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldDescription="Enter the prefix for the number that displays before the number"
+										fieldLabel="Number Prefix"
+										name="./animatingNumbersPrefix"/>
+									<suffix
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldDescription="Enter the suffix for the number that displays after the number"
+										fieldLabel="Number Suffix"
+										name="./animatingNumbersSuffix"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldDescription="Enter the label that displays below the number"
+										fieldLabel="Label"
+										name="./animatingNumbersLabel"/>
+									<color
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Choose the color for the numbers and the label"
+										fieldLabel="Color"
+										name="./animatingNumbersColor">
+										<items
+											jcr:primaryType="nt:unstructured"
+											sling:resourceSuperType="/apps/plweb-dsys/common/common-color-picker/v1/common-color-picker/cq:dialog/content/items/column/items/color/items"/>
+									</color>
                                 </items>
-                            </animationInterval>
-                            <prefix
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Enter the prefix for the number that displays before the number"
-                                fieldLabel="Number Prefix"
-                                name="./animatingNumbersPrefix"/>
-                            <suffix
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Enter the suffix for the number that displays after the number"
-                                fieldLabel="Number Suffix"
-                                name="./animatingNumbersSuffix"/>
-                            <label
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Enter the label that displays below the number"
-                                fieldLabel="Label"
-                                name="./animatingNumbersLabel"/>
-                            <color
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                fieldDescription="Choose the color for the numbers and the label"
-                                fieldLabel="Color"
-                                name="./animatingNumbersColor">
-                                <items
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceSuperType="/apps/plweb-dsys/common/common-color-picker/v1/common-color-picker/cq:dialog/content/items/column/items/color/items"/>
-                            </color>
+                            </column>
                         </items>
-                    </column>
-					<authControl
+                    </general>
+                    <authControl
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/include"
                         path="plweb-dsys/common/authcontrol/cq:dialog/content/items/tabs/items/authControl"/>
                 </items>
-            </animatingNumbers>
+            </tabs>
         </items>
     </content>
 </jcr:root>
