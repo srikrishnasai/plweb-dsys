@@ -6,10 +6,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
@@ -26,26 +24,16 @@ public class MultifieldHelperModel {
 	@RequestAttribute
 	private String nodeName = null;
 
-	@RequestAttribute
-	private String nodePath = null;
-
 	@SlingObject
 	public Resource resource;
-
-	@SlingObject
-	public ResourceResolver resolver;
 
 	public Resource childResource;
 	int length = 0;
 
 	@PostConstruct
 	protected void init() {
-		if (StringUtils.isNotBlank(nodeName)) {
+		if (nodeName != null) {
 			childResource = resource.getChild(nodeName);
-		}
-
-		if (StringUtils.isNotBlank(nodePath)) {
-			childResource = resolver.getResource(nodePath);
 		}
 	}
 

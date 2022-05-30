@@ -3,7 +3,7 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="Accordion"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="[plweb-dsys.commons.editor.dialog.childreneditor.v1,core.wcm.components.accordion.v1.editor]"
+    extraClientlibs="[core.wcm.components.commons.editor.dialog.childreneditor.v1,core.wcm.components.accordion.v1.editor]"
     helpPath="https://www.adobe.com/go/aem_cmp_accordion_v1"
     trackingFeature="core-components:accordion:v1">
     <content
@@ -16,30 +16,6 @@
                 sling:resourceType="granite/ui/components/coral/foundation/tabs"
                 maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
-                    <accordionItems
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Items"
-                        sling:resourceType="granite/ui/components/coral/foundation/container"
-                        margin="{Boolean}true">
-                        <items jcr:primaryType="nt:unstructured">
-                            <columns
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                                margin="{Boolean}true">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <column
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <accordionItems
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="plweb-dsys/common/childreneditor/v1/childreneditor"/>
-                                        </items>
-                                    </column>
-                                </items>
-                            </columns>
-                        </items>
-                    </accordionItems>
                     <authControl
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/include"
