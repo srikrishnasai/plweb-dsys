@@ -1,0 +1,80 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2018 Adobe
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<coral-multifield data-sly-use.childrenEditor="com.adobe.cq.wcm.core.components.commons.editor.dialog.childreneditor.Editor"
+                  data-sly-use.iconTemplate="icon.html"
+                  data-cmp-is="childrenEditor"
+                  class="cmp-childreneditor"
+                  data-container-path = "${childrenEditor.container.path}">
+    <sly data-sly-use.multiHelper="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodePath=childrenEditor.container.path}"/>
+    <coral-multifield-item data-sly-repeat.item="${childrenEditor.items}" data-name="${item.name}">
+        <div class="cmp-childreneditor__item">
+            <foundation-autocomplete class="coral-Form-field cmp-childreneditor__item-iconPath" data-cmp-hook-childreneditor="iconPath" name="./${item.name}/iconPath" placeholder="Icon Path" pickersrc="/mnt/overlay/dam/cfm/admin/content/v2/associated-content/assetpicker.html?root=/content/dam&amp;mode=single&amp;filter=nosystem" data-foundation-validation="">
+            <div class="foundation-autocomplete-inputgroupwrapper">
+               <div class="coral-InputGroup" role="presentation">
+                  <input is="coral-textfield" class="coral3-Textfield coral-InputGroup-input" autocomplete="off" placeholder="Icon Path" id="coral-id-657" role="combobox" aria-label="Link"  aria-invalid="false">
+                  <span class="coral-InputGroup-button">
+                     <button is="coral-button" class="coral3-Button coral3-Button--secondary" size="M" variant="secondary" title="Open Selection Dialog" type="button" aria-label="Open Selection Dialog">
+                        <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--select" icon="select" size="S" autoarialabel="on" role="img" aria-label="select"></coral-icon>
+                        <coral-button-label></coral-button-label>
+                     </button>
+                  </span>
+               </div>
+            </div>
+            <coral-overlay foundation-autocomplete-suggestion="" class="foundation-picker-buttonlist coral3-Overlay" data-foundation-picker-buttonlist-src="/mnt/overlay/cq/gui/content/coral/common/form/pagefield/suggestion{.offset,limit}.html?root=%2fcontent{&amp;query}" aria-hidden="true" style="display: none;"></coral-overlay>
+            <coral-taglist foundation-autocomplete-value="" name="./${item.name}/iconPath" class="coral3-TagList" aria-disabled="false" role="grid" aria-live="off" aria-atomic="false" aria-relevant="additions" aria-readonly="false" aria-invalid="false">
+               <coral-tag value="${multiHelper.childResource.listChildren[itemList.index].iconPath}" tabindex="0" class="coral3-Tag coral3-Tag--large" role="row" aria-labelledby="coral-id-658">
+                  <span handle="buttonCell" role="gridcell">
+                     <button is="coral-button" class="coral3-Button coral3-Button--minimal coral3-Tag-removeButton" size="M" variant="minimal" tracking="off" handle="button" type="button" icon="close" iconsize="XS" title="Remove" tabindex="-1" coral-close="" aria-label="Remove: ${multiHelper.childResource.listChildren[itemList.index].iconPath}">
+                        <coral-icon class="coral3-Icon coral3-Icon--close coral3-Icon--sizeXS" icon="close" size="XS" autoarialabel="on" role="img" aria-label="close"></coral-icon>
+                        <coral-button-label></coral-button-label>
+                     </button>
+                  </span>
+                  <coral-tag-label role="rowheader" id="coral-id-658"></coral-tag-label>
+                  <input handle="input" type="hidden" name="./${item.name}/iconPath" value="${multiHelper.childResource.listChildren[itemList.index].iconPath}">
+               </coral-tag>
+               <object aria-hidden="true" tabindex="-1" style="display:block; position:absolute; top:0; left:0; height:100%; width:100%; opacity:0; overflow:hidden; z-index:-100;" type="text/html" data="about:blank">&ZeroWidthSpace;</object>
+            </coral-taglist>
+            <input class="foundation-field-related" type="hidden" name="./${item.name}/iconPath@Delete">
+         </foundation-autocomplete>
+            <sly data-sly-call="${iconTemplate.icon @ item=item}"></sly>
+            <input is="coral-textfield"
+                   class="cmp-childreneditor__item-title"
+                   data-cmp-hook-childreneditor="itemTitle"
+                   name="./${item.name}/cq:panelTitle"
+                   value="${item.value}"
+                   placeholder="${item.title}">
+        </div>
+    </coral-multifield-item>
+    <button data-cmp-hook-childreneditor="add" type="button" is="coral-button">${'Add' @ i18n}</button>
+    <template coral-multifield-template="">
+        <div class="cmp-childreneditor__item">
+         <foundation-autocomplete class="coral-Form-field cmp-childreneditor__item-iconPath" data-cmp-hook-childreneditor="iconPath" name="iconPath" placeholder="Icon Path" pickersrc="/mnt/overlay/dam/cfm/admin/content/v2/associated-content/assetpicker.html?root=/content/dam&amp;mode=single&amp;filter=nosystem" data-foundation-validation="">
+            <coral-overlay foundation-autocomplete-suggestion="" class="foundation-picker-buttonlist" data-foundation-picker-buttonlist-src="/mnt/overlay/cq/gui/content/coral/common/form/pagefield/suggestion{.offset,limit}.html?root=%2fcontent{&amp;query}"></coral-overlay>
+            <coral-taglist foundation-autocomplete-value="" name="iconPath">
+               <coral-tag value=""></coral-tag>
+            </coral-taglist>
+            <input class="foundation-field-related" type="hidden" name="iconPath@Delete">
+         </foundation-autocomplete>
+            <span class="cmp-childreneditor__item-icon"
+                  data-cmp-hook-childreneditor="itemIcon"></span>
+            <input is="coral-textfield"
+                   class="cmp-childreneditor__item-title"
+                   data-cmp-hook-childreneditor="itemTitle" required>
+            <input type="hidden" data-cmp-hook-childreneditor="itemResourceType">
+            <input type="hidden" data-cmp-hook-childreneditor="itemTemplatePath">
+        </div>
+    </template>
+</coral-multifield>
