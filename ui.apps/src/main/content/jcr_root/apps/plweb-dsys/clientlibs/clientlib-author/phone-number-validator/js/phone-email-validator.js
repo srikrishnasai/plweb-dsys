@@ -8,7 +8,7 @@
             let pattern = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
             let value = el.val();
             if (value && !pattern.test(value)) {
-                return "123-456-7890 or (123) 456-7890 or 123 456 7890 or 123.456.7890 or +91 (123) 456-7890";
+                return "Enter valid phone number as per given format";
             }
         }
     });

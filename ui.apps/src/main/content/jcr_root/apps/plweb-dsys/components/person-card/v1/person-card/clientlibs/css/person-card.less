@@ -14,6 +14,7 @@
     .element(compact-main,{
         display: flex;
         align-items: center;
+        padding: 0.5rem 0rem;
     });
     .element(compact-container,{
         align-self: center;
@@ -22,6 +23,8 @@
         margin-right: @24;
         width: 83px;
         height: 83px;
+        min-width: 83px;
+        min-height: 83px;
     });
     .element(compact-name,{
         font-size: 16px;
@@ -74,6 +77,8 @@
     .modifier(bio-avatar,{
         width: 220px;
         height: 220px;
+        min-width: 220px;
+        min-height: 220px;
         margin-right: @48;
     });
     .element(bio-name,{
@@ -122,7 +127,7 @@
 
         .element(bio-main,{
             display: flex;
-            background: @textBodyDark;
+            //background: @textBodyDark;
             padding: @32 @4;
         });
         .modifier(bio-desktop,{
@@ -145,6 +150,8 @@
         .modifier(bio-avatar,{
             width: 83px;
             height: 83px;
+            min-width: 83px;
+            min-height: 83px;
             margin-right: @24;
         });
         .element(bio-desc,{
