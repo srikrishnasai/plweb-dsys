@@ -8,7 +8,9 @@ data-sly-test="${authControlObj.hasComponentAccess}">
      data-cmp-data-layer="${accordion.data.json}"
      data-cmp-single-expansion="${accordion.singleExpansion}"
      data-placeholder-text="${wcmmode.edit && 'Please drag Accordion item components here' @ i18n}">
-     <sly data-sly-use.multiHelper="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodePath=resource.path}"/>
+	 <sly data-sly-use.clientlib="${'/libs/granite/sightly/templates/clientlib.html'}"
+     data-sly-call="${clientLib.all @ categories='plweb-dsys.core.wcm.components.accordion.v1'}"/>
+    <sly data-sly-use.multiHelper="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodePath=resource.path}"/>
     <div data-sly-test="${accordion.items.size > 0}"
          data-sly-repeat.item="${accordion.items}"
          class="cmp-accordion__item"
