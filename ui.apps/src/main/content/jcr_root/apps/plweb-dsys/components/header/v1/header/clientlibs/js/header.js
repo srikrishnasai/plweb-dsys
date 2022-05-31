@@ -13,9 +13,10 @@
 
     var ANIMATION_DURATION = 600;
 
-    var LIST_ID = "#list"
+    var LIST_ID = "#list";
 
     var ACTIVATE_LIST_CLASS = "activate-list";
+
 
     function showMegaMenu(dropdownElem, button) {
         var hasUpArrow = $('.secondary-nav__navigation').find(".secondary-nav--up-arrow");
@@ -54,6 +55,8 @@
         }, TIME_TO_ADD_DISPLAY_CLASS);
     }
 
+    
+
     $(window).on("load", function () {
         $(".header").each(function () {
             var hamburger = $("#hamburger");
@@ -66,25 +69,14 @@
         $(".secondary-nav__navigation").each(function () {
             var nav = this;
             $(nav)
-                .find("li")
+                .find(".secondary-nav__link-wrapper")
                 .each(function () {
                     if ($(document).width() > MAX_TABLET_WIDTH) {
                         var dropdown = $(this).find("#dropdown");
-                        $(this).hover(
-                            function () {
-                                $(LIST_ID).removeClass(ACTIVATE_LIST_CLASS)
-                                if (!dropdown.hasClass("secondary-nav--dropdown-active")) {
-                                    dropdown.addClass("secondary-nav--dropdown-active");
-                                    setTimeout(function () {
-                                        dropdown.children(0).addClass("secondary-nav--dropdown-show");
-                                    }, TIME_TO_ADD_DISPLAY_CLASS);
-                                }
-                            },
-                            function () {
-                                dropdown.children(0).removeClass("secondary-nav--dropdown-show");
-                                setTimeout(function () {
-                                    dropdown.removeClass("secondary-nav--dropdown-active");
-                                }, ANIMATION_DURATION + TIME_TO_ADD_DISPLAY_CLASS);
+                        $(this).hover(function () {
+                                $(dropdown).fadeIn();
+                            }, function () {
+                                $(dropdown).fadeOut();
                             }
                         );
                     }
