@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Secondary Nav"
-	extraClientlibs="[plweb-dsys.author.restrict-input-special-character]"
+	extraClientlibs="[plweb-dsys.author.restrict-input-special-character, plweb-dsys.rte-charLimit]"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
@@ -97,6 +97,8 @@
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                                 fieldLabel="Description"
+                                                                class="custom-rte"
+                                                                max-char-limit="150"
                                                                 name="./columnOne/overview/overviewDescription"
                                                                 useFixedInlineToolbar="{Boolean}true">
                                                                 <rtePlugins
@@ -216,6 +218,8 @@
                                                                                     sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                                                     fieldLabel="Description"
                                                                                     name="./description"
+                                                                                    class="custom-rte"
+                                                                                    max-char-limit="150"
                                                                                     useFixedInlineToolbar="{Boolean}true">
                                                                                     <rtePlugins
                                                                                         jcr:primaryType="nt:unstructured"
@@ -271,10 +275,28 @@
                                                                 title="Upload Image Asset"
                                                                 uploadUrl="${suffix.path}"
                                                                 useHTML5="{Boolean}true"/>
+                                                            <showOriginalImage
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                checked="{Boolean}false"
+                                                                fieldDescription="This will load the Original image"
+                                                                name="./columnOne/marketingtile/useOriginalImage"
+                                                                text="Use Original Images"
+                                                                value="true"/>
+                                                            <showTransparentImage
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                checked="{Boolean}false"
+                                                                fieldDescription="Check this checkbox if the image is transparent"
+                                                                name="./columnOne/marketingtile/useTransparentImage"
+                                                                text="Use Transparent Images"
+                                                                value="true"/>
                                                             <desciption
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                                 fieldLabel="Description"
+                                                                class="custom-rte"
+                                                                max-char-limit="150"
                                                                 name="./columnOne/marketingtile/description"
                                                                 useFixedInlineToolbar="{Boolean}true">
                                                                 <rtePlugins
@@ -379,6 +401,8 @@
                                                             <desciption
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                                class="custom-rte"
+                                                                max-char-limit="150"
                                                                 fieldLabel="Description"
                                                                 name="./columnTwo/overview/overviewDescription"
                                                                 useFixedInlineToolbar="{Boolean}true">
@@ -498,6 +522,8 @@
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                                                     fieldLabel="Description"
+                                                                                    class="custom-rte"
+                                                                                    max-char-limit="150"
                                                                                     name="./description"
                                                                                     useFixedInlineToolbar="{Boolean}true">
                                                                                     <rtePlugins
@@ -554,10 +580,28 @@
                                                                 title="Upload Image Asset"
                                                                 uploadUrl="${suffix.path}"
                                                                 useHTML5="{Boolean}true"/>
+                                                            <showOriginalImage
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                checked="{Boolean}false"
+                                                                fieldDescription="This will load the Original image"
+                                                                name="./columnTwo/marketingtile/useOriginalImage"
+                                                                text="Use Original Images"
+                                                                value="true"/>
+                                                            <showTransparentImage
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                checked="{Boolean}false"
+                                                                fieldDescription="Check this checkbox if the image is transparent"
+                                                                name="./columnTwo/marketingtile/useTransparentImage"
+                                                                text="Use Transparent Images"
+                                                                value="true"/>
                                                             <desciption
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                                 fieldLabel="Description"
+                                                                class="custom-rte"
+                                                                max-char-limit="150"
                                                                 name="./columnTwo/marketingtile/description"
                                                                 useFixedInlineToolbar="{Boolean}true">
                                                                 <rtePlugins
@@ -663,6 +707,8 @@
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                                 fieldLabel="Description"
+                                                                class="custom-rte"
+                                                                max-char-limit="150"
                                                                 name="./columnThree/overview/overviewDescription"
                                                                 useFixedInlineToolbar="{Boolean}true">
                                                                 <rtePlugins
@@ -781,6 +827,8 @@
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                                                     fieldLabel="Description"
+                                                                                    class="custom-rte"
+                                                                                    max-char-limit="150"
                                                                                     name="./description"
                                                                                     useFixedInlineToolbar="{Boolean}true">
                                                                                     <rtePlugins
@@ -837,10 +885,28 @@
                                                                 title="Upload Image Asset"
                                                                 uploadUrl="${suffix.path}"
                                                                 useHTML5="{Boolean}true"/>
+                                                            <showOriginalImage
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                checked="{Boolean}false"
+                                                                fieldDescription="This will load the Original image"
+                                                                name="./columnThree/marketingtile/useOriginalImage"
+                                                                text="Use Original Images"
+                                                                value="true"/>
+                                                            <showTransparentImage
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                checked="{Boolean}false"
+                                                                fieldDescription="Check this checkbox if the image is transparent"
+                                                                name="./columnThree/marketingtile/useTransparentImage"
+                                                                text="Use Transparent Images"
+                                                                value="true"/>
                                                             <desciption
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                                 fieldLabel="Description"
+                                                                class="custom-rte"
+                                                                max-char-limit="150"
                                                                 name="./columnThree/marketingtile/description"
                                                                 useFixedInlineToolbar="{Boolean}true">
                                                                 <rtePlugins

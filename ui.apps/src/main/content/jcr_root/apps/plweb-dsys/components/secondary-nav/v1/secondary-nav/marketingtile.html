@@ -1,7 +1,10 @@
 <sly data-sly-template.marketingtile="${@ marketingObj}">
-   <div id="marketing" class="secondary-nav__marketing">
-      <img data-sly-test="${marketingObj.fileReference}" class="marketing__image" alt="Marketing Image" src="${marketingObj.fileReference}"/>
-      <div class="dsys-text dsys-text--caption marketing__description">${marketingObj.description @ context='html'}
+   <sly
+    data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform=marketingObj.useOriginalImage?'dsys-flexImg':'dsys-flexImg576w', imagePath=marketingObj.fileReference, transparent=marketingObj.useTransparentImage}" />
+      <div id="marketing" class="secondary-nav__marketing">
+         <img data-sly-test="${marketingObj.fileReference}" class="marketing__image" alt="Marketing Image" src="${imageurl.transformedImageUrl}"/>
+         <div class="dsys-text dsys-text--caption marketing__description">${marketingObj.description @ context='html'}
+         </div>
       </div>
-   </div>
 </sly>
+

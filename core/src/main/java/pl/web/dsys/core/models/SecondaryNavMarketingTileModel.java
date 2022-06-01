@@ -29,6 +29,12 @@ public class SecondaryNavMarketingTileModel {
 	private String fileReference;
 
 	@ValueMapValue
+	private String useOriginalImage;
+
+	@ValueMapValue
+	private String useTransparentImage;
+
+	@ValueMapValue
 	private String description;
 
 	@PostConstruct
@@ -42,6 +48,14 @@ public class SecondaryNavMarketingTileModel {
 
 	public String getDescription() {
 		return description;
+	}
+
+	public String getUseOriginalImage() {
+		return useOriginalImage;
+	}
+
+	public String getUseTransparentImage() {
+		return useTransparentImage;
 	}
 
 }

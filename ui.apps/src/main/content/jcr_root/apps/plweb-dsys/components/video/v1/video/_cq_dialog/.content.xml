@@ -19,7 +19,7 @@
                             <listSettings
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Video Settings"
-                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
                                     <column
                                         jcr:primaryType="nt:unstructured"
