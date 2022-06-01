@@ -52,7 +52,28 @@
             .uppercase;
             min-height: 25px;
             box-sizing: border-box;
+            width: fit-content;
+            position: relative;
+            &:after {    
+                content: '';
+                height: 1px;
+                width: 100%;
+                transition: transform @long;
+                background-color: @primary;
+                transform: scaleX(0);
+                transform-origin: center;
+                position: absolute;
+                left: 0;
+                pointer-events: none;
+                top: 100%;
+            }
         }
+
+
+      
+
+        
+
     });
     .element(dropdown,{
         position: absolute;
@@ -67,7 +88,7 @@
         display: none;
         .dropdown{
             .element(container,{
-                opacity: 0;
+                opacity: 1;
                 transition: opacity @long linear;
                 max-width    : 1280px;
                 margin: 0 auto;
@@ -263,7 +284,7 @@
             background: transparent;
             display: block;
             max-height: 0px;
-            transition: all @long linear;
+            transition: max-height @long linear;
             overflow: hidden;
             .dropdown{
                 .element(container,{
@@ -310,9 +331,25 @@
     }
 }
 
+.secondary-nav__link-wrapper:hover{
+
+    .navigation-link{
+        color: @primary !important;  //Needed to override color given by the element's class
+        &:after{
+            transform: scaleX(1);
+        }
+    }
+}
+
 @media @mediaTablet{
     .secondary-nav{
         display: block;
+    }
+}
+
+@media screen and (min-width:1199px) {
+    .secondary-nav__dropdown{
+        top: ~'calc(100% - 16px)';
     }
 }
 

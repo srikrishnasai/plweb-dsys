@@ -61,11 +61,11 @@
 		<nav id="navigaton" class="secondary-nav__navigation">
 			<ul data-sly-list="${headerRef.primarylinks}">
 			<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.targetPath}"/>
-				<li data-sly-test="${itemControlObj.resourceAuthorized}">
+				<li data-sly-test="${itemControlObj.resourceAuthorized}" class="secondary-nav__link-wrapper">
 					<div class="secondary-nav__link-container">
 						<sly data-sly-test="${item.targetPath}"
 							data-sly-use.linkhelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url=item.targetPath}" />
-						<a target="${item.linkTarget}" class="dsys-text dsys-text--microcopy dsys-link navigation-link"
+						<a target="${item.linkTarget}" class="dsys-text dsys-text--microcopy navigation-link"
 							href="${linkhelper.linkURL}">${item.linkText}</a>
 							<!-- Dropdown icon.Only displayed in device whose size is less than 991px -->
 						<div id="dropdownButton"  data-sly-test="${item.secondaryNavXfPath}"  class="secondary-nav__drop-down-mobile"></div>
