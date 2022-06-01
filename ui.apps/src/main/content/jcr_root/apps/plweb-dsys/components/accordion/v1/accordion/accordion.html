@@ -23,7 +23,7 @@ data-sly-test="${authControlObj.hasComponentAccess}">
                     class="cmp-accordion__button${item.name in accordion.expandedItems ? ' cmp-accordion__button--expanded' : ''}"
                     aria-controls="${item.id}-panel"
                     data-cmp-hook-accordion="button">
-                <div class="cmp-accordion__front-icon" style="background-image:url('${multiHelper.childResource.listChildren[itemList.index].iconPath @ context = 'uri'}') "></div>
+                <div data-sly-test="${multiHelper.childResource.listChildren[itemList.index].iconPath}" class="cmp-accordion__front-icon" style="background-image:url('${multiHelper.childResource.listChildren[itemList.index].iconPath @ context = 'uri'}') "></div>
                 <span class="cmp-accordion__title">${item.title}</span>
                 <div class="cmp-accordion__icon"></div>
             </button>
