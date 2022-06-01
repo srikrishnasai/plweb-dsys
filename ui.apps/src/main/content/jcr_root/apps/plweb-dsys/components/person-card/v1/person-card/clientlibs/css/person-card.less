@@ -46,6 +46,8 @@
         height: 16px;
         display: inline-block;
         width: 20px;
+        min-width: 20px;
+        background-repeat: no-repeat;
     });
     .element(phone,{
         background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/phone.svg);
@@ -53,6 +55,17 @@
         height: 20px;
         display: inline-block;
         width: 20px;
+        min-width: 20px;
+        background-repeat: no-repeat;
+    });
+    .element(linkedin,{
+        background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/linkedin.svg);
+        margin-right: @8;
+        height: 30px;
+        display: inline-block;
+        width: 20px;
+        min-width: 30px;
+        background-repeat: no-repeat;
     });
     .element(link,{
         text-decoration: none;
@@ -162,5 +175,11 @@
             align-items: center;
             margin-bottom: 1.5rem;
         });
+    }
+}
+
+@media @mediaMobile {
+    .person-card__link-wrapper{
+        flex-direction: column;
     }
 }
