@@ -4,7 +4,7 @@
 
 <sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit && !properties.domain)}"/>
 <sly data-sly-test.calcId="${properties.code ? properties.code : 'ret05'}"/>
-<sly data-sly-test.calcUrl="${properties.domain}/calculators/${calcId}?skn=382&r=2&c=990000&tc=CCCCCC&tabs=${properties.disableTabs ? 0 : 1}&global-disclosure=${properties.disableDisclosures ? 'off' : 'on'}"/>
+<sly data-sly-set.calcUrl="${properties.domain}/calculators/${calcId}?skn=382&r=2&c=990000&tc=CCCCCC&tabs=${properties.disableTabs ? 0 : 1}&global-disclosure=${properties.disableDisclosures ? 'off' : 'on'}"/>
 <iframe data-component-name="Inline Calculator" data-sly-test.publish="${properties.domain && !wcmmode.edit}"
     data-tool-vendor="${properties.domain}"
     data-tool-id="${calcId}"
