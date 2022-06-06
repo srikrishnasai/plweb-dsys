@@ -1,3 +1,6 @@
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/global.less";
 /*
  *  Copyright 2018 Adobe
  *
@@ -14,28 +17,68 @@
  *  limitations under the License.
  */
 
-.cmp-tabs__tablist {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    list-style: none;
-}
+.cmp-tabs {
+    position: relative;
 
-.cmp-tabs__tab {
-    box-sizing: border-box;
-    border-bottom: 1px solid transparent;
-    padding: .5rem 1rem;
-    cursor: pointer;
-
-    &--active {
-        border-color: inherit;
+    &__tablist {
+        display: flex;
+        padding-left: 0;
+        list-style: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        border-bottom: 1px solid @neutral200;
     }
-}
 
-.cmp-tabs__tabpanel {
-    display: none;
+    &__tablist::-webkit-scrollbar {
+        display: none;
+    }
 
-    &--active {
-        display: block;
+    &__tab {
+        box-sizing: border-box;
+        border-bottom: 1px solid transparent;
+        cursor: pointer;
+        padding: @16 @64;
+        font-weight: 500;
+
+        &--active {
+            border-color: @blue500;
+            color: @blue500;
+            font-weight: 700;
+        }
+    }
+
+    &__tabpanel {
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    &__paddle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: 57px;
+        font-size: @24;
+        background: @white;
+        border: unset;
+        cursor: pointer;
+        font-weight: 200;
+
+        &--left {
+            left: 0;
+        }
+
+        &--right {
+            right: 0;
+        }
+
+        &--hidden {
+            display: none;
+        }
     }
 }

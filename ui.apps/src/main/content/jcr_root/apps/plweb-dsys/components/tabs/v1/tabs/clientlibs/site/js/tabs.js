@@ -16,7 +16,7 @@
 /* global
     CQ
  */
-(function() {
+(function () {
     "use strict";
 
     var containerUtils = window.CQ && window.CQ.CoreComponents && window.CQ.CoreComponents.container && window.CQ.CoreComponents.container.utils ? window.CQ.CoreComponents.container.utils : undefined;
@@ -82,6 +82,7 @@
             config.element.removeAttribute("data-" + NS + "-is");
 
             cacheElements(config.element);
+            initTabScrollWithEvents();
             that._active = getActiveIndex(that._elements["tab"]);
 
             if (that._elements.tabpanel) {
@@ -108,7 +109,7 @@
                  * - if so, route the "navigate" operation to enact a navigation of the Tabs based on index data
                  */
                 CQ.CoreComponents.MESSAGE_CHANNEL = CQ.CoreComponents.MESSAGE_CHANNEL || new window.Granite.author.MessageChannel("cqauthor", window);
-                CQ.CoreComponents.MESSAGE_CHANNEL.subscribeRequestMessage("cmp.panelcontainer", function(message) {
+                CQ.CoreComponents.MESSAGE_CHANNEL.subscribeRequestMessage("cmp.panelcontainer", function (message) {
                     if (message.data && message.data.type === "cmp-tabs" && message.data.id === that._elements.self.dataset["cmpPanelcontainerId"]) {
                         if (message.data.operation === "navigate") {
                             navigate(message.data.index);
@@ -166,6 +167,109 @@
         }
 
         /**
+        * Checking element is scrollable or not
+        *
+        * @private
+        */
+        function isScrollable(ele) {
+            // Compare the width to see if the element has scrollable content
+            const hasScrollableContent = ele.scrollWidth > ele.clientWidth;
+
+            // It's not enough because the element's `overflow-x` style can be set as
+            // * `hidden`
+            // * `hidden !important`
+            // In those cases, the scrollbar isn't shown
+            const overflowXStyle = window.getComputedStyle(ele).overflowX;
+            const isOverflowHidden = overflowXStyle.indexOf('hidden') !== -1;
+
+            return hasScrollableContent && !isOverflowHidden;
+        };
+
+        /**
+         * Init Tabs scroll
+         *
+         * @private
+         */
+        function initTabScrollWithEvents() {
+            // duration of scroll animation
+            var scrollDuration = 300;
+            // paddles
+            var leftPaddle = document.getElementsByClassName('cmp-tabs__paddle--left');
+            var rightPaddle = document.getElementsByClassName('cmp-tabs__paddle--right');
+
+            // get some relevant size for the paddle triggering point
+            var paddleMargin = 20;
+            // get items dimensions
+            var itemsLength = $('.cmp-tabs__tab').length;
+            var itemSize = $('.cmp-tabs__tab').outerWidth(true);
+
+            var getMenuWrapperSize = function () {
+                return $('.cmp-tabs__tablist').outerWidth();
+            }
+            var menuWrapperSize = getMenuWrapperSize();
+
+            // get total width of all menu items
+            var getMenuSize = function () {
+                return itemsLength * itemSize;
+            };
+            var menuSize = getMenuSize();
+            // get how much of menu is invisible
+            var menuInvisibleSize = menuSize - menuWrapperSize;
+
+            var getMenuSize = function () {
+                return itemsLength * itemSize;
+            };
+
+            // get how much have we scrolled to the left
+            var getMenuPosition = function () {
+                return $('#cmp-tabs').scrollLeft();
+            };
+
+            var menuSize = getMenuSize();
+
+            if (!isScrollable($('.cmp-tabs__tablist')[0])) {
+                $(leftPaddle).addClass('cmp-tabs__paddle--hidden');
+                $(rightPaddle).addClass('cmp-tabs__paddle--hidden');
+            }
+
+            $('#cmp-tabs').on('scroll', function () {
+                // get how much of menu is invisible
+                menuInvisibleSize = menuSize - menuWrapperSize;
+                // get how much have we scrolled so far
+                var menuPosition = getMenuPosition();
+
+                var menuEndOffset = menuInvisibleSize - paddleMargin;
+
+                // show & hide the paddles 
+                // depending on scroll position
+                if (menuPosition <= paddleMargin) {
+                    $(leftPaddle).addClass('cmp-tabs__paddle--hidden');
+                    $(rightPaddle).removeClass('cmp-tabs__paddle--hidden');
+                } else if (menuPosition < menuEndOffset) {
+                    // show both paddles in the middle
+                    $(leftPaddle).removeClass('cmp-tabs__paddle--hidden');
+                    $(rightPaddle).removeClass('cmp-tabs__paddle--hidden');
+                } else if (menuPosition >= menuEndOffset) {
+                    $(leftPaddle).removeClass('cmp-tabs__paddle--hidden');
+                    $(rightPaddle).addClass('cmp-tabs__paddle--hidden');
+                }
+            });
+
+
+            // scroll to left
+            $(".cmp-tabs__paddle--right").on('click', function () {
+                var leftPos = $('.cmp-tabs__tablist').scrollLeft();
+                $('#cmp-tabs').animate({ scrollLeft: leftPos + 175 }, scrollDuration);
+            });
+
+            // scroll to right
+            $(".cmp-tabs__paddle--left").on('click', function () {
+                var leftPos = $('.cmp-tabs__tablist').scrollLeft();
+                $('#cmp-tabs').animate({ scrollLeft: leftPos - 175 }, scrollDuration);
+            });
+        }
+
+        /**
          * Binds Tabs event handling
          *
          * @private
@@ -174,16 +278,17 @@
             var tabs = that._elements["tab"];
             if (tabs) {
                 for (var i = 0; i < tabs.length; i++) {
-                    (function(index) {
-                        tabs[i].addEventListener("click", function(event) {
+                    (function (index) {
+                        tabs[i].addEventListener("click", function (event) {
                             navigateAndFocusTab(index);
                         });
-                        tabs[i].addEventListener("keydown", function(event) {
+                        tabs[i].addEventListener("keydown", function (event) {
                             onKeyDown(event);
                         });
                     })(i);
                 }
             }
+
         }
 
         /**
@@ -404,15 +509,15 @@
 
         var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
         var body = document.querySelector("body");
-        var observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
                 // needed for IE
                 var nodesArray = [].slice.call(mutation.addedNodes);
                 if (nodesArray.length > 0) {
-                    nodesArray.forEach(function(addedNode) {
+                    nodesArray.forEach(function (addedNode) {
                         if (addedNode.querySelectorAll) {
                             var elementsArray = [].slice.call(addedNode.querySelectorAll(selectors.self));
-                            elementsArray.forEach(function(element) {
+                            elementsArray.forEach(function (element) {
                                 new Tabs({ element: element, options: readData(element) });
                             });
                         }
