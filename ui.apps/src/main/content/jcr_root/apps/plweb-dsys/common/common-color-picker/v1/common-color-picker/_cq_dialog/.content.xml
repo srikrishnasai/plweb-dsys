@@ -18,6 +18,10 @@
                         fieldLabel="Color"
                         name="./color">
                         <items jcr:primaryType="nt:unstructured">
+                            <black
+                                jcr:primaryType="nt:unstructured"
+                                text="Black"
+                                value="black"/>
                             <darkBlue
                                 jcr:primaryType="nt:unstructured"
                                 text="Dark Blue (#1E376C)"
@@ -30,10 +34,6 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Light Blue (#B1E2FA)"
                                 value="#B1E2FA"/>
-                            <black
-                                jcr:primaryType="nt:unstructured"
-                                text="Black"
-                                value="black"/>
                             <grey
                                 jcr:primaryType="nt:unstructured"
                                 text="Grey (#B4B6B5)"
@@ -42,10 +42,6 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Light Grey (#EBEBEB)"
                                 value="#ebebeb"/>
-                            <white
-                                jcr:primaryType="nt:unstructured"
-                                text="White"
-                                value="white"/>
                             <turquoise
                                 jcr:primaryType="nt:unstructured"
                                 text="Turquoise (#24C5CF)"
@@ -74,6 +70,10 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Green (#8DC63F)"
                                 value="#8dc63f"/>
+                            <white
+                                jcr:primaryType="nt:unstructured"
+                                text="White"
+                                value="white"/>    
                         </items>
                     </color>
                 </items>
