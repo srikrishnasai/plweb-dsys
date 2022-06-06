@@ -1,4 +1,24 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
 	data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-use.iframe="pl.web.dsys.core.models.IframeModel"
 	data-sly-call="${clientlib.all @ categories='plweb-dsys.iframe'}" />
-<sly data-sly-call="${template.placeholder @ isEmpty = !headerRef.allSitesPath, classAppend='cmp-text'}"></sly>
+<sly data-sly-call="${template.placeholder @ isEmpty = !iframe.html, classAppend='cmp-text'}"></sly>
+
+<!--/*
+    Copyright 
+*/-->
+<div id="iframe-container"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     >   
+    <span data-sly-test="${iframe.showHtml}" >
+        ${iframe.html  @ context = 'unsafe' }   
+    </span>
+    
+    <span data-sly-test="${iframe.showFrame}" >
+        <iframe NAME="${iframe.iFrameId}" 
+                ID="${iframe.iFrameId}" 
+                src="${iframe.appUrl}"                                 
+                frameborder="0"                 
+                allowtransparency="true"></iframe>
+    </span>
+</div>
