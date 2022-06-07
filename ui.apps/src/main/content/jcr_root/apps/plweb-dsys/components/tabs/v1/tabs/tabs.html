@@ -28,6 +28,7 @@
         role="tablist"
         class="cmp-tabs__tablist"
         aria-label="${tabs.accessibilityLabel}"
+        id="cmp-tabs"
         aria-multiselectable="false">
         <sly data-sly-test.isActive="${tab.name == tabs.activeItem}"/>
         <li role="tab"
@@ -37,6 +38,17 @@
             tabindex="${isActive ? '0' : '-1'}"
             data-cmp-hook-tabs="tab">${tab.title}</li>
     </ol>
+
+    <div class="cmp-tabs__paddles">
+      <button class="cmp-tabs__paddle cmp-tabs__paddle--left  cmp-tabs__paddle--hidden">
+        < 
+      </button>
+  
+      <button class="cmp-tabs__paddle cmp-tabs__paddle--right">
+        >
+      </button>
+    </div>
+    
     <div data-sly-repeat.item="${tabs.items}"
          data-sly-resource="${item.name @ decorationTagName='div'}"
          id="${item.id}-tabpanel"
