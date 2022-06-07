@@ -21,6 +21,7 @@
     var PN_PANEL_TITLE = "cq:panelTitle";
     var PN_RESOURCE_TYPE = "sling:resourceType";
 	var PN_ICON_PATH = "iconPath";
+    var PN_ITEM_TAGS = "cq:authtags";
     var PN_COPY_FROM = "./@CopyFrom";
     var POST_SUFFIX = ".container.html";
 
@@ -35,6 +36,7 @@
             icon: "[data-cmp-hook-childreneditor='itemIcon']",
             input: "[data-cmp-hook-childreneditor='itemTitle']",
 			iconPath: "[data-cmp-hook-childreneditor='iconPath']",
+            authTags: "[data-cmp-hook-childreneditor='itemTags']",
             hiddenItemResourceType: "[data-cmp-hook-childreneditor='itemResourceType']",
             hiddenItemTemplatePath: "[data-cmp-hook-childreneditor='itemTemplatePath']"
         }
@@ -226,6 +228,8 @@
                                                 }
                                                 var iconPath = item.querySelectorAll(selectors.item.iconPath)[0];
                                                 iconPath.name = "./" + name + "/" + PN_ICON_PATH;
+												var authTags = item.querySelectorAll(selectors.item.authTags)[0];
+												authTags.name = "./" + name + "/" + PN_ITEM_TAGS;
                                                 var itemIcon = item.querySelectorAll(selectors.item.icon)[0];
                                                 var icon = that._renderIcon(components[0]);
                                                 itemIcon.appendChild(icon);
