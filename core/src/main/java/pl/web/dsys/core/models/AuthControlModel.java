@@ -42,6 +42,9 @@ public class AuthControlModel {
 	@RequestAttribute
 	private String path;
 
+	@RequestAttribute
+	private String itemPath;
+
 	@ScriptVariable
 	private Page currentPage;
 
@@ -119,4 +122,18 @@ public class AuthControlModel {
 		return access;
 	}
 
+	public boolean isItemAuthorized() {
+		boolean itemAccess = Boolean.TRUE;
+		Resource itemRes = resolver.getResource(itemPath);
+		if (itemRes != null) {
+			log.debug("Accordion/Tab Item is not null");
+			if (AuthUtil.isAuthorOrPreview(request)) {
+				itemAccess = AuthUtil.isAuthorOrPreview(request);
+			} else {
+				itemAccess = AuthUtil.checkAccess(request, itemRes);
+			}
+			log.debug("Accordion/Tab Item has access ::{}", itemAccess);
+		}
+		return itemAccess;
+	}
 }
