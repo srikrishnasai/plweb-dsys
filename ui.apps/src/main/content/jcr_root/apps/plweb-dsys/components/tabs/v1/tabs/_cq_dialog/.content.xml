@@ -33,7 +33,7 @@
                                         <items jcr:primaryType="nt:unstructured">
                                             <tabitems
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="core/wcm/components/commons/editor/dialog/childreneditor/v1/childreneditor"/>
+                                                sling:resourceType="plweb-dsys/common/childreneditor/v1/childreneditor"/>
                                         </items>
                                     </column>
                                 </items>
