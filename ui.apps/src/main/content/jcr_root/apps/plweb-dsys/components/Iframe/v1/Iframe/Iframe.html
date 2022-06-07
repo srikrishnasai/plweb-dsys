@@ -7,18 +7,22 @@
 <!--/*
     Copyright 
 */-->
-<div id="iframe-container"
+<div id="iframe-container" class="iframe"
      data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
      >   
     <span data-sly-test="${iframe.showHtml}" >
         ${iframe.html  @ context = 'unsafe' }   
     </span>
     
-    <span data-sly-test="${iframe.showFrame}" >
+    <div data-sly-test="${iframe.showFrame}" class="iframe__container">
         <iframe NAME="${iframe.iFrameId}" 
                 ID="${iframe.iFrameId}" 
-                src="${iframe.appUrl}"                                 
+                src="${iframe.appUrl}"
+                width="448"
+                webkitAllowFullScreen
+                mozallowfullscreen
+                height="252"                                 
                 frameborder="0"                 
                 allowtransparency="true"></iframe>
-    </span>
+    </div>
 </div>
