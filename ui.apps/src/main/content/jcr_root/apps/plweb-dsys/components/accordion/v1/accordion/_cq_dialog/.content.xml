@@ -42,6 +42,7 @@
                     </accordionItems>
                     <authControl
                         jcr:primaryType="nt:unstructured"
+                        sling:hideResource="{Boolean}true"
                         sling:resourceType="granite/ui/components/coral/foundation/include"
                         path="plweb-dsys/common/authcontrol/cq:dialog/content/items/tabs/items/authControl"/>
                 </items>
