@@ -205,14 +205,23 @@
                <input class="foundation-field-related" type="hidden" name="cq:authtags@TypeHint" value="String[]">
                <input class="foundation-field-related" type="hidden" name="cq:authtags@Delete">
             </foundation-autocomplete>
-            <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline">
+            <coral-icon class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
+               icon="infoCircle" tabindex="0" aria-describedby="description_799734da-abc9-49cd-9fdc-010342d17b35"
+               alt="description" size="S" autoarialabel="on" role="img" aria-label="description"></coral-icon>
+            <coral-tooltip target="_prev" placement="left" id="description_799734da-abc9-49cd-9fdc-010342d17b35"
+               class="coral3-Tooltip coral3-Tooltip--info" aria-hidden="true" variant="info" tabindex="-1"
+               role="tooltip" style="display: none;">
+               <coral-tooltip-content>Select tags under AMF Authorize/User Type or AMF Autorize/Special Agencies
+               </coral-tooltip-content>
+            </coral-tooltip>
+         </div>
+		 <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline cmp-childreneditor__item-denyTags">
                <coral-checkbox name="denyTags"
-                  data-sly-attribute.checked="${multiHelper.childResource.listChildren[itemList.index].denyTags == 'true'}"
                   value="true" data-foundation-validation="" data-validation="" class="coral-Form-field coral3-Checkbox"
-                  aria-disabled="false" aria-invalid="false">
+                  aria-disabled="false" aria-invalid="false" data-cmp-hook-childreneditor="denyTags">
                   <input type="checkbox" handle="input" class=" coral3-Checkbox-input" id="coral-id-1436"
-                     value="${multiHelper.childResource.listChildren[itemList.index].denyTags}"
-                     name="/${item.name}/denyTags"> <span class=" coral3-Checkbox-checkmark" handle="checkbox"></span>
+                     value="true"
+                     name="denyTags"> <span class=" coral3-Checkbox-checkmark" handle="checkbox"></span>
                   <label class=" coral3-Checkbox-description" handle="labelWrapper" for="coral-id-1436">
                      <coral-checkbox-label>Deny Tags </coral-checkbox-label>
                   </label>
@@ -228,19 +237,6 @@
                   <coral-tooltip-content>Makes tag list about a list of denied agencies</coral-tooltip-content>
                </coral-tooltip>
             </div>
-
-
-
-            <coral-icon class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
-               icon="infoCircle" tabindex="0" aria-describedby="description_799734da-abc9-49cd-9fdc-010342d17b35"
-               alt="description" size="S" autoarialabel="on" role="img" aria-label="description"></coral-icon>
-            <coral-tooltip target="_prev" placement="left" id="description_799734da-abc9-49cd-9fdc-010342d17b35"
-               class="coral3-Tooltip coral3-Tooltip--info" aria-hidden="true" variant="info" tabindex="-1"
-               role="tooltip" style="display: none;">
-               <coral-tooltip-content>Select tags under AMF Authorize/User Type or AMF Autorize/Special Agencies
-               </coral-tooltip-content>
-            </coral-tooltip>
-         </div>
          <foundation-autocomplete class="coral-Form-field cmp-childreneditor__item-iconPath"
             data-cmp-hook-childreneditor="iconPath" name="iconPath" placeholder="Icon Path"
             pickersrc="/mnt/overlay/dam/cfm/admin/content/v2/associated-content/assetpicker.html?root=/content/dam&amp;mode=single&amp;filter=nosystem"

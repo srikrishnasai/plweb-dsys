@@ -51,18 +51,20 @@
         >
       </button>
     </div>
-    
-    <div data-sly-repeat.item="${tabs.items}"
+
+    <sly data-sly-repeat.item="${tabs.items}">
+    <sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ itemPath=item.path}"/> 
+    <div
          data-sly-resource="${item.name @ decorationTagName='div'}"
+         data-sly-test="${itemControlObj.itemAuthorized}"
          id="${item.id}-tabpanel"
          role="tabpanel"
          aria-labelledby="${item.id}-tab"
          tabindex="0"
          class="cmp-tabs__tabpanel${item.name == tabs.activeItem ? ' cmp-tabs__tabpanel--active' : ''}"
          data-cmp-hook-tabs="tabpanel"
-         data-cmp-data-layer="${item.data.json}"
-         data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ itemPath=tab.path}"
-         data-sly-test="${itemControlObj.itemAuthorized}"></div>
+         data-cmp-data-layer="${item.data.json}"></div>
+     </sly>
     <sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys/newpar', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"
          data-sly-test="${(wcmmode.edit || wcmmode.preview) && tabs.items.size < 1}"></sly>
 </div>
