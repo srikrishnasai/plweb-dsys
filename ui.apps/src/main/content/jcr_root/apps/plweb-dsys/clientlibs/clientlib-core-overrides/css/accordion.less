@@ -68,6 +68,38 @@
 
     });
 
+    .modifier(section-expand,{
+        .cmp-accordion{
+            background: transparent;
+            padding-left: 0px !important;
+            .element(title,{
+                color: #108188;
+                padding-right: 5px;
+            });
+            .cmp-accordion__button{
+                width: auto;
+                .cmp-accordion__icon{
+                    background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/plus.svg);
+                    height: 16px;
+                    width: 16px;
+                    background-repeat: no-repeat;
+                    filter: invert(31%) sepia(73%) saturate(6685%) hue-rotate(171deg) brightness(96%) contrast(87%);
+                }
+                &.cmp-accordion__button--expanded{
+                    .cmp-accordion__icon{
+                        background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/minus.svg);
+                        height: 16px;
+                        width: 16px;
+                        filter: invert(31%) sepia(73%) saturate(6685%) hue-rotate(171deg) brightness(96%) contrast(87%);
+                    }
+                }
+            }
+    }
+    .cmp-accordion__panel{
+        margin-top: 0;
+    }
+    });
+
     .cmp-accordion{
         padding: 20px;
         

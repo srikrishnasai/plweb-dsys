@@ -655,11 +655,11 @@
                     </responsive-grid>
                 </v1>
             </responsive-grid>
-			<accordion jcr:primaryType="nt:unstructured">
+			 <accordion jcr:primaryType="nt:unstructured">
                 <v1 jcr:primaryType="nt:unstructured">
                     <accordion jcr:primaryType="nt:unstructured">
                         <policy_1653033532711
-                            jcr:lastModified="{Date}2022-05-20T13:30:39.714+05:30"
+                            jcr:lastModified="{Date}2022-06-08T12:23:54.794+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Theme"
@@ -684,6 +684,21 @@
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item0>
+                                <item1
+                                    cq:styleGroupLabel="USE COMPONENT AS"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleId="1654671140420"
+                                            cq:styleLabel="Accordian"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                            cq:styleClasses="accordion--section-expand"
+                                            cq:styleId="1654671149361"
+                                            cq:styleLabel="Section Expand"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item1>
                             </cq:styleGroups>
                         </policy_1653033532711>
                     </accordion>
