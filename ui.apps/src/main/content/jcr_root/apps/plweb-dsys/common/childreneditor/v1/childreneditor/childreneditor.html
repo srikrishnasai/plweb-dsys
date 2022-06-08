@@ -13,20 +13,34 @@
    ~ See the License for the specific language governing permissions and
    ~ limitations under the License.
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
-<coral-multifield data-sly-use.childrenEditor="com.adobe.cq.wcm.core.components.commons.editor.dialog.childreneditor.Editor" data-sly-use.iconTemplate="icon.html" data-cmp-is="childrenEditor" class="cmp-childreneditor" data-container-path="${childrenEditor.container.path}">
-   <sly data-sly-use.multiHelper="${'pl.web.dsys.core.models.ChildrenEditor' @ nodePath=childrenEditor.container.path}" />
+<coral-multifield
+   data-sly-use.childrenEditor="com.adobe.cq.wcm.core.components.commons.editor.dialog.childreneditor.Editor"
+   data-sly-use.iconTemplate="icon.html" data-cmp-is="childrenEditor" class="cmp-childreneditor"
+   data-container-path="${childrenEditor.container.path}">
+   <sly
+      data-sly-use.multiHelper="${'pl.web.dsys.core.models.ChildrenEditor' @ nodePath=childrenEditor.container.path}" />
    <coral-multifield-item data-sly-repeat.item="${childrenEditor.items}" data-name="${item.name}">
       <div class="cmp-childreneditor__item">
          <div class="coral-Form-fieldwrapper">
             <label id="label_c289d92a-5f42-475a-ba9a-724adec463e0" class="coral-Form-fieldlabel">Auth Tags</label>
-            <foundation-autocomplete class="coral-Form-field cq-ui-tagfield" data-cq-msm-lockable="cq:authtags" name="./${item.name}/cq:authtags" multiple="" pickersrc="/mnt/overlay/cq/gui/content/coral/common/form/tagfield/picker.html?root=%2fcontent%2fcq%3atags&amp;selectionCount=multiple" labelledby="label_c289d92a-5f42-475a-ba9a-724adec463e0 description_c289d92a-5f42-475a-ba9a-724adec463e0" valuedisplaymode="block" data-foundation-validation="" data-cq-ui-tagfield-create-action="/apps/plweb-dsys/common/authcontrol/cq%3adialog/content/items/tabs/items/authControl/items/columns/items/column/items/authTags">
+            <foundation-autocomplete class="coral-Form-field cq-ui-tagfield" data-cq-msm-lockable="cq:authtags"
+               name="./${item.name}/cq:authtags" multiple=""
+               pickersrc="/mnt/overlay/cq/gui/content/coral/common/form/tagfield/picker.html?root=%2fcontent%2fcq%3atags&amp;selectionCount=multiple"
+               labelledby="label_c289d92a-5f42-475a-ba9a-724adec463e0 description_c289d92a-5f42-475a-ba9a-724adec463e0"
+               valuedisplaymode="block" data-foundation-validation=""
+               data-cq-ui-tagfield-create-action="/apps/plweb-dsys/common/authcontrol/cq%3adialog/content/items/tabs/items/authControl/items/columns/items/column/items/authTags">
                <div class="foundation-autocomplete-inputgroupwrapper">
                   <div class="coral-InputGroup" role="presentation">
-                     <input is="coral-textfield" class="coral3-Textfield coral-InputGroup-input" autocomplete="off" placeholder="" id="coral-id-658" aria-labelledby="label_c289d92a-5f42-475a-ba9a-724adec463e0 description_c289d92a-5f42-475a-ba9a-724adec463e0" role="combobox" labelledby="label_c289d92a-5f42-475a-ba9a-724adec463e0 description_c289d92a-5f42-475a-ba9a-724adec463e0" aria-invalid="false">
+                     <input is="coral-textfield" class="coral3-Textfield coral-InputGroup-input" autocomplete="off"
+                        placeholder="" id="coral-id-658"
+                        aria-labelledby="label_c289d92a-5f42-475a-ba9a-724adec463e0 description_c289d92a-5f42-475a-ba9a-724adec463e0"
+                        role="combobox"
+                        labelledby="label_c289d92a-5f42-475a-ba9a-724adec463e0 description_c289d92a-5f42-475a-ba9a-724adec463e0"
+                        aria-invalid="false">
                      <span class="coral-InputGroup-button">
-                        <button is="coral-button"
-                           class="coral3-Button coral3-Button--secondary" size="M" variant="secondary"
-                           title="Open Selection Dialog" type="button" aria-label="Open Selection Dialog">
+                        <button is="coral-button" class="coral3-Button coral3-Button--secondary" size="M"
+                           variant="secondary" title="Open Selection Dialog" type="button"
+                           aria-label="Open Selection Dialog">
                            <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--select" icon="select" size="S"
                               autoarialabel="on" role="img" aria-label="select"></coral-icon>
                            <coral-button-label></coral-button-label>
@@ -34,10 +48,15 @@
                      </span>
                   </div>
                </div>
-               <coral-overlay foundation-autocomplete-suggestion="" class="foundation-picker-buttonlist coral3-Overlay" data-foundation-picker-buttonlist-src="/mnt/overlay/cq/gui/content/coral/common/form/tagfield/suggestion{.offset,limit}.html?root=%2fcontent%2fcq%3atags{&amp;query}" aria-hidden="true" style="display: none;"></coral-overlay>
-               <coral-taglist foundation-autocomplete-value="" name="./${item.name}/cq:authtags" class="coral3-TagList" aria-disabled="false" role="grid" aria-live="off" aria-atomic="false" aria-relevant="additions" aria-invalid="false" aria-readonly="false">
+               <coral-overlay foundation-autocomplete-suggestion="" class="foundation-picker-buttonlist coral3-Overlay"
+                  data-foundation-picker-buttonlist-src="/mnt/overlay/cq/gui/content/coral/common/form/tagfield/suggestion{.offset,limit}.html?root=%2fcontent%2fcq%3atags{&amp;query}"
+                  aria-hidden="true" style="display: none;"></coral-overlay>
+               <coral-taglist foundation-autocomplete-value="" name="./${item.name}/cq:authtags" class="coral3-TagList"
+                  aria-disabled="false" role="grid" aria-live="off" aria-atomic="false" aria-relevant="additions"
+                  aria-invalid="false" aria-readonly="false">
                   <sly data-sly-list.tag1="${multiHelper.tabList[itemList.index].tagList}">
-                     <coral-tag class="coral3-Tag coral3-Tag--large" closable="" value="${tag1.tagID}" role="row" tabindex="0" aria-labelledby="coral-id-1094">
+                     <coral-tag class="coral3-Tag coral3-Tag--large" closable="" value="${tag1.tagID}" role="row"
+                        tabindex="0" aria-labelledby="coral-id-1094">
                         <span handle="buttonCell" role="gridcell">
                            <button is="coral-button"
                               class="coral3-Button coral3-Button--minimal coral3-Tag-removeButton" size="M"
@@ -49,22 +68,55 @@
                            </button>
                         </span>
                         <coral-tag-label role="rowheader" id="coral-id-1094">${tag1.tagTitle}</coral-tag-label>
-                        <input handle="input" type="hidden" name="./${item.name}/cq:authtags" value="${tag1.tagID}"> 
+                        <input handle="input" type="hidden" name="./${item.name}/cq:authtags" value="${tag1.tagID}">
                      </coral-tag>
                   </sly>
                </coral-taglist>
-               <input class="foundation-field-related" type="hidden" name="./${item.name}/cq:authtags@TypeHint" value="String[]">
-               <input class="foundation-field-related" type="hidden" name="./${item.name}/cq:authtags@Delete"> 
+               <input class="foundation-field-related" type="hidden" name="./${item.name}/cq:authtags@TypeHint"
+                  value="String[]">
+               <input class="foundation-field-related" type="hidden" name="./${item.name}/cq:authtags@Delete">
             </foundation-autocomplete>
-            <coral-icon class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS" icon="infoCircle" tabindex="0" aria-describedby="description_c289d92a-5f42-475a-ba9a-724adec463e0" alt="description" size="S" autoarialabel="on" role="img" aria-label="description"></coral-icon>
-            <coral-tooltip target="_prev" placement="left" id="description_c289d92a-5f42-475a-ba9a-724adec463e0" class="coral3-Tooltip coral3-Tooltip--info" aria-hidden="true" variant="info" tabindex="-1" role="tooltip" style="display: none;">
-               <coral-tooltip-content>Select tags under AMF Authorize/User Type or AMF Autorize/Special Agencies </coral-tooltip-content>
+            <coral-icon class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
+               icon="infoCircle" tabindex="0" aria-describedby="description_c289d92a-5f42-475a-ba9a-724adec463e0"
+               alt="description" size="S" autoarialabel="on" role="img" aria-label="description"></coral-icon>
+            <coral-tooltip target="_prev" placement="left" id="description_c289d92a-5f42-475a-ba9a-724adec463e0"
+               class="coral3-Tooltip coral3-Tooltip--info" aria-hidden="true" variant="info" tabindex="-1"
+               role="tooltip" style="display: none;">
+               <coral-tooltip-content>Select tags under AMF Authorize/User Type or AMF Autorize/Special Agencies
+               </coral-tooltip-content>
             </coral-tooltip>
          </div>
-         <foundation-autocomplete class="coral-Form-field cmp-childreneditor__item-iconPath" data-cmp-hook-childreneditor="iconPath" name="./${item.name}/iconPath" placeholder="Icon Path" pickersrc="/mnt/overlay/dam/cfm/admin/content/v2/associated-content/assetpicker.html?root=/content/dam&amp;mode=single&amp;filter=nosystem" data-foundation-validation="">
+         <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline">
+            <coral-checkbox name="./${item.name}/denyTags"
+               data-sly-attribute.checked="${multiHelper.childResource.listChildren[itemList.index].denyTags == 'true'}"
+               value="true" data-foundation-validation="" data-validation="" class="coral-Form-field coral3-Checkbox"
+               aria-disabled="false" aria-invalid="false">
+               <input type="checkbox" handle="input" class=" coral3-Checkbox-input" id="coral-id-1436"
+                  value="${multiHelper.childResource.listChildren[itemList.index].denyTags}"
+                  name="/${item.name}/denyTags"> <span class=" coral3-Checkbox-checkmark" handle="checkbox"></span>
+               <label class=" coral3-Checkbox-description" handle="labelWrapper" for="coral-id-1436">
+                  <coral-checkbox-label>Deny Tags </coral-checkbox-label>
+               </label>
+            </coral-checkbox>
+            <input class="foundation-field-related" type="hidden" name="./${item.name}/denyTags@Delete">
+            <coral-icon class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
+               icon="infoCircle" tabindex="0" aria-describedby="description_8537ee40-3d90-4b3d-ae9d-b0f28bdffbd4"
+               alt="description" size="S" autoarialabel="on" role="img" aria-label="description"></coral-icon>
+            <coral-tooltip target="_prev" placement="right" id="description_8537ee40-3d90-4b3d-ae9d-b0f28bdffbd4"
+               class="coral3-Tooltip coral3-Tooltip--info coral3-Tooltip--arrowRight" aria-hidden="true" variant="info"
+               tabindex="-1" role="tooltip"
+               style="z-index: 10020; max-width: 962.5px; left: 38px; top: 40.5px; display: none;">
+               <coral-tooltip-content>Makes tag list about a list of denied agencies</coral-tooltip-content>
+            </coral-tooltip>
+         </div>
+         <foundation-autocomplete class="coral-Form-field cmp-childreneditor__item-iconPath"
+            data-cmp-hook-childreneditor="iconPath" name="./${item.name}/iconPath" placeholder="Icon Path"
+            pickersrc="/mnt/overlay/dam/cfm/admin/content/v2/associated-content/assetpicker.html?root=/content/dam&amp;mode=single&amp;filter=nosystem"
+            data-foundation-validation="">
             <div class="foundation-autocomplete-inputgroupwrapper">
                <div class="coral-InputGroup" role="presentation">
-                  <input is="coral-textfield" class="coral3-Textfield coral-InputGroup-input" autocomplete="off" placeholder="Icon Path" id="coral-id-657" role="combobox" aria-label="Link" aria-invalid="false"> 
+                  <input is="coral-textfield" class="coral3-Textfield coral-InputGroup-input" autocomplete="off"
+                     placeholder="Icon Path" id="coral-id-657" role="combobox" aria-label="Link" aria-invalid="false">
                   <span class="coral-InputGroup-button">
                      <button is="coral-button" class="coral3-Button coral3-Button--secondary" size="M"
                         variant="secondary" title="Open Selection Dialog" type="button"
@@ -76,9 +128,15 @@
                   </span>
                </div>
             </div>
-            <coral-overlay foundation-autocomplete-suggestion="" class="foundation-picker-buttonlist coral3-Overlay" data-foundation-picker-buttonlist-src="/mnt/overlay/cq/gui/content/coral/common/form/pagefield/suggestion{.offset,limit}.html?root=%2fcontent{&amp;query}" aria-hidden="true" style="display: none;"></coral-overlay>
-            <coral-taglist foundation-autocomplete-value="" name="./${item.name}/iconPath" class="coral3-TagList" aria-disabled="false" role="grid" aria-live="off" aria-atomic="false" aria-relevant="additions" aria-readonly="false" aria-invalid="false">
-               <coral-tag value="${multiHelper.childResource.listChildren[itemList.index].iconPath}" tabindex="0" class="coral3-Tag coral3-Tag--large" role="row" aria-labelledby="coral-id-658">
+
+            <coral-overlay foundation-autocomplete-suggestion="" class="foundation-picker-buttonlist coral3-Overlay"
+               data-foundation-picker-buttonlist-src="/mnt/overlay/cq/gui/content/coral/common/form/pagefield/suggestion{.offset,limit}.html?root=%2fcontent{&amp;query}"
+               aria-hidden="true" style="display: none;"></coral-overlay>
+            <coral-taglist foundation-autocomplete-value="" name="./${item.name}/iconPath" class="coral3-TagList"
+               aria-disabled="false" role="grid" aria-live="off" aria-atomic="false" aria-relevant="additions"
+               aria-readonly="false" aria-invalid="false">
+               <coral-tag value="${multiHelper.childResource.listChildren[itemList.index].iconPath}" tabindex="0"
+                  class="coral3-Tag coral3-Tag--large" role="row" aria-labelledby="coral-id-658">
                   <span handle="buttonCell" role="gridcell">
                      <button is="coral-button" class="coral3-Button coral3-Button--minimal coral3-Tag-removeButton"
                         size="M" variant="minimal" tracking="off" handle="button" type="button" icon="close"
@@ -90,14 +148,18 @@
                      </button>
                   </span>
                   <coral-tag-label role="rowheader" id="coral-id-658"></coral-tag-label>
-                  <input handle="input" type="hidden" name="./${item.name}/iconPath" value="${multiHelper.childResource.listChildren[itemList.index].iconPath}"> 
+                  <input handle="input" type="hidden" name="./${item.name}/iconPath"
+                     value="${multiHelper.childResource.listChildren[itemList.index].iconPath}">
                </coral-tag>
-               <object aria-hidden="true" tabindex="-1" style="display:block; position:absolute; top:0; left:0; height:100%; width:100%; opacity:0; overflow:hidden; z-index:-100;" type="text/html" data="about:blank">&ZeroWidthSpace;</object>
+               <object aria-hidden="true" tabindex="-1"
+                  style="display:block; position:absolute; top:0; left:0; height:100%; width:100%; opacity:0; overflow:hidden; z-index:-100;"
+                  type="text/html" data="about:blank">&ZeroWidthSpace;</object>
             </coral-taglist>
-            <input class="foundation-field-related" type="hidden" name="./${item.name}/iconPath@Delete"> 
+            <input class="foundation-field-related" type="hidden" name="./${item.name}/iconPath@Delete">
          </foundation-autocomplete>
          <sly data-sly-call="${iconTemplate.icon @ item=item}"></sly>
-         <input is="coral-textfield" class="cmp-childreneditor__item-title" data-cmp-hook-childreneditor="itemTitle" name="./${item.name}/cq:panelTitle" value="${item.value}" placeholder="${item.title}"> 
+         <input is="coral-textfield" class="cmp-childreneditor__item-title" data-cmp-hook-childreneditor="itemTitle"
+            name="./${item.name}/cq:panelTitle" value="${item.value}" placeholder="${item.title}">
       </div>
    </coral-multifield-item>
    <button data-cmp-hook-childreneditor="add" type="button" is="coral-button">${'Add' @ i18n}</button>
@@ -105,41 +167,97 @@
       <div class="cmp-childreneditor__item">
          <div class="coral-Form-fieldwrapper">
             <label id="label_799734da-abc9-49cd-9fdc-010342d17b35" class="coral-Form-fieldlabel">Auth Tags</label>
-            <foundation-autocomplete class="coral-Form-field cq-ui-tagfield cmp-childreneditor__item-itemTags" data-cmp-hook-childreneditor="itemTags" data-cq-msm-lockable="cq:authtags" name="cq:authtags" multiple="" pickersrc="/mnt/overlay/cq/gui/content/coral/common/form/tagfield/picker.html?root=%2fcontent%2fcq%3atags&amp;selectionCount=multiple" labelledby="label_799734da-abc9-49cd-9fdc-010342d17b35 description_799734da-abc9-49cd-9fdc-010342d17b35" valuedisplaymode="block" data-foundation-validation="" data-cq-ui-tagfield-create-action="/apps/plweb-dsys/common/authcontrol/cq%3adialog/content/items/tabs/items/authControl/items/columns/items/column/items/authTags">
+            <foundation-autocomplete class="coral-Form-field cq-ui-tagfield cmp-childreneditor__item-itemTags"
+               data-cmp-hook-childreneditor="itemTags" data-cq-msm-lockable="cq:authtags" name="cq:authtags" multiple=""
+               pickersrc="/mnt/overlay/cq/gui/content/coral/common/form/tagfield/picker.html?root=%2fcontent%2fcq%3atags&amp;selectionCount=multiple"
+               labelledby="label_799734da-abc9-49cd-9fdc-010342d17b35 description_799734da-abc9-49cd-9fdc-010342d17b35"
+               valuedisplaymode="block" data-foundation-validation=""
+               data-cq-ui-tagfield-create-action="/apps/plweb-dsys/common/authcontrol/cq%3adialog/content/items/tabs/items/authControl/items/columns/items/column/items/authTags">
                <div class="foundation-autocomplete-inputgroupwrapper">
                   <div class="coral-InputGroup" role="presentation">
-                     <input is="coral-textfield" class="coral3-Textfield coral-InputGroup-input" autocomplete="off" placeholder="" id="coral-id-1802" aria-labelledby="label_799734da-abc9-49cd-9fdc-010342d17b35 description_799734da-abc9-49cd-9fdc-010342d17b35" role="combobox" labelledby="label_799734da-abc9-49cd-9fdc-010342d17b35 description_799734da-abc9-49cd-9fdc-010342d17b35" aria-invalid="false">
+                     <input is="coral-textfield" class="coral3-Textfield coral-InputGroup-input" autocomplete="off"
+                        placeholder="" id="coral-id-1802"
+                        aria-labelledby="label_799734da-abc9-49cd-9fdc-010342d17b35 description_799734da-abc9-49cd-9fdc-010342d17b35"
+                        role="combobox"
+                        labelledby="label_799734da-abc9-49cd-9fdc-010342d17b35 description_799734da-abc9-49cd-9fdc-010342d17b35"
+                        aria-invalid="false">
                      <span class="coral-InputGroup-button">
-                        <button is="coral-button" class="coral3-Button coral3-Button--secondary" size="M" variant="secondary" title="Open Selection Dialog" type="button" aria-label="Open Selection Dialog">
-                           <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--select" icon="select" size="S" autoarialabel="on" role="img" aria-label="select"></coral-icon>
+                        <button is="coral-button" class="coral3-Button coral3-Button--secondary" size="M"
+                           variant="secondary" title="Open Selection Dialog" type="button"
+                           aria-label="Open Selection Dialog">
+                           <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--select" icon="select" size="S"
+                              autoarialabel="on" role="img" aria-label="select"></coral-icon>
                            <coral-button-label></coral-button-label>
                         </button>
                      </span>
                   </div>
                </div>
-               <coral-overlay foundation-autocomplete-suggestion="" class="foundation-picker-buttonlist coral3-Overlay" data-foundation-picker-buttonlist-src="/mnt/overlay/cq/gui/content/coral/common/form/tagfield/suggestion{.offset,limit}.html?root=%2fcontent%2fcq%3atags{&amp;query}" aria-hidden="true" style="display: none;"></coral-overlay>
-               <coral-taglist foundation-autocomplete-value="" name="cq:authtags" class="coral3-TagList" aria-disabled="false" role="grid" aria-live="off" aria-atomic="false" aria-relevant="additions" aria-readonly="false" aria-invalid="false">
-                  <object aria-hidden="true" tabindex="-1" style="display:block; position:absolute; top:0; left:0; height:100%; width:100%; opacity:0; overflow:hidden; z-index:-100;" type="text/html" data="about:blank">&ZeroWidthSpace;</object>
+               <coral-overlay foundation-autocomplete-suggestion="" class="foundation-picker-buttonlist coral3-Overlay"
+                  data-foundation-picker-buttonlist-src="/mnt/overlay/cq/gui/content/coral/common/form/tagfield/suggestion{.offset,limit}.html?root=%2fcontent%2fcq%3atags{&amp;query}"
+                  aria-hidden="true" style="display: none;"></coral-overlay>
+               <coral-taglist foundation-autocomplete-value="" name="cq:authtags" class="coral3-TagList"
+                  aria-disabled="false" role="grid" aria-live="off" aria-atomic="false" aria-relevant="additions"
+                  aria-readonly="false" aria-invalid="false">
+                  <object aria-hidden="true" tabindex="-1"
+                     style="display:block; position:absolute; top:0; left:0; height:100%; width:100%; opacity:0; overflow:hidden; z-index:-100;"
+                     type="text/html" data="about:blank">&ZeroWidthSpace;</object>
                </coral-taglist>
                <input class="foundation-field-related" type="hidden" name="cq:authtags@TypeHint" value="String[]">
-               <input class="foundation-field-related" type="hidden" name="cq:authtags@Delete"> 
+               <input class="foundation-field-related" type="hidden" name="cq:authtags@Delete">
             </foundation-autocomplete>
-            <coral-icon class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS" icon="infoCircle" tabindex="0" aria-describedby="description_799734da-abc9-49cd-9fdc-010342d17b35" alt="description" size="S" autoarialabel="on" role="img" aria-label="description"></coral-icon>
-            <coral-tooltip target="_prev" placement="left" id="description_799734da-abc9-49cd-9fdc-010342d17b35" class="coral3-Tooltip coral3-Tooltip--info" aria-hidden="true" variant="info" tabindex="-1" role="tooltip" style="display: none;">
-               <coral-tooltip-content>Select tags under AMF Authorize/User Type or AMF Autorize/Special Agencies</coral-tooltip-content>
+            <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline">
+               <coral-checkbox name="denyTags"
+                  data-sly-attribute.checked="${multiHelper.childResource.listChildren[itemList.index].denyTags == 'true'}"
+                  value="true" data-foundation-validation="" data-validation="" class="coral-Form-field coral3-Checkbox"
+                  aria-disabled="false" aria-invalid="false">
+                  <input type="checkbox" handle="input" class=" coral3-Checkbox-input" id="coral-id-1436"
+                     value="${multiHelper.childResource.listChildren[itemList.index].denyTags}"
+                     name="/${item.name}/denyTags"> <span class=" coral3-Checkbox-checkmark" handle="checkbox"></span>
+                  <label class=" coral3-Checkbox-description" handle="labelWrapper" for="coral-id-1436">
+                     <coral-checkbox-label>Deny Tags </coral-checkbox-label>
+                  </label>
+               </coral-checkbox>
+               <input class="foundation-field-related" type="hidden" name="denyTags@Delete">
+               <coral-icon class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
+                  icon="infoCircle" tabindex="0" aria-describedby="description_8537ee40-3d90-4b3d-ae9d-b0f28bdffbd4"
+                  alt="description" size="S" autoarialabel="on" role="img" aria-label="description"></coral-icon>
+               <coral-tooltip target="_prev" placement="right" id="description_8537ee40-3d90-4b3d-ae9d-b0f28bdffbd4"
+                  class="coral3-Tooltip coral3-Tooltip--info coral3-Tooltip--arrowRight" aria-hidden="true"
+                  variant="info" tabindex="-1" role="tooltip"
+                  style="z-index: 10020; max-width: 962.5px; left: 38px; top: 40.5px; display: none;">
+                  <coral-tooltip-content>Makes tag list about a list of denied agencies</coral-tooltip-content>
+               </coral-tooltip>
+            </div>
+
+
+
+            <coral-icon class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
+               icon="infoCircle" tabindex="0" aria-describedby="description_799734da-abc9-49cd-9fdc-010342d17b35"
+               alt="description" size="S" autoarialabel="on" role="img" aria-label="description"></coral-icon>
+            <coral-tooltip target="_prev" placement="left" id="description_799734da-abc9-49cd-9fdc-010342d17b35"
+               class="coral3-Tooltip coral3-Tooltip--info" aria-hidden="true" variant="info" tabindex="-1"
+               role="tooltip" style="display: none;">
+               <coral-tooltip-content>Select tags under AMF Authorize/User Type or AMF Autorize/Special Agencies
+               </coral-tooltip-content>
             </coral-tooltip>
          </div>
-         <foundation-autocomplete class="coral-Form-field cmp-childreneditor__item-iconPath" data-cmp-hook-childreneditor="iconPath" name="iconPath" placeholder="Icon Path" pickersrc="/mnt/overlay/dam/cfm/admin/content/v2/associated-content/assetpicker.html?root=/content/dam&amp;mode=single&amp;filter=nosystem" data-foundation-validation="">
-            <coral-overlay foundation-autocomplete-suggestion="" class="foundation-picker-buttonlist" data-foundation-picker-buttonlist-src="/mnt/overlay/cq/gui/content/coral/common/form/pagefield/suggestion{.offset,limit}.html?root=%2fcontent{&amp;query}"> </coral-overlay>
+         <foundation-autocomplete class="coral-Form-field cmp-childreneditor__item-iconPath"
+            data-cmp-hook-childreneditor="iconPath" name="iconPath" placeholder="Icon Path"
+            pickersrc="/mnt/overlay/dam/cfm/admin/content/v2/associated-content/assetpicker.html?root=/content/dam&amp;mode=single&amp;filter=nosystem"
+            data-foundation-validation="">
+            <coral-overlay foundation-autocomplete-suggestion="" class="foundation-picker-buttonlist"
+               data-foundation-picker-buttonlist-src="/mnt/overlay/cq/gui/content/coral/common/form/pagefield/suggestion{.offset,limit}.html?root=%2fcontent{&amp;query}">
+            </coral-overlay>
             <coral-taglist foundation-autocomplete-value="" name="iconPath">
                <coral-tag value=""></coral-tag>
             </coral-taglist>
-            <input class="foundation-field-related" type="hidden" name="iconPath@Delete"> 
+            <input class="foundation-field-related" type="hidden" name="iconPath@Delete">
          </foundation-autocomplete>
          <span class="cmp-childreneditor__item-icon" data-cmp-hook-childreneditor="itemIcon"></span>
-         <input is="coral-textfield" class="cmp-childreneditor__item-title" data-cmp-hook-childreneditor="itemTitle" required>
+         <input is="coral-textfield" class="cmp-childreneditor__item-title" data-cmp-hook-childreneditor="itemTitle"
+            required>
          <input type="hidden" data-cmp-hook-childreneditor="itemResourceType">
-         <input type="hidden" data-cmp-hook-childreneditor="itemTemplatePath"> 
+         <input type="hidden" data-cmp-hook-childreneditor="itemTemplatePath">
       </div>
    </template>
 </coral-multifield>
