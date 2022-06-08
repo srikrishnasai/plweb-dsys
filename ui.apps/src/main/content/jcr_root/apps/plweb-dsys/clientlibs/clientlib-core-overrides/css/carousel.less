@@ -1,0 +1,57 @@
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/global.less";
+
+.cmp-carousel {
+    position: relative;
+
+    &__indicator {
+        background-color: @neutral300;
+        cursor: pointer;
+
+        &--active {
+            background-color: @blue500;
+        }
+    }
+
+    &__actions {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__action {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: @8;
+        background-color: transparent;
+        height: @16;
+        width: @16;
+        font-size: 0;
+        border: 0;
+        cursor: pointer;
+
+        &--previous {
+            border-bottom: 2px solid @blue500;
+            border-left: 2px solid @blue500;
+            transform: translateX(25%) rotate(45deg);
+        }
+
+        &--next {
+            border-right: 2px solid @blue500;
+            border-top: 2px solid @blue500;
+            transform: translateX(-25%) rotate(45deg);
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 @32;
+    }
+}
