@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.dam.api.DamConstants;
+import com.day.cq.wcm.api.NameConstants;
 import com.day.cq.wcm.api.WCMMode;
 
 public class AuthUtil {
@@ -96,7 +97,7 @@ public class AuthUtil {
 		}
 		return Boolean.FALSE;
 	}
-	
+
 	/**
 	 * 
 	 * @param resourceResolver
@@ -112,11 +113,13 @@ public class AuthUtil {
 			if (null != assetRes) {
 				vm = assetRes.getValueMap();
 			}
-		} else {
+		} else if (resourceResolver.isResourceType(res, NameConstants.NT_PAGE)) {
 			Resource pageRes = resourceResolver.getResource(res.getPath() + "/" + JcrConstants.JCR_CONTENT);
 			if (null != pageRes) {
 				vm = pageRes.getValueMap();
 			}
+		} else {
+			vm = res.getValueMap();
 		}
 		return vm;
 	}
