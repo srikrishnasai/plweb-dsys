@@ -86,6 +86,7 @@
         background-color: @nav-bg-color;
         gap: @8;
         display: none;
+        box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.25);
         .dropdown{
             .element(container,{
                 opacity: 1;
@@ -230,7 +231,12 @@
             background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/hamburger.svg);
         });
         .modifier(close,{
-            background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/close.svg);
+            background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/mobile-close.svg);
+            height: 22px;
+            width: 22px;
+            min-width: 22px;
+            min-height: 22px;
+            background-repeat: no-repeat;
         });
         .element(search,{
             display: none;
@@ -245,6 +251,7 @@
             display: none;
             opacity: 0;
             transition: all @long linear;
+            box-shadow: inset 1px 3px 4px rgba(0, 0, 0, 0.25);
             ul{
                 margin-bottom: @16;
                 flex-direction: column;
@@ -345,12 +352,31 @@
     .secondary-nav{
         display: block;
     }
+    .secondary-nav__link-outer-wrapper{
+        padding-left: 0;
+    }
+    .navigation-link{
+        color: @textBodyLight  !important;  //Needed to override color given by the element's class
+        &:after{
+            transform: scaleX(0) !important;
+        }
+    }
+    .secondary-nav__link-wrapper:hover{
+
+        .navigation-link{
+            color: @textBodyLight  !important;  //Needed to override color given by the element's class
+            &:after{
+                transform: scaleX(0) !important;
+            }
+        }
+    }
 }
 
 @media screen and (min-width:1199px) {
     .secondary-nav__dropdown{
         top: ~'calc(100% - 16px)';
     }
+
 }
 
 
