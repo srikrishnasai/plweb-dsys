@@ -97,7 +97,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                 fieldLabel="Video Source&#xa;"
                                                 name="./source"
-                                                rootPath="/content/dam/paclife"/>
+                                                rootPath="/content/dam"/>
                                             <verticalBarPos
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/select"

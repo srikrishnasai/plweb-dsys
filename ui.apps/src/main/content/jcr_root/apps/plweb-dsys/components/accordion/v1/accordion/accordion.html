@@ -1,5 +1,3 @@
-<sly data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" 
-data-sly-test="${authControlObj.hasComponentAccess}">
 <div data-sly-use.accordion="com.adobe.cq.wcm.core.components.models.Accordion"
      data-panelcontainer="${wcmmode.edit && 'accordion'}"
      id="${accordion.id}"
@@ -42,4 +40,3 @@ data-sly-test="${authControlObj.hasComponentAccess}">
     <sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys/newpar', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"
          data-sly-test="${(wcmmode.edit || wcmmode.preview) && accordion.items.size < 1}"></sly>
 </div>
-</sly>
