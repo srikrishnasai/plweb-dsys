@@ -15,10 +15,10 @@
             <div class="person-card__compact-name">
                 ${personCardObj.name} </div>
             <div class="person-card__compact-position">${personCardObj.position}</div>
-            <div class="person-card__link-container">
+            <div class="person-card__link-container person-card__link-wrapper ">
                 <div class="person-card__link-container" data-sly-test="${personCardObj.mail}">
                     <div class="person-card__mail"></div>
-                    <a href="mailto:${personCardObj.mail}" class="person-card__link">${personCardObj.mail}</a>
+                    <a href="mailto:${personCardObj.mail}" class="person-card__link">Email Me</a>
                 </div>
                 <div class="person-card__link-container" data-sly-test="${personCardObj.telephone}"
                     class="person-card__link-container">
@@ -27,8 +27,11 @@
                     <a href="tel:${personCardObj.telephone}" class="person-card__link">${personCardObj.telephone}</a>
                 </div>
                 <div class="person-card__link-container" data-sly-test="${personCardObj.linkedin}">
+                    <div class="person-card__linkedin"></div>
+
                     <a href="${personCardObj.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
                 </div>
+                    
             </div>
         </div>
     </aside>
@@ -46,10 +49,10 @@
                 <div class="person-card__bio-desc">
                     ${personCardObj.desc @ context = 'html'}
                 </div>
-                <div class="person-card__link-container">
+                <div class="person-card__link-container  person-card__link-wrapper ">
                     <div class="person-card__link-container" data-sly-test="${personCardObj.mail}">
                         <div class="person-card__mail"></div>
-                        <a href="mailto:${personCardObj.mail}" class="person-card__link">${personCardObj.mail}</a>
+                        <a href="mailto:${personCardObj.mail}" class="person-card__link">Email Me</a>
                     </div>
                     <div class="person-card__link-container" data-sly-test="${personCardObj.telephone}">
                         <div class="person-card__phone"></div>
@@ -58,6 +61,7 @@
                             class="person-card__link">${personCardObj.telephone}</a>
                     </div>
                     <div class="person-card__link-container" data-sly-test="${personCardObj.linkedin}">
+                        <div class="person-card__linkedin"></div>
                         <a href="${personCardObj.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
                     </div>
                 </div>
@@ -79,16 +83,17 @@
             <div class="person-card__bio-desc">
                 ${personCardObj.desc @ context = 'html'}
             </div>
-            <div class="person-card__link-container">
+            <div class="person-card__link-container  person-card__link-wrapper ">
                 <div class="person-card__link-container" data-sly-test="${personCardObj.mail}">
                     <div class="person-card__mail"></div>
-                    <a href="mailto:${personCardObj.mail}" class="person-card__link">${personCardObj.mail}</a>
+                    <a href="mailto:${personCardObj.mail}" class="person-card__link">Email Me</a>
                 </div>
                 <div class="person-card__link-container" data-sly-test="${personCardObj.telephone}">
                     <div class="person-card__phone"></div>
                     <a href="tel:${personCardObj.telephone}" class="person-card__link">${personCardObj.telephone}</a>
                 </div>
                 <div class="person-card__link-container" data-sly-test="${personCardObj.linkedin}">
+                    <div class="person-card__linkedin"></div>
                     <a href="${personCardObj.linkedin}" class="person-card__link" target="_blank">Linkedin</a>
                 </div>
             </div>

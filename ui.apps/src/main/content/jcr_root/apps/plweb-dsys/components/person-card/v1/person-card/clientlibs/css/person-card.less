@@ -14,6 +14,7 @@
     .element(compact-main,{
         display: flex;
         align-items: center;
+        padding: 0.5rem 0rem;
     });
     .element(compact-container,{
         align-self: center;
@@ -22,6 +23,8 @@
         margin-right: @24;
         width: 83px;
         height: 83px;
+        min-width: 83px;
+        min-height: 83px;
     });
     .element(compact-name,{
         font-size: 16px;
@@ -43,6 +46,8 @@
         height: 16px;
         display: inline-block;
         width: 20px;
+        min-width: 20px;
+        background-repeat: no-repeat;
     });
     .element(phone,{
         background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/phone.svg);
@@ -50,6 +55,17 @@
         height: 20px;
         display: inline-block;
         width: 20px;
+        min-width: 20px;
+        background-repeat: no-repeat;
+    });
+    .element(linkedin,{
+        background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/linkedin.svg);
+        margin-right: @8;
+        height: 30px;
+        display: inline-block;
+        width: 20px;
+        min-width: 30px;
+        background-repeat: no-repeat;
     });
     .element(link,{
         text-decoration: none;
@@ -74,6 +90,8 @@
     .modifier(bio-avatar,{
         width: 220px;
         height: 220px;
+        min-width: 220px;
+        min-height: 220px;
         margin-right: @48;
     });
     .element(bio-name,{
@@ -122,7 +140,7 @@
 
         .element(bio-main,{
             display: flex;
-            background: @textBodyDark;
+            //background: @textBodyDark;
             padding: @32 @4;
         });
         .modifier(bio-desktop,{
@@ -145,6 +163,8 @@
         .modifier(bio-avatar,{
             width: 83px;
             height: 83px;
+            min-width: 83px;
+            min-height: 83px;
             margin-right: @24;
         });
         .element(bio-desc,{
@@ -155,5 +175,11 @@
             align-items: center;
             margin-bottom: 1.5rem;
         });
+    }
+}
+
+@media @mediaMobile {
+    .person-card__link-wrapper{
+        flex-direction: column;
     }
 }

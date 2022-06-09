@@ -2,6 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Person Card"
+    extraClientlibs="[plweb-dsys.author.phone-email-validator]"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
@@ -74,6 +75,7 @@
                                                         autoStart="{Boolean}false"
                                                         class="cq-droptarget"
                                                         fieldLabel="Image"
+                                                        required="{Boolean}true"
                                                         fileNameParameter="./image/fileName"
                                                         mimeTypes="[image]"
                                                         multiple="{Boolean}false"
@@ -183,12 +185,23 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldLabel="Mail"
+                                        validation="email-validation"
                                         name="./mail"/>
                                     <telephone
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldLabel="Telephone"
+                                        class="field-phonenumber"
+                                        validation="phone-number-validation"
                                         name="./telephone"/>
+                                    <tip
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        disabled="{Boolean}true"
+                                        renderHidden="{Boolean}true"
+                                        renderReadOnly="{Boolean}true"
+                                        showhidetargetvalue="tip"
+                                        value="Use phone format 123-456-7890 or (123) 456-7890 or 123 456 7890 or 123.456.7890 or +91 (123) 456-7890"/>
                                     <linkedin
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
