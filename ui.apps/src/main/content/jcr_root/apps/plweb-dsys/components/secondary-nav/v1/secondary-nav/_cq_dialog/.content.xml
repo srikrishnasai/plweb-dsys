@@ -78,7 +78,7 @@
                                                                 fieldDescription="Select path of the page to visit "
                                                                 fieldLabel="Primary Link Target Path"
                                                                 name="./columnOne/overview/primaryLinkTargetPath"
-                                                                rootPath="/content/plweb-dsys"/>
+                                                                rootPath="/content"/>
                                                             <primaryLinkText
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -130,7 +130,7 @@
                                                                                     fieldDescription="Select path of the page to visit "
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
-                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                    rootPath="/content"/>
                                                                                 <linkText
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -206,7 +206,7 @@
                                                                                     fieldDescription="Select path of the page to visit "
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
-                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                    rootPath="/content"/>
                                                                                 <linkText
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -391,7 +391,7 @@
                                                                 fieldDescription="Select path of the page to visit "
                                                                 fieldLabel="Primary Link Target Path"
                                                                 name="./columnTwo/overview/primaryLinkTargetPath"
-                                                                rootPath="/content/plweb-dsys"/>
+                                                                rootPath="/content"/>
                                                             <primaryLinkText
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -443,7 +443,7 @@
                                                                                     fieldDescription="Select path of the page to visit "
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
-                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                    rootPath="/content"/>
                                                                                 <linkText
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -519,7 +519,7 @@
                                                                                     fieldDescription="Select path of the page to visit "
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
-                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                    rootPath="/content"/>
                                                                                 <linkText
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -704,7 +704,7 @@
                                                                 fieldDescription="Select path of the page to visit "
                                                                 fieldLabel="Primary Link Target Path"
                                                                 name="./columnThree/overview/primaryLinkTargetPath"
-                                                                rootPath="/content/plweb-dsys"/>
+                                                                rootPath="/content"/>
                                                             <primaryLinkText
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -756,7 +756,7 @@
                                                                                     fieldDescription="Select path of the page to visit "
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
-                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                    rootPath="/content"/>
                                                                                 <linkText
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -832,7 +832,7 @@
                                                                                     fieldDescription="Select path of the page to visit "
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
-                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                    rootPath="/content"/>
                                                                                 <linkText
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

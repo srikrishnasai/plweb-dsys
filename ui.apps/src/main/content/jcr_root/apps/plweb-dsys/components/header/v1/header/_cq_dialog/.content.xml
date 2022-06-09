@@ -54,7 +54,7 @@
                                                         fieldDescription="Select path for all sites to show the dropdown"
                                                         fieldLabel="All Sites Path"
                                                         name="./allSitesPath"
-                                                        rootPath="/content/plweb-dsys"/>
+                                                        rootPath="/content"/>
                                                     <topNavHeaderText
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -133,7 +133,7 @@
                                                                                     fieldDescription="Select path of the page to visit "
                                                                                     fieldLabel="Link Target Path"
                                                                                     name="./targetPath"
-                                                                                    rootPath="/content/plweb-dsys"/>
+                                                                                    rootPath="/content"/>
                                                                                 <linkText
                                                                                     jcr:primaryType="nt:unstructured"
                                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -211,7 +211,7 @@
                                                         fieldDescription="Select path for search results page"
                                                         fieldLabel="Search Target Path"
                                                         name="./searchTargetPath"
-                                                        rootPath="/content/plweb-dsys"/>
+                                                        rootPath="/content"/>
                                                 </items>
                                                 <granite:data jcr:primaryType="nt:unstructured"/>
                                             </container>

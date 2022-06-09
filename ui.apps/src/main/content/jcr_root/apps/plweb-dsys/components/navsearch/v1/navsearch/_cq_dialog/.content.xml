@@ -27,7 +27,7 @@
 				                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
 				                        fieldLabel="Target"
 				                        name="./target"
-				                        rootPath="/content/plweb-dsys"/>                                     
+				                        rootPath="/content"/>                                     
                                 </items>
                             </column>
                         </items>
