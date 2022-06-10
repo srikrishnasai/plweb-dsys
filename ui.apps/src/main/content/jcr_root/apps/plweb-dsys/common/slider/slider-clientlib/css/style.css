@@ -1,0 +1,23 @@
+.custom-dialog-slider__wrapper {
+    background-color: #f1f1f1;
+    border: 1px solid #d0d0d0;
+    margin-bottom: 10px;
+}
+
+.custom-dialog-slider__elem {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.custom-dialog-slider__elem .coral3-Slider {
+    width: 100%;
+    margin: 0;
+}
+
+.custom-dialog-slider__elem .coral3-Tooltip {
+    min-width: 40px;
+    padding: 4px 8px;
+    text-align: center;
+    line-height: 32px;
+}
+

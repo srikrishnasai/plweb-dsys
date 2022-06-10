@@ -3,7 +3,7 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="Text With Background Image"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="[checkbox-show-hide]">
+    extraClientlibs="[checkbox-show-hide,plweb-dsys.commons.slider]">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -72,6 +72,18 @@
                                         name="./landingHeroOverlay"
                                         text="Overlay Following Component"
                                         value="true"/>
+                                    <vertical
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/plweb-dsys/common/slider"
+                                        fieldDescription="0 makes the text to start at top of the image, 50 makes the text to start at 50% of the image height and so on."
+                                        fieldLabel="Vertical Alignment"
+                                        name="./positionVertical"/>
+                                    <horizontal
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/plweb-dsys/common/slider"
+                                        fieldDescription="0 makes the text to start at top of the image, 50 makes the text to start at 50% of the image height and so on."
+                                        fieldLabel="Horizontal Alignment"
+                                        name="./positionHorizontal"/>
                                 </items>
                             </content>
                         </items>
