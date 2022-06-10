@@ -11,7 +11,8 @@
              data-animating-numbers-increment-value="${properties.animatingNumbersIncrementValue}"
              data-animating-numbers-interval="${properties.animatingNumbersAnimationInterval}">
             <div class="animating-numbers__number-wrapper">
-                ${properties.animatingNumbersPrefix}<span class="animating-numbers-number">${properties.animatingNumbersStartValue}</span>${properties.animatingNumbersSuffix}
+                ${properties.animatingNumbersPrefix}<span class="animating-numbers-number ${properties.spaceBeforeSuffix ? 'animating-numbers__suffix-space' : ''} 
+                ${properties.spaceAfterPrefix ? 'animating-numbers__prefix-space' : ''}">${properties.animatingNumbersStartValue}</span>${properties.animatingNumbersSuffix}
             </div>
             <div class="animating-numbers__number-label">
                 <p>

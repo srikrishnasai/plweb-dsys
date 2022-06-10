@@ -1,5 +1,5 @@
 (function () {
-    $(window).on("load", function () {
+    $(document).ready(function()  {
 
         var OBSERVER_CLASS_NAME = ".circular-rating__circle-inner-wrapper"
 

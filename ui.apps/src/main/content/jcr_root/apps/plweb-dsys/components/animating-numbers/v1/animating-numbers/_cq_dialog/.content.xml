@@ -84,12 +84,28 @@
 										fieldDescription="Enter the prefix for the number that displays before the number"
 										fieldLabel="Number Prefix"
 										name="./animatingNumbersPrefix"/>
+									<spaceAfterPrefix
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        checked="{Boolean}false"
+                                        fieldDescription="This will add the space after prefix."
+                                        name="./spaceAfterPrefix"
+                                        text="Add Space After Prefix"
+                                        value="true"/>
 									<suffix
 										jcr:primaryType="nt:unstructured"
 										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
 										fieldDescription="Enter the suffix for the number that displays after the number"
 										fieldLabel="Number Suffix"
 										name="./animatingNumbersSuffix"/>
+									<spaceBeforeSuffix
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        checked="{Boolean}false"
+                                        fieldDescription="This will add the space before suffix."
+                                        name="./spaceBeforeSuffix"
+                                        text="Add Space Before Suffix"
+                                        value="true"/>
 									<label
 										jcr:primaryType="nt:unstructured"
 										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
