@@ -41,10 +41,34 @@
                                                 fieldDescription="Choose the color for the separator line"
                                                 fieldLabel="Color"
                                                 name="./lineColor">
-                                                <items
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceSuperType="/apps/plweb-dsys/common/common-color-picker/v1/common-color-picker/cq:dialog/content/items/column/items/color/items"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <black
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Black"
+                                                        value="black"/>
+                                                    <darkBlue
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Dark Blue (#1E376C)"
+                                                        value="#1E376C"/>
+                                                    <grey
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Grey (#B4B6B5)"
+                                                        value="#b4b6b5"/>
+                                                    <lightGrey
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Light Grey (#EBEBEB)"
+                                                        value="#ebebeb"/>
+                                                    <teal
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Teal (#B6E5FF)"
+                                                        value="#B6E5FF"/>   
+                                                    <white
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="White"
+                                                        value="white"/>    
+                                                </items>           
                                             </color>
+                                            
                                         </items>
                                     </column>
                                 </items>

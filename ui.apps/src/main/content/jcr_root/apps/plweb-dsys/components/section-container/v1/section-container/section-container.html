@@ -37,7 +37,8 @@
         class="width-container ${properties.animation && properties.animation != 'none' ? 'animated slower' : ''} ${properties.animation && properties.animation != 'none' ? properties.animation : ''}">
         <div data-sly-test="${!properties.hideTitleandText}"
             class="section-container__title-and-text section-container__title-and-text--alignment-${properties.titleTextAlignment} section-container__title-and-text--bottom-spacing-${properties.titleTextBottomSpacing}">
-            <div class="section-container__title"
+            <div class="section-container__title ${properties.restrictTextWidth ? 'section-container__title--restrict-width' : ''}"
+
                 data-sly-resource="${'title' @ resourceType='plweb-dsys/components/title/v1/title', decoration='true'}">
             </div>
 

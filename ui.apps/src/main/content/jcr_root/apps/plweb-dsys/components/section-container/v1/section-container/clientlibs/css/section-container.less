@@ -433,6 +433,11 @@
                         margin: auto;
                     });
                 });
+                .element(title, {
+                    .modifier(restrict-width, {
+                        margin: auto;
+                    });
+                });
             }
         });
         .modifier(alignment-right, {
@@ -451,6 +456,12 @@
     });
 
     .element(desc, {
+        .modifier(restrict-width, {
+            max-width: 672px;
+        });
+    });
+    
+    .element(title, {
         .modifier(restrict-width, {
             max-width: 672px;
         });
