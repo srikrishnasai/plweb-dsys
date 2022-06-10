@@ -1,2 +1,2 @@
 #base=js
-landing-hero.js
+text-with-background-image.js

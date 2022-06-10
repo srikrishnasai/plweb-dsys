@@ -5,41 +5,19 @@
 <sly data-sly-test="${authControlObj.hasComponentAccess}">
 
     <!--/*NOTE: Add class 'overlay-item-below' to overlay an icon card nav component place below*/-->
-
-    <div class="landing-flex-container-wrapper landing-hero-component">
-        <div class="landing-hero-background">
-            <div data-component-name="Landing Hero" data-sly-test="${properties.landingHeroBgImageFileRef}"
-                class="card detail-hero-img-overlay ${properties.landingHeroOverlay ? 'overlay-item-below' : '' } ">
-
-                <div class="hero-background-img-wrapper">
-                    <div class="landing-hero-background-img"
-                        style="background-image:url('${properties.landingHeroBgImageFileRef @ context = 'styleString'}') ">
-                    </div>
-                </div>
-
-                <input type="hidden" class="landing-lg-img" value="${properties.landingHeroBgImageFileRef}">
-                <input type="hidden" class="landing-sm-img" value="${properties.landingHeroMobileBgImageFileRef}">
-
-
-
-                <div class="white-overlay-landing-hero"></div>
-
-
-                <div class="card-img-overlay text-center position-relative my-auto">
-                    <!-- /*NOTE: Add class 'large-hero-title' to get the larger title text seen in the visual design*/ -->
-                    <div class="landing-component-content-wrapper">
-                        <div class="card-text mx-auto text-white detail-hero-subtitle">
-                            ${properties.landingHeroContent @ context = 'html'}
-                        </div>
-
-
-                    </div>
-                </div>
+    <div data-component-name="text-with-bg-img" data-sly-test="${properties.landingHeroBgImageFileRef}"
+        class="text-with-bg-img ${properties.landingHeroOverlay ? 'text-with-bg-img--overlay-item-below' : '' }"
+        data-sly-attribute.data-vertical-pos=" ${properties.positionVertical}"
+        data-sly-attribute.data-horizontal-pos="${properties.positionHorizontal}">
+        <div class="text-with-bg-img__container">
+            <div class="text-with-bg-img__img-container"
+                style="background-image:url('${properties.landingHeroBgImageFileRef @ context = 'styleString'}') ">
             </div>
 
+            <div data-sly-test="${properties.landingHeroContent}" class="text-with-bg-img__txt-container">
+                ${properties.landingHeroContent @ context = 'html'}
+            </div>
         </div>
-
-
     </div>
     <sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit && !properties.landingHeroBgImageFileRef)}" />
 </sly>
