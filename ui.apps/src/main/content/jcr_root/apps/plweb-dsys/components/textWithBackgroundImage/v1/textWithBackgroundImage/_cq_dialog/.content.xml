@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Text With Background Image"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[checkbox-show-hide,plweb-dsys.commons.slider]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <textContent
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldLabel="Content"
+                                        name="./textContent"
+                                        useFixedInlineToolbar="{Boolean}true">
+                                        <rtePlugins
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
+                                        <uiSettings
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
+                                    </textContent>
+                                    <bgImage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="pcwr/cq/gui/components/authoring/dialog/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Background Image"
+                                        fileNameParameter="./bgImageFileName"
+                                        fileReferenceParameter="./bgImageFileRef"
+                                        mimeTypes="[image/jpeg,image/png]"
+                                        multiple="{Boolean}false"
+                                        name="./bgImageFile"
+                                        title="Upload Image Asset"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                    <mobileBgImage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="pcwr/cq/gui/components/authoring/dialog/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Mobile Background Image"
+                                        fileNameParameter="./mobileBgImageFileName"
+                                        fileReferenceParameter="./mobileBgImageFileRef"
+                                        mimeTypes="[image/jpeg,image/png]"
+                                        multiple="{Boolean}false"
+                                        name="./mobileBgImageFile"
+                                        title="Upload Image Asset"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                    <overlay
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./overlay"
+                                        text="Overlay Following Component"
+                                        value="true"/>
+                                    <vertical
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/plweb-dsys/common/slider"
+                                        fieldDescription="0 makes the text to start at top of the image, 50 makes the text to start at 50% of the image height and so on."
+                                        fieldLabel="Vertical Alignment"
+                                        name="./positionVertical"/>
+                                    <horizontal
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/plweb-dsys/common/slider"
+                                        fieldDescription="0 makes the text to start at top of the image, 50 makes the text to start at 50% of the image height and so on."
+                                        fieldLabel="Horizontal Alignment"
+                                        name="./positionHorizontal"/>
+                                </items>
+                            </content>
+                        </items>
+                    </general>
+                    <authControl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="plweb-dsys/common/authcontrol/cq:dialog/content/items/tabs/items/authControl"/>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

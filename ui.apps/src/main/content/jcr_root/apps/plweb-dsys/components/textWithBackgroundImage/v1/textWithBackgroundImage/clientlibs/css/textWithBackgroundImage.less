@@ -1,0 +1,40 @@
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+
+.text-with-bg-img {
+	z-index: -1;
+	position: relative;
+
+	.modifier(overlay-item-below, {
+			margin-bottom: -150px;
+		}
+
+	);
+
+	.element(container, {
+			position: relative;
+			display: flex;
+			justify-content: center;
+		}
+
+	);
+
+	.element(img-container, {
+			width: 100%;
+			min-height: 550px;
+			min-width: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+	);
+
+	.element(txt-container, {
+			position: absolute;
+			top: 20px;
+			max-width: 60%;
+			max-width: ~'min(600px, 60%)'; // intentionally added twice as a fallback
+		}
+
+	);
+}

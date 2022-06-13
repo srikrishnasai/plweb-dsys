@@ -1,0 +1,2 @@
+#base=js
+text-with-background-image.js
