@@ -23,11 +23,11 @@
                                 sling:resourceType="granite/ui/components/coral/foundation/container"
                                 margin="{Boolean}true">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <landingHeroContent
+                                    <textContent
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                         fieldLabel="Content"
-                                        name="./landingHeroContent"
+                                        name="./textContent"
                                         useFixedInlineToolbar="{Boolean}true">
                                         <rtePlugins
                                             jcr:primaryType="nt:unstructured"
@@ -35,41 +35,41 @@
                                         <uiSettings
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
-                                    </landingHeroContent>
-                                    <landingHeroBgImage
+                                    </textContent>
+                                    <bgImage
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="pcwr/cq/gui/components/authoring/dialog/fileupload"
                                         allowUpload="{Boolean}false"
                                         autoStart="{Boolean}false"
                                         class="cq-droptarget"
                                         fieldLabel="Background Image"
-                                        fileNameParameter="./landingHeroBgImageFileName"
-                                        fileReferenceParameter="./landingHeroBgImageFileRef"
+                                        fileNameParameter="./bgImageFileName"
+                                        fileReferenceParameter="./bgImageFileRef"
                                         mimeTypes="[image/jpeg,image/png]"
                                         multiple="{Boolean}false"
-                                        name="./landingHeroBgImageFile"
+                                        name="./bgImageFile"
                                         title="Upload Image Asset"
                                         uploadUrl="${suffix.path}"
                                         useHTML5="{Boolean}true"/>
-                                    <landingHeroMobileBgImage
+                                    <mobileBgImage
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="pcwr/cq/gui/components/authoring/dialog/fileupload"
                                         allowUpload="{Boolean}false"
                                         autoStart="{Boolean}false"
                                         class="cq-droptarget"
                                         fieldLabel="Mobile Background Image"
-                                        fileNameParameter="./landingHeroMobileBgImageFileName"
-                                        fileReferenceParameter="./landingHeroMobileBgImageFileRef"
+                                        fileNameParameter="./mobileBgImageFileName"
+                                        fileReferenceParameter="./mobileBgImageFileRef"
                                         mimeTypes="[image/jpeg,image/png]"
                                         multiple="{Boolean}false"
-                                        name="./landingHeroMobileBgImageFile"
+                                        name="./mobileBgImageFile"
                                         title="Upload Image Asset"
                                         uploadUrl="${suffix.path}"
                                         useHTML5="{Boolean}true"/>
-                                    <landingHeroOverlay
+                                    <overlay
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                                        name="./landingHeroOverlay"
+                                        name="./overlay"
                                         text="Overlay Following Component"
                                         value="true"/>
                                     <vertical

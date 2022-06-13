@@ -5,19 +5,19 @@
 <sly data-sly-test="${authControlObj.hasComponentAccess}">
 
     <!--/*NOTE: Add class 'overlay-item-below' to overlay an icon card nav component place below*/-->
-    <div data-component-name="text-with-bg-img" data-sly-test="${properties.landingHeroBgImageFileRef}"
-        class="text-with-bg-img ${properties.landingHeroOverlay ? 'text-with-bg-img--overlay-item-below' : '' }"
+    <div data-component-name="text-with-bg-img" data-sly-test="${properties.bgImageFileRef}"
+        class="text-with-bg-img ${properties.overlay ? 'text-with-bg-img--overlay-item-below' : '' }"
         data-sly-attribute.data-vertical-pos=" ${properties.positionVertical}"
         data-sly-attribute.data-horizontal-pos="${properties.positionHorizontal}">
         <div class="text-with-bg-img__container">
             <div class="text-with-bg-img__img-container"
-                style="background-image:url('${properties.landingHeroBgImageFileRef @ context = 'styleString'}') ">
+                style="background-image:url('${properties.bgImageFileRef @ context = 'styleString'}') ">
             </div>
 
-            <div data-sly-test="${properties.landingHeroContent}" class="text-with-bg-img__txt-container">
-                ${properties.landingHeroContent @ context = 'html'}
+            <div data-sly-test="${properties.textContent}" class="text-with-bg-img__txt-container">
+                ${properties.textContent @ context = 'html'}
             </div>
         </div>
     </div>
-    <sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit && !properties.landingHeroBgImageFileRef)}" />
+    <sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit && !properties.bgImageFileRef)}" />
 </sly>
