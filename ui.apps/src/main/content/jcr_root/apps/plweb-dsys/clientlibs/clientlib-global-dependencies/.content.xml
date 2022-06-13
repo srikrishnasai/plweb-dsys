@@ -3,4 +3,4 @@
     jcr:primaryType="cq:ClientLibraryFolder"
     allowProxy="{Boolean}true"
     categories="[plweb-dsys.global-dependencies]"
-    embed="[plweb-dsys.jquery,plweb-dsys.font-awesome]"/>
+    embed="[plweb-dsys.jquery]"/>
