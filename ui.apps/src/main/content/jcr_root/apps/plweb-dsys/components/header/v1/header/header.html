@@ -59,7 +59,7 @@
 			<div id="hamburger" class="secondary-nav__mobile-icon secondary-nav--hamburger"></div>
 		</div>
 		<nav id="navigaton" class="secondary-nav__navigation">
-			<ul data-sly-list="${headerRef.primarylinks}">
+			<ul data-sly-list="${headerRef.primarylinks}" class="secondary-nav__link-outer-wrapper">
 			<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.targetPath}"/>
 				<li data-sly-test="${itemControlObj.resourceAuthorized}" class="secondary-nav__link-wrapper">
 					<div class="secondary-nav__link-container">
