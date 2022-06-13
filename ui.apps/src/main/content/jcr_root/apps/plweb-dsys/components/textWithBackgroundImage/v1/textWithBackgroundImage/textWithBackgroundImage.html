@@ -14,6 +14,9 @@
                 style="background-image:url('${properties.bgImageFileRef @ context = 'styleString'}') ">
             </div>
 
+            <input type="hidden" class="bg-lg-img" value="${properties.bgImageFileRef}">
+            <input type="hidden" class="bg-sm-img" value="${properties.mobileBgImageFileRef}">
+
             <div data-sly-test="${properties.textContent}" class="text-with-bg-img__txt-container">
                 ${properties.textContent @ context = 'html'}
             </div>
