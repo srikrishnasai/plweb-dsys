@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2022-05-17T18:02:27.617+05:30"
+        cq:lastModified="{Date}2022-06-15T16:09:14.006+05:30"
         cq:lastModifiedBy="admin"
         cq:policy="plweb-dsys/components/page/v1/page/policy"
         jcr:primaryType="nt:unstructured"
@@ -94,7 +94,7 @@
                                         sling:resourceType="wcm/core/components/policies/mapping"/>
                                 </v1>
                             </button-group>
-							<accordion jcr:primaryType="nt:unstructured">
+                            <accordion jcr:primaryType="nt:unstructured">
                                 <v1 jcr:primaryType="nt:unstructured">
                                     <accordion
                                         cq:policy="plweb-dsys/components/accordion/v1/accordion/policy_1653033532711"
@@ -102,6 +102,14 @@
                                         sling:resourceType="wcm/core/components/policies/mapping"/>
                                 </v1>
                             </accordion>
+                            <tabs jcr:primaryType="nt:unstructured">
+                                <v1 jcr:primaryType="nt:unstructured">
+                                    <tabs
+                                        cq:policy="plweb-dsys/components/tabs/v1/tabs/policy_1655289371768"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </v1>
+                            </tabs>
                             <table jcr:primaryType="nt:unstructured">
                                 <v1 jcr:primaryType="nt:unstructured">
                                     <table
