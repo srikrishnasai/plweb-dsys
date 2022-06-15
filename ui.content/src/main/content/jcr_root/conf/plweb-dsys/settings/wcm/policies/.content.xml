@@ -655,7 +655,7 @@
                     </responsive-grid>
                 </v1>
             </responsive-grid>
-			 <accordion jcr:primaryType="nt:unstructured">
+            <accordion jcr:primaryType="nt:unstructured">
                 <v1 jcr:primaryType="nt:unstructured">
                     <accordion jcr:primaryType="nt:unstructured">
                         <policy_1653033532711
@@ -704,6 +704,21 @@
                     </accordion>
                 </v1>
             </accordion>
+            <tabs jcr:primaryType="nt:unstructured">
+                <v1 jcr:primaryType="nt:unstructured">
+                    <tabs jcr:primaryType="nt:unstructured">
+                        <policy_1655289371768
+                            jcr:lastModified="{Date}2022-06-15T16:09:13.956+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Tabs policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[/apps/plweb-dsys/components/container,/apps/plweb-dsys/components/contentfragment,/apps/plweb-dsys/components/experiencefragment,/apps/plweb-dsys/components/section-container/v1/section-container]">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_1655289371768>
+                    </tabs>
+                </v1>
+            </tabs>
         </components>
     </plweb-dsys>
 </jcr:root>
