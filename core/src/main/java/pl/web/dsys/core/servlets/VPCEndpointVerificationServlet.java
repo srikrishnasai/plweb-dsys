@@ -2,11 +2,17 @@ package pl.web.dsys.core.servlets;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
 
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 
@@ -35,35 +41,30 @@ public class VPCEndpointVerificationServlet extends SlingSafeMethodsServlet {
 
 		logger.debug("Inside VPCEndpointVerification Servlet");
 
-		/*
-		 * try (CloseableHttpClient client = HttpClients.createDefault()) { HttpGet get
-		 * = new HttpGet(
-		 * "https://vpce-0cfe6cc9e3df992e1-zgw8ttm9.vpce-svc-015109a36b504d84f.us-west-2.vpce.amazonaws.com/IdentityProviderService/pinger.aspx?a=444aa312"
-		 * );
-		 * 
-		 * HttpResponse response = client.execute(get); if (200 !=
-		 * response.getStatusLine().getStatusCode()) { throw new
-		 * IOException("Server returned error: " +
-		 * response.getStatusLine().getReasonPhrase()); }
-		 * 
-		 * HttpEntity entity = response.getEntity();
-		 * logger.debug("Response from test servlet ::{}",
-		 * EntityUtils.toString(entity));
-		 * resp.getWriter().write(EntityUtils.toString(entity));
-		 * 
-		 * }
-		 */
 		StringBuffer response = new StringBuffer("");
 		try {
 			URL url = new URL(
 					"https://vpce-0cfe6cc9e3df992e1-zgw8ttm9.vpce-svc-015109a36b504d84f.us-west-2.vpce.amazonaws.com/IdentityProviderService/pinger.aspx?a=444aa312");
-			logger.debug("URL ::{}", url);
-			// SonarQube - try with a resource
-			HttpURLConnection con = (HttpURLConnection) url.openConnection();
-			con.setRequestMethod("GET");
-			int responseCode = con.getResponseCode();
-			if (responseCode == HttpURLConnection.HTTP_OK) {
-				BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			SSLContext context = SSLContext.getInstance("TLSv1.2");
+			TrustManager[] trustManager = new TrustManager[] { new X509TrustManager() {
+				public X509Certificate[] getAcceptedIssuers() {
+					return new X509Certificate[0];
+				}
+
+				public void checkClientTrusted(X509Certificate[] certificate, String str) {
+				}
+
+				public void checkServerTrusted(X509Certificate[] certificate, String str) {
+				}
+			} };
+			context.init(null, trustManager, new SecureRandom());
+
+			HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+			conn.setSSLSocketFactory(context.getSocketFactory());
+			conn.setRequestMethod("GET");
+			int responseCode = conn.getResponseCode();
+			if (responseCode == HttpsURLConnection.HTTP_OK) {
+				BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 				String inputLine;
 				while ((inputLine = in.readLine()) != null) {
 					response.append(inputLine);
@@ -71,10 +72,11 @@ public class VPCEndpointVerificationServlet extends SlingSafeMethodsServlet {
 				logger.debug("REsponse ::{}", response);
 				in.close();
 			}
-
-		} finally {
-
+		} catch (KeyManagementException | NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		resp.getWriter().write("Response " + response);
+
+		resp.getWriter().print(response);
 	}
 }
