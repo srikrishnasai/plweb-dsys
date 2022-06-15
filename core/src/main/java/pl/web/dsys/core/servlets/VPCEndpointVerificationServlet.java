@@ -57,23 +57,21 @@ public class VPCEndpointVerificationServlet extends SlingSafeMethodsServlet {
 		try {
 			URL url = new URL(
 					"https://vpce-0cfe6cc9e3df992e1-zgw8ttm9.vpce-svc-015109a36b504d84f.us-west-2.vpce.amazonaws.com/IdentityProviderService/pinger.aspx?a=444aa312");
-			InputStream stream = null;
 			logger.debug("URL ::{}", url);
 			// SonarQube - try with a resource
-			try (BufferedReader br = new BufferedReader(new InputStreamReader(stream))) {
-				HttpURLConnection con = (HttpURLConnection) url.openConnection();
-				con.setRequestMethod("GET");
-				int responseCode = con.getResponseCode();
-				if (responseCode == HttpURLConnection.HTTP_OK) {
-					BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-					String inputLine;
-					while ((inputLine = in.readLine()) != null) {
-						response.append(inputLine);
-					}
-					logger.debug("REsponse ::{}", response);
-					in.close();
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			con.setRequestMethod("GET");
+			int responseCode = con.getResponseCode();
+			if (responseCode == HttpURLConnection.HTTP_OK) {
+				BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+				String inputLine;
+				while ((inputLine = in.readLine()) != null) {
+					response.append(inputLine);
 				}
+				logger.debug("REsponse ::{}", response);
+				in.close();
 			}
+
 		} finally {
 
 		}
