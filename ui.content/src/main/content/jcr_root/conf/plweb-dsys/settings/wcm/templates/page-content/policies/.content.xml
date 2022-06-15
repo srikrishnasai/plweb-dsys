@@ -102,6 +102,14 @@
                                         sling:resourceType="wcm/core/components/policies/mapping"/>
                                 </v1>
                             </accordion>
+                            <table jcr:primaryType="nt:unstructured">
+                                <v1 jcr:primaryType="nt:unstructured">
+                                    <table
+                                        cq:policy="plweb-dsys/components/table/v1/table/policy_1654760328736"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </v1>
+                            </table>
                         </components>
                     </plweb-dsys>
                 </container>

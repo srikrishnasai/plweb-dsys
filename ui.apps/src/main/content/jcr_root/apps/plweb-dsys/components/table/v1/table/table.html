@@ -1,0 +1,10 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @ categories='plweb-dsys.table'}" />
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !title}"></sly>
+<div class="dsys-table ${properties.alternateColumnShade ? 'dsys-table--alternate-col-shade' : '' } ${properties.addColWidthsManually ? 'dsys-table--fixed-layout' : ''}">
+    ${properties.tableData @context='html'}
+</div>
+
+
