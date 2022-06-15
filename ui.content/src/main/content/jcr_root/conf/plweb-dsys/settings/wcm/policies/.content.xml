@@ -719,6 +719,83 @@
                     </tabs>
                 </v1>
             </tabs>
+            <table jcr:primaryType="nt:unstructured">
+                <v1 jcr:primaryType="nt:unstructured">
+                    <table jcr:primaryType="nt:unstructured">
+                        <policy_1654760328736
+                            jcr:lastModified="{Date}2022-06-15T11:20:23.155+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Table Policy"
+                            sling:resourceType="wcm/core/components/policy/policy">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                            <cq:styleGroups jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleGroupLabel="TABLE"
+                                    cq:styleGroupMultiple="true"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="dsys-table__table-box"
+                                            cq:styleId="1654760426817"
+                                            cq:styleLabel="Add Table Box"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                            cq:styleClasses="dsys-table--table-shadow-remove"
+                                            cq:styleId="1655117224220"
+                                            cq:styleLabel="Remove Table Shadow"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item0>
+                                <item1
+                                    cq:styleGroupLabel="HEADER"
+                                    cq:styleGroupMultiple="true"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="dsys-table--remove-header-bgcolor"
+                                            cq:styleId="1654869148821"
+                                            cq:styleLabel="Remove Header Color"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                            cq:styleClasses="dsys-table--header-bottom-border"
+                                            cq:styleId="1655272156586"
+                                            cq:styleLabel="Add Header Bottom Border"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item2
+                                            cq:styleClasses="dsys-table--dark-header-bottom-border"
+                                            cq:styleId="1655108569369"
+                                            cq:styleLabel="Dark Header Bottom Border"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item3
+                                            cq:styleClasses="dsys-table--header-right-border"
+                                            cq:styleId="1655129242786"
+                                            cq:styleLabel="Add Header Right Border"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item1>
+                                <item2
+                                    cq:styleGroupLabel="BORDER"
+                                    cq:styleGroupMultiple="true"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="dsys-table--column-border"
+                                            cq:styleId="1654869022962"
+                                            cq:styleLabel="Add Column Border"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                            cq:styleClasses="dsys-table--remove-row-border"
+                                            cq:styleId="1654871341265"
+                                            cq:styleLabel="Remove Row Border"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item2>
+                            </cq:styleGroups>
+                        </policy_1654760328736>
+                    </table>
+                </v1>
+            </table>
         </components>
     </plweb-dsys>
 </jcr:root>
