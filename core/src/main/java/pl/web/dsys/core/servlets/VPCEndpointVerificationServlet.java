@@ -46,8 +46,7 @@ public class VPCEndpointVerificationServlet extends SlingSafeMethodsServlet {
 				throw new IOException("Server returned error: " + response.getStatusLine().getReasonPhrase());
 			}
 			HttpEntity entity = response.getEntity();
-			//logger.debug("Response ::{}", EntityUtils.toString(entity));
-			resp.getWriter().print(EntityUtils.toString(entity));
+			resp.getWriter().write(EntityUtils.toString(entity));
 
 		}
 
