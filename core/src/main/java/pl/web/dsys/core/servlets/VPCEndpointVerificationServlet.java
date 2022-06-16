@@ -41,7 +41,7 @@ public class VPCEndpointVerificationServlet extends SlingSafeMethodsServlet {
 	protected void doGet(final SlingHttpServletRequest req, final SlingHttpServletResponse resp)
 			throws ServletException, IOException {
 
-		logger.debug("Inside VPCEndpointVerification Servlet");
+		logger.debug("Inside VPCEndpointVerification Servlet changed to Apache Client");
 		String result = StringUtils.EMPTY;
 		/*
 		 * StringBuffer response = new StringBuffer(""); try { URL url = new URL(
@@ -104,9 +104,12 @@ public class VPCEndpointVerificationServlet extends SlingSafeMethodsServlet {
 			httpclient = HttpClients.custom()
 					.setSSLContext(new SSLContextBuilder().loadTrustMaterial(null, TrustAllStrategy.INSTANCE).build())
 					.setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE).build();
+			logger.debug("Apache Client http client");
 			HttpGet apiRequest = new HttpGet(
 					"https://vpce-0cfe6cc9e3df992e1-zgw8ttm9.vpce-svc-015109a36b504d84f.us-west-2.vpce.amazonaws.com/IdentityProviderService/pinger.aspx?a=444aa312");
+			logger.debug("api request");
 			HttpResponse response = httpclient.execute(apiRequest);
+			logger.debug("http response");
 			if (200 != response.getStatusLine().getStatusCode()) {
 				throw new IOException("Server returned error: " + response.getStatusLine().getReasonPhrase());
 			}
