@@ -9,8 +9,10 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 
+import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 import javax.servlet.Servlet;
@@ -46,6 +48,7 @@ public class VPCEndpointVerificationServlet extends SlingSafeMethodsServlet {
 			URL url = new URL(
 					"https://vpce-0cfe6cc9e3df992e1-zgw8ttm9.vpce-svc-015109a36b504d84f.us-west-2.vpce.amazonaws.com/IdentityProviderService/pinger.aspx?a=444aa312");
 			SSLContext context = SSLContext.getInstance("TLSv1.2");
+			// Create a trust manager that does not validate certificate chains
 			TrustManager[] trustManager = new TrustManager[] { new X509TrustManager() {
 				public X509Certificate[] getAcceptedIssuers() {
 					return new X509Certificate[0];
@@ -57,10 +60,20 @@ public class VPCEndpointVerificationServlet extends SlingSafeMethodsServlet {
 				public void checkServerTrusted(X509Certificate[] certificate, String str) {
 				}
 			} };
+			// Install the all-trusting trust manager
 			context.init(null, trustManager, new SecureRandom());
 
+			// Create all-trusting host name verifier
+			HostnameVerifier allHostsValid = new HostnameVerifier() {
+				public boolean verify(String hostname, SSLSession session) {
+					return true;
+				}
+			};
+
 			HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+			// Install the all-trusting host verifier
 			conn.setSSLSocketFactory(context.getSocketFactory());
+			conn.setHostnameVerifier(allHostsValid);
 			conn.setRequestMethod("GET");
 			int responseCode = conn.getResponseCode();
 			if (responseCode == HttpsURLConnection.HTTP_OK) {
