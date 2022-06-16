@@ -30,6 +30,8 @@
             white-space: nowrap;
             flex-wrap: nowrap;
             border-bottom: 1px solid @neutral200;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
 
             &::-webkit-scrollbar {
                 display: none;
@@ -44,6 +46,7 @@
             cursor: pointer;
             padding: @16 @64;
             font-weight: 500;
+            outline: none;
 
             &--active {
                 border-color: @blue500;
