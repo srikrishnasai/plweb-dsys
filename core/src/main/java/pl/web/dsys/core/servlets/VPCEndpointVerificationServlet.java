@@ -35,8 +35,7 @@ public class VPCEndpointVerificationServlet extends SlingSafeMethodsServlet {
 			throws ServletException, IOException {
 
 		logger.debug("Inside VPCEndpointVerification Servlet");
-        resp.setContentType("text/html; charset=utf-8");
-        resp.setHeader("content-encoding", "gzip");
+		resp.setContentType("text/html; charset=utf-8");
 		try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
 			HttpGet apiRequest = new HttpGet(
 					"https://lid-ips.websolutions.dev.rs.pacificlife.com/identityproviderservice/pinger.aspx?a=444aa312");
@@ -46,7 +45,9 @@ public class VPCEndpointVerificationServlet extends SlingSafeMethodsServlet {
 				throw new IOException("Server returned error: " + response.getStatusLine().getReasonPhrase());
 			}
 			HttpEntity entity = response.getEntity();
-			resp.getWriter().write(EntityUtils.toString(entity));
+			String responseEntity = EntityUtils.toString(entity);
+			logger.debug("Response Entity ::{}",responseEntity);
+			resp.getWriter().write(responseEntity);
 
 		}
 
