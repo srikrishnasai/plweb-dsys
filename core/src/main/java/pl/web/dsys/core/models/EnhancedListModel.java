@@ -13,6 +13,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
@@ -47,10 +48,15 @@ public class EnhancedListModel {
 
 	@ValueMapValue
 	private String listRootPath;
+	
+	@RequestAttribute
+	private String listType;
 
-	List<Resource> resourcesList;
+	List<Resource> resourcesList = new ArrayList<Resource>();
 	List<ListItem> enhancedListItems = null;
-
+    List<PageItem> enhancedPageItems = new ArrayList<PageItem>();
+    List<AssetItem> enhancedAssetItems = new ArrayList<AssetItem>();
+    
 	@PostConstruct
 	protected void init() {
 		log.debug("Inside Post Construct of Enhanced List Model.. {}");
@@ -89,16 +95,52 @@ public class EnhancedListModel {
 		for (Resource res : resourcesList) {
 			if (resolver.isResourceType(res, DamConstants.NT_DAM_ASSET)) {
 				log.debug("Asset Resource ::{}", res.getPath());
-				ListItem item = res.adaptTo(AssetItem.class);
+				AssetItem item = res.adaptTo(AssetItem.class);
 				enhancedItems.add(item);
+				enhancedAssetItems.add(item);
 
 			} else if (resolver.isResourceType(res, NameConstants.NT_PAGE)) {
 				log.debug("Page Resource ::{}", res.getPath());
-				ListItem item = res.adaptTo(PageItem.class);
+				PageItem item = res.adaptTo(PageItem.class);
 				enhancedItems.add(item);
+				enhancedPageItems.add(item);
 			}
 		}
 
 		return enhancedItems;
 	}
+
+	public String getChildDepth() {
+		return childDepth;
+	}
+
+	public String getListFrom() {
+		return listFrom;
+	}
+
+	public String getListItems() {
+		return listItems;
+	}
+
+	public String getListRootPath() {
+		return listRootPath;
+	}
+
+	public String getListType() {
+		return listType;
+	}
+
+	public List<Resource> getResourcesList() {
+		return resourcesList;
+	}
+
+	public List<PageItem> getEnhancedPageItems() {
+		return enhancedPageItems;
+	}
+
+	public List<AssetItem> getEnhancedAssetItems() {
+		return enhancedAssetItems;
+	}
+
+	
 }

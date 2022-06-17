@@ -14,9 +14,7 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.commons.util.DamUtil;
 
-import pl.web.dsys.core.search.SearchResult;
-
-@Model(adaptables = Resource.class, adapters = SearchResult.class, resourceType = "dam:Asset")
+@Model(adaptables = Resource.class, adapters = ListItem.class, resourceType = "dam:Asset")
 public class AssetItem implements ListItem {
 
 	@Self
@@ -26,10 +24,14 @@ public class AssetItem implements ListItem {
 	private ResourceResolver resourceResolver;
 
 	private Optional<Asset> asset;
+	
+	String thumbnail = StringUtils.EMPTY;
 
 	@PostConstruct
 	protected void initModel() {
 		this.asset = Optional.ofNullable(DamUtil.resolveToAsset(resource));
+		this.thumbnail = this.asset.map(a -> a.getRendition("cq5dam.thumbnail.319.319.png").getPath())
+				.orElse(StringUtils.EMPTY);
 	}
 
 	@Override
@@ -38,4 +40,7 @@ public class AssetItem implements ListItem {
 				.orElse(asset.map(Asset::getName).filter(StringUtils::isNotEmpty).orElse(StringUtils.EMPTY));
 	}
 
+	public String getThumbnail() {
+		return thumbnail;
+	}
 }
