@@ -2,6 +2,7 @@ package pl.web.dsys.core.models;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
@@ -11,6 +12,8 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+
+import pl.web.dsys.core.utils.SharedContants;
 
 @Model(adaptables = Resource.class, adapters = ListItem.class, resourceType = "cq:Page")
 public class PageItem implements ListItem {
@@ -35,7 +38,32 @@ public class PageItem implements ListItem {
 
 	@Override
 	public String getTitle() {
-		return page.getTitle() + " From PageItem Bean";
+		return StringUtils.defaultIfBlank(StringUtils.defaultIfBlank(page.getPageTitle(), page.getTitle()),
+				page.getName());
+	}
+
+	@Override
+	public String getDescription() {
+
+		return page.getDescription();
+	}
+
+	@Override
+	public String getContentType() {
+
+		return "page";
+	}
+
+	@Override
+	public String getPath() {
+
+		return page.getPath();
+	}
+
+	@Override
+	public String getUrl() {
+
+		return getPath() + SharedContants.PAGE_EXTENSION;
 	}
 
 }

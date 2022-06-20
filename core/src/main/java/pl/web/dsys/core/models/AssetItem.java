@@ -24,23 +24,53 @@ public class AssetItem implements ListItem {
 	private ResourceResolver resourceResolver;
 
 	private Optional<Asset> asset;
-	
+
 	String thumbnail = StringUtils.EMPTY;
+
+	String assetFormat = StringUtils.EMPTY;
 
 	@PostConstruct
 	protected void initModel() {
 		this.asset = Optional.ofNullable(DamUtil.resolveToAsset(resource));
 		this.thumbnail = this.asset.map(a -> a.getRendition("cq5dam.thumbnail.319.319.png").getPath())
 				.orElse(StringUtils.EMPTY);
+		this.assetFormat = this.asset.map(a -> a.getMetadataValue("dc:format")).orElse(StringUtils.EMPTY);
 	}
 
 	@Override
 	public String getTitle() {
-		return asset.map(a -> a.getMetadataValue("dc:title") + " from AssetItem Bean").filter(StringUtils::isNotEmpty)
+		return asset.map(a -> a.getMetadataValue("dc:title")).filter(StringUtils::isNotEmpty)
 				.orElse(asset.map(Asset::getName).filter(StringUtils::isNotEmpty).orElse(StringUtils.EMPTY));
 	}
 
 	public String getThumbnail() {
 		return thumbnail;
+	}
+
+	@Override
+	public String getDescription() {
+
+		return asset.map(a -> a.getMetadataValue("dc:description")).filter(StringUtils::isNotEmpty)
+				.orElse(StringUtils.EMPTY);
+	}
+
+	@Override
+	public String getContentType() {
+		if (StringUtils.isNotEmpty(assetFormat) && StringUtils.startsWithIgnoreCase(assetFormat, "video")) {
+			return "video";
+		}
+		return "asset";
+	}
+
+	@Override
+	public String getPath() {
+
+		return asset.map(Asset::getPath).orElse(StringUtils.EMPTY);
+	}
+
+	@Override
+	public String getUrl() {
+
+		return getPath();
 	}
 }

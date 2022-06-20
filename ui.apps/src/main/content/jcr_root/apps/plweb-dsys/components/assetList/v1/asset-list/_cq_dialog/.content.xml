@@ -117,6 +117,7 @@
                                                             <assetmulti
                                                                 granite:class=""
                                                                 jcr:primaryType="nt:unstructured"
+																composite="{Boolean}true"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
                                                                 <field
                                                                     jcr:primaryType="nt:unstructured"

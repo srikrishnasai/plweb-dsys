@@ -6,5 +6,13 @@ import org.osgi.annotation.versioning.ProviderType;
 public interface ListItem {
 
 	String getTitle();
+	
+	String getDescription();
+	
+	String getContentType();
+	
+	String getPath();
+	
+	String getUrl();
 
 }

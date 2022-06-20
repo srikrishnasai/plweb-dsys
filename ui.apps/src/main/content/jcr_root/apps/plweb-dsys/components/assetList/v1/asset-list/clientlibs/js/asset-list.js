@@ -1,24 +1,49 @@
-$(document).ready(function () {
-    $('.bulleted-list').find('.bulleted-list-wrapper').each(function () {
-        var length = $(this).attr("data-length");
-        var columnCount = $(this).attr('data-columnCount');
-        var rawCount;
-        if(columnCount == 'two'){
-            rawCount=length/2;
-            rawCount=Math.ceil(rawCount);
-            console.log("rawCount",rawCount);
-            $(this).find('.bullet-list').css('grid-template-rows', 'repeat('+rawCount+',auto)');
+
+/**Intialize Swiper for carousel view */
+function initializeSwiper(totalItems, swiper, prevButton, nextButton, pagination) {
+    return new Swiper(swiper, {
+        direction: "horizontal",
+        loop: false,
+        pagination: {
+            el: pagination,
+            type: "bullets",
+            clickable: true,
+        },
+        spaceBetween: 10,
+        observer: true,
+        observeParents: true,
+        centeredSlides: true,
+        centerInsufficientSlides: true,
+        slideToClickedSlide: true,
+        speed: 1000,
+        navigation: {
+            nextEl: nextButton,
+            prevEl: prevButton,
         }
-        else if(columnCount == 'three'){
-            rawCount=length/3;
-            rawCount=Math.ceil(rawCount);
-            console.log("rawCount",rawCount);
-            if(length !== "4"){
-                $(this).find('.bullet-list').css('grid-template-rows', 'repeat('+rawCount+',auto)');
-            }
-            else{
-                $(this).find('.bullet-list').css('grid-auto-flow', 'row');
-            }
-        }
+    });
+}
+
+
+
+function loadComponent(elem) {
+
+    var videoContainer = $(elem);
+    var swiper;
+
+    var totalSlides = videoContainer.find("#asset-carousel").find("li").not(".swiper-slide-duplicate").length;
+
+        var swiperContainer = videoContainer.find(".swiper");
+        var prevButton = videoContainer.find(".swiper-button-prev")[0];
+        var nextButton = videoContainer.find(".swiper-button-next")[0];
+        var pagination = videoContainer.find(".swiper-pagination")[0];
+
+    swiper = initializeSwiper(totalSlides, swiperContainer[0], prevButton, nextButton, pagination);
+}
+
+
+
+$(window).on("load", function () {
+    $(".asset-container").each(function () {
+        loadComponent(this);
     });
 });
