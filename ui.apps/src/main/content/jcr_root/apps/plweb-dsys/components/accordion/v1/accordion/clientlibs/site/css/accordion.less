@@ -36,12 +36,6 @@
         display: block;
     }
 }
-
-.arrow-color{
-    color: red;
-    height: 25px;
-    width: 25px;
-}
 .accordion {
     .modifier(dark, {
             .cmp-accordion {
@@ -51,7 +45,6 @@
                 .element(title, {
                         color: @textBodyDark;
                     }
-
                 );
 
                 .element(item, {
@@ -62,13 +55,12 @@
                         &:hover {
                             border-bottom: @hairline solid @primary;
 
-                            .cmp-accordion__icon {
-                                filter: invert(18%) sepia(87%) saturate(3453%) hue-rotate(197deg) brightness(91%) contrast(90%);
+                            .arrow{
+                                color: @primary;
                             }
                         }
 
                     }
-
                 );
 
                 .element(panel, {
@@ -80,13 +72,11 @@
 
                 .cmp-accordion__button {
                     &.cmp-accordion__button--expanded {
-                        .cmp-accordion__icon {
-                            background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/angle-up-solid-light.svg);
-                            height: 16px;
-                            width: 16px;
-                            min-width: 16px;
-                            max-height: 16px;
-                            background-repeat: no-repeat;
+                        .arrow-down{
+                            display: none;
+                        }
+                        .arrow-up{
+                            display: block;
                         }
                     }
                 }
@@ -113,9 +103,8 @@
 
                         &:hover {
                             border-bottom: @hairline solid @primary;
-
-                            .cmp-accordion__icon {
-                                filter: invert(18%) sepia(87%) saturate(3453%) hue-rotate(197deg) brightness(91%) contrast(90%);
+                            .arrow{
+                                color: @primary;
                             }
                         }
 
@@ -124,20 +113,17 @@
                 );
 
                 .element(panel, {
-
                         color: @neutral1000;
                     }
-
                 );
 
                 .cmp-accordion__button {
                     &.cmp-accordion__button--expanded {
-                        .cmp-accordion__icon {
-                            background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/angle-up-solid-light.svg);
-                            height: 16px;
-                            width: 16px;
-                            background-repeat: no-repeat;
-                            filter: invert(57%) sepia(0%) saturate(1%) hue-rotate(297deg) brightness(100%) contrast(94%);
+                        .arrow-down{
+                            display: none;
+                        }
+                        .arrow-up{
+                            display: block;
                         }
 
                     }
@@ -155,9 +141,7 @@
                 .element(title, {
                         color: @textBodyLight;
                     }
-
                 );
-
                 .element(item, {
                         border-bottom: @hairline solid @neutral200;
                         padding-bottom: 20px;
@@ -165,33 +149,24 @@
 
                         &:hover {
                             border-bottom: @hairline solid @primary;
-
-                            .cmp-accordion__icon {
-                                filter: invert(18%) sepia(87%) saturate(3453%) hue-rotate(197deg) brightness(91%) contrast(90%);
+                            .arrow{
+                                color: @primary;
                             }
                         }
-
                     }
-
                 );
-
                 .element(panel, {
-
                         color: @neutral1000;
                     }
-
                 );
-
                 .cmp-accordion__button {
                     &.cmp-accordion__button--expanded {
-                        .cmp-accordion__icon {
-                            background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/angle-up-solid-light.svg);
-                            height: 16px;
-                            width: 16px;
-                            background-repeat: no-repeat;
-                            filter: invert(57%) sepia(0%) saturate(1%) hue-rotate(297deg) brightness(100%) contrast(94%);
+                        .arrow-down{
+                            display: none;
                         }
-
+                        .arrow-up{
+                            display: block;
+                        }
                     }
                 }
             }
@@ -208,9 +183,11 @@
                         color: @primary;
                         padding-right: 10px;
                     }
-
                 );
-
+                .arrow{
+                    color: @primary !important;
+                    font-size: 16px !important;
+                }
                 .element(item, {
                         border-bottom: @hairline solid @neutral200;
                         padding-bottom: 20px;
@@ -218,53 +195,38 @@
 
                         &:hover {
                             border-bottom: @hairline solid @primary;
-
-                            .cmp-accordion__icon {
-                                filter: invert(18%) sepia(87%) saturate(3453%) hue-rotate(197deg) brightness(91%) contrast(90%);
+                            .arrow{
+                                color: @primary;
                             }
                         }
-
                     }
-
                 );
-
                 .element(panel, {
                         color: @neutral1000;
                     }
-
                 );
-
                 .cmp-accordion__button {
                     width: auto;
-
-                    .cmp-accordion__icon {
-                        background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/plus.svg);
-                        height: 16px;
-                        width: 16px;
-                        min-height: 16px;
-                        min-width: 16px;
-                        background-repeat: no-repeat;
-                        filter: invert(28%) sepia(97%) saturate(891%) hue-rotate(180deg) brightness(96%) contrast(100%);
+                    .arrow-down{
+                        display: block;
                     }
-
+                    .arrow-up{
+                        display: none;
+                    }
                     &.cmp-accordion__button--expanded {
-                        .cmp-accordion__icon {
-                            background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/minus.svg);
-                            height: 16px;
-                            width: 16px;
-                            min-height: 16px;
-                            min-width: 16px;
-                            filter: invert(28%) sepia(97%) saturate(891%) hue-rotate(180deg) brightness(96%) contrast(100%);
+                        .arrow-down{
+                            display: none;
+                        }
+                        .arrow-up{
+                            display: block;
                         }
                     }
                 }
             }
-
             .cmp-accordion__panel {
                 margin-top: 0;
             }
         }
-
     );
 
     .cmp-accordion {
@@ -277,19 +239,17 @@
                 font-size: @productBody;
                 line-height: 24px;
             }
-
         );
-
-        .element(icon, {
-                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/angle-down-solid-light.svg);
-                height: 16px;
-                width: 16px;
-                min-width: 16px;
-                min-height: 16px;
-                background-repeat: no-repeat;
-            }
-
-        );
+        .arrow{
+            color: #8F8F8F;
+            font-size: 20px;
+        }
+        .arrow-down{
+            display: block;
+        }
+        .arrow-up{
+            display: none;
+        }
 
         .element(front-icon, {
                 height: 16px;
@@ -299,9 +259,7 @@
                 background-repeat: no-repeat;
                 margin-right: 5px;
             }
-
         );
-
         .element(button, {
                 background-color: transparent;
                 cursor: pointer;
@@ -315,9 +273,7 @@
                 align-items: center;
                 padding: 0;
             }
-
         );
-
         .element(panel, {
 
                 .openSans;
@@ -326,20 +282,15 @@
                 line-height: 24px;
                 margin-top: 20px;
             }
-
         );
-
         .cmp-accordion__item:last-child {
             margin-bottom: 0 !important;
         }
-
         .cmp-accordion__panel--expanded {
             display: none;
         }
-
         .cmp-accordion__panel--hidden {
             display: none;
         }
-
     }
 }

@@ -18,10 +18,10 @@
                         <div data-sly-test="${multiHelper.childResource.listChildren[itemList.index].iconPath}"
                             class="cmp-accordion__front-icon"
                             style="background-image:url('${multiHelper.childResource.listChildren[itemList.index].iconPath @ context = 'uri'}') ">
-                        </div>
-                        <span class="cmp-accordion__title ${item.name in accordion.expandedItems ? 'Ravi' : 'Vatsal'}">${item.title}</span>
-                        <!-- <div class="cmp-accordion__icon"></div>   -->
-                        <i class="fa-solid arrow-color ${item.name in accordion.expandedItems ? 'fa-angle-down' : 'fa-angle-up'}"></i>     
+                        </div> 
+                        <span class="cmp-accordion__title">${item.title}</span>
+                        <i class="fa-solid arrow-color fa-angle-down arrow-down arrow"></i>     
+                        <i class="fa-solid arrow-color fa-angle-up arrow-up arrow"></i>                          
                     </button>
                 </div>
                 <div data-sly-resource="${item.name @ decorationTagName='div'}" data-cmp-hook-accordion="panel"
