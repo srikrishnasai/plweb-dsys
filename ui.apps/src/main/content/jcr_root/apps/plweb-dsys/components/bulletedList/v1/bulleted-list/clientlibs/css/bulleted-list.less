@@ -1,10 +1,8 @@
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 
-
-
-
 .bulleted-list {
+    // cmp-list--checkmarks, cmp-list-numbers Classes are added through style system
     &.cmp-list{
         .modifier(checkmarks,{
             .bullet-list {
@@ -31,7 +29,7 @@
                 }
             }
         });
-        .modifier(no-left-padding,{
+        .modifier(no-left-padding, {
             .bullet-list {
                 padding-left: 0px !important;
             }
