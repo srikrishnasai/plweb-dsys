@@ -84,6 +84,20 @@
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
                                     </desciption>
+                                </items>
+                            </column>
+                        </items>
+                    </general>
+                    <links
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Link"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
                                     <linkOptions
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/select"
@@ -92,44 +106,66 @@
                                         name="./linkOptions">
                                         <items jcr:primaryType="nt:unstructured">
                                             <linkToPDF
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Link to PDF"
-                                                value="pdf"/>
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Link to PDF"
+                                            value="pdf"/>
                                             <linkToWebPage
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Link to webpage"
-                                                value="webpage"/>
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Link to webpage"
+                                            value="webpage"/>
                                             <linkToButton
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Button"
-                                                value="button"/>
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Button"
+                                            value="button"/>
                                         </items>
                                     </linkOptions>
-                                    <linkTitle
+                                    <section1Links
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Please enter link name"
-                                        fieldLabel="Link Title"
-                                        name="./cardWebpageTitle"/>
-                                    <linkTarget
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                        fieldDescription="Select path of the target link"
-                                        fieldLabel="Link Target"
-                                        name="./cardWebpageTarget"
-                                        rootPath="/content"/>
-                                    <linkTabTarget
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        checked="{Boolean}false"
-                                        fieldDescription="Check this checkbox to open the link in new tab."
-                                        name="./cardWebpageTabTarget"
-                                        text="Open Link in New Tab"
-                                        value="true"/>
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        eaem-nested=""
+                                        fieldDescription="Click 'Add' to add a new link"
+                                        fieldLabel="Links">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            name="./multiFieldItems1">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <linkConfig
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Add link"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <linkTitle
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Please enter link name"
+                                                            fieldLabel="Link Title"
+                                                            name="./cardWebpageTitle"/>
+                                                        <linkTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                            fieldDescription="Select path of the target link"
+                                                            fieldLabel="Link Target"
+                                                            name="./cardWebpageTarget"
+                                                            rootPath="/content"/>
+                                                        <linkTabTarget
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="{Boolean}false"
+                                                            fieldDescription="Check this checkbox to open the link in new tab."
+                                                            name="./cardWebpageTabTarget"
+                                                            text="Open Link in New Tab"
+                                                            value="true"/>
+                                                    </items>
+                                                </linkConfig>
+                                            </items>
+                                        </field>
+                                    </section1Links>
                                 </items>
                             </column>
                         </items>
-                    </general>
+                    </links>
                     <authControl
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/include"

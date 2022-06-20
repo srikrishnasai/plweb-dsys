@@ -659,7 +659,7 @@
                 <v1 jcr:primaryType="nt:unstructured">
                     <accordion jcr:primaryType="nt:unstructured">
                         <policy_1653033532711
-                            jcr:lastModified="{Date}2022-06-08T12:23:54.794+05:30"
+                            jcr:lastModified="{Date}2022-06-20T11:14:21.089+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Theme"
@@ -669,7 +669,7 @@
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                             <cq:styleGroups jcr:primaryType="nt:unstructured">
                                 <item0
-                                    cq:styleGroupLabel="Theme"
+                                    cq:styleGroupLabel="THEME"
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
@@ -681,6 +681,11 @@
                                             cq:styleClasses="accordion--light"
                                             cq:styleId="1653033550797"
                                             cq:styleLabel="Light"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item2
+                                            cq:styleClasses="accordion--white-color"
+                                            cq:styleId="1655703786318"
+                                            cq:styleLabel="White"
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item0>

@@ -11,7 +11,7 @@
         width: 100%;
         flex-direction: column;
         // max-width: 500px;
-        // padding: @4;
+        padding: 24px;
         // padding-top: 0;
         box-sizing: border-box;
     });
@@ -27,7 +27,7 @@
         height: 64px;
         width: 64px;
         object-fit: contain;
-        margin-bottom: @24;
+        margin-bottom: @8;
         border-radius: @rounded;
     });
 
@@ -36,6 +36,7 @@
         border-radius: @rounded;
         width: 80px;
         margin-bottom: @8;
+        margin-top: -24px;
         display: none;
     });
 
@@ -56,7 +57,21 @@
         .openSans;
         color: @blue600;
         text-decoration: none;
+        width: 100%;
     });
+
+    .element(card-ul,{
+        list-style: none;
+        padding-inline-start: 0px;
+    });
+
+    .element(card-li,{
+        margin-bottom: @8;
+        display: flex;
+        align-items: center;
+    });
+
+    
     .modifier(center-title,{
         .card__title{
             text-align: center;
@@ -124,6 +139,7 @@
                 width: 16px;
                 height: 16px;
                 background-repeat: no-repeat;
+                margin-right: 5px
             }
 
         });
@@ -142,6 +158,7 @@
                 text-align: center;
                 color: #FBFBFB;
                 padding: 10px 24px;
+                width: 100%;
             }
             
             .pdf-wrapper{
@@ -172,7 +189,7 @@
             width: 80%;
         }
         .card__main{
-            padding: 1rem !important;
+            padding: @24;
         }
     });
 

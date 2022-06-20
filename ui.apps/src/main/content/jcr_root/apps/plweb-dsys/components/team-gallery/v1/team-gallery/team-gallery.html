@@ -24,7 +24,7 @@
                     target="${item.openInNewTab ? '_blank' : ''}"> ${item.employeeName} </a>
                 <span data-sly-test="${!item.linkTarget}"> ${item.employeeName}</span>
             </h4>
-            <div class="team-gallery__position">${item.position}</div>
+            <div class="team-gallery__position">${item.position @ context = 'html'}</div>
             <div class="team-gallery__position">${item.description @ context = 'html'}</div>
         </div>
     </li>
