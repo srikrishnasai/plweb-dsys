@@ -10,36 +10,41 @@
             .bullet-list {
                 display: grid;
                 gap: 10px;
-                padding-left: 10px;
-    
                 .li-bullet-list {
                     list-style-type: none;
                     display:flex;
                     flex-direction: row;
                     gap: 10px;
                     .checkmark{
-                        background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/checkmark.svg);
                         width: 30px;
                         height: 30px;
                         min-width: 30px;
-                    }
-                    .list-text {
-                        font-family: 'Open Sans';
-                        font-weight: 400;
-                        font-size: 16px;
-                        line-height: 24px;
+                        background-color: #E9F2FA;
+                        border-radius: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .color-checkmark{
+                            color: @linkLight;
+                        }
                     }
                 }
             }
         });
+        .modifier(no-left-padding,{
+            .bullet-list {
+                padding-left: 0px !important;
+            }
+        });
         .modifier(numbers,{
+            .checkmark{
+                display: none;
+            }
             .bullet-list {
                 counter-reset: li;
                 list-style-type: none;
                 font-size: 1rem;
                 line-height: 18px;
-                padding-left: 10px;
-                font-weight: 700;
                 display: grid;
                 gap: 10px;
                 li {
@@ -48,8 +53,6 @@
                     &:before {
                         content: counter(li);
                         counter-increment: li;
-                        // height: 25px;
-                        // width: 25px;
                         height: 36px;
                         width: 36px;
                         border-radius: 50%;
@@ -57,20 +60,16 @@
                         position: absolute;
                         left: 0;
                         top: 5px;
-                      
-                        color: #0D65B3;
+                        color: @linkLight;
                         text-align: center;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         background-color: #E9F2FA;
                         min-width: 36px;
+                        .fw-700;
                     }
                     .list-text {
-                        font-family: 'Open Sans';
-                        font-weight: 400;
-                        font-size: 16px;
-                        line-height: 24px;
                         display: block;
                         padding-left: 16px;
                     }
@@ -80,9 +79,19 @@
     }
 
     .bulleted-list-wrapper {
-        padding: 10px;
+        .checkmark{
+            display: none;
+        }
+
+        .list-text {
+            .openSans;
+            .fw-400;
+            font-size: 1rem;
+            line-height: 24px;
+        }
 
         .bullet-list {
+            padding-left: 20px;
             .modifier(one, {
                     grid-template-columns: auto;
                 }
@@ -103,7 +112,6 @@
         }
         .bullet-list-bullet {
             list-style-type: none;
-            padding-left: 10px;
             display: grid;
             gap: 10px;
             li {
@@ -113,18 +121,12 @@
                 flex-direction: row;
                 &:before {
                     content: "";
-                    height: 15px;
-                    width: 15px;
+                    height: 12px;
+                    width: 12px;
                     border-radius: 50%;
                     margin-top: 5px;
-                    background-color: #0D65B3;
-                    min-width: 15px;
-                }
-                .list-text {
-                    font-family: 'Open Sans';
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 24px;
+                    background-color: @linkLight;
+                    min-width: 12px;
                 }
             }
         }   
@@ -138,28 +140,6 @@
         grid-template-rows: repeat(1, auto) !important;
         gap: 10px !important;
         grid-auto-flow: row !important;
-    }
-
-    .bulleted-list {
-        &.cmp-list{
-            
-            .modifier(numbers,{
-                .bullet-list {
-                    padding-left: 0px;
-                }
-            });
-        }
-    
-        .bulleted-list-wrapper {
-            padding: 0px;
-            .bullet-list-bullet {
-                padding-left: 0px;
-                li {
-                    padding-left: 0px;
-                }
-            }   
-        }
-    
     }
 }
 
