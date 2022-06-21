@@ -109,7 +109,7 @@
                             </columns>
                         </items>
                     </properties>
-                    <accessibility
+                    <!-- <accessibility
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Accessibility"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
@@ -136,7 +136,7 @@
                                 </items>
                             </columns>
                         </items>
-                    </accessibility>
+                    </accessibility> -->
 					<authControl
                         jcr:primaryType="nt:unstructured"
                         path="plweb-dsys/common/authcontrol/cq:dialog/content/items/tabs/items/authControl"

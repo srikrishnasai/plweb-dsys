@@ -666,11 +666,12 @@
                     </responsive-grid>
                 </v1>
             </responsive-grid>
-            <accordion jcr:primaryType="nt:unstructured">
+             <accordion jcr:primaryType="nt:unstructured">
                 <v1 jcr:primaryType="nt:unstructured">
                     <accordion jcr:primaryType="nt:unstructured">
                         <policy_1653033532711
-                            jcr:lastModified="{Date}2022-06-08T12:23:54.794+05:30"
+                            cq:styleDefaultClasses="accordion--light"
+                            jcr:lastModified="{Date}2022-06-20T16:50:30.637+05:30"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Theme"
