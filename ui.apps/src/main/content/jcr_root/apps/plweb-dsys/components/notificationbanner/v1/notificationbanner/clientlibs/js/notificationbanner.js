@@ -68,9 +68,9 @@ function setBannerType(curElem){
 
         if(buttonType === "linkButton"){
         	if(targetTab === "true"){
-				window.open(targetPath + ".html",'_blank');
+				window.open(targetPath ,'_blank');
             }else{
-				window.location.href = targetPath + ".html";
+				window.location.href = targetPath;
             }
         }
         else{

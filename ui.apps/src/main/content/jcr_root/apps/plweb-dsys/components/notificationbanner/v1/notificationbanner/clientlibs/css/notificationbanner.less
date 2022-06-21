@@ -16,30 +16,17 @@
      }
 
      .element(text,{
-        width: 90%;
+        max-width: 90%;
         display: inline-block;
         margin-bottom: 0;
         margin-right: 2%; 
-        padding-left: 10px;
+        padding-left: 2%;
 
         p{
             margin-bottom:0;
             //font-size:16px;
         }
     });
-
-    // .text {
-    //     width: 90%;
-    //     display: inline-block;
-    //     margin-bottom: 0;
-    //     margin-right: 2%; 
-    //     padding-left: 10px;
-
-    //     p{
-    //         margin-bottom:0;
-    //         //font-size:16px;
-    //     }
-    // }
 
     &.fade-banner{
         opacity: 0;
@@ -50,40 +37,35 @@
         transition: opacity 500ms linear 0.5s;
     }  
 
-    .bannerButton {
+    .element(bannerButton, {
         border: 0;
         white-space: nowrap;
         margin-right: 5%;
         color: #fff;
+        min-width: fit-content;
         &.bannerButton--teal {
             background-color: #108188;
             color: #fff;
         }
-    }
+    });
+
 }
 
 @media @mediaTablet {
 	.notification_bar{
         flex-direction: column;
-        padding: unset;
+        padding: 12px;
         margin-right: 10%;
 
         .element(text,{
             width: 90%;
-            padding: 4%;
-    
-            
+            padding: 2%;     
         });
 
         .element(bannerButton,{
             margin-bottom: 2%;
-            margin-right: 0;   
+            white-space: unset;
         });
-
-        // .bannerButton{
-        //     margin-bottom: 2%;
-        //     margin-right: 0;
-        // }
 
 	}
 }
