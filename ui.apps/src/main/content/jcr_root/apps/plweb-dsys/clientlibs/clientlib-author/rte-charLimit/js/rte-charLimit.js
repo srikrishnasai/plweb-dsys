@@ -13,26 +13,29 @@
         var escapeCodes = [8, 46, 37, 38, 39, 40, 35, 36, 45, 27]; // backspace, delete, leftarrow, uparrow, downarrow, rightarrow, home, end, insert, escape
 
         function truncateAndUpdate(el, text) {
-            $(el).text(text.substring(0, maxCharCount) || '');
+            var truncatedText = text.substring(0, maxCharCount) || ''
+            $(el).text(truncatedText);
             $(el).focusEnd();
+            $rteContainer.find('.custom-rte__char-count').html(maxCharCount - truncatedText.length);
         }
 
         function secondCheckAndChangeText(el) {
             var text = removeMarkup($(el).text());
             if (maxCharCount - text.length < 0) {
-                truncateAndUpdate(el, TEXT_VAL);
+                truncateAndUpdate(el, text);
             }
         }
 
-        function removeMarkup(val){
+        function removeMarkup(val) {
             var divElem = document.createElement('div');
             divElem.innerHTML = val;
             return divElem.textContent;
         }
 
         function updateCount(el, text) {
-            $rteContainer.find('.custom-rte__char-count').html(maxCharCount - text.length);
             secondCheckAndChangeText(el);
+            var truncatedText = removeMarkup($(el).text());
+            $rteContainer.find('.custom-rte__char-count').html(maxCharCount - truncatedText.length);
         }
 
         function addCharCount() {
@@ -43,7 +46,7 @@
                 curCharCount = 0;
             }
             var $rteCountTextEle = $rteContainer && $rteContainer.find('.custom-rte__char-count');
-            if($rteCountTextEle && $rteCountTextEle.length) {
+            if ($rteCountTextEle && $rteCountTextEle.length) {
                 $rteCountTextEle.innerHTML = (maxCharCount - curCharCount);
             } else {
                 //Charcters counter 
@@ -74,13 +77,13 @@
         $rteBox.on('keydown keyup', onTextInput);
 
         // focus end jQuery
-        $.fn.focusEnd = function() {
+        $.fn.focusEnd = function () {
             $(this).focus();
             var tmp = $('<span />').appendTo($(this)),
                 node = tmp.get(0),
                 range = null,
                 sel = null;
-        
+
             if (document.selection) {
                 range = document.body.createTextRange();
                 range.moveToElementText(node);
