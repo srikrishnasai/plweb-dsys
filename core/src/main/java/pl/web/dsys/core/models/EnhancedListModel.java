@@ -60,10 +60,10 @@ public class EnhancedListModel {
 
 	@RequestAttribute
 	private String listType;
-	
+
 	@ValueMapValue
 	private String title;
-	
+
 	@ValueMapValue
 	private String description;
 
@@ -78,6 +78,8 @@ public class EnhancedListModel {
 	 */
 	@ScriptVariable
 	protected ValueMap properties;
+
+	private String length;
 
 	List<Resource> resourcesList = new ArrayList<Resource>();
 	List<ListItem> enhancedListItems = null;
@@ -141,7 +143,7 @@ public class EnhancedListModel {
 				enhancedPageItems.add(item);
 			}
 		}
-
+		
 		return enhancedItems;
 	}
 
@@ -226,6 +228,10 @@ public class EnhancedListModel {
 
 	public String getDescription() {
 		return description;
+	}
+
+	public String getLength() {
+		return Integer.toString(resourcesList.size());
 	}
 
 }

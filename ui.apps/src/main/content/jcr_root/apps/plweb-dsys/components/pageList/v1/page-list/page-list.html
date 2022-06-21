@@ -1,16 +1,14 @@
-<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.all @ categories='plweb-dsys.pages-list'}" />
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.all @ categories='plweb-dsys.page-list'}" />
 <sly data-sly-use.listObj="${'pl.web.dsys.core.models.EnhancedListModel' @ listType='pages'}"/>
-<div class="pages-container" id="pages-carousel">
-	<div class="swiper swiper-container">
+
+	<div class="pages-container" data-length="${listObj.length}" data-columnCount="two">
+        <sly data-sly-test="${listObj.title}">
         <h3>${listObj.title}</h3>
+        </sly>
+        <sly data-sly-test="${listObj.description}">
         <p>${listObj.description}</p>
-		<ul class="swiper-wrapper" data-sly-list.item="${listObj.enhancedListItems}">
-			<li class="swiper-slide"> <img src="${item.path}" alt/> </li>
+        </sly>
+		<ul class="ul-pages-list" data-sly-list.item="${listObj.enhancedListItems}">
+			<li class="li-pages-list"> <a href="${item.Url}" ><span class="list-text">${item.title} </span></a></li>
 		</ul>
 	</div>
-	<div class="carouselButtonContainer">
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-pagination"></div>
-		<div class="swiper-button-next"></div>
-	</div>
-</div>

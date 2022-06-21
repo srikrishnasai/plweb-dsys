@@ -5,7 +5,15 @@
         <h3>${listObj.title}</h3>
         <p>${listObj.description}</p>
 		<ul class="swiper-wrapper" data-sly-list.item="${listObj.enhancedListItems}">
-			<li class="swiper-slide"> <img src="${item.path}" alt/> </li>
+			<li class="swiper-slide"> 
+                <img data-sly-test="${item.contentType == 'asset'}" src="${item.path}" alt="${item.contentType}"/>
+                <div onclick="playVideoForCarousel(event)">
+                <video id="videoPlayer" data-sly-test="${item.contentType == 'video'}" src="${item.path}" playsinline >
+                <source src=${item.path} type="video/mp4" />
+                </video>
+                </div>
+
+            </li>
 		</ul>
 	</div>
 	<div class="carouselButtonContainer">

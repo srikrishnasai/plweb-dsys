@@ -23,7 +23,10 @@ function initializeSwiper(totalItems, swiper, prevButton, nextButton, pagination
     });
 }
 
-
+function playVideoForCarousel(elem) {
+    var videoElement = $('#videoPlayer');
+    videoElement[0].play();
+}
 
 function loadComponent(elem) {
 
