@@ -5,8 +5,8 @@
     class="${(wcmmode.edit || wcmmode.design) ? 'component-border': ''} 
     section-container__main  
     ${properties.removeSpaceDesktop ? ' section-container--desktop-full-width' : ''}
-    ${properties.removeSpaceTablet ? ' section-container--tablet-full-width' : ''}
-    ${properties.removeSpaceMobile ? ' section-container--mobile-full-width' : ''}
+    ${(properties.useDesktopConfigForTablet && properties.removeSpaceDesktop) || properties.removeSpaceTablet ? ' section-container--tablet-full-width' : ''}
+    ${(properties.useDesktopConfigForMobile && properties.removeSpaceDesktop) || properties.removeSpaceMobile ? ' section-container--mobile-full-width' : ''}
     ${properties.animation && properties.animation != 'none' ? ' animatedParent animateOnce' : ''} 
     section-container--desktop-top-external-${properties.desktopTopExternal}  
     section-container--desktop-bottom-external-${properties.desktopBottomExternal} 

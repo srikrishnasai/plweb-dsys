@@ -395,9 +395,9 @@
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
-                                            cq:styleClasses="section-container__layout--grid"
-                                            cq:styleId="1650354041255"
-                                            cq:styleLabel="Grid"
+                                            cq:styleClasses="section-container__layout--block"
+                                            cq:styleId="1655793301794"
+                                            cq:styleLabel="Block"
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item0>

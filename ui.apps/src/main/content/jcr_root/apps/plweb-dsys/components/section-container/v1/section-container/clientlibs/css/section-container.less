@@ -2,6 +2,27 @@
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 
 .section-container {
+    
+    .aem-Grid {
+        display: flex;
+        gap: @64;
+
+        &::before {
+            content: none;
+        }
+    
+        &::after {
+            content: none;
+        }
+    }
+
+    @media @mediaMobile {
+        .aem-Grid {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+  
     .element(author-title-bar,{
         position: absolute;
         width: 100%;
@@ -467,25 +488,6 @@
         });
     });
 
-    .element(layout, {
-        .modifier(grid ,{
-            .aem-Grid::before {
-                content: none;
-            }
-
-            .aem-Grid::after {
-                content: none;
-            }
-
-            @media @mediaMobile {
-                .aem-Grid {
-                    display: flex;
-                    flex-direction: column;
-                }
-            }
-        });
-    });
-
     .element(justify, {
         .modifier(center ,{
             .aem-Grid {
@@ -537,11 +539,5 @@
                 gap: 128px;
             }
         });
-    });
-
-    .element(layout-parsys, {
-        .new.newpar {
-            min-width: 150px;
-        }
     });
 }
