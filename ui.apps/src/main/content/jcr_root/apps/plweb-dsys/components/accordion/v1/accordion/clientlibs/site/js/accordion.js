@@ -621,3 +621,18 @@
     window.addEventListener("hashchange", onHashChange, false);
 
 }());
+
+$(document).ready(function () {
+    $('.accordion').each(function() {
+
+       let hasSectionExpanded = $(this).hasClass('accordion--section-expand');
+
+       if(hasSectionExpanded){
+           $(this).find('.arrow-down').removeClass('fa-angle-down');
+           $(this).find('.arrow-up').removeClass('fa-angle-up');
+           $(this).find('.arrow-down').addClass('fa-plus');
+           $(this).find('.arrow-up').addClass('fa-minus');
+       }
+    
+    });
+});

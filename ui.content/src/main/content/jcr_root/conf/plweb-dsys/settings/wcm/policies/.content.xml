@@ -681,7 +681,7 @@
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                             <cq:styleGroups jcr:primaryType="nt:unstructured">
                                 <item0
-                                    cq:styleGroupLabel="Theme"
+                                    cq:styleGroupLabel="THEME"
                                     jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
@@ -693,6 +693,11 @@
                                             cq:styleClasses="accordion--light"
                                             cq:styleId="1653033550797"
                                             cq:styleLabel="Light"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item2
+                                            cq:styleClasses="accordion--white-color"
+                                            cq:styleId="1655703786318"
+                                            cq:styleLabel="White"
                                             jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item0>

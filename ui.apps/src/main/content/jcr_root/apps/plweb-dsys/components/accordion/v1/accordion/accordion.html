@@ -1,42 +1,36 @@
 <div data-sly-use.accordion="com.adobe.cq.wcm.core.components.models.Accordion"
-     data-panelcontainer="${wcmmode.edit && 'accordion'}"
-     id="${accordion.id}"
-     class="cmp-accordion"
-     data-cmp-is="accordion"
-     data-cmp-data-layer="${accordion.data.json}"
-     data-cmp-single-expansion="${accordion.singleExpansion}"
-     data-placeholder-text="${wcmmode.edit && 'Please drag Accordion item components here' @ i18n}">
-	 <sly data-sly-use.clientlib="${'/libs/granite/sightly/templates/clientlib.html'}"
-     data-sly-call="${clientLib.all @ categories='plweb-dsys.core.wcm.components.accordion.v1'}"/>
-    <sly data-sly-use.multiHelper="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodePath=resource.path}"/>
-	<sly data-sly-test="${accordion.items.size > 0}" data-sly-repeat.item="${accordion.items}">
-	<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ itemPath=item.path}"/>
-	<sly data-sly-test="${itemControlObj.itemAuthorized}">
-    <div
-         class="cmp-accordion__item"
-         data-cmp-hook-accordion="item"
-         data-cmp-data-layer="${item.data.json}"
-         id="${item.id}"
-         data-cmp-expanded="${item.name in accordion.expandedItems}">
-        <div class="cmp-accordion__header">
-            <button id="${item.id}-button"
-                    class="cmp-accordion__button${item.name in accordion.expandedItems ? ' cmp-accordion__button--expanded' : ''}"
-                    aria-controls="${item.id}-panel"
-                    data-cmp-hook-accordion="button">
-                <div data-sly-test="${multiHelper.childResource.listChildren[itemList.index].iconPath}" class="cmp-accordion__front-icon" style="background-image:url('${multiHelper.childResource.listChildren[itemList.index].iconPath @ context = 'uri'}') "></div>
-                <span class="cmp-accordion__title">${item.title}</span>
-                <div class="cmp-accordion__icon"></div>
-            </button>
-        </div>
-        <div data-sly-resource="${item.name @ decorationTagName='div'}"
-             data-cmp-hook-accordion="panel"
-             id="${item.id}-panel"
-             class="cmp-accordion__panel${item.name in accordion.expandedItems ? ' cmp-accordion__panel--expanded' : ' cmp-accordion__panel--hidden'}"
-             role="region"
-             aria-labelledby="${item.id}-button"></div>     
-    </div>
-	</sly>
-	</sly>
+    data-panelcontainer="${wcmmode.edit && 'accordion'}" id="${accordion.id}" class="cmp-accordion"
+    data-cmp-is="accordion" data-cmp-data-layer="${accordion.data.json}"
+    data-cmp-single-expansion="${accordion.singleExpansion}"
+    data-placeholder-text="${wcmmode.edit && 'Please drag Accordion item components here' @ i18n}">
+    <sly data-sly-use.clientlib="${'/libs/granite/sightly/templates/clientlib.html'}"
+        data-sly-call="${clientLib.all @ categories='plweb-dsys.core.wcm.components.accordion.v1'}" />
+    <sly data-sly-use.multiHelper="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodePath=resource.path}" />
+    <sly data-sly-test="${accordion.items.size > 0}" data-sly-repeat.item="${accordion.items}">
+        <sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ itemPath=item.path}" />
+        <sly data-sly-test="${itemControlObj.itemAuthorized}">
+            <div class="cmp-accordion__item" data-cmp-hook-accordion="item" data-cmp-data-layer="${item.data.json}"
+                id="${item.id}" data-cmp-expanded="${item.name in accordion.expandedItems}">
+                <div class="cmp-accordion__header">
+                    <button id="${item.id}-button" 
+                        class="cmp-accordion__button${item.name in accordion.expandedItems ? ' cmp-accordion__button--expanded' : ''}"
+                        aria-controls="${item.id}-panel" data-cmp-hook-accordion="button">
+                        <div data-sly-test="${multiHelper.childResource.listChildren[itemList.index].iconPath}"
+                            class="cmp-accordion__front-icon"
+                            style="background-image:url('${multiHelper.childResource.listChildren[itemList.index].iconPath @ context = 'uri'}') ">
+                        </div> 
+                        <span class="cmp-accordion__title">${item.title}</span>
+                        <i class="fa-solid arrow-color fa-angle-down arrow-down arrow"></i>     
+                        <i class="fa-solid arrow-color fa-angle-up arrow-up arrow"></i>                          
+                    </button>
+                </div>
+                <div data-sly-resource="${item.name @ decorationTagName='div'}" data-cmp-hook-accordion="panel"
+                    id="${item.id}-panel"
+                    class="cmp-accordion__panel${item.name in accordion.expandedItems ? ' cmp-accordion__panel--expanded' : ' cmp-accordion__panel--hidden'}"
+                    role="region" aria-labelledby="${item.id}-button"></div>
+            </div>
+        </sly>
+    </sly>
     <sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys/newpar', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"
-         data-sly-test="${(wcmmode.edit || wcmmode.preview) && accordion.items.size < 1}"></sly>
+        data-sly-test="${(wcmmode.edit || wcmmode.preview) && accordion.items.size < 1}"></sly>
 </div>

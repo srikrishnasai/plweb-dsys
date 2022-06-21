@@ -3,9 +3,9 @@
       data-sly-use.objRef="pl.web.dsys.core.models.CardModel"
 	  data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
       data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform=objRef.useOriginalImage ?'dsys-flexImg':'dsys-flexImg576w', nodeName='image', transparent=objRef.useTransparentImage}"
-      data-sly-use.linkTarget="${'pl.web.dsys.core.helpers.LinkHelpers' @ url=objRef.cardWebpageTarget}"
       data-sly-call="${clientlib.all @ categories='plweb-dsys.card'}">
 </div>
+<sly data-sly-use.model1="${'pl.web.dsys.core.helpers.MultifieldHelperModel' @ nodeName='multiFieldItems1'}"></sly>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !objRef.cardTitle, classAppend='cmp-text'}"></sly>
 <sly data-sly-test="${authControlObj.hasComponentAccess}">
 <section class="card__main">
@@ -21,15 +21,17 @@
       <div data-sly-test="${objRef.cardDescription}" class="card__description">
             ${objRef.cardDescription @ context = 'html'}
       </div>
-	  <sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=objRef.cardWebpageTarget}"/>
-      <div data-sly-test="${itemControlObj.resourceAuthorized}" class="link-wrapper--${properties.linkOptions}">
-            <div class="pdf-wrapper" data-sly-test="${properties.linkOptions == 'pdf' && objRef.cardWebpageTarget}"></div>
-            <div class="wrapper-link">
-                  <a target="${objRef.cardWebpageTabTarget ? '_blank' : ''}" data-sly-test="${objRef.cardWebpageTarget}"
-                  href="${linkTarget.linkURL}" class="card__link">
-                  ${objRef.cardWebpageTitle}
-                  </a>
-            </div>
+      <div class="link-wrapper--${properties.linkOptions}">
+            <ul data-sly-test="${model1.childResource}" class="card__card-ul"
+                  data-sly-list="${model1.childResource.listChildren}">
+                        <sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.cardWebpageTarget}"/>
+                        <li data-sly-test="${itemControlObj.resourceAuthorized}" class="wrapper-link card__card-li"
+                        data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.cardWebpageTarget}">
+                        <div class="pdf-wrapper" data-sly-test="${properties.linkOptions == 'pdf' && item.cardWebpageTarget}"></div>
+                              <a href="${linkHelper.linkURL}" target="${item.cardWebpageTabTarget ? '_blank' : ''}"
+                                    class="card__link"> ${item.cardWebpageTitle} </a>
+                        </li>
+            </ul>
       </div>
    
 </section>

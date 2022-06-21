@@ -46,6 +46,7 @@
                                         sling:resourceType="granite/ui/components/foundation/form/select"
                                         class="cq-dialog-dropdown-showhide"
                                         fieldLabel="Text Color"
+                                        sling:hideResource="true"
                                         name="./color">
                                         <items jcr:primaryType="cq:WidgetCollection">
                                             <blue
@@ -116,10 +117,18 @@
                                         required="{Boolean}true"/>
                                     <designation
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                         fieldLabel="Designation"
+                                        required="{Boolean}true"
                                         name="./position"
-                                        required="{Boolean}true"/>
+                                        useFixedInlineToolbar="{Boolean}true">
+                                        <rtePlugins
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/rtePlugins"/>
+                                        <uiSettings
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
+                                    </designation>    
                                     <description
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/container"
