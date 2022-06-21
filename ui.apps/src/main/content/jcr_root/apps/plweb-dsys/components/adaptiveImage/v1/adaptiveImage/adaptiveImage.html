@@ -6,8 +6,8 @@ data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" />
 		<img src="${image.large @ context='uri'}" alt="${image.alt ? image.alt : ''}"/>
 	</noscript>
     <a data-sly-unwrap="${!image.link}" href="${image.link}" data-cmp-hook-image="link" class="${image.imagePos}">
-        <div class="adaptive-image">
-            <img class="adaptive-image__elm ${image.imagePos}" data-sm-src="${image.small @ context='html'}" data-md-src="${image.medium @ context='html'}" data-lg-src="${image.large @ context='html'}"
+        <div class="adaptive-image ${image.imagePos}">
+            <img class="adaptive-image__elm " data-sm-src="${image.small @ context='html'}" data-md-src="${image.medium @ context='html'}" data-lg-src="${image.large @ context='html'}"
                 src="data:image/gif;base64,R0lGOD	lhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAI=" alt="${image.alt ? image.alt : ''}" title="${image.title ? image.title : 'Image'}">
             <div class="adaptive-image__loader"></div>
         </div>

@@ -2,19 +2,23 @@
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.video'}" />
-<section class="video__main" class="dsys-border dsys-border__${properties.barPosition}">
-    <button class="video__playButton">
-        <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
-    </button>
-    <video muted="${properties.autoplay ? true : null}" id="videoPlayer" width="100%" height="100%"
-        controls="${properties.controls ? null : true }" autoplay="${properties.autoplay ? true : null}"
-        loop="${properties.loop ? true : null}" preload="${properties.preload}"
-        controlsList="${properties.download ? true : null}">
-        <source src="${properties.source}" type="video/mp4" />
-        <source src="video/videogular.ogg" type="video/ogg" />
-        <source src="video/videogular.webm" type="video/webm" />
-    </video>
-</section>
+    <div class="dsys-border dsys-border__${properties.barPosition}">
+        <section class="video__main">
+            <button class="video__playButton">
+                <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
+            </button>
+            <video muted="${properties.autoplay ? true : null}" id="videoPlayer" width="100%" height="100%"
+                controls="${properties.controls ? null : true }" autoplay="${properties.autoplay ? true : null}"
+                loop="${properties.loop ? true : null}" preload="${properties.preload}"
+                controlsList="${properties.download ? true : null}">
+                <source src="${properties.source}" type="video/mp4" />
+                <source src="video/videogular.ogg" type="video/ogg" />
+                <source src="video/videogular.webm" type="video/webm" />
+            </video>
+        </section>
+
+    </div>
+
 
 
 <sly data-sly-call="${template.placeholder @ isEmpty=properties.source == ''}" />
