@@ -1,0 +1,31 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
+    data-sly-call="${clientlib.all @ categories='plweb-dsys.video-list'}" />
+<div id="videoContainer"
+    class="video__container ${properties.addTopSpacing ? 'video__container-top-spacing' : ''} ${properties.addBottomSpacing ? 'video__container-bottom-spacing' : ''}"
+    data-sly-use.list="pl.web.dsys.core.models.VideoList" data-sly-test="${authControlObj.hasComponentAccess}">
+
+
+    <h2 class="videoComponentTitle" data-sly-test="${properties.componentTitle}">${properties.componentTitle}</h2>
+
+    <span id="properties" data-attribute="${properties.view}"></span>
+    <div data-sly-test="${properties.view && properties.view == 'carousel'}" id="carousel">
+        <div data-sly-include="carousel.html"></div>
+    </div>
+
+    <div data-sly-test="${properties.view && properties.view == 'sidebar'}" id="sidebar">
+        <div data-sly-include="sidebar.html"></div>
+    </div>
+
+    <div data-sly-test="${properties.view != 'sidebar' && properties.view != 'carousel'}">
+        <ul data-sly-list.item="${list.items}" data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+            data-sly-use.itemTemplate="${list.view}">
+            <li data-sly-test="${properties.limit? itemList.count <= properties.limit : itemList.count<=5}"
+                class="${list.liClass}" data-sly-call="${itemTemplate.item @ list = list, item = item}"></li>
+        </ul>
+    </div>
+
+
+    <sly data-sly-call="${templates.placeholder @ isEmpty = !video.videoPath, classAppend = 'cq-dd-image'}"></sly>
+</div>
