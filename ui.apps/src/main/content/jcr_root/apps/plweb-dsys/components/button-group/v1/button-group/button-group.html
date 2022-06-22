@@ -6,8 +6,8 @@
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !objRef.numberOfButtons, classAppend='cmp-text'}"></sly>
 <div data-sly-test="${authControlObj.hasComponentAccess}" class="dsys-button-group__main">
-      <div data-sly-resource="${'button1' @ resourceType='/apps/plweb-dsys/components/button/v1/button', decorationTagName='div'}"></div>
-      <div data-sly-resource="${'button2' @ resourceType='/apps/plweb-dsys/components/button/v1/button', decorationTagName='div'}"></div>
-      <div data-sly-test="${objRef.numberOfButtons == '3'}"
-           data-sly-resource="${'button3' @ resourceType='/apps/plweb-dsys/components/button/v1/button', decorationTagName='div'}"></div>
+      <sly data-sly-resource="${'button1' @ resourceType='/apps/plweb-dsys/components/button/v1/button', decorationTagName='div'}"></sly>
+      <sly data-sly-resource="${'button2' @ resourceType='/apps/plweb-dsys/components/button/v1/button', decorationTagName='div'}"></sly>
+      <sly data-sly-test="${objRef.numberOfButtons == '3'}"
+           data-sly-resource="${'button3' @ resourceType='/apps/plweb-dsys/components/button/v1/button', decorationTagName='div'}"></sly>
 </div>
