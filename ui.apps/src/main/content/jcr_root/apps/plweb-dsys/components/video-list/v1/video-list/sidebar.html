@@ -1,0 +1,56 @@
+<div data-sly-use.list="pl.web.dsys.core.models.VideoList"
+data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
+data-sly-test="${authControlObj.hasComponentAccess}">
+  <div class="showCarousel" data-sly-include="carousel.html"></div>
+    <div id="conainer" class="sidebar shimmer ${properties.useTealColor ? 'video-content-teal' : ''}">
+        <div class="player">
+            <div class="d-flex player_container items-center content-center">
+                <button id="sideBarPlay" class="playButton">
+                    <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
+                </button>
+                <div id="shimmer" class="shimmerContainer shimmerEffect"></div>
+                <video muted="${list.autoplay}" id="videoPlayer" width="100%" height="100%" controls="${list.controls}"
+                    class="${list.videoClass} sidebarPlayer" autoplay="${list.autoplay}" loop="${list.loop}" preload="${list.preload}"
+                    controlsList="${list.download}" poster="${item.related}">
+                    <source type="video/mp4" />
+                    <source src="video/videogular.ogg" type="video/ogg" />
+                    <source src="video/videogular.webm" type="video/webm" />
+                </video>
+            </div>
+            <div>
+                <h3 class="titleStyling sidebarVideoTitle shimmerEffect" id="videoTitle"></h3>
+                <p class="videoDesc shimmerEffect" id="videoDescription"></p>
+            </div>
+        </div>
+        <div id="rightBar" class="rightPane">
+            <span class="arrow topArrow"><i class="fa fa-chevron-up"></i></span>
+            <ul data-sly-list.item="${list.featuredVideoList}" class="rightPaneContent">
+                <li data-sly-test="${properties.limit? itemList.count <= properties.limit : itemList.count<=5}">
+                    <div class="preview">
+
+
+                        <div class="videoOverlay">
+                            <div id="shimmer" class="shimmerContainer shimmerEffect"></div>
+                            <div id="overlay" class="overlay"><span class="overlayText">Now Playing </span> </div>
+                            <video
+                                data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @transform='flexImg1200w', imagePath=item.related}"
+                                poster="${properties.useOriginalImage ? item.related : imageurl.transformedImageUrl}"
+                                muted class="sideBarThumbnail" data-desc="${item.description}"
+                                data-title="${item.title? item.title : item.name}" data-video-path=${item.path}
+                                id="${list.id}" height="auto" play="false">
+                                <source src=${item.path} type="video/mp4" />
+                            </video>
+
+                        </div>
+                        <div id="details" class="details">
+                            <p class="titleStyling secondaryTitleStyling shimmerEffect"> ${item.title? item.title : item.name} </p>
+                            <p class="shimmerEffect onlyShimmer"></p>
+                            <span class="ellipsisDesc shimmerEffect"> ${item.description ? item.description : item.title } </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="arrow downArrow"><i class="fa fa-chevron-down fa-2x"></i></div>
+        </div>
+    </div>
+</div>

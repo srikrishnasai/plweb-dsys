@@ -123,4 +123,36 @@ public class AuthUtil {
 		}
 		return vm;
 	}
+
+    /**
+	 * 
+	 * @param path
+	 * @param slingRequest
+	 * @param resolver
+	 * @param res
+	 * @return
+	 */
+	public static boolean isResourceAuthorized(String path, SlingHttpServletRequest slingRequest,ResourceResolver resolver){
+		Resource listItem  = resolver.getResource(path);
+
+		ValueMap vm = getVm(resolver, listItem);
+	    boolean isItemAuth= vm.get(SharedContants.PN_AUTH_BY_ITEM, SharedContants.DO_COMPONENT_AUTH_DEFAULT);;
+
+    	boolean access = Boolean.TRUE;
+    	if(isItemAuth){
+	    	try {
+		    	 listItem  = resolver.getResource(path);
+		    	
+		    	if(listItem != null){
+			    	access = AuthUtil.checkAccess(slingRequest, listItem);		    	
+		    	}
+	    	}catch(Exception ex){
+	    		ex.printStackTrace();
+	    		
+	    	}
+    	}
+    	return access;
+    }
+ 
+	
 }
