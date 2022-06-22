@@ -5,6 +5,12 @@
     .element(main,{
         display: flex;
         flex-direction: row;
+
+        .button{
+            .dsys-button{
+                height: 100%;
+            }
+        }
     });
 
     .modifier(small-gap,{
@@ -40,4 +46,15 @@
             gap: 12px;
         }
      });
+}
+
+@media @mediaMobile {
+    .dsys-button-group {
+        .element(main,{
+            flex-direction: column;
+        });
+
+    }
+    
+    
 }
