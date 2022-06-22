@@ -1,7 +1,7 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.all @ categories='plweb-dsys.page-list'}" />
 <sly data-sly-use.listObj="${'pl.web.dsys.core.models.EnhancedListModel' @ listType='pages'}"/>
 
-	<div class="pages-container" data-length="${listObj.length}" data-columnCount="two">
+	<div class="pages-container" data-length="${listObj.length}" data-columnCount="${properties.listColumn ? 'two' : ''}">
         <sly data-sly-test="${listObj.title}">
         <h3>${listObj.title}</h3>
         </sly>

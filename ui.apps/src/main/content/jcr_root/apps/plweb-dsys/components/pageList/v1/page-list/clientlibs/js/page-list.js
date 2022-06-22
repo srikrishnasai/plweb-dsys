@@ -8,6 +8,8 @@ $(document).ready(function () {
             rawCount=Math.ceil(rawCount);
             console.log("rawCount",rawCount);
             $(this).find('.ul-pages-list').css('grid-template-rows', 'repeat('+rawCount+',auto)');
+        } else {
+            $(this).find('.ul-pages-list').css('grid-template-rows', 'repeat('+length+',auto)');
         }
     });
 });
