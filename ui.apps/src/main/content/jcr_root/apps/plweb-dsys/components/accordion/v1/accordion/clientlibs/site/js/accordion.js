@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-(function() {
+(function () {
     "use strict";
 
     var containerUtils = window.CQ && window.CQ.CoreComponents && window.CQ.CoreComponents.container && window.CQ.CoreComponents.container.utils ? window.CQ.CoreComponents.container.utils : undefined;
@@ -71,7 +71,7 @@
          */
         "singleExpansion": {
             "default": false,
-            "transform": function(value) {
+            "transform": function (value) {
                 return !(value === null || typeof value === "undefined");
             }
         }
@@ -163,7 +163,7 @@
                      * - if so, route the "navigate" operation to enact a navigation of the Accordion based on index data
                      */
                     window.CQ.CoreComponents.MESSAGE_CHANNEL = window.CQ.CoreComponents.MESSAGE_CHANNEL || new window.Granite.author.MessageChannel("cqauthor", window);
-                    window.CQ.CoreComponents.MESSAGE_CHANNEL.subscribeRequestMessage("cmp.panelcontainer", function(message) {
+                    window.CQ.CoreComponents.MESSAGE_CHANNEL.subscribeRequestMessage("cmp.panelcontainer", function (message) {
                         if (message.data && message.data.type === "cmp-accordion" && message.data.id === that._elements.self.dataset["cmpPanelcontainerId"]) {
                             if (message.data.operation === "navigate") {
                                 // switch to single expansion mode when navigating in edit mode.
@@ -252,12 +252,12 @@
             var buttons = that._elements["button"];
             if (buttons) {
                 for (var i = 0; i < buttons.length; i++) {
-                    (function(index) {
-                        buttons[i].addEventListener("click", function(event) {
+                    (function (index) {
+                        buttons[i].addEventListener("click", function (event) {
                             toggle(index);
                             focusButton(index);
                         });
-                        buttons[i].addEventListener("keydown", function(event) {
+                        buttons[i].addEventListener("keydown", function (event) {
                             onButtonKeyDown(event, index);
                         });
                     })(i);
@@ -334,7 +334,7 @@
                 if (dataLayerEnabled) {
                     var accordionId = that._elements.self.id;
                     var expandedItems = getExpandedItems()
-                        .map(function(item) {
+                        .map(function (item) {
                             return getDataLayerId(item);
                         });
 
@@ -448,6 +448,10 @@
          * @param {HTMLElement} item The item to annotate as expanded
          */
         function expandItem(item) {
+            var slides = document.getElementsByClassName("animated");
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].classList.add('go');
+            }
             var index = that._elements["item"].indexOf(item);
             if (index > -1) {
                 var button = that._elements["button"][index];
@@ -455,12 +459,12 @@
                 button.classList.add(cssClasses.button.expanded);
                 // used to fix some known screen readers issues in reading the correct state of the 'aria-expanded' attribute
                 // e.g. https://bugs.webkit.org/show_bug.cgi?id=210934
-                setTimeout(function() {
+                setTimeout(function () {
                     button.setAttribute("aria-expanded", true);
                 }, delay);
                 panel.classList.add(cssClasses.panel.expanded);
                 panel.classList.remove(cssClasses.panel.hidden);
-                $('#'+panel.id).slideDown();
+                $('#' + panel.id).slideDown();
                 panel.setAttribute("aria-hidden", false);
             }
         }
@@ -480,12 +484,12 @@
                 button.classList.remove(cssClasses.button.expanded);
                 // used to fix some known screen readers issues in reading the correct state of the 'aria-expanded' attribute
                 // e.g. https://bugs.webkit.org/show_bug.cgi?id=210934
-                setTimeout(function() {
+                setTimeout(function () {
                     button.setAttribute("aria-expanded", false);
                 }, delay);
                 panel.classList.add(cssClasses.panel.hidden);
                 panel.classList.remove(cssClasses.panel.expanded);
-                $('#'+panel.id).slideUp();
+                $('#' + panel.id).slideUp();
                 panel.setAttribute("aria-hidden", true);
             }
         }
@@ -585,15 +589,15 @@
 
         var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
         var body = document.querySelector("body");
-        var observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
                 // needed for IE
                 var nodesArray = [].slice.call(mutation.addedNodes);
                 if (nodesArray.length > 0) {
-                    nodesArray.forEach(function(addedNode) {
+                    nodesArray.forEach(function (addedNode) {
                         if (addedNode.querySelectorAll) {
                             var elementsArray = [].slice.call(addedNode.querySelectorAll(selectors.self));
-                            elementsArray.forEach(function(element) {
+                            elementsArray.forEach(function (element) {
                                 new Accordion({ element: element, options: readData(element) });
                             });
                         }
