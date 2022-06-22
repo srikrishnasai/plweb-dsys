@@ -8,7 +8,7 @@
         <sly data-sly-test="${listObj.description}">
         <p>${listObj.description}</p>
         </sly>
-		<ul class="ul-pages-list" data-sly-list.item="${listObj.enhancedListItems}">
-			<li class="li-pages-list"> <a href="${item.Url}" ><span class="list-text">${item.title} </span></a></li>
+		<ul class="ul-pages-list ${properties.removePadding ? 'ul-pages-list--no-padding' : ''}" data-sly-list.item="${listObj.enhancedListItems}">
+			<li class="li-pages-list ${properties.removeBullets ? 'li-pages-list--no-bullets' : ''}"> <a href="${item.Url}" ><span class="list-text">${item.title} </span></a></li>
 		</ul>
 	</div>

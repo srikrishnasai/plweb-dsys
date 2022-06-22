@@ -10,6 +10,11 @@
 		gap: 10px;
 		gap: 10px;
 		grid-auto-flow: column;
+		
+		.modifier(no-padding, {
+		   padding-left: 0px;
+		   padding-inline-start: 0px;
+		});
 	}
 
 	.li-pages-list {
@@ -17,15 +22,17 @@
 		display: flex;
 		flex-direction: row;
 
-		&:before {
-			content: "";
-			height: 15px;
-			width: 15px;
-			border-radius: 50%;
-			margin-top: 5px;
-			background-color: #0D65B3;
-			min-width: 15px;
-		}
+        .modifier(no-bullets,{
+			&:before {
+				content: "";
+				height: 15px;
+				width: 15px;
+				border-radius: 50%;
+				margin-top: 5px;
+				background-color: #0D65B3;
+				min-width: 15px;
+			}
+		});
 
 		span.list-text {
 			font-family: 'Open Sans';
