@@ -1,2 +1,2 @@
-#base=./js
-swiper.bundle.min.js
+#base=js
+swiper.min.js

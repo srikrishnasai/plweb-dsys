@@ -1,22 +1,24 @@
-<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.all @ categories='plweb-dsys.asset-list'}" />
-<sly data-sly-use.listObj="${'pl.web.dsys.core.models.EnhancedListModel' @ listType='assets'}"/>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+	data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+	data-sly-call="${clientlib.all @ categories='plweb-dsys.asset-list'}" />
+<sly data-sly-use.listObj="${'pl.web.dsys.core.models.EnhancedListModel' @ listType='assets'}" />
 <div class="asset-container" id="asset-carousel">
-	<div class="swiper swiper-container">
-        <h3>${listObj.title}</h3>
-        <p>${listObj.description}</p>
+	<div class="swiper assetSwiper">
+		<h3>${listObj.title}</h3>
+		<p>${listObj.description}</p>
 		<ul class="swiper-wrapper" data-sly-list.item="${listObj.enhancedListItems}">
-			<li class="swiper-slide"> 
-                <img data-sly-test="${item.contentType == 'asset'}" src="${item.path}" alt="${item.contentType}"/>
-                <div onclick="playVideoForCarousel(event)">
-                <video id="videoPlayer" data-sly-test="${item.contentType == 'video'}" src="${item.path}" playsinline >
-                <source src=${item.path} type="video/mp4" />
-                </video>
-                </div>
+			<li class="swiper-slide">
+				<img data-sly-test="${item.contentType == 'asset'}" src="${item.path}" alt="${item.contentType}" />
+				<div onclick="playVideoForCarousel(event)">
+					<video id="videoPlayer" data-sly-test="${item.contentType == 'video'}" src="${item.path}"
+						playsinline>
+						<source src=${item.path} type="video/mp4" />
+					</video>
+				</div>
 
-            </li>
+			</li>
 		</ul>
-	</div>
-	<div class="carouselButtonContainer">
+
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-pagination"></div>
 		<div class="swiper-button-next"></div>
