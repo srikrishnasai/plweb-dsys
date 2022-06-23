@@ -1,3 +1,0 @@
-#base=css
-swiper.min.css
-swiper-custom.less
