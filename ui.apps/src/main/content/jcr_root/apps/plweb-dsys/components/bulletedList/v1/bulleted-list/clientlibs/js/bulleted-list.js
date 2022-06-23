@@ -13,12 +13,7 @@ $(document).ready(function () {
         else if(columnCount == 'three'){
             rawCount=length/3;
             rawCount=Math.ceil(rawCount);
-            if(length !== "4"){
-                $(this).find('.bullet-list').css('grid-template-rows', 'repeat('+rawCount+',auto)');
-            }
-            else{
-                $(this).find('.bullet-list').css('grid-auto-flow', 'row');
-            }
+            $(this).find('.bullet-list').css('grid-template-rows', 'repeat('+rawCount+',auto)');      
         }
     });
 
