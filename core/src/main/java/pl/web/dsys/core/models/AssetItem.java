@@ -1,5 +1,7 @@
 package pl.web.dsys.core.models;
 
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Optional;
 
 import javax.annotation.PostConstruct;
@@ -7,10 +9,12 @@ import javax.annotation.PostConstruct;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
+import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.commons.util.DamUtil;
 
@@ -29,12 +33,45 @@ public class AssetItem implements ListItem {
 
 	String assetFormat = StringUtils.EMPTY;
 
+	private Date lastModified;
+
+	private Date publishedDate;
+
+	private String name;
+
+	private String icon;
+	ValueMap vm;
+
 	@PostConstruct
 	protected void initModel() {
 		this.asset = Optional.ofNullable(DamUtil.resolveToAsset(resource));
 		this.thumbnail = this.asset.map(a -> a.getRendition("cq5dam.thumbnail.319.319.png").getPath())
 				.orElse(StringUtils.EMPTY);
 		this.assetFormat = this.asset.map(a -> a.getMetadataValue("dc:format")).orElse(StringUtils.EMPTY);
+		this.name = this.asset.map(a -> a.getName()).orElse(StringUtils.EMPTY);
+		if (DamUtil.resolveToAsset(resource) != null) {
+			Resource metaDataRes = resourceResolver
+					.getResource(resource.getPath() + "/" + JcrConstants.JCR_CONTENT + "/metadata");
+			if (metaDataRes != null) {
+				this.vm = metaDataRes.getValueMap();
+				GregorianCalendar cal = this.vm.get("publishedDate", GregorianCalendar.class);
+				if (null == cal) {
+					cal = this.vm.get("jcr:lastModified", GregorianCalendar.class);
+				}
+				if (cal != null)
+					this.lastModified = cal.getTime();
+			}
+
+		}
+		if (StringUtils.isNotEmpty(name)) {
+			if (StringUtils.endsWithIgnoreCase(name, ".mp4")) {
+				this.icon = "fa fa-play fa-2x";
+			} else if (StringUtils.endsWithIgnoreCase(name, ",pdf")) {
+				this.icon = "fa fa-file-pdf-o fa-2x";
+			} else {
+				this.icon = "fa fa-file-word-o fa-2x";
+			}
+		}
 	}
 
 	@Override
@@ -72,5 +109,24 @@ public class AssetItem implements ListItem {
 	public String getUrl() {
 
 		return getPath();
+	}
+
+	@Override
+	public Date getLastModified() {
+		return lastModified;
+	}
+
+	@Override
+	public Date getPublishedDate() {
+		return lastModified;
+	}
+
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	public String getIcon() {
+		return icon;
 	}
 }
