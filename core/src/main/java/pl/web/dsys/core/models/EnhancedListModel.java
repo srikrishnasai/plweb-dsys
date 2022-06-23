@@ -116,6 +116,8 @@ public class EnhancedListModel {
 					}
 				}
 			}
+		} else if (StringUtils.isNotEmpty(listFrom) && StringUtils.equalsIgnoreCase(listFrom, "tags")) {
+			// Build tags query for both assets and pages.
 		}
 
 	}
@@ -143,7 +145,7 @@ public class EnhancedListModel {
 				enhancedPageItems.add(item);
 			}
 		}
-		
+
 		return enhancedItems;
 	}
 

@@ -8,17 +8,19 @@ import javax.annotation.PostConstruct;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Model(adaptables = { Resource.class,
 		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class AssetListModel {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(AssetListModel.class);
 
 	@SlingObject
@@ -31,9 +33,13 @@ public class AssetListModel {
 	ResourceResolver resolver;
 
 	List<ListItem> assetsList;
-	
+
 	@Self
 	private EnhancedListModel enhancedListModel;
+
+	@ValueMapValue
+	@Default(intValues = 0)
+	private int maxItems;
 
 	@PostConstruct
 	protected void init() {
@@ -42,11 +48,23 @@ public class AssetListModel {
 
 	public List<ListItem> getAssetsList() {
 		if (!enhancedListModel.getEnhancedListItems().isEmpty()) {
-			return enhancedListModel.getEnhancedListItems();
+			List<ListItem> list = enhancedListModel.getEnhancedListItems();
+			if (maxItems != 0) {
+				List<ListItem> tempList = new ArrayList<ListItem>();
+				for (ListItem item : list) {
+					if (list.size() < maxItems) {
+						tempList.add(item);
+					} else {
+						break;
+					}
+				}
+				return tempList;
+			}
+			return list;
 		}
 		return new ArrayList<ListItem>();
 	}
-	
+
 	public EnhancedListModel getEnhancedListModel() {
 		return enhancedListModel;
 	}
@@ -58,7 +76,7 @@ public class AssetListModel {
 	public String getDescription() {
 		return enhancedListModel.getDescription();
 	}
-	
+
 	public String getLength() {
 		return enhancedListModel.getLength();
 	}

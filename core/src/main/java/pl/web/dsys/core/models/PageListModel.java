@@ -80,7 +80,7 @@ public class PageListModel {
 	public String getDescription() {
 		return enhancedListModel.getDescription();
 	}
-	
+
 	public String getLength() {
 		return enhancedListModel.getLength();
 	}
