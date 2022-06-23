@@ -1,0 +1,58 @@
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
+
+.pages-container {
+
+	.ul-pages-list {
+		list-style-type: none;
+		padding-left: 10px;
+		display: grid;
+		gap: 10px;
+		gap: 10px;
+		grid-auto-flow: column;
+
+		.modifier(no-padding, {
+				padding-left: 0px;
+				padding-inline-start: 0px;
+			}
+
+		);
+	}
+
+	.li-pages-list {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+
+		&:not(.li-pages-list--no-bullets) {
+			&:before {
+				content: "";
+				height: 15px;
+				width: 15px;
+				border-radius: 50%;
+				margin-top: 5px;
+				background-color: #0D65B3;
+				min-width: 15px;
+			}
+		}
+
+		span.list-text {
+			font-family: 'Open Sans';
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 24px;
+			display: block;
+			padding-left: 10px;
+		}
+	}
+
+	@media @mediaMobile {
+		.ul-pages-list {
+			grid-template-columns: auto !important;
+			grid-template-rows: repeat(1, auto) !important;
+			gap: 10px !important;
+			grid-auto-flow: row !important;
+		}
+	}
+
+}
