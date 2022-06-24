@@ -2,31 +2,7 @@
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 
 .section-container {
-    
-    .aem-Grid {
-        display: flex;
-        gap: @64;
 
-        &::before {
-            content: none;
-        }
-    
-        &::after {
-            content: none;
-        }
-
-        > * {
-            flex: 1 1 0;
-        }
-    }
-
-    @media @mediaMobile {
-        .aem-Grid {
-            display: flex;
-            flex-direction: column;
-        }
-    }
-  
     .element(author-title-bar,{
         position: absolute;
         width: 100%;
@@ -44,6 +20,91 @@
        height:  22px;
     });
 
+    .element(layout, {
+        .modifier(grid, {
+            .section-container-grid.aem-Grid {
+                display: flex;
+                gap: @64;
+                
+                @media @mediaMobile {  
+                    flex-direction: column;
+                }
+                
+                > * {
+                    flex: 1 1 0;
+                }
+
+                &::before {
+                    content: none;
+                }
+            
+                &::after {
+                    content: none;
+                }
+            }
+        });
+
+        .modifier(grid-vertical-stack-mobile, {
+            .section-container-grid.aem-Grid {
+                @media @mediaMobile {  
+                    flex-direction: column;
+                }
+            }
+        });
+
+        .modifier(grid-vertical-stack-small-tablet, {
+            .section-container-grid.aem-Grid {
+                @media @mediaSmallTablet {  
+                    flex-direction: column;
+                }
+            }
+        });
+
+        .modifier(grid-vertical-stack-tablet, {
+            .section-container-grid.aem-Grid {
+                @media @mediaTablet {  
+                    flex-direction: column;
+                }
+            }
+        });
+
+        .modifier(grid-gap-extrasmall ,{
+            .section-container-grid.aem-Grid {
+                gap: @24;
+            }
+        });
+
+        .modifier(grid-gap-small ,{
+            .section-container-grid.aem-Grid {
+                gap: @32;
+            }
+        });
+
+        .modifier(grid-gap-medium ,{
+            .section-container-grid.aem-Grid {
+                gap: @64;
+            }
+        });
+
+        .modifier(grid-gap-large ,{
+            .section-container-grid.aem-Grid {
+                gap: 128px;
+            }
+        });
+        
+        .modifier(grid-vertical-align-center, {
+            .section-container-grid.aem-Grid {
+                align-items: center;
+            }
+        });
+
+        .modifier(grid-vertical-align-top, {
+            .section-container-grid.aem-Grid {
+                align-items: top;
+            }
+        });
+    });
+    
     .element(main, {
         position: relative;
         .width-container {
@@ -489,59 +550,6 @@
     .element(title, {
         .modifier(restrict-width, {
             max-width: 672px;
-        });
-    });
-
-    .element(justify, {
-        .modifier(center ,{
-            .aem-Grid {
-                justify-content: center;
-            }
-        });
-    });
-
-    .element(align, {
-        .modifier(center ,{
-            .aem-Grid {
-                align-items: center;
-            }
-        });
-    });
-
-    .element(gap, {
-
-
-        .aem-Grid::after , .aem-Grid::before{
-            content: none;
-        }
-
-        .aem-Grid{
-            &::after , &::before {
-                content: none;
-            }
-        }
-        .modifier(extrasmall ,{
-            .aem-Grid {
-                gap: @24;
-            }
-        });
-
-        .modifier(small ,{
-            .aem-Grid {
-                gap: @32;
-            }
-        });
-
-        .modifier(medium ,{
-            .aem-Grid {
-                gap: @64;
-            }
-        });
-
-        .modifier(large ,{
-            .aem-Grid {
-                gap: 128px;
-            }
         });
     });
 }
