@@ -1,5 +1,7 @@
 package pl.web.dsys.core.models;
 
+import java.util.Date;
+
 import javax.annotation.PostConstruct;
 
 import org.apache.commons.lang3.StringUtils;
@@ -27,12 +29,15 @@ public class PageItem implements ListItem {
 	private Page page;
 	ValueMap vm;
 
+	Date lastModified;
+	
 	@PostConstruct
 	protected void initModel() {
 		if (resourceResolver.adaptTo(PageManager.class) != null
 				&& resourceResolver.adaptTo(PageManager.class).getContainingPage(resource) != null) {
 			this.page = resourceResolver.adaptTo(PageManager.class).getContainingPage(resource);
 			this.vm = page.getContentResource().getValueMap();
+			this.lastModified = this.page.getLastModified().getTime();
 		}
 	}
 
@@ -64,6 +69,22 @@ public class PageItem implements ListItem {
 	public String getUrl() {
 
 		return getPath() + SharedContants.PAGE_EXTENSION;
+	}
+
+	@Override
+	public Date getLastModified() {
+		return lastModified;
+	}
+
+	@Override
+	public Date getPublishedDate() {
+		return lastModified;
+	}
+
+	@Override
+	public String getName() {
+		return StringUtils.defaultIfBlank(StringUtils.defaultIfBlank(page.getPageTitle(), page.getTitle()),
+				page.getName());
 	}
 
 }

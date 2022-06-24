@@ -54,6 +54,11 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Fixed list"
                                                 value="static"/>
+											<tags
+                                                granite:hide="${cqDesign.disableTags}"
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Tags"
+                                                value="tags"/>
                                         </items>
                                     </listFrom>
                                     <setChildren
@@ -135,6 +140,75 @@
                                             </well>
                                         </items>
                                     </setStatic>
+									<setTags
+                                        granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            showhidetargetvalue="tags"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                granite:class="coral-Heading coral-Heading--4"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}4"
+                                                text="Options for Tags"/>
+                                            <well
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <parentPage
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldDescription="Leave empty to use current page"
+                                                        fieldLabel="Parent page"
+                                                        multiple="{Boolean}true"
+                                                        name="./tagsSearchRoot"
+                                                        rootPath="/content"/>
+                                                    <tags
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                        fieldLabel="Tags"
+                                                        multiple="{Boolean}true"
+                                                        name="./tags"/>
+                                                    <match
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Match"
+                                                        name="./tagsMatch">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <any
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="any tag"
+                                                                value="any"/>
+                                                            <all
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="all tags"
+                                                                value="all"/>
+                                                        </items>
+                                                    </match>
+                                                </items>
+                                            </well>
+                                        </items>
+                                    </setTags>
+									<limit
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                        defaultValue="5"
+                                        fieldDescription="Maximum number of items displayed in list"
+                                        fieldLabel="Limit"
+                                        max="{Long}10"
+                                        min="{Long}1"
+                                        name="./limit"/>
+                                    <limitTypeHint
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                        defaultValue="Long"
+                                        ignoreData="{Boolean}true"
+                                        name="./limit@TypeHint"
+                                        type="Long"
+                                        value="Long"/>
                                 </items>
                             </column>
                         </items>
