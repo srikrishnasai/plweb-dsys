@@ -72,7 +72,8 @@ public class SecondaryNavLinksModel {
 			}
 		}
 
-		if (StringUtils.isNotBlank(iconPath)) {
+		// Commenting the code which trims the path and returns svg name.
+		/*if (StringUtils.isNotBlank(iconPath)) {
 			String[] iconPathArray = iconPath.split("/");
 			if (iconPathArray.length >= 2) {
 				iconName = iconPathArray[iconPathArray.length - 1];
@@ -82,7 +83,7 @@ public class SecondaryNavLinksModel {
 				iconName = iconName.replace(".svg", "");
 			}
 		}
-		log.debug("Icon Name ::{}", iconName);
+		log.debug("Icon Name ::{}", iconName); */
 	}
 
 	public String getLinkText() {
@@ -111,7 +112,7 @@ public class SecondaryNavLinksModel {
 	}
 
 	public String getIconPath() {
-		return iconName;
+		return iconPath;
 	}
 
 }
