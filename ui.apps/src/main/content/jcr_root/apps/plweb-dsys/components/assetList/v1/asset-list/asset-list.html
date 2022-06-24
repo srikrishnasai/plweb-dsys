@@ -2,6 +2,7 @@
 	data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
 	data-sly-call="${clientlib.all @ categories='plweb-dsys.asset-list'}" />
 <sly data-sly-use.assetsObj="${'pl.web.dsys.core.models.AssetListModel' @ listType='assets'}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = !assetsObj.title, classAppend='cmp-text'}"></sly>
 <div class="asset-container" id="asset-carousel">
 	<div class="swiper assetSwiper">
 		<h3>${assetsObj.title}</h3>

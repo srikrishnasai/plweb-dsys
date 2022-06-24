@@ -47,12 +47,13 @@ public class PageListModel {
 
 	@PostConstruct
 	protected void init() {
-		log.debug("Inside Post Construct of Page List Model.. {}", enhancedListModel.getEnhancedListItems());
+		log.debug("Inside Post Construct of Page List Model.. {}");
 	}
 
 	public List<ListItem> getPagesList() {
-		if (!enhancedListModel.getEnhancedListItems().isEmpty()) {
-			return enhancedListModel.getEnhancedListItems();
+		List<ListItem> pageList = enhancedListModel.getEnhancedListItems();
+		if (!pageList.isEmpty()) {
+			return pageList;
 		}
 		return new ArrayList<ListItem>();
 	}

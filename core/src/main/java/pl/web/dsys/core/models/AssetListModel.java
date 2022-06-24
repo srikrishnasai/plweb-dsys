@@ -43,24 +43,13 @@ public class AssetListModel {
 
 	@PostConstruct
 	protected void init() {
-		log.debug("Inside Post Construct of Assets List Model.. {}", enhancedListModel.getEnhancedListItems());
+		log.debug("Inside Post Construct of Assets List Model.. {}");
 	}
 
 	public List<ListItem> getAssetsList() {
-		if (!enhancedListModel.getEnhancedListItems().isEmpty()) {
-			List<ListItem> list = enhancedListModel.getEnhancedListItems();
-			if (maxItems != 0) {
-				List<ListItem> tempList = new ArrayList<ListItem>();
-				for (ListItem item : list) {
-					if (list.size() < maxItems) {
-						tempList.add(item);
-					} else {
-						break;
-					}
-				}
-				return tempList;
-			}
-			return list;
+		List<ListItem> assetList = enhancedListModel.getEnhancedListItems();
+		if (!assetList.isEmpty()) {
+			return assetList;
 		}
 		return new ArrayList<ListItem>();
 	}

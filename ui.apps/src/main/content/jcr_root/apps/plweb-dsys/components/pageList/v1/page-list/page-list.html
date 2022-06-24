@@ -1,6 +1,6 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.all @ categories='plweb-dsys.page-list'}" />
 <sly data-sly-use.pagesObj="${'pl.web.dsys.core.models.PageListModel' @ listType='pages'}"/>
-
+<sly data-sly-call="${template.placeholder @ isEmpty = !pagesObj.title, classAppend='cmp-text'}"></sly>
 	<div class="pages-container" data-length="${pagesObj.length}" data-columnCount="${pagesObj.listColumn ? 'two' : ''}">
         <sly data-sly-test="${pagesObj.title}">
         <h3>${pagesObj.title}</h3>
