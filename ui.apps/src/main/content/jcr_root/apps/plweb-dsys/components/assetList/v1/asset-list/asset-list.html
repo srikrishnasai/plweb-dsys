@@ -2,13 +2,16 @@
 	data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
 	data-sly-call="${clientlib.all @ categories='plweb-dsys.asset-list'}" />
 <sly data-sly-use.assetsObj="${'pl.web.dsys.core.models.AssetListModel' @ listType='assets'}"/>
+<sly data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"/>
 <sly data-sly-call="${template.placeholder @ isEmpty = !assetsObj.title, classAppend='cmp-text'}"></sly>
+<sly data-sly-test="${authControlObj.hasComponentAccess}">
 <div class="asset-container" id="asset-carousel">
 	<div class="swiper assetSwiper">
 		<h3>${assetsObj.title}</h3>
 		<p>${assetsObj.description}</p>
 		<ul class="swiper-wrapper" data-sly-list.item="${assetsObj.assetsList}">
-			<li class="swiper-slide">
+		    <sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.path}"/>
+			<li data-sly-test="${itemControlObj.resourceAuthorized}" class="swiper-slide">
 				<img data-sly-test="${item.contentType == 'asset'}" src="${item.path}" alt="${item.contentType}" />
 				<div onclick="playVideoForCarousel(event)">
 					<video id="videoPlayer" data-sly-test="${item.contentType == 'video'}" src="${item.path}"
@@ -25,3 +28,4 @@
 		<div class="swiper-button-next"></div>
 	</div>
 </div>
+</sly>

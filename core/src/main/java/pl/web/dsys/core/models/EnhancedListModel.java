@@ -38,6 +38,7 @@ import com.day.cq.wcm.api.NameConstants;
 import com.day.cq.wcm.api.Page;
 import com.drew.lang.annotations.NotNull;
 
+import pl.web.dsys.core.utils.AuthUtil;
 import pl.web.dsys.core.utils.JcrQueryUtils;
 
 @Model(adaptables = { Resource.class,
@@ -161,9 +162,15 @@ public class EnhancedListModel {
 				Resource res = resolver.getResource(row.getPath());
 				if (res != null) {
 					if (StringUtils.equalsIgnoreCase(listType, "assets")) {
-						resList.add(res.getParent().getParent());
+						Resource damItem = res.getParent().getParent();
+						if (AuthUtil.checkAccess(request, damItem)) {
+							resList.add(damItem);
+						}
 					} else if (StringUtils.equalsIgnoreCase(listType, "pages")) {
-						resList.add(res.getParent());
+						Resource pageItem = res.getParent();
+						if (AuthUtil.checkAccess(request, res)) {
+							resList.add(pageItem);
+						}
 					} else {
 						resList.add(res);
 					}
@@ -181,14 +188,20 @@ public class EnhancedListModel {
 			Resource rootResource = resolver.getResource(listRootPath);
 			Iterator<Resource> children = rootResource.listChildren();
 			while (children.hasNext()) {
-				resourcesList.add(children.next());
+				Resource child = children.next();
+				if (AuthUtil.checkAccess(request, child)) {
+					resourcesList.add(child);
+				}
 			}
 		} else if (StringUtils.isNotEmpty(listRootPath) && StringUtils.equalsIgnoreCase(listType, "pages")) {
 			Stream<Page> pagesList = getChildListItems();
 			Iterator<Page> pageItr = pagesList.iterator();
 			while (pageItr.hasNext()) {
 				Page page = pageItr.next();
-				resourcesList.add(page.adaptTo(Resource.class));
+				Resource child = page.adaptTo(Resource.class);
+				if (AuthUtil.checkAccess(request, child)) {
+					resourcesList.add(child);
+				}
 			}
 		}
 
@@ -201,7 +214,9 @@ public class EnhancedListModel {
 				String listItemPath = vm.get("listItems", String.class);
 				if (StringUtils.isNotEmpty(listItemPath)) {
 					Resource listItemRes = resolver.getResource(listItemPath);
-					resourcesList.add(listItemRes);
+					if (AuthUtil.checkAccess(request, listItemRes)) {
+						resourcesList.add(listItemRes);
+					}
 				}
 			}
 		}
