@@ -10,8 +10,7 @@
 		<h3>${assetsObj.title}</h3>
 		<p>${assetsObj.description}</p>
 		<ul class="swiper-wrapper" data-sly-list.item="${assetsObj.assetsList}">
-		    <sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.path}"/>
-			<li data-sly-test="${itemControlObj.resourceAuthorized}" class="swiper-slide">
+		    <li class="swiper-slide">
 				<img data-sly-test="${item.contentType == 'asset'}" src="${item.path}" alt="${item.contentType}" />
 				<div onclick="playVideoForCarousel(event)">
 					<video id="videoPlayer" data-sly-test="${item.contentType == 'video'}" src="${item.path}"

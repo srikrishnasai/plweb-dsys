@@ -101,10 +101,14 @@ public class EnhancedListModel {
 	@Default(intValues = 0)
 	private int limit;
 
+	@ValueMapValue
+	private String itemauth;
+
 	List<Resource> resourcesList = new ArrayList<Resource>();
 	List<ListItem> enhancedListItems = null;
 	List<PageItem> enhancedPageItems = new ArrayList<PageItem>();
 	List<AssetItem> enhancedAssetItems = new ArrayList<AssetItem>();
+	boolean isItemAuth = false;
 
 	@PostConstruct
 	protected void init() {
@@ -162,15 +166,9 @@ public class EnhancedListModel {
 				Resource res = resolver.getResource(row.getPath());
 				if (res != null) {
 					if (StringUtils.equalsIgnoreCase(listType, "assets")) {
-						Resource damItem = res.getParent().getParent();
-						if (AuthUtil.checkAccess(request, damItem)) {
-							resList.add(damItem);
-						}
+						resList.add(res.getParent().getParent());
 					} else if (StringUtils.equalsIgnoreCase(listType, "pages")) {
-						Resource pageItem = res.getParent();
-						if (AuthUtil.checkAccess(request, res)) {
-							resList.add(pageItem);
-						}
+						resList.add(res.getParent());
 					} else {
 						resList.add(res);
 					}
@@ -188,20 +186,14 @@ public class EnhancedListModel {
 			Resource rootResource = resolver.getResource(listRootPath);
 			Iterator<Resource> children = rootResource.listChildren();
 			while (children.hasNext()) {
-				Resource child = children.next();
-				if (AuthUtil.checkAccess(request, child)) {
-					resourcesList.add(child);
-				}
+				resourcesList.add(children.next());
 			}
 		} else if (StringUtils.isNotEmpty(listRootPath) && StringUtils.equalsIgnoreCase(listType, "pages")) {
 			Stream<Page> pagesList = getChildListItems();
 			Iterator<Page> pageItr = pagesList.iterator();
 			while (pageItr.hasNext()) {
 				Page page = pageItr.next();
-				Resource child = page.adaptTo(Resource.class);
-				if (AuthUtil.checkAccess(request, child)) {
-					resourcesList.add(child);
-				}
+				resourcesList.add(page.adaptTo(Resource.class));
 			}
 		}
 
@@ -214,9 +206,7 @@ public class EnhancedListModel {
 				String listItemPath = vm.get("listItems", String.class);
 				if (StringUtils.isNotEmpty(listItemPath)) {
 					Resource listItemRes = resolver.getResource(listItemPath);
-					if (AuthUtil.checkAccess(request, listItemRes)) {
-						resourcesList.add(listItemRes);
-					}
+					resourcesList.add(listItemRes);
 				}
 			}
 		}
@@ -232,7 +222,20 @@ public class EnhancedListModel {
 
 	private List<ListItem> getEnhancedList(List<Resource> resourcesList) {
 		List<ListItem> enhancedItems = new ArrayList<ListItem>();
-		for (Resource res : resourcesList) {
+		List<Resource> resList = new ArrayList<Resource>();
+		if (StringUtils.isNotBlank(itemauth)) {
+			isItemAuth = Boolean.parseBoolean(itemauth);
+		}
+		if (isItemAuth && !AuthUtil.isAuthorOrPreview(request)) {
+			for (Resource res : resourcesList) {
+				if (AuthUtil.checkAccess(request, res)) {
+					resList.add(res);
+				}
+			}
+		} else {
+			resList = resourcesList;
+		}
+		for (Resource res : resList) {
 			if (resolver.isResourceType(res, DamConstants.NT_DAM_ASSET)) {
 				log.debug("Asset Resource ::{}", res.getPath());
 				AssetItem item = res.adaptTo(AssetItem.class);

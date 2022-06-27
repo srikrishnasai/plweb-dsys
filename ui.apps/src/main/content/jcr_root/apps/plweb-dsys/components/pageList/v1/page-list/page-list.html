@@ -11,8 +11,7 @@
         <p>${pagesObj.description}</p>
         </sly>
 		<ul class="ul-pages-list ${pagesObj.removePadding ? 'ul-pages-list--no-padding' : ''}" data-sly-list.item="${pagesObj.pagesList}">
-		    <sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.path}"/>
-			<li data-sly-test="${itemControlObj.resourceAuthorized}" class="li-pages-list ${pagesObj.removeBullets ? 'li-pages-list--no-bullets' : ''}"> <a href="${item.Url}" ><span class="list-text">${item.title} </span></a></li>
+			<li class="li-pages-list ${pagesObj.removeBullets ? 'li-pages-list--no-bullets' : ''}"> <a href="${item.Url}" ><span class="list-text">${item.title} </span></a></li>
 		</ul>
 	</div>
 </sly>
