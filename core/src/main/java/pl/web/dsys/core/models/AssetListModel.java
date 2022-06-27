@@ -48,7 +48,7 @@ public class AssetListModel {
 
 	public List<ListItem> getAssetsList() {
 		List<ListItem> assetList = enhancedListModel.getEnhancedListItems();
-		if (!assetList.isEmpty()) {
+		if (null != assetList && !assetList.isEmpty()) {
 			return assetList;
 		}
 		return new ArrayList<ListItem>();
