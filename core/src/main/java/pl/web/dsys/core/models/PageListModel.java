@@ -52,7 +52,7 @@ public class PageListModel {
 
 	public List<ListItem> getPagesList() {
 		List<ListItem> pageList = enhancedListModel.getEnhancedListItems();
-		if (!pageList.isEmpty()) {
+		if (null != pageList && !pageList.isEmpty()) {
 			return pageList;
 		}
 		return new ArrayList<ListItem>();

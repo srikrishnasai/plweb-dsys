@@ -38,6 +38,7 @@ import com.day.cq.wcm.api.NameConstants;
 import com.day.cq.wcm.api.Page;
 import com.drew.lang.annotations.NotNull;
 
+import pl.web.dsys.core.utils.AuthUtil;
 import pl.web.dsys.core.utils.JcrQueryUtils;
 
 @Model(adaptables = { Resource.class,
@@ -100,10 +101,14 @@ public class EnhancedListModel {
 	@Default(intValues = 0)
 	private int limit;
 
+	@ValueMapValue
+	private String itemauth;
+
 	List<Resource> resourcesList = new ArrayList<Resource>();
 	List<ListItem> enhancedListItems = null;
 	List<PageItem> enhancedPageItems = new ArrayList<PageItem>();
 	List<AssetItem> enhancedAssetItems = new ArrayList<AssetItem>();
+	boolean isItemAuth = false;
 
 	@PostConstruct
 	protected void init() {
@@ -217,7 +222,20 @@ public class EnhancedListModel {
 
 	private List<ListItem> getEnhancedList(List<Resource> resourcesList) {
 		List<ListItem> enhancedItems = new ArrayList<ListItem>();
-		for (Resource res : resourcesList) {
+		List<Resource> resList = new ArrayList<Resource>();
+		if (StringUtils.isNotBlank(itemauth)) {
+			isItemAuth = Boolean.parseBoolean(itemauth);
+		}
+		if (isItemAuth && !AuthUtil.isAuthorOrPreview(request)) {
+			for (Resource res : resourcesList) {
+				if (AuthUtil.checkAccess(request, res)) {
+					resList.add(res);
+				}
+			}
+		} else {
+			resList = resourcesList;
+		}
+		for (Resource res : resList) {
 			if (resolver.isResourceType(res, DamConstants.NT_DAM_ASSET)) {
 				log.debug("Asset Resource ::{}", res.getPath());
 				AssetItem item = res.adaptTo(AssetItem.class);

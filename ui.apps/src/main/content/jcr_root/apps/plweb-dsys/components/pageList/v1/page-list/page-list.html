@@ -1,5 +1,7 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.all @ categories='plweb-dsys.page-list'}" />
 <sly data-sly-use.pagesObj="${'pl.web.dsys.core.models.PageListModel' @ listType='pages'}"/>
+<sly data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"/>
+<sly data-sly-test="${authControlObj.hasComponentAccess}">
 <sly data-sly-call="${template.placeholder @ isEmpty = !pagesObj.title, classAppend='cmp-text'}"></sly>
 	<div class="pages-container" data-length="${pagesObj.length}" data-columnCount="${pagesObj.listColumn ? 'two' : ''}">
         <sly data-sly-test="${pagesObj.title}">
@@ -12,3 +14,4 @@
 			<li class="li-pages-list ${pagesObj.removeBullets ? 'li-pages-list--no-bullets' : ''}"> <a href="${item.Url}" ><span class="list-text">${item.title} </span></a></li>
 		</ul>
 	</div>
+</sly>
