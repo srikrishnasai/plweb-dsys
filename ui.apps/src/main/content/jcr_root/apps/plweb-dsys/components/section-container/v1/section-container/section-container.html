@@ -23,22 +23,21 @@
     section-container--desktop-background-${properties.desktopBgColor} 
     section-container--tablet-background-${properties.useDesktopConfigForMobile ? properties.desktopBgColor : properties.tabletBgColor} 
     section-container--mobile-background-${properties.useDesktopConfigForMobile ? properties.desktopBgColor : properties.mobileBgColor}">
-    <!-- Layout Container Parsys Inclusion -->
 
-    <!-- Section container start text only for edit mode-->
+    <!-- Section container component title bar only for edit mode-->
     <div class="component-bar component-title-bar section-container__author-title-bar"
         data-sly-test="${wcmmode.edit || wcmmode.design}">
         Section Container
     </div>
-    <div class="section-container__author-title-bar-dummy"
-        data-sly-test="${wcmmode.edit || wcmmode.design}">
+    <div class="section-container__author-title-bar-dummy" data-sly-test="${wcmmode.edit || wcmmode.design}">
     </div>
+    <!-- Width Container - The spacing and the max width of the component is controlled by this div -->
     <div
         class="width-container ${properties.animation && properties.animation != 'none' ? 'animated slower' : ''} ${properties.animation && properties.animation != 'none' ? properties.animation : ''}">
+        <!-- Title and Text components inclusion -->
         <div data-sly-test="${!properties.hideTitleandText}"
             class="section-container__title-and-text section-container__title-and-text--alignment-${properties.titleTextAlignment} section-container__title-and-text--bottom-spacing-${properties.titleTextBottomSpacing}">
             <div class="section-container__title ${properties.restrictTextWidth ? 'section-container__title--restrict-width' : ''}"
-
                 data-sly-resource="${'title' @ resourceType='plweb-dsys/components/title/v1/title', decoration='true'}">
             </div>
 
@@ -46,7 +45,12 @@
                 data-sly-resource="${'desc' @ resourceType='plweb-dsys/components/text/v1/text', decoration='true'}">
             </div>
         </div>
-        <div class="section-container__layout-parsys"
+        <!-- Layout Container Parsys Inclusion -->
+        <div class="section-container__layout 
+                    ${properties.layout == 'custom' ? 'section-container__layout--block' : 'section-container__layout--grid'}
+                    ${properties.layout == 'custom' ? '' : '{0}{1}' @ format=['section-container__layout--grid-gap-', properties.gridGutter]}
+                    ${properties.layout == 'custom' ? '' : '{0}{1}' @ format=['section-container__layout--grid-vertical-stack-', properties.gridVerticalStack]}
+                    ${properties.layout == 'custom' ? '' : '{0}{1}' @ format=['section-container__layout--grid-vertical-align-', properties.gridVerticalAlignment]}"
             data-sly-resource="${'layout-container-parsys' @ resourceType='plweb-dsys/components/responsive-grid/v1/responsive-grid', decoration='true'}">
         </div>
     </div>
@@ -57,5 +61,6 @@
     </div>
 </div>
 
+<!-- Added the clientlib at the bottom to make sure all the html classes are present on the dom before the scripts executes -->
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.section-container-js'}" />

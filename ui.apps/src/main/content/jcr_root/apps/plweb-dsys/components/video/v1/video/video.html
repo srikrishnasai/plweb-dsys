@@ -2,8 +2,8 @@
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.video'}" />
-    <div class="dsys-border dsys-border__${properties.barPosition}">
-        <section class="video__main">
+
+        <section class="video__main dsys-border dsys-border__${properties.barPosition}">
             <button class="video__playButton">
                 <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
             </button>
@@ -16,9 +16,5 @@
                 <source src="video/videogular.webm" type="video/webm" />
             </video>
         </section>
-
-    </div>
-
-
 
 <sly data-sly-call="${template.placeholder @ isEmpty=properties.source == ''}" />

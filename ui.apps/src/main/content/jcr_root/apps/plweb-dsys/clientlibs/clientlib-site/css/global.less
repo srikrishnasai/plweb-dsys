@@ -1,223 +1,307 @@
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 
-@teal-color: rgba(16,129,136,1);
+@teal-color: rgba(16, 129, 136, 1);
 
 .aem-GridColumn {
     padding: 0 !important;
 }
-.dsys-button{
+
+.dsys-button {
     display: flex;
     cursor: pointer;
 
-    .modifier(center,{
-        justify-content: center;
-    });
-    .modifier(right,{
-        justify-content: right;
-    });
-    .element(main,{
-        border-radius: @rounded;
-        padding: @8 @16;
-        text-decoration: none;
-        font-family: 'Open Sans';
-        text-align: center;
-        line-height: 24px;
-        min-width: 30px;
-        .fw-700;
-        .modifier(pbg-wc,{
-            background-color: @primary;
-            .dsys-button-text{
-                color: @neutral0;
-            }       
-            &:hover{
-                background-color: #082a47;
-            }     
-        });
-    
-        .modifier(b3bg-b9c,{
-            background-color: @blue300;
-            .dsys-button-text{
-                color: @blue900;
-            }   
-            &:hover{
-                background-color: #8dc6f794;
-            }         
-        });
-    
-        .modifier(tbg-pc,{
-            background-color: transparent;
-            border: 1px solid @primary;
-            .dsys-button-text{
-                color: @primary;
-            }
-            &:hover{
-                background-color: @primary;   
-                border: 1px solid @primary;
-                .dsys-button-text{
-                    color: @textBodyDark;
-                }
-            }
-        });
-    
-        .modifier(tbg-b1c,{
-            background-color: transparent;
-            border: 1px solid @blue100;
-            .dsys-button-text{
-                color: @blue100;
-            }
-            &:hover{
-                background-color: @blue100;
-                border: 1px solid @blue100;
-                .dsys-button-text{
-                    color: @primary;
+    .modifier(center, {
+            justify-content: center;
+        }
+
+    );
+
+    .modifier(right, {
+            justify-content: right;
+        }
+
+    );
+
+    .element(main, {
+            border-radius: @rounded;
+            padding: @8 @16;
+            text-decoration: none;
+            font-family: 'Open Sans';
+            text-align: center;
+            line-height: 24px;
+            min-width: 30px;
+            .fw-700;
+
+            .modifier(pbg-wc, {
+                    background-color: @primary;
+
+                    .dsys-button-text {
+                        color: @neutral0;
+                    }
+
+                    &:hover {
+                        background-color: #082a47;
+                    }
                 }
 
-            }
-        });
-        
-        
-    });
-        
-    
+            );
+
+            .modifier(b3bg-b9c, {
+                    background-color: @blue300;
+
+                    .dsys-button-text {
+                        color: @blue900;
+                    }
+
+                    &:hover {
+                        background-color: #8dc6f794;
+                    }
+                }
+
+            );
+
+            .modifier(tbg-pc, {
+                    background-color: transparent;
+                    border: 1px solid @primary;
+
+                    .dsys-button-text {
+                        color: @primary;
+                    }
+
+                    &:hover {
+                        background-color: @primary;
+                        border: 1px solid @primary;
+
+                        .dsys-button-text {
+                            color: @textBodyDark;
+                        }
+                    }
+                }
+
+            );
+
+            .modifier(tbg-b1c, {
+                    background-color: transparent;
+                    border: 1px solid @blue100;
+
+                    .dsys-button-text {
+                        color: @blue100;
+                    }
+
+                    &:hover {
+                        background-color: @blue100;
+                        border: 1px solid @blue100;
+
+                        .dsys-button-text {
+                            color: @primary;
+                        }
+
+                    }
+                }
+
+            );
+
+
+        }
+
+    );
+
+
 }
- 
-.dsys-title{
-    text-transform: capitalize;
-    
-    .modifier(center,{
-        .ta-center;
-    });
-    .modifier(right,{
-        .ta-right;
-    });
 
-    .title-heading-sup{
+.dsys-title {
+    text-transform: capitalize;
+
+    .modifier(center, {
+            .ta-center;
+        }
+
+    );
+
+    .modifier(right, {
+            .ta-right;
+        }
+
+    );
+
+    .title-heading-sup {
         vertical-align: super;
         margin-left: -5px;
         top: -0.5em;
     }
-    
-.dsys-title{
-    
-    .element(heading-h1,{
-        .montserrat;
-        font-weight: 700;
-        font-size: 2.5rem;
-        line-height: 56px;
-    });
-    .element(heading-h2,{
-        .montserrat;
-        font-weight: 700;
-        font-size: 2.25rem;
-        line-height: 48px;
-    });
 
-    .element(heading-h3,{
-        .montserrat;
-        font-weight: 700;
-        font-size: 1.75rem;
-        line-height: 36px;
-    });
-   
-    .element(subheading,{
-        .montserrat;
-        font-weight: 700;
-        font-size: 1.75rem;
-        line-height: 36px;
+    .dsys-title {
 
-        .modifier(primaryDark,{
-            color: @primaryDark;
-        });
-        .modifier(textBodyDark,{
-            color: @textBodyDark;
-        });
-        .modifier(textBodyLight,{
-            color: @textBodyLight;
-        });
+        .element(heading-h1, {
+                .montserrat;
+                font-weight: 700;
+                font-size: 2.5rem;
+                line-height: 56px;
+            }
+
+        );
+
+        .element(heading-h2, {
+                .montserrat;
+                font-weight: 700;
+                font-size: 2.25rem;
+                line-height: 48px;
+            }
+
+        );
+
+        .element(heading-h3, {
+                .montserrat;
+                font-weight: 700;
+                font-size: 1.75rem;
+                line-height: 36px;
+            }
+
+        );
+
+        .element(subheading, {
+                .montserrat;
+                font-weight: 700;
+                font-size: 1.75rem;
+                line-height: 36px;
+
+                .modifier(primaryDark, {
+                        color: @primaryDark;
+                    }
+
+                );
+
+                .modifier(textBodyDark, {
+                        color: @textBodyDark;
+                    }
+
+                );
+
+                .modifier(textBodyLight, {
+                        color: @textBodyLight;
+                    }
+
+                );
 
 
-    });
+            }
 
-    .modifier(primaryDark,{
-        color: @primaryDark;
-    });
-    .modifier(textBodyDark,{
-        color: @textBodyDark;
-    });
-    .modifier(textBodyLight,{
-        color: @textBodyLight;
-    });
-}
-}
+        );
 
-.dsys-text{
-    &.dsys-text{
-        .openSans;
-        .modifier(body,{
-            font-size: @brandBody;  // 16px;
-            line-height: 24px;
-        });
+        .modifier(primaryDark, {
+                color: @primaryDark;
+            }
 
-        .modifier(caption ,{
-            font-size: @brandCaption; //14.45px
-            line-height: 24px;
-        });
+        );
 
-        .modifier(disclosure ,{
-            font-size: @brandDisclosure; //14.45px
-            line-height: 24px;
-        });
+        .modifier(textBodyDark, {
+                color: @textBodyDark;
+            }
 
-        .modifier(microcopy,{
-            font-size: @brandMicrocopy; //12.8px
-            line-height: 16px;
-        });
+        );
 
-        .modifier(color-white, {
-            color: #fff;
-        });
+        .modifier(textBodyLight, {
+                color: @textBodyLight;
+            }
 
-        .modifier(color-black, {
-            color: #000;
-        });
-
-        .modifier(color-teal, {
-            color: @teal-color
-        });
+        );
     }
 }
-.dsys-bgColor{
-    .modifier(whiteColor, {
-        background-color: @white;
-    });
-    
-    .modifier(light-grey, {
-        background-color: @textBodyDark;
-    });
-    
-    .modifier(light-blue, {
-        background-color: @primaryLight;
-    });
 
-    .modifier(transparent, {
-        background-color: transparent;
-    });
+.dsys-text {
+    &.dsys-text {
+        .openSans;
+
+        .modifier(body, {
+                font-size: @brandBody; // 16px;
+                line-height: 24px;
+            }
+
+        );
+
+        .modifier(caption, {
+                font-size: @brandCaption; //14.45px
+                line-height: 24px;
+            }
+
+        );
+
+        .modifier(disclosure, {
+                font-size: @brandDisclosure; //14.45px
+                line-height: 24px;
+            }
+
+        );
+
+        .modifier(microcopy, {
+                font-size: @brandMicrocopy; //12.8px
+                line-height: 16px;
+            }
+
+        );
+
+        .modifier(color-white, {
+                color: #fff;
+            }
+
+        );
+
+        .modifier(color-black, {
+                color: #000;
+            }
+
+        );
+
+        .modifier(color-teal, {
+                color: @teal-color
+            }
+
+        );
+    }
 }
 
-.dsys-icon{
-    .element(search,{
-        background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/search.svg);
-        height: 18px;
-        width: 18px;
-    })
+.dsys-bgColor {
+    .modifier(whiteColor, {
+            background-color: @white;
+        }
+
+    );
+
+    .modifier(light-grey, {
+            background-color: @textBodyDark;
+        }
+
+    );
+
+    .modifier(light-blue, {
+            background-color: @primaryLight;
+        }
+
+    );
+
+    .modifier(transparent, {
+            background-color: transparent;
+        }
+
+    );
+}
+
+.dsys-icon {
+    .element(search, {
+            background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/search.svg);
+            height: 18px;
+            width: 18px;
+        }
+    )
 }
 
 .dsys-link {
     width: fit-content;
     position: relative;
+
     @media @mediaMD {
-        &:after {    
+        &:after {
             content: '';
             height: 1px;
             width: 100%;
@@ -230,63 +314,80 @@
             pointer-events: none;
             top: 100%;
         }
-        &:hover { 
-            color: @primary !important;  //Needed to override color given by the element's class
-            &:after{
+        &:hover {
+            color: @primary  !important; //Needed to override color given by the element's class
+
+            &:after {
                 transform: scaleX(1);
             }
         }
     }
 }
-.dsys-border{
-    .element(left,{
-        position: relative;
-        z-index : 1;
-        &:before {
-            content : "";
-            position: absolute;
-            right    : 100%;
-            top     : 10%;
-            height  : 80%;
-            border-left:12px solid #005EAD;
+
+.dsys-border {
+    .element(left, {
+            position: relative;
+            z-index : 1;
+
+            &:before {
+                content : "";
+                position: absolute;
+                right : 100%;
+                top : 10%;
+                height : 80%;
+                border-left:12px solid #005EAD;
+            }
         }
-    });
-    .element(right,{
-        position: relative;
-        z-index : 1;
-        &:before {
-            content : "";
-            position: absolute;
-            left    : 100%;
-            top     : 10%;
-            height  : 80%;
-            border-left:12px solid #005EAD;
+
+    );
+
+    .element(right, {
+            position: relative;
+            z-index : 1;
+
+            &:before {
+                content : "";
+                position: absolute;
+                left : 100%;
+                top : 10%;
+                height : 80%;
+                border-left:12px solid #005EAD;
+            }
         }
-    });
-    .element(top,{
-        position: relative;
-        z-index : 1;
-        :before {
-            content : "";
-            position: absolute;
-            left    : 10%;
-            bottom  : 100%;
-            width   : 80%;
-            border-top:12px solid #005EAD;
+
+    );
+
+    .element(top, {
+            position: relative;
+            z-index : 1;
+
+            &:before {
+                content : "";
+                position: absolute;
+                left : 10%;
+                bottom : 100%;
+                width : 80%;
+                border-top:12px solid #005EAD;
+            }
         }
-    });
-    .element(bottom,{
-        position: relative;
-        z-index : 1;
-        :before {
-            content : "";
-            position: absolute;
-            left    : 10%;
-            bottom  : 0;
-            width   : 80%;
-            top:100%;
-            border-top:12px solid #005EAD;
-        }    
-    });
+
+    );
+
+    .element(bottom, {
+            position: relative;
+            z-index : 1;
+
+            &:before {
+                content : "";
+                position: absolute;
+                left : 10%;
+                bottom : 0;
+                width : 80%;
+                top:100%;
+                border-top:12px solid #005EAD;
+            }
+        }
+
+    );
 
 }

@@ -22,8 +22,12 @@
         $(button).toggleClass(UP_ARROW_CLASS);
     }
 
+    function calculateHeight() {
+        $('.footer').parent().css("padding-bottom", $('footer').height() + 'px');
+    }
+
     $(window).on("load", function () {
-        $('.footer').parent().css("padding-bottom", $('footer').height() + 'px')
+        calculateHeight();
         $(".footer__nav-bar").each(function () {
             $(this).find(".footer__drop-down").each(function () {
                 $(this).on("click", function () {
@@ -36,6 +40,13 @@
             })
         })
     })
+
+    $(document).ready(function () {
+        calculateHeight();
+        document.addEventListener('readystatechange', (event) => {
+            calculateHeight();
+        });
+    });
 })()
 
 
