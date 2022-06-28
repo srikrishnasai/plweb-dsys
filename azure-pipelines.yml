@@ -31,21 +31,9 @@ steps:
     pwd    
     echo $(Agent.TempDirectory)
 
-- task: ArtifactoryMaven@2
+- task: Maven@3
+  displayName: 'Maven pom.xml'
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'clean install'
-    artifactoryResolverService: 'JFrog'
-    targetResolveReleaseRepo: 'web-maven'
-    targetResolveSnapshotRepo: 'web-maven'
-    artifactoryDeployService: 'JFrog'
-    targetDeployReleaseRepo: 'web-maven-local'
-    targetDeploySnapshotRepo: 'web-maven-snapshots-local'
-    collectBuildInfo: true
-    buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
-- task: ArtifactoryPublishBuildInfo@1
-  inputs:
-    artifactoryService: 'JFrog'
-    buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
+    options: 'clean compile '
+    publishJUnitResults: false
