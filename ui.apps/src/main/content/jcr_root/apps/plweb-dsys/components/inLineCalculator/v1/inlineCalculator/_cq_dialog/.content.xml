@@ -15,34 +15,47 @@
                     <general
                         jcr:primaryType="nt:unstructured"
                         jcr:title="General"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
-                            <domain
+                            <columns
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Example 'http://test1.calcxml.com'"
-                                fieldLabel="Domain"
-                                name="./domain"
-                                required="{Boolean}true"/>
-                            <disableTabs
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                name="./disableTabs"
-                                text="Disable Tabs?"
-                                value="true"/>
-                            <code
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Defaults to 'ret05'"
-                                fieldLabel="Code"
-                                name="./code"/>
-                            <disableDisclosures
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                name="./disableDisclosures"
-                                text="Disable Disclosures?"
-                                value="true"/>
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <domain
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Example 'http://test1.calcxml.com'"
+                                                fieldLabel="Domain"
+                                                name="./domain"
+                                                required="{Boolean}true"/>
+                                            <disableTabs
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./disableTabs"
+                                                text="Disable Tabs?"
+                                                value="true"/>
+                                            <code
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Defaults to 'ret05'"
+                                                fieldLabel="Code"
+                                                name="./code"/>
+                                            <disableDisclosures
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./disableDisclosures"
+                                                text="Disable Disclosures?"
+                                                value="true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
                         </items>
                     </general>
                     <authControl
