@@ -6,10 +6,10 @@
 			<sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=links.targetPath}"/>
          <div class="support__link-container" data-sly-test="${itemControlObj.resourceAuthorized}">
             <a target="${links.linkTarget}" class="dsys-text dsys-text--body support__icon-link ${!links.iconPath && 'support--no-icon-link'}" href="${linkhelper.linkURL}">
-               <div class="dsys-icon dsys-icon--${links.iconPath}"></div>
+               <div class="dsys-icon dsys-icon--${links.iconPath}" style="background-image: url('${links.iconPath  @ context='uri'}');"></div>
             </a>
             <div>
-               <a target="${links.linkTarget}" class="dsys-text dsys-text--body" href="${linkhelper.linkURL}">
+               <a target="${links.linkTarget}" lass="dsys-text dsys-text--body" href="${linkhelper.linkURL}">
                   ${links.linkText}
                </a>
                <div class="dsys-text dsys-text--caption support__description">${links.description @ context='html'}

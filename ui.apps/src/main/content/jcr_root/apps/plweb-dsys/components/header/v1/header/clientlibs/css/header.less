@@ -55,6 +55,7 @@
             width: fit-content;
             position: relative;
             color: @textBodyLight;
+            padding-bottom: 5px;
             &:after {    
                 content: ''; 
                 height: 1px;
@@ -380,7 +381,36 @@
 
 }
 
+@media screen and (min-width:992px) and (max-width:1249px) {
 
+    .secondary-nav__main{
+        gap: 0 !important;
+    }
+
+    .secondary-nav__link-outer-wrapper{
+        flex-wrap: wrap;
+        padding: 0;
+
+        .secondary-nav__link-wrapper{
+            width: fit-content;
+        }
+    }
+    .secondary-nav__img-container{
+        img{
+            height: 30px;
+        }
+    }
+
+    
+}
+
+@media @mediaMobile {
+
+    .secondary-nav__navigation .navigation-link {
+        padding-bottom: 0;
+    }
+    
+}
 
 
 
