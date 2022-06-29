@@ -1,10 +1,10 @@
 <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.video-list'}" />
 <div id="videoContainer"
     class="video__container ${properties.addTopSpacing ? 'video__container-top-spacing' : ''} ${properties.addBottomSpacing ? 'video__container-bottom-spacing' : ''}"
-    data-sly-use.list="pl.web.dsys.core.models.VideoList" data-sly-test="${authControlObj.hasComponentAccess}">
+    data-sly-use.list="${'pl.web.dsys.core.models.VideoList'@ listType='assets'}" data-sly-test="${authControlObj.hasComponentAccess}">
 
 
     <h2 class="videoComponentTitle" data-sly-test="${properties.componentTitle}">${properties.componentTitle}</h2>

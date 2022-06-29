@@ -2,6 +2,7 @@ package pl.web.dsys.core.models;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 import java.util.Optional;
 
 import javax.annotation.PostConstruct;
@@ -129,4 +130,21 @@ public class AssetItem implements ListItem {
 	public String getIcon() {
 		return icon;
 	}
+	 /**
+     * Overrides equals and hashcode method for checking duplicates objects.
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!(obj instanceof AssetItem))
+            return false;
+			AssetItem that = (AssetItem) obj;
+        return Objects.equals(getPath(), that.getPath());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getPath());
+    }
 }

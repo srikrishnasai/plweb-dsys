@@ -1,6 +1,7 @@
-<div data-sly-use.list="pl.web.dsys.core.models.VideoList"
+<div data-sly-use.list="${'pl.web.dsys.core.models.VideoList'@ listType='assets'}"
 data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
-data-sly-test="${authControlObj.hasComponentAccess}">
+data-sly-test="${authControlObj.hasComponentAccess}"
+>
   <div class="showCarousel" data-sly-include="carousel.html"></div>
     <div id="conainer" class="sidebar shimmer ${properties.useTealColor ? 'video-content-teal' : ''}">
         <div class="player">

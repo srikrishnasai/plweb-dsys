@@ -15,7 +15,6 @@ import javax.annotation.PostConstruct;
 import javax.jcr.Session;
 
 import org.apache.commons.lang3.StringUtils;
-
 //sling model apache imports
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -29,27 +28,22 @@ import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-
 //logger imports
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-//search api imports
-import com.day.cq.search.QueryBuilder;
-import com.day.cq.search.result.SearchResult;
 import com.adobe.cq.sightly.SightlyWCMMode;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
-
-//other imports
-import pl.web.dsys.core.pojos.AssetPojo;
-import pl.web.dsys.core.pojos.AssetlistBean;
+//search api imports
+import com.day.cq.search.QueryBuilder;
+import com.day.cq.search.result.SearchResult;
 
 //sling model for video list component
 @Model(adaptables = { Resource.class,
         SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, resourceType = "plweb-dsys/components/video-list/v1/video-list")
 @Exporter(name = "jackson", extensions = "json")
-public class VideoList extends AssetPojo {
+public class VideoList {
     private static final Logger LOGGER = LoggerFactory.getLogger(VideoList.class);
 
     @ScriptVariable(name = "wcmmode")
@@ -112,10 +106,13 @@ public class VideoList extends AssetPojo {
     @Self
     private SlingHttpServletRequest request;
 
+    @Self
+	private EnhancedListModel enhancedListModel;
+
     private String mediaName;
     private String resourceType;
-    private ArrayList<AssetlistBean> featuredVideoList = new ArrayList<>();
-    AssetlistBean featuredAssetlistBean;
+    private ArrayList<ListItem> featuredVideoList = new ArrayList<>();
+    ListItem featuredAssetlistBean;
     private String requestParam = "";
     private String multifiedItemNodeName = "/campaignParamValues";
 
@@ -158,7 +155,7 @@ public class VideoList extends AssetPojo {
                                 Resource assetRes = resourceResolver.getResource(featuredVideoCampaign);
 
                                 if (assetRes != null) {
-                                    AssetlistBean campaignAssetlistBean = getAssetBean(assetRes);
+                                    AssetItem campaignAssetlistBean = getAssetBean(assetRes);
                                     featuredVideoList.add(campaignAssetlistBean);
 
                                 }
@@ -182,7 +179,7 @@ public class VideoList extends AssetPojo {
                 for (int i = 0; i < tagsVideoList.size(); i++) {
                     Resource assetRes = resourceResolver.getResource(tagsVideoList.get(i));
                     if (assetRes != null) {
-                        AssetlistBean tagAssetlistBean = getAssetBean(assetRes);
+                        AssetItem tagAssetlistBean = getAssetBean(assetRes);
                         LOGGER.info("TagAssetlistBean::" + tagAssetlistBean);
                         featuredVideoList.add(tagAssetlistBean);
 
@@ -203,9 +200,11 @@ public class VideoList extends AssetPojo {
             }
         }
         // append featuredVideo list after tagged video if it is available
-        Collection<AssetlistBean> listVideoItems = getItems();
+        Collection<ListItem> listVideoItems = getAssetsList();
+        LOGGER.info("enhancedList::" + listVideoItems);
+
         if (listVideoItems != null && listVideoItems.size() > 0) {
-            ArrayList<AssetlistBean> list = new ArrayList(listVideoItems);
+            ArrayList<ListItem> list = new ArrayList(listVideoItems);
             Boolean isItemMatches = false;
             if (featuredAssetlistBean != null) {
                 for (int i = 0; i < list.size(); i++) {
@@ -232,12 +231,12 @@ public class VideoList extends AssetPojo {
         }
 
         new LinkedHashSet<>(featuredVideoList);
-        List<AssetlistBean> list = featuredVideoList.stream().distinct().collect(Collectors.toList());
+        List<ListItem> list = featuredVideoList.stream().distinct().collect(Collectors.toList());
         featuredVideoList = new ArrayList<>(list);
 
         // prepare data for analytics based on selected view for a list
         if (null != view && !StringUtils.isEmpty(view)) {
-            AssetlistBean assetlistBean = null;
+            ListItem assetlistBean = null;
             if (!view.equals("sidebar") && !view.equals("carousel")) {
                 if (listVideoItems != null && listVideoItems.size() > 0) {
                     assetlistBean = listVideoItems.iterator().next();
@@ -296,6 +295,19 @@ public class VideoList extends AssetPojo {
 
     }
 
+    public List<ListItem> getAssetsList() {
+		List<ListItem> assetList = enhancedListModel.getEnhancedListItems();
+		if (null != assetList && !assetList.isEmpty()) {
+			new ArrayList<ListItem>(assetList);
+		}
+		return new ArrayList<ListItem>();
+	}
+
+    public AssetItem getAssetBean(Resource assetRes) {
+       return assetRes.adaptTo(AssetItem.class);
+    }
+   
+
     public String getAutoplay() {
         return autoplay;
     }
@@ -344,7 +356,7 @@ public class VideoList extends AssetPojo {
         return resourceType;
     }
 
-    public ArrayList<AssetlistBean> getFeaturedVideoList() {
+    public ArrayList<ListItem> getFeaturedVideoList() {
         return featuredVideoList;
     }
 

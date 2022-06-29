@@ -1,4 +1,4 @@
-<div data-sly-use.list="pl.web.dsys.core.models.VideoList"
+<div data-sly-use.list="${'pl.web.dsys.core.models.VideoList'@ listType='assets'}"
     data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
     data-sly-test="${authControlObj.hasComponentAccess}">
     <div id="theaterMode" class="theaterMode shimmer ${properties.useTealColor ? 'video-content-teal' : ''}">
@@ -11,6 +11,11 @@
                 <button type="button" id="carouselPlay" class="playButton">
                     <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
                 </button>
+                <h1>autoplay -${list.autoplay}</h1>
+                <h1>Controls- ${list.controls}</h1>
+                <h1> featuredVideoList - ${list.featuredVideoList}</h1>
+             
+
                 <video muted="${list.autoplay}" id="carouselPlayer" width="100%" controls="${list.controls}"
                     class="${list.videoClass} carouselPlayer" autoplay="${list.autoplay}" loop="${list.loop}"
                     preload="${list.preload}" controlsList="${list.download}" poster="${item.related}" height="100%"

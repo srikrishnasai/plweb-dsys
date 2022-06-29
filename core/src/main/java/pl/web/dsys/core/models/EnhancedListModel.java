@@ -116,6 +116,8 @@ public class EnhancedListModel {
 		if (StringUtils.isEmpty(listFrom)) {
 			listFrom = StringUtils.EMPTY;
 		}
+		log.debug("listFrom.. {}"+listFrom);
+
 		switch (listFrom) {
 		case STATIC:
 			populateStaticListItems();
@@ -182,6 +184,10 @@ public class EnhancedListModel {
 	}
 
 	private void populateChildListItems() {
+		log.debug("listRootPath.. {}"+listRootPath);
+		log.debug("listType.. {}"+listType);
+
+
 		if (StringUtils.isNotEmpty(listRootPath) && StringUtils.equalsIgnoreCase(listType, "assets")) {
 			Resource rootResource = resolver.getResource(listRootPath);
 			Iterator<Resource> children = rootResource.listChildren();
@@ -235,7 +241,10 @@ public class EnhancedListModel {
 		} else {
 			resList = resourcesList;
 		}
+
 		for (Resource res : resList) {
+			log.debug("resource type before::{}");
+
 			if (resolver.isResourceType(res, DamConstants.NT_DAM_ASSET)) {
 				log.debug("Asset Resource ::{}", res.getPath());
 				AssetItem item = res.adaptTo(AssetItem.class);

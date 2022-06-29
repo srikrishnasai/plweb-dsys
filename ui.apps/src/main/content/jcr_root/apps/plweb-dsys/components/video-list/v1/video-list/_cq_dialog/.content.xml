@@ -18,17 +18,32 @@
                     <listSettings
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Video Settings"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <column
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:hideResource="{Boolean}true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the Title"
+                                        fieldLabel="Title"
+                                        name="./title"/>
+                                    <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:hideResource="{Boolean}true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the Description"
+                                        fieldLabel="Description"
+                                        name="./description"/>
                                     <listFrom
                                         granite:class="cq-dialog-dropdown-showhide"
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Build list using"
+                                        fieldLabel="Build List Using"
                                         name="./listFrom">
                                         <granite:data
                                             jcr:primaryType="nt:unstructured"
@@ -37,23 +52,13 @@
                                             <children
                                                 granite:hide="${cqDesign.disableChildren}"
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Child list"
+                                                text="Child List"
                                                 value="children"/>
                                             <static
                                                 granite:hide="${cqDesign.disableStatic}"
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Fixed list"
                                                 value="static"/>
-                                            <search
-                                                granite:hide="${cqDesign.disableSearch}"
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Search"
-                                                value="search"/>
-                                            <tags
-                                                granite:hide="${cqDesign.disableTags}"
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Tags"
-                                                value="tags"/>
                                         </items>
                                     </listFrom>
                                     <setChildren
@@ -69,18 +74,31 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/heading"
                                                 level="{Long}4"
-                                                text="Options for Child Pages"/>
+                                                text="Options for Child Assets"/>
                                             <well
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/well">
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <parentPage
                                                         jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"/>
+                                                    <childDepth
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                        fieldDescription="Controls how deep the child items can be added to the list"
+                                                        fieldLabel="Child Depth"
+                                                        max="100"
+                                                        min="1"
+                                                        name="./childDepth"
+                                                        step="1"
+                                                        value="1"/>
+                                                    <assetPage
+                                                        jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                        fieldDescription="Leave empty to use current page"
-                                                        fieldLabel="Parent page"
-                                                        name="./parentPage"
-                                                        rootPath="/content/dam/paclife"/>
+                                                        fieldLabel="Asset path"
+                                                        name="./listRootPath"
+                                                        rootPath="/content/dam"/>
                                                 </items>
                                             </well>
                                         </items>
@@ -98,7 +116,7 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/heading"
                                                 level="{Long}4"
-                                                text="Options for Fixed list"/>
+                                                text="Options for Fixed List"/>
                                             <well
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/well">
@@ -111,108 +129,29 @@
                                                             <multi
                                                                 granite:class=""
                                                                 jcr:primaryType="nt:unstructured"
-                                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                                                                sling:hideResource="{Boolean}true"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"/>
+                                                            <assetmulti
+                                                                granite:class=""
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                                composite="{Boolean}true">
                                                                 <field
                                                                     jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                                    name="./assets"
-                                                                    rootPath="/content/dam/paclife"/>
-                                                            </multi>
+                                                                    name="./listItems"
+                                                                    rootPath="/content/dam"/>
+                                                            </assetmulti>
                                                         </items>
                                                     </pages>
                                                 </items>
                                             </well>
                                         </items>
                                     </setStatic>
-                                    <setSearch
-                                        granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
-                                        <granite:data
-                                            jcr:primaryType="nt:unstructured"
-                                            showhidetargetvalue="search"/>
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <heading
-                                                granite:class="coral-Heading coral-Heading--4"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
-                                                level="{Long}4"
-                                                text="Options for Search"/>
-                                            <well
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/well">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <query
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                        fieldLabel="Search query"
-                                                        name="./query"/>
-                                                    <queryContentPath
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                        fieldDescription="Leave empty to use current site (eg. /content/mysite)"
-                                                        fieldLabel="Search in"
-                                                        name="./searchIn"
-                                                        rootPath="/content/dam/"/>
-                                                </items>
-                                            </well>
-                                        </items>
-                                    </setSearch>
-                                    <setTags
-                                        granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
-                                        <granite:data
-                                            jcr:primaryType="nt:unstructured"
-                                            showhidetargetvalue="tags"/>
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <heading
-                                                granite:class="coral-Heading coral-Heading--4"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
-                                                level="{Long}4"
-                                                text="Options for Tags"/>
-                                            <well
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/well">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <parentPage
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                        fieldDescription="Leave empty to use current page"
-                                                        fieldLabel="Parent page"
-                                                        multiple="{Boolean}true"
-                                                        name="./tagsSearchRoot"
-                                                        rootPath="/content/dam/paclife"/>
-                                                    <tags
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="cq/gui/components/coral/common/form/tagfield"
-                                                        fieldLabel="Tags"
-                                                        multiple="{Boolean}true"
-                                                        name="./tags"/>
-                                                    <match
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                        fieldLabel="Match"
-                                                        name="./tagsMatch">
-                                                        <items jcr:primaryType="nt:unstructured">
-                                                            <any
-                                                                jcr:primaryType="nt:unstructured"
-                                                                text="any tag"
-                                                                value="any"/>
-                                                            <all
-                                                                jcr:primaryType="nt:unstructured"
-                                                                text="all tags"
-                                                                value="all"/>
-                                                        </items>
-                                                    </match>
-                                                </items>
-                                            </well>
-                                        </items>
-                                    </setTags>
                                     <view
                                         granite:class="featured-video-hide-show"
                                         jcr:primaryType="nt:unstructured"
+                                        sling:orderBefore="limit"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                         emptyOption="{Boolean}true"
                                         fieldDescription="Select the view to display"
@@ -255,23 +194,6 @@
                                                 value="true"/>
                                         </items>
                                     </featuredVideoContainer>
-                                    <limit
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
-                                        defaultValue="5"
-                                        fieldDescription="Maximum number of videos displayed in list"
-                                        fieldLabel="Limit"
-                                        max="{Long}10"
-                                        min="{Long}1"
-                                        name="./limit"/>
-                                    <limitTypeHint
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
-                                        defaultValue="Long"
-                                        ignoreData="{Boolean}true"
-                                        name="./limit@TypeHint"
-                                        type="Long"
-                                        value="Long"/>
                                 </items>
                             </column>
                         </items>
@@ -280,6 +202,7 @@
                         granite:class="featured-video-tab"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Featured Video"
+                        sling:orderBefore="authControl"
                         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                         <items jcr:primaryType="nt:unstructured">
                             <column
@@ -340,6 +263,7 @@
                     <generalSettings
                         jcr:primaryType="nt:unstructured"
                         jcr:title="General Settings"
+                        sling:orderBefore="authControl"
                         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                         <items jcr:primaryType="nt:unstructured">
                             <column
@@ -375,6 +299,7 @@
                     <playbackSettings
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Playback Settings"
+                        sling:orderBefore="authControl"
                         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                         <items jcr:primaryType="nt:unstructured">
                             <column
@@ -458,68 +383,6 @@
                             </column>
                         </items>
                     </playbackSettings>
-                    <auth
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Auth Control"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
-                        <items jcr:primaryType="nt:unstructured">
-                            <column
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <authtitle
-                                        jcr:primaryType="nt:unstructured"
-                                        jcr:title="Autorization by Item"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <itemauth
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                fieldDescription="Check if you want Auth Control by list item."
-                                                name="./itemauth"
-                                                text="Auth by Item"
-                                                value="{Boolean}true"/>
-                                        </items>
-                                    </authtitle>
-                                    <authtitlecomp
-                                        jcr:primaryType="nt:unstructured"
-                                        jcr:title="Authorization by Component"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <compauth
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                fieldDescription="Check if you want to turn on Component Auth Control."
-                                                name="./compauth"
-                                                text="Component Auth"
-                                                value="{Boolean}true"/>
-                                            <tags
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
-                                                allowBulkEdit="{Boolean}true"
-                                                autocreateTag="{Boolean}true"
-                                                fieldDescription="Select tags under AMF Authorize/User Type or AMF Autorize/Special Agencies"
-                                                fieldLabel="Auth Tags"
-                                                multiple="{Boolean}true"
-                                                name="./cq:authtags">
-                                                <granite:data
-                                                    jcr:primaryType="nt:unstructured"
-                                                    cq-msm-lockable="cq:tags"/>
-                                            </tags>
-                                            <denytags
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                fieldDescription="Makes tag list about a list of denied agencies"
-                                                name="./denyTags"
-                                                renderReadOnly="{Boolean}true"
-                                                text="Deny Tags"
-                                                value="true"/>
-                                        </items>
-                                    </authtitlecomp>
-                                </items>
-                            </column>
-                        </items>
-                    </auth>
                 </items>
             </tabs>
         </items>
