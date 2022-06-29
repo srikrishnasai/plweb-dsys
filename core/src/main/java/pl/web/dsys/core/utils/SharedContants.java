@@ -19,6 +19,14 @@ public class SharedContants {
 	public static final String DEFAULT_PUBLIC_AGENCY = "PUBLIC";
 	public static final String AGENCY_PREFIX = "amfauth:agency/";
 	public static final String AGENCY_SELECTOR_PREFIX = "A:";
-	
+
 	public static final String PAGE_EXTENSION = ".html";
+
+	// EnhancedList Constants
+	public static final String ASC = "asc";
+	public static final String DESC = "desc";
+
+	public static final String TITLE = "title";
+	public static final String PUBLISHED = "published";
+	public static final String MODIFIED = "modified";
 }

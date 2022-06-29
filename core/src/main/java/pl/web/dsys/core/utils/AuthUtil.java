@@ -136,7 +136,7 @@ public class AuthUtil {
 		Resource listItem  = resolver.getResource(path);
 
 		ValueMap vm = getVm(resolver, listItem);
-	    boolean isItemAuth= vm.get(SharedContants.PN_AUTH_BY_ITEM, SharedContants.DO_COMPONENT_AUTH_DEFAULT);;
+	    boolean isItemAuth= vm.get(SharedContants.PN_AUTH_BY_ITEM, SharedContants.DO_COMPONENT_AUTH_DEFAULT);
 
     	boolean access = Boolean.TRUE;
     	if(isItemAuth){

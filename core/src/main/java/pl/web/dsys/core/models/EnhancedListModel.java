@@ -1,6 +1,7 @@
 package pl.web.dsys.core.models;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -40,6 +41,7 @@ import com.drew.lang.annotations.NotNull;
 
 import pl.web.dsys.core.utils.AuthUtil;
 import pl.web.dsys.core.utils.JcrQueryUtils;
+import pl.web.dsys.core.utils.SharedContants;
 
 @Model(adaptables = { Resource.class,
 		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
@@ -103,6 +105,12 @@ public class EnhancedListModel {
 
 	@ValueMapValue
 	private String itemauth;
+
+	@ValueMapValue
+	private String orderBy;
+
+	@ValueMapValue
+	private String sortOrder;
 
 	List<Resource> resourcesList = new ArrayList<Resource>();
 	List<ListItem> enhancedListItems = null;
@@ -262,6 +270,33 @@ public class EnhancedListModel {
 				return tempList;
 			}
 		}
+		enhancedItems = getSortedItems(enhancedItems);
+
+		return enhancedItems;
+	}
+
+	private List<ListItem> getSortedItems(List<ListItem> enhancedItems) {
+		if (StringUtils.isNotBlank(orderBy)) {
+			log.debug("Order By ::{}", orderBy);
+			log.debug("Sort Order ::{}", sortOrder);
+			if (StringUtils.equalsIgnoreCase(sortOrder, SharedContants.ASC)) {
+				if (StringUtils.equalsIgnoreCase(orderBy, SharedContants.TITLE)) {
+					enhancedItems.sort(Comparator.comparing(ListItem::getTitle));
+				} else if (StringUtils.equalsIgnoreCase(orderBy, SharedContants.PUBLISHED)) {
+					enhancedItems.sort(Comparator.comparing(ListItem::getPublishedDate));
+				} else if (StringUtils.equalsIgnoreCase(orderBy, SharedContants.MODIFIED)) {
+					enhancedItems.sort(Comparator.comparing(ListItem::getLastModified));
+				}
+			} else if (StringUtils.equalsIgnoreCase(sortOrder, SharedContants.DESC)) {
+				if (StringUtils.equalsIgnoreCase(orderBy, SharedContants.TITLE)) {
+					enhancedItems.sort(Comparator.comparing(ListItem::getTitle).reversed());
+				} else if (StringUtils.equalsIgnoreCase(orderBy, SharedContants.PUBLISHED)) {
+					enhancedItems.sort(Comparator.comparing(ListItem::getPublishedDate).reversed());
+				} else if (StringUtils.equalsIgnoreCase(orderBy, SharedContants.MODIFIED)) {
+					enhancedItems.sort(Comparator.comparing(ListItem::getLastModified).reversed());
+				}
+			}
+		}
 		return enhancedItems;
 	}
 
@@ -307,8 +342,7 @@ public class EnhancedListModel {
 		}
 
 		// a path is specified, get that page or return null
-		return parentPath.map(resource.getResourceResolver()::getResource)
-				.map(currentPage.getPageManager()::getContainingPage);
+		return parentPath.map(resolver::getResource).map(currentPage.getPageManager()::getContainingPage);
 	}
 
 	/**
