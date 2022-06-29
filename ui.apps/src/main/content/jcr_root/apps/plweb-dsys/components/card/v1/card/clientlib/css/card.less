@@ -65,7 +65,6 @@
     .element(card-li,{
         margin-bottom: @8;
         display: flex;
-        align-items: center;
     });
 
     
@@ -81,7 +80,11 @@
 
     .modifier(center-description,{
         .card__description{
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: center;
         }
     });
 
@@ -132,11 +135,8 @@
             align-items: center;
             margin-top: auto;
             .pdf-wrapper{
-                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/pdf.svg);
-                width: 16px;
-                height: 16px;
-                background-repeat: no-repeat;
-                min-width: 16px;
+               padding-right: 5px;
+               color: @primary;
             }
 
         });
@@ -157,7 +157,7 @@
             }
             
             .pdf-wrapper{
-               display: none
+               display: none;
             }
 
         });

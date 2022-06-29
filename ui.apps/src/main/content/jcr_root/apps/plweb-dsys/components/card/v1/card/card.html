@@ -27,8 +27,12 @@
                         <sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.cardWebpageTarget}"/>
                         <li data-sly-test="${itemControlObj.resourceAuthorized}" class="wrapper-link card__card-li"
                         data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.cardWebpageTarget}">
-                        <div class="pdf-wrapper" data-sly-test="${properties.linkOptions == 'pdf' && item.cardWebpageTarget}"></div>
-                              <a href="${linkHelper.linkURL}" target="${item.cardWebpageTabTarget ? '_blank' : ''}"
+                        <div class="pdf-wrapper" data-sly-test="${properties.linkOptions == 'pdf' && item.cardWebpageTarget}">
+                              <span>
+                                    <i class="fa-solid fa-file-pdf"></i>                                     
+                              </span>
+                        </div>
+                        <a href="${linkHelper.linkURL}" target="${item.cardWebpageTabTarget ? '_blank' : ''}"
                                     class="card__link"> ${item.cardWebpageTitle} </a>
                         </li>
             </ul>
