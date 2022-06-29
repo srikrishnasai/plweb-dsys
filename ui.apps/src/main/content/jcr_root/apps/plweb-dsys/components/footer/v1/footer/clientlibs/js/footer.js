@@ -5,6 +5,8 @@
 
     var LIST_HEIGHT = 40
 
+    var FOOTER_HEIGHT = 0;
+
     function showList(ulElem, button) {
         var maxHeight = $(ulElem).children().length * LIST_HEIGHT;
         var hasFooterUpClass = $('.footer__list').find('.footer--up-arrow');
@@ -13,21 +15,28 @@
             $('.footer--up-arrow').parent().parent().find("ul").css("max-height", "0px");
             $('.footer__list').find('.footer--up-arrow').toggleClass(UP_ARROW_CLASS);
         }
+
+        calculateHeight(FOOTER_HEIGHT + (maxHeight - 20) + 'px');
         $(ulElem).css("max-height", maxHeight + "px")
         $(button).toggleClass(UP_ARROW_CLASS);
     }
 
     function hideList(ulElem, button) {
+        calculateHeight(FOOTER_HEIGHT + 'px');
         $(ulElem).css("max-height", "0px")
         $(button).toggleClass(UP_ARROW_CLASS);
     }
 
-    function calculateHeight() {
-        $('.footer').parent().css("padding-bottom", $('footer').height() + 'px');
+    function calculateHeight(height) {
+        $('.footer').parent().css({
+            "transition": 'padding-bottom 0.5s linear',
+            "padding-bottom": height,
+        });
     }
 
     $(window).on("load", function () {
-        calculateHeight();
+        FOOTER_HEIGHT = $('footer').height();
+        calculateHeight(FOOTER_HEIGHT + 'px');
         $(".footer__nav-bar").each(function () {
             $(this).find(".footer__drop-down").each(function () {
                 $(this).on("click", function () {
@@ -42,11 +51,9 @@
     })
 
     $(document).ready(function () {
-        calculateHeight();
+        calculateHeight($('footer').height() + 'px');
         document.addEventListener('readystatechange', (event) => {
-            calculateHeight();
+            calculateHeight($('footer').height() + 'px');
         });
     });
 })()
-
-
