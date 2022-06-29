@@ -84,8 +84,6 @@ public class AssetPojo {
 
     @PostConstruct
     protected void init() {
-
-        assetManager = resourceResolver.adaptTo(AssetManager.class);
         // read edit config properties
         sortOrder = Enums.SortOrder.fromString(
                 properties.get(com.adobe.cq.wcm.core.components.models.List.PN_SORT_ORDER, Enums.SortOrder.ASC.value));
@@ -149,11 +147,12 @@ public class AssetPojo {
 
     private void populateStaticListItems() {
         listItems = new ArrayList<AssetlistBean>();
+        this.assetManager = resourceResolver.adaptTo(AssetManager.class);
         String[] assetPaths = properties.get(ASSETS, new String[0]);
         for (String path : assetPaths) {
-            if (assetManager.assetExists(path) &&
+            if (this.assetManager.assetExists(path) &&
                     AuthUtil.isResourceAuthorized(path, request, resourceResolver)) {
-                listItems.add(convert(assetManager.getAsset(path)));
+                listItems.add(convert(this.assetManager.getAsset(path)));
             }
         }
     }

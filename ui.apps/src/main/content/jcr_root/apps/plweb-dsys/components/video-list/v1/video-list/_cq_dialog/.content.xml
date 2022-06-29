@@ -80,7 +80,7 @@
                                                         fieldDescription="Leave empty to use current page"
                                                         fieldLabel="Parent page"
                                                         name="./parentPage"
-                                                        rootPath="/content/dam/paclife"/>
+                                                        rootPath="/content/dam"/>
                                                 </items>
                                             </well>
                                         </items>
@@ -116,7 +116,7 @@
                                                                     jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                                     name="./assets"
-                                                                    rootPath="/content/dam/paclife"/>
+                                                                    rootPath="/content/dam"/>
                                                             </multi>
                                                         </items>
                                                     </pages>
@@ -183,7 +183,7 @@
                                                         fieldLabel="Parent page"
                                                         multiple="{Boolean}true"
                                                         name="./tagsSearchRoot"
-                                                        rootPath="/content/dam/paclife"/>
+                                                        rootPath="/content/dam"/>
                                                     <tags
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="cq/gui/components/coral/common/form/tagfield"
@@ -296,7 +296,7 @@
                                                 fieldDescription="Leave empty to use default featured video"
                                                 fieldLabel="Select Featured Video"
                                                 name="./featuredVideo"
-                                                rootPath="/content/dam/paclife"/>
+                                                rootPath="/content/dam"/>
                                         </items>
                                     </featuredVideoContainer>
                                     <campaignUrlParamName
@@ -329,7 +329,7 @@
                                                     fieldDescription="Select featured video for campaign parameter value."
                                                     fieldLabel="Select Campaign Featured Video"
                                                     name="./featuredVideoCampaign"
-                                                    rootPath="/content/dam/paclife"/>
+                                                    rootPath="/content/dam"/>
                                             </items>
                                         </field>
                                     </campaignUrlParams>
