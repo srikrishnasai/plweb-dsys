@@ -1,6 +1,8 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.text-with-bg-image'}"
+    data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg1440w', imagePath=properties.bgImageFileRef, transparent='false'}"
+	data-sly-use.imageurlMob="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg768w', imagePath=properties.mobileBgImageFileRef, transparent='false'}"
     data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" />
 <sly data-sly-test="${authControlObj.hasComponentAccess}">
 
@@ -11,11 +13,11 @@
         data-sly-attribute.data-horizontal-pos="${properties.positionHorizontal}">
         <div class="text-with-bg-img__container">
             <div class="text-with-bg-img__img-container"
-                style="background-image:url('${properties.bgImageFileRef @ context = 'styleString'}') ">
+                style="background-image:url('${imageurl.transformedImageUrl @ context = 'styleString'}') ">
             </div>
 
-            <input type="hidden" class="bg-lg-img" value="${properties.bgImageFileRef}">
-            <input type="hidden" class="bg-sm-img" value="${properties.mobileBgImageFileRef}">
+            <input type="hidden" class="bg-lg-img" value="${imageurl.transformedImageUrl}">
+            <input type="hidden" class="bg-sm-img" value="${imageurlMob.transformedImageUrl}">
 
             <div data-sly-test="${properties.textContent}" class="text-with-bg-img__txt-container">
                 ${properties.textContent @ context = 'html'}
