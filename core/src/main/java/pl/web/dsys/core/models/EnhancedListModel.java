@@ -116,21 +116,21 @@ public class EnhancedListModel {
 		if (StringUtils.isEmpty(listFrom)) {
 			listFrom = StringUtils.EMPTY;
 		}
-		log.debug("listFrom.. {}"+listFrom);
+		log.debug("listFrom.. {}" + listFrom);
 
 		switch (listFrom) {
-		case STATIC:
-			populateStaticListItems();
-			break;
-		case CHILDREN:
-			populateChildListItems();
-			break;
-		case TAGS:
-			populateTagListItems();
-			break;
-		default:
-			resourcesList = new ArrayList<Resource>();
-			break;
+			case STATIC:
+				populateStaticListItems();
+				break;
+			case CHILDREN:
+				populateChildListItems();
+				break;
+			case TAGS:
+				populateTagListItems();
+				break;
+			default:
+				resourcesList = new ArrayList<Resource>();
+				break;
 		}
 
 	}
@@ -184,15 +184,16 @@ public class EnhancedListModel {
 	}
 
 	private void populateChildListItems() {
-		log.debug("listRootPath.. {}"+listRootPath);
-		log.debug("listType.. {}"+listType);
-
+		log.debug("listRootPath.. {}" + listRootPath);
+		log.debug("listType.. {}" + listType);
 
 		if (StringUtils.isNotEmpty(listRootPath) && StringUtils.equalsIgnoreCase(listType, "assets")) {
 			Resource rootResource = resolver.getResource(listRootPath);
 			Iterator<Resource> children = rootResource.listChildren();
 			while (children.hasNext()) {
 				resourcesList.add(children.next());
+				log.debug("resourcesList..while {}" + resourcesList);
+
 			}
 		} else if (StringUtils.isNotEmpty(listRootPath) && StringUtils.equalsIgnoreCase(listType, "pages")) {
 			Stream<Page> pagesList = getChildListItems();

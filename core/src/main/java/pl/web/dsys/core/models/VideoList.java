@@ -107,12 +107,12 @@ public class VideoList {
     private SlingHttpServletRequest request;
 
     @Self
-	private EnhancedListModel enhancedListModel;
+    private EnhancedListModel enhancedListModel;
 
     private String mediaName;
     private String resourceType;
-    private ArrayList<ListItem> featuredVideoList = new ArrayList<>();
-    ListItem featuredAssetlistBean;
+    private ArrayList<AssetItem> featuredVideoList = new ArrayList<>();
+    AssetItem featuredAssetlistBean;
     private String requestParam = "";
     private String multifiedItemNodeName = "/campaignParamValues";
 
@@ -200,11 +200,11 @@ public class VideoList {
             }
         }
         // append featuredVideo list after tagged video if it is available
-        Collection<ListItem> listVideoItems = getAssetsList();
+        Collection<AssetItem> listVideoItems = getAssetsList();
         LOGGER.info("enhancedList::" + listVideoItems);
 
         if (listVideoItems != null && listVideoItems.size() > 0) {
-            ArrayList<ListItem> list = new ArrayList(listVideoItems);
+            ArrayList<AssetItem> list = new ArrayList(listVideoItems);
             Boolean isItemMatches = false;
             if (featuredAssetlistBean != null) {
                 for (int i = 0; i < list.size(); i++) {
@@ -231,12 +231,12 @@ public class VideoList {
         }
 
         new LinkedHashSet<>(featuredVideoList);
-        List<ListItem> list = featuredVideoList.stream().distinct().collect(Collectors.toList());
+        List<AssetItem> list = featuredVideoList.stream().distinct().collect(Collectors.toList());
         featuredVideoList = new ArrayList<>(list);
 
         // prepare data for analytics based on selected view for a list
         if (null != view && !StringUtils.isEmpty(view)) {
-            ListItem assetlistBean = null;
+            AssetItem assetlistBean = null;
             if (!view.equals("sidebar") && !view.equals("carousel")) {
                 if (listVideoItems != null && listVideoItems.size() > 0) {
                     assetlistBean = listVideoItems.iterator().next();
@@ -295,18 +295,18 @@ public class VideoList {
 
     }
 
-    public List<ListItem> getAssetsList() {
-		List<ListItem> assetList = enhancedListModel.getEnhancedListItems();
-		if (null != assetList && !assetList.isEmpty()) {
-			new ArrayList<ListItem>(assetList);
-		}
-		return new ArrayList<ListItem>();
-	}
+    public List<AssetItem> getAssetsList() {
+        enhancedListModel.getEnhancedListItems();
+        List<AssetItem> assetList = enhancedListModel.getEnhancedAssetItems();
+        if (null != assetList && !assetList.isEmpty()) {
+            new ArrayList<AssetItem>(assetList);
+        }
+        return new ArrayList<AssetItem>();
+    }
 
     public AssetItem getAssetBean(Resource assetRes) {
-       return assetRes.adaptTo(AssetItem.class);
+        return assetRes.adaptTo(AssetItem.class);
     }
-   
 
     public String getAutoplay() {
         return autoplay;
@@ -356,7 +356,7 @@ public class VideoList {
         return resourceType;
     }
 
-    public ArrayList<ListItem> getFeaturedVideoList() {
+    public ArrayList<AssetItem> getFeaturedVideoList() {
         return featuredVideoList;
     }
 
