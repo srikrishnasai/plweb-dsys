@@ -4,7 +4,7 @@
     data-sly-call="${clientlib.all @ categories='plweb-dsys.video-list'}" />
 <div id="videoContainer"
     class="video__container ${properties.addTopSpacing ? 'video__container-top-spacing' : ''} ${properties.addBottomSpacing ? 'video__container-bottom-spacing' : ''}"
-    data-sly-use.list="${'pl.web.dsys.core.models.VideoList'@ listType='assets'}" data-sly-test="${authControlObj.hasComponentAccess}">
+    data-sly-use.list="${'pl.web.dsys.core.models.VideoList' @ listType='assets'}">
 
 
     <h2 class="videoComponentTitle" data-sly-test="${properties.componentTitle}">${properties.componentTitle}</h2>
@@ -19,7 +19,7 @@
     </div>
 
     <div data-sly-test="${properties.view != 'sidebar' && properties.view != 'carousel'}">
-        <ul data-sly-list.item="${list.items}" data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+        <ul data-sly-list.item="${list.featuredVideoList}" data-sly-use.template="core/wcm/components/commons/v1/templates.html"
             data-sly-use.itemTemplate="${list.view}">
             <li data-sly-test="${properties.limit? itemList.count <= properties.limit : itemList.count<=5}"
                 class="${list.liClass}" data-sly-call="${itemTemplate.item @ list = list, item = item}"></li>
