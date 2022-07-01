@@ -199,7 +199,7 @@ public class VideoList {
 			}
 		}
 		// append featuredVideo list after tagged video if it is available
-		Collection<ListItem> listVideoItems = getAssetsList();
+		Collection<AssetItem> listVideoItems = getAssetsList();
 		LOGGER.info("enhancedList::" + listVideoItems);
 
 		if (listVideoItems != null && listVideoItems.size() > 0) {
@@ -293,13 +293,17 @@ public class VideoList {
 		return pathList;
 
 	}
-
-	public List<ListItem> getAssetsList() {
-		List<ListItem> assetList = enhancedListModel.getEnhancedListItems();
+    /**
+     * return Asset list
+     * @return List of AssetItem
+     */
+	public List<AssetItem> getAssetsList() {
+        enhancedListModel.getEnhancedListItems();
+		List<AssetItem> assetList = enhancedListModel.getEnhancedAssetItems();
 		if (null != assetList && !assetList.isEmpty()) {
 			return assetList;
 		}
-		return new ArrayList<ListItem>();
+		return new ArrayList<AssetItem>();
 	}
 
 	public AssetItem getAssetBean(Resource assetRes) {
@@ -319,8 +323,7 @@ public class VideoList {
 	}
 
 	public boolean showVideo() {
-
-		if (mode.isEdit())
+    if (mode.isEdit())
 			return true;
 		return StringUtils.isNotEmpty(video);
 
