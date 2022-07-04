@@ -1,0 +1,48 @@
+{
+  "headerComponent": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:createdBy": "admin",
+    "searchTargetPath": "/content/plweb-dsys/home/search-results",
+    "fileReference": "/content/dam/we-retail/en/activities/hiking-camping/Hiking-Campaign-Male.jpg",
+    "jcr:lastModifiedBy": "admin",
+    "compauth": "false",
+    "jcr:created": "Thu Apr 28 2022 16:13:25 GMT+0530",
+    "hideSearch": "true",
+    "hideTopNav": "true",
+    "topNavHeaderText": "Pacific Life Advisory",
+    "allSitesPath": "/content/plweb-dsys/us/en/misc/all-sites",
+    "jcr:lastModified": "Mon Jul 04 2022 21:32:01 GMT+0530",
+    "sling:resourceType": "plweb-dsys/components/header/v1/header",
+    "primarylinks": {
+      "jcr:primaryType": "nt:unstructured",
+      "item0": {
+        "jcr:primaryType": "nt:unstructured",
+        "secondaryNavXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/secondary-nav/second-header",
+        "targetPath": "/content/plweb-dsys/us/en/third-page",
+        "linkTarget": "true"
+      },
+      "item1": {
+        "jcr:primaryType": "nt:unstructured",
+        "secondaryNavXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/secondary-nav/master",
+        "targetPath": "/content/plweb-dsys/us/en/second-page",
+        "linkText": "Insights"
+      },
+      "item2": {
+        "jcr:primaryType": "nt:unstructured",
+        "targetPath": "/content/plweb-dsys/us",
+        "linkText": "Variable Annuities"
+      },
+      "item3": {
+        "jcr:primaryType": "nt:unstructured",
+        "targetPath": "/content/plweb-dsys/component-library/building-blocks",
+        "linkText": "Fixed Annuities"
+      },
+      "item4": {
+        "jcr:primaryType": "nt:unstructured",
+        "secondaryNavXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/sales-tool-dropdown/master",
+        "targetPath": "/content/plweb-dsys/us/card-policy",
+        "linkText": "Sales Tools"
+      }
+    }
+  }
+}
