@@ -25,7 +25,7 @@
             <ul data-sly-test="${model1.childResource}" class="card__card-ul"
                   data-sly-list="${model1.childResource.listChildren}">
                         <sly data-sly-use.itemControlObj="${'pl.web.dsys.core.models.AuthControlModel' @ path=item.cardWebpageTarget}"/>
-                        <li data-sly-test="${itemControlObj.resourceAuthorized}" class="wrapper-link card__card-li"
+                        <li data-sly-test="${itemControlObj.resourceAuthorized && item.cardWebpageTarget}" class="wrapper-link card__card-li"
                         data-sly-use.linkHelper="${'pl.web.dsys.core.helpers.LinkHelpers' @ url= item.cardWebpageTarget}">
                         <div class="pdf-wrapper" data-sly-test="${properties.linkOptions == 'pdf' && item.cardWebpageTarget}">
                               <span>
