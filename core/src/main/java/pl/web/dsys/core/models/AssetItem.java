@@ -45,7 +45,7 @@ public class AssetItem implements ListItem {
 	@PostConstruct
 	protected void initModel() {
 		this.asset = Optional.ofNullable(DamUtil.resolveToAsset(resource));
-		this.thumbnail = this.asset.map(a -> a.getRendition("cq5dam.thumbnail.319.319.png").getPath())
+		this.thumbnail = this.asset.map(a -> a.getRendition("original").getPath())
 				.orElse(StringUtils.EMPTY);
 		this.assetFormat = this.asset.map(a -> a.getMetadataValue("dc:format")).orElse(StringUtils.EMPTY);
 		this.name = this.asset.map(a -> a.getName()).orElse(StringUtils.EMPTY);
