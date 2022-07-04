@@ -448,10 +448,9 @@
          * @param {HTMLElement} item The item to annotate as expanded
          */
         function expandItem(item) {
-            var slides = document.getElementsByClassName("animated");
-            for (var i = 0; i < slides.length; i++) {
-                slides[i].classList.add('go');
-            }
+            $(item).find('.animated').each(function () {
+                $(this).addClass('go');
+            });
             var index = that._elements["item"].indexOf(item);
             if (index > -1) {
                 var button = that._elements["button"][index];
