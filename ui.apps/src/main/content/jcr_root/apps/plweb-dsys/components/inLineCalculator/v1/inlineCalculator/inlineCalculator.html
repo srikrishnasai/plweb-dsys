@@ -1,23 +1,31 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
- data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
- data-sly-test="${authControlObj.hasComponentAccess}">
+    data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
+    data-sly-test="${authControlObj.hasComponentAccess}">
 
-<sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit && !properties.domain)}"/>
-<sly data-sly-test.calcId="${properties.code ? properties.code : 'ret05'}"/>
-<sly data-sly-set.calcUrl="${properties.domain}/calculators/${calcId}?skn=382&r=2&c=990000&tc=CCCCCC&tabs=${properties.disableTabs ? 0 : 1}&global-disclosure=${properties.disableDisclosures ? 'off' : 'on'}"/>
-<iframe data-component-name="Inline Calculator" data-sly-test.publish="${properties.domain && !wcmmode.edit}"
-    data-tool-vendor="${properties.domain}"
-    data-tool-id="${calcId}"
-	src="${calcUrl}" 
-	frameborder="0" style="width: 100vw;height: 100vh;position: relative" 
-    id="${currentNode.identifier}">
-</iframe>
+    <sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit && !properties.domain)}" />
+    <sly data-sly-test.calcId="${properties.code ? properties.code : 'ret05'}" />
+    <sly
+        data-sly-set.calcUrl="${properties.domain}/calculators/${calcId}?skn=382&r=2&c=990000&tc=CCCCCC&tabs=${properties.disableTabs ? 0 : 1}&global-disclosure=${properties.disableDisclosures ? 'off' : 'on'}" />
+    <iframe data-component-name="Inline Calculator" data-sly-test.publish="${properties.domain && !wcmmode.edit}"
+        data-tool-vendor="${properties.domain}" data-tool-id="${calcId}" src="${calcUrl}" frameborder="0"
+        style="width: 100%;height: 100vh;position: relative" id="${currentNode.identifier}">
+    </iframe>
+
+    <script type="text/javascript">
+        window.addEventListener("message", function (event) {
+            var iframe = document.getElementById("${currentNode.identifier @ context = 'attribute'}");
+            // Iframe  needs to adjust to height of content
+            if (event.origin == "${properties.domain @ context = 'attribute'}" && event.data.startsWith("height:")) {
+                var height = event.data.split(":", 2)[1];
+                iframe.style.height = height + 'px';
+            }
+        }, false);
+    </script>
 
 
 
-<!--/* In edit mode, display calculator will scrollbar as above code snippet causes the page height to increase indefinitely */-->
-<iframe data-sly-test="${properties.domain && wcmmode.edit}"
-	src="${calcUrl}" 
-	frameborder="0" style="width: 100%;position: relative" >
-</iframe>
+    <!--/* In edit mode, display calculator will scrollbar as above code snippet causes the page height to increase indefinitely */-->
+    <iframe data-sly-test="${properties.domain && wcmmode.edit}" src="${calcUrl}" frameborder="0"
+        style="width: 100%;position: relative">
+    </iframe>
 </sly>
