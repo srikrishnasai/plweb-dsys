@@ -5,11 +5,11 @@
 <sly data-sly-call="${templates.placeholder @ isEmpty = 'true', classAppend='cmp-text'}" />
 
 <div id="videoContainer"
-    class="video__container ${properties.addTopSpacing ? 'video__container-top-spacing' : ''} ${properties.addBottomSpacing ? 'video__container-bottom-spacing' : ''}"
-    data-sly-use.list="${'pl.web.dsys.core.models.VideoList' @ listType='assets'}">
+    class="video-list ${properties.addTopSpacing ? 'video-list--top-spacing' : ''} ${properties.addBottomSpacing ? 'video-list--bottom-spacing' : ''}"
+    data-sly-use.list="${'pl.web.dsys.core.models.VideoList' @ listType='assets'}" data-sly-test="${authControlObj.hasComponentAccess}">
 
 
-    <h2 class="videoComponentTitle" data-sly-test="${properties.componentTitle}">${properties.componentTitle}</h2>
+    <h2 class="video-list__title" data-sly-test="${properties.componentTitle}">${properties.componentTitle}</h2>
 
     <span id="properties" data-attribute="${properties.view}"></span>
     <div data-sly-test="${properties.view && properties.view == 'carousel'}" id="carousel">

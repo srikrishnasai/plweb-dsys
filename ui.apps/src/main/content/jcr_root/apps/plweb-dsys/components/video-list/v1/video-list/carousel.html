@@ -1,53 +1,57 @@
 <div data-sly-use.list="${'pl.web.dsys.core.models.VideoList'@ listType='assets'}"
     data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
     data-sly-test="${authControlObj.hasComponentAccess}">
-    <div id="theaterMode" class="theaterMode shimmer ${properties.useTealColor ? 'video-content-teal' : ''}">
+    <div id="theaterMode" class="video-list--theater-mode video-list__shimmer">
+
         <!-- Video player container with player title description -->
-        <section id="playerContainer" class="d-flex items-center dir-col playerContainer">
+        <section id="playerContainer" class="d-flex items-center dir-col video-list__player-container">
             <!--  Player where video will  be played with the play button on it -->
-            <div class="d-flex items-center content-center carouselVideoContainer">
-                <div class="shimmerContainer shimmerEffect"></div>
-                <button type="button" id="carouselPlay" class="playButton">
+            <div class="d-flex items-center content-center video-list__carousel-video-container">
+                <div class=" video-list__shimmer-container  video-list__shimmer-effect"></div>
+                <button type="button" id="carouselPlay" class="video-list__play-button">
                     <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
                 </button>
 
                 <video muted="${list.autoplay}" id="carouselPlayer" width="100%" controls="${list.controls}"
-                    class="${list.videoClass} carouselPlayer" autoplay="${list.autoplay}" loop="${list.loop}"
-                    preload="${list.preload}" controlsList="${list.download}" poster="${item.related}" height="100%"
-                    playsinline>
+                    class="${list.videoClass} video-list__carousel-player" autoplay="${list.autoplay}"
+                    loop="${list.loop}" preload="${list.preload}" controlsList="${list.download}"
+                    poster="${item.related}" height="100%" playsinline>
                     <source type="video/mp4" />
                     <source src="video/videogular.ogg" type="video/ogg" />
                     <source src="video/videogular.webm" type="video/webm" />
                 </video>
             </div>
-            <div class="videoText titleStyling shimmerEffect">
+            <div class="video-list__video-text  video-list__title-styling video-list__shimmer-effect">
                 <span id="videoTitle"></span>
             </div>
-            <span id="videoDesc" class="videoDesc shimmerEffect"></span>
+            <span id="videoDesc" class="video-list__video-desc video-list__shimmer-effect"></span>
         </section>
 
         <!-- Carousel to browse other videos -->
-        <section id="videoGallery" class="videoGallery d-flex dir-col">
-            <span class="videoGalleryTitle">Watch Next</span>
-            <div class="carousel" id="carousel">
+        <section id="videoGallery" class="video-list__video-gallery d-flex dir-col">
+            <span class="video-list__video-gallery-title">Watch Next</span>
+            <div class="video-list__carousel" id="carousel">
 
-                <div class="swiper swiper-container">
+                <div class="swiper videoListSwiper">
                     <!-- Additional required wrapper -->
                     <ul class="swiper-wrapper" data-sly-list.item="${list.featuredVideoList}">
                         <!-- Slides -->
                         <li data-sly-test="${properties.limit? itemList.count <= properties.limit : itemList.count<=5}"
                             class="swiper-slide">
                             <!-- Card containing video , title , desc -->
-                            <div class="card cardShadow" onclick="playVideoFromCarousel(event)" id="card">
-                                <div class="thumbnailContainer">
-                                    <div class="videoWithOverlay">
-                                        <div class="shimmerContainer shimmerEffect"></div>
-                                        <div id="overlay" class="overlay"><span class="overlayText"> Now Playing </span>
+                            <div class="video-list__card video-list__card-shadow" onclick="playVideoFromCarousel(event)"
+                                id="card">
+                                <div class="video-list__thumbnail-container">
+                                    <div class="video-list__video-with-overlay">
+                                        <div class="video-list__shimmer-container video-list__shimmer-effect"></div>
+                                        <div id="overlay" class="video-list__overlay"><span
+                                                class="video-list__overlay-text"> Now
+                                                Playing </span>
                                         </div>
                                         <video preload="metadata"
                                             data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @transform='flexImg1200w', imagePath=item.related}"
                                             poster="${properties.useOriginalImage ? item.related : imageurl.transformedImageUrl}"
-                                            height="100%" muted class="carouselThumbnail" height="100%"
+                                            height="100%" muted class="video-list__carousel-thumbnail" height="100%"
                                             data-desc="${item.description}"
                                             data-title="${item.title? item.title : item.name}"
                                             data-video-path=${item.path} id="${list.id}">
@@ -58,18 +62,21 @@
                                     </div>
                                 </div>
 
-                                <div class="carouselThumbnailText">
-                                    <p class="titleStyling carouselThumbnailTitle secondaryTitleStyling shimmerEffect">
+                                <div class="video-list__carousel-thumbnail-text">
+                                    <p
+                                        class="video-list__title-styling video-list__carousel-thumbnail-title video-list__secondary-title-styling video-list__shimmer-effect">
                                         ${item.title? item.title :
                                         item.name} </p>
-                                    <span class="ellipsisDesc ellipsis-5 desc shimmerEffect"> ${item.description ?
+                                    <span
+                                        class="video-list__ellipsis-desc video-list__ellipsis-5 desc video-list__shimmer-effect">
+                                        ${item.description ?
                                         item.description : item.title } </span>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <div class="d-flex content-center items-center carouselButtonContainer">
+                <div class="d-flex content-center items-center video-list__carousel-button-container">
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>

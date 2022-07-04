@@ -1,57 +1,63 @@
 <div data-sly-use.list="${'pl.web.dsys.core.models.VideoList'@ listType='assets'}"
-data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
-data-sly-test="${authControlObj.hasComponentAccess}"
->
-  <div class="showCarousel" data-sly-include="carousel.html"></div>
-    <div id="conainer" class="sidebar shimmer ${properties.useTealColor ? 'video-content-teal' : ''}">
-        <div class="player">
-            <div class="d-flex player_container items-center content-center">
-                <button id="sideBarPlay" class="playButton">
+    data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel"
+    data-sly-test="${authControlObj.hasComponentAccess}">
+    <div class="video-list__show-carousel" data-sly-include="carousel.html"></div>
+    <div id="conainer" class="video-list--sidebar video-list__shimmer">
+        <div class="video-list__player">
+            <div class="d-flex video-list__player-container items-center content-center">
+                <button id="sideBarPlay" class="video-list__play-button">
                     <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
                 </button>
-                <div id="shimmer" class="shimmerContainer shimmerEffect"></div>
+                <div id="shimmer" class="video-list__shimmer-container video-list__shimmer-effect"></div>
                 <video muted="${list.autoplay}" id="videoPlayer" width="100%" height="100%" controls="${list.controls}"
-                    class="${list.videoClass} sidebarPlayer" autoplay="${list.autoplay}" loop="${list.loop}" preload="${list.preload}"
-                    controlsList="${list.download}" poster="${item.related}">
+                    class="${list.videoClass} video-list__sidebar-player" autoplay="${list.autoplay}"
+                    loop="${list.loop}" preload="${list.preload}" controlsList="${list.download}"
+                    poster="${item.related}">
                     <source type="video/mp4" />
                     <source src="video/videogular.ogg" type="video/ogg" />
                     <source src="video/videogular.webm" type="video/webm" />
                 </video>
             </div>
             <div>
-                <h3 class="titleStyling sidebarVideoTitle shimmerEffect" id="videoTitle"></h3>
-                <p class="videoDesc shimmerEffect" id="videoDescription"></p>
+                <h3 class="video-list__title-styling video-list__sidebar-video-title video-list__shimmer-effect"
+                    id="videoTitle"></h3>
+                <p class="video-list__video-desc video-list__shimmer-effect" id="videoDescription"></p>
             </div>
         </div>
-        <div id="rightBar" class="rightPane">
-            <span class="arrow topArrow"><i class="fa fa-chevron-up"></i></span>
-            <ul data-sly-list.item="${list.featuredVideoList}" class="rightPaneContent">
+        <div id="rightBar" class="video-list__right-pane">
+            <span class="video-list__arrow video-list__top-arrow"><i class="fa fa-chevron-up"></i></span>
+            <ul data-sly-list.item="${list.featuredVideoList}" class="video-list__right-pane-content">
                 <li data-sly-test="${properties.limit? itemList.count <= properties.limit : itemList.count<=5}">
-                    <div class="preview">
+                    <div class="video-list__preview">
 
 
-                        <div class="videoOverlay">
-                            <div id="shimmer" class="shimmerContainer shimmerEffect"></div>
-                            <div id="overlay" class="overlay"><span class="overlayText">Now Playing </span> </div>
+                        <div class="video-list__video-overlay">
+                            <div id="shimmer" class="video-list__shimmer-container video-list__shimmer-effect"></div>
+                            <div id="overlay" class="video-list__overlay"><span class="video-list__overlay-text">Now
+                                    Playing </span> </div>
                             <video
                                 data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @transform='flexImg1200w', imagePath=item.related}"
                                 poster="${properties.useOriginalImage ? item.related : imageurl.transformedImageUrl}"
-                                muted class="sideBarThumbnail" data-desc="${item.description}"
+                                muted class="video-list__sidebar-thumbnail" data-desc="${item.description}"
                                 data-title="${item.title? item.title : item.name}" data-video-path=${item.path}
                                 id="${list.id}" height="auto" play="false">
                                 <source src=${item.path} type="video/mp4" />
                             </video>
 
                         </div>
-                        <div id="details" class="details">
-                            <p class="titleStyling secondaryTitleStyling shimmerEffect"> ${item.title? item.title : item.name} </p>
-                            <p class="shimmerEffect onlyShimmer"></p>
-                            <span class="ellipsisDesc shimmerEffect"> ${item.description ? item.description : item.title } </span>
+                        <div id="details" class="video-list__details">
+                            <p
+                                class="video-list__title-styling video-list__secondary-title-styling video-list__shimmer-effect">
+                                ${item.title? item.title :
+                                item.name} </p>
+                            <p class="video-list__shimmer-effect video-list__only-shimmer"></p>
+                            <span class="video-list__ellipsis-desc video-list__shimmer-effect"> ${item.description ?
+                                item.description : item.title} </span>
                         </div>
                     </div>
                 </li>
             </ul>
-            <div class="arrow downArrow"><i class="fa fa-chevron-down fa-2x"></i></div>
+            <div class="video-list__arrow video-list__down-arrow"><i class="fa fa-chevron-down fa-2x"></i></div>
         </div>
     </div>
 </div>
