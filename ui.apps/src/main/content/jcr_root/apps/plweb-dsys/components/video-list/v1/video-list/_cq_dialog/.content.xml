@@ -1,146 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:primaryType="nt:unstructured"
-    jcr:title="Video List"
-    sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="[core.wcm.components.list.v1.editor,plweb-dsys.components.video-list.v1.video-list-dialog]"
-    helpPath="https://www.adobe.com/go/aem_cmp_list_v1">
-    <content
-        granite:class="cmp-list--editor"
-        jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/container">
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" jcr:primaryType="nt:unstructured" jcr:title="Video List" sling:resourceType="cq/gui/components/authoring/dialog" extraClientlibs="[core.wcm.components.list.v1.editor,plweb-dsys.components.video-list.v1.video-list-dialog]" helpPath="https://www.adobe.com/go/aem_cmp_list_v1">
+    <content granite:class="cmp-list--editor" jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-            <tabs
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/tabs"
-                maximized="{Boolean}true">
+            <tabs jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/tabs" maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
-                    <listSettings
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Video Settings"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                        margin="{Boolean}true">
+                    <listSettings jcr:primaryType="nt:unstructured" jcr:title="Video Settings" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns" margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
-                            <column
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <title
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:hideResource="{Boolean}true"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter the Title"
-                                        fieldLabel="Title"
-                                        name="./title"/>
-                                    <description
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:hideResource="{Boolean}true"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Enter the Description"
-                                        fieldLabel="Description"
-                                        name="./description"/>
-                                    <listFrom
-                                        granite:class="cq-dialog-dropdown-showhide"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        fieldLabel="Build List Using"
-                                        name="./listFrom">
-                                        <granite:data
-                                            jcr:primaryType="nt:unstructured"
-                                            cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                    <title jcr:primaryType="nt:unstructured" sling:hideResource="{Boolean}true" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldDescription="Enter the Title" fieldLabel="Title" name="./title" />
+                                    <description jcr:primaryType="nt:unstructured" sling:hideResource="{Boolean}true" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldDescription="Enter the Description" fieldLabel="Description" name="./description" />
+                                    <listFrom granite:class="cq-dialog-dropdown-showhide" jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/select" fieldLabel="Build List Using" name="./listFrom">
+                                        <granite:data jcr:primaryType="nt:unstructured" cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target" />
                                         <items jcr:primaryType="nt:unstructured">
-                                            <children
-                                                granite:hide="${cqDesign.disableChildren}"
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Child List"
-                                                value="children"/>
-                                            <static
-                                                granite:hide="${cqDesign.disableStatic}"
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Fixed list"
-                                                value="static"/>
+                                            <children granite:hide="${cqDesign.disableChildren}" jcr:primaryType="nt:unstructured" text="Child List" value="children" />
+                                            <static granite:hide="${cqDesign.disableStatic}" jcr:primaryType="nt:unstructured" text="Fixed list" value="static" />
                                         </items>
                                     </listFrom>
-                                    <setChildren
-                                        granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
-                                        <granite:data
-                                            jcr:primaryType="nt:unstructured"
-                                            showhidetargetvalue="children"/>
+                                    <setChildren granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin" jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <granite:data jcr:primaryType="nt:unstructured" showhidetargetvalue="children" />
                                         <items jcr:primaryType="nt:unstructured">
-                                            <heading
-                                                granite:class="coral-Heading coral-Heading--4"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
-                                                level="{Long}4"
-                                                text="Options for Child Assets"/>
-                                            <well
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                            <heading granite:class="coral-Heading coral-Heading--4" jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/heading" level="{Long}4" text="Options for Child Assets" />
+                                            <well jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/well">
                                                 <items jcr:primaryType="nt:unstructured">
-                                                    <parentPage
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:hideResource="{Boolean}true"/>
-                                                    <childDepth
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:hideResource="{Boolean}true"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
-                                                        fieldDescription="Controls how deep the child items can be added to the list"
-                                                        fieldLabel="Child Depth"
-                                                        max="100"
-                                                        min="1"
-                                                        name="./childDepth"
-                                                        step="1"
-                                                        value="1"/>
-                                                    <assetPage
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                        fieldLabel="Asset path"
-                                                        name="./listRootPath"
-                                                        rootPath="/content/dam"/>
+                                                    <parentPage jcr:primaryType="nt:unstructured" sling:hideResource="{Boolean}true" />
+                                                    <childDepth jcr:primaryType="nt:unstructured" sling:hideResource="{Boolean}true" sling:resourceType="granite/ui/components/coral/foundation/form/numberfield" fieldDescription="Controls how deep the child items can be added to the list" fieldLabel="Child Depth" max="100" min="1" name="./childDepth" step="1" value="1" />
+                                                    <assetPage jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathfield" fieldLabel="Asset path" name="./listRootPath" rootPath="/content/dam" />
                                                 </items>
                                             </well>
                                         </items>
                                     </setChildren>
-                                    <setStatic
-                                        granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
-                                        <granite:data
-                                            jcr:primaryType="nt:unstructured"
-                                            showhidetargetvalue="static"/>
+                                    <setStatic granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin" jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <granite:data jcr:primaryType="nt:unstructured" showhidetargetvalue="static" />
                                         <items jcr:primaryType="nt:unstructured">
-                                            <heading
-                                                granite:class="coral-Heading coral-Heading--4"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
-                                                level="{Long}4"
-                                                text="Options for Fixed List"/>
-                                            <well
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                            <heading granite:class="coral-Heading coral-Heading--4" jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/heading" level="{Long}4" text="Options for Fixed List" />
+                                            <well jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/well">
                                                 <items jcr:primaryType="nt:unstructured">
-                                                    <pages
-                                                        granite:class="foundation-layout-util-maximized-alt coral-Form-fieldwrapper"
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <pages granite:class="foundation-layout-util-maximized-alt coral-Form-fieldwrapper" jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
                                                         <items jcr:primaryType="nt:unstructured">
-                                                            <multi
-                                                                granite:class=""
-                                                                jcr:primaryType="nt:unstructured"
-                                                                sling:hideResource="{Boolean}true"
-                                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"/>
-                                                            <assetmulti
-                                                                granite:class=""
-                                                                jcr:primaryType="nt:unstructured"
-                                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                                                composite="{Boolean}true">
-                                                                <field
-                                                                    jcr:primaryType="nt:unstructured"
-                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                                    name="./listItems"
-                                                                    rootPath="/content/dam"/>
+                                                            <multi granite:class="" jcr:primaryType="nt:unstructured" sling:hideResource="{Boolean}true" sling:resourceType="granite/ui/components/coral/foundation/form/multifield" />
+                                                            <assetmulti granite:class="" jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/multifield" composite="{Boolean}true">
+                                                                <field jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathfield" name="./listItems" rootPath="/content/dam" />
                                                             </assetmulti>
                                                         </items>
                                                     </pages>
@@ -148,111 +48,36 @@
                                             </well>
                                         </items>
                                     </setStatic>
-                                    <view
-                                        granite:class="featured-video-hide-show"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:orderBefore="limit"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        emptyOption="{Boolean}true"
-                                        fieldDescription="Select the view to display"
-                                        fieldLabel="View"
-                                        name="./view"
-                                        type="editable">
+                                    <view granite:class="featured-video-hide-show" jcr:primaryType="nt:unstructured" sling:orderBefore="limit" sling:resourceType="granite/ui/components/coral/foundation/form/select" emptyOption="{Boolean}true" fieldDescription="Select the view to display" fieldLabel="View" name="./view" type="editable">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <default
-                                                jcr:primaryType="nt:unstructured"
-                                                text="default"
-                                                value="item.html"/>
-                                            <carousel
-                                                jcr:primaryType="nt:unstructured"
-                                                text="carousel"
-                                                value="carousel"/>
-                                            <sidebar
-                                                jcr:primaryType="nt:unstructured"
-                                                text="sidebar list"
-                                                value="sidebar"/>
+                                            <default jcr:primaryType="nt:unstructured" text="default" value="item.html" />
+                                            <carousel jcr:primaryType="nt:unstructured" text="carousel" value="carousel" />
+                                            <sidebar jcr:primaryType="nt:unstructured" text="sidebar list" value="sidebar" />
                                         </items>
-                                        <granite:data
-                                            jcr:primaryType="nt:unstructured"
-                                            featured-video-hide-show-target=".carousel-sidebar"/>
+                                        <granite:data jcr:primaryType="nt:unstructured" featured-video-hide-show-target=".carousel-sidebar" />
                                     </view>
-                                    <featuredVideoContainer
-                                        granite:class="carousel-sidebar"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
-                                        <granite:data
-                                            jcr:primaryType="nt:unstructured"
-                                            hideshowtargetvalue="item.html"/>
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <useTealColor
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                fieldDescription="Checking this would make the titles, carousel arrows, hover states colors as teal"
-                                                name="./useTealColor"
-                                                text="Use Teal Color for titles"
-                                                uncheckedValue="false"
-                                                value="true"/>
-                                        </items>
+                                    <featuredVideoContainer granite:class="carousel-sidebar" jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <granite:data jcr:primaryType="nt:unstructured" hideshowtargetvalue="item.html" />
                                     </featuredVideoContainer>
                                 </items>
                             </column>
                         </items>
                     </listSettings>
-                    <featuredvideoSettings
-                        granite:class="featured-video-tab"
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Featured Video"
-                        sling:orderBefore="authControl"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                    <featuredvideoSettings granite:class="featured-video-tab" jcr:primaryType="nt:unstructured" jcr:title="Featured Video" sling:orderBefore="authControl" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                         <items jcr:primaryType="nt:unstructured">
-                            <column
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <featuredVideoContainer
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <featuredVideoContainer jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <featuredVideoSelect
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                fieldDescription="Leave empty to use default featured video"
-                                                fieldLabel="Select Featured Video"
-                                                name="./featuredVideo"
-                                                rootPath="/content/dam/paclife"/>
+                                            <featuredVideoSelect jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathfield" fieldDescription="Leave empty to use default featured video" fieldLabel="Select Featured Video" name="./featuredVideo" rootPath="/content/dam/paclife" />
                                         </items>
                                     </featuredVideoContainer>
-                                    <campaignUrlParamName
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Add paramter name for campaign url."
-                                        fieldLabel="Campaign parameter name"
-                                        name="./campaignParamName"/>
-                                    <campaignUrlParams
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                        composite="{Boolean}true"
-                                        eaem-nested=""
-                                        fieldDescription="Click 'Add field' to add a new parameter value for campaign url."
-                                        fieldLabel="Campaign URL parameter values">
-                                        <field
-                                            jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/container"
-                                            name="./campaignParamValues">
+                                    <campaignUrlParamName jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldDescription="Add paramter name for campaign url." fieldLabel="Campaign parameter name" name="./campaignParamName" />
+                                    <campaignUrlParams jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/multifield" composite="{Boolean}true" eaem-nested="" fieldDescription="Click 'Add field' to add a new parameter value for campaign url." fieldLabel="Campaign URL parameter values">
+                                        <field jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container" name="./campaignParamValues">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <paramValue
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                    fieldDescription="Please provide value for the campaign parameter."
-                                                    fieldLabel="Parameter Value"
-                                                    name="./paramValue"/>
-                                                <featuredVideoCampaign
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                    fieldDescription="Select featured video for campaign parameter value."
-                                                    fieldLabel="Select Campaign Featured Video"
-                                                    name="./featuredVideoCampaign"
-                                                    rootPath="/content/dam/paclife"/>
+                                                <paramValue jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldDescription="Please provide value for the campaign parameter." fieldLabel="Parameter Value" name="./paramValue" />
+                                                <featuredVideoCampaign jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathfield" fieldDescription="Select featured video for campaign parameter value." fieldLabel="Select Campaign Featured Video" name="./featuredVideoCampaign" rootPath="/content/dam/paclife" />
                                             </items>
                                         </field>
                                     </campaignUrlParams>
@@ -260,123 +85,33 @@
                             </column>
                         </items>
                     </featuredvideoSettings>
-                    <generalSettings
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="General Settings"
-                        sling:orderBefore="authControl"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                    <generalSettings jcr:primaryType="nt:unstructured" jcr:title="General Settings" sling:orderBefore="authControl" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                         <items jcr:primaryType="nt:unstructured">
-                            <column
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <componentTitle
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Provide Section Header"
-                                        fieldLabel="Component Title"
-                                        name="./componentTitle"/>
-                                    <addTopSpacing
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="Add a top spacing of 64px to the component"
-                                        name="./addTopSpacing"
-                                        text="Add Top Spacing (64px)"
-                                        uncheckedValue="false"
-                                        value="true"/>
-                                    <addBottomSpacing
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="Add a bottom spacing of 64px to the component"
-                                        name="./addBottomSpacing"
-                                        text="Add Bottom Spacing (64px)"
-                                        uncheckedValue="false"
-                                        value="true"/>
+                                    <componentTitle jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldDescription="Provide Section Header" fieldLabel="Component Title" name="./componentTitle" />
+                                    <addTopSpacing jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/checkbox" fieldDescription="Add a top spacing of 64px to the component" name="./addTopSpacing" text="Add Top Spacing (64px)" uncheckedValue="false" value="true" />
+                                    <addBottomSpacing jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/checkbox" fieldDescription="Add a bottom spacing of 64px to the component" name="./addBottomSpacing" text="Add Bottom Spacing (64px)" uncheckedValue="false" value="true" />
                                 </items>
                             </column>
                         </items>
                     </generalSettings>
-                    <playbackSettings
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Playback Settings"
-                        sling:orderBefore="authControl"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                    <playbackSettings jcr:primaryType="nt:unstructured" jcr:title="Playback Settings" sling:orderBefore="authControl" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                         <items jcr:primaryType="nt:unstructured">
-                            <column
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <videoClass
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        fieldDescription="HTML class name for the video tag."
-                                        fieldLabel="Video element class"
-                                        name="./videoClass"/>
-                                    <controls
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="Check if the browser should not show playback controls."
-                                        name="./controls"
-                                        text="Controls"
-                                        uncheckedValue="false"
-                                        value="true"/>
-                                    <autoplay
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="Start playback automatically"
-                                        name="./autoplay"
-                                        text="Autoplay"
-                                        uncheckedValue="false"
-                                        value="true"/>
-                                    <loop
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="Jump back to the start when the end of the video is reached."
-                                        name="./loop"
-                                        text="Loop"
-                                        uncheckedValue="false"
-                                        value="true"/>
-                                    <download
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="Allow for download."
-                                        name="./download"
-                                        text="Download"
-                                        uncheckedValue="false"
-                                        value="true"/>
-                                    <useOriginalImage
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        checked="{Boolean}false"
-                                        fieldDescription="This will load original video thumbnail image from DAM."
-                                        name="./useOriginalImage"
-                                        text="Use Original Image for thumbnails"
-                                        value="true"/>
-                                    <preload
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        emptyOption="{Boolean}true"
-                                        fieldDescription="If the video should automatically be downloaded on page load."
-                                        fieldLabel="Preload"
-                                        name="./preload"
-                                        type="editable">
+                                    <videoClass jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldDescription="HTML class name for the video tag." fieldLabel="Video element class" name="./videoClass" />
+                                    <controls jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/checkbox" fieldDescription="Check if the browser should not show playback controls." name="./controls" text="Disable Controls" uncheckedValue="false" value="true" />
+                                    <autoplay jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/checkbox" fieldDescription="Start playback automatically" name="./autoplay" text="Autoplay Featured Video" uncheckedValue="false" value="true" />
+                                    <loop jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/checkbox" fieldDescription="Jump back to the start when the end of the video is reached." name="./loop" text="Loop" uncheckedValue="false" value="true" />
+                                    <download jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/checkbox" fieldDescription="Allow for download." name="./download" text="Download" uncheckedValue="false" value="true" />
+                                    <useOriginalImage jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/checkbox" checked="{Boolean}false" fieldDescription="This will load original video thumbnail image from DAM." name="./useOriginalImage" text="Use Original Image for thumbnails" value="true" />
+                                    <preload jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/select" emptyOption="{Boolean}true" fieldDescription="If the video should automatically be downloaded on page load." fieldLabel="Preload" name="./preload" type="editable">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <auto
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Preload video on page load (auto)"
-                                                value="auto"/>
-                                            <metadata
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Preload only video metadata (metadata)"
-                                                value="metadata"/>
-                                            <none
-                                                jcr:primaryType="nt:unstructured"
-                                                text="No preloading (none)"
-                                                value="none"/>
-                                            <empty
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Skip preload setting (browser default behavior)"
-                                                value=""/>
+                                            <auto jcr:primaryType="nt:unstructured" text="Preload video on page load (auto)" value="auto" />
+                                            <metadata jcr:primaryType="nt:unstructured" text="Preload only video metadata (metadata)" value="metadata" />
+                                            <none jcr:primaryType="nt:unstructured" text="No preloading (none)" value="none" />
+                                            <empty jcr:primaryType="nt:unstructured" text="Skip preload setting (browser default behavior)" value="" />
                                         </items>
                                     </preload>
                                 </items>
