@@ -24,7 +24,7 @@ class CardModelTest {
 	}
 
 	@Test
-	void doTestHeaderModel() {
+	void doTestCardModel() {
 		CardModel cardModel = getCardModelUnderTest(CARD_COMPONENT);
 		assertEquals("Title", cardModel.getCardTitle());
 		assertEquals("Description", cardModel.getCardDescription());
