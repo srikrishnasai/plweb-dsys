@@ -1,12 +1,12 @@
 <h1>Ctemplate </h1>
 <template data-sly-template.item="${@ list, item}">
-    <div class="videoContainer verticalSpacing d-flex items-center content-center">
+    <div class="video-list__video-container video-list__vertical-spacing d-flex items-center content-center">
         <button data-sly-test="${list.videoClass != 'video-js vjs-default-skin'}" id="playButton" class="playButton">
             <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
         </button>
 
-        <video id="${list.id}" width="100%" height="auto" controls="${list.controls}" class="${list.videoClass}"
-            autoplay="${list.autoplay}" loop="${video.loop}" preload="${list.preload}" controlsList="${list.download}"
+        <video id="${list.id}" width="100%" height="auto" controls="${list.disableControls ? '' : 'true'}" class="${list.videoClass}"
+            autoplay="${list.autoplay}" loop="${list.loop}" preload="${list.preload}" controlsList="${list.download}"
             data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @transform='flexImg1200w', imagePath=item.related}"
             poster="${properties.useOriginalImage ? item.related : imageurl.transformedImageUrl}">
             <source src="${item.path}" type="video/mp4" />

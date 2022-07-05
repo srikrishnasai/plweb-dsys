@@ -125,18 +125,18 @@ public class EnhancedListModel {
 			listFrom = StringUtils.EMPTY;
 		}
 		switch (listFrom) {
-		case STATIC:
-			populateStaticListItems();
-			break;
-		case CHILDREN:
-			populateChildListItems();
-			break;
-		case TAGS:
-			populateTagListItems();
-			break;
-		default:
-			resourcesList = new ArrayList<Resource>();
-			break;
+			case STATIC:
+				populateStaticListItems();
+				break;
+			case CHILDREN:
+				populateChildListItems();
+				break;
+			case TAGS:
+				populateTagListItems();
+				break;
+			default:
+				resourcesList = new ArrayList<Resource>();
+				break;
 		}
 
 	}
@@ -195,6 +195,8 @@ public class EnhancedListModel {
 			Iterator<Resource> children = rootResource.listChildren();
 			while (children.hasNext()) {
 				resourcesList.add(children.next());
+				log.debug("resourcesList..while {}" + resourcesList);
+
 			}
 		} else if (StringUtils.isNotEmpty(listRootPath) && StringUtils.equalsIgnoreCase(listType, "pages")) {
 			Stream<Page> pagesList = getChildListItems();
@@ -243,6 +245,7 @@ public class EnhancedListModel {
 		} else {
 			resList = resourcesList;
 		}
+
 		for (Resource res : resList) {
 			if (resolver.isResourceType(res, DamConstants.NT_DAM_ASSET)) {
 				log.debug("Asset Resource ::{}", res.getPath());

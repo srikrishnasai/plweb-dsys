@@ -88,7 +88,7 @@ public class AssetPojo {
         sortOrder = Enums.SortOrder.fromString(
                 properties.get(com.adobe.cq.wcm.core.components.models.List.PN_SORT_ORDER, Enums.SortOrder.ASC.value));
         orderBy = Enums.OrderBy.fromString(
-                properties.get(com.adobe.cq.wcm.core.components.models.List.PN_ORDER_BY, StringUtils.EMPTY)); 
+                properties.get(com.adobe.cq.wcm.core.components.models.List.PN_ORDER_BY, StringUtils.EMPTY));
 
     }
 
@@ -105,12 +105,10 @@ public class AssetPojo {
         return (convert((Asset) assetRes.adaptTo(Asset.class)));
     }
 
-   
     public boolean showAssetList() {
         getItems();
         return mode.isEdit() || listItems.size() > 0;
     }
-
 
     private Enums.Source getListType() {
         String listFromValue = properties.get(com.adobe.cq.wcm.core.components.models.List.PN_SOURCE,
@@ -267,7 +265,7 @@ public class AssetPojo {
         }
         assetBean.setName(asset.getName());
         if (asset.getRendition("original") != null)
-            assetBean.setSize(asset.getRendition("original").getSize());   
+            assetBean.setSize(asset.getRendition("original").getSize());
 
         try {
             Resource relatedAssetRes = resourceResolver.getResource(asset.getPath() + "/"

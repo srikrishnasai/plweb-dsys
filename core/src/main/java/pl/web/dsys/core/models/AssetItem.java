@@ -2,6 +2,7 @@ package pl.web.dsys.core.models;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 import java.util.Optional;
 
 import javax.annotation.PostConstruct;
@@ -13,6 +14,8 @@ import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.dam.api.Asset;
@@ -41,6 +44,7 @@ public class AssetItem implements ListItem {
 
 	private String icon;
 	ValueMap vm;
+	private static final Logger log = LoggerFactory.getLogger(AssetItem.class);
 
 	@PostConstruct
 	protected void initModel() {
@@ -128,5 +132,23 @@ public class AssetItem implements ListItem {
 
 	public String getIcon() {
 		return icon;
+	}
+
+	/**
+	 * Overrides equals and hashcode method for checking duplicates objects.
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof AssetItem))
+			return false;
+		AssetItem that = (AssetItem) obj;
+		return Objects.equals(getPath(), that.getPath());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(getPath());
 	}
 }

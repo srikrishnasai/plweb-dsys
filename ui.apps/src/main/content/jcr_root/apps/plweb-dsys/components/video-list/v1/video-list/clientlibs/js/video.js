@@ -63,7 +63,7 @@ function calculateCarouselLoop(length) {
  * @param {Object} elem - The element which is clicked.
  */
 function playVideoFromSidebar(elem, container) {
-    if (container.find(".shimmer").length === 0) {
+    if (container.find(".video-list__shimmer").length === 0) {
         var video = $(elem).find("video");
         var player = container.find("#videoPlayer");
         var path = video.attr("data-video-path");
@@ -94,7 +94,7 @@ function playVideoFromSidebar(elem, container) {
 function playVideoFromCarousel(e) {
     if (e.preventDefault) e.preventDefault();
     var videoContainer = $(e.target).closest("#videoContainer");
-    if (videoContainer.find(".shimmer").length === 0) {
+    if (videoContainer.find(".video-list__shimmer").length === 0) {
         var elem = $(e.target).closest("#card");
         var videoElem = $(elem).find("video");
         var path = videoElem.attr("data-video-path");
@@ -105,7 +105,7 @@ function playVideoFromCarousel(e) {
             $(this).removeClass("o-1");
         });
         /** In carousel as there are duplicate slides add overlay to all the slides */
-        videoContainer.find(".carouselThumbnail").each(function () {
+        videoContainer.find(".video-list__carousel-thumbnail").each(function () {
             var carouselVideoPath = $(this).attr("data-video-path");
             if (carouselVideoPath === path) $(this).siblings("#overlay").addClass("o-1");
             if (carouselVideoPath === path) $(this).siblings("#overlay").find("span").addClass("o-1");
@@ -240,8 +240,8 @@ function initializeSwiper(isLoopNeeded, totalItems, swiper, prevButton, nextButt
                 breakpoint: function(swiper){
                     $(this.$el[0]).find("li").each(function(){
                         $(this).find("#card").on("click", function(){
-									playVideoFromCarousel(this)
-							})
+                                    playVideoFromCarousel(this)
+                            })
                     })
                 }
         }*/
@@ -414,8 +414,8 @@ function loadComponent(elem) {
     var isSidebarPageInitialized = false;
 
     var shimmerTimer = setTimeout(function () {
-        videoContainer.find(".shimmer").each(function () {
-            $(this).removeClass("shimmer");
+        videoContainer.find(".video-list__shimmer").each(function () {
+            $(this).removeClass("video-list__shimmer");
         });
     }, REMOVE_SHIMMER_TIMER());
 
@@ -437,7 +437,8 @@ function loadComponent(elem) {
         /**Initializing swiper process */
         var totalSlides = videoContainer.find("#carousel").find("li").not(".swiper-slide-duplicate").length;
         var isLoopNeeded = calculateCarouselLoop(totalSlides);
-        var swiperContainer = videoContainer.find(".swiper");
+        var swiperContainer = videoContainer.find(".videoListSwiper");
+
         var prevButton = videoContainer.find(".swiper-button-prev")[0];
         var nextButton = videoContainer.find(".swiper-button-next")[0];
         var pagination = videoContainer.find(".swiper-pagination")[0];
@@ -469,7 +470,7 @@ function loadComponent(elem) {
         player.attr("src", path);
         player.attr("poster", poster);
         $(player).attr("autoplay") && player[0].play();
-        videoContainer.find(".carouselThumbnail").each(function () {
+        videoContainer.find(".video-list__carousel-thumbnail").each(function () {
             var carouselVideoPath = $(this).attr("data-video-path");
             if (carouselVideoPath === path) {
                 $(this).siblings("#overlay").addClass("o-1");
@@ -479,8 +480,8 @@ function loadComponent(elem) {
 
         /** Add listener so that play button is showed only when video can be played on initial load  */
         player.one("canplay", function () {
-            videoContainer.find(".shimmer").each(function () {
-                $(this).removeClass("shimmer");
+            videoContainer.find(".video-list__shimmer").each(function () {
+                $(this).removeClass("video-list__shimmer");
             });
             clearTimeout(shimmerTimer);
             button.css("opacity", "1");
@@ -498,7 +499,7 @@ function loadComponent(elem) {
             playVideoForSidebar(videoContainer);
         });
         addListeners(player, button, playVideoForSidebar, videoContainer);
-        var videoElementFromSidebar = videoContainer.find(".rightPane").find("video").first();
+        var videoElementFromSidebar = videoContainer.find(".video-list__right-pane").find("video").first();
         videoContainer
             .find("#sidebar")
             .find(".preview")
@@ -521,10 +522,10 @@ function loadComponent(elem) {
         $(player).attr("autoplay") && player[0].play();
 
         var rightRail = videoContainer.find("#rightBar").height();
-        var scrollHeight = videoContainer.find(".rightPaneContent")[0].scrollHeight;
-        var downArrow = videoContainer.find(".downArrow");
-        var topArrow = videoContainer.find(".topArrow");
-        var sidebarContent = videoContainer.find(".rightPaneContent");
+        var scrollHeight = videoContainer.find(".video-list__right-pane-content")[0].scrollHeight;
+        var downArrow = videoContainer.find(".video-list__down-arrow");
+        var topArrow = videoContainer.find(".video-list__top-arrow");
+        var sidebarContent = videoContainer.find(".video-list__right-pane-content");
 
         scrollHeight > rightRail && downArrow.css({ "z-index": "1000000", opacity: "1" });
         downArrow.on("click", function () {
@@ -546,8 +547,8 @@ function loadComponent(elem) {
         });
 
         player.one("canplay", function () {
-            videoContainer.find(".shimmer").each(function () {
-                $(this).removeClass("shimmer");
+            videoContainer.find(".video-list__shimmer").each(function () {
+                $(this).removeClass("video-list__shimmer");
             });
             clearTimeout(shimmerTimer);
             button.css("opacity", "1");
@@ -615,7 +616,7 @@ $(window).on("load", function () {
             $(this).hide();
         });
     }
-    $(".video__container").each(function () {
+    $(".video-list").each(function () {
         loadComponent(this);
         if (isIos) {
             $(this)
