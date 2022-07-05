@@ -9,7 +9,7 @@
                     <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
                 </button>
                 <div id="shimmer" class="video-list__shimmer-container video-list__shimmer-effect"></div>
-                <video muted="${list.autoplay}" id="videoPlayer" width="100%" height="100%" controls="${list.controls}"
+                <video muted="${list.autoplay}" id="videoPlayer" width="100%" height="100%" controls="${list.disableControls ? '' : 'true'}"
                     class="${list.videoClass} video-list__sidebar-player" autoplay="${list.autoplay}"
                     loop="${list.loop}" preload="${list.preload}" controlsList="${list.download}"
                     poster="${item.related}">

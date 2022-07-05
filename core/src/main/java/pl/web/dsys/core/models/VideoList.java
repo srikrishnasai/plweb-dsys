@@ -65,7 +65,7 @@ public class VideoList {
 
 	@ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
 	@Default(values = StringUtils.EMPTY)
-	private String controls;
+	private String disableControls;
 
 	@ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
 	@Default(values = "item.html")
@@ -337,8 +337,8 @@ public class VideoList {
 		return videoClass;
 	}
 
-	public String getControls() {
-		return controls;
+	public String getDisableControls() {
+		return disableControls;
 	}
 
 	public String getLoop() {

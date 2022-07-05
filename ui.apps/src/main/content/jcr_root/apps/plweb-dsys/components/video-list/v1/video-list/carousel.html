@@ -11,8 +11,7 @@
                 <button type="button" id="carouselPlay" class="video-list__play-button">
                     <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
                 </button>
-
-                <video muted="${list.autoplay}" id="carouselPlayer" width="100%" controls="${list.controls}"
+                <video muted="${list.autoplay}" id="carouselPlayer" width="100%" controls="${list.disableControls ? '' : 'true'}"
                     class="${list.videoClass} video-list__carousel-player" autoplay="${list.autoplay}"
                     loop="${list.loop}" preload="${list.preload}" controlsList="${list.download}"
                     poster="${item.related}" height="100%" playsinline>

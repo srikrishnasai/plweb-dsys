@@ -5,7 +5,7 @@
             <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
         </button>
 
-        <video id="${list.id}" width="100%" height="auto" controls="${list.controls}" class="${list.videoClass}"
+        <video id="${list.id}" width="100%" height="auto" controls="${list.disableControls ? '' : 'true'}" class="${list.videoClass}"
             autoplay="${list.autoplay}" loop="${list.loop}" preload="${list.preload}" controlsList="${list.download}"
             data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @transform='flexImg1200w', imagePath=item.related}"
             poster="${properties.useOriginalImage ? item.related : imageurl.transformedImageUrl}">
