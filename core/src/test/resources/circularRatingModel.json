@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "jcr:createdBy": "admin",
+    "jcr:title": "plweb-dsys",
+    "redirectTarget": "/content/plweb-dsys/us/en",
+    "sling:configRef": "/conf/plweb-dsys",
+    "sling:redirect": true,
+    "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+    "sling:redirectStatus": 302,
+    "cq:conf": "/conf/plweb-dsys",
+    "sling:resourceType": "foundation/components/redirect",
+    "cq:allowedTemplates": [
+      "/conf/plweb-dsys/settings/wcm/templates/(?!xf-).*"
+    ],
+    "image": {
+      "jcr:primaryType": "nt:unstructured"
+    }
+  },
+  "home": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "jcr:createdBy": "admin",
+      "socialMedia": [
+        "facebook"
+      ],
+      "jcr:title": "Home",
+      "cq:template": "/conf/plweb-dsys/settings/wcm/templates/page-content",
+      "compauth": "false",
+      "footerXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/footer/master",
+      "jcr:created": "Wed May 04 2022 17:27:38 GMT+0530",
+      "cq:lastModified": "Tue Jun 21 2022 15:40:18 GMT+0530",
+      "pageTitle": "Home",
+      "cq:conf": "/conf/plweb-dsys",
+      "sling:resourceType": "plweb-dsys/components/page/v1/page",
+      "cq:lastModifiedBy": "admin",
+      "navTitle": "Home",
+      "headerXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/header/master",
+      "circular_rating": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "admin",
+        "jcr:lastModifiedBy": "admin",
+        "jcr:created": "Tue Jul 05 2022 18:53:14 GMT+0530",
+        "circularRatingColor": "turquoise",
+        "ratingTitle": "Circular Rating",
+        "jcr:lastModified": "Tue Jul 05 2022 18:53:40 GMT+0530",
+        "sling:resourceType": "plweb-dsys/components/circular-rating/v1/circular-rating",
+        "circularRatingSize": "small",
+        "ratingText": "30"
+      }
+    }
+  }
+}
