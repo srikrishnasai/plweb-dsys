@@ -18,14 +18,13 @@
             data-sly-call="${editing.inplace @ nodeName='image', emptyText=component.title, large='large', medium='medium', small='small', showPlaceHolder=true}">
         </sly>
         
+        <!-- Inclusion of adaptive image resource -->
         <div class="text-with-bg-img__container">
             <div class="text-with-bg-img__img-container"
             <sly data-sly-resource="${'image' @ resourceType='plweb-dsys/components/adaptiveImage/v1/adaptiveImage', selectors=[imgAdaptive.largeTransform, imgAdaptive.mediumTransform, imgAdaptive.smallTransform], wcmmode='disabled'}">
             </sly>
         </div>
 
-        <!-- <input type="hidden" class="bg-lg-img" value="${imageurl.transformedImageUrl}">
-        <input type="hidden" class="bg-sm-img" value="${imageurlMob.transformedImageUrl}"> -->
             <div data-sly-test="${properties.textContent}" class="text-with-bg-img__txt-container">
                 ${properties.textContent @ context = 'html'}
             </div>
