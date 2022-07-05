@@ -1,24 +1,31 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
     data-sly-call="${clientlib.all @ categories='plweb-dsys.text-with-bg-image'}"
-    data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg1440w', imagePath=properties.bgImageFileRef, transparent='false'}"
-	data-sly-use.imageurlMob="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform='dsys-flexImg768w', imagePath=properties.mobileBgImageFileRef, transparent='false'}"
+    data-sly-use.imgAdaptive="${'pl.web.dsys.core.helpers.ImageTransformHelperUse'}"
+    data-sly-use.imageReference="${'pl.web.dsys.core.helpers.ChildNodeImageFileReference' @ nodeName='image/large'}"
     data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" />
-<sly data-sly-test="${authControlObj.hasComponentAccess}">
+<sly data-sly-test="${authControlObj.hasComponentAccess && imageReference.getImageFileReference}">
 
     <!--/*NOTE: Add class 'overlay-item-below' to overlay an icon card nav component place below*/-->
-    <div data-component-name="text-with-bg-img" data-sly-test="${properties.bgImageFileRef}"
+    <div data-component-name="text-with-bg-img"
         class="text-with-bg-img ${properties.overlay ? 'text-with-bg-img--overlay-item-below' : '' }"
         data-sly-attribute.data-vertical-pos=" ${properties.positionVertical}"
         data-sly-attribute.data-horizontal-pos="${properties.positionHorizontal}">
+
+        <!-- Inclusion of inpace-editing -->
+        <sly data-sly-test="${wcmmode.edit}"
+            data-sly-use.editing="plweb-dsys/components/sightly/templates/inplace-editing-placeholder.html"
+            data-sly-call="${editing.inplace @ nodeName='image', emptyText=component.title, large='large', medium='medium', small='small', showPlaceHolder=true}">
+        </sly>
+        
         <div class="text-with-bg-img__container">
             <div class="text-with-bg-img__img-container"
-                style="background-image:url('${imageurl.transformedImageUrl @ context = 'styleString'}') ">
-            </div>
+            <sly data-sly-resource="${'image' @ resourceType='plweb-dsys/components/adaptiveImage/v1/adaptiveImage', selectors=[imgAdaptive.largeTransform, imgAdaptive.mediumTransform, imgAdaptive.smallTransform], wcmmode='disabled'}">
+            </sly>
+        </div>
 
-            <input type="hidden" class="bg-lg-img" value="${imageurl.transformedImageUrl}">
-            <input type="hidden" class="bg-sm-img" value="${imageurlMob.transformedImageUrl}">
-
+        <!-- <input type="hidden" class="bg-lg-img" value="${imageurl.transformedImageUrl}">
+        <input type="hidden" class="bg-sm-img" value="${imageurlMob.transformedImageUrl}"> -->
             <div data-sly-test="${properties.textContent}" class="text-with-bg-img__txt-container">
                 ${properties.textContent @ context = 'html'}
             </div>
