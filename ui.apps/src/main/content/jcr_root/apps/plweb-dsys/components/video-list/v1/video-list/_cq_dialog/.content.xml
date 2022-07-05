@@ -148,6 +148,23 @@
                                             </well>
                                         </items>
                                     </setStatic>
+                                    <orderBy
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:hideResource="{Boolean}true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        emptyOption="{Boolean}true"
+                                        fieldDescription="Enter a property like 'jcr:created'"
+                                        fieldLabel="Order By"
+                                        name="./orderBy"
+                                        type="editable"/>
+                                    <sortOrder
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:hideResource="{Boolean}true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Sort order ascending or descending"
+                                        fieldLabel="Sort Order"
+                                        name="./sortOrder"
+                                        type="editable"/>
                                     <view
                                         granite:class="featured-video-hide-show"
                                         jcr:primaryType="nt:unstructured"
