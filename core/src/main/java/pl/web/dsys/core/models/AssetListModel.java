@@ -67,6 +67,9 @@ public class AssetListModel {
 	}
 
 	public String getLength() {
+		if (enhancedListModel.getLimit() != 0) {
+			return String.valueOf(enhancedListModel.getLimit());
+		}
 		return enhancedListModel.getLength();
 	}
 

@@ -389,4 +389,8 @@ public class EnhancedListModel {
 		return Integer.toString(resourcesList.size());
 	}
 
+	public int getLimit() {
+		return limit;
+	}
+
 }
