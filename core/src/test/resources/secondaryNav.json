@@ -1,0 +1,162 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "jcr:createdBy": "admin",
+    "jcr:title": "plweb-dsys",
+    "redirectTarget": "/content/plweb-dsys/us/en",
+    "sling:configRef": "/conf/plweb-dsys",
+    "sling:redirect": true,
+    "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+    "sling:redirectStatus": 302,
+    "cq:conf": "/conf/plweb-dsys",
+    "sling:resourceType": "foundation/components/redirect",
+    "cq:allowedTemplates": [
+      "/conf/plweb-dsys/settings/wcm/templates/(?!xf-).*"
+    ],
+    "image": {
+      "jcr:primaryType": "nt:unstructured"
+    }
+  },
+  "home": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "jcr:createdBy": "admin",
+      "socialMedia": [
+        "facebook"
+      ],
+      "jcr:title": "Home",
+      "cq:template": "/conf/plweb-dsys/settings/wcm/templates/page-content",
+      "compauth": "false",
+      "footerXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/footer/master",
+      "jcr:created": "Wed May 04 2022 17:27:38 GMT+0530",
+      "cq:lastModified": "Tue Jun 21 2022 15:40:18 GMT+0530",
+      "pageTitle": "Home",
+      "cq:conf": "/conf/plweb-dsys",
+      "sling:resourceType": "plweb-dsys/components/page/v1/page",
+      "cq:lastModifiedBy": "admin",
+      "navTitle": "Home",
+      "headerXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/header/master",
+      "secondary_nav": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "admin",
+        "jcr:lastModifiedBy": "admin",
+        "compauth": "false",
+        "jcr:created": "Tue Apr 26 2022 13:50:07 GMT+0530",
+        "jcr:lastModified": "Fri Jun 24 2022 12:38:26 GMT+0530",
+        "sling:resourceType": "plweb-dsys/components/secondary-nav/v1/secondary-nav",
+        "textIsRich": [
+          "true",
+          "true",
+          "true",
+          "true",
+          "true",
+          "true",
+          "true",
+          "true",
+          "true",
+          "true"
+        ],
+        "columnOne": {
+          "jcr:primaryType": "nt:unstructured",
+          "navType": "overview",
+          "overview": {
+            "jcr:primaryType": "nt:unstructured",
+            "primaryLinkText": "What is Fixed Annuities?",
+            "primaryLinkTarget": "true",
+            "header": "First Page Header",
+            "overviewDescription": "This is the test description for the column one",
+            "primaryLinkTargetPath": "/content/plweb-dsys/us/en/first-page",
+            "secondaryLinks": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "targetPath": "/content/home",
+                "linkText": "View Performance"
+              },
+              "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "targetPath": "/content/home",
+                "linkTarget": "true"
+              }
+            }
+          },
+          "marketingtile": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:lastModifiedBy": "admin",
+            "jcr:lastModified": "Fri Jun 24 2022 12:38:26 GMT+0530"
+          },
+          "multilinks": {
+            "jcr:primaryType": "nt:unstructured",
+            "links": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "description": "<p>For clients who want access to their money after five years without withdrawal charges. </p>\r\n",
+                "targetPath": "/content/plweb-dsys/us/en/first-page",
+                "linkText": "Pacific Choice"
+              },
+              "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "description": "<p>For clients who want access to their money after five years without withdrawal charges.</p>\r\n",
+                "targetPath": "/content/plweb-dsys/us/en/second-page",
+                "linkText": "Pacific Choice Income"
+              }
+            }
+          }
+        },
+        "columnTwo": {
+          "jcr:primaryType": "nt:unstructured",
+          "navType": "multilinks",
+          "overview": {
+            "jcr:primaryType": "nt:unstructured",
+            "header": "second coloumn"
+          },
+          "marketingtile": {
+            "jcr:primaryType": "nt:unstructured",
+            "description": "test",
+            "fileReference": "/content/dam/JimMorris_quote_bg.jpg",
+            "jcr:lastModifiedBy": "admin",
+            "jcr:lastModified": "Fri Jun 24 2022 12:38:26 GMT+0530"
+          },
+          "multilinks": {
+            "jcr:primaryType": "nt:unstructured",
+            "links": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "description": "<p>For clients who want access to their money after five years without withdrawal charges.</p>\r\n",
+                "iconPath": "/apps/plweb-dsys/clientlibs/clientlib-site/resources/close.svg",
+                "targetPath": "/content/plweb-dsys/us/en/first-page",
+                "linkText": "Pacific Choice"
+              },
+              "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "description": "<p>For clients who want access to their money after five years without withdrawal charges.</p>\r\n",
+                "iconPath": "/apps/plweb-dsys/clientlibs/clientlib-site/resources/phone.svg/jcr:content",
+                "targetPath": "/content/plweb-dsys/us/en/third-page",
+                "linkTarget": "true",
+                "linkText": "Pacific Choice Income"
+              }
+            }
+          }
+        },
+        "columnThree": {
+          "jcr:primaryType": "nt:unstructured",
+          "navType": "overview",
+          "overview": {
+            "jcr:primaryType": "nt:unstructured"
+          },
+          "marketingtile": {
+            "jcr:primaryType": "nt:unstructured",
+            "description": "<p>Give clients the flexibility to move when and how they choose with Invesco V.I. Defined Outcome Funds.</p>\r\n",
+            "fileReference": "/content/dam/core-components-examples/library/sample-assets/mountain-range.jpg",
+            "jcr:lastModifiedBy": "admin",
+            "jcr:lastModified": "Fri Jun 24 2022 12:38:26 GMT+0530"
+          }
+        }
+      }
+    }
+  }
+}
