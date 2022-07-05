@@ -12,15 +12,14 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 @Model(adaptables = { Resource.class,
 		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, resourceType = CircularRatingModel.resourceType)
-@Exporter(name = "jackson", extensions = "json")		
+@Exporter(name = "jackson", extensions = "json")
 public class CircularRatingModel {
 
 	private static final Logger log = LoggerFactory.getLogger(CircularRatingModel.class);
 	public static final String resourceType = "plweb-dsys/components/circular-rating/v1/circular-rating";
-	
+
 	@SlingObject
 	Resource resource;
 
@@ -38,7 +37,6 @@ public class CircularRatingModel {
 
 	@ValueMapValue
 	private String circularRatingSize;
-
 
 	@PostConstruct
 	protected void init() {

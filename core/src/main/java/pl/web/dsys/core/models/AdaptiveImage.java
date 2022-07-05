@@ -1,27 +1,18 @@
 package pl.web.dsys.core.models;
-import pl.web.dsys.core.utils.CommonUtils;
 
 import java.util.Arrays;
 
+import javax.annotation.PostConstruct;
 import javax.jcr.RepositoryException;
 
-import static org.apache.sling.api.resource.ResourceResolver.PROPERTY_RESOURCE_TYPE;
-
-import javax.annotation.PostConstruct;
+import org.apache.commons.lang.StringUtils;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.models.annotations.Default;
-import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
-import org.apache.sling.models.annotations.injectorspecific.OSGiService;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import org.apache.sling.settings.SlingSettingsService;
-import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
-
-import org.apache.commons.lang.StringUtils;
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,15 +20,10 @@ import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.api.DamConstants;
 import com.day.cq.wcm.foundation.Image;
 
-import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
+import pl.web.dsys.core.utils.CommonUtils;
 
-import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject; 
-
-@Model(adaptables = {Resource.class, SlingHttpServletRequest.class},
-defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+@Model(adaptables = { Resource.class,
+		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class AdaptiveImage {
 
 	private static final Logger LOG = LoggerFactory.getLogger(AdaptiveImage.class);
@@ -55,7 +41,7 @@ public class AdaptiveImage {
 	private static final String PROPERTY_LARGE_IMAGE_DAM = "largeImageDAM";
 	private static final String PROPERTY_MEDIUM_IMAGE_DAM = "mediumImageDAM";
 	private static final String PROPERTY_SMALL_IMAGE_DAM = "smallImageDAM";
-	private static final String PROPERTY_LARGE_IMAGE_TRANSPARENT = "largeTransparentImage"; 
+	private static final String PROPERTY_LARGE_IMAGE_TRANSPARENT = "largeTransparentImage";
 	private static final String PROPERTY_MEDIUM_IMAGE_TRANSPARENT = "mediumTransparentImage";
 	private static final String PROPERTY_SMALL_IMAGE_TRANSPARENT = "smallTransparentImage";
 	private static final String PROPERTY_IMAGE_POSITION_TAG = "imagePos";
@@ -78,11 +64,11 @@ public class AdaptiveImage {
 	Resource resource;
 
 	@SlingObject
-    private ResourceResolver resolver;
+	private ResourceResolver resolver;
 
 	ValueMap valueMap;
 
-	@PostConstruct 
+	@PostConstruct
 	public void activate() throws Exception {
 		LOG.debug("Activating AdaptiveImage...");
 		LOG.debug("... request: {}", request.getRequestPathInfo());
@@ -105,18 +91,18 @@ public class AdaptiveImage {
 			if (selectors.length > 3) {
 				this.setLazyLoad(true);
 			}
-		} 
+		}
 
-		/*If for some reason, the transforms are not set, setting default transforms*/
-		if(null == this.getLargeTransformName() || StringUtils.isBlank(this.getLargeTransformName())
+		/* If for some reason, the transforms are not set, setting default transforms */
+		if (null == this.getLargeTransformName() || StringUtils.isBlank(this.getLargeTransformName())
 				|| !this.getLargeTransformName().contains("dsys-flexImg")) {
 			this.setLargeTransformName("dsys-flexImg1440w");
 		}
-		if(null == this.getMediumTransformName() || StringUtils.isBlank(this.getMediumTransformName())
+		if (null == this.getMediumTransformName() || StringUtils.isBlank(this.getMediumTransformName())
 				|| !this.getMediumTransformName().contains("dsys-flexImg")) {
 			this.setMediumTransformName("dsys-flexImg992w");
 		}
-		if(null == this.getSmallTransformName() || StringUtils.isBlank(this.getSmallTransformName())
+		if (null == this.getSmallTransformName() || StringUtils.isBlank(this.getSmallTransformName())
 				|| !this.getSmallTransformName().contains("dsys-flexImg")) {
 			this.setSmallTransformName("dsys-flexImg768w");
 		}
@@ -126,9 +112,9 @@ public class AdaptiveImage {
 		return new Image(resource, imageType);
 	}
 
-    private String getFileName(String imagefileReference) {
-        return imagefileReference.substring(imagefileReference.lastIndexOf("/")+1);
-    }
+	private String getFileName(String imagefileReference) {
+		return imagefileReference.substring(imagefileReference.lastIndexOf("/") + 1);
+	}
 
 	// ------------ Get local DAM AdaptiveImage paths for various sizes
 	public String getSmallImagePath() {
@@ -136,32 +122,32 @@ public class AdaptiveImage {
 
 		image = getImage(PROPERTY_ADAPTIVE_IMAGE_SMALL);
 		if (checkContent(image)) {
-			if(valueMap.containsKey(PROPERTY_SMALL_IMAGE_TRANSPARENT)) {
+			if (valueMap.containsKey(PROPERTY_SMALL_IMAGE_TRANSPARENT)) {
 				this.transparent = true;
 			}
-			if(valueMap.containsKey(PROPERTY_SMALL_IMAGE_DAM)){
+			if (valueMap.containsKey(PROPERTY_SMALL_IMAGE_DAM)) {
 				return getAdaptiveImagePath("dsys-flexImg", image);
 			}
 			return getAdaptiveImagePath(getSmallTransformName(), image);
 		}
-	// ------------ Fallback to the Medium image when Samll image not present
+		// ------------ Fallback to the Medium image when Samll image not present
 		image = getImage(PROPERTY_ADAPTIVE_IMAGE_MEDIUM);
 		if (checkContent(image)) {
-			if(valueMap.containsKey(PROPERTY_MEDIUM_IMAGE_TRANSPARENT)) {
+			if (valueMap.containsKey(PROPERTY_MEDIUM_IMAGE_TRANSPARENT)) {
 				this.transparent = true;
 			}
-			if(valueMap.containsKey(PROPERTY_MEDIUM_IMAGE_DAM)){
+			if (valueMap.containsKey(PROPERTY_MEDIUM_IMAGE_DAM)) {
 				return getAdaptiveImagePath("dsys-flexImg", image);
 			}
 			return getAdaptiveImagePath(getMediumTransformName(), image);
 		}
-	// ------------ Fallback to the Large image when Medium image not present
+		// ------------ Fallback to the Large image when Medium image not present
 		image = getImage(PROPERTY_ADAPTIVE_IMAGE_LARGE);
 		if (checkContent(image)) {
-			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
+			if (valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
 				this.transparent = true;
 			}
-			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_DAM)){
+			if (valueMap.containsKey(PROPERTY_LARGE_IMAGE_DAM)) {
 				return getAdaptiveImagePath("dsys-flexImg", image);
 			}
 			return getAdaptiveImagePath(getLargeTransformName(), image);
@@ -173,23 +159,23 @@ public class AdaptiveImage {
 	public String getMediumImagePath() {
 		Image image;
 
-	   image = getImage(PROPERTY_ADAPTIVE_IMAGE_MEDIUM);
+		image = getImage(PROPERTY_ADAPTIVE_IMAGE_MEDIUM);
 		if (checkContent(image)) {
-			if(valueMap.containsKey(PROPERTY_MEDIUM_IMAGE_TRANSPARENT)) {
+			if (valueMap.containsKey(PROPERTY_MEDIUM_IMAGE_TRANSPARENT)) {
 				this.transparent = true;
 			}
-			if(valueMap.containsKey(PROPERTY_MEDIUM_IMAGE_DAM)){
+			if (valueMap.containsKey(PROPERTY_MEDIUM_IMAGE_DAM)) {
 				return getAdaptiveImagePath("dsys-flexImg", image);
 			}
 			return getAdaptiveImagePath(getMediumTransformName(), image);
 		}
-	// ------------ Fallback to the Large image when Medium image not present
+		// ------------ Fallback to the Large image when Medium image not present
 		image = getImage(PROPERTY_ADAPTIVE_IMAGE_LARGE);
 		if (checkContent(image)) {
-			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
+			if (valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
 				this.transparent = true;
 			}
-			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_DAM)){
+			if (valueMap.containsKey(PROPERTY_LARGE_IMAGE_DAM)) {
 				return getAdaptiveImagePath("dsys-flexImg", image);
 			}
 			return getAdaptiveImagePath(getLargeTransformName(), image);
@@ -201,14 +187,14 @@ public class AdaptiveImage {
 	public String getLargeImagePath() {
 		Image image;
 		image = getImage(PROPERTY_ADAPTIVE_IMAGE_LARGE);
-		if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_DAM)) {
-			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
+		if (valueMap.containsKey(PROPERTY_LARGE_IMAGE_DAM)) {
+			if (valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
 				this.transparent = true;
 			}
 			return getAdaptiveImagePath("dsys-flexImg", image);
-		} 
+		}
 		if (checkContent(image)) {
-			if(valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
+			if (valueMap.containsKey(PROPERTY_LARGE_IMAGE_TRANSPARENT)) {
 				this.transparent = true;
 			}
 			return getAdaptiveImagePath(getLargeTransformName(), image);
@@ -221,26 +207,31 @@ public class AdaptiveImage {
 		LOG.debug("in getAdaptiveImagePath");
 		String modifiedPath;
 		if (transformName != null) {
-			if(this.transparent) {
+			if (this.transparent) {
 				this.transparent = false;
-                modifiedPath = String.format(IMAGE_PNG_PATH_FORMAT, image.getPath(), getFileName(image.getFileReference()), transformName);
-				return CommonUtils.resolveUrl(modifiedPath, resolver, request);	 
-            }
-			modifiedPath = String.format(IMAGE_PATH_FORMAT, image.getPath(), getFileName(image.getFileReference()), transformName);
-			return CommonUtils.resolveUrl(modifiedPath, resolver, request);	 
+				modifiedPath = String.format(IMAGE_PNG_PATH_FORMAT, image.getPath(),
+						getFileName(image.getFileReference()), transformName);
+				return CommonUtils.resolveUrl(modifiedPath, resolver, request);
+			}
+			modifiedPath = String.format(IMAGE_PATH_FORMAT, image.getPath(), getFileName(image.getFileReference()),
+					transformName);
+			return CommonUtils.resolveUrl(modifiedPath, resolver, request);
 		}
 		return null;
 	}
 
 	/* Get image title */
-	public String getDisplayPopupTitle(){
+	public String getDisplayPopupTitle() {
 		LOG.debug("in getDisplayPopupTitle");
 		Resource imageParent = resource.getParent();
 		ValueMap vm = imageParent.getValueMap();
 		return vm.get(PROPERTY_DISPLAY_POPUP_TITLE_TAG, String.class);
 	}
 
-	/* Get image alt value from the dialog and if not present then fetch from the dam properies */
+	/*
+	 * Get image alt value from the dialog and if not present then fetch from the
+	 * dam properies
+	 */
 	public String getAlt() {
 		LOG.debug("in getAlt");
 		if (valueMap.containsKey(PROPERTY_ALT_TAG)) {
@@ -249,39 +240,42 @@ public class AdaptiveImage {
 			Resource imageParent = resource.getParent();
 			ValueMap vm = imageParent.getValueMap();
 
-			if(vm.get(PROPERTY_ISDECORATIVE_TAG, String.class).equalsIgnoreCase("false")){
-				if(vm.get(PROPERTY_DAM_ALT_TAG, String.class).equalsIgnoreCase("true")){
+			if (vm.get(PROPERTY_ISDECORATIVE_TAG, String.class).equalsIgnoreCase("false")) {
+				if (vm.get(PROPERTY_DAM_ALT_TAG, String.class).equalsIgnoreCase("true")) {
 					Image largeImage = this.getImage(PROPERTY_ADAPTIVE_IMAGE_LARGE);
 					if (largeImage != null && StringUtils.isNotBlank(largeImage.getFileReference())) {
-						Resource imageResource = request.getResourceResolver().getResource(largeImage.getFileReference());
+						Resource imageResource = request.getResourceResolver()
+								.getResource(largeImage.getFileReference());
 						if (imageResource != null) {
 							Asset asset = imageResource.adaptTo(Asset.class);
 							if (asset != null) {
 								String description = asset.getMetadataValue(DamConstants.DC_DESCRIPTION);
 								if (StringUtils.isNotBlank(description)) {
 									return description;
-								}
-								else {
+								} else {
 									return "";
 								}
 							}
 						}
 					}
-				}
-				else {
+				} else {
 					return vm.get(PROPERTY_ALT_FLEXIBLE_TAG, String.class);
 				}
-			} 
+			}
 		}
 		return "";
-	}	
-	/* Get image title from the dialog and if not present then fetch from the dam properies */
+	}
+
+	/*
+	 * Get image title from the dialog and if not present then fetch from the dam
+	 * properies
+	 */
 	public String getTitle() {
 		LOG.debug("in getTitle");
 		Resource imageParent = resource.getParent();
 		ValueMap vm = imageParent.getValueMap();
 		String test = vm.get(PROPERTY_DAM_TITLE_TAG, String.class);
-		if(vm.get(PROPERTY_DAM_TITLE_TAG, String.class).equalsIgnoreCase("true")){
+		if (vm.get(PROPERTY_DAM_TITLE_TAG, String.class).equalsIgnoreCase("true")) {
 			Image largeImage = this.getImage(PROPERTY_ADAPTIVE_IMAGE_LARGE);
 			if (largeImage != null && StringUtils.isNotBlank(largeImage.getFileReference())) {
 				Resource imageResource = request.getResourceResolver().getResource(largeImage.getFileReference());
@@ -291,27 +285,28 @@ public class AdaptiveImage {
 						String title = asset.getMetadataValue(DamConstants.DC_TITLE);
 						if (StringUtils.isNotBlank(title)) {
 							return title;
-						}
-						else {
+						} else {
 							return asset.getName().split("\\.")[0];
 						}
 					}
 				}
 			}
-		}
-		else {
+		} else {
 			return vm.get(PROPERTY_TITLE_TAG, String.class);
 		}
 		return "";
 	}
 
-	/* Get image alt title from dialog and if not present then fetch from the dam properies */
+	/*
+	 * Get image alt title from dialog and if not present then fetch from the dam
+	 * properies
+	 */
 	public String getLink() {
 		LOG.debug("in getLink method of Adaptive Image");
 		Resource imageParent = resource.getParent();
 		ValueMap vm = imageParent.getValueMap();
 		String linkURL = vm.get(PROPERTY_URL_LINK_TAG, String.class);
-		if(vm.get(PROPERTY_ISDECORATIVE_TAG, String.class).equalsIgnoreCase("false")){
+		if (vm.get(PROPERTY_ISDECORATIVE_TAG, String.class).equalsIgnoreCase("false")) {
 			if (vm.containsKey(PROPERTY_URL_LINK_TAG)) {
 				return linkURL + ".html";
 			}
@@ -323,18 +318,18 @@ public class AdaptiveImage {
 		LOG.debug("in getImagePos method of Adaptive Image");
 		Resource imageParent = resource.getParent();
 		ValueMap vm = imageParent.getValueMap();
-		if (vm.containsKey(PROPERTY_IMAGE_POSITION_TAG)){
+		if (vm.containsKey(PROPERTY_IMAGE_POSITION_TAG)) {
 			String imagePosition = vm.get(PROPERTY_IMAGE_POSITION_TAG, String.class);
 			this.imagePosition = imagePosition;
-			if (this.imagePosition.equalsIgnoreCase("d-block mx-auto")){
+			if (this.imagePosition.equalsIgnoreCase("d-block mx-auto")) {
 				return "d-block-mx-auto";
 
-			}else{
+			} else {
 				return imagePosition;
 			}
-			
+
 		}
-	return "";
+		return "";
 	}
 
 	/*

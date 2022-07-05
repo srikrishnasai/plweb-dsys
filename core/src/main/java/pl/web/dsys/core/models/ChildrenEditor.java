@@ -69,7 +69,7 @@ public class ChildrenEditor {
 				items.add(children.next());
 
 			}
-			//get taginfo using TagManager API
+			// get taginfo using TagManager API
 			TagManager tagManager = resolver.adaptTo(TagManager.class);
 
 			for (int i = 0; i < items.size(); i++) {
@@ -83,7 +83,7 @@ public class ChildrenEditor {
 					List<TagInfo> tagList = new ArrayList<TagInfo>();
 
 					for (String j : authTag) {
-						//set TagInfo data
+						// set TagInfo data
 						TagInfo tag = new TagInfo();
 						tag.setTagID(tagManager.resolve(j).getTagID());
 						tag.setTagTitle(tagManager.resolve(j).getTitlePath());
@@ -99,11 +99,11 @@ public class ChildrenEditor {
 						tagList.add(tag);
 
 					}
-					//set TagList data
+					// set TagList data
 					tab.setTagList(tagList);
 
 				}
-				//set TabList
+				// set TabList
 				tabList.add(tab);
 
 			}

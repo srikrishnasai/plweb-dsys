@@ -30,7 +30,7 @@ public class PageItem implements ListItem {
 	ValueMap vm;
 
 	Date lastModified;
-	
+
 	@PostConstruct
 	protected void initModel() {
 		if (resourceResolver.adaptTo(PageManager.class) != null

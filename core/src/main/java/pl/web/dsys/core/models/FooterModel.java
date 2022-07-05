@@ -1,22 +1,15 @@
 package pl.web.dsys.core.models;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.PostConstruct;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
-import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 @Model(adaptables = { Resource.class,
 		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, resourceType = FooterModel.resourceType)
@@ -24,7 +17,7 @@ public class FooterModel {
 
 	private static final Logger log = LoggerFactory.getLogger(FooterModel.class);
 	public static final String resourceType = "plweb-dsys/components/footer/v1/footer";
-	
+
 	@SlingObject
 	Resource resource;
 
@@ -51,8 +44,6 @@ public class FooterModel {
 
 	@ValueMapValue
 	private String copyright;
-
-
 
 	@PostConstruct
 	protected void init() {

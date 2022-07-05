@@ -51,11 +51,11 @@ public class AuthControlFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		log.debug("Inside Auth Control Filter :::{}",WCMMode.fromRequest(request));
+		log.debug("Inside Auth Control Filter :::{}", WCMMode.fromRequest(request));
 		final SlingHttpServletResponse slingResponse = (SlingHttpServletResponse) response;
 		final SlingHttpServletRequest slingRequest = (SlingHttpServletRequest) request;
 		final Resource currentRes = slingRequest.getResource();
-		if(AuthUtil.isAuthorOrPreview(slingRequest)) {
+		if (AuthUtil.isAuthorOrPreview(slingRequest)) {
 			log.debug("Requested Page is Edit/Preview/ReadOnly mode so has access");
 			chain.doFilter(request, response);
 			return;

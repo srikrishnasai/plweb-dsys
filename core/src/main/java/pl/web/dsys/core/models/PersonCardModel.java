@@ -13,15 +13,14 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 @Model(adaptables = { Resource.class,
 		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, resourceType = PersonCardModel.resourceType)
-@Exporter(name = "jackson", extensions = "json")		
+@Exporter(name = "jackson", extensions = "json")
 public class PersonCardModel {
 
 	private static final Logger log = LoggerFactory.getLogger(PersonCardModel.class);
 	public static final String resourceType = "plweb-dsys/components/person-card/v1/person-card";
-	
+
 	@SlingObject
 	Resource resource;
 
@@ -61,19 +60,18 @@ public class PersonCardModel {
 	@ValueMapValue
 	private String linkedin;
 
-
 	Resource child;
 	ValueMap valueMap;
 	private String fileReference;
 
 	@PostConstruct
 	protected void init() {
-		log.debug("Inside Post Construct of Person Card Model..");	
-		if(null != resource) {
+		log.debug("Inside Post Construct of Person Card Model..");
+		if (null != resource) {
 			child = resource.getChild("image");
-			if(null != child) {
+			if (null != child) {
 				valueMap = child.getValueMap();
-		    	fileReference = valueMap.get("fileReference", String.class);  
+				fileReference = valueMap.get("fileReference", String.class);
 			}
 		}
 	}

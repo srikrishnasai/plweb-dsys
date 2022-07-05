@@ -31,6 +31,7 @@ import pl.web.dsys.core.utils.CloudManagerNotificationUtil;
 
 /**
  * This Servlet acts as a webhook to post and get cloudmanager response.
+ * 
  * @author Krishna
  *
  */
@@ -39,7 +40,6 @@ import pl.web.dsys.core.utils.CloudManagerNotificationUtil;
 		HttpConstants.METHOD_POST })
 public class CloudManagerNotificationServlet extends SlingAllMethodsServlet {
 
-	
 	/**
 	 * 
 	 */

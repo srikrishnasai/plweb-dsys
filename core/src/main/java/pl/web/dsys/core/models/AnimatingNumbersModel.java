@@ -1,6 +1,5 @@
 package pl.web.dsys.core.models;
 
-
 import javax.annotation.PostConstruct;
 
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -13,7 +12,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 @Model(adaptables = { Resource.class,
 		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, resourceType = AnimatingNumbersModel.resourceType)
 @Exporter(name = "jackson", extensions = "json")
@@ -21,7 +19,7 @@ public class AnimatingNumbersModel {
 
 	private static final Logger log = LoggerFactory.getLogger(AnimatingNumbersModel.class);
 	public static final String resourceType = "plweb-dsys/components/animating-numbers/v1/animating-numbers";
-	
+
 	@SlingObject
 	Resource resource;
 
@@ -51,7 +49,6 @@ public class AnimatingNumbersModel {
 
 	@ValueMapValue
 	private String animatingNumbersColor;
-
 
 	@PostConstruct
 	protected void init() {

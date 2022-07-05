@@ -293,12 +293,14 @@ public class VideoList {
 		return pathList;
 
 	}
-    /**
-     * return Asset list
-     * @return List of AssetItem
-     */
+
+	/**
+	 * return Asset list
+	 * 
+	 * @return List of AssetItem
+	 */
 	public List<AssetItem> getAssetsList() {
-        enhancedListModel.getEnhancedListItems();
+		enhancedListModel.getEnhancedListItems();
 		List<AssetItem> assetList = enhancedListModel.getEnhancedAssetItems();
 		if (null != assetList && !assetList.isEmpty()) {
 			return assetList;
@@ -323,7 +325,7 @@ public class VideoList {
 	}
 
 	public boolean showVideo() {
-    if (mode.isEdit())
+		if (mode.isEdit())
 			return true;
 		return StringUtils.isNotEmpty(video);
 

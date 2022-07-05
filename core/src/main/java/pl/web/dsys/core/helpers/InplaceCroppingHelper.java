@@ -1,36 +1,28 @@
 package pl.web.dsys.core.helpers;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.sling.api.resource.Resource;
-
 import javax.annotation.PostConstruct;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.models.annotations.Default;
-import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
-import org.apache.sling.models.annotations.injectorspecific.OSGiService;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import org.apache.sling.settings.SlingSettingsService;
+
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.ValueMap;
-import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
-
-import com.day.cq.wcm.foundation.Image;
-import pl.web.dsys.core.utils.SharedContants;
-
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.day.cq.wcm.foundation.Image;
+
+import pl.web.dsys.core.utils.SharedContants;
 
 /**
  * Helper to get the image source path for Image inplace editor
  *
  */
 
-@Model(adaptables = {Resource.class, SlingHttpServletRequest.class},
-defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+@Model(adaptables = { Resource.class,
+		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class InplaceCroppingHelper {
 
 	private static final Logger LOG = LoggerFactory.getLogger(InplaceCroppingHelper.class);
@@ -40,14 +32,13 @@ public class InplaceCroppingHelper {
 
 	@RequestAttribute
 	String imageName;
-	
+
 	@RequestAttribute
 	String nodeName;
 
-
-	@PostConstruct 
+	@PostConstruct
 	public void activate() {
-	LOG.error("InplaceCroppingHelperSling");
+		LOG.error("InplaceCroppingHelperSling");
 		/*
 		 * if node name is provided, get the child resource with that name of the
 		 * current resource, if not, use the current resource
@@ -56,7 +47,7 @@ public class InplaceCroppingHelper {
 		if (StringUtils.isNotEmpty(nodeName)) {
 			res = res.getChild(nodeName);
 		}
-				
+
 	}
 
 	private Image getImage(String name) {
@@ -71,7 +62,7 @@ public class InplaceCroppingHelper {
 		}
 		return img;
 	}
-	
+
 	private boolean hasImg(String name) {
 		Image img = getImage(name);
 		return img != null && img.hasContent();
@@ -80,7 +71,7 @@ public class InplaceCroppingHelper {
 	public boolean isNamedImage() {
 		return StringUtils.isNotBlank(imageName) ? hasImg(imageName) : false;
 	}
-	
+
 	public boolean isSmallImage() {
 		return hasImg(SharedContants.PROPERTY_ADAPTIVE_IMAGE_SMALL);
 	}

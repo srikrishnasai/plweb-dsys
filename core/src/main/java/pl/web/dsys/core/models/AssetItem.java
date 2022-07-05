@@ -49,8 +49,7 @@ public class AssetItem implements ListItem {
 	@PostConstruct
 	protected void initModel() {
 		this.asset = Optional.ofNullable(DamUtil.resolveToAsset(resource));
-		this.thumbnail = this.asset.map(a -> a.getRendition("original").getPath())
-				.orElse(StringUtils.EMPTY);
+		this.thumbnail = this.asset.map(a -> a.getRendition("original").getPath()).orElse(StringUtils.EMPTY);
 		this.assetFormat = this.asset.map(a -> a.getMetadataValue("dc:format")).orElse(StringUtils.EMPTY);
 		this.name = this.asset.map(a -> a.getName()).orElse(StringUtils.EMPTY);
 		if (DamUtil.resolveToAsset(resource) != null) {
