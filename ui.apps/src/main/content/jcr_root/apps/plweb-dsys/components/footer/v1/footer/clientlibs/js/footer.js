@@ -17,19 +17,19 @@
         }
 
         calculateHeight(FOOTER_HEIGHT + (maxHeight - 20) + 'px');
-        $(ulElem).css("max-height", maxHeight + "px")
+        $(ulElem).css("max-height", maxHeight + "px", false)
         $(button).toggleClass(UP_ARROW_CLASS);
     }
 
     function hideList(ulElem, button) {
-        calculateHeight(FOOTER_HEIGHT + 'px');
+        calculateHeight(FOOTER_HEIGHT + 'px', false);
         $(ulElem).css("max-height", "0px")
         $(button).toggleClass(UP_ARROW_CLASS);
     }
 
-    function calculateHeight(height) {
+    function calculateHeight(height, initial = true) {
         $('.footer').parent().css({
-            "transition": 'padding-bottom 0.5s linear',
+            "transition": `padding-bottom ${initial ? '0s' : '0.5s'} linear`,
             "padding-bottom": height,
         });
     }
@@ -48,6 +48,11 @@
                 })
             })
         })
+
+        $(window).resize(function () {
+            FOOTER_HEIGHT = $('footer').height();
+            calculateHeight(FOOTER_HEIGHT + 'px');
+        });
     })
 
     $(document).ready(function () {
