@@ -87,15 +87,6 @@ public class ChildrenEditor {
 						TagInfo tag = new TagInfo();
 						tag.setTagID(tagManager.resolve(j).getTagID());
 						tag.setTagTitle(tagManager.resolve(j).getTitlePath());
-						logger.info("authTag::{}", j);
-						logger.info("tagValue::{}", tagManager.resolve(j));
-						logger.info("tagID::{}", tagManager.resolve(j).getTagID());
-						logger.info("tagTitle::{}", tagManager.resolve(j).getTitle());
-						logger.info("tagTitlePath::{}", tagManager.resolve(j).getTitlePath());
-						logger.info("tagNameSpace::{}", tagManager.resolve(j).getNamespace().toString());
-						logger.info("tagLocalID:{}", tagManager.resolve(j).getLocalTagID());
-						logger.info("tagName::{}", tagManager.resolve(j).getName());
-						logger.info("tagValueTitle::{}", tagManager.resolveByTitle(j));
 						tagList.add(tag);
 
 					}

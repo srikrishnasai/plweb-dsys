@@ -1,0 +1,78 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "jcr:createdBy": "admin",
+    "jcr:title": "plweb-dsys",
+    "redirectTarget": "/content/plweb-dsys/us/en",
+    "sling:configRef": "/conf/plweb-dsys",
+    "sling:redirect": true,
+    "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+    "sling:redirectStatus": 302,
+    "cq:conf": "/conf/plweb-dsys",
+    "sling:resourceType": "foundation/components/redirect",
+    "cq:allowedTemplates": [
+      "/conf/plweb-dsys/settings/wcm/templates/(?!xf-).*"
+    ],
+    "image": {
+      "jcr:primaryType": "nt:unstructured"
+    }
+  },
+  "home": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "jcr:createdBy": "admin",
+      "socialMedia": [
+        "facebook"
+      ],
+      "jcr:title": "Home",
+      "cq:template": "/conf/plweb-dsys/settings/wcm/templates/page-content",
+      "compauth": "false",
+      "footerXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/footer/master",
+      "jcr:created": "Wed May 04 2022 17:27:38 GMT+0530",
+      "cq:lastModified": "Tue Jun 21 2022 15:40:18 GMT+0530",
+      "pageTitle": "Home",
+      "cq:conf": "/conf/plweb-dsys",
+      "sling:resourceType": "plweb-dsys/components/page/v1/page",
+      "cq:lastModifiedBy": "admin",
+      "navTitle": "Home",
+      "headerXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/header/master",
+      "authControlled-experience-fragment": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "admin",
+        "jcr:lastModifiedBy": "admin",
+        "jcr:created": "Wed Jul 06 2022 18:22:23 GMT+0530",
+        "jcr:lastModified": "Wed Jul 06 2022 18:22:45 GMT+0530",
+        "defaultXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/header/master",
+        "sling:resourceType": "plweb-dsys/components/authControlledExperienceFragment/v1/authControlledExperienceFragment",
+        "variations": {
+          "jcr:primaryType": "nt:unstructured",
+          "item0": {
+            "jcr:primaryType": "nt:unstructured",
+            "variationXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/header/Variation1",
+            "cq:authtags": "amfauth:agency/25448"
+          }
+        }
+      },
+      "authControlled-experience-fragment-no-variations": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "admin",
+        "jcr:lastModifiedBy": "admin",
+        "jcr:created": "Wed Jul 06 2022 18:22:23 GMT+0530",
+        "jcr:lastModified": "Wed Jul 06 2022 18:22:45 GMT+0530",
+        "defaultXfPath": "/content/experience-fragments/plweb-dsys/us/en/site/header/master",
+        "sling:resourceType": "plweb-dsys/components/authControlledExperienceFragment/v1/authControlledExperienceFragment"
+      },
+      "authControlled-experience-fragment-empty": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "admin",
+        "jcr:lastModifiedBy": "admin",
+        "jcr:created": "Wed Jul 06 2022 18:22:23 GMT+0530",
+        "jcr:lastModified": "Wed Jul 06 2022 18:22:45 GMT+0530",
+        "defaultXfPath": "",
+        "sling:resourceType": "plweb-dsys/components/authControlledExperienceFragment/v1/authControlledExperienceFragment"
+      }
+    }
+  }
+}
