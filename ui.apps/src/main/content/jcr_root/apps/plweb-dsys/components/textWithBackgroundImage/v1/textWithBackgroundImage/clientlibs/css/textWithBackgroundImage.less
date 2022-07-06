@@ -25,6 +25,14 @@
 			min-width: 100%;
 			background-repeat: no-repeat;
 			background-size: cover;
+
+			.adaptive-image__elm{
+				width: 100%;
+				height: 550px;
+				// min-height: 400px;
+				// max-height: 550px;
+				object-fit: cover;
+			}
 		}
 
 	);
@@ -37,4 +45,15 @@
 		}
 
 	);
+
+	@media @mediaXS {
+        .element(img-container, {
+		
+			.adaptive-image__elm{
+				height: 600px;
+			}
+		}
+
+	);
+    }
 }

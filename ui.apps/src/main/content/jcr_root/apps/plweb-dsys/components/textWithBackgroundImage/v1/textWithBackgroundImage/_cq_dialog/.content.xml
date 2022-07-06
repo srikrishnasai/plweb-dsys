@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Text With Background Image"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="[checkbox-show-hide,plweb-dsys.commons.slider]">
+    extraClientlibs="[checkbox-show-hide,plweb-dsys.commons.slider, plweb-dsys.rte-charLimit]">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -28,6 +28,8 @@
                                         sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                         fieldLabel="Content"
                                         name="./textContent"
+                                        class="custom-rte"
+                                        max-char-limit="250"
                                         useFixedInlineToolbar="{Boolean}true">
                                         <rtePlugins
                                             jcr:primaryType="nt:unstructured"
@@ -36,36 +38,6 @@
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceSuperType="plweb-dsys/common/commonRTE/v1/commonRTE/cq:dialog/content/items/column/items/richText/uiSettings"/>
                                     </textContent>
-                                    <bgImage
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="pcwr/cq/gui/components/authoring/dialog/fileupload"
-                                        allowUpload="{Boolean}false"
-                                        autoStart="{Boolean}false"
-                                        class="cq-droptarget"
-                                        fieldLabel="Background Image"
-                                        fileNameParameter="./bgImageFileName"
-                                        fileReferenceParameter="./bgImageFileRef"
-                                        mimeTypes="[image/jpeg,image/png]"
-                                        multiple="{Boolean}false"
-                                        name="./bgImageFile"
-                                        title="Upload Image Asset"
-                                        uploadUrl="${suffix.path}"
-                                        useHTML5="{Boolean}true"/>
-                                    <mobileBgImage
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="pcwr/cq/gui/components/authoring/dialog/fileupload"
-                                        allowUpload="{Boolean}false"
-                                        autoStart="{Boolean}false"
-                                        class="cq-droptarget"
-                                        fieldLabel="Mobile Background Image"
-                                        fileNameParameter="./mobileBgImageFileName"
-                                        fileReferenceParameter="./mobileBgImageFileRef"
-                                        mimeTypes="[image/jpeg,image/png]"
-                                        multiple="{Boolean}false"
-                                        name="./mobileBgImageFile"
-                                        title="Upload Image Asset"
-                                        uploadUrl="${suffix.path}"
-                                        useHTML5="{Boolean}true"/>
                                     <overlay
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -88,6 +60,269 @@
                             </content>
                         </items>
                     </general>
+                    <large
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Large Image"
+                        sling:orderBefore="animate"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <large
+                                                granite:class="large-image"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Upload Image"
+                                                fileNameParameter="./image/large/fileName"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./image/large/file"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <largeImageTransform
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Image Resolution"
+                                                name="./largeImageTransform">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <aptImageVeryHighLarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Very High (1440px)"
+                                                        value="flexImageLargeVeryHigh"/>
+                                                    <aptImageHighLarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="High (1200px)"
+                                                        value="flexImageLargeHigh"/>
+                                                    <aptImageMediumLarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Medium (992px)"
+                                                        value="flexImageLargeMedium"/>
+                                                    <aptImageLowLarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Low (768px)"
+                                                        value="flexImageLargeLow"/>
+                                                    <aptImageVeryLowLarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Very Low (576px)"
+                                                        value="flexImageLargeVeryLow"/>
+                                                    <aptImageLargeThumbnailLarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Large Thumbnail (400px)"
+                                                        value="flexImageLargeThumbnailLarge"/>
+                                                    <aptImageSmallThumbnailLarge
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Small Thumbnail (200px)"
+                                                        value="flexImageLargeThumbnailSmall"/>
+                                                </items>
+                                            </largeImageTransform>
+                                            <lgResType
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                name="./image/large/sling:resourceType"
+                                                value="wcm/foundation/components/image"/>
+                                            <largeImageDAM
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}false"
+                                                fieldDescription="This will load image from DAM."
+                                                name="./image/largeImageDAM"
+                                                text="Use Original Image"
+                                                value="true"/>
+                                            <largeTransparentImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}false"
+                                                fieldDescription="Check this checkbox if the image is transparent."
+                                                name="./image/largeTransparentImage"
+                                                text="Use Transparent Image"
+                                                value="true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </large>
+                    <medium
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Medium Image"
+                        sling:orderBefore="animate"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <medium
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Upload Image"
+                                                fileNameParameter="./image/medium/fileName"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./image/medium/file"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <mediumImageTransform
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Image Resolution"
+                                                name="./mediumImageTransform">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <aptImageHighMedium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="High (992px)"
+                                                        value="flexImageMediumHigh"/>
+                                                    <aptImageMediumMedium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Medium (768px)"
+                                                        value="flexImageMediumMedium"/>
+                                                    <aptImageLowMedium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Low (580px)"
+                                                        value="flexImageMediumLow"/>
+                                                    <aptImageLargeThumbnailMedium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Large Thumbnail (400px)"
+                                                        value="flexImageMediumThumbnailLarge"/>
+                                                    <aptImageSmallThumbnailMedium
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Small Thumbnail (200px)"
+                                                        value="flexImageMediumThumbnailSmall"/>
+                                                </items>
+                                            </mediumImageTransform>
+                                            <mdResType
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                name="./image/medium/sling:resourceType"
+                                                value="wcm/foundation/components/image"/>
+                                            <medImageDAM
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}false"
+                                                fieldDescription="This will load image from DAM."
+                                                name="./image/mediumImageDAM"
+                                                text="Use Original Image"
+                                                value="true"/>
+                                            <mediumTransparentImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}false"
+                                                fieldDescription="Check this checkbox if the image is transparent."
+                                                name="./image/mediumTransparentImage"
+                                                text="Use Transparent Image"
+                                                value="true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </medium>
+                    <small
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Small Image"
+                        sling:orderBefore="animate"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <small
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Upload Image"
+                                                fileNameParameter="./image/small/fileName"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./image/small/file"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <smallImageTransform
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Image Transform"
+                                                name="./smallImageTransform">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <aptImageHighSmall
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="High (768px)"
+                                                        value="flexImageSmallHigh"/>
+                                                    <aptImageMediumSmall
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Medium (580px)"
+                                                        value="flexImageSmallMedium"/>
+                                                    <aptImageLowSmall
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Low (440px)"
+                                                        value="flexImageSmallLow"/>
+                                                    <aptImageLargeThumbnailSmall
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Large Thumbnail (400px)"
+                                                        value="flexImageSmallThumbnailLarge"/>
+                                                    <aptImageSmallThumbnailSmall
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Small Thumbnail (200px)"
+                                                        value="flexImageSmallThumbnailSmall"/>
+                                                </items>
+                                            </smallImageTransform>
+                                            <smResType
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                name="./image/small/sling:resourceType"
+                                                value="wcm/foundation/components/image"/>
+                                            <smallImageDAM
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                fieldDescription="This will load image from DAM."
+                                                name="./image/smallImageDAM"
+                                                text="Use Original Image"
+                                                value="true"/>
+                                            <smallTransparentImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}false"
+                                                fieldDescription="Check this checkbox if the image is transparent."
+                                                name="./image/smallTransparentImage"
+                                                text="Use Transparent Image"
+                                                value="true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </small>
                     <authControl
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/include"
