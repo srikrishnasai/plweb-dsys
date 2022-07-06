@@ -1,0 +1,32 @@
+<span id="wcmmmode" data-wcm-mode="${wcmmode.toString}"> </span>
+<sly data-sly-use.notificationBanner="pl.web.dsys.core.models.NotificationBannerModel"
+     data-sly-test.componentProperties="${notificationBanner.bannerType == 'cookienotification' ? inheritedPageProperties : notificationBanner.componentProperties}"
+     data-sly-use.linkTarget="${'pl.web.dsys.core.helpers.LinkHelpers' @ url=componentProperties.notificationTargetPath}">
+</sly>
+<div data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='plweb-dsys.notificationbanner'}"></div>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=(wcmmode.edit || !componentProperties.notificationDescription)}" />
+
+<div data-sly-test="${componentProperties.notificationDescription}"
+     class="${!componentProperties.notificationDisableAnimation ? 'animatedParent animateOnce' : ''}">
+     <div class="notification_bar ${!componentProperties.notificationDisableAnimation ? '' : 'notification_bar--disableAnimations'} 
+                 ${componentProperties.notificationBannerPosition == 'none' && !componentProperties.notificationDisableAnimation ? 'animated fadeInCustom' : ''}
+                 ${componentProperties.notificationBannerPosition != 'none' && !componentProperties.notificationDisableAnimation ? 'fade-banner' : ''} 
+                 ${notificationBanner.bannerType == 'cookienotification' ? 'cookienotification' : 'normalnotification'}"
+          data-sly-attribute.data-cookie-expiry="${componentProperties.notificationExpiryDay}"
+          data-sly-attribute.data-banner-type="${notificationBanner.bannerType}"
+          data-sly-attribute.data-banner-position="${componentProperties.notificationBannerPosition}">
+
+          <div class="notification_bar__text">${componentProperties.notificationDescription @context='html'}</div>
+
+          <button id="cookie-button" data-sly-test="${componentProperties.notificationButtonLabel}"
+               class="dsys-button__main dsys-button__main--pbg-wc btn cta-text-btn notification_bar__bannerButton ${componentProperties.useTealButton ? 'notification_bar__bannerButton--teal' : ''}"
+               data-sly-attribute.data-button-type="${componentProperties.notificationButtonUse}"
+               data-sly-attribute.data-path="${linkTarget.linkURL}"
+               data-sly-attribute.data-path-tab="${componentProperties.notificationLinkTabTarget}"
+               onclick="setBannerType(this)">
+               ${componentProperties.notificationButtonLabel}
+          </button>
+     </div>
+</div>
