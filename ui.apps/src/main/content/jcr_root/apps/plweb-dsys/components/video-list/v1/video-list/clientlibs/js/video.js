@@ -502,7 +502,7 @@ function loadComponent(elem) {
         var videoElementFromSidebar = videoContainer.find(".video-list__right-pane").find("video").first();
         videoContainer
             .find("#sidebar")
-            .find(".preview")
+            .find(".video-list__preview")
             .each(function () {
                 $(this).on("click", function () {
                     playVideoFromSidebar(this, videoContainer);

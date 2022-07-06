@@ -5,10 +5,81 @@
 	position: relative;
 
 	.swiper {
-		margin: 0px 80px;
+		margin: 0px;
+
+		@media @mediaMD {
+			margin: 0px 80px;
+		}
 	}
 
 	.swiper-wrapper {
 		padding-inline-start: 0px;
+		margin: 0px;
 	}
+
+	.swiper-pagination {
+		position: relative;
+		bottom: unset !important;
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		display: none;
+
+		@media @mediaMD {
+			display: flex;
+		}
+	}
+
+	.swiper-pagination {
+		display: block;
+
+		@media @mediaMD {
+			display: none;
+		}
+	}
+
+	video {
+		height: 100%;
+		width: 100%;
+	}
+
+	.element(player-container, {
+			background: @neutral200;
+			aspect-ratio: 16 / 9;
+			width: 100%;
+			cursor: pointer;
+			position: relative;
+			border-radius: 4px;
+			border: 1px solid transparent;
+		}
+
+	);
+
+	.element(img-wrapper, {
+			position: relative;
+			padding-bottom: 56.25%;
+			height: 0;
+			background-color: @neutral200;
+
+			img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: top left;
+			}
+		}
+
+	);
+
+	.element(player, {
+			border-radius: 4px;
+			aspect-ratio: 16 / 9;
+		}
+
+	);
+
 }

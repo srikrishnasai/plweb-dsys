@@ -8,196 +8,272 @@
     right: 0;
     bottom: 0;
     left: 0;
-    
-    .element(main,{
-        display: flex;
-    });
 
-    .element(nav-bar,{
-        padding: @48 0;
-        background: @nav-background;
-        color: @textBodyDark;
-        min-height : 240px;
-        box-sizing: border-box;
-    });
+    .element(main, {
+            display: flex;
+        }
 
-    .element(list,{
-		flex: 1;
-        margin-right: 10px;
-        box-sizing: border-box;
+    );
+
+    .element(nav-bar, {
+            padding: @48 0;
+            background: @nav-background;
+            color: @textBodyDark;
+            min-height : 240px;
+            box-sizing: border-box;
+        }
+
+    );
+
+    .element(list, {
+            flex: 1;
+            margin-right: 10px;
+            box-sizing: border-box;
 
 
-        .modifier(logo-container,{
-			display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 0px;
-    	});
-    });
+            .modifier(logo-container, {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 0px;
+                }
+
+            );
+        }
+
+    );
 
     .element(links, {
-        padding: 0;
-    });
+            padding: 0;
+        }
+
+    );
 
     .element(text, {
-		line-height: 24px;
-        margin: @16 0rem;
-        list-style-type: none;
-	});
-
-    .element(link,{
-		color:  @textBodyDark;
-    });
-
-    .modifier(heading,{
-		.montserrat;
-        .uppercase;
-		.fw-600;
-    });
-
-    .element(logo,{
-        max-height: 100%;
-        max-width: 100%;
-    });
-
-    .element(other-links,{
-		margin: @16 0rem;
-        display:flex;
-    	font-size: 12px;
-    	line-height: 20px;
-    	color: @textBodyLight;
-        width: 100%;
-        .openSans;
-	});
-
-    .element(drop-down,{
-		flex-shrink: 0
-	});
-
-    .modifier(occupy-full-width,{
-		flex-grow: 1;
-    });
-
-    .element(drop-down,{
-			display: none;
-		});
-
-    .element(bottom-links,{
-        display: flex;
-        flex-wrap: wrap;
-        list-style-type: none;
-        a{
-            text-decoration: underline;
-            color: @textBodyLight;
-            margin-left: @24;
+            line-height: 24px;
+            margin: @16 0rem;
+            list-style-type: none;
         }
-    });
 
-    .modifier(mobile-list,{
-        padding-inline-start: 0px;
-    });
+    );
 
-    .element(left-links,{
-		margin: 0rem 1rem;
-    });
+    .element(link, {
+            color: @textBodyDark;
+        }
 
-    .element(copyright,{
-        flex-shrink: 0;
-    });
+    );
 
-    .element(bottom-links-container,{
-        display: flex;
-    });
+    .modifier(heading, {
+            .montserrat;
+            .uppercase;
+            .fw-600;
+        }
 
-    .modifier(left-link-full-width,{
-        flex-grow: 1;
-        flex-shrink: 0.5;
+    );
 
-    });
+    .element(logo, {
+            max-height: 100%;
+            max-width: 100%;
+        }
 
-	@media @mediaXS {
+    );
 
-        .element(list,{
-            flex: 1;
-            max-width: inherit;
-            margin-right: 0px;
-            .modifier(logo-container,{
-                display: none;
-            });
-        });
-        .element(main,{
-            flex-direction: column;
-        });
-        .element(nav-bar,{
-            padding: @32 0px;
-            min-height: inherit;
-        });
-        .modifier(link-mobile-view,{
-            padding-left: @16;
-        });
+    .element(other-links, {
+            margin: @16 0rem;
+            display:flex;
+            font-size: 12px;
+            line-height: 20px;
+            color: @textBodyLight;
+            width: 100%;
+            .openSans;
+        }
+
+    );
+
+    .element(drop-down, {
+            flex-shrink: 0
+        }
+
+    );
+
+    .modifier(occupy-full-width, {
+            flex-grow: 1;
+        }
+
+    );
+
+    .element(drop-down, {
+            display: none;
+        }
+
+    );
+
+    .element(bottom-links, {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+
+            a {
+                text-decoration: underline;
+                color: @textBodyLight;
+                margin-left: @24;
+            }
+        }
+
+    );
+
+    .modifier(mobile-list, {
+            padding-inline-start: 0px;
+        }
+
+    );
+
+    .element(left-links, {
+            margin: 0rem 1rem;
+        }
+
+    );
+
+    .element(copyright, {
+            flex-shrink: 0;
+            margin: 1em 0rem;
+        }
+
+    );
+
+    .element(bottom-links-container, {
+            display: flex;
+            width: -webkit-fill-available;
+        }
+
+    );
+
+    .modifier(left-link-full-width, {
+            flex-grow: 1;
+            flex-shrink: 0.5;
+
+        }
+
+    );
+
+    @media @mediaXS {
+
+        .element(list, {
+                flex: 1;
+                max-width: inherit;
+                margin-right: 0px;
+
+                .modifier(logo-container, {
+                        display: none;
+                    }
+
+                );
+            }
+
+        );
+
+        .element(main, {
+                flex-direction: column;
+            }
+
+        );
+
+        .element(nav-bar, {
+                padding: @32 0px;
+                min-height: inherit;
+            }
+
+        );
+
+        .modifier(link-mobile-view, {
+                padding-left: @16;
+            }
+
+        );
 
         .element(text, {
-            margin: 0rem;
-            margin-top: @16;
-        });
-
-        .element(drop-down,{
-            display: inline-block;
-            background: transparent;
-            outline: none;
-            color: @textBodyDark;
-            border: none;
-            background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downArrow.svg);
-            width: 14px;
-            height: 8px;
-            align-self: center;
-            cursor: pointer;
-            background-repeat: no-repeat;
-        });
-
-        .modifier(mobile-list,{
-            max-height: 0px;
-            transition: all 0.5s linear;
-            overflow: hidden;
-            padding-inline-start: 0px;
-        });
-
-        .modifier(up-arrow,{
-            background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/upArrow.svg);
-        });
-
-        .element(copyright,{
-            align-self: center;
-        });
-
-        .element(other-links,{
-            flex-direction: column;
-            margin: 0rem;
-            margin-top: @24;
-        });
-
-        .element(bottom-links,{
-            justify-content: space-between;
-            row-gap: @4;
-            flex: 1;
-            a{
-                margin-left: 0px;
+                margin: 0rem;
+                margin-top: @16;
             }
-        });
 
-        .modifier(mobile-nav-header-container,{
-            display: flex;
-            margin-top: @16;
-        });
+        );
 
-        .modifier(heading,{
-            flex: 1;
-            margin-top:  0rem;
-        });
-        
-        .modifier(display-list,{
-            flex-direction: column;
-        });
+        .element(drop-down, {
+                display: inline-block;
+                background: transparent;
+                outline: none;
+                color: @textBodyDark;
+                border: none;
+                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/downArrow.svg);
+                width: 14px;
+                height: 8px;
+                align-self: center;
+                cursor: pointer;
+                background-repeat: no-repeat;
+            }
+
+        );
+
+        .modifier(mobile-list, {
+                max-height: 0px;
+                transition: all 0.5s linear;
+                overflow: hidden;
+                padding-inline-start: 0px;
+            }
+
+        );
+
+        .modifier(up-arrow, {
+                background-image: url(/etc.clientlibs/plweb-dsys/clientlibs/clientlib-site/resources/upArrow.svg);
+            }
+
+        );
+
+        .element(copyright, {
+                align-self: center;
+            }
+
+        );
+
+        .element(other-links, {
+                flex-direction: column;
+                margin: 0rem;
+                margin-top: @24;
+            }
+
+        );
+
+        .element(bottom-links, {
+                justify-content: space-between;
+                row-gap: @4;
+                flex: 1;
+
+                a {
+                    margin-left: 0px;
+                }
+            }
+
+        );
+
+        .modifier(mobile-nav-header-container, {
+                display: flex;
+                margin-top: @16;
+            }
+
+        );
+
+        .modifier(heading, {
+                flex: 1;
+                margin-top: 0rem;
+            }
+
+        );
+
+        .modifier(display-list, {
+                flex-direction: column;
+            }
+
+        );
 
     }
 }
