@@ -73,7 +73,7 @@
                         <aspectRatios jcr:primaryType="nt:unstructured">
                             <crop1
                                 jcr:primaryType="nt:unstructured"
-                                name="550:1920 Crop"
+                                name="192:55 Crop"
                                 ratio="0.28"/>
                         </aspectRatios>
                     </crop>
@@ -87,7 +87,7 @@
                         <aspectRatios jcr:primaryType="nt:unstructured">
                             <crop1
                                 jcr:primaryType="nt:unstructured"
-                                name="1200:550 Crop"
+                                name="120:55 Crop"
                                 ratio="0.46"/>
                         </aspectRatios>
                     </crop>
@@ -101,8 +101,8 @@
                         <aspectRatios jcr:primaryType="nt:unstructured">
                             <crop1
                                 jcr:primaryType="nt:unstructured"
-                                name="550:768 Crop"
-                                ratio="0.72"/>
+                                name="600:768 Crop"
+                                ratio="0.78"/>
                         </aspectRatios>
                     </crop>
                 </plugins>
@@ -111,5 +111,5 @@
     </cq:inplaceEditing>
     <cq:listeners
         jcr:primaryType="cq:EditListenersConfig"
-        afteredit="REFRESH_SELF"/>
+        afteredit="REFRESH_PAGE"/>
 </jcr:root>

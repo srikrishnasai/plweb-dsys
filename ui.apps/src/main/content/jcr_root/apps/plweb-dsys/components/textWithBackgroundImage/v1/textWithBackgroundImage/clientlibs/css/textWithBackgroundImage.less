@@ -28,8 +28,9 @@
 
 			.adaptive-image__elm{
 				width: 100%;
-				min-height: 400px;
-				max-height: 550px;
+				height: 550px;
+				// min-height: 400px;
+				// max-height: 550px;
 				object-fit: cover;
 			}
 		}
@@ -44,4 +45,15 @@
 		}
 
 	);
+
+	@media @mediaXS {
+        .element(img-container, {
+		
+			.adaptive-image__elm{
+				height: 600px;
+			}
+		}
+
+	);
+    }
 }
