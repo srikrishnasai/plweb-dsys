@@ -1,0 +1,122 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:createdBy": "admin",
+  "jcr:created": "Thu May 26 2022 12:42:36 GMT+0530",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "jcr:createdBy": "admin",
+    "jcr:title": "Component Library",
+    "cq:template": "/conf/plweb-dsys/settings/wcm/templates/component-library",
+    "compauth": "false",
+    "jcr:created": "Thu May 26 2022 12:42:36 GMT+0530",
+    "cq:lastModified": "Tue May 17 2022 14:50:08 GMT+0000",
+    "sling:resourceType": "plweb-dsys/components/component-library/component-library-page",
+    "cq:allowedTemplates": "/conf/plweb-dsys/settings/wcm/templates/component-library",
+    "cq:lastModifiedBy": "admin",
+    "root": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "plweb-dsys/components/container",
+      "navigation_bar": {
+        "linkTarget": "/content/building-blocks",
+        "sling:resourceType": "plweb-dsys/components/component-library/navbar/v1/navbar"
+      }
+    }
+  },
+  "building-blocks": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:mixinTypes": [
+      "rep:AccessControllable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:created": "Thu May 26 2022 12:42:36 GMT+0530",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "jcr:createdBy": "admin",
+      "jcr:title": "Building Blocks",
+      "cq:template": "/conf/plweb-dsys/settings/wcm/templates/component-library",
+      "jcr:created": "Thu May 26 2022 12:42:36 GMT+0530",
+      "cq:lastModified": "Tue May 17 2022 14:35:04 GMT+0000",
+      "sling:resourceType": "plweb-dsys/components/component-library/component-library-page",
+      "cq:lastModifiedBy": "admin"
+    },
+    "text": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Thu May 26 2022 12:42:36 GMT+0530",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent",
+        "jcr:createdBy": "admin",
+        "jcr:title": "Building Blocks",
+        "pageTitle": "Page Title",
+        "cq:template": "/conf/plweb-dsys/settings/wcm/templates/component-library",
+        "jcr:created": "Thu May 26 2022 12:42:36 GMT+0530",
+        "cq:lastModified": "Tue May 17 2022 14:35:04 GMT+0000",
+        "sling:resourceType": "plweb-dsys/components/component-library/component-library-page",
+        "cq:lastModifiedBy": "admin"
+      },
+      "text-child": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Thu May 26 2022 12:42:37 GMT+0530",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent",
+        "jcr:createdBy": "admin",
+        "jcr:title": "Building Blocks",
+        "pageTitle": "Page Title",
+        "cq:template": "/conf/plweb-dsys/settings/wcm/templates/component-library",
+        "jcr:created": "Thu May 26 2022 12:42:36 GMT+0530",
+        "cq:lastModified": "Tue May 17 2022 14:35:04 GMT+0000",
+        "sling:resourceType": "plweb-dsys/components/component-library/component-library-page",
+        "cq:lastModifiedBy": "admin"
+      }
+    },
+      "text-child2": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Thu May 26 2022 12:42:37 GMT+0530",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent",
+        "jcr:createdBy": "admin",
+        "jcr:title": "Building Blocks",
+        "cq:template": "/conf/plweb-dsys/settings/wcm/templates/component-library",
+        "jcr:created": "Thu May 26 2022 12:42:36 GMT+0530",
+        "cq:lastModified": "Tue May 17 2022 14:35:04 GMT+0000",
+        "sling:resourceType": "plweb-dsys/components/component-library/component-library-page",
+        "cq:lastModifiedBy": "admin",
+        "hideInNav": "true"
+      }
+    }
+    },
+    "title": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Thu May 26 2022 12:42:37 GMT+0530",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent",
+        "jcr:createdBy": "admin",
+        "jcr:title": "Building Blocks",
+        "cq:template": "/conf/plweb-dsys/settings/wcm/templates/component-library",
+        "jcr:created": "Thu May 26 2022 12:42:36 GMT+0530",
+        "cq:lastModified": "Tue May 17 2022 14:35:04 GMT+0000",
+        "sling:resourceType": "plweb-dsys/components/component-library/component-library-page",
+        "cq:lastModifiedBy": "admin",
+        "hideInNav": "true"
+      },
+      "title-child": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Thu May 26 2022 12:42:37 GMT+0530",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent",
+        "jcr:createdBy": "admin",
+        "jcr:title": "Building Blocks",
+        "cq:template": "/conf/plweb-dsys/settings/wcm/templates/component-library",
+        "jcr:created": "Thu May 26 2022 12:42:36 GMT+0530",
+        "cq:lastModified": "Tue May 17 2022 14:35:04 GMT+0000",
+        "sling:resourceType": "plweb-dsys/components/component-library/component-library-page",
+        "cq:lastModifiedBy": "admin"
+      }
+    }
+    }
+  }
+}
