@@ -1,46 +1,51 @@
-/**Intialize Swiper for carousel view */
-function initializeSwiper(totalItems, swiper, prevButton, nextButton, pagination) {
-    return new Swiper(swiper, {
-        direction: "horizontal",
-        loop: false,
-        pagination: {
-            el: pagination,
-            type: "bullets",
-            clickable: true,
-        },
-        spaceBetween: 10,
-        speed: 1000,
-        navigation: {
-            nextEl: nextButton,
-            prevEl: prevButton,
-        }
-    });
-}
+(function () {
+    "use strict";
 
-function loadComponent(elem) {
+    /**Intialize Swiper for carousel view */
+    function initializeSwiper(totalItems, swiper, prevButton, nextButton, pagination) {
+        return new Swiper(swiper, {
+            direction: "horizontal",
+            loop: false,
+            pagination: {
+                el: pagination,
+                type: "bullets",
+                clickable: true,
+            },
+            spaceBetween: 10,
+            speed: 1000,
+            navigation: {
+                nextEl: nextButton,
+                prevEl: prevButton,
+            }
+        });
+    }
 
-    var videoContainer = $(elem);
-    var swiper;
+    function loadComponent(elem) {
 
-    var totalSlides = videoContainer.find("#asset-carousel").find("li").not(".swiper-slide-duplicate").length;
-    var swiperContainer = videoContainer.find(".assetSwiper");
-    var prevButton = videoContainer.find(".swiper-button-prev")[0];
-    var nextButton = videoContainer.find(".swiper-button-next")[0];
-    var pagination = videoContainer.find(".swiper-pagination")[0];
+        var videoContainer = $(elem);
+        var swiper;
 
-    swiper = initializeSwiper(totalSlides, swiperContainer[0], prevButton, nextButton, pagination);
+        var totalSlides = videoContainer.find("#asset-carousel").find("li").not(".swiper-slide-duplicate").length;
+        var swiperContainer = videoContainer.find(".assetSwiper");
+        var prevButton = videoContainer.find(".swiper-button-prev")[0];
+        var nextButton = videoContainer.find(".swiper-button-next")[0];
+        var pagination = videoContainer.find(".swiper-pagination")[0];
 
-    swiper.on('slideChange', function () {
-        videoContainer.find("video").each(function () {
-            $(this)[0].pause();
+        swiper = initializeSwiper(totalSlides, swiperContainer[0], prevButton, nextButton, pagination);
+
+        swiper.on('slideChange', function () {
+            videoContainer.find("video").each(function () {
+                $(this)[0].pause();
+            });
+        });
+    }
+
+
+
+    $(window).on("load", function () {
+        $(".asset-container").each(function () {
+            loadComponent(this);
         });
     });
-}
 
-
-
-$(window).on("load", function () {
-    $(".asset-container").each(function () {
-        loadComponent(this);
-    });
-});
+}());
