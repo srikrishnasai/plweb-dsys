@@ -41,6 +41,21 @@ public class AssetListModel {
 	@Default(intValues = 0)
 	private int maxItems;
 
+	@ValueMapValue
+	private String autopauseDisabled;
+
+	@ValueMapValue
+	private String autoplay;
+
+	@ValueMapValue
+	private String delay;
+
+	@ValueMapValue
+	private String infiniteLoop;
+
+	@ValueMapValue
+	private String animation;
+
 	@PostConstruct
 	protected void init() {
 		log.debug("Inside Post Construct of Assets List Model.. {}");
@@ -60,6 +75,26 @@ public class AssetListModel {
 
 	public String getTitle() {
 		return enhancedListModel.getTitle();
+	}
+
+	public String getAutopauseDisabled() {
+		return autopauseDisabled;
+	}
+
+	public String getAutoplay() {
+		return autoplay;
+	}
+
+	public String getDelay() {
+		return delay;
+	}
+
+	public String getInfiniteLoop() {
+		return infiniteLoop;
+	}
+
+	public String getAnimation() {
+		return animation;
 	}
 
 	public String getDescription() {

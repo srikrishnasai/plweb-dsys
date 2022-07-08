@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root 
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0" 
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0" 
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+    xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Assets List"
+    extraClientlibs="[plweb-dsys.author.checkbox-show-hide]"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
@@ -135,6 +141,107 @@
                             </column>
                         </items>
                     </listSettings>
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General"
+                        sling:orderBefore="items"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items 
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:hideChildren="[id]">
+                                            <infiniteloop
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}true"
+                                                fieldDescription="Enables looping of the carousel"
+                                                name="./infiniteLoop"
+                                                text="Infinite Loop"
+                                                value="true"/>
+                                            <autoplay
+                                                jcr:primaryType="nt:unstructured"
+                                                granite:class="cq-dialog-checkbox-showhide"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.autoplay ? cqDesign.autoplay : false}"
+                                                fieldDescription="If checked, automatically transition between slides."
+                                                name="./autoplay"
+                                                text="Automatically transition slides"
+                                                uncheckedValue="false"
+                                                value="true">
+                                                <granite:data 
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-checkbox-showhide-target=".autoplay-vatsal"
+                                                    isShowOnCheckedTarget="{Boolean}true"/>
+                                            </autoplay>
+                                            <autoplayGroup
+                                                granite:class="autoplay-vatsal"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <alert
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/alert"
+                                                        size="S"
+                                                        text="Automatic transitions are previewed with the 'View as Published' page action."
+                                                        variant="info"/>
+                                                    <delay
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                        fieldDescription="The delay (in seconds) before automatically transitioning to the next slide."
+                                                        fieldLabel="Transition Delay (seconds)"
+                                                        max="600"
+                                                        min="0"
+                                                        name="./delay"
+                                                        step="1"
+                                                        value="${not empty cqDesign.delay ? cqDesign.delay : 5}">
+                                                    </delay>
+                                                    <autopauseDisabled
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                        checked="${not empty cqDesign.autopauseDisabled ? cqDesign.autopauseDisabled : false}"
+                                                        fieldDescription="If checked, automatic pause when hovering the carousel is disabled."
+                                                        name="./autopauseDisabled"
+                                                        text="Disable automatic pause on hover"
+                                                        uncheckedValue="false"
+                                                        value="true">
+                                                    </autopauseDisabled>
+                                                </items>
+                                            </autoplayGroup>
+                                            <animation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Animation"
+                                                name="./animation">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <default
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Default"
+                                                        value=""/>
+                                                    <flip
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Flip"
+                                                        value="flip"/>
+                                                    <fade
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Fade"
+                                                        value="fade"/>
+                                                </items>
+                                            </animation>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
                     <authControl
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/include"
