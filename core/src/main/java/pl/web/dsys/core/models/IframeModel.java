@@ -9,6 +9,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
@@ -44,6 +45,7 @@ public class IframeModel {
 	private String html;
 
 	@ValueMapValue
+	@Default(values = "#")
 	private String appUrl;
 
 	@ValueMapValue
@@ -100,9 +102,7 @@ public class IframeModel {
 	}
 
 	public String getAppUrl() {
-		if (StringUtils.isBlank(appUrl)) {
-			return "#";
-		}
+	
 		return appUrl;
 	}
 
