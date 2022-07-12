@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
 @Exporter(name = "jackson", extensions = "json")
 public class IframeModel {
 
-	private static final Logger log = LoggerFactory.getLogger(GlobalEnablerModel.class);
+	private static final Logger log = LoggerFactory.getLogger(IframeModel.class);
 	public static final String resourceType = "plweb-dsys/components/Iframe/v1/Iframe";
 	public static final String IFRM_EXTERNAPP = "IFRM_EXTERNAPP";
 	public static final String PROP_OVERRIDE_ID = "overrideId";
