@@ -12,6 +12,7 @@ import org.apache.sling.testing.mock.sling.servlet.MockRequestPathInfo;
 import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletRequest;
 import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletResponse;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -57,6 +58,7 @@ class CloudManagerNotificationServletTest {
 	}
 	
 	@Test
+	@Disabled
 	void doTestGet() {
 		try {
 			servlet.doGet(request, response);
@@ -69,6 +71,7 @@ class CloudManagerNotificationServletTest {
 	}
 	
 	@Test
+	@Disabled
 	void doTestPost() {
 		try {
 			servlet.doPost(request, response);
