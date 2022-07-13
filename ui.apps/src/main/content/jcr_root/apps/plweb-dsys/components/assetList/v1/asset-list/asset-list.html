@@ -5,14 +5,21 @@
 <sly data-sly-use.authControlObj="pl.web.dsys.core.models.AuthControlModel" />
 <sly data-sly-call="${template.placeholder @ isEmpty = !assetsObj.title, classAppend='cmp-text'}"></sly>
 <sly data-sly-test="${authControlObj.hasComponentAccess}">
-	<div class="asset-container" id="asset-carousel">
+	<div class="asset-container asset-container__main" id="asset-carousel"
+		data-cmp-loop="${(wcmmode.edit || wcmmode.design) ? 'false' : assetsObj.infiniteLoop}"
+		data-cmp-autoplay="${(wcmmode.edit || wcmmode.design) ? '' : (assetsObj.autoplay ? 'true' : '')}"
+		data-cmp-delay="${assetsObj.delay}" data-cmp-animation="${assetsObj.animation}"
+		data-cmp-autopause-disabled="${(wcmmode.edit || wcmmode.design) ? 'true' : assetsObj.autopauseDisabled}">
 		<div class="swiper assetSwiper">
 			<h3>${assetsObj.title}</h3>
 			<p>${assetsObj.description}</p>
 			<ul class="swiper-wrapper" data-sly-list.item="${assetsObj.assetsList}">
 				<li class="swiper-slide">
 					<div class="asset-container__img-wrapper" data-sly-test="${item.contentType == 'asset'}">
-						<img class="asset-container__player" src="${item.path}" alt="${item.contentType}" />
+						<sly
+							data-sly-use.imageurl="${'pl.web.dsys.core.helpers.ImageTransformHelper' @ transform=item.path ?'dsys-flexImg':'dsys-flexImg1200w', imagePath=item.path}" />
+						<img class="asset-container__player" src="${imageurl.transformedImageUrl}"
+							alt="${item.contentType}" />
 					</div>
 					<div class="asset-container__player-container" data-sly-test="${item.contentType == 'video'}">
 						<video controls="true" class="asset-container__player" id="videoPlayer" src="${item.path}"
@@ -25,8 +32,8 @@
 			</ul>
 		</div>
 
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-pagination"></div>
-		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev asset-container__swiper-control asset-container__swiper-control--prev"></div>
+		<div class="swiper-pagination asset-container__pagination"></div>
+		<div class="swiper-button-next asset-container__swiper-control asset-container__swiper-control--next"></div>
 	</div>
 </sly>
