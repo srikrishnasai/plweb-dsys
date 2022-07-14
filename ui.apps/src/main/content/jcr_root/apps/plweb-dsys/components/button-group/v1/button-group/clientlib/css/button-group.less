@@ -1,60 +1,88 @@
-@import (reference)  "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
+@import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/design-token-imports.less";
 @import (reference) "/apps/plweb-dsys/clientlibs/clientlib-site/css/mixins.less";
 
 .dsys-button-group {
-    .element(main,{
-        display: flex;
-        flex-direction: row;
+    .element(main, {
+            display: flex;
+            flex-direction: row;
 
-        .button{
-            .dsys-button{
-                height: 100%;
+            .button {
+                .dsys-button {
+                    height: 100%;
+                }
             }
         }
-    });
 
-    .modifier(small-gap,{
-        .dsys-button-group__main{
-            gap: 12px;
-        }
-     });
+    );
 
-    .modifier(medium-gap,{
-        .dsys-button-group__main{
-            gap: 24px;
-        }
-     });
-
-    .modifier(large-gap,{
-        .dsys-button-group__main{
-            gap: 36px;
-        }
-     });
-
-     .modifier(left,{
-        .dsys-button-group__main{
-            justify-content: left;
-        }
-     });
-
-    .modifier(center,{
-        .dsys-button-group__main{
-            justify-content: center;
+    .modifier(small-gap, {
+            .dsys-button-group__main {
+                gap: 12px;
+            }
         }
 
-        .dsys-button-group__main{
-            gap: 12px;
-        }
-     });
-}
+    );
 
-@media @mediaMobile {
-    .dsys-button-group {
-        .element(main,{
-            flex-direction: column;
-        });
+    .modifier(medium-gap, {
+            .dsys-button-group__main {
+                gap: 24px;
+            }
+        }
+
+    );
+
+    .modifier(large-gap, {
+            .dsys-button-group__main {
+                gap: 36px;
+            }
+        }
+
+    );
+
+    .modifier(left, {
+            .dsys-button-group__main {
+                justify-content: left;
+            }
+        }
+
+    );
+
+    .modifier(center, {
+            .dsys-button-group__main {
+                justify-content: center;
+            }
+
+            .dsys-button-group__main {
+                gap: 12px;
+            }
+        }
+
+    );
+
+    @media @mediaMobile {
+
+        .element(main, {
+                flex-direction: column;
+            }
+
+        );
+
+        .modifier(medium-gap, {
+                .dsys-button-group__main {
+                    gap: 18px;
+                }
+            }
+
+        );
+
+        .modifier(large-gap, {
+                .dsys-button-group__main {
+                    gap: 24px;
+                }
+            }
+
+        );
 
     }
-    
-    
+
 }

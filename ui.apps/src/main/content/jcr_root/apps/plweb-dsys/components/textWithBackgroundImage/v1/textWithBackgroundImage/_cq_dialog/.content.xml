@@ -91,42 +91,6 @@
                                                 title="Upload Image Asset"
                                                 uploadUrl="${suffix.path}"
                                                 useHTML5="{Boolean}true"/>
-                                            <largeImageTransform
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Image Resolution"
-                                                name="./largeImageTransform">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <aptImageVeryHighLarge
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Very High (1440px)"
-                                                        value="flexImageLargeVeryHigh"/>
-                                                    <aptImageHighLarge
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="High (1200px)"
-                                                        value="flexImageLargeHigh"/>
-                                                    <aptImageMediumLarge
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Medium (992px)"
-                                                        value="flexImageLargeMedium"/>
-                                                    <aptImageLowLarge
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Low (768px)"
-                                                        value="flexImageLargeLow"/>
-                                                    <aptImageVeryLowLarge
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Very Low (576px)"
-                                                        value="flexImageLargeVeryLow"/>
-                                                    <aptImageLargeThumbnailLarge
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Large Thumbnail (400px)"
-                                                        value="flexImageLargeThumbnailLarge"/>
-                                                    <aptImageSmallThumbnailLarge
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Small Thumbnail (200px)"
-                                                        value="flexImageLargeThumbnailSmall"/>
-                                                </items>
-                                            </largeImageTransform>
                                             <lgResType
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
@@ -184,34 +148,6 @@
                                                 title="Upload Image Asset"
                                                 uploadUrl="${suffix.path}"
                                                 useHTML5="{Boolean}true"/>
-                                            <mediumImageTransform
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Image Resolution"
-                                                name="./mediumImageTransform">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <aptImageHighMedium
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="High (992px)"
-                                                        value="flexImageMediumHigh"/>
-                                                    <aptImageMediumMedium
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Medium (768px)"
-                                                        value="flexImageMediumMedium"/>
-                                                    <aptImageLowMedium
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Low (580px)"
-                                                        value="flexImageMediumLow"/>
-                                                    <aptImageLargeThumbnailMedium
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Large Thumbnail (400px)"
-                                                        value="flexImageMediumThumbnailLarge"/>
-                                                    <aptImageSmallThumbnailMedium
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Small Thumbnail (200px)"
-                                                        value="flexImageMediumThumbnailSmall"/>
-                                                </items>
-                                            </mediumImageTransform>
                                             <mdResType
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
@@ -269,34 +205,6 @@
                                                 title="Upload Image Asset"
                                                 uploadUrl="${suffix.path}"
                                                 useHTML5="{Boolean}true"/>
-                                            <smallImageTransform
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Image Transform"
-                                                name="./smallImageTransform">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <aptImageHighSmall
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="High (768px)"
-                                                        value="flexImageSmallHigh"/>
-                                                    <aptImageMediumSmall
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Medium (580px)"
-                                                        value="flexImageSmallMedium"/>
-                                                    <aptImageLowSmall
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Low (440px)"
-                                                        value="flexImageSmallLow"/>
-                                                    <aptImageLargeThumbnailSmall
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Large Thumbnail (400px)"
-                                                        value="flexImageSmallThumbnailLarge"/>
-                                                    <aptImageSmallThumbnailSmall
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Small Thumbnail (200px)"
-                                                        value="flexImageSmallThumbnailSmall"/>
-                                                </items>
-                                            </smallImageTransform>
                                             <smResType
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
