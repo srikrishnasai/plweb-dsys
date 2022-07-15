@@ -1,18 +1,19 @@
 package pl.web.dsys.core.models;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.apache.sling.api.resource.Resource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import pl.web.dsys.core.base.DsysTestContext;
 
-@ExtendWith(AemContextExtension.class)
+@ExtendWith({ AemContextExtension.class, MockitoExtension.class })
 class PageListModelTest {
 
 	private final AemContext context = DsysTestContext.newAemContext();
@@ -23,11 +24,14 @@ class PageListModelTest {
 		context.load().json("/pageListModel.json", "/content");
 	}
 
+	@Test
 	@Disabled
 	void doTestPageList() {
 		PageListModel pageList = getPageListModelUnderTest(PAGE_LIST_COMPONENT);
-		EnhancedListModel enhancedList = context.currentResource(PAGE_LIST_COMPONENT).adaptTo(EnhancedListModel.class);
-		assertEquals("5", enhancedList.getLimit());
+		assertNotNull(pageList.getRemovePadding());
+		assertNotNull(pageList.getRemoveBullets());
+		assertNotNull(pageList.getListColumn());
+		assertNotNull(pageList.getTitle());
 	}
 
 	private PageListModel getPageListModelUnderTest(String resourcePath) {

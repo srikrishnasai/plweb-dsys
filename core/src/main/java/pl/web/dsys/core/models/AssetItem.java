@@ -69,7 +69,7 @@ public class AssetItem implements ListItem {
 		if (StringUtils.isNotEmpty(name)) {
 			if (StringUtils.endsWithIgnoreCase(name, ".mp4")) {
 				this.icon = "fa fa-play fa-2x";
-			} else if (StringUtils.endsWithIgnoreCase(name, ",pdf")) {
+			} else if (StringUtils.endsWithIgnoreCase(name, ".pdf")) {
 				this.icon = "fa fa-file-pdf-o fa-2x";
 			} else {
 				this.icon = "fa fa-file-word-o fa-2x";

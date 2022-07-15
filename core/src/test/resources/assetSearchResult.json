@@ -204,7 +204,341 @@
             }
           }
         }
-      }
+      },
+      "asset1.mp4": {
+        "jcr:primaryType": "dam:Asset",
+        "jcr:mixinTypes": [
+          "mix:versionable"
+        ],
+        "jcr:createdBy": "admin",
+        "jcr:versionHistory": "c1695219-be75-4bd8-b926-9a91f8d17018",
+        "jcr:predecessors": [
+          "edec5e14-1b8d-453d-9236-57c5027196f2"
+        ],
+        "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+        "jcr:baseVersion": "edec5e14-1b8d-453d-9236-57c5027196f2",
+        "jcr:isCheckedOut": true,
+        "jcr:uuid": "1150ba8b-2230-4e19-ab7a-c71446593455",
+        "jcr:content": {
+          "jcr:primaryType": "dam:AssetContent",
+          "jcr:lastModifiedBy": "admin",
+          "dam:assetState": "processed",
+          "cq:name": "asset1.jpg",
+          "jcr:lastModified": "Mon Apr 25 2022 13:47:17 GMT+0530",
+          "cq:parentPath": "/content/dam/plweb-dsys",
+          "renditions": {
+            "jcr:primaryType": "nt:folder",
+            "jcr:createdBy": "admin",
+            "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+            "cq5dam.thumbnail.48.48.png": {
+              "jcr:primaryType": "nt:file",
+              "jcr:createdBy": "admin",
+              "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+              "jcr:content": {
+                "jcr:primaryType": "nt:resource",
+                "jcr:lastModifiedBy": "workflow-process-service",
+                "jcr:mimeType": "image/png",
+                "jcr:lastModified": "Mon Apr 25 2022 13:47:17 GMT+0530",
+                ":jcr:data": 346,
+                "jcr:uuid": "e46b3757-9c0a-4e8f-b1b9-35a03ed0df62"
+              }
+            },
+            "cq5dam.thumbnail.140.100.png": {
+              "jcr:primaryType": "nt:file",
+              "jcr:createdBy": "admin",
+              "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+              "jcr:content": {
+                "jcr:primaryType": "nt:resource",
+                "jcr:lastModifiedBy": "workflow-process-service",
+                "jcr:mimeType": "image/png",
+                "jcr:lastModified": "Mon Apr 25 2022 13:47:17 GMT+0530",
+                ":jcr:data": 2611,
+                "jcr:uuid": "f4f2bf0a-1154-4cc4-8fe4-77be60d001f1"
+              }
+            },
+            "cq5dam.web.1280.1280.jpeg": {
+              "jcr:primaryType": "nt:file",
+              "jcr:createdBy": "admin",
+              "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+              "jcr:content": {
+                "jcr:primaryType": "nt:resource",
+                "jcr:lastModifiedBy": "workflow-process-service",
+                "jcr:mimeType": "image/jpeg",
+                "jcr:lastModified": "Mon Apr 25 2022 13:47:17 GMT+0530",
+                ":jcr:data": 19720,
+                "jcr:uuid": "28c015dd-e14c-4427-9a19-25d3885e7e31"
+              }
+            },
+            "original": {
+              "jcr:primaryType": "nt:file",
+              "jcr:createdBy": "admin",
+              "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+              "jcr:content": {
+                "jcr:primaryType": "nt:resource",
+                "jcr:lastModifiedBy": "admin",
+                "jcr:mimeType": "image/jpeg",
+                "jcr:lastModified": "Mon Apr 25 2022 13:47:13 GMT+0530",
+                ":jcr:data": 71731,
+                "jcr:uuid": "926f6a27-1569-4894-a4ba-b514346b479a"
+              }
+            },
+            "cq5dam.thumbnail.319.319.png": {
+              "jcr:primaryType": "nt:file",
+              "jcr:createdBy": "admin",
+              "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+              "jcr:content": {
+                "jcr:primaryType": "nt:resource",
+                "jcr:lastModifiedBy": "workflow-process-service",
+                "jcr:mimeType": "image/png",
+                "jcr:lastModified": "Mon Apr 25 2022 13:47:17 GMT+0530",
+                ":jcr:data": 11514,
+                "jcr:uuid": "673fabf1-34e5-472a-a0c4-c031533579cd"
+              }
+            }
+          },
+          "related": {
+            "jcr:primaryType": "nt:unstructured"
+          },
+          "metadata": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:Taggable"
+            ],
+            "dam:Physicalheightininches": "0.7083333134651184",
+            "tiff:Compression": 6,
+            "dam:Physicalwidthininches": "13.05555534362793",
+            "dam:JpgFromRawStart": 382,
+            "dam:Fileformat": "JPEG",
+            "dam:Progressive": "yes",
+            "tiff:ImageLength": 51,
+            "tiff:YResolution": "72/1",
+            "exif:ColorSpace": 65535,
+            "jcr:lastModifiedBy": "admin",
+            "xmp:CreatorTool": "Adobe Photoshop CC (Macintosh)",
+            "dam:extracted": "Mon Apr 25 2022 13:47:17 GMT+0530",
+            "dc:format": "video/jpeg",
+            "dam:Bitsperpixel": 24,
+            "exif:ExifVersion": "0221",
+            "xmpMM:DocumentID": "xmp.did:AE2E3F741ACA11E39F4CD06DF927654C",
+            "dam:MIMEtype": "image/jpeg",
+            "tiff:Orientation": 1,
+            "exif:ExifImageWidth": 940,
+            "dam:JpgFromRawLength": 988,
+            "dam:Physicalwidthindpi": 72,
+            "dam:Physicalheightindpi": 72,
+            "tiff:ResolutionUnit": 2,
+            "xmpMM:OriginalDocumentID": "xmp.did:4576AD9C112068118083FEAE8F0AE3A0",
+            "dc:modified": "Mon Apr 25 2022 13:47:11 GMT+0530",
+            "photoshop:ColorMode": 3,
+            "dam:Numberofimages": 1,
+            "tiff:XResolution": "72/1",
+            "exif:PixelYDimension": 51,
+            "dam:ExifOffset": 232,
+            "xmp:MetadataDate": "Thu Jan 01 2015 00:00:00 GMT+0000",
+            "exif:PixelXDimension": 940,
+            "jcr:lastModified": "Mon Apr 25 2022 13:47:11 GMT+0530",
+            "dam:Numberoftextualcomments": 0,
+            "xmpMM:InstanceID": "xmp.iid:61e45f9c-a0cb-4560-83c5-054bb35d320a",
+            "xmp:ModifyDate": "Thu Jan 01 2015 00:00:00 GMT+0000",
+            "xmp:CreateDate": "Thu Jan 01 2015 00:00:00 GMT+0000",
+            "tiff:ImageWidth": 940,
+            "dam:sha1": "3170872759f04c3e5801e56384c5843b13ca106f",
+            "dam:size": 71731,
+            "dam:ColorSpace": -1,
+            "tiff:SamplesPerPixel": 3,
+            "tiff:PhotometricInterpretation": 2,
+            "exif:ExifImageLength": 51,
+            "xmpMM:DerivedFrom": {
+              "jcr:primaryType": "nt:unstructured",
+              "stRef:instanceID": "xmp.iid:524b6b7f-6449-45a6-b6fd-22994ff6a8fe",
+              "xmpNodeType": "xmpStruct",
+              "stRef:documentID": "xmp.did:4576AD9C112068118083FEAE8F0AE3A0"
+            },
+            "xmpMM:History": {
+              "jcr:primaryType": "nt:unstructured",
+              "xmpNodeType": "xmpArray",
+              "xmpArraySize": 1,
+              "xmpArrayType": "rdf:Seq",
+              "1": {
+                "jcr:primaryType": "nt:unstructured",
+                "stEvt:action": "saved",
+                "xmpNodeType": "xmpStruct",
+                "stEvt:softwareAgent": "Adobe Photoshop CC (Macintosh)",
+                "stEvt:when": "Thu Jan 01 2015 00:00:00 GMT+0000",
+                "stEvt:changed": "/",
+                "stEvt:instanceID": "xmp.iid:61e45f9c-a0cb-4560-83c5-054bb35d320a"
+              }
+            }
+          }
+        }
+      },
+      "asset2.pdf": {
+        "jcr:primaryType": "dam:Asset",
+        "jcr:mixinTypes": [
+          "mix:versionable"
+        ],
+        "jcr:createdBy": "admin",
+        "jcr:versionHistory": "c1695219-be75-4bd8-b926-9a91f8d17018",
+        "jcr:predecessors": [
+          "edec5e14-1b8d-453d-9236-57c5027196f2"
+        ],
+        "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+        "jcr:baseVersion": "edec5e14-1b8d-453d-9236-57c5027196f2",
+        "jcr:isCheckedOut": true,
+        "jcr:uuid": "1150ba8b-2230-4e19-ab7a-c71446593455",
+        "jcr:content": {
+          "jcr:primaryType": "dam:AssetContent",
+          "jcr:lastModifiedBy": "admin",
+          "dam:assetState": "processed",
+          "cq:name": "asset1.jpg",
+          "jcr:lastModified": "Mon Apr 25 2022 13:47:17 GMT+0530",
+          "cq:parentPath": "/content/dam/plweb-dsys",
+          "renditions": {
+            "jcr:primaryType": "nt:folder",
+            "jcr:createdBy": "admin",
+            "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+            "cq5dam.thumbnail.48.48.png": {
+              "jcr:primaryType": "nt:file",
+              "jcr:createdBy": "admin",
+              "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+              "jcr:content": {
+                "jcr:primaryType": "nt:resource",
+                "jcr:lastModifiedBy": "workflow-process-service",
+                "jcr:mimeType": "image/png",
+                "jcr:lastModified": "Mon Apr 25 2022 13:47:17 GMT+0530",
+                ":jcr:data": 346,
+                "jcr:uuid": "e46b3757-9c0a-4e8f-b1b9-35a03ed0df62"
+              }
+            },
+            "cq5dam.thumbnail.140.100.png": {
+              "jcr:primaryType": "nt:file",
+              "jcr:createdBy": "admin",
+              "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+              "jcr:content": {
+                "jcr:primaryType": "nt:resource",
+                "jcr:lastModifiedBy": "workflow-process-service",
+                "jcr:mimeType": "image/png",
+                "jcr:lastModified": "Mon Apr 25 2022 13:47:17 GMT+0530",
+                ":jcr:data": 2611,
+                "jcr:uuid": "f4f2bf0a-1154-4cc4-8fe4-77be60d001f1"
+              }
+            },
+            "cq5dam.web.1280.1280.jpeg": {
+              "jcr:primaryType": "nt:file",
+              "jcr:createdBy": "admin",
+              "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+              "jcr:content": {
+                "jcr:primaryType": "nt:resource",
+                "jcr:lastModifiedBy": "workflow-process-service",
+                "jcr:mimeType": "image/jpeg",
+                "jcr:lastModified": "Mon Apr 25 2022 13:47:17 GMT+0530",
+                ":jcr:data": 19720,
+                "jcr:uuid": "28c015dd-e14c-4427-9a19-25d3885e7e31"
+              }
+            },
+            "original": {
+              "jcr:primaryType": "nt:file",
+              "jcr:createdBy": "admin",
+              "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+              "jcr:content": {
+                "jcr:primaryType": "nt:resource",
+                "jcr:lastModifiedBy": "admin",
+                "jcr:mimeType": "image/jpeg",
+                "jcr:lastModified": "Mon Apr 25 2022 13:47:13 GMT+0530",
+                ":jcr:data": 71731,
+                "jcr:uuid": "926f6a27-1569-4894-a4ba-b514346b479a"
+              }
+            },
+            "cq5dam.thumbnail.319.319.png": {
+              "jcr:primaryType": "nt:file",
+              "jcr:createdBy": "admin",
+              "jcr:created": "Mon Apr 25 2022 13:47:07 GMT+0530",
+              "jcr:content": {
+                "jcr:primaryType": "nt:resource",
+                "jcr:lastModifiedBy": "workflow-process-service",
+                "jcr:mimeType": "image/png",
+                "jcr:lastModified": "Mon Apr 25 2022 13:47:17 GMT+0530",
+                ":jcr:data": 11514,
+                "jcr:uuid": "673fabf1-34e5-472a-a0c4-c031533579cd"
+              }
+            }
+          },
+          "related": {
+            "jcr:primaryType": "nt:unstructured"
+          },
+          "metadata": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:Taggable"
+            ],
+            "dam:Physicalheightininches": "0.7083333134651184",
+            "tiff:Compression": 6,
+            "dam:Physicalwidthininches": "13.05555534362793",
+            "dam:JpgFromRawStart": 382,
+            "dam:Fileformat": "JPEG",
+            "dam:Progressive": "yes",
+            "tiff:ImageLength": 51,
+            "tiff:YResolution": "72/1",
+            "exif:ColorSpace": 65535,
+            "jcr:lastModifiedBy": "admin",
+            "xmp:CreatorTool": "Adobe Photoshop CC (Macintosh)",
+            "dam:extracted": "Mon Apr 25 2022 13:47:17 GMT+0530",
+            "dc:format": "video/jpeg",
+            "dam:Bitsperpixel": 24,
+            "exif:ExifVersion": "0221",
+            "xmpMM:DocumentID": "xmp.did:AE2E3F741ACA11E39F4CD06DF927654C",
+            "dam:MIMEtype": "image/jpeg",
+            "tiff:Orientation": 1,
+            "exif:ExifImageWidth": 940,
+            "dam:JpgFromRawLength": 988,
+            "dam:Physicalwidthindpi": 72,
+            "dam:Physicalheightindpi": 72,
+            "tiff:ResolutionUnit": 2,
+            "xmpMM:OriginalDocumentID": "xmp.did:4576AD9C112068118083FEAE8F0AE3A0",
+            "dc:modified": "Mon Apr 25 2022 13:47:11 GMT+0530",
+            "photoshop:ColorMode": 3,
+            "dam:Numberofimages": 1,
+            "tiff:XResolution": "72/1",
+            "exif:PixelYDimension": 51,
+            "dam:ExifOffset": 232,
+            "xmp:MetadataDate": "Thu Jan 01 2015 00:00:00 GMT+0000",
+            "exif:PixelXDimension": 940,
+            "jcr:lastModified": "Mon Apr 25 2022 13:47:11 GMT+0530",
+            "dam:Numberoftextualcomments": 0,
+            "xmpMM:InstanceID": "xmp.iid:61e45f9c-a0cb-4560-83c5-054bb35d320a",
+            "xmp:ModifyDate": "Thu Jan 01 2015 00:00:00 GMT+0000",
+            "xmp:CreateDate": "Thu Jan 01 2015 00:00:00 GMT+0000",
+            "tiff:ImageWidth": 940,
+            "dam:sha1": "3170872759f04c3e5801e56384c5843b13ca106f",
+            "dam:size": 71731,
+            "dam:ColorSpace": -1,
+            "tiff:SamplesPerPixel": 3,
+            "tiff:PhotometricInterpretation": 2,
+            "exif:ExifImageLength": 51,
+            "xmpMM:DerivedFrom": {
+              "jcr:primaryType": "nt:unstructured",
+              "stRef:instanceID": "xmp.iid:524b6b7f-6449-45a6-b6fd-22994ff6a8fe",
+              "xmpNodeType": "xmpStruct",
+              "stRef:documentID": "xmp.did:4576AD9C112068118083FEAE8F0AE3A0"
+            },
+            "xmpMM:History": {
+              "jcr:primaryType": "nt:unstructured",
+              "xmpNodeType": "xmpArray",
+              "xmpArraySize": 1,
+              "xmpArrayType": "rdf:Seq",
+              "1": {
+                "jcr:primaryType": "nt:unstructured",
+                "stEvt:action": "saved",
+                "xmpNodeType": "xmpStruct",
+                "stEvt:softwareAgent": "Adobe Photoshop CC (Macintosh)",
+                "stEvt:when": "Thu Jan 01 2015 00:00:00 GMT+0000",
+                "stEvt:changed": "/",
+                "stEvt:instanceID": "xmp.iid:61e45f9c-a0cb-4560-83c5-054bb35d320a"
+              }
+            }
+          }
+        }
+      }      
     }
   }
 }
