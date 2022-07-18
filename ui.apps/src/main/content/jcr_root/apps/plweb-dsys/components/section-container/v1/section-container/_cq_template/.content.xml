@@ -6,5 +6,6 @@
     desktopTopInternal="no-space"
     desktopBottomInternal="no-space"
     useDesktopConfigForTablet="true"
-    useDesktopConfigForMobile="true">
+    useDesktopConfigForMobile="true"
+    titleTextBottomSpacing="small">
 </jcr:root>
